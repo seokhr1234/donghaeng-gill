@@ -1,0 +1,8 @@
+{
+  "name": "donghaeng-android-demo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {"prepare:web": "node scripts/prepare-web.mjs", "sync": "npm run prepare:web && cap sync android"},
+  "dependencies": {"@capacitor/core": "8.0.0", "@capacitor/android": "8.0.0", "@capacitor/geolocation": "8.0.0", "@noble/hashes": "2.0.1"},
+  "devDependencies": {"@capacitor/cli": "8.0.0", "esbuild": "0.25.12"}
+}

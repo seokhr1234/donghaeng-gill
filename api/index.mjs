@@ -1,3 +1,4 @@
+import {walkOnlyResponse} from '../donghaeng-nav/services/web-profile.mjs';
 import {createCityWalkHandler} from '../donghaeng-nav/services/city-walk/router.mjs';
 import {createConfiguredWalkReviewHandler} from '../donghaeng-nav/services/transit/configured-review.mjs';
 import {createConditionHandler, DEFAULT_GEMINI_MODEL} from '../donghaeng-nav/scripts/condition-api.mjs';
@@ -26,6 +27,7 @@ export default function handler(req, res) {
   const route = ['/api/transit/walk-review','/api/routes/city-walk','/api/city/coverage','/api/status', '/api/analyze-condition', '/api/select-route',...expansionPaths].includes(url.pathname)
     ? url.pathname
     : url.pathname === '/api/index' ? `/api/${url.searchParams.get('route') || ''}` : '';
+  if(walkOnlyResponse(req,res,route))return;
   if(['/api/routes/city-walk','/api/city/coverage'].includes(route))return city(req,res,route);
   if(route==='/api/transit/walk-review')return walkReview(req,res);
   if(['/api/routes/transit','/api/transit/status'].includes(route))return transit(req,res,route);
@@ -33,7 +35,7 @@ export default function handler(req, res) {
   if(route==='/api/coverage'&&!process.env.DONGHAENG_BACKEND_URL){
     if(req.method!=='GET'){res.statusCode=405;res.end();return}
     res.setHeader('Content-Type','application/json; charset=utf-8');res.setHeader('Cache-Control','no-store');
-    return res.end(JSON.stringify({...publicCoverage,transit:{...publicCoverage.transit,state:process.env.ODSAY_API_KEY&&process.env.DONGHAENG_TRANSIT_ENABLED!=='false'?'reference_candidates_only':'not_configured'}}));
+    return res.end(JSON.stringify({...publicCoverage,transit:{...publicCoverage.transit,state:'unavailable_in_web_build'}}));
   }
   return expansionPaths.includes(route)?expansion(req,res,route):handle(req, res, route);
 }

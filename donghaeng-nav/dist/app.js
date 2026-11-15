@@ -1,6 +1,8 @@
 'use strict';
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],E=NavEngine,F=DonghaengFinal;
 if(/^https?:$/.test(location.protocol))$('#expansion-link').hidden=false;
+document.body.dataset.buildProfile=globalThis.DONGHAENG_BUILD?.target||'web-walk';
+$('#mode-transit').hidden=!globalThis.DONGHAENG_BUILD?.transitEnabled;
 const storageIssues={};const read=k=>{try{const value=SavedData.decode(k,localStorage.getItem(k));storageIssues[k]=value.invalid;return value.items}catch{storageIssues[k]=0;return []}},write=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v));return true}catch{toast('브라우저 저장 공간에 접근할 수 없어요.');return false}};
 let graph,map,precisionController,origin=null,originName='출발 위치를 선택해 주세요',destination=null,profile,analyzed='',routes=[],selected=0,watchId=null,currentStep=-1,detailGroups=[],toastTimer,pickMode=null,gpsMarker,accuracyCircle;
 let accessReports=[];
@@ -166,6 +168,7 @@ function showRouteReason(){
 }
 function setTravelMode(mode){
  if(!['walk','transit'].includes(mode)||travelMode===mode)return;
+ if(mode==='transit'&&!globalThis.DONGHAENG_BUILD?.transitEnabled){toast('도보 공개판에서는 도보 길찾기를 제공합니다.');return}
  if(mode==='transit'&&!/^https?:$/.test(location.protocol)){toast('대중교통은 온라인 동행길에서 사용할 수 있어요.');return}
  cancelAnalysis();invalidate();travelMode=mode;$('#transit-sharing').hidden=mode!=='transit';$('#transit-connection').hidden=mode!=='transit';$('#mobile-save').hidden=mode==='transit';
  $$('[data-travel-mode]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.travelMode===mode)));checkDestinationEntry(destination);
@@ -191,6 +194,7 @@ function showShortTransitNotice(){
  $('#result-title').textContent='대중교통 검색 범위';$('#search-status').textContent='도보 가능 여부는 같은 이동 조건으로 다시 계산해 확인해요.';$('#mobile-route-status').textContent='700m 이내 · 대중교통 검색 미지원';if(isMobileUI())setMobileMode('results');
 }
 async function findTransitRoute(){
+ if(!globalThis.DONGHAENG_BUILD?.transitEnabled)return;
  if(!/^https?:$/.test(location.protocol)){$('#search-status').textContent='대중교통 검색은 온라인 동행길에서 사용할 수 있어요.';return}
  if(transitRequest)return;
  if(transitSearchSource==='ODsay'&&E.distance(origin,destination.ll)<=700){invalidate();showShortTransitNotice();return}

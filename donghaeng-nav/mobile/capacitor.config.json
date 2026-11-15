@@ -1,0 +1,11 @@
+{
+  "appId": "app.donghaeng.gill.demo",
+  "appName": "동행길 시연",
+  "webDir": "www",
+  "android": {
+    "allowMixedContent": false
+  },
+  "server": {
+    "androidScheme": "https"
+  }
+}

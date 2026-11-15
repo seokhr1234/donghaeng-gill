@@ -134,7 +134,7 @@ def build():
         path.write_text(html, encoding='utf-8', newline='\n')
     facilities = json.loads(local_file(datasets['bundled-facilities-seoul']['path']).read_bytes())['features']
     manifest = {
-        'version': '2026-11-15-steep-roads',
+        'version': '2026-11-15-walk-web-android',
         'main_source': 'donghaeng-nav/dist/index.html',
         'expansion': {'online_page': 'expansion.html', 'service_code_files': len(services['files']), 'review_asset_files': len(services.get('review_assets', {})),
                       'service_integrity_sha256': sha(service_path.read_bytes()), 'citywide_routing': False,
@@ -145,7 +145,7 @@ def build():
                                         'reviewed_date': review_points['metadata']['reviewed_date'], 'display_only': True, 'field_verified': False, 'routing_eligible': False}},
         'compressed_assets': compressed_assets,
         'project_name': '동행길',
-        'transit_main': {'mode_selector': True, 'line_stop_details': True, 'reference_markers_only': False, 'walking_reference_geometry': True, 'walking_time_comparison': True, 'whole_journey_review': True, 'mixed_steps_replay': True, 'offline_transit_provider': True, 'repeat_rest_validator': True, 'local_timetable_adapter': True, 'operational_timetable_configured': False, 'vehicle_geometry_verified': False, 'stop_mapping_verified': False, 'timetable_verified': False, 'accessible_journey_verified': False, 'provider_search_verified': False, 'full_ui_optimization_deferred': True},
+        'transit_main': {'mode_selector': False, 'web_transit_enabled': False, 'android_demo_transit_enabled': True, 'line_stop_details': True, 'reference_markers_only': False, 'walking_reference_geometry': True, 'walking_time_comparison': True, 'whole_journey_review': True, 'mixed_steps_replay': True, 'offline_transit_provider': True, 'repeat_rest_validator': True, 'local_timetable_adapter': True, 'operational_timetable_configured': False, 'vehicle_geometry_verified': False, 'stop_mapping_verified': False, 'timetable_verified': False, 'accessible_journey_verified': False, 'provider_search_verified': False, 'full_ui_optimization_deferred': True},
         'route_choice': {'max_attempts': 24, 'time_budget_ms': 4000, 'max_candidates': 5, 'explanation': 'Decision-time final response; no new request on click', 'real_gemini_verified': False},
         'source_snapshot': lock['source'],
         'facility_records': len(facilities),

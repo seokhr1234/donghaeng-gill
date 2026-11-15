@@ -6,7 +6,7 @@
   "credentials_included": true,
   "source_project": "동행길-Codex-전달; bbb referenced for Leaflet OSM tiles",
   "files": 428,
-  "html_sha256": "74b54aa8a02a08b996ccc9040dbfc29171911c1258e30cf5b11ec0cc7a2e7fd0",
+  "html_sha256": "a1c85ac71b53d0e5313f3f0be3c6642275b0079cc8098ea13ab80fe91653d6da",
   "verification": {
     "copied_project_build": true,
     "server_root_app_setup_http_200": true,
@@ -56,7 +56,7 @@
   "precision_runtime_included": true,
   "precision_runtime_loader_implemented": true,
   "main_promotion": {
-    "version": "2026-11-15-steep-roads",
+    "version": "2026-11-15-walk-web-android",
     "review": "donghaeng-nav/docs/main-navigation-promotion.md",
     "original_gis_reprocessed": false,
     "field_verified": false

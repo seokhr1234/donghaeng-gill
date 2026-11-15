@@ -1,0 +1,22 @@
+import assert from 'node:assert/strict';
+import {createServer} from 'node:http';
+import {createRequire} from 'node:module';
+import {writeFile} from 'node:fs/promises';
+import {createApp} from '../server.mjs';
+import entry from '../../api/index.mjs';
+const require=createRequire(import.meta.url),{chromium}=require('playwright'),bundle=process.argv.includes('--bundle'),checks=[];let providerCalls=0;
+const app=createApp({transitConfig:{apiKey:'synthetic-not-real',enabled:true,fetchImpl:async()=>{providerCalls++;throw Error('must not call')}}}),vercel=createServer(entry);
+await Promise.all([new Promise(r=>app.listen(0,'127.0.0.1',r)),new Promise(r=>vercel.listen(0,'127.0.0.1',r))]);let browser;
+try{
+ const base='http://127.0.0.1:'+app.address().port,edge='http://127.0.0.1:'+vercel.address().port;
+ for(const server of [base,edge])for(const route of ['routes/transit','transit/walk-review','journeys'])for(const path of ['/api/'+route,...(server===edge?['/api/index?route='+route]:[])]){const r=await fetch(server+path,{method:'POST',headers:{'Content-Type':'application/json'},body:'{}'});assert.equal(r.status,404);assert.equal((await r.json()).code,'transit_not_in_web_build')}
+ for(const server of [base,edge]){const r=await fetch(server+'/api/transit/status');assert.equal((await r.json()).state,'unavailable_in_web_build')}
+ assert.equal(providerCalls,0);checks.push('Node and direct/rewrite Vercel transit, journey and transit-walk endpoints are unavailable even with a configured key; no provider invocation');
+ browser=await chromium.launch({headless:true,executablePath:'/usr/bin/chromium',args:['--no-sandbox']});const context=await browser.newContext({viewport:{width:393,height:852}});await context.route('https://**',r=>r.abort());const page=await context.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));
+ await page.goto(base+(bundle?'/동행길-최종.html':'/'));await page.waitForFunction(()=>!document.querySelector('#find-route').disabled,null,{timeout:60000});assert.equal(await page.evaluate(()=>DONGHAENG_BUILD.transitEnabled),false);assert.equal(await page.locator('#mode-transit').isVisible(),false);assert.match(await page.locator('.question-progress').innerText(),/1 \/ 3/);
+ await page.locator('#origin-query').fill('서울');await page.locator('.map-layers-control > summary').click({timeout:3000});assert.equal(await page.evaluate(()=>tripQuestions.snapshot().collapsed),true);checks.push('Web build has three walking-only questions and the map control remains tappable while origin search expands');
+ await page.evaluate(()=>{tripQuestions.close();setOrigin([37.5665,126.978],'공개 시험 출발');setDestination({name:'공개 시험 도착',ll:[37.573,126.98]},{pan:false});setTravelMode('transit')});assert.equal(await page.evaluate(()=>travelMode),'walk');await page.locator('#condition').fill('가장 짧은 길로 가고 싶어요.');await page.locator('#find-route').click();await page.waitForFunction(()=>cityRoute&&!document.querySelector('#find-route').disabled,null,{timeout:30000});assert.equal(await page.evaluate(()=>cityRoute.accessibilityVerified),false);assert(await page.evaluate(()=>cityRoute.coordinates.length>2));checks.push('Direct mode tampering does not enable transit; preserved Seoul reference walking still works with unknown accessibility');
+ for(const size of [{width:320,height:568},{width:667,height:375},{width:1440,height:1000}]){await page.setViewportSize(size);assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth))}
+ await page.goto(base+'/expansion.html');assert.equal(await page.locator('#mode option[value=transit]').count(),0);assert.deepEqual(errors,[]);assert.equal(providerCalls,0);
+ const r={pass:true,entry:bundle?'standalone':'source',checks,browserErrors:errors,actualProviderCalls:0,fieldVerified:false};await writeFile(new URL('../docs/web-walk-'+(bundle?'bundle-':'')+'results.json',import.meta.url),JSON.stringify(r,null,2)+'\n');console.log(JSON.stringify(r,null,2));
+}finally{await browser?.close();app.closeAllConnections();vercel.closeAllConnections();await Promise.all([new Promise(r=>app.close(r)),new Promise(r=>vercel.close(r))])}

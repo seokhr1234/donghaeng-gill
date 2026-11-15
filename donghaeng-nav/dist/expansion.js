@@ -4,6 +4,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribu
 const features=L.layerGroup().addTo(map),paths=L.layerGroup().addTo(map),pins={};let origin=null,destination=null,picking=null,featureEpoch=0,routeEpoch=0,searchEpoch=0,layerChanged=false;
 const node=(tag,text)=>{const e=document.createElement(tag);e.textContent=text;return e};
 const transitView=TransitUI.create({map,container:$('#route-results'),fitBounds:bounds=>map.fitBounds(bounds,{padding:[30,30]})});
+if(!globalThis.DONGHAENG_BUILD?.transitEnabled){document.querySelector('#mode option[value=transit]')?.remove();document.querySelector('#transit-status').hidden=true}
 const reviewNames={barrier:'차단물',crossing:'횡단부',entrance:'출입구',kerb:'턱',elevator:'승강기'},reviewColors={barrier:'#a34200',crossing:'#176bd1',entrance:'#6f3aa7',kerb:'#866200',elevator:'#176d52'};
 const tagValue=value=>value===undefined?'미등록 · 현장 미확인':value===''?'빈 등록값 · 확인 필요':String(value);
 function appendReviewDetails(box,p,source){

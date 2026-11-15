@@ -1,0 +1,21 @@
+{
+  "pass": true,
+  "dateKst": "2026-11-15",
+  "baseline": "d7b1361",
+  "branch": "release/walk-web-android-demo",
+  "originalDataPreserved": 9,
+  "researchPreserved": true,
+  "serviceFiles": 52,
+  "protectedCode": 27,
+  "fiveHtmlSameBuild": true,
+  "htmlSha256": "a1c85ac71b53d0e5313f3f0be3c6642275b0079cc8098ea13ab80fe91653d6da",
+  "reports": [
+    "web-walk-results",
+    "web-walk-bundle-results",
+    "android-demo-results",
+    "android-apk-build-results"
+  ],
+  "actualAndroidKeyEmbedded": false,
+  "actualAndroidDeviceTest": false,
+  "actualProviderCalls": 0
+}

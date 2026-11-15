@@ -1,0 +1,19 @@
+{
+  "pass": true,
+  "checkedDateKst": "2026-11-15",
+  "apkName": "donghaeng-android-demo.apk",
+  "bytes": 21171219,
+  "sha256": "ada8e019222b258e7ff249f7c861a18ff5b1ce8508ea9a1e6d2624142325e364",
+  "appId": "app.donghaeng.gill.demo",
+  "minSdk": 24,
+  "targetSdk": 36,
+  "signatureVerified": true,
+  "build": "debug",
+  "nativeProviderBridgeIncluded": true,
+  "actualKeyEmbedded": false,
+  "onDeviceKeySetup": true,
+  "androidProfileEnabled": true,
+  "actualAndroidDeviceTest": false,
+  "actualProviderCall": false,
+  "nativeSourceSha256": "ba34f10edaa13857bfa11882879a46b2727eefd94e2f3fd24b2313301af7455c"
+}
