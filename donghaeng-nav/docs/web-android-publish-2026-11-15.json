@@ -1,0 +1,95 @@
+{
+  "pass": true,
+  "checkedDateKst": "2026-11-15",
+  "sourceCommit": "d72473a5050f0196b8d9bce2c0c790ebb2c1ac97",
+  "origin": "https://donghaeng-gill.vercel.app",
+  "webTransitEnabled": false,
+  "walkingQuestions": 3,
+  "publicTransitRequests": [
+    {
+      "path": "/api/routes/transit",
+      "status": 404,
+      "code": "transit_not_in_web_build"
+    },
+    {
+      "path": "/api/transit/walk-review",
+      "status": 404,
+      "code": "transit_not_in_web_build"
+    },
+    {
+      "path": "/api/journeys",
+      "status": 404,
+      "code": "transit_not_in_web_build"
+    },
+    {
+      "path": "/api/index?route=routes/transit",
+      "status": 404,
+      "code": "transit_not_in_web_build"
+    }
+  ],
+  "transitStatus": "unavailable_in_web_build",
+  "cityCoverage": {
+    "status": 200,
+    "segments": 963670
+  },
+  "files": [
+    {
+      "path": "index.html",
+      "matchesSource": true
+    },
+    {
+      "path": "build-profile.js",
+      "matchesSource": true
+    },
+    {
+      "path": "app.js",
+      "matchesSource": true
+    },
+    {
+      "path": "trip-questions.js",
+      "matchesSource": true
+    }
+  ],
+  "mobileMapControlTappableAfterOriginSearch": true,
+  "browserErrors": [],
+  "actualOdsayCalls": 0,
+  "actualAiCalls": 0,
+  "externalTilesBlocked": true,
+  "branch": "release/walk-web-android-demo",
+  "mainFastForward": {
+    "from": "d7b1361b085463727b4101307c78872a8436275c",
+    "to": "d72473a5050f0196b8d9bce2c0c790ebb2c1ac97",
+    "force": false
+  },
+  "githubStatuses": [
+    {
+      "context": "Vercel – donghaeng",
+      "state": "success",
+      "url": "https://vercel.com/snu-clab/donghaeng/AVD38bxEmB4Xtb6fpy3P23xf7XT2"
+    },
+    {
+      "context": "Vercel – aiaiaiaiaiaiaiai",
+      "state": "success",
+      "url": "https://vercel.com/snu-clab/aiaiaiaiaiaiaiai/BsThtfZkNkxUFKWkPuGoqCLNjJUi"
+    }
+  ],
+  "apk": {
+    "pass": true,
+    "checkedDateKst": "2026-11-15",
+    "apkName": "donghaeng-android-demo.apk",
+    "bytes": 21171219,
+    "sha256": "ada8e019222b258e7ff249f7c861a18ff5b1ce8508ea9a1e6d2624142325e364",
+    "appId": "app.donghaeng.gill.demo",
+    "minSdk": 24,
+    "targetSdk": 36,
+    "signatureVerified": true,
+    "build": "debug",
+    "nativeProviderBridgeIncluded": true,
+    "actualKeyEmbedded": false,
+    "onDeviceKeySetup": true,
+    "androidProfileEnabled": true,
+    "actualAndroidDeviceTest": false,
+    "actualProviderCall": false,
+    "nativeSourceSha256": "ba34f10edaa13857bfa11882879a46b2727eefd94e2f3fd24b2313301af7455c"
+  }
+}
