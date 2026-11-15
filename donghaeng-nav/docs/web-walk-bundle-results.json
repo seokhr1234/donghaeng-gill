@@ -4,7 +4,7 @@
   "checks": [
     "Node and direct/rewrite Vercel transit, journey and transit-walk endpoints are unavailable even with a configured key; no provider invocation",
     "Web build has three walking-only questions and the map control remains tappable while origin search expands",
-    "Direct mode tampering does not enable transit; preserved Seoul reference walking still works with unknown accessibility"
+    "Direct mode tampering does not enable transit; the complete three-question flow submits preserved Seoul reference walking with unknown accessibility"
   ],
   "browserErrors": [],
   "actualProviderCalls": 0,
