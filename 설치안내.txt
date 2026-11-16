@@ -1,0 +1,15 @@
+동행길 청주오스코 시연 1.0.2 설치 안내
+
+1. ZIP 압축을 풀고 donghaeng-android-demo-1.0.2.apk를 Android 휴대폰으로 옮겨 설치하세요.
+2. Android 7 이상이 필요합니다. 기존 1.0.1 Release와 같은 서명으로 업데이트할 수 있습니다.
+3. 앱은 청주오스코 주변으로 시작합니다. 지도 위 청주오스코 → 오스코 탭에서 등록 지물과 공식 안내를 확인하세요.
+4. 사용자가 제공한 Android 교통 키가 포함되어 있습니다. 패키지명은 app.donghaeng.gill.demo입니다.
+5. 인터넷·위치 권한이 필요한 기능이 있습니다. 청주 도보 계산은 아직 미지원이며 대중교통은 참고 후보입니다.
+6. 대표점은 실제 출입구가 아닙니다. 실제 기기 GPS·턱·폭·운영·현장 통행은 미검증입니다.
+7. 비공개 시연용 설치 파일입니다. API 키를 포함하므로 지정 기기에서 사용하세요.
+
+지도 자료 © OpenStreetMap contributors, ODbL-1.0
+https://www.openstreetmap.org/copyright
+등록 자료 원문은 APK의 assets/public/data/osco/context.json과 연구 브랜치에 포함되어 있습니다.
+
+SHA256 파일은 APK가 손상·변경되지 않았는지 비교하는 체크섬이며 설치할 파일이 아닙니다.
