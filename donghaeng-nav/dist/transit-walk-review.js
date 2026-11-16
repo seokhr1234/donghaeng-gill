@@ -77,7 +77,7 @@ function create({map,input,fitBounds,cached,onResult=()=>{},fetchImpl=root.fetch
     el('p','핀과 등록 도로 사이 약 '+r.endpointGaps.map(Math.round).join('m / ')+'m · 이 접속은 미확인','gap-note'),
     el('p','경사 미등록 '+Math.round(r.unknownInclineMeters).toLocaleString()+'m · 실제 보도·턱·폭·출입구·휴식은 미확인','gap-note'));
     const source=el('details'),summary=el('summary','도보 자료 출처·기준일');source.append(summary,el('p','OpenStreetMap · '+(r.sourceMetadata.license||'ODbL-1.0')+' · 자료 기준 '+(r.sourceMetadata.source_as_of||'미확인')+' · 수집 '+(r.sourceMetadata.collected_date||'미확인')+' · EPSG:4326 · 현장 미검증','gap-note'));item.append(source);
-    L.polyline(r.coordinates,{color:'#486e8c',weight:5,opacity:.9,dashArray:'5 7',interactive:false}).addTo(layer);coordinates.push(...r.coordinates);
+    L.polyline(r.coordinates,{contrastRole:'unverified',color:'#486e8c',weight:5,opacity:.9,dashArray:'5 7',interactive:false}).addTo(layer);coordinates.push(...r.coordinates);
    }else item.append(el('p',leg.notice||'이 구간의 보행 연결은 미확인입니다.','gap-note'));
    details.append(item);
   }

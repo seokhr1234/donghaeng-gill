@@ -6,7 +6,7 @@
   "credentials_included": true,
   "source_project": "동행길-Codex-전달; bbb referenced for Leaflet OSM tiles",
   "files": 428,
-  "html_sha256": "7f92f4f9f53de84a0a19bb78cd7072e606141747fe51e7d0514d417ecc03dda1",
+  "html_sha256": "3086d367f620d98381cbb06ef5c2fa9ecf385e002175823408410126c5ccd508",
   "verification": {
     "copied_project_build": true,
     "server_root_app_setup_http_200": true,
@@ -56,7 +56,7 @@
   "precision_runtime_included": true,
   "precision_runtime_loader_implemented": true,
   "main_promotion": {
-    "version": "2026-11-17-osco-map-demo",
+    "version": "2026-11-17-high-contrast",
     "review": "donghaeng-nav/docs/main-navigation-promotion.md",
     "original_gis_reprocessed": false,
     "field_verified": false

@@ -1,0 +1,25 @@
+{
+  "pass": true,
+  "baseline": "b207e8205e974afa37b008db857e42f3bb1bf930",
+  "runtime_datasets_byte_identical": 11,
+  "research_preserved": true,
+  "service_graph_and_slope_assets_preserved": true,
+  "engine_and_navigation_policy_preserved": true,
+  "modified_display_code": [
+    "app.js",
+    "facilities.js",
+    "high-contrast.js",
+    "journey-review.js",
+    "map-layers.js",
+    "navigation-ui.js",
+    "osco-map.js",
+    "transit-walk-review.js"
+  ],
+  "existing_real_route_geometry_unchanged_under_toggle": true,
+  "paid_provider_calls": 0,
+  "html_outputs_identical": 5,
+  "sampled_text_contrast_minimum": 18.883060964594996,
+  "web_transit_enabled": false,
+  "new_slope_values_promoted": 0,
+  "field_verified": false
+}

@@ -1,0 +1,45 @@
+.contrast-toggle {display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;min-height:44px;padding:8px 12px;gap:5px;border:2px solid #245c43;border-radius:24px;background:#fff;color:#173f2e;font:700 13px/1.25 system-ui,sans-serif;cursor:pointer;flex-shrink:0}
+.header>.contrast-toggle {margin-left:auto}
+.contrast-toggle:focus-visible {outline:3px solid #003fbd;outline-offset:3px}
+.contrast-announcement {position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+.contrast-legend {display:none;font-size:12px;line-height:1.55;margin-bottom:12px}
+.contrast-legend summary {min-height:36px;cursor:pointer;font-weight:700}
+.contrast-legend p {display:flex;align-items:center;gap:8px;margin:8px 0}
+.contrast-sample {display:inline-block;flex:0 0 32px;height:0;border-top:4px solid #111}
+.contrast-sample.contrast-route {border-color:#003fbd;border-top-width:6px}
+.contrast-sample.contrast-alternative,.contrast-sample.contrast-estimated-risk {border-top-style:dashed}
+.contrast-sample.contrast-unverified {border-top-style:dotted}
+.contrast-sample.contrast-registered-risk {height:4px;border:0;background:repeating-linear-gradient(to right,#111 0 5px,transparent 5px 8px)}
+.contrast-sample.contrast-steep {height:4px;border:0;background:repeating-linear-gradient(to right,#111 0 14px,transparent 14px 19px,#111 19px 22px,transparent 22px 27px)}
+.hc-osco-marker {background:transparent;border:0}
+.hc-osco-marker span {display:grid;place-items:center;width:24px;height:24px;border:2px solid #111;background:white;color:#111;font:800 12px/1 sans-serif;box-sizing:border-box}
+.hc-osco-transport span {border-radius:50%;background:#111;color:white}
+.hc-osco-facilities span {border-style:double;border-width:3px}
+html[data-contrast=high] .hc-osco-transport span {color:#fff!important}
+html[data-contrast=high] {color-scheme:light;--green:#111;--ink:#111;--muted:#222;--line:#111}
+html[data-contrast=high] body {background:#fff!important;color:#111!important}
+html[data-contrast=high] :is(p,small,label,summary,dt,dd,li,h1,h2,h3,h4,b,strong,span) {color:inherit!important;text-shadow:none!important}
+html[data-contrast=high] :is(.header,.sidebar,.sheet-header,.sheet-scroll,.question-card,.question-top,.question-input,.question-controls,.question-summary,.location-box,.destination-field,.route-card,.route-header,.route-limits,.city-review-details,.navigation-panel,.navigation-status,.navigation-trip-summary,.navigation-cue,.usage-header,.usage-body,.usage-footer,.usage-notice,.map-layers-control,.map-layers-body,.facility-control,.precision-control,.map-source-control,.map-top .area,.map-legend,.route-callout,.leaflet-popup-content-wrapper,.leaflet-popup-tip,.leaflet-tooltip,.leaflet-control-attribution,.leaflet-bar,.transit-card,.transit-trip-detail,.transit-source-info,.journey-review,.transit-walk-review,.tools,.result,.mobile-tabs,.mobile-route-action,.question-map-return,dialog,header,footer) {background:#fff!important;color:#111!important;border-color:#111!important;box-shadow:none!important}
+html[data-contrast=high] :is(button,input,textarea,select) {background:#fff!important;color:#111!important;border-color:#111!important;border-width:2px!important;box-shadow:none!important;accent-color:#111}
+html[data-contrast=high] :is(input,textarea)::placeholder {color:#333!important;opacity:1}
+html[data-contrast=high] :is(a,.leaflet-container a) {color:#003fbd!important;text-decoration:underline!important;text-underline-offset:3px}
+html[data-contrast=high] :is(.primary,button[aria-pressed=true],button[aria-selected=true],button[aria-current],.nav.active,.mobile-tabs button[aria-current],.navigation-start) {background:#111!important;color:#fff!important;border-color:#111!important}
+html[data-contrast=high] :is(.primary,button[aria-pressed=true],button[aria-selected=true],button[aria-current],.nav.active,.navigation-start) :is(span,b,small,strong) {color:#fff!important;background:transparent!important}
+html[data-contrast=high] :is(button,input,textarea,select):disabled {opacity:1!important;border-style:dashed!important}
+html[data-contrast=high] :focus-visible {outline:3px solid #003fbd!important;outline-offset:3px!important}
+html[data-contrast=high] :is(.osco-warning,.facility-evidence-warning,.question-error,.usage-notice,.review-badge,.demo-banner,.gap-note) {background:#fff1a8!important;color:#111!important;border:2px solid #111!important}
+html[data-contrast=high] :is(.map-source-control,.map-layers-control,.route-card,.question-card,.navigation-cue,dialog) {border:2px solid #111!important}
+html[data-contrast=high] .leaflet-tile-pane {filter:grayscale(1) contrast(1.15)}
+html[data-contrast=high] :is(.facility-marker-icon,.facility-cluster-icon,.facility-symbol,.transit-stop,.order-map-marker) {color:#111!important}
+html[data-contrast=high] :is(.facility-marker-icon,.facility-symbol) {background:#fff!important;border:2px solid #111!important;color:#111!important;box-shadow:none!important}
+html[data-contrast=high] .facility-cluster b {background:#111!important;color:white!important;border:1px solid white!important}
+html[data-contrast=high] :is(.facility-marker-icon,.facility-cluster-icon,.facility-symbol,.transit-stop,.order-map-marker) span,
+html[data-contrast=high] .facility-marker {background:#fff!important;color:#111!important;border:2px solid #111!important;box-shadow:none!important}
+html[data-contrast=high] .facility-marker-icon svg {color:#111!important}
+html[data-contrast=high] :is(.osco-pin,.transit-bus,.map-pin.origin) span {background:#111!important;color:#fff!important;border:2px solid #fff!important;box-shadow:0 0 0 2px #111!important}
+html[data-contrast=high] :is(.transit-subway,.map-pin.destination) span {background:#fff!important;color:#111!important;border:3px double #111!important;border-radius:3px!important}
+html[data-contrast=high] .map-slope-key::before {height:4px;background:repeating-linear-gradient(to right,#111 0 10px,transparent 10px 13px,#111 13px 15px,transparent 15px 18px)}
+html[data-contrast=high] .contrast-legend {display:block;color:#111}
+html[data-contrast=high] .map-legend {display:none}
+@media(max-width:700px) {.header>.contrast-toggle {padding:7px 9px;font-size:12px;min-height:44px}.header {gap:8px}.contrast-legend {font-size:12px}}
+@media(forced-colors:active) {.contrast-toggle {border:2px solid ButtonText}.contrast-sample {border-color:CanvasText}.contrast-sample.contrast-route {border-color:LinkText}.hc-osco-marker span {forced-color-adjust:none}.contrast-legend {display:block}}

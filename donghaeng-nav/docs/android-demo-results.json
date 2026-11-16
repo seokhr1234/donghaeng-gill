@@ -2,6 +2,7 @@
   "pass": true,
   "checks": [
     "Packaged Android profile keeps four questions and native key settings; startup does not spend a transit call",
+    "Packaged Android high contrast toggles without a native/provider call and preserves the key settings and transit profile",
     "Native bridge response uses the exact shared ODsay normalization and original mobility constraints, with no server-side transit request",
     "Android computes walking/all-leg review through the preserved public walking API; Node-only services bundle for browser, unknown access/schedule stays unknown and no extra transit query is made"
   ],

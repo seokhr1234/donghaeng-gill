@@ -57,7 +57,7 @@ function countVisible(){const b=bounds();visibleFeatures=model.features.filter(f
 function render(){
  countVisible();spider.clearLayers();clusters.clearLayers();expandedCluster=null;
  const visible=visibleFeatures.filter(f=>enabled[f.kind]),zoom=map.getZoom();
- for(const kind of KINDS){groups[kind].clearLayers();if(!enabled[kind]||zoom<17)continue;for(const f of visible.filter(f=>f.kind===kind)){const parts=lines(f.geometry);if(parts.length&&['stairs','escalator','elevator','complex'].includes(kind))L.polyline(parts.map(p=>p.map(toLL)),{...featureOptions,renderer,color:kind==='stairs'?'#c35b31':'#7152ba',weight:3,opacity:.7,dashArray:kind==='stairs'?'5 5':null}).on('click',ev=>showPopup(f,ev.latlng)).addTo(groups[kind])}}
+ for(const kind of KINDS){groups[kind].clearLayers();if(!enabled[kind]||zoom<17)continue;for(const f of visible.filter(f=>f.kind===kind)){const parts=lines(f.geometry);if(parts.length&&['stairs','escalator','elevator','complex'].includes(kind))L.polyline(parts.map(p=>p.map(toLL)),{...featureOptions,renderer,contrastRole:'context',color:kind==='stairs'?'#c35b31':'#7152ba',weight:3,opacity:.7,dashArray:kind==='stairs'?'5 5':null}).on('click',ev=>showPopup(f,ev.latlng)).addTo(groups[kind])}}
  for(const items of cluster(visible,c=>map.latLngToLayerPoint(toLL(c)),zoom<14?90:zoom<17?60:44)){
   if(items.length===1){marker(items[0],toLL(anchor(items[0]))).addTo(clusters);continue}
   const kinds=[...new Set(items.map(f=>f.kind))],kind=kinds.length===1?kinds[0]:'mixed',center=toLL(anchor(items[0]));

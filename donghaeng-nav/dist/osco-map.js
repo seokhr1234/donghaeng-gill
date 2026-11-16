@@ -173,18 +173,44 @@
    }
    layers.clearLayers(); rendered = 0;
    let overflow = false, zoomHidden = false;
+   const symbolGroups = new Map();
+   const symbolFor = (feature, kind) => {
+    const t = feature.properties.tags || {};
+    return kind === 'transport' ? (t.railway === 'station' ? '역' : '정') :
+     kind === 'access_points' ? (t.highway === 'crossing' ? '횡' : t.entrance ? '입' : t.barrier === 'kerb' ? '턱' : '접') :
+     ({bench: '의', toilets: '화', parking: 'P', shelter: '쉼', drinking_water: '물'}[t.amenity] || '시');
+   };
    for (const [kind, , minZoom] of selectedKinds) {
     counts[kind] = 0;
     if (zoom < minZoom) {zoomHidden = true; continue;}
     for (const {feature: f, bounds: box} of context?.[kind] || []) {
      if (box[0] > b.getEast() || box[2] < b.getWest() || box[1] > b.getNorth() || box[3] < b.getSouth()) continue;
      if (rendered >= 600) {overflow = true; break;}
+     if (root.HighContrast?.active() && f.geometry.type === 'Point') {
+      const c = f.geometry.coordinates, ll = [c[1], c[0]], pixel = map.latLngToContainerPoint(ll);
+      const key = kind + ':' + Math.floor(pixel.x / 32) + ':' + Math.floor(pixel.y / 32);
+      if (!symbolGroups.has(key)) symbolGroups.set(key, {kind, ll, features: []});
+      symbolGroups.get(key).features.push(f); rendered++; counts[kind]++; continue;
+     }
      const color = {roads: '#487b72', buildings: '#858b88', access_points: '#aa6431', transport: '#31678b', facilities: '#387e50'}[kind];
-     L.geoJSON(f, {style: {color, weight: kind === 'buildings' ? 1 : 2, opacity: .65, fillOpacity: kind === 'buildings' ? .06 : .12},
+     L.geoJSON(f, {style: {contrastRole: kind === 'buildings' ? 'building' : 'context', color, weight: kind === 'buildings' ? 1 : 2, opacity: .65, fillOpacity: kind === 'buildings' ? .06 : .12},
       pointToLayer: (feature, ll) => L.circleMarker(ll, {radius: 5, color: '#fff', weight: 1.5, fillColor: color, fillOpacity: .9}),
       onEachFeature: (feature, layer) => layer.bindPopup(() => featurePopup(feature, kind), {maxWidth: 320, maxHeight: 300}),
      }).addTo(layers); rendered++; counts[kind]++;
     }
+   }
+   for (const group of symbolGroups.values()) {
+    const {features, ll, kind} = group, symbol = features.length > 1 ? String(features.length) : symbolFor(features[0], kind);
+    L.marker(ll, {title: kinds.find(k => k[0] === kind)[1] + ' · ' + features.length + '건 · 현장 미확인', icon: L.divIcon({
+     className: 'hc-osco-marker hc-osco-' + kind, html: '<span>' + symbol + '</span>', iconSize: [24, 24], iconAnchor: [12, 12],
+    })}).bindPopup(() => {
+     if (features.length === 1) return featurePopup(features[0], kind);
+     const box = el('section', undefined, 'osco-popup');
+     box.append(el('h3', '가까운 등록 지점 ' + features.length + '건'), el('p', '화면상 겹침을 묶었습니다. 표시는 첫 원본 지점의 좌표이며 실제 한 시설이라는 뜻이 아닙니다.'));
+     for (const f of features.slice(0, 10)) {const d = el('details'); d.append(el('summary', f.properties.tags?.name || f.id), featurePopup(f, kind)); box.append(d);}
+     if (features.length > 10) box.append(el('p', '첫 10건을 표시합니다. 지도를 확대하면 나눠 볼 수 있어요.'));
+     return box;
+    }, {maxWidth: 320, maxHeight: 300}).addTo(layers);
    }
    retry.hidden = !failed || !selectedKinds.length;
    status.textContent = !selectedKinds.length ? '표시할 자료를 선택해 주세요.' : loading ? '오스코 등록 자료를 불러오는 중…' :
@@ -193,13 +219,13 @@
     zoomHidden ? '일부 자료는 16~17단계 이상 확대하면 표시돼요.' :
     rendered ? '현재 화면의 등록 객체 ' + rendered + '개 · 현장 미확인' : '이 화면에 표시할 등록 자료가 없어요. 미등록 시설이 있을 수 있어요.';
   }
-  retry.onclick = load; map.on('moveend', render); render();
+  retry.onclick = load; map.on('moveend', render); document.addEventListener('donghaeng-contrast-change', render); render();
   return {panel, places: data.places, show({popup = true} = {}) {
    const bounds = L.latLngBounds([[36.615, 127.322], [36.632, 127.342]]);
    if (fitBounds) fitBounds(bounds); else map.fitBounds(bounds);
    render(); if (popup) venueMarkers.get('osco:venue')?.openPopup();
   }, snapshot: () => ({loaded: !!context, loading, failed, rendered, selected: kinds.filter(([k]) => checkboxes[k].checked).map(([k]) => k)}),
-  destroy() {disposed = true; map.off('moveend', render); markers.remove(); layers.remove();}};
+  destroy() {disposed = true; map.off('moveend', render); document.removeEventListener('donghaeng-contrast-change', render); markers.remove(); layers.remove();}};
  }
  root.OscoMap = {create, inScope, places};
 })(globalThis);

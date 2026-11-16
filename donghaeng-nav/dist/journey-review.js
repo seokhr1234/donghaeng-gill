@@ -54,7 +54,7 @@ function create({review,walkingLegs=[],map,fitBounds}){
   previous.disabled=s.index===0;next.disabled=s.index===s.count-1;pause.disabled=s.phase!=='replay';pause.hidden=s.phase!=='replay';play.hidden=s.phase==='replay';stop.hidden=['idle','manual'].includes(s.phase);
   if(marker){marker.remove();marker=null}
   const route=walkingLegs.find(l=>l.id===s.segment.walkingLegId)?.route;
-  if(route?.coordinates?.length){fitBounds(root.L.latLngBounds(route.coordinates));marker=root.L.circleMarker(route.coordinates[0],{radius:7,color:'#486e8c',fillOpacity:1}).addTo(map).bindTooltip('모의 도보 시작점 · 실제 GPS 위치 아님')}
+  if(route?.coordinates?.length){fitBounds(root.L.latLngBounds(route.coordinates));marker=root.L.circleMarker(route.coordinates[0],{contrastRole:'simulation',radius:7,color:'#486e8c',fillOpacity:1}).addTo(map).bindTooltip('모의 도보 시작점 · 실제 GPS 위치 아님')}
   // Vehicle geometry and missing walking gaps are never interpolated.
  }});
  for(const [i,s] of review.segments.entries()){const item=el('li'),b=el('button',labels[s.mode]+(s.minutes===null?' · 시간 미확인':' · 참고 '+s.minutes+'분'),'secondary');b.type='button';b.onclick=()=>session.select(i);item.append(b);items.push(item);list.append(item)}

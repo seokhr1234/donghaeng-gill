@@ -3,6 +3,7 @@ function create(map,{onOpen=()=>{},researchPanel=null}={}){
  const L=root.L,doc=document,control=L.control({position:'topleft'}),box=doc.createElement('details');box.className='map-layers-control';
  const summary=doc.createElement('summary');summary.textContent='시설·지도';box.append(summary);
  const body=doc.createElement('div');body.className='map-layers-body';box.append(body);
+ if(root.HighContrast)body.append(root.HighContrast.legend());
  const tabs=doc.createElement('div');tabs.className='map-layer-tabs';tabs.role='tablist';tabs.setAttribute('aria-label','지도 표시');body.append(tabs);
  const originals=[doc.querySelector('.facility-control'),doc.querySelector('.precision-control')];
  const panels=[],buttons=[];let active=0;
@@ -64,7 +65,7 @@ function create(map,{onOpen=()=>{},researchPanel=null}={}){
  pane.style.pointerEvents = 'none';
  const renderer = L.canvas({pane: 'slope-review'});
  const lines = L.polyline([], {
-  pane: 'slope-review', renderer, interactive: false,
+  contrastRole: 'steep', pane: 'slope-review', renderer, interactive: false,
   color: '#cd3e3e', opacity: .82, weight: 3.5, smoothFactor: 0,
  });
  let data = null;
