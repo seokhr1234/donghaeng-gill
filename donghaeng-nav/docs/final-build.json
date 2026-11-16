@@ -1,11 +1,11 @@
 {
-  "version": "2026-11-15-walk-web-android",
+  "version": "2026-11-17-osco-map-demo",
   "main_source": "donghaeng-nav/dist/index.html",
   "expansion": {
     "online_page": "expansion.html",
-    "service_code_files": 52,
+    "service_code_files": 54,
     "review_asset_files": 2,
-    "service_integrity_sha256": "b24ae3571086eadcac70276f7d55b602691da36240b07cb997ebad90b037f5a2",
+    "service_integrity_sha256": "b1b5f2a173f2a0590f8a5e589b11b5db319e33c7921476f70b496d9047faf383",
     "citywide_routing": false,
     "authenticated_transit_verified": false,
     "new_slope_values_promoted": 0,
@@ -85,9 +85,30 @@
       "sha256": "9b3fca33e50577604b0791d5459f724fdd3c95ffe251322ec4bd4af5cf2bade2",
       "bytes": 473311,
       "source_sha256": "a94f671ddc81b4831aacf872fa243cde25473ebbaf51690b8c8479327afdabcc"
+    },
+    {
+      "path": "data/osco/info.json.gz",
+      "sha256": "ad613e81cc45c2f255c080d2743000fc6708ef50db47e06aa9bd0a512d84d1e7",
+      "bytes": 2981,
+      "source_sha256": "49d4e042ee425e1951e299dd0617acd9e98f16cb33964a836fc62ce81f8f8102"
+    },
+    {
+      "path": "data/osco/context.json.gz",
+      "sha256": "126a3007ad03bee8ba61c0679a6184ccb6cb2dc91f462e1117b2dd6d9a9658e1",
+      "bytes": 1054570,
+      "source_sha256": "5824deec3c23975b189b13207fe64f854e83be4081424e4417d3ff85898a39ba"
     }
   ],
   "project_name": "동행길",
+  "osco_research": {
+    "display_only": true,
+    "routing_eligible": false,
+    "field_verified": false,
+    "venue_facts_and_osm_layers": true,
+    "municipal_geometry_published": false,
+    "new_slope_values_promoted": 0,
+    "report": "docs/osco-map-data-results.json"
+  },
   "transit_main": {
     "mode_selector": false,
     "web_transit_enabled": false,
@@ -186,8 +207,8 @@
   "precision_records": 16169,
   "precision_field_verified": false,
   "runtime_validation": "Exact hashes and graph binding; supplied OA-22241 archive re-extracted as supplementary evidence only; existing route slopes and precision map unchanged",
-  "html_sha256": "a1c85ac71b53d0e5313f3f0be3c6642275b0079cc8098ea13ab80fe91653d6da",
-  "html_bytes": 17575185,
+  "html_sha256": "7f92f4f9f53de84a0a19bb78cd7072e606141747fe51e7d0514d417ecc03dda1",
+  "html_bytes": 19003034,
   "external_requests_required": false,
   "online_basemap": "OpenStreetMap raster tiles via Leaflet; HTTP(S) only",
   "offline_basemap": "Embedded OSM snapshot via Leaflet GridLayer",

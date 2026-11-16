@@ -1,17 +1,18 @@
 (function(root){'use strict';
-function create(map,{onOpen=()=>{}}={}){
+function create(map,{onOpen=()=>{},researchPanel=null}={}){
  const L=root.L,doc=document,control=L.control({position:'topleft'}),box=doc.createElement('details');box.className='map-layers-control';
  const summary=doc.createElement('summary');summary.textContent='시설·지도';box.append(summary);
  const body=doc.createElement('div');body.className='map-layers-body';box.append(body);
  const tabs=doc.createElement('div');tabs.className='map-layer-tabs';tabs.role='tablist';tabs.setAttribute('aria-label','지도 표시');body.append(tabs);
  const originals=[doc.querySelector('.facility-control'),doc.querySelector('.precision-control')];
  const panels=[],buttons=[];let active=0;
- for(const [i,name] of ['시설','경사','지도 자료'].entries()){
+ const names=['시설','경사','지도 자료',...(researchPanel?['오스코']:[])];
+ for(const [i,name] of names.entries()){
   const button=doc.createElement('button');button.type='button';button.role='tab';button.id='map-layer-tab-'+i;button.textContent=name;button.setAttribute('aria-controls','map-layer-panel-'+i);tabs.append(button);buttons.push(button);
   const panel=doc.createElement('div');panel.id='map-layer-panel-'+i;panel.role='tabpanel';panel.setAttribute('aria-labelledby',button.id);body.append(panel);panels.push(panel);
-  button.onclick=()=>select(i);button.onkeydown=e=>{if(['ArrowRight','ArrowLeft','Home','End'].includes(e.key)){e.preventDefault();select(e.key==='Home'?0:e.key==='End'?2:(active+(e.key==='ArrowRight'?1:2))%3);buttons[active].focus()}};
+  button.onclick=()=>select(i);button.onkeydown=e=>{if(['ArrowRight','ArrowLeft','Home','End'].includes(e.key)){e.preventDefault();select(e.key==='Home'?0:e.key==='End'?names.length-1:(active+(e.key==='ArrowRight'?1:names.length-1))%names.length);buttons[active].focus()}};
  }
- panels[0].append(originals[0]);panels[2].append(originals[1]);
+ panels[0].append(originals[0]);panels[2].append(originals[1]);if(researchPanel)panels[3].append(researchPanel);
  function sync(){panels.forEach((p,i)=>{p.hidden=i!==active;buttons[i].setAttribute('aria-selected',String(i===active));buttons[i].tabIndex=i===active?0:-1});originals[0].open=box.open&&active===0;originals[1].open=box.open&&active===2;}
  function select(i){active=i;sync()}
  box.addEventListener('toggle',()=>{sync();if(box.open)onOpen()});
@@ -139,7 +140,7 @@ function create(map,{onOpen=()=>{}}={}){
  sync();
  render();
  return {
-  open(tab = 0) { box.open = true; select(tab); },
+  open(tab = 0) { box.open = true; select(tab); onOpen(); },
   snapshot: () => ({tab: active, open: box.open, loaded: !!data, count: data?.segments.length || 0, visible}),
   destroy() {
    disposed = true;

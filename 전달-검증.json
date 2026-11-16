@@ -6,7 +6,7 @@
   "credentials_included": true,
   "source_project": "동행길-Codex-전달; bbb referenced for Leaflet OSM tiles",
   "files": 428,
-  "html_sha256": "a1c85ac71b53d0e5313f3f0be3c6642275b0079cc8098ea13ab80fe91653d6da",
+  "html_sha256": "7f92f4f9f53de84a0a19bb78cd7072e606141747fe51e7d0514d417ecc03dda1",
   "verification": {
     "copied_project_build": true,
     "server_root_app_setup_http_200": true,
@@ -33,7 +33,7 @@
     "vercel_api_deployed": false,
     "real_gemini_for_vercel_verified": false
   },
-  "updated": "2026-11-15",
+  "updated": "2026-11-17",
   "credential_scope": "User-authorized local donghaeng-nav/.env only; ignored by version control, never bundled in HTML",
   "folder_bytes_at_update": 518293146,
   "user_reported_phone_observation": {
@@ -56,7 +56,7 @@
   "precision_runtime_included": true,
   "precision_runtime_loader_implemented": true,
   "main_promotion": {
-    "version": "2026-11-15-walk-web-android",
+    "version": "2026-11-17-osco-map-demo",
     "review": "donghaeng-nav/docs/main-navigation-promotion.md",
     "original_gis_reprocessed": false,
     "field_verified": false

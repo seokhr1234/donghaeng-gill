@@ -1,0 +1,48 @@
+{
+  "pass": true,
+  "inputs": [
+    {
+      "path": "derived/osm-roads.geojson",
+      "sha256": "e87539c1d499a492e108aec0cffd17aa8f384cf09cc56eaef79798130e21c5e6",
+      "features": 6644
+    },
+    {
+      "path": "derived/osm-buildings.geojson",
+      "sha256": "06a4940fea9e8244d12b92e0115f6a382d40cb9d21d37175a413a2eb3738e220",
+      "features": 4690
+    },
+    {
+      "path": "derived/osm-access_points.geojson",
+      "sha256": "cff7f8fc55f502df9de8dfa9f0e0f8aa144e0d5d69761e1b5f08a8a9121380d8",
+      "features": 1764
+    },
+    {
+      "path": "derived/osm-transport.geojson",
+      "sha256": "63a893e9cf5d24d205d099f4fddc5d07474f1f27d53d690956ec3a7278ff7790",
+      "features": 446
+    },
+    {
+      "path": "derived/osm-facilities.geojson",
+      "sha256": "2dffbb5a0eafeceed36a4b0b7c1dee1fbba115fc3f4b88dca4aff1ddaadfccf3",
+      "features": 2357
+    }
+  ],
+  "outputs": [
+    {
+      "path": "data/osco/info.json",
+      "sha256": "49d4e042ee425e1951e299dd0617acd9e98f16cb33964a836fc62ce81f8f8102",
+      "bytes": 6948
+    },
+    {
+      "path": "data/osco/context.json",
+      "sha256": "5824deec3c23975b189b13207fe64f854e83be4081424e4417d3ff85898a39ba",
+      "bytes": 8054905
+    }
+  ],
+  "source_geometry_and_tags_preserved": true,
+  "municipal_or_secondary_geometry_published": false,
+  "new_routing_edges": 0,
+  "new_slope_values_promoted": 0,
+  "field_verified": false,
+  "routing_eligible": false
+}

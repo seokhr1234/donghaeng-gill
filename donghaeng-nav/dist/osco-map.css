@@ -1,0 +1,28 @@
+.map-top {gap:8px}
+.map-top #osco-open {border-radius:24px;font-weight:700;color:#245c43;white-space:nowrap}
+.osco-panel {font-size:13px;line-height:1.55}
+.osco-panel h3,.osco-popup h3 {margin:0 0 8px;color:#245c43}
+.osco-actions {display:flex;flex-wrap:wrap;gap:7px;margin:10px 0}
+.osco-actions button,.osco-panel>button {border:1px solid #d4e2d9;border-radius:22px;padding:9px 12px;min-height:40px;background:#f3f8f4;color:#245c43;font:inherit;font-weight:650;cursor:pointer}
+.osco-actions button:focus-visible,.osco-toggle input:focus-visible {outline:3px solid #d39332;outline-offset:3px}
+.osco-toggle {display:flex;gap:9px;align-items:center;padding:8px 0;min-height:32px;cursor:pointer}
+.osco-toggle input {width:18px;height:18px;accent-color:#245c43;flex-shrink:0}
+.osco-note,.osco-layer-status {color:#53665b;font-size:12px;line-height:1.6}
+.osco-warning {color:#854e18;background:#fff4e5;border-radius:10px;padding:8px;font-size:12px}
+.osco-source {overflow-wrap:anywhere;font-size:12px}
+.osco-source small {display:block;color:#58695f}
+.osco-panel details {margin-top:12px}
+.osco-panel summary,.osco-popup summary {cursor:pointer;font-weight:650}
+.osco-popup {font-size:13px;line-height:1.55;overflow-wrap:anywhere}
+.osco-popup p {margin:8px 0}
+.osco-popup dl {display:grid;grid-template-columns:85px minmax(0,1fr);gap:5px;margin:10px 0}
+.osco-popup dt {color:#5c6b61}
+.osco-popup dd {margin:0;overflow-wrap:anywhere}
+.osco-popup a,.osco-panel a {color:#226249;text-decoration:underline}
+.osco-pin {background:transparent;border:0}
+.osco-pin span {display:block;background:#245c43;color:#fff;border:2px solid white;border-radius:20px;text-align:center;padding:5px 3px;box-shadow:0 2px 6px #193c3933;font:700 12px sans-serif}
+@media(max-width:700px) {
+ .map-top {max-width:calc(100% - 68px);gap:6px}
+ .map-top #osco-open {padding:7px 10px;font-size:11px;min-height:36px}
+ .osco-popup {max-width:calc(100vw - 76px)}
+}

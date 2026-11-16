@@ -1,0 +1,21 @@
+{
+  "pass": true,
+  "base_commit": "9f1dd30",
+  "previous_runtime_datasets_byte_identical": 9,
+  "original_research_preserved": true,
+  "source_osm_geometry_tags_versions_preserved": true,
+  "existing_graph_and_slope_assets_preserved": true,
+  "protected_code_changes": [
+    "app.js",
+    "map-layers.js",
+    "osco-map.js"
+  ],
+  "official_evidence_matches_research": true,
+  "municipal_and_secondary_geometry_published": false,
+  "html_outputs_identical": 5,
+  "runtime_hashes_checked": true,
+  "osco_context_lazy_in_standalone": true,
+  "new_slope_values_promoted": 0,
+  "osco_walking_routing_enabled": false,
+  "field_verified": false
+}

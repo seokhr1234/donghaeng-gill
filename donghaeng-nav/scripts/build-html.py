@@ -108,7 +108,7 @@ def build():
             raise ValueError('알 수 없는 데이터 블록: ' + ident)
         used.add(ident)
         packed = packed_data(relative)
-        return '<script id="' + ident + '" type="application/octet-stream" data-encoding="gzip-base64"' + (' data-lazy="true"' if ident in ['bundled-seoul-base', 'bundled-terrain-evidence'] else '') + '>' + base64.b64encode(packed).decode() + '</script>'
+        return '<script id="' + ident + '" type="application/octet-stream" data-encoding="gzip-base64"' + (' data-lazy="true"' if ident in ['bundled-seoul-base', 'bundled-terrain-evidence', 'bundled-osco-context'] else '') + '>' + base64.b64encode(packed).decode() + '</script>'
     html = re.sub(r'<script id="([^"]+)"(?: data-lazy="true")? type="application/json" data-src="([^"]+)"[^>]*></script>', data_block, html)
     optional = 'data/accessibility/seoul/steep-roads.json'
     if 'donghaeng-nav/dist/' + optional not in services.get('slope_assets', {}):
@@ -134,7 +134,7 @@ def build():
         path.write_text(html, encoding='utf-8', newline='\n')
     facilities = json.loads(local_file(datasets['bundled-facilities-seoul']['path']).read_bytes())['features']
     manifest = {
-        'version': '2026-11-15-walk-web-android',
+        'version': '2026-11-17-osco-map-demo',
         'main_source': 'donghaeng-nav/dist/index.html',
         'expansion': {'online_page': 'expansion.html', 'service_code_files': len(services['files']), 'review_asset_files': len(services.get('review_assets', {})),
                       'service_integrity_sha256': sha(service_path.read_bytes()), 'citywide_routing': False,
@@ -145,6 +145,9 @@ def build():
                                         'reviewed_date': review_points['metadata']['reviewed_date'], 'display_only': True, 'field_verified': False, 'routing_eligible': False}},
         'compressed_assets': compressed_assets,
         'project_name': '동행길',
+        'osco_research': {'display_only': True, 'routing_eligible': False, 'field_verified': False,
+                          'venue_facts_and_osm_layers': True, 'municipal_geometry_published': False,
+                          'new_slope_values_promoted': 0, 'report': 'docs/osco-map-data-results.json'},
         'transit_main': {'mode_selector': False, 'web_transit_enabled': False, 'android_demo_transit_enabled': True, 'line_stop_details': True, 'reference_markers_only': False, 'walking_reference_geometry': True, 'walking_time_comparison': True, 'whole_journey_review': True, 'mixed_steps_replay': True, 'offline_transit_provider': True, 'repeat_rest_validator': True, 'local_timetable_adapter': True, 'operational_timetable_configured': False, 'vehicle_geometry_verified': False, 'stop_mapping_verified': False, 'timetable_verified': False, 'accessible_journey_verified': False, 'provider_search_verified': False, 'full_ui_optimization_deferred': True},
         'route_choice': {'max_attempts': 24, 'time_budget_ms': 4000, 'max_candidates': 5, 'explanation': 'Decision-time final response; no new request on click', 'real_gemini_verified': False},
         'source_snapshot': lock['source'],
@@ -182,7 +185,7 @@ def build():
     (ROOT / 'donghaeng-nav/docs/final-build.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n')
     handoff_path = ROOT / '전달-검증.json'
     handoff = json.loads(handoff_path.read_text())
-    handoff.update(html_sha256=manifest['html_sha256'], updated='2026-11-15', main_program='동행길', precision_runtime_included=True, precision_runtime_loader_implemented=True)
+    handoff.update(html_sha256=manifest['html_sha256'], updated='2026-11-17', main_program='동행길', precision_runtime_included=True, precision_runtime_loader_implemented=True)
     handoff['main_promotion'] = {'version': manifest['version'], 'review': 'donghaeng-nav/docs/main-navigation-promotion.md', 'original_gis_reprocessed': False, 'field_verified': False}
     handoff['supplementary_evidence'] = manifest['supplementary_evidence']
     handoff['gps_stabilization'] = manifest['gps']

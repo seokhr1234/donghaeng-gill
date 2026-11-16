@@ -1,6 +1,8 @@
 # 동행길 Android 시연 APK
 
 공통 소스는 `../dist/`, 웹 공개판은 도보 전용이며 Android 자산 빌드만 대중교통을 활성화한다.
+2026-11-17: **1.0.2/versionCode3**는 청주오스코 주변 지도·공식 안내·등록 지물을 포함하며 해당 지역으로 시작합니다. 키와 서명은 기존1.0.1 Release 설정을 유지합니다. [앱 연결·검사·게시 기록](../docs/osco-app-integration-2026-11-17.md). 청주 도보 계산은 미지원이며 네이티브 대중교통 참고 검색과 구분합니다.
+
 패키지명: **app.donghaeng.gill.demo**, Android 7(API24) 이상, targetSdk36.
 
 ## 설치 후 사용
@@ -61,7 +63,7 @@ cd donghaeng-nav/mobile/android
 ./gradlew assembleRelease
 ```
 
-출력은 `android/app/build/outputs/apk/release/app-release.apk`다. 버전1.0.1/versionCode2, 패키지는
+출력은 `android/app/build/outputs/apk/release/app-release.apk`다. 최신 버전1.0.2/versionCode3, 패키지는
 `app.donghaeng.gill.demo`로 유지한다. 실제 키·서명 설정·keystore는 소스 커밋/로그에 넣지 않는다.
 키가 포함된 APK의 GitHub Release 업로드는 저장소가 비공개인지 확인한 후 수행한다.
 이번 작업과 게시 상태는 [Release 기록](../docs/android-release-2026-11-16.md)을 참고한다.
