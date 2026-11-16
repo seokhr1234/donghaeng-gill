@@ -357,5 +357,6 @@
   "new_provider_calls": 0,
   "actual_android_device_test": false,
   "gps_field_test": false,
-  "field_verified": false
+  "field_verified": false,
+  "source_commit": "de878d8070cf591052b5ccb510a741d69bda63de"
 }

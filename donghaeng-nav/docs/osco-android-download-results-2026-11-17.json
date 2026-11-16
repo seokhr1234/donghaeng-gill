@@ -1,0 +1,22 @@
+{
+  "pass": true,
+  "checked_date_kst": "2026-11-17",
+  "repository_private": true,
+  "app_source_commit": "de878d8070cf591052b5ccb510a741d69bda63de",
+  "download_tag": "android-demo-v1.0.2-download",
+  "distribution_commit": "2d6a89590a156aec89db9fe17fa2508a9d93863e",
+  "download_url": "https://github.com/seokhr1234/aiaiaiaiaiaiaiai/archive/refs/tags/android-demo-v1.0.2-download.zip",
+  "downloaded_github_zip_bytes": 17430451,
+  "zip_crc_verified": true,
+  "extracted_apk_sha256": "4eb9b91d12919856cc84cc375573dd61d51a148fc9afe2df8ae1d30bd4c41b28",
+  "download_matches_signed_apk": true,
+  "release_tag": "android-demo-v1.0.2",
+  "release_url": "https://github.com/seokhr1234/aiaiaiaiaiaiaiai/releases/tag/android-demo-v1.0.2",
+  "direct_upload_error": "uploads.github.com HTTP401",
+  "raw_key_or_signing_files_in_distribution": false,
+  "apk_contains_user_authorized_native_key": true,
+  "published": true,
+  "field_verified": false,
+  "published_at_kst": "2026-11-17T01:54:30+09:00",
+  "release_direct_assets": 0
+}

@@ -6,7 +6,7 @@
 
 2026-11-16 착수: [청주오스코 주변 사전 자료조사](research/accessibility/cheongju-osco-2026-11-16/README.md). 사용자 장소 변경에 따라 자료조사만 진행했습니다. 공식 BF 인증·시설/주차 도면, 청주시 보행 안전시설 등록 도형19종, 최신 OSM 지역 원본·버스 관계, 공개 표고를 확보·대조했습니다. 원본 기준일/수집일/좌표계/현장 미검증과 결측·상충을 구분하며 앱 반영·Vercel·APK 후속 작업은 보류합니다.
 
-2026-11-17 후속: 사용자 요청에 따라 [청주오스코 조사 자료의 앱 연결·Android 1.0.2](donghaeng-nav/docs/osco-app-integration-2026-11-17.md)를 진행했습니다. 지도 상단 **청주오스코** 또는 [행사장 주변 바로 열기](https://donghaeng-gill.vercel.app/?area=osco)에서 공식 안내·BF 인증·주차 근거와 OSM 등록 지물을 확인합니다. 청주 도보 계산은 미지원으로 명시하며, 이용조건 미확인 지자체/가공 상세행은 보류합니다. 웹 도보 전용과 Android 대중교통 시연 분리를 유지합니다. 게시·APK 결과는 연결 문서를 참고하세요.
+2026-11-17 후속: 사용자 요청에 따라 [청주오스코 조사 자료의 앱 연결·Android 1.0.2](donghaeng-nav/docs/osco-app-integration-2026-11-17.md)를 진행했습니다. 지도 상단 **청주오스코** 또는 [행사장 주변 바로 열기](https://donghaeng-gill.vercel.app/?area=osco)에서 공식 안내·BF 인증·주차 근거와 OSM 등록 지물을 확인합니다. 청주 도보 계산은 미지원으로 명시하며, 이용조건 미확인 지자체/가공 상세행은 보류합니다. 웹 도보 전용과 Android 대중교통 시연 분리를 유지합니다. [설치용 APK 1.0.2 ZIP](https://github.com/seokhr1234/aiaiaiaiaiaiaiai/archive/refs/tags/android-demo-v1.0.2-download.zip)과 [Release](https://github.com/seokhr1234/aiaiaiaiaiaiaiai/releases/tag/android-demo-v1.0.2)를 게시했습니다. 비공개 저장소 GitHub 로그인이 필요합니다. 앱/배포/서명·다운로드 검사는 연결 문서를 참고하세요.
 
 운영 주소: **[donghaeng-gill.vercel.app](https://donghaeng-gill.vercel.app)**. 2026-11-14 최신 feature 커밋을 `main`에 반영해 운영 배포를 완료했습니다. 서울 기본 화면·확장 화면·서울 도보 API·모바일·실제 OSM 배경 로딩을 공개 주소에서 확인했습니다. [배포·브랜치 구조 대조·검사 기록](donghaeng-nav/docs/production-deployment-2026-11-14.md). 이전 11월 13일의 운영 주소 404 기록은 당시 상태입니다.
 

@@ -1,0 +1,97 @@
+{
+  "pass": true,
+  "checked_date_kst": "2026-11-17",
+  "source_commit": "de878d8070cf591052b5ccb510a741d69bda63de",
+  "origin": "https://donghaeng-gill.vercel.app",
+  "osco_url": "https://donghaeng-gill.vercel.app/?area=osco",
+  "files": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "bytes": 24411,
+      "sha256": "29de619603a09e84d3d2911927358482af694ad49db3f18ad71cc74baf662e30",
+      "matches_source": true
+    },
+    {
+      "path": "app.js",
+      "status": 200,
+      "bytes": 98656,
+      "sha256": "01feb3894529bf7cbc325ef039043b8f2d44de79ecb3105c3b078b549e0e6194",
+      "matches_source": true
+    },
+    {
+      "path": "osco-map.js",
+      "status": 200,
+      "bytes": 13833,
+      "sha256": "e99b85ef8e226a236011bb7f12e875c7cc4122e3b4e5fa5739a8a86a7a2656b9",
+      "matches_source": true
+    },
+    {
+      "path": "osco-map.css",
+      "status": 200,
+      "bytes": 1926,
+      "sha256": "f0d17feb4ae50f399d04964016db58679ea9feb9ef29f3452ae425831e70da8f",
+      "matches_source": true
+    },
+    {
+      "path": "data/osco/info.json",
+      "status": 200,
+      "bytes": 6948,
+      "sha256": "49d4e042ee425e1951e299dd0617acd9e98f16cb33964a836fc62ce81f8f8102",
+      "matches_source": true
+    },
+    {
+      "path": "data/osco/context.json.gz",
+      "status": 200,
+      "bytes": 1054570,
+      "sha256": "126a3007ad03bee8ba61c0679a6184ccb6cb2dc91f462e1117b2dd6d9a9658e1",
+      "matches_source": true
+    },
+    {
+      "path": "build-profile.js",
+      "status": 200,
+      "bytes": 203,
+      "sha256": "28c7a02d601f2bf45d1241787e0401a8a3240daf28c75c4ad48167e40fa37a1a",
+      "matches_source": true
+    }
+  ],
+  "deployment_statuses": [
+    {
+      "context": "Vercel – aiaiaiaiaiaiaiai",
+      "state": "success",
+      "target_url": "https://vercel.com/snu-clab/aiaiaiaiaiaiaiai/82PrEf51ME8UX4kQqz98namW3D51"
+    },
+    {
+      "context": "Vercel – donghaeng",
+      "state": "success",
+      "target_url": "https://vercel.com/snu-clab/donghaeng/BsD93hBM7S6hDPLzgBHHzg2Wutiu"
+    }
+  ],
+  "web_transit_enabled": false,
+  "blocked_transit_paths": [
+    {
+      "path": "/api/routes/transit",
+      "status": 404,
+      "code": "transit_not_in_web_build"
+    },
+    {
+      "path": "/api/transit/walk-review",
+      "status": 404,
+      "code": "transit_not_in_web_build"
+    },
+    {
+      "path": "/api/journeys",
+      "status": 404,
+      "code": "transit_not_in_web_build"
+    },
+    {
+      "path": "/api/index?route=routes/transit",
+      "status": 404,
+      "code": "transit_not_in_web_build"
+    }
+  ],
+  "preserved_city_segments": 963670,
+  "actual_provider_calls": 0,
+  "physical_phone_test": false,
+  "field_verified": false
+}

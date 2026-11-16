@@ -32,3 +32,11 @@
 작업 브랜치는 `feature/cheongju-osco-demo`, 원본 조사 브랜치는 `research/cheongju-osco-2026-11-16`이다. 원격main과 앱 구조를 대조했으며, 공통 앱/웹 도보 차단을 유지한 상태로 사용자 요청의 푸시·연결된 Vercel 자동 배포를 진행한다. 원격 푸시는 강제로 덮어쓰지 않는다.
 
 APK 검사: [Release1.0.2 서명·내용·비밀 분리](osco-android-apk-results-2026-11-17.json). 17,916,909bytes, 기존1.0.1과 같은 서명 인증서, Android24~36 비디버그 Release이며 키는 네이티브DEX에만 포함된다. 패키징된 모든 웹 자산과 동기화 소스·오스코 데이터 원본이 일치했다. 실기기 설치·GPS 검증은 미완료다.
+
+## 최종 게시 결과
+
+- 앱 소스 커밋 `de878d8070cf591052b5ccb510a741d69bda63de`를 `feature/cheongju-osco-demo`와 `main`에 푸시했다. main은 `1dfd9a5`에서 강제 변경 없이 전진했다. 조사 전용 브랜치 `research/cheongju-osco-2026-11-16`은 원본 조사 커밋 `9f1dd30`으로 별도 푸시했다.
+- Vercel 두 프로젝트의 배포 성공을 확인했다. [청주오스코 주변 열기](https://donghaeng-gill.vercel.app/?area=osco). 운영 주소의 HTML/앱/오스코 JS·CSS/정보/압축 도형/프로필7개가 로컬 소스 해시와 일치한다. 서울 도보963,670구간을 유지하고 공개 대중교통4개 API 경로의 차단도 실제 확인했다. [배포 검사](osco-production-results-2026-11-17.json).
+- [Android1.0.2 Release](https://github.com/seokhr1234/aiaiaiaiaiaiaiai/releases/tag/android-demo-v1.0.2)를2026-11-17 01:54:30 KST 게시했다. **[설치용 APK ZIP](https://github.com/seokhr1234/aiaiaiaiaiaiaiai/archive/refs/tags/android-demo-v1.0.2-download.zip)**. 비공개 저장소이므로 GitHub 로그인이 필요하다. ZIP을 풀어 `.apk`를 설치한다.
+- `uploads.github.com` 직접첨부는HTTP401이어서 기존 배포 방식대로 APK/체크섬/빌드정보/설치안내만 담은 별도 다운로드 태그를 사용했다. Release 직접첨부0개이며 본문의ZIP링크로 제공한다. 배포 스냅샷 `2d6a89590a156aec89db9fe17fa2508a9d93863e`는 앱 개발 브랜치가 아니다. 원시 키·서명 파일은 넣지 않았다. 사용자 승인된 키는 APK 네이티브에만 있다.
+- 실제 GitHub ZIP17,430,451bytes를 다시 다운로드해 CRC·내부 APK SHA256 일치를 확인했다. 로컬 설치ZIP은17,427,906bytes다. [다운로드·게시 검증](osco-android-download-results-2026-11-17.json). 사용자 실기기 설치·현장GPS/통행 검증은 남아 있다.
