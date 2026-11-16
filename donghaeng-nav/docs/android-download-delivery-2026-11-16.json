@@ -1,0 +1,60 @@
+{
+  "checkedDateKst": "2026-11-16",
+  "request": "APK artifact download failure; ZIP delivery and Release upload retry after full-access permission change",
+  "localZip": {
+    "checkedDateKst": "2026-11-16",
+    "apkUnchanged": true,
+    "apkSha256": "e0088e808f467e79932044340550e1a44435ae2f50264de1f4089874216ed20f",
+    "zipName": "donghaeng-android-demo-1.0.1-install.zip",
+    "zipBytes": 16362315,
+    "zipSha256": "2b30bdb35f30d1e6410eb9066e8dcbc67f5a8fe941c16c7f2f0a3a7ff898a536",
+    "zipCrcPassed": true,
+    "extractedApkHashMatches": true,
+    "entries": [
+      "donghaeng-android-demo-1.0.1.apk",
+      "donghaeng-android-demo-1.0.1.apk.sha256",
+      "INSTALL.txt"
+    ],
+    "rawKeyAndSigningFilesIncluded": false,
+    "userDownloadVerified": false
+  },
+  "githubDistribution": {
+    "tag": "android-demo-v1.0.1-download",
+    "distributionCommit": "e2d0ca79d69fcd41763b2817e4312710ef81a2b8",
+    "sourceCommit": "90192f716c6d2dbd89732391ea87b95763fb6e30",
+    "apkSha256": "e0088e808f467e79932044340550e1a44435ae2f50264de1f4089874216ed20f",
+    "privateRepository": true,
+    "archiveUrl": "https://github.com/seokhr1234/aiaiaiaiaiaiaiai/archive/refs/tags/android-demo-v1.0.1-download.zip",
+    "apkRawUrl": "https://github.com/seokhr1234/aiaiaiaiaiaiaiai/raw/refs/tags/android-demo-v1.0.1-download/donghaeng-android-demo-1.0.1.apk",
+    "entries": [
+      "donghaeng-android-demo-1.0.1.apk",
+      "donghaeng-android-demo-1.0.1.apk.sha256",
+      "INSTALL.md"
+    ],
+    "githubArchiveDownloaded": true,
+    "zipCrcPassed": true,
+    "downloadedApkSha256": "e0088e808f467e79932044340550e1a44435ae2f50264de1f4089874216ed20f",
+    "downloadedApkHashMatches": true,
+    "githubArchiveBytes": 16363427
+  },
+  "release": {
+    "releaseId": 446585268,
+    "tagName": "android-demo-v1.0.1",
+    "draft": false,
+    "publishedAt": "2026-11-16T14:42:35Z",
+    "releaseUrl": "https://github.com/seokhr1234/aiaiaiaiaiaiaiai/releases/tag/android-demo-v1.0.1",
+    "assetNames": [],
+    "downloadUrl": "https://github.com/seokhr1234/aiaiaiaiaiaiaiai/archive/refs/tags/android-demo-v1.0.1-download.zip",
+    "downloadMethod": "private GitHub distribution tag archive linked in Release body",
+    "privateRepository": true,
+    "directReleaseAssetUploadHttpStatusAfterPermissionChange": 401
+  },
+  "publishedAtKst": "2026-11-16T23:42:35+09:00",
+  "directReleaseAssetsUploaded": false,
+  "deliveryCompleteViaPrivateGithubZip": true,
+  "appSourceChanged": false,
+  "mainChanged": false,
+  "newProviderCalls": 0,
+  "actualAndroidDeviceTest": false,
+  "userDeviceDownloadVerified": false
+}

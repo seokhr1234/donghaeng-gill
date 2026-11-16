@@ -30,7 +30,7 @@
 
 2026-11-15 배포 대상 분리: [도보 공개판·Android 시연 APK](donghaeng-nav/docs/web-android-split-2026-11-15.md). Vercel은 대중교통 화면/API를 제공하지 않고, Android 시연판은 네이티브 통신부에 Android 키를 설정해 직접 조회합니다. 실제 키가 없어 제공 APK는 설치 후 교통 키 입력이 필요합니다.
 
-2026-11-16 Android 후속: [키를 포함한 1.0.1 Release APK](donghaeng-nav/docs/android-release-2026-11-16.md)를 생성했습니다. GitHub Release 초안은 만들었지만 첨부 업로드 인증401로 게시 대기 중입니다. 사용자가 제공한 Android 키는 Git 제외 로컬 설정에서 네이티브 빌드에만 포함하며, 패키지는 `app.donghaeng.gill.demo`입니다. 키로 실제 공급자 검색 1회에 성공했고 저장소 비공개 상태를 확인했습니다. 실제 기기 설치·GPS 검증은 별도이며 최종 APK·Release 게시 결과는 연결 문서에 기록합니다.
+2026-11-16 Android 후속: [키를 포함한 1.0.1 Release APK](donghaeng-nav/docs/android-release-2026-11-16.md)를 생성했습니다. [GitHub Release](https://github.com/seokhr1234/aiaiaiaiaiaiaiai/releases/tag/android-demo-v1.0.1) 본문의 [설치용 APK ZIP](https://github.com/seokhr1234/aiaiaiaiaiaiaiai/archive/refs/tags/android-demo-v1.0.1-download.zip)으로 게시했습니다. 비공개 저장소이므로 GitHub 로그인이 필요합니다. 사용자가 제공한 Android 키는 Git 제외 로컬 설정에서 네이티브 빌드에만 포함하며, 패키지는 `app.donghaeng.gill.demo`입니다. 키로 실제 공급자 검색 1회에 성공했고 저장소 비공개 상태를 확인했습니다. 실제 기기 설치·GPS 검증은 별도이며 최종 APK·Release 게시 결과는 연결 문서에 기록합니다.
 
 최신 발표자료: [동행길 발표자료 최종본](동행길_발표자료_최종.pptx).
 
