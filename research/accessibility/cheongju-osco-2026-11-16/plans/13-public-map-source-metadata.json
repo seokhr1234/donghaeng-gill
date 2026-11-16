@@ -1,0 +1,42 @@
+[
+  {
+    "id": "cheongju-map-js-mapservice",
+    "url": "https://www.cjtgis.go.kr/js/common/mapService.js",
+    "timeout": 40
+  },
+  {
+    "id": "cheongju-map-js-basemapconfig",
+    "url": "https://www.cjtgis.go.kr/js/map/BaseMapConfig.js",
+    "timeout": 40
+  },
+  {
+    "id": "cheongju-map-js-mapfacilitymng",
+    "url": "https://www.cjtgis.go.kr/js/map/MapFacilityMng.js",
+    "timeout": 40
+  },
+  {
+    "id": "cheongju-map-js-maplayermng",
+    "url": "https://www.cjtgis.go.kr/js/map/MapLayerMng.js",
+    "timeout": 40
+  },
+  {
+    "id": "cheongju-map-js-mapmaker",
+    "url": "https://www.cjtgis.go.kr/js/map/MapMaker.js",
+    "timeout": 40
+  },
+  {
+    "id": "cheongju-map-js-mapaction",
+    "url": "https://www.cjtgis.go.kr/js/map/MapAction.js",
+    "timeout": 40
+  },
+  {
+    "id": "cheongju-map-js-projection",
+    "url": "https://www.cjtgis.go.kr/js/map/proj/projection.js",
+    "timeout": 40
+  },
+  {
+    "id": "cheongju-map-js-search",
+    "url": "https://www.cjtgis.go.kr/js/custom/search.js",
+    "timeout": 40
+  }
+]

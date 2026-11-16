@@ -1,0 +1,46 @@
+{
+  "requests": 184,
+  "complete_response_hashes_verified": 181,
+  "complete_response_bytes": 426351183,
+  "http_status_counts": {
+    "200": 129,
+    "503": 41,
+    "None": 2,
+    "405": 1,
+    "400": 6,
+    "404": 3,
+    "502": 1,
+    "403": 1
+  },
+  "transport_failed": 3,
+  "verified_http200_resources": 125,
+  "http200_not_equal_to_dataset_acquired": true,
+  "wrong_legacy_board_resources": {
+    "osco-leaflet-page": "legacy board URL returned homepage",
+    "osco-parking-rates": "legacy board URL returned homepage",
+    "osco-firefloor-post": "unrelated event document, not the requested floor drawing"
+  },
+  "provider_groups": {
+    "official_bf_registry": 9,
+    "official_project_developer": 2,
+    "official_municipal_service": 14,
+    "official_bus_committee": 4,
+    "official_municipal_gis": 67,
+    "copernicus_product_or_distribution": 9,
+    "official_public_data_or_spatial_portal": 26,
+    "official_venue_gallery": 3,
+    "osm_source_or_distributor": 8,
+    "official_rail_data_portal": 1,
+    "official_tourism": 1,
+    "project_architect": 1,
+    "official_venue_operator": 25,
+    "regional_mobility_operator_site_affiliation_needs_confirmation": 2,
+    "secondary_mirror_or_field_report": 12
+  },
+  "collection_start_kst": "2026-11-16T23:59:52.374062+09:00",
+  "collection_end_request_kst": "2026-11-17T00:49:33.301907+09:00",
+  "web_search_extraction_evidence_not_original_bytes": true,
+  "active_runtime_replaced": false,
+  "new_slope_values_promoted": 0,
+  "field_verified": false
+}

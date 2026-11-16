@@ -1,0 +1,26 @@
+{
+  "id": "copernicus-readme",
+  "url": "https://copernicus-dem-30m.s3.amazonaws.com/readme.html",
+  "timeout": 40,
+  "requested_at_utc": "2026-11-16T15:09:30.699121+00:00",
+  "requested_at_kst": "2026-11-17T00:09:30.699126+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://copernicus-dem-30m.s3.amazonaws.com/readme.html",
+  "response_headers": {
+    "content-length": "8536",
+    "date": "Mon, 16 Nov 2026 15:09:31 GMT",
+    "server": "envoy",
+    "last-modified": "Wed, 22 Nov 2023 10:39:04 GMT",
+    "etag": "\"022cee281269bfa9eafa36401ef3e104\"",
+    "content-type": "text/html"
+  },
+  "bytes": 8536,
+  "sha256": "922461d55070e3c7e0cf2903ec54190d69e3773da2dc9e776a3f03566cfd56d2",
+  "response_path": "raw/copernicus-readme/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:09:31.354371+00:00"
+}

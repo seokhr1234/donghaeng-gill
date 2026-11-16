@@ -1,0 +1,23 @@
+{
+  "id": "cheongju-tgis-road-safety",
+  "url": "https://www.cjtgis.go.kr/statistics/selectRodInfo.do",
+  "timeout": 50,
+  "requested_at_utc": "2026-11-16T15:10:48.038213+00:00",
+  "requested_at_kst": "2026-11-17T00:10:48.038217+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://www.cjtgis.go.kr/statistics/selectRodInfo.do",
+  "response_headers": {
+    "date": "Mon, 16 Nov 2026 15:10:48 GMT",
+    "content-type": "text/html; charset=UTF-8",
+    "server": "envoy"
+  },
+  "bytes": 7454,
+  "sha256": "ea0f37913975320a36aa8a970064161be06388565c036e2fae53575ccb2a1469",
+  "response_path": "raw/cheongju-tgis-road-safety/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:10:49.183531+00:00"
+}

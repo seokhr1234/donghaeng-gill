@@ -1,0 +1,24 @@
+{
+  "id": "safekorea-heat-ui",
+  "url": "https://www.safekorea.go.kr/idsiSFK/neo/sfk/cs/sfc/htw/htweaiList.html",
+  "timeout": 35,
+  "requested_at_utc": "2026-11-16T15:03:18.757093+00:00",
+  "requested_at_kst": "2026-11-17T00:03:18.757099+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 503,
+  "final_url": "https://www.safekorea.go.kr/idsiSFK/neo/sfk/cs/sfc/htw/htweaiList.html",
+  "response_headers": {
+    "content-length": "91",
+    "content-type": "text/plain",
+    "date": "Mon, 16 Nov 2026 15:03:23 GMT",
+    "server": "envoy"
+  },
+  "bytes": 91,
+  "sha256": "2f85832e31ca57711e6107af6b142363351ae516adb71c69afc643fac26be7f6",
+  "response_path": "raw/safekorea-heat-ui/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:03:24.122509+00:00"
+}

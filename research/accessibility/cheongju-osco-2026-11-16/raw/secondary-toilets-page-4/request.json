@@ -1,0 +1,23 @@
+{
+  "id": "secondary-toilets-page-4",
+  "url": "https://statnorth.kr/toilets/%EC%B6%A9%EB%B6%81/%EC%B2%AD%EC%A3%BC%EC%8B%9C-%ED%9D%A5%EB%8D%95%EA%B5%AC?page=5",
+  "timeout": 40,
+  "requested_at_utc": "2026-11-16T15:20:50.023652+00:00",
+  "requested_at_kst": "2026-11-17T00:20:50.023657+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://statnorth.kr/toilets/%EC%B6%A9%EB%B6%81/%EC%B2%AD%EC%A3%BC%EC%8B%9C-%ED%9D%A5%EB%8D%95%EA%B5%AC?page=5",
+  "response_headers": {
+    "date": "Mon, 16 Nov 2026 15:20:50 GMT",
+    "content-type": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  "bytes": 347515,
+  "sha256": "7379d1450ca5d5b588e5d1dae5a05269da1682b709930e54bcf378c9aa7792c7",
+  "response_path": "raw/secondary-toilets-page-4/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:20:51.000044+00:00"
+}

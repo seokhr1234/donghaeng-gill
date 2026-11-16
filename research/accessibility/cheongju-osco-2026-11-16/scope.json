@@ -1,0 +1,33 @@
+{
+  "request": "Research only; no app changes/deployment/APK at this stage",
+  "location": "청주오스코",
+  "officialAddress": "충청북도 청주시 흥덕구 오송읍 오송생명로 250",
+  "representativePoint": {
+    "latitude": 36.6267203,
+    "longitude": 127.335363,
+    "sourceId": "gallery-directions",
+    "sourceType": "official venue gallery page map marker JavaScript",
+    "entranceVerified": false,
+    "positionAccuracyMeters": null
+  },
+  "researchBboxLonLat": [
+    127.28,
+    36.59,
+    127.39,
+    36.67
+  ],
+  "coreBboxLonLat": [
+    127.31,
+    36.61,
+    127.36,
+    36.65
+  ],
+  "distanceBandsMeters": [
+    1000,
+    2000,
+    5000
+  ],
+  "fieldVerified": false,
+  "activeRuntimeReplaced": false,
+  "newSlopeValuesPromoted": 0
+}

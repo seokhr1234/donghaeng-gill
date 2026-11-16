@@ -1,0 +1,26 @@
+{
+  "id": "geofabrik-korea-state",
+  "url": "https://download.geofabrik.de/asia/south-korea-updates/state.txt",
+  "timeout": 45,
+  "requested_at_utc": "2026-11-16T15:02:29.249031+00:00",
+  "requested_at_kst": "2026-11-17T00:02:29.249038+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://download.geofabrik.de/asia/south-korea-updates/state.txt",
+  "response_headers": {
+    "content-length": "113",
+    "content-type": "text/plain",
+    "date": "Mon, 16 Nov 2026 14:58:20 GMT",
+    "server": "envoy",
+    "last-modified": "Mon, 16 Nov 2026 00:05:38 GMT",
+    "etag": "\"71-6605989aef513\""
+  },
+  "bytes": 113,
+  "sha256": "a6e7bfa0da8b4ab6da8bdade0fa19eedf92fac3ef48a21e67fcd840f283643de",
+  "response_path": "raw/geofabrik-korea-state/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:02:30.571499+00:00"
+}

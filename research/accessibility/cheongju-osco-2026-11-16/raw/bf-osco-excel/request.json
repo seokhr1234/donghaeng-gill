@@ -1,0 +1,24 @@
+{
+  "id": "bf-osco-excel",
+  "url": "https://www.koddi.or.kr/bf/data/resultDataExcel.do?search=schTp1&keyword=%EC%B2%AD%EC%A3%BC%EC%A0%84%EC%8B%9C%EA%B4%80",
+  "timeout": 60,
+  "requested_at_utc": "2026-11-16T15:15:18.977608+00:00",
+  "requested_at_kst": "2026-11-17T00:15:18.977611+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://www.koddi.or.kr/bf/data/resultDataExcel.do?search=schTp1&keyword=%EC%B2%AD%EC%A3%BC%EC%A0%84%EC%8B%9C%EA%B4%80",
+  "response_headers": {
+    "date": "Mon, 16 Nov 2026 15:15:25 GMT",
+    "server": "envoy",
+    "content-disposition": "attachment; filename=\"ì¸ì¦ì¤ì íí©ëª©ë¡_20261117001519\".xls",
+    "content-type": "application/vnd.ms-excel;charset=utf-8"
+  },
+  "bytes": 6144,
+  "sha256": "0f61101fcb72326f125f0c0b12f7e593cbbdfd70b26f8de415cbc80a74cc4ca5",
+  "response_path": "raw/bf-osco-excel/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:15:26.337029+00:00"
+}

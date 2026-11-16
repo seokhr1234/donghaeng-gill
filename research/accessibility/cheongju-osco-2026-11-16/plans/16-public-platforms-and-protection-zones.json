@@ -1,0 +1,67 @@
+[
+  {
+    "id": "cheongju-tgis-wfs-platforms-study",
+    "url": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_C118_P&outputFormat=application%2Fjson&bbox=225030.58970356168%2C443550.1905484578%2C234900.12847381394%2C452462.21576077957%2CEPSG%3A5186&maxFeatures=5000",
+    "timeout": 60,
+    "layer": "GT_C118_P",
+    "declared_source_crs": "EPSG:5186",
+    "research_bbox_lonlat": [
+      127.28,
+      36.59,
+      127.39,
+      36.67
+    ]
+  },
+  {
+    "id": "cheongju-tgis-wfs-disabled-protection-zones-study",
+    "url": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_C117_A&outputFormat=application%2Fjson&bbox=225030.58970356168%2C443550.1905484578%2C234900.12847381394%2C452462.21576077957%2CEPSG%3A5186&maxFeatures=5000",
+    "timeout": 60,
+    "layer": "GT_C117_A",
+    "declared_source_crs": "EPSG:5186",
+    "research_bbox_lonlat": [
+      127.28,
+      36.59,
+      127.39,
+      36.67
+    ]
+  },
+  {
+    "id": "cheongju-tgis-wfs-elderly-protection-zones-study",
+    "url": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_C115_A&outputFormat=application%2Fjson&bbox=225030.58970356168%2C443550.1905484578%2C234900.12847381394%2C452462.21576077957%2CEPSG%3A5186&maxFeatures=5000",
+    "timeout": 60,
+    "layer": "GT_C115_A",
+    "declared_source_crs": "EPSG:5186",
+    "research_bbox_lonlat": [
+      127.28,
+      36.59,
+      127.39,
+      36.67
+    ]
+  },
+  {
+    "id": "cheongju-tgis-wfs-school-protection-zones-study",
+    "url": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_C101_A&outputFormat=application%2Fjson&bbox=225030.58970356168%2C443550.1905484578%2C234900.12847381394%2C452462.21576077957%2CEPSG%3A5186&maxFeatures=5000",
+    "timeout": 60,
+    "layer": "GT_C101_A",
+    "declared_source_crs": "EPSG:5186",
+    "research_bbox_lonlat": [
+      127.28,
+      36.59,
+      127.39,
+      36.67
+    ]
+  },
+  {
+    "id": "cheongju-tgis-wfs-public-parking-study",
+    "url": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_A111_A&outputFormat=application%2Fjson&bbox=225030.58970356168%2C443550.1905484578%2C234900.12847381394%2C452462.21576077957%2CEPSG%3A5186&maxFeatures=5000",
+    "timeout": 60,
+    "layer": "GT_A111_A",
+    "declared_source_crs": "EPSG:5186",
+    "research_bbox_lonlat": [
+      127.28,
+      36.59,
+      127.39,
+      36.67
+    ]
+  }
+]

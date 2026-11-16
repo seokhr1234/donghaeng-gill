@@ -1,0 +1,23 @@
+{
+  "id": "bf-osco-detail-main",
+  "url": "https://www.koddi.or.kr/bf/state/resultDataView.do?resultSeq=22241",
+  "timeout": 45,
+  "requested_at_utc": "2026-11-16T15:12:33.136685+00:00",
+  "requested_at_kst": "2026-11-17T00:12:33.136697+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://www.koddi.or.kr/bf/state/resultDataView.do?resultSeq=22241",
+  "response_headers": {
+    "date": "Mon, 16 Nov 2026 15:12:34 GMT",
+    "server": "envoy",
+    "content-type": "text/html;charset=UTF-8"
+  },
+  "bytes": 30116,
+  "sha256": "383a888cc0de01cb58125a085701c800e4f306887f937bac202852aa261af19b",
+  "response_path": "raw/bf-osco-detail-main/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:12:35.322683+00:00"
+}

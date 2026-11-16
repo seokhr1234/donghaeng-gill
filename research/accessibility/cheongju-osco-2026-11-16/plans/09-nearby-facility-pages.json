@@ -1,0 +1,52 @@
+[
+  {
+    "id": "secondary-heat-heungdeok",
+    "url": "https://statnorth.kr/heat-shelters/%EC%B6%A9%EB%B6%81/%EC%B2%AD%EC%A3%BC%EC%8B%9C-%ED%9D%A5%EB%8D%95%EA%B5%AC",
+    "timeout": 40
+  },
+  {
+    "id": "osco-commercial-tenant-notice",
+    "url": "https://osco.or.kr/cs-center/notice/?mod=document&pageid=1&uid=1153",
+    "timeout": 40
+  },
+  {
+    "id": "regional-mobility-service",
+    "url": "https://chungbuk-th-back.essetel.com/service.php",
+    "timeout": 40
+  },
+  {
+    "id": "regional-mobility-fees",
+    "url": "https://chungbuk-th-back.essetel.com/use_fee.php",
+    "timeout": 40
+  },
+  {
+    "id": "copernicus-stac-root",
+    "url": "https://copernicus-dem-30m-stac.s3.amazonaws.com/catalog.json",
+    "timeout": 40
+  },
+  {
+    "id": "copernicus-stac-root-tile",
+    "url": "https://copernicus-dem-30m-stac.s3.amazonaws.com/Copernicus_DSM_COG_10_N36_00_E127_00_DEM.json",
+    "timeout": 40
+  },
+  {
+    "id": "secondary-toilets-page-2",
+    "url": "https://statnorth.kr/toilets/%EC%B6%A9%EB%B6%81/%EC%B2%AD%EC%A3%BC%EC%8B%9C-%ED%9D%A5%EB%8D%95%EA%B5%AC?page=2",
+    "timeout": 40
+  },
+  {
+    "id": "secondary-toilets-page-3",
+    "url": "https://statnorth.kr/toilets/%EC%B6%A9%EB%B6%81/%EC%B2%AD%EC%A3%BC%EC%8B%9C-%ED%9D%A5%EB%8D%95%EA%B5%AC?page=3",
+    "timeout": 40
+  },
+  {
+    "id": "secondary-toilets-page-4",
+    "url": "https://statnorth.kr/toilets/%EC%B6%A9%EB%B6%81/%EC%B2%AD%EC%A3%BC%EC%8B%9C-%ED%9D%A5%EB%8D%95%EA%B5%AC?page=5",
+    "timeout": 40
+  },
+  {
+    "id": "secondary-toilets-page-5",
+    "url": "https://statnorth.kr/toilets/%EC%B6%A9%EB%B6%81/%EC%B2%AD%EC%A3%BC%EC%8B%9C-%ED%9D%A5%EB%8D%95%EA%B5%AC?page=4",
+    "timeout": 40
+  }
+]

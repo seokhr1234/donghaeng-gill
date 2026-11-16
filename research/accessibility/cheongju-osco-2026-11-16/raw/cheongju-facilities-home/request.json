@@ -1,0 +1,16 @@
+{
+  "id": "cheongju-facilities-home",
+  "url": "https://www.cjsisul.or.kr/",
+  "timeout": 40,
+  "requested_at_utc": "2026-11-16T15:09:27.877987+00:00",
+  "requested_at_kst": "2026-11-17T00:09:27.877993+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": null,
+  "transport_result": "request_failed",
+  "error_type": "URLError",
+  "error": "<urlopen error Tunnel connection failed: 403 Forbidden>",
+  "completed_at_utc": "2026-11-16T15:09:28.180347+00:00"
+}

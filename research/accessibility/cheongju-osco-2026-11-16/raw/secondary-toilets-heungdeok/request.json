@@ -1,0 +1,23 @@
+{
+  "id": "secondary-toilets-heungdeok",
+  "url": "https://statnorth.kr/toilets/%EC%B6%A9%EB%B6%81/%EC%B2%AD%EC%A3%BC%EC%8B%9C-%ED%9D%A5%EB%8D%95%EA%B5%AC",
+  "timeout": 45,
+  "requested_at_utc": "2026-11-16T15:06:25.831646+00:00",
+  "requested_at_kst": "2026-11-17T00:06:25.831656+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://statnorth.kr/toilets/%EC%B6%A9%EB%B6%81/%EC%B2%AD%EC%A3%BC%EC%8B%9C-%ED%9D%A5%EB%8D%95%EA%B5%AC",
+  "response_headers": {
+    "date": "Mon, 16 Nov 2026 15:06:26 GMT",
+    "content-type": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  "bytes": 453142,
+  "sha256": "d30d9afbfa96ef4cb11411a1fdbde9d328786093fe66d9af6ccfcb50aa51d507",
+  "response_path": "raw/secondary-toilets-heungdeok/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:06:27.077399+00:00"
+}

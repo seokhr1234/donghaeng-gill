@@ -1,0 +1,23 @@
+{
+  "id": "gallery-directions",
+  "url": "https://www.cbartgallery-osco.com/cbart-osco/contents.do?key=851",
+  "timeout": 40,
+  "requested_at_utc": "2026-11-16T14:59:55.240705+00:00",
+  "requested_at_kst": "2026-11-16T23:59:55.240710+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://www.cbartgallery-osco.com/cbart-osco/contents.do?key=851",
+  "response_headers": {
+    "date": "Mon, 16 Nov 2026 14:59:56 GMT",
+    "server": "envoy",
+    "content-type": "text/html;charset=UTF-8"
+  },
+  "bytes": 18051,
+  "sha256": "7b7f6fb26f617d16838bbabab4325c9392772a13a59c97a10a4dd8675154c09e",
+  "response_path": "raw/gallery-directions/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T14:59:56.319708+00:00"
+}

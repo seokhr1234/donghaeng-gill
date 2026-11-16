@@ -1,0 +1,22 @@
+[
+  {
+    "id": "bf-osco-excel",
+    "url": "https://www.koddi.or.kr/bf/data/resultDataExcel.do?search=schTp1&keyword=%EC%B2%AD%EC%A3%BC%EC%A0%84%EC%8B%9C%EA%B4%80",
+    "timeout": 60
+  },
+  {
+    "id": "secondary-toilets-heungdeok-csv",
+    "url": "https://statnorth.kr/api/places/csv?c=toilets&sgg=43113",
+    "timeout": 60
+  },
+  {
+    "id": "copernicus-license",
+    "url": "https://dataspace.copernicus.eu/sites/default/files/media/files/2025-06/copernicus_contributing_mission_data_access_v2_cop_dem_licenses.pdf",
+    "timeout": 60
+  },
+  {
+    "id": "copernicus-validation-report",
+    "url": "https://spacedata.copernicus.eu/documents/20126/0/GEO1988-CopernicusDEM-RP-001_ValidationReport_V1.0.pdf/edc88601-897e-82df-5604-b6b60cbecb57?t=1586527010843",
+    "timeout": 60
+  }
+]

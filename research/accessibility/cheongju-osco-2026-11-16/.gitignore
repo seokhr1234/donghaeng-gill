@@ -1,0 +1,10 @@
+**/response.bin
+**/partial.bin
+/downloads/
+/large-derived/
+__pycache__/
+/secondary-derived/
+/municipal-derived/
+**/extracted.txt
+/documents/
+**/preview-text.txt

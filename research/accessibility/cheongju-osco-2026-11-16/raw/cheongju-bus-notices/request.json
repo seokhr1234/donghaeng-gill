@@ -1,0 +1,23 @@
+{
+  "id": "cheongju-bus-notices",
+  "url": "https://www.cjbus.co.kr/home/sub.php?menukey=3301",
+  "timeout": 50,
+  "requested_at_utc": "2026-11-16T15:10:55.450858+00:00",
+  "requested_at_kst": "2026-11-17T00:10:55.450864+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://www.cjbus.co.kr/home/sub.php?menukey=3301",
+  "response_headers": {
+    "date": "Mon, 16 Nov 2026 15:10:56 GMT",
+    "server": "envoy",
+    "content-type": "text/html; charset=utf-8"
+  },
+  "bytes": 31837,
+  "sha256": "50117f60b577a22a78f0d8a360cab5b6f55546b0e81e347659118671efcabef0",
+  "response_path": "raw/cheongju-bus-notices/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:10:57.154677+00:00"
+}

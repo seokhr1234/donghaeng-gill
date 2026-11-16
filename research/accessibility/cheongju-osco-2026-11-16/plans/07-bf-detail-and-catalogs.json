@@ -1,0 +1,37 @@
+[
+  {
+    "id": "bf-osco-detail-main",
+    "url": "https://www.koddi.or.kr/bf/state/resultDataView.do?resultSeq=22241",
+    "timeout": 45
+  },
+  {
+    "id": "bf-osco-detail-preliminary",
+    "url": "https://www.koddi.or.kr/bf/state/resultDataView.do?resultSeq=10965",
+    "timeout": 45
+  },
+  {
+    "id": "bf-osong-page2",
+    "url": "https://www.koddi.or.kr/bf/state/resultDataList.do?search=schTp1&keyword=%EC%98%A4%EC%86%A1&pageIndex=2",
+    "timeout": 45
+  },
+  {
+    "id": "kric-elevator-api-catalog",
+    "url": "https://www.data.go.kr/catalog/15041682/openapi.json",
+    "timeout": 45
+  },
+  {
+    "id": "ngii-dxf-catalog",
+    "url": "https://www.data.go.kr/catalog/15015482/fileData.json",
+    "timeout": 45
+  },
+  {
+    "id": "ngii-mapinfo-catalog",
+    "url": "https://www.data.go.kr/catalog/15067685/fileData.json",
+    "timeout": 45
+  },
+  {
+    "id": "safetydata-shelter-api-no-key",
+    "url": "https://www.safetydata.go.kr/V2/api/DSSP-IF-10942?returnType=json&pageNo=1&numOfRows=1",
+    "timeout": 45
+  }
+]

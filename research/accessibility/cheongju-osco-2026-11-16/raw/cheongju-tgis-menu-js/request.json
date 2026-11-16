@@ -1,0 +1,26 @@
+{
+  "id": "cheongju-tgis-menu-js",
+  "url": "https://www.cjtgis.go.kr/js/custom/menu.js",
+  "timeout": 40,
+  "requested_at_utc": "2026-11-16T15:09:34.038748+00:00",
+  "requested_at_kst": "2026-11-17T00:09:34.038753+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://www.cjtgis.go.kr/js/custom/menu.js",
+  "response_headers": {
+    "date": "Mon, 16 Nov 2026 15:09:35 GMT",
+    "etag": "\"276f-6ad07869\"",
+    "content-type": "application/javascript",
+    "last-modified": "Thu, 15 Oct 2026 06:53:29 GMT",
+    "content-length": "10095",
+    "server": "envoy"
+  },
+  "bytes": 10095,
+  "sha256": "1e125b4f649fb169f2c5ae3cda811e97f29d590001a4bfa7c1ac9610fa88913e",
+  "response_path": "raw/cheongju-tgis-menu-js/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:09:35.314623+00:00"
+}

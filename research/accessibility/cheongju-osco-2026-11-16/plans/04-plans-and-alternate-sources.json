@@ -1,0 +1,77 @@
+[
+  {
+    "id": "osco-layout-pdf",
+    "url": "https://d2u77gqg41v474.cloudfront.net/kboard_attached/5/202604/69eaab899e6543908448.pdf",
+    "timeout": 80
+  },
+  {
+    "id": "osco-fire-pdf",
+    "url": "https://d2u77gqg41v474.cloudfront.net/kboard_attached/5/202604/69eaab555e6dd3146830.pdf",
+    "timeout": 80
+  },
+  {
+    "id": "osco-regulations-pdf",
+    "url": "https://d2u77gqg41v474.cloudfront.net/kboard_attached/5/202606/6a261527cfdca4683221.pdf",
+    "timeout": 80
+  },
+  {
+    "id": "osco-floor-image",
+    "url": "https://d2u77gqg41v474.cloudfront.net/app/uploads/2024/09/27115359/floor.png",
+    "timeout": 45
+  },
+  {
+    "id": "osco-hall-plan-image",
+    "url": "https://d2u77gqg41v474.cloudfront.net/app/uploads/2024/10/24170248/1floor_1024.png",
+    "timeout": 45
+  },
+  {
+    "id": "osco-parking-plan-image",
+    "url": "https://d2u77gqg41v474.cloudfront.net/app/uploads/2025/09/30090842/%EC%A3%BC%EC%B0%A8%EC%88%98%EC%A0%95-1024x376.png",
+    "timeout": 45
+  },
+  {
+    "id": "osco-rental-page2",
+    "url": "https://osco.or.kr/article/?pageid=2&mod=list",
+    "timeout": 45
+  },
+  {
+    "id": "cheongju-bis-http",
+    "url": "http://www.dcbis.go.kr/",
+    "timeout": 45
+  },
+  {
+    "id": "cheongju-bis-no-www",
+    "url": "https://dcbis.go.kr/",
+    "timeout": 45
+  },
+  {
+    "id": "data-bus-no-www",
+    "url": "https://data.go.kr/data/15067528/fileData.do",
+    "timeout": 45
+  },
+  {
+    "id": "safetydata-no-www",
+    "url": "https://safetydata.go.kr/",
+    "timeout": 45
+  },
+  {
+    "id": "secondary-osong-station",
+    "url": "https://hiosong.kr/cheongju/place/?id=a3a72a21-c7ff-4a38-bfb8-7f477021faca",
+    "timeout": 45
+  },
+  {
+    "id": "secondary-heat-provenance",
+    "url": "https://python-choigosu.com/data/shelter-2026/",
+    "timeout": 45
+  },
+  {
+    "id": "secondary-toilets-heungdeok",
+    "url": "https://statnorth.kr/toilets/%EC%B6%A9%EB%B6%81/%EC%B2%AD%EC%A3%BC%EC%8B%9C-%ED%9D%A5%EB%8D%95%EA%B5%AC",
+    "timeout": 45
+  },
+  {
+    "id": "osm-api-osco-live",
+    "url": "https://api.openstreetmap.org/api/0.6/map?bbox=127.315,36.61,127.345,36.64",
+    "timeout": 90
+  }
+]

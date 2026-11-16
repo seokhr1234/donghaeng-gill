@@ -1,0 +1,24 @@
+{
+  "id": "regional-mobility-service",
+  "url": "https://chungbuk-th-back.essetel.com/service.php",
+  "timeout": 40,
+  "requested_at_utc": "2026-11-16T15:20:46.966354+00:00",
+  "requested_at_kst": "2026-11-17T00:20:46.966360+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://chungbuk-th-back.essetel.com/service.php",
+  "response_headers": {
+    "date": "Mon, 16 Nov 2026 15:20:47 GMT",
+    "server": "envoy",
+    "last-modified": "Mon, 16 Nov 2026 15:20:47 GMT",
+    "content-type": "text/html; charset=utf-8"
+  },
+  "bytes": 42552,
+  "sha256": "0331c17eb0f81d5fd3267d196555146e5f3b9dcb9fca685439d43a7d6920cdbb",
+  "response_path": "raw/regional-mobility-service/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:20:48.181577+00:00"
+}

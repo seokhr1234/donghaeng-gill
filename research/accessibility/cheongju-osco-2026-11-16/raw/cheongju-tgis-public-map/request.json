@@ -1,0 +1,23 @@
+{
+  "id": "cheongju-tgis-public-map",
+  "url": "https://www.cjtgis.go.kr/map/mapMain.do",
+  "timeout": 45,
+  "requested_at_utc": "2026-11-16T15:36:36.332637+00:00",
+  "requested_at_kst": "2026-11-17T00:36:36.332648+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://www.cjtgis.go.kr/map/mapMain.do",
+  "response_headers": {
+    "date": "Mon, 16 Nov 2026 15:36:37 GMT",
+    "content-type": "text/html; charset=UTF-8",
+    "server": "envoy"
+  },
+  "bytes": 25831,
+  "sha256": "91a553e2a96f403e2485337cb343b5a422fa214781c164c0a62a58e326a15deb",
+  "response_path": "raw/cheongju-tgis-public-map/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:36:37.562183+00:00"
+}

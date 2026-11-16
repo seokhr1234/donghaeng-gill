@@ -1,0 +1,98 @@
+[
+  {
+    "file": "documents/osco-facility-guide-2026.pdf",
+    "source_id": "osco-facility-pdf",
+    "sha256": "fc4c0285dda05ff954b09b2f1cbe39e624684af093e70cd82c020e5b0bc4b6ea",
+    "bytes": 34354937,
+    "original_copy_without_modification": true,
+    "redistribution_terms": "original provider terms; local research copy"
+  },
+  {
+    "file": "documents/osco-exhibition-layout-2026-04-22.pdf",
+    "source_id": "osco-layout-pdf",
+    "sha256": "4ca8f02b5dbe27d8bd8f33f876548639e057dff471177740d283fab9a8ce35cb",
+    "bytes": 111510,
+    "original_copy_without_modification": true,
+    "redistribution_terms": "original provider terms; local research copy"
+  },
+  {
+    "file": "documents/osco-fire-plan-2026-04-17.pdf",
+    "source_id": "osco-fire-pdf",
+    "sha256": "a9aaa64e1148d0dbbab627d9b1c8cd33e34433b071140608c6f3645709da656e",
+    "bytes": 112810,
+    "original_copy_without_modification": true,
+    "redistribution_terms": "original provider terms; local research copy"
+  },
+  {
+    "file": "documents/osco-operation-regulations.pdf",
+    "source_id": "osco-regulations-pdf",
+    "sha256": "7ca28af784d5158b1a185a9e6be6d6973e6101827e3a925ed116f21caff06678",
+    "bytes": 90139,
+    "original_copy_without_modification": true,
+    "redistribution_terms": "original provider terms; local research copy"
+  },
+  {
+    "file": "documents/osco-commercial-facility-notice.pdf",
+    "source_id": "osco-commercial-tenant-pdf-0",
+    "sha256": "d5ee88d6df9d9eefed2e678e421db3503b882e355ad6ff80f483e7697419a84f",
+    "bytes": 61405,
+    "original_copy_without_modification": true,
+    "redistribution_terms": "original provider terms; local research copy"
+  },
+  {
+    "file": "documents/osco-parking-plan.png",
+    "source_id": "osco-parking-plan-image",
+    "sha256": "83ab349fad8e162bd8770324d4ef26fad5f4e23c154aa1099dcea4396aa205ae",
+    "bytes": 448647,
+    "original_copy_without_modification": true,
+    "redistribution_terms": "original provider terms; local research copy"
+  },
+  {
+    "file": "documents/osco-floor-guide.png",
+    "source_id": "osco-floor-image",
+    "sha256": "39f5376be00d0d150d02493b2fbfeb893c6554a1924ab7ab1bb53ae3cd406b92",
+    "bytes": 1312033,
+    "original_copy_without_modification": true,
+    "redistribution_terms": "original provider terms; local research copy"
+  },
+  {
+    "file": "documents/osco-hall-plan.png",
+    "source_id": "osco-hall-plan-image",
+    "sha256": "bff10f1b11da6ee39de15860d89dbe671543d7e0474bc3a3bf18a53e5ff9933d",
+    "bytes": 170022,
+    "original_copy_without_modification": true,
+    "redistribution_terms": "original provider terms; local research copy"
+  },
+  {
+    "file": "documents/osco-access-map.png",
+    "source_id": "osco-traffic-map",
+    "sha256": "e361291006eae243fe3dbe1b013730273cdc002547da54aed50f6a21d7274fd5",
+    "bytes": 451186,
+    "original_copy_without_modification": true,
+    "redistribution_terms": "original provider terms; local research copy"
+  },
+  {
+    "file": "documents/bf-cheongju-exhibition-credentials.xls",
+    "source_id": "bf-osco-excel",
+    "sha256": "0f61101fcb72326f125f0c0b12f7e593cbbdfd70b26f8de415cbc80a74cc4ca5",
+    "bytes": 6144,
+    "original_copy_without_modification": true,
+    "redistribution_terms": "original provider terms; local research copy"
+  },
+  {
+    "file": "documents/cbdc-construction-progress-2026-03.hwpx",
+    "source_id": "cbdc-construction-hwpx",
+    "sha256": "bfb52b0ec614944da4f037881d8865b57a350962812ef4174e8d6ccad40a74f9",
+    "bytes": 876451,
+    "original_copy_without_modification": true,
+    "redistribution_terms": "original provider terms; local research copy"
+  },
+  {
+    "file": "documents/copernicus-licenses.pdf",
+    "source_id": "copernicus-license",
+    "sha256": "bb4a01dcd7f61acefa81c9ccd76af975e12096158169acf0d7b5c44c26c8701f",
+    "bytes": 499914,
+    "original_copy_without_modification": true,
+    "redistribution_terms": "original provider terms; local research copy"
+  }
+]

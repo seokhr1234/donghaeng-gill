@@ -1,0 +1,24 @@
+{
+  "id": "osm-api-osco-live",
+  "url": "https://api.openstreetmap.org/api/0.6/map?bbox=127.315,36.61,127.345,36.64",
+  "timeout": 90,
+  "requested_at_utc": "2026-11-16T15:06:27.077666+00:00",
+  "requested_at_kst": "2026-11-17T00:06:27.077672+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://api.openstreetmap.org/api/0.6/map?bbox=127.315,36.61,127.345,36.64",
+  "response_headers": {
+    "server": "envoy",
+    "content-disposition": "attachment; filename=\"map.osm\"",
+    "content-type": "application/xml; charset=utf-8",
+    "date": "Mon, 16 Nov 2026 15:06:28 GMT"
+  },
+  "bytes": 4062254,
+  "sha256": "30a4a3b4e2afe23d336a7323a030df175c3c871e55d3b72d4cd4266d2bb38475",
+  "response_path": "raw/osm-api-osco-live/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:06:29.607477+00:00"
+}

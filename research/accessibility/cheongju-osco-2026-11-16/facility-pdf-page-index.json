@@ -1,0 +1,274 @@
+[
+  {
+    "pdf_page": 1,
+    "opening": "                                   www.OSCO.or.kr               청주오스코 시설 가이드 Cheongju Osong Convention Center Facility Guide ",
+    "has_accessible_toilet": false,
+    "has_elevator": false,
+    "has_medical": false,
+    "has_nursing": false
+  },
+  {
+    "pdf_page": 2,
+    "opening": "02 Cheongju Osong Convention Center(OSCO)        10,031m                          2      Exhibition Hall      3,830m              ",
+    "has_accessible_toilet": false,
+    "has_elevator": false,
+    "has_medical": false,
+    "has_nursing": false
+  },
+  {
+    "pdf_page": 3,
+    "opening": "                                                                                                         청주오스코(OSCO) 03       OVER",
+    "has_accessible_toilet": false,
+    "has_elevator": false,
+    "has_medical": false,
+    "has_nursing": false
+  },
+  {
+    "pdf_page": 4,
+    "opening": "04 Cheongju Osong Convention Center(OSCO) 4 ㅣ Cheongju Osong Convention Center(OSCO)        FLOOR PLANS FLOOR  층별안내 PLANS 층별안내  2F",
+    "has_accessible_toilet": false,
+    "has_elevator": false,
+    "has_medical": false,
+    "has_nursing": false
+  },
+  {
+    "pdf_page": 5,
+    "opening": "                                                 청주오스코(OSCO) 05                                                 청주 오스코(OSCO) ㅣ 5  ",
+    "has_accessible_toilet": false,
+    "has_elevator": false,
+    "has_medical": true,
+    "has_nursing": false
+  },
+  {
+    "pdf_page": 6,
+    "opening": "                   6 ㅣ Cheongju Osong Convention Center(OSCO)                   6 ㅣ Cheongju Osong Convention Center(OSCO)  ong Co",
+    "has_accessible_toilet": true,
+    "has_elevator": true,
+    "has_medical": false,
+    "has_nursing": true
+  },
+  {
+    "pdf_page": 7,
+    "opening": "                                                                                                                                  ",
+    "has_accessible_toilet": false,
+    "has_elevator": false,
+    "has_medical": false,
+    "has_nursing": false
+  },
+  {
+    "pdf_page": 8,
+    "opening": "08 Cheongju Osong Convention Center(OSCO)        1F EXHIBITION HALL     전기     구분(Facility)    전압종류                전압             ",
+    "has_accessible_toilet": false,
+    "has_elevator": false,
+    "has_medical": false,
+    "has_nursing": false
+  },
+  {
+    "pdf_page": 9,
+    "opening": "                                                                         청주오스코(OSCO) 09     인터넷 시스템   구분(Facility)     유선/무선 사용 가능",
+    "has_accessible_toilet": false,
+    "has_elevator": false,
+    "has_medical": false,
+    "has_nursing": false
+  },
+  {
+    "pdf_page": 10,
+    "opening": "                 8 ㅣ Cheongju Osong Convention Center(OSCO)  ong Convention Center(OSCO)                       EXHIBITION HALL    ",
+    "has_accessible_toilet": true,
+    "has_elevator": true,
+    "has_medical": false,
+    "has_nursing": true
+  },
+  {
+    "pdf_page": 11,
+    "opening": "                                                                                                                                  ",
+    "has_accessible_toilet": false,
+    "has_elevator": false,
+    "has_medical": false,
+    "has_nursing": false
+  },
+  {
+    "pdf_page": 12,
+    "opening": "onvention Center(OSCO)                 8 ㅣ Cheongju Osong Convention Center(OSCO)          12    Cheongju Osong Convention Center(",
+    "has_accessible_toilet": true,
+    "has_elevator": true,
+    "has_medical": false,
+    "has_nursing": true
+  },
+  {
+    "pdf_page": 13,
+    "opening": "Convention Center(OSCO)                   8 ㅣ Cheongju Osong Convention Center(OSCO)                                              ",
+    "has_accessible_toilet": true,
+    "has_elevator": true,
+    "has_medical": false,
+    "has_nursing": true
+  },
+  {
+    "pdf_page": 14,
+    "opening": "                  계단 Stairs                                    안내 Information                                                     ",
+    "has_accessible_toilet": true,
+    "has_elevator": true,
+    "has_medical": false,
+    "has_nursing": true
+  },
+  {
+    "pdf_page": 15,
+    "opening": "                                                                             청주오스코(OSCO) 15     기타 ETC. 전기 구분(Facility)   전압종류    ",
+    "has_accessible_toilet": false,
+    "has_elevator": false,
+    "has_medical": false,
+    "has_nursing": false
+  },
+  {
+    "pdf_page": 16,
+    "opening": "16   Cheongju Osong Convention Center(OSCO)          기타 ETC.      하우스 조명       구분(Facility)          품명                 용도     수량 ",
+    "has_accessible_toilet": false,
+    "has_elevator": false,
+    "has_medical": false,
+    "has_nursing": false
+  },
+  {
+    "pdf_page": 17,
+    "opening": "                                                                                  청주오스코(OSCO) 17     음향 구분(Facility)        품명    ",
+    "has_accessible_toilet": false,
+    "has_elevator": true,
+    "has_medical": false,
+    "has_nursing": false
+  },
+  {
+    "pdf_page": 18,
+    "opening": "18   Cheongju Osong Convention Center(OSCO)          기타 ETC.      장비 및 가구, 기타       구분(Facility)         장비명                   규격 ",
+    "has_accessible_toilet": false,
+    "has_elevator": false,
+    "has_medical": false,
+    "has_nursing": false
+  },
+  {
+    "pdf_page": 19,
+    "opening": "                                                                                  청주오스코(OSCO) 19     부대시설 Support Facilities 부대시설 ",
+    "has_accessible_toilet": false,
+    "has_elevator": false,
+    "has_medical": true,
+    "has_nursing": true
+  },
+  {
+    "pdf_page": 20,
+    "opening": "FLOOR PLANS 주차시설             PARKING LOT             주차 시설      P2                                                                ",
+    "has_accessible_toilet": false,
+    "has_elevator": false,
+    "has_medical": false,
+    "has_nursing": false
+  },
+  {
+    "pdf_page": 21,
+    "opening": "SUPPORT FACILITIES   SUPPORT FACILITIES  부대시설 부대 시설   지하주차장 입구 Underground Parking Entrance                                       ",
+    "has_accessible_toilet": false,
+    "has_elevator": false,
+    "has_medical": false,
+    "has_nursing": false
+  },
+  {
+    "pdf_page": 22,
+    "opening": "22 Cheongju Osong Convention Center(OSCO)        ACCOMMODATIONS    숙박안내                    ACCOMMODATIONS                     ACCO",
+    "has_accessible_toilet": false,
+    "has_elevator": false,
+    "has_medical": false,
+    "has_nursing": false
+  },
+  {
+    "pdf_page": 23,
+    "opening": "                                                                                                                  청주오스코(OSCO) 23  ",
+    "has_accessible_toilet": false,
+    "has_elevator": false,
+    "has_medical": false,
+    "has_nursing": false
+  },
+  {
+    "pdf_page": 24,
+    "opening": "        14 ㅣ Cheongju Osong Convention Center(OSCO)            24 Cheongju Osong Convention Center(OSCO)              14 ㅣ Cheongj",
+    "has_accessible_toilet": false,
+    "has_elevator": false,
+    "has_medical": false,
+    "has_nursing": false
+  },
+  {
+    "pdf_page": 25,
+    "opening": "                                                                                                                                  ",
+    "has_accessible_toilet": false,
+    "has_elevator": false,
+    "has_medical": false,
+    "has_nursing": false
+  },
+  {
+    "pdf_page": 26,
+    "opening": "26 Cheongju Osong Convention Center(OSCO)        Chungbuk Tourist & Unique Venues    충북관광지 & 유니크베뉴                             서울 ",
+    "has_accessible_toilet": false,
+    "has_elevator": false,
+    "has_medical": false,
+    "has_nursing": false
+  },
+  {
+    "pdf_page": 27,
+    "opening": "                                                          청주오스코(OSCO) 27                                                  제천      ",
+    "has_accessible_toilet": false,
+    "has_elevator": false,
+    "has_medical": false,
+    "has_nursing": false
+  },
+  {
+    "pdf_page": 28,
+    "opening": "28 Cheongju Osong Convention Center(OSCO)     North Chungcheong region 충북 북부지역                         제천                       Je",
+    "has_accessible_toilet": false,
+    "has_elevator": false,
+    "has_medical": false,
+    "has_nursing": false
+  },
+  {
+    "pdf_page": 29,
+    "opening": "                                                                                              청주오스코(OSCO) 29      깊은산속 옹달샘        ",
+    "has_accessible_toilet": false,
+    "has_elevator": false,
+    "has_medical": false,
+    "has_nursing": false
+  },
+  {
+    "pdf_page": 30,
+    "opening": "30 Cheongju Osong Convention Center(OSCO)     Central Chungcheong region 충북 중부지역                                  진천 뤁스퀘어         ",
+    "has_accessible_toilet": false,
+    "has_elevator": false,
+    "has_medical": false,
+    "has_nursing": false
+  },
+  {
+    "pdf_page": 31,
+    "opening": "                                                                                                      청주오스코(OSCO) 31              ",
+    "has_accessible_toilet": false,
+    "has_elevator": false,
+    "has_medical": false,
+    "has_nursing": false
+  },
+  {
+    "pdf_page": 32,
+    "opening": "32 Cheongju Osong Convention Center(OSCO)         Chungbuk Tourist & Unique Venues     충북 마이스베뉴                              포레스트 ",
+    "has_accessible_toilet": false,
+    "has_elevator": false,
+    "has_medical": false,
+    "has_nursing": false
+  },
+  {
+    "pdf_page": 33,
+    "opening": "                                                           청주오스코(OSCO) 33                                                         ",
+    "has_accessible_toilet": false,
+    "has_elevator": false,
+    "has_medical": false,
+    "has_nursing": false
+  },
+  {
+    "pdf_page": 34,
+    "opening": "충청북도 청주시 흥덕구 오송읍 오송생명로 250 250, Osongsaengmyeong-ro, Osong-eup, Heungdeok-gu, Cheongju-si, Chungcheongbuk-do, Republic of Korea TE",
+    "has_accessible_toilet": false,
+    "has_elevator": false,
+    "has_medical": false,
+    "has_nursing": false
+  }
+]

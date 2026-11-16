@@ -1,0 +1,26 @@
+{
+  "id": "osco-traffic-map",
+  "url": "https://d2u77gqg41v474.cloudfront.net/app/uploads/2024/10/11163138/osco_map1400x830.png",
+  "timeout": 45,
+  "requested_at_utc": "2026-11-16T15:02:14.261352+00:00",
+  "requested_at_kst": "2026-11-17T00:02:14.261359+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://d2u77gqg41v474.cloudfront.net/app/uploads/2024/10/11163138/osco_map1400x830.png",
+  "response_headers": {
+    "content-type": "image/png",
+    "content-length": "451186",
+    "date": "Mon, 16 Nov 2026 15:02:14 GMT",
+    "server": "envoy",
+    "last-modified": "Fri, 11 Oct 2024 07:31:39 GMT",
+    "etag": "\"f38f6123fc887e4c7cb20f2f3f1eb0e5\""
+  },
+  "bytes": 451186,
+  "sha256": "e361291006eae243fe3dbe1b013730273cdc002547da54aed50f6a21d7274fd5",
+  "response_path": "raw/osco-traffic-map/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:02:15.464953+00:00"
+}

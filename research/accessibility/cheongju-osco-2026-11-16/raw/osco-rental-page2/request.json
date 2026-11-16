@@ -1,0 +1,23 @@
+{
+  "id": "osco-rental-page2",
+  "url": "https://osco.or.kr/article/?pageid=2&mod=list",
+  "timeout": 45,
+  "requested_at_utc": "2026-11-16T15:06:16.920203+00:00",
+  "requested_at_kst": "2026-11-17T00:06:16.920212+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://osco.or.kr/article/?pageid=2&mod=list",
+  "response_headers": {
+    "date": "Mon, 16 Nov 2026 15:06:18 GMT",
+    "content-type": "text/html; charset=UTF-8",
+    "server": "envoy"
+  },
+  "bytes": 1275710,
+  "sha256": "216fcbb770e4e427e0ba3690564cc2f8ce4614f0616b9f56f5c68dd237ef0768",
+  "response_path": "raw/osco-rental-page2/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:06:19.063818+00:00"
+}

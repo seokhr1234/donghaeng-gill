@@ -1,0 +1,222 @@
+[
+  {
+    "type": "tactile",
+    "source_id": "cheongju-tgis-statistics-json-tactile",
+    "raw_statistics": {
+      "GuResult": [
+        {
+          "구분": "합계",
+          "수량": "           8,183"
+        },
+        {
+          "구분": "흥덕구",
+          "수량": "           3,722"
+        }
+      ],
+      "DongResult": [
+        {
+          "구분": "합계",
+          "수량": "           8,183"
+        },
+        {
+          "구분": "오송읍",
+          "수량": "             896"
+        }
+      ],
+      "PoliceResult": [
+        {
+          "구분": "합계",
+          "수량": "           8,183"
+        }
+      ]
+    },
+    "source_as_of": null,
+    "scope": "municipal registered facility aggregates, not site inventory",
+    "coordinates_available": false,
+    "field_verified": false,
+    "runtime_import_allowed": false
+  },
+  {
+    "type": "crossings",
+    "source_id": "cheongju-tgis-statistics-json-crossings",
+    "raw_statistics": {
+      "GuResult": [
+        {
+          "구분": "합계",
+          "합계": "           9,426",
+          "일반형": "           5,514",
+          "지브라": "           3,912"
+        },
+        {
+          "구분": "흥덕구",
+          "합계": "           3,558",
+          "일반형": "           2,025",
+          "지브라": "           1,533"
+        }
+      ],
+      "DongResult": [
+        {
+          "구분": "합계",
+          "합계": "           9,426",
+          "일반형": "           5,514",
+          "지브라": "           3,912"
+        },
+        {
+          "구분": "오송읍",
+          "합계": "             759",
+          "일반형": "             313",
+          "지브라": "             446"
+        }
+      ],
+      "PoliceResult": [
+        {
+          "구분": "합계",
+          "합계": "           9,426",
+          "일반형": "           5,514",
+          "지브라": "           3,912"
+        }
+      ]
+    },
+    "source_as_of": null,
+    "scope": "municipal registered facility aggregates, not site inventory",
+    "coordinates_available": false,
+    "field_verified": false,
+    "runtime_import_allowed": false
+  },
+  {
+    "type": "audible",
+    "source_id": "cheongju-tgis-statistics-json-audible",
+    "raw_statistics": {
+      "GuResult": [
+        {
+          "구분": "합계",
+          "수량": "           1,466"
+        },
+        {
+          "구분": "흥덕구",
+          "수량": "             596"
+        }
+      ],
+      "DongResult": [
+        {
+          "구분": "합계",
+          "수량": "           1,466"
+        },
+        {
+          "구분": "오송읍",
+          "수량": "             284"
+        }
+      ],
+      "PoliceResult": [
+        {
+          "구분": "합계",
+          "수량": "           1,466"
+        }
+      ]
+    },
+    "source_as_of": null,
+    "scope": "municipal registered facility aggregates, not site inventory",
+    "coordinates_available": false,
+    "field_verified": false,
+    "runtime_import_allowed": false
+  },
+  {
+    "type": "grade-crossings",
+    "source_id": "cheongju-tgis-statistics-json-grade-crossings",
+    "raw_statistics": {
+      "GuResult": [
+        {
+          "구분": "합계",
+          "합계": "              46",
+          "육교": "              13",
+          "지하도": "               0",
+          "대각선 횡단보도": "              33",
+          "미분류": "               0"
+        },
+        {
+          "구분": "흥덕구",
+          "합계": "              11",
+          "육교": "               4",
+          "지하도": "               0",
+          "대각선 횡단보도": "               7",
+          "미분류": "               0"
+        }
+      ],
+      "DongResult": [
+        {
+          "구분": "합계",
+          "합계": "              46",
+          "육교": "              13",
+          "지하도": "               0",
+          "대각선 횡단보도": "              33",
+          "미분류": "               0"
+        },
+        {
+          "구분": "오송읍",
+          "합계": "               2",
+          "육교": "               1",
+          "지하도": "               0",
+          "대각선 횡단보도": "               1",
+          "미분류": "               0"
+        }
+      ],
+      "PoliceResult": [
+        {
+          "구분": "합계",
+          "합계": "              46",
+          "육교": "              13",
+          "지하도": "               0",
+          "대각선 횡단보도": "              33",
+          "미분류": "               0"
+        }
+      ]
+    },
+    "source_as_of": null,
+    "scope": "municipal registered facility aggregates, not site inventory",
+    "coordinates_available": false,
+    "field_verified": false,
+    "runtime_import_allowed": false
+  },
+  {
+    "type": "ground-signals",
+    "source_id": "cheongju-tgis-statistics-json-ground-signals",
+    "raw_statistics": {
+      "GuResult": [
+        {
+          "구분": "합계",
+          "개소": "              62",
+          "바닥보행등 수": "             124"
+        },
+        {
+          "구분": "흥덕구",
+          "개소": "              15",
+          "바닥보행등 수": "              30"
+        }
+      ],
+      "DongResult": [
+        {
+          "구분": "합계",
+          "개소": "              62",
+          "바닥보행등 수": "             124"
+        },
+        {
+          "구분": "오송읍",
+          "개소": "               2",
+          "바닥보행등 수": "               4"
+        }
+      ],
+      "PoliceResult": [
+        {
+          "구분": "합계",
+          "개소": "              62",
+          "바닥보행등 수": "             124"
+        }
+      ]
+    },
+    "source_as_of": null,
+    "scope": "municipal registered facility aggregates, not site inventory",
+    "coordinates_available": false,
+    "field_verified": false,
+    "runtime_import_allowed": false
+  }
+]

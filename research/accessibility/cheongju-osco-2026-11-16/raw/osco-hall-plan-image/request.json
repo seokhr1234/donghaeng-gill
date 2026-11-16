@@ -1,0 +1,26 @@
+{
+  "id": "osco-hall-plan-image",
+  "url": "https://d2u77gqg41v474.cloudfront.net/app/uploads/2024/10/24170248/1floor_1024.png",
+  "timeout": 45,
+  "requested_at_utc": "2026-11-16T15:06:15.990887+00:00",
+  "requested_at_kst": "2026-11-17T00:06:15.990892+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://d2u77gqg41v474.cloudfront.net/app/uploads/2024/10/24170248/1floor_1024.png",
+  "response_headers": {
+    "content-type": "image/png",
+    "content-length": "170022",
+    "date": "Mon, 16 Nov 2026 15:06:16 GMT",
+    "server": "envoy",
+    "last-modified": "Thu, 24 Oct 2024 08:02:49 GMT",
+    "etag": "\"7cdbf7f59f1566af02e791096d81ae4a\""
+  },
+  "bytes": 170022,
+  "sha256": "bff10f1b11da6ee39de15860d89dbe671543d7e0474bc3a3bf18a53e5ff9933d",
+  "response_path": "raw/osco-hall-plan-image/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:06:16.919740+00:00"
+}

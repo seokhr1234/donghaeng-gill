@@ -1,0 +1,23 @@
+{
+  "id": "osco-fire-post",
+  "url": "https://osco.or.kr/article/?uid=891&mod=document&pageid=1",
+  "timeout": 45,
+  "requested_at_utc": "2026-11-16T15:02:15.465604+00:00",
+  "requested_at_kst": "2026-11-17T00:02:15.465609+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://osco.or.kr/article/?uid=891&mod=document&pageid=1",
+  "response_headers": {
+    "date": "Mon, 16 Nov 2026 15:02:16 GMT",
+    "content-type": "text/html; charset=UTF-8",
+    "server": "envoy"
+  },
+  "bytes": 1271019,
+  "sha256": "b9281d31df2556ee4ca84adf6fe1104a41da05ad71058fc69ca4b5b04f16484f",
+  "response_path": "raw/osco-fire-post/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:02:17.133962+00:00"
+}

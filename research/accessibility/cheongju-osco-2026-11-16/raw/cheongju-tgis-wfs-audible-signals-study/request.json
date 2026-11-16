@@ -1,0 +1,31 @@
+{
+  "id": "cheongju-tgis-wfs-audible-signals-study",
+  "url": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_A119_P&outputFormat=application%2Fjson&bbox=225030.58970356168%2C443550.1905484578%2C234900.12847381394%2C452462.21576077957%2CEPSG%3A5186&maxFeatures=5000",
+  "timeout": 80,
+  "layer": "GT_A119_P",
+  "declared_source_crs": "EPSG:5186",
+  "research_bbox_lonlat": [
+    127.28,
+    36.59,
+    127.39,
+    36.67
+  ],
+  "requested_at_utc": "2026-11-16T15:43:10.795614+00:00",
+  "requested_at_kst": "2026-11-17T00:43:10.795619+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_A119_P&outputFormat=application%2Fjson&bbox=225030.58970356168%2C443550.1905484578%2C234900.12847381394%2C452462.21576077957%2CEPSG%3A5186&maxFeatures=5000",
+  "response_headers": {
+    "date": "Mon, 16 Nov 2026 15:43:13 GMT",
+    "content-type": "application/json;charset=UTF-8",
+    "server": "envoy"
+  },
+  "bytes": 266861,
+  "sha256": "e284c0e66df61d338e5615965eca2ae4309c9d55d73a865a81cc09e6b1251b26",
+  "response_path": "raw/cheongju-tgis-wfs-audible-signals-study/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:43:13.770540+00:00"
+}

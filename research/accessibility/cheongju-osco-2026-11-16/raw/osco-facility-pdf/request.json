@@ -1,0 +1,26 @@
+{
+  "id": "osco-facility-pdf",
+  "url": "https://d2u77gqg41v474.cloudfront.net/app/uploads/2026/04/01094035/%EC%8B%9C%EC%84%A4%EA%B0%80%EC%9D%B4%EB%93%9C_%EC%B2%AD%EC%A3%BC%EC%98%A4%EC%8A%A4%EC%BD%94.pdf",
+  "timeout": 45,
+  "requested_at_utc": "2026-11-16T15:02:14.244259+00:00",
+  "requested_at_kst": "2026-11-17T00:02:14.244287+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://d2u77gqg41v474.cloudfront.net/app/uploads/2026/04/01094035/%EC%8B%9C%EC%84%A4%EA%B0%80%EC%9D%B4%EB%93%9C_%EC%B2%AD%EC%A3%BC%EC%98%A4%EC%8A%A4%EC%BD%94.pdf",
+  "response_headers": {
+    "content-type": "application/pdf",
+    "content-length": "34354937",
+    "date": "Mon, 16 Nov 2026 15:02:14 GMT",
+    "server": "envoy",
+    "last-modified": "Wed, 01 Apr 2026 00:40:36 GMT",
+    "etag": "\"f4f11b9a28bb9a04275c4ac118e7c0eb\""
+  },
+  "bytes": 34354937,
+  "sha256": "fc4c0285dda05ff954b09b2f1cbe39e624684af093e70cd82c020e5b0bc4b6ea",
+  "response_path": "raw/osco-facility-pdf/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:02:17.498822+00:00"
+}

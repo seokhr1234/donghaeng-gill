@@ -1,0 +1,25 @@
+{
+  "id": "secondary-heat-csv",
+  "url": "https://python-choigosu.com/data/shelter-2026.csv",
+  "timeout": 80,
+  "requested_at_utc": "2026-11-16T15:09:22.807423+00:00",
+  "requested_at_kst": "2026-11-17T00:09:22.807429+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://python-choigosu.com/data/shelter-2026.csv",
+  "response_headers": {
+    "date": "Mon, 16 Nov 2026 15:09:23 GMT",
+    "content-type": "application/octet-stream",
+    "content-length": "9241558",
+    "last-modified": "Mon, 16 Nov 2026 10:34:40 GMT",
+    "server": "envoy"
+  },
+  "bytes": 9241558,
+  "sha256": "3c1e97daea19d617687c28785e0a6180b450f5b0e80f8bfa0e9e2850d7951799",
+  "response_path": "raw/secondary-heat-csv/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:09:23.344358+00:00"
+}

@@ -1,0 +1,24 @@
+{
+  "id": "cheongju-bis-route",
+  "url": "https://dcbis.go.kr/search/route.do",
+  "timeout": 50,
+  "requested_at_utc": "2026-11-16T15:10:49.341371+00:00",
+  "requested_at_kst": "2026-11-17T00:10:49.341376+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 503,
+  "final_url": "https://dcbis.go.kr/search/route.do",
+  "response_headers": {
+    "content-length": "91",
+    "content-type": "text/plain",
+    "date": "Mon, 16 Nov 2026 15:10:55 GMT",
+    "server": "envoy"
+  },
+  "bytes": 91,
+  "sha256": "2f85832e31ca57711e6107af6b142363351ae516adb71c69afc643fac26be7f6",
+  "response_path": "raw/cheongju-bis-route/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:10:55.450045+00:00"
+}

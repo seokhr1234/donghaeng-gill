@@ -1,0 +1,23 @@
+{
+  "id": "copernicus-stac-root",
+  "url": "https://copernicus-dem-30m-stac.s3.amazonaws.com/catalog.json",
+  "timeout": 40,
+  "requested_at_utc": "2026-11-16T15:20:48.181883+00:00",
+  "requested_at_kst": "2026-11-17T00:20:48.181888+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 404,
+  "final_url": "https://copernicus-dem-30m-stac.s3.amazonaws.com/catalog.json",
+  "response_headers": {
+    "date": "Mon, 16 Nov 2026 15:20:48 GMT",
+    "content-type": "application/xml",
+    "server": "envoy"
+  },
+  "bytes": 303,
+  "sha256": "e69652a69d62b5272d7ee52d39b9e60b3c1209fbfeac3febe22a9d38ae01a3fa",
+  "response_path": "raw/copernicus-stac-root/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:20:48.824652+00:00"
+}

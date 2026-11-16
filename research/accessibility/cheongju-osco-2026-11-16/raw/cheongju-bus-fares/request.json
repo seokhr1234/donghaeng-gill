@@ -1,0 +1,23 @@
+{
+  "id": "cheongju-bus-fares",
+  "url": "https://www.cjbus.co.kr/home/sub.php?menukey=3209",
+  "timeout": 50,
+  "requested_at_utc": "2026-11-16T15:10:54.463506+00:00",
+  "requested_at_kst": "2026-11-17T00:10:54.463512+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://www.cjbus.co.kr/home/sub.php?menukey=3209",
+  "response_headers": {
+    "date": "Mon, 16 Nov 2026 15:10:55 GMT",
+    "server": "envoy",
+    "content-type": "text/html; charset=utf-8"
+  },
+  "bytes": 24479,
+  "sha256": "45a143b957ed9bdda10f490710e902b07dd2117af92eb2addd01de64a8bb5648",
+  "response_path": "raw/cheongju-bus-fares/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:10:55.981127+00:00"
+}

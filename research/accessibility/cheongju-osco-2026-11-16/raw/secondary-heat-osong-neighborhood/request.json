@@ -1,0 +1,23 @@
+{
+  "id": "secondary-heat-osong-neighborhood",
+  "url": "https://statnorth.kr/heat-shelters/%EC%B6%A9%EB%B6%81/%EC%B2%AD%EC%A3%BC%EC%8B%9C-%ED%9D%A5%EB%8D%95%EA%B5%AC/%EC%98%A4%EC%86%A1%EC%9D%8D",
+  "timeout": 40,
+  "requested_at_utc": "2026-11-16T15:24:14.544221+00:00",
+  "requested_at_kst": "2026-11-17T00:24:14.544231+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://statnorth.kr/heat-shelters/%EC%B6%A9%EB%B6%81/%EC%B2%AD%EC%A3%BC%EC%8B%9C-%ED%9D%A5%EB%8D%95%EA%B5%AC/%EC%98%A4%EC%86%A1%EC%9D%8D",
+  "response_headers": {
+    "date": "Mon, 16 Nov 2026 15:24:15 GMT",
+    "content-type": "text/html; charset=utf-8",
+    "server": "envoy"
+  },
+  "bytes": 246932,
+  "sha256": "56fb27983ffafdd54e1f9a859dac9cddf6469e6a1cb6b644d2cef186a4fd39e0",
+  "response_path": "raw/secondary-heat-osong-neighborhood/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:24:15.491857+00:00"
+}

@@ -1,0 +1,23 @@
+{
+  "id": "secondary-toilets-heungdeok-csv",
+  "url": "https://statnorth.kr/api/places/csv?c=toilets&sgg=43113",
+  "timeout": 60,
+  "requested_at_utc": "2026-11-16T15:15:18.976805+00:00",
+  "requested_at_kst": "2026-11-17T00:15:18.976815+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 403,
+  "final_url": "https://statnorth.kr/api/places/csv?c=toilets&sgg=43113",
+  "response_headers": {
+    "date": "Mon, 16 Nov 2026 15:15:19 GMT",
+    "content-type": "text/plain; charset=utf-8",
+    "server": "envoy"
+  },
+  "bytes": 9,
+  "sha256": "78342a0905a72ce44da083dcb5d23b8ea0c16992ba2a82eece97e033d76ba3d3",
+  "response_path": "raw/secondary-toilets-heungdeok-csv/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:15:19.849740+00:00"
+}

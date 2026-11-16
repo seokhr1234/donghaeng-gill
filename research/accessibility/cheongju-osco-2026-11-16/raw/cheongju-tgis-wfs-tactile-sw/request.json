@@ -1,0 +1,31 @@
+{
+  "id": "cheongju-tgis-wfs-tactile-sw",
+  "url": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_C094_A&outputFormat=application%2Fjson&bbox=225043.53852326877%2C443550.1905484578%2C229978.29775305127%2C448004.77223244973%2CEPSG%3A5186&maxFeatures=2000",
+  "timeout": 40,
+  "layer": "GT_C094_A",
+  "research_bbox_lonlat": [
+    127.28,
+    36.59,
+    127.335,
+    36.63
+  ],
+  "retry_reason": "Broad query failed with an invalid source LinearRing; smaller public map extents test whether unaffected geometry is retrievable",
+  "requested_at_utc": "2026-11-16T15:47:16.056926+00:00",
+  "requested_at_kst": "2026-11-17T00:47:16.056936+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_C094_A&outputFormat=application%2Fjson&bbox=225043.53852326877%2C443550.1905484578%2C229978.29775305127%2C448004.77223244973%2CEPSG%3A5186&maxFeatures=2000",
+  "response_headers": {
+    "date": "Mon, 16 Nov 2026 15:47:17 GMT",
+    "content-type": "application/json;charset=UTF-8",
+    "server": "envoy"
+  },
+  "bytes": 700188,
+  "sha256": "7a1119818d44393f551655baa0e555af2cb3654f0ec6999caeacf906c85dce70",
+  "response_path": "raw/cheongju-tgis-wfs-tactile-sw/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:47:18.124473+00:00"
+}

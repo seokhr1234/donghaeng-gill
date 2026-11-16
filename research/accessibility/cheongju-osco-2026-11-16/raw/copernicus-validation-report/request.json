@@ -1,0 +1,24 @@
+{
+  "id": "copernicus-validation-report",
+  "url": "https://spacedata.copernicus.eu/documents/20126/0/GEO1988-CopernicusDEM-RP-001_ValidationReport_V1.0.pdf/edc88601-897e-82df-5604-b6b60cbecb57?t=1586527010843",
+  "timeout": 60,
+  "requested_at_utc": "2026-11-16T15:15:19.850259+00:00",
+  "requested_at_kst": "2026-11-17T00:15:19.850291+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 503,
+  "final_url": "https://spacedata.copernicus.eu/documents/20126/0/GEO1988-CopernicusDEM-RP-001_ValidationReport_V1.0.pdf/edc88601-897e-82df-5604-b6b60cbecb57?t=1586527010843",
+  "response_headers": {
+    "content-length": "91",
+    "content-type": "text/plain",
+    "date": "Mon, 16 Nov 2026 15:15:24 GMT",
+    "server": "envoy"
+  },
+  "bytes": 91,
+  "sha256": "2f85832e31ca57711e6107af6b142363351ae516adb71c69afc643fac26be7f6",
+  "response_path": "raw/copernicus-validation-report/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:15:24.925262+00:00"
+}

@@ -1,0 +1,140 @@
+{
+  "requests": 12,
+  "max_split_depth": 3,
+  "initial_failed_bbox_lonlat": [
+    127.335,
+    36.63,
+    127.39,
+    36.67
+  ],
+  "leaf_extents": [
+    {
+      "source_id": "cheongju-tgis-wfs-tactile-ne-d1-0",
+      "bbox_lonlat": [
+        127.335,
+        36.63,
+        127.3625,
+        36.650000000000006
+      ],
+      "query_complete": true,
+      "http_status": 200
+    },
+    {
+      "source_id": "cheongju-tgis-wfs-tactile-ne-d1-1",
+      "bbox_lonlat": [
+        127.3625,
+        36.63,
+        127.39,
+        36.650000000000006
+      ],
+      "query_complete": true,
+      "http_status": 200
+    },
+    {
+      "source_id": "cheongju-tgis-wfs-tactile-ne-d1-2",
+      "bbox_lonlat": [
+        127.335,
+        36.650000000000006,
+        127.3625,
+        36.67
+      ],
+      "query_complete": true,
+      "http_status": 200
+    },
+    {
+      "source_id": "cheongju-tgis-wfs-tactile-ne-d1-3-d2-0",
+      "bbox_lonlat": [
+        127.3625,
+        36.650000000000006,
+        127.37625,
+        36.660000000000004
+      ],
+      "query_complete": true,
+      "http_status": 200
+    },
+    {
+      "source_id": "cheongju-tgis-wfs-tactile-ne-d1-3-d2-2",
+      "bbox_lonlat": [
+        127.3625,
+        36.660000000000004,
+        127.37625,
+        36.67
+      ],
+      "query_complete": true,
+      "http_status": 200
+    },
+    {
+      "source_id": "cheongju-tgis-wfs-tactile-ne-d1-3-d2-3",
+      "bbox_lonlat": [
+        127.37625,
+        36.660000000000004,
+        127.39,
+        36.67
+      ],
+      "query_complete": true,
+      "http_status": 200
+    },
+    {
+      "source_id": "cheongju-tgis-wfs-tactile-ne-d1-3-d2-1-d3-0",
+      "bbox_lonlat": [
+        127.37625,
+        36.650000000000006,
+        127.383125,
+        36.655
+      ],
+      "query_complete": true,
+      "http_status": 200
+    },
+    {
+      "source_id": "cheongju-tgis-wfs-tactile-ne-d1-3-d2-1-d3-1",
+      "bbox_lonlat": [
+        127.383125,
+        36.650000000000006,
+        127.39,
+        36.655
+      ],
+      "query_complete": true,
+      "http_status": 200
+    },
+    {
+      "source_id": "cheongju-tgis-wfs-tactile-ne-d1-3-d2-1-d3-2",
+      "bbox_lonlat": [
+        127.37625,
+        36.655,
+        127.383125,
+        36.660000000000004
+      ],
+      "query_complete": true,
+      "http_status": 200
+    },
+    {
+      "source_id": "cheongju-tgis-wfs-tactile-ne-d1-3-d2-1-d3-3",
+      "bbox_lonlat": [
+        127.383125,
+        36.655,
+        127.39,
+        36.660000000000004
+      ],
+      "query_complete": false,
+      "http_status": 400
+    }
+  ],
+  "unretrieved_extent_count": 1,
+  "unretrieved_extents": [
+    {
+      "source_id": "cheongju-tgis-wfs-tactile-ne-d1-3-d2-1-d3-3",
+      "bbox_lonlat": [
+        127.383125,
+        36.655,
+        127.39,
+        36.660000000000004
+      ],
+      "query_complete": false,
+      "http_status": 400
+    }
+  ],
+  "source_geometry_repaired": false,
+  "unknown_areas_treated_as_zero": false,
+  "field_verified": false,
+  "routing_eligible": false
+}

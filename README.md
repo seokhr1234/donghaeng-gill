@@ -4,6 +4,8 @@
 
 전체 변경은 [수정이력.md](수정이력.md), 작업 규칙은 [AGENTS.md](AGENTS.md), 이번 전환의 근거와 검사 범위는 [메인 전환 기록](donghaeng-nav/docs/main-navigation-promotion.md)을 참고하세요.
 
+2026-11-16 착수: [청주오스코 주변 사전 자료조사](research/accessibility/cheongju-osco-2026-11-16/README.md). 사용자 장소 변경에 따라 자료조사만 진행했습니다. 공식 BF 인증·시설/주차 도면, 청주시 보행 안전시설 등록 도형19종, 최신 OSM 지역 원본·버스 관계, 공개 표고를 확보·대조했습니다. 원본 기준일/수집일/좌표계/현장 미검증과 결측·상충을 구분하며 앱 반영·Vercel·APK 후속 작업은 보류합니다.
+
 운영 주소: **[donghaeng-gill.vercel.app](https://donghaeng-gill.vercel.app)**. 2026-11-14 최신 feature 커밋을 `main`에 반영해 운영 배포를 완료했습니다. 서울 기본 화면·확장 화면·서울 도보 API·모바일·실제 OSM 배경 로딩을 공개 주소에서 확인했습니다. [배포·브랜치 구조 대조·검사 기록](donghaeng-nav/docs/production-deployment-2026-11-14.md). 이전 11월 13일의 운영 주소 404 기록은 당시 상태입니다.
 
 2026-11-14 후속: [대중교통 우선 실행 계획](donghaeng-nav/docs/transit-next-plan-2026-11-14.md). 메인 버스·지하철 선택과 참고 후보/노선/승하차 표시를 구현·배포했습니다. 실제 ODsay 검색은 업체 오류로 실패해 계정 설정 확인을 남겼으며 [구현·운영 검사·남은 작업](donghaeng-nav/docs/transit-main-publish-2026-11-14.md)에 구분했습니다. UI 겹침과 버튼 디자인의 전체 최적화는 마지막 T10 단계입니다.

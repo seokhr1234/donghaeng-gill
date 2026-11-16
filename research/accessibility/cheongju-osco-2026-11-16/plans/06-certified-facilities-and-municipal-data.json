@@ -1,0 +1,57 @@
+[
+  {
+    "id": "bf-search-osco",
+    "url": "https://www.koddi.or.kr/bf/state/resultDataList.do?search=schTp1&keyword=%EC%98%A4%EC%8A%A4%EC%BD%94&pageIndex=1",
+    "timeout": 45
+  },
+  {
+    "id": "bf-search-cheongju-exhibition",
+    "url": "https://www.koddi.or.kr/bf/state/resultDataList.do?search=schTp1&keyword=%EC%B2%AD%EC%A3%BC%EC%A0%84%EC%8B%9C%EA%B4%80&pageIndex=1",
+    "timeout": 45
+  },
+  {
+    "id": "bf-search-osong",
+    "url": "https://www.koddi.or.kr/bf/state/resultDataList.do?search=schTp1&keyword=%EC%98%A4%EC%86%A1&pageIndex=1",
+    "timeout": 45
+  },
+  {
+    "id": "cbdc-construction-hwpx",
+    "url": "https://www.cbdc.co.kr/zboard/printFileDown.do?atchFileId=FILE_000100000021645&fileSn=0&lmCode=BBSMSTR_000000000193",
+    "timeout": 50
+  },
+  {
+    "id": "cheongju-tgis-road-safety",
+    "url": "https://www.cjtgis.go.kr/statistics/selectRodInfo.do",
+    "timeout": 50
+  },
+  {
+    "id": "cheongju-tgis-traffic-safety",
+    "url": "https://www.cjtgis.go.kr/statistics/selectTrafficInfo.do",
+    "timeout": 50
+  },
+  {
+    "id": "cheongju-tgis-special",
+    "url": "https://www.cjtgis.go.kr/statistics/selectSpecialInfo.do",
+    "timeout": 50
+  },
+  {
+    "id": "cheongju-bis-route",
+    "url": "https://dcbis.go.kr/search/route.do",
+    "timeout": 50
+  },
+  {
+    "id": "cheongju-bis-stops",
+    "url": "https://dcbis.go.kr/search/busStop.do",
+    "timeout": 50
+  },
+  {
+    "id": "cheongju-bus-fares",
+    "url": "https://www.cjbus.co.kr/home/sub.php?menukey=3209",
+    "timeout": 50
+  },
+  {
+    "id": "cheongju-bus-notices",
+    "url": "https://www.cjbus.co.kr/home/sub.php?menukey=3301",
+    "timeout": 50
+  }
+]

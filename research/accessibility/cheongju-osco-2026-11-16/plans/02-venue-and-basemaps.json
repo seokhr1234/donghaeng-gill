@@ -1,0 +1,120 @@
+[
+  {
+    "id": "osco-floor",
+    "url": "https://osco.or.kr/facilities_guide/floor/",
+    "timeout": 45
+  },
+  {
+    "id": "osco-halls",
+    "url": "https://osco.or.kr/facilities_guide/contents/",
+    "timeout": 45
+  },
+  {
+    "id": "osco-parking",
+    "url": "https://osco.or.kr/facilities_guide/parking/",
+    "timeout": 45
+  },
+  {
+    "id": "osco-facility-pdf",
+    "url": "https://d2u77gqg41v474.cloudfront.net/app/uploads/2026/04/01094035/%EC%8B%9C%EC%84%A4%EA%B0%80%EC%9D%B4%EB%93%9C_%EC%B2%AD%EC%A3%BC%EC%98%A4%EC%8A%A4%EC%BD%94.pdf",
+    "timeout": 45
+  },
+  {
+    "id": "osco-traffic-map",
+    "url": "https://d2u77gqg41v474.cloudfront.net/app/uploads/2024/10/11163138/osco_map1400x830.png",
+    "timeout": 45
+  },
+  {
+    "id": "osco-layout-post",
+    "url": "https://osco.or.kr/article/?uid=892&mod=document&pageid=1",
+    "timeout": 45
+  },
+  {
+    "id": "osco-fire-post",
+    "url": "https://osco.or.kr/article/?uid=891&mod=document&pageid=1",
+    "timeout": 45
+  },
+  {
+    "id": "osco-regulations-post",
+    "url": "https://osco.or.kr/article/?uid=135&mod=document&pageid=1",
+    "timeout": 45
+  },
+  {
+    "id": "osco-firefloor-post",
+    "url": "https://osco.or.kr/article/?uid=244&mod=document&pageid=1",
+    "timeout": 45
+  },
+  {
+    "id": "gallery-usage",
+    "url": "https://www.cbartgallery-osco.com/cbart-osco/contents.do?key=849",
+    "timeout": 45
+  },
+  {
+    "id": "gallery-floor",
+    "url": "https://www.cbartgallery-osco.com/cbart-osco/contents.do?key=852",
+    "timeout": 45
+  },
+  {
+    "id": "data-toilets-catalog",
+    "url": "https://www.data.go.kr/catalog/15012892/standard.json",
+    "timeout": 45
+  },
+  {
+    "id": "data-heat-catalog",
+    "url": "https://www.data.go.kr/catalog/15013199/standard.json",
+    "timeout": 45
+  },
+  {
+    "id": "data-bf-catalog",
+    "url": "https://www.data.go.kr/catalog/3051093/fileData.json",
+    "timeout": 45
+  },
+  {
+    "id": "ngii-topo-catalog",
+    "url": "https://www.data.go.kr/catalog/15059719/fileData.json",
+    "timeout": 45
+  },
+  {
+    "id": "ngii-dem-catalog",
+    "url": "https://www.data.go.kr/catalog/15059920/fileData.json",
+    "timeout": 45
+  },
+  {
+    "id": "ngii-map-history-catalog",
+    "url": "https://www.data.go.kr/catalog/15148179/fileData.json",
+    "timeout": 45
+  },
+  {
+    "id": "geofabrik-korea-261115-md5",
+    "url": "https://download.geofabrik.de/asia/south-korea-261115.osm.pbf.md5",
+    "timeout": 45
+  },
+  {
+    "id": "geofabrik-korea-261115-pbf",
+    "url": "https://download.geofabrik.de/asia/south-korea-261115.osm.pbf",
+    "timeout": 180
+  },
+  {
+    "id": "geofabrik-korea-state",
+    "url": "https://download.geofabrik.de/asia/south-korea-updates/state.txt",
+    "timeout": 45
+  },
+  {
+    "id": "localdata-toilet-file",
+    "url": "https://file.localdata.go.kr/file/public_restroom_info/info/fulldata.zip",
+    "timeout": 45
+  },
+  {
+    "id": "copernicus-n36e127",
+    "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N36_00_E127_00_DEM/Copernicus_DSM_COG_10_N36_00_E127_00_DEM.tif",
+    "timeout": 180
+  },
+  {
+    "id": "overpass-osco-discovery",
+    "url": "https://overpass.kumi.systems/api/interpreter",
+    "form": {
+      "data": "[out:json][timeout:40];nwr[\"name\"~\"오스코|OSCO|오송역\",i](36.59,127.28,36.67,127.39);out center meta;"
+    },
+    "timeout": 60
+  }
+]

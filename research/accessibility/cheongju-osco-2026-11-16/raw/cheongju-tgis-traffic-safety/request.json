@@ -1,0 +1,23 @@
+{
+  "id": "cheongju-tgis-traffic-safety",
+  "url": "https://www.cjtgis.go.kr/statistics/selectTrafficInfo.do",
+  "timeout": 50,
+  "requested_at_utc": "2026-11-16T15:10:48.491645+00:00",
+  "requested_at_kst": "2026-11-17T00:10:48.491648+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://www.cjtgis.go.kr/statistics/selectTrafficInfo.do",
+  "response_headers": {
+    "date": "Mon, 16 Nov 2026 15:10:49 GMT",
+    "content-type": "text/html; charset=UTF-8",
+    "server": "envoy"
+  },
+  "bytes": 8330,
+  "sha256": "b90b9cc3e50d55476e8c8f3bf305187ec9f2ba1e89717c38b4d7df5adc2905b1",
+  "response_path": "raw/cheongju-tgis-traffic-safety/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:10:49.341082+00:00"
+}

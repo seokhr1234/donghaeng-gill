@@ -1,0 +1,26 @@
+{
+  "id": "osco-layout-pdf",
+  "url": "https://d2u77gqg41v474.cloudfront.net/kboard_attached/5/202604/69eaab899e6543908448.pdf",
+  "timeout": 80,
+  "requested_at_utc": "2026-11-16T15:06:15.018441+00:00",
+  "requested_at_kst": "2026-11-17T00:06:15.018446+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://d2u77gqg41v474.cloudfront.net/kboard_attached/5/202604/69eaab899e6543908448.pdf",
+  "response_headers": {
+    "content-type": "application/pdf",
+    "content-length": "111510",
+    "date": "Mon, 16 Nov 2026 15:06:15 GMT",
+    "server": "envoy",
+    "last-modified": "Thu, 23 Apr 2026 23:30:21 GMT",
+    "etag": "\"7af2df422883716804c14a9c0eed844b\""
+  },
+  "bytes": 111510,
+  "sha256": "4ca8f02b5dbe27d8bd8f33f876548639e057dff471177740d283fab9a8ce35cb",
+  "response_path": "raw/osco-layout-pdf/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:06:15.990583+00:00"
+}

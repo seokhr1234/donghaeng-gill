@@ -1,0 +1,92 @@
+[
+  {
+    "id": "localdata-toilet-intro",
+    "url": "https://file.localdata.go.kr/file/public_restroom_info/info",
+    "timeout": 35
+  },
+  {
+    "id": "localdata-toilet-csv",
+    "url": "https://file.localdata.go.kr/file/download/public_restroom_info/info",
+    "timeout": 60
+  },
+  {
+    "id": "safetydata-home",
+    "url": "https://www.safetydata.go.kr/",
+    "timeout": 35
+  },
+  {
+    "id": "safekorea-heat-ui",
+    "url": "https://www.safekorea.go.kr/idsiSFK/neo/sfk/cs/sfc/htw/htweaiList.html",
+    "timeout": 35
+  },
+  {
+    "id": "cheongju-bis",
+    "url": "https://www.dcbis.go.kr/",
+    "timeout": 35
+  },
+  {
+    "id": "cheongju-bis-mobile",
+    "url": "https://m.dcbis.go.kr/",
+    "timeout": 35
+  },
+  {
+    "id": "cheongju-bus-committee",
+    "url": "https://www.cjbus.co.kr/home/main.php",
+    "timeout": 35
+  },
+  {
+    "id": "cheongju-bus-system",
+    "url": "https://www.cjbus.co.kr/home/sub.php?menukey=3201",
+    "timeout": 35
+  },
+  {
+    "id": "cheongju-tdata",
+    "url": "https://tdata.cheongju.go.kr/",
+    "timeout": 35
+  },
+  {
+    "id": "cheongju-gis-main",
+    "url": "https://map.cheongju.go.kr/main.do",
+    "timeout": 35
+  },
+  {
+    "id": "cheongju-tgis",
+    "url": "https://www.cjtgis.go.kr/index.do",
+    "timeout": 35
+  },
+  {
+    "id": "data-bus-stops",
+    "url": "https://www.data.go.kr/data/15067528/fileData.do",
+    "timeout": 35
+  },
+  {
+    "id": "data-bus-stops-catalog",
+    "url": "https://www.data.go.kr/catalog/15067528/fileData.json",
+    "timeout": 35
+  },
+  {
+    "id": "ngii-site",
+    "url": "https://map.ngii.go.kr/ms/map/NlipMap.do",
+    "timeout": 35
+  },
+  {
+    "id": "ngii-mapnotice-catalog",
+    "url": "https://www.data.go.kr/catalog/15067684/fileData.json",
+    "timeout": 35
+  },
+  {
+    "id": "copernicus-aws-registry",
+    "url": "https://registry.opendata.aws/copernicus-dem/",
+    "timeout": 35
+  },
+  {
+    "id": "safemap-shelter-doc",
+    "url": "https://www.safemap.go.kr/opna/data/dataViewRenew.do?objtId=115",
+    "timeout": 35
+  },
+  {
+    "id": "safemap-toilet-doc",
+    "url": "https://www.safemap.go.kr/opna/data/dataViewRenew.do?objtId=227",
+    "timeout": 35
+  }
+]

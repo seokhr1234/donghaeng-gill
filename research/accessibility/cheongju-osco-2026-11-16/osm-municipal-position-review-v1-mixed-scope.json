@@ -1,0 +1,22 @@
+{
+  "osm_crossing_nodes_compared": 871,
+  "municipal_crossing_polygons": 1092,
+  "nearest_map_distance_counts": {
+    "5": 9,
+    "10": 10,
+    "25": 12,
+    "50": 12
+  },
+  "multiple_polygon_candidates_within10m": 4,
+  "identity_automatically_merged": 0,
+  "coordinate_changes": 0,
+  "new_topology_connections": 0,
+  "field_verified": false,
+  "routing_eligible": false,
+  "positional_accuracy_established": false,
+  "notes": [
+    "Distance compares registered source positions, not real-world surveying or walk distance",
+    "Different feature definitions, timestamps and coverage gaps prevent declaring either source complete or correct",
+    "Review candidates stay in private municipal-derived output; no runtime linkage"
+  ]
+}

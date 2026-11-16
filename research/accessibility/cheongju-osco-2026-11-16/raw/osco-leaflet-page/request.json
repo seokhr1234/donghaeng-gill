@@ -1,0 +1,23 @@
+{
+  "id": "osco-leaflet-page",
+  "url": "https://osco.or.kr/?kboard_id=2&mod=document&uid=10",
+  "timeout": 40,
+  "requested_at_utc": "2026-11-16T14:59:54.311668+00:00",
+  "requested_at_kst": "2026-11-16T23:59:54.311674+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://osco.or.kr/?kboard_id=2&mod=document&uid=10",
+  "response_headers": {
+    "date": "Mon, 16 Nov 2026 14:59:55 GMT",
+    "content-type": "text/html; charset=UTF-8",
+    "server": "envoy"
+  },
+  "bytes": 1327686,
+  "sha256": "68264955ed087152a7dd55b5a1f1569af2cffdc714067cfce7edf6b0394f1eda",
+  "response_path": "raw/osco-leaflet-page/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T14:59:55.807769+00:00"
+}

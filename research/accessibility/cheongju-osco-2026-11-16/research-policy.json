@@ -1,0 +1,18 @@
+{
+  "schema": "osco-research-policy-v1",
+  "research_only": true,
+  "deployment_requested_then_deferred_by_user": true,
+  "app_changes_authorized_now": false,
+  "collected_originals_preserved": true,
+  "new_measured_slopes_promoted": 0,
+  "field_verification_performed": false,
+  "naver_api_sdk_search_tiles_used": false,
+  "paid_provider_calls": 0,
+  "interpretation_rules": {
+    "OSM registration date is a snapshot, not field verification": true,
+    "PDF publication/creation date is distinct from survey date": true,
+    "official certificate applies to the registered building, not station-to-building corridor": true,
+    "failed download is not zero records": true,
+    "secondary mirrors withheld from runtime": true
+  }
+}

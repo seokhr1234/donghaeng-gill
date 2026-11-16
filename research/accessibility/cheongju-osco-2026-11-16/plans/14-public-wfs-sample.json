@@ -1,0 +1,7 @@
+[
+  {
+    "id": "cheongju-tgis-wfs-crossings-core",
+    "url": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_A004_A&outputFormat=application%2Fjson&bbox=228170.34892551968%2C445779.2976607897%2C231312.53086467873%2C449119.2714837272%2CEPSG%3A5186&maxFeatures=1000",
+    "timeout": 60
+  }
+]

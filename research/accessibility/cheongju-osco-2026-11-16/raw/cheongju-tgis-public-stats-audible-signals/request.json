@@ -1,0 +1,23 @@
+{
+  "id": "cheongju-tgis-public-stats-audible-signals",
+  "url": "https://www.cjtgis.go.kr/statistics/totalStatisticsPopE.do?facilityId=GT_A119_P",
+  "timeout": 40,
+  "requested_at_utc": "2026-11-16T15:30:01.182869+00:00",
+  "requested_at_kst": "2026-11-17T00:30:01.182875+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://www.cjtgis.go.kr/statistics/totalStatisticsPopE.do?facilityId=GT_A119_P",
+  "response_headers": {
+    "date": "Mon, 16 Nov 2026 15:30:02 GMT",
+    "content-type": "text/html; charset=UTF-8",
+    "server": "envoy"
+  },
+  "bytes": 2925,
+  "sha256": "2c594e4bacbc27b76c48a1afa8bc95db570e47ce13de5dd36ef3250ac2265374",
+  "response_path": "raw/cheongju-tgis-public-stats-audible-signals/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:30:02.085445+00:00"
+}

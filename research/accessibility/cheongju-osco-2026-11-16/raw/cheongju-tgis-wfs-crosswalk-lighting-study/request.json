@@ -1,0 +1,30 @@
+{
+  "id": "cheongju-tgis-wfs-crosswalk-lighting-study",
+  "url": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_C130_P&outputFormat=application%2Fjson&bbox=225030.58970356168%2C443550.1905484578%2C234900.12847381394%2C452462.21576077957%2CEPSG%3A5186&maxFeatures=5000",
+  "timeout": 80,
+  "layer": "GT_C130_P",
+  "declared_source_crs": "EPSG:5186",
+  "research_bbox_lonlat": [
+    127.28,
+    36.59,
+    127.39,
+    36.67
+  ],
+  "requested_at_utc": "2026-11-16T15:43:14.387739+00:00",
+  "requested_at_kst": "2026-11-17T00:43:14.387744+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_C130_P&outputFormat=application%2Fjson&bbox=225030.58970356168%2C443550.1905484578%2C234900.12847381394%2C452462.21576077957%2CEPSG%3A5186&maxFeatures=5000",
+  "response_headers": {
+    "date": "Mon, 16 Nov 2026 15:43:14 GMT",
+    "content-type": "application/json;charset=UTF-8",
+    "server": "envoy"
+  },
+  "transport_result": "request_failed",
+  "error_type": "TimeoutError",
+  "error": "The read operation timed out",
+  "completed_at_utc": "2026-11-16T15:44:34.825784+00:00"
+}

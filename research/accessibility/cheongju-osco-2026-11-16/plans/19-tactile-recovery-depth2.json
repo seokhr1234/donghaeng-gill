@@ -1,0 +1,54 @@
+[
+  {
+    "id": "cheongju-tgis-wfs-tactile-ne-d1-3-d2-0",
+    "url": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_C094_A&outputFormat=application%2Fjson&bbox=232409.89195600292%2C450233.1360458666%2C233643.58826128874%2C451347.5863881987%2CEPSG%3A5186&maxFeatures=2000",
+    "layer": "GT_C094_A",
+    "research_bbox_lonlat": [
+      127.3625,
+      36.650000000000006,
+      127.37625,
+      36.660000000000004
+    ],
+    "timeout": 45,
+    "retry_reason": "Smaller normal public map viewport after invalid source LinearRing; source geometry is never repaired"
+  },
+  {
+    "id": "cheongju-tgis-wfs-tactile-ne-d1-3-d2-1",
+    "url": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_C094_A&outputFormat=application%2Fjson&bbox=233639.23771296663%2C450237.86757032346%2C234873.09357680223%2C451352.4945676677%2CEPSG%3A5186&maxFeatures=2000",
+    "layer": "GT_C094_A",
+    "research_bbox_lonlat": [
+      127.37625,
+      36.650000000000006,
+      127.39,
+      36.660000000000004
+    ],
+    "timeout": 45,
+    "retry_reason": "Smaller normal public map viewport after invalid source LinearRing; source geometry is never repaired"
+  },
+  {
+    "id": "cheongju-tgis-wfs-tactile-ne-d1-3-d2-2",
+    "url": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_C094_A&outputFormat=application%2Fjson&bbox=232405.6994140171%2C451342.85436590126%2C233639.23771296663%2C452457.30706553697%2CEPSG%3A5186&maxFeatures=2000",
+    "layer": "GT_C094_A",
+    "research_bbox_lonlat": [
+      127.3625,
+      36.660000000000004,
+      127.37625,
+      36.67
+    ],
+    "timeout": 45,
+    "retry_reason": "Smaller normal public map viewport after invalid source LinearRing; source geometry is never repaired"
+  },
+  {
+    "id": "cheongju-tgis-wfs-tactile-ne-d1-3-d2-3",
+    "url": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_C094_A&outputFormat=application%2Fjson&bbox=233634.88613705017%2C451347.5863881987%2C234868.58403137876%2C452462.21576077957%2CEPSG%3A5186&maxFeatures=2000",
+    "layer": "GT_C094_A",
+    "research_bbox_lonlat": [
+      127.37625,
+      36.660000000000004,
+      127.39,
+      36.67
+    ],
+    "timeout": 45,
+    "retry_reason": "Smaller normal public map viewport after invalid source LinearRing; source geometry is never repaired"
+  }
+]

@@ -1,0 +1,23 @@
+{
+  "id": "osco-floor",
+  "url": "https://osco.or.kr/facilities_guide/floor/",
+  "timeout": 45,
+  "requested_at_utc": "2026-11-16T15:02:12.467976+00:00",
+  "requested_at_kst": "2026-11-17T00:02:12.467989+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://osco.or.kr/facilities_guide/floor/",
+  "response_headers": {
+    "date": "Mon, 16 Nov 2026 15:02:13 GMT",
+    "content-type": "text/html; charset=UTF-8",
+    "server": "envoy"
+  },
+  "bytes": 1270296,
+  "sha256": "61258ad09767fdbd469b792d85dc5b424bfc42d21c403f284f6667906bbcb1d8",
+  "response_path": "raw/osco-floor/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:02:14.243828+00:00"
+}

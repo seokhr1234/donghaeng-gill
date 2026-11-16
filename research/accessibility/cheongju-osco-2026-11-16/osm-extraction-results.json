@@ -1,0 +1,733 @@
+{
+  "pass": true,
+  "bbox": [
+    127.28,
+    36.59,
+    127.39,
+    36.67
+  ],
+  "source_metadata": {
+    "source_id": "geofabrik-korea-261115-pbf",
+    "source_url": "https://download.geofabrik.de/asia/south-korea-261115.osm.pbf",
+    "source_as_of": "2026-11-15T21:22:28Z",
+    "collected_at_utc": "2026-11-16T15:04:11.661395+00:00",
+    "source_crs": "EPSG:4326",
+    "vertical_datum": null,
+    "license": "ODbL-1.0",
+    "attribution": "© OpenStreetMap contributors",
+    "field_verified": false,
+    "routing_eligible": false,
+    "active_runtime_replaced": false,
+    "new_slope_values_promoted": 0,
+    "scope": "Ways with at least one source node in research bbox; complete way node references restored; not an administrative completeness claim",
+    "relation_notice": "Relations retained with all raw member IDs; missing remote members explicitly marked, not reconstructed"
+  },
+  "source_pbf_bytes": 291897143,
+  "source_pbf_sha256": "d3dcc6478ee3dfc9898956211009bfc88300ca918edb30e34848fa817e881a89",
+  "source_pbf_md5_verified": true,
+  "bbox_nodes": 89279,
+  "context_nodes": 6635,
+  "ways": 13302,
+  "relations": 165,
+  "incomplete_context_relations": 87,
+  "all_way_node_refs_restored": true,
+  "layers": {
+    "facilities": 2357,
+    "transport": 446,
+    "access_points": 1764,
+    "land_water_green": 4425,
+    "roads": 6644,
+    "buildings": 4690
+  },
+  "highway_counts": {
+    "residential": 1082,
+    "secondary": 96,
+    "tertiary": 350,
+    "motorway": 30,
+    "motorway_link": 29,
+    "primary": 104,
+    "service": 1840,
+    "primary_link": 73,
+    "path": 94,
+    "unclassified": 107,
+    "cycleway": 253,
+    "trunk": 30,
+    "trunk_link": 42,
+    "tertiary_link": 48,
+    "track": 254,
+    "pedestrian": 26,
+    "footway": 1973,
+    "living_street": 69,
+    "steps": 53,
+    "services": 1,
+    "secondary_link": 40,
+    "construction": 47,
+    "elevator": 3
+  },
+  "access_tag_object_counts": {
+    "crossing": 1546,
+    "lit": 81,
+    "barrier": 60,
+    "foot": 251,
+    "tactile_paving": 163,
+    "wheelchair": 52,
+    "access": 93,
+    "opening_hours": 21,
+    "kerb": 35,
+    "ele": 14,
+    "surface": 694,
+    "width": 12,
+    "incline": 46,
+    "smoothness": 7,
+    "sidewalk": 2
+  },
+  "facility_object_counts": {
+    "school": 23,
+    "bank": 27,
+    "library": 20,
+    "supermarket": 45,
+    "museum": 6,
+    "veterinary": 4,
+    "motel": 21,
+    "florist": 9,
+    "post_office": 5,
+    "kindergarten": 10,
+    "fuel": 14,
+    "parking_entrance": 24,
+    "parking": 313,
+    "fast_food": 66,
+    "convenience": 91,
+    "restaurant": 498,
+    "atm": 5,
+    "stationery": 14,
+    "cafe": 141,
+    "optician": 6,
+    "bench": 51,
+    "place_of_worship": 35,
+    "bakery": 25,
+    "hairdresser": 71,
+    "police": 4,
+    "shelter": 30,
+    "beauty": 8,
+    "information": 6,
+    "townhall": 23,
+    "bus_station": 4,
+    "car_repair": 20,
+    "pharmacy": 32,
+    "bicycle": 5,
+    "toilets": 14,
+    "bicycle_rental": 21,
+    "doctors": 29,
+    "dentist": 18,
+    "clothes": 27,
+    "telephone": 2,
+    "university": 9,
+    "playground": 48,
+    "artwork": 3,
+    "bar": 9,
+    "recycling": 1,
+    "charging_station": 2,
+    "bicycle_parking": 7,
+    "internet_cafe": 1,
+    "ice_cream": 8,
+    "cosmetics": 17,
+    "defibrillator": 1,
+    "fire_hydrant": 8,
+    "bicycle_repair_station": 1,
+    "car_wash": 3,
+    "drinking_water": 1,
+    "hardware": 10,
+    "laundry": 11,
+    "taxi": 5,
+    "yes": 13,
+    "social_facility": 14,
+    "community_centre": 15,
+    "motorcycle": 1,
+    "childcare": 1,
+    "guest_house": 2,
+    "theme_park": 1,
+    "variety_store": 2,
+    "confectionery": 8,
+    "electronics": 4,
+    "books": 5,
+    "appliance": 4,
+    "butcher": 9,
+    "art": 1,
+    "outdoor": 2,
+    "park": 138,
+    "tailor": 2,
+    "shoes": 4,
+    "jewelry": 5,
+    "baby_goods": 2,
+    "alternative": 3,
+    "greengrocer": 24,
+    "pub": 38,
+    "games": 1,
+    "locksmith": 2,
+    "prep_school": 10,
+    "dojo": 2,
+    "music_school": 4,
+    "lottery": 1,
+    "electrical": 1,
+    "karaoke_box": 1,
+    "travel_agency": 2,
+    "cinema": 2,
+    "photo": 4,
+    "arts_centre": 5,
+    "alcohol": 1,
+    "agrarian": 3,
+    "bed": 3,
+    "bag": 1,
+    "seafood": 6,
+    "general": 2,
+    "public_bath": 1,
+    "theatre": 2,
+    "garden": 35,
+    "courthouse": 1,
+    "parking_space": 28,
+    "clinic": 1,
+    "driving_school": 1,
+    "fire_station": 4,
+    "studio": 1,
+    "marketplace": 1,
+    "tyres": 4,
+    "car": 1,
+    "fountain": 5,
+    "hospital": 2,
+    "car_parts": 1,
+    "hotel": 1,
+    "e-cigarette": 1,
+    "social_centre": 2,
+    "conference_centre": 1,
+    "ranger_station": 2,
+    "motorcycle_repair": 1
+  },
+  "point_facilities_within_meters": {
+    "1000": {
+      "bus_stop": 2,
+      "parking_entrance": 13,
+      "cafe": 27,
+      "pharmacy": 6,
+      "restaurant": 147,
+      "car_wash": 1,
+      "fast_food": 20,
+      "ice_cream": 2,
+      "bank": 4,
+      "doctors": 2,
+      "dentist": 2,
+      "bar": 6,
+      "library": 3
+    },
+    "2000": {
+      "fuel": 1,
+      "bus_stop": 19,
+      "police": 1,
+      "toilets": 1,
+      "library": 4,
+      "parking": 2,
+      "parking_entrance": 16,
+      "university": 3,
+      "cafe": 44,
+      "restaurant": 168,
+      "bar": 7,
+      "bank": 6,
+      "kindergarten": 2,
+      "doctors": 3,
+      "post_office": 1,
+      "pharmacy": 13,
+      "car_wash": 1,
+      "fast_food": 22,
+      "ice_cream": 2,
+      "dentist": 3,
+      "veterinary": 1
+    },
+    "5000": {
+      "school": 3,
+      "bank": 18,
+      "bus_stop": 101,
+      "library": 9,
+      "veterinary": 3,
+      "post_office": 4,
+      "fuel": 4,
+      "parking": 30,
+      "fast_food": 55,
+      "restaurant": 407,
+      "atm": 3,
+      "cafe": 106,
+      "bench": 8,
+      "parking_entrance": 20,
+      "place_of_worship": 11,
+      "police": 2,
+      "townhall": 5,
+      "bus_station": 2,
+      "toilets": 5,
+      "bicycle_rental": 13,
+      "doctors": 28,
+      "pharmacy": 29,
+      "dentist": 15,
+      "shelter": 9,
+      "university": 3,
+      "telephone": 1,
+      "bar": 9,
+      "recycling": 1,
+      "charging_station": 1,
+      "bicycle_parking": 3,
+      "internet_cafe": 1,
+      "ice_cream": 6,
+      "bicycle_repair_station": 1,
+      "car_wash": 3,
+      "drinking_water": 1,
+      "taxi": 4,
+      "kindergarten": 4,
+      "social_facility": 1,
+      "pub": 32,
+      "karaoke_box": 1,
+      "prep_school": 1,
+      "cinema": 1,
+      "arts_centre": 2,
+      "public_bath": 1,
+      "music_school": 1
+    }
+  },
+  "registered_highway_topology": {
+    "segments": 39088,
+    "nodes": 35660,
+    "components": 32,
+    "largest_components": [
+      [
+        14380620732,
+        34899
+      ],
+      [
+        11038303153,
+        281
+      ],
+      [
+        5261221974,
+        118
+      ],
+      [
+        12895147631,
+        67
+      ],
+      [
+        437043734,
+        40
+      ],
+      [
+        13993862041,
+        39
+      ],
+      [
+        7438778312,
+        35
+      ],
+      [
+        12136958307,
+        26
+      ],
+      [
+        5369583603,
+        21
+      ],
+      [
+        12895147738,
+        20
+      ]
+    ],
+    "pedestrian_eligibility_checked": false,
+    "coordinate_snapping": 0
+  },
+  "named_venue_and_station_objects": [
+    {
+      "type": "node",
+      "id": 10196145723,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "departures_board": "realtime",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "오송역8 (517번)",
+        "name:en": "Osong Station 8 (Bus No. 517)",
+        "name:ko": "오송역8 (517번)",
+        "public_transport": "platform",
+        "ref": "1462",
+        "shelter": "yes",
+        "tactile_paving": "yes"
+      },
+      "coordinates": [
+        127.3267299,
+        36.619526
+      ],
+      "distance_m": 1110.6
+    },
+    {
+      "type": "node",
+      "id": 10196145724,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "departures_board": "realtime",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "오송역7 (502, 525번)",
+        "name:en": "Osong Station 7 (Bus No. 502 and No. 525)",
+        "name:ko": "오송역7 (502, 525번)",
+        "public_transport": "platform",
+        "ref": "1497",
+        "shelter": "yes",
+        "tactile_paving": "yes"
+      },
+      "coordinates": [
+        127.3267847,
+        36.6194726
+      ],
+      "distance_m": 1111.6
+    },
+    {
+      "type": "node",
+      "id": 10196145725,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "departures_board": "realtime",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "오송역6 (조치원, 세종 방면 - 청주 시내버스 전용)",
+        "name:en": "Osong Station 6 (to Jochiwon and Sejong - Cheongju City Bus Exclusive)",
+        "name:ko": "오송역6 (조치원, 세종 방면 - 청주 시내버스 전용)",
+        "public_transport": "platform",
+        "ref": "1458",
+        "shelter": "yes",
+        "tactile_paving": "yes"
+      },
+      "coordinates": [
+        127.3268375,
+        36.619426
+      ],
+      "distance_m": 1112.1
+    },
+    {
+      "type": "node",
+      "id": 10196145726,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "오송역5 (청주 방면)",
+        "name:en": "Osong Station 5 (to Cheongju)",
+        "name:ko": "오송역5 (청주 방면)",
+        "public_transport": "platform",
+        "ref": "1447",
+        "shelter": "yes",
+        "tactile_paving": "yes"
+      },
+      "coordinates": [
+        127.3268985,
+        36.6193807
+      ],
+      "distance_m": 1112.1
+    },
+    {
+      "type": "node",
+      "id": 10196145727,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "오송역3,4 (세종, 대전 방면)",
+        "name:en": "Osong Station 3,4 (to Sejong and Daejeon)",
+        "name:ko": "오송역3,4 (세종, 대전 방면)",
+        "public_transport": "platform",
+        "ref": "13012;013012;1434",
+        "shelter": "yes",
+        "tactile_paving": "yes"
+      },
+      "coordinates": [
+        127.3269533,
+        36.6193313
+      ],
+      "distance_m": 1112.8
+    },
+    {
+      "type": "node",
+      "id": 10196145728,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "departures_board": "realtime",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "오송역종점",
+        "name:en": "Osong Station Terminus",
+        "name:ko": "오송역종점",
+        "public_transport": "platform",
+        "ref": "1409",
+        "shelter": "yes",
+        "tactile_paving": "yes"
+      },
+      "coordinates": [
+        127.3270048,
+        36.6192821
+      ],
+      "distance_m": 1113.8
+    },
+    {
+      "type": "node",
+      "id": 10196145729,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "departures_board": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "오송역 하차정류장",
+        "name:en": "Osong Station Arrival Stop",
+        "name:ko": "오송역 하차정류장",
+        "public_transport": "platform",
+        "shelter": "yes",
+        "tactile_paving": "yes"
+      },
+      "coordinates": [
+        127.3270612,
+        36.6192367
+      ],
+      "distance_m": 1114.2
+    },
+    {
+      "type": "node",
+      "id": 10196145730,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "departures_board": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "오송역 하차정류장",
+        "name:en": "Osong Station Arrival Stop",
+        "name:ko": "오송역 하차정류장",
+        "public_transport": "platform",
+        "shelter": "yes",
+        "tactile_paving": "yes"
+      },
+      "coordinates": [
+        127.3271161,
+        36.6191864
+      ],
+      "distance_m": 1115.1
+    },
+    {
+      "type": "way",
+      "id": 334133622,
+      "tags": {
+        "electrified": "yes",
+        "frequency": "60",
+        "gauge": "1435",
+        "name": "오송역진입선로",
+        "operator": "한국철도공사",
+        "operator:en": "Korea Railroad Corporation",
+        "operator:ko": "한국철도공사",
+        "operator:short": "KORAIL",
+        "operator:type": "public",
+        "operator:wikidata": "Q18169",
+        "operator:wikipedia": "en:Korail",
+        "railway": "rail",
+        "tracks": "1",
+        "usage": "branch",
+        "voltage": "25000"
+      },
+      "geometry_in": "osm-objects.json.gz"
+    },
+    {
+      "type": "way",
+      "id": 647622873,
+      "tags": {
+        "addr:city": "청주시",
+        "addr:district": "흥덕구",
+        "addr:housenumber": "215",
+        "addr:postcode": "28221",
+        "addr:province": "충청북도",
+        "addr:street": "오송생명14로",
+        "addr:subdistrict": "봉산리",
+        "addr:town": "오송읍",
+        "landuse": "residential",
+        "name": "오송역동아라이크텐",
+        "name:en": "Osong Dongah Like Ten Apts.",
+        "name:ko": "오송역동아라이크텐",
+        "residential": "apartments"
+      },
+      "geometry_in": "osm-objects.json.gz"
+    },
+    {
+      "type": "way",
+      "id": 684378022,
+      "tags": {
+        "highway": "path",
+        "name": "오송역 6번 출구"
+      },
+      "geometry_in": "osm-objects.json.gz"
+    },
+    {
+      "type": "way",
+      "id": 685470336,
+      "tags": {
+        "landuse": "construction",
+        "name": "오송역서한이다음노블리스아파트",
+        "opening_date": "2025-05-10",
+        "residential": "apartments"
+      },
+      "geometry_in": "osm-objects.json.gz"
+    },
+    {
+      "type": "way",
+      "id": 685470337,
+      "tags": {
+        "landuse": "residential",
+        "name": "오송역대광로제비앙그랜드센텀아파트",
+        "residential": "apartments"
+      },
+      "geometry_in": "osm-objects.json.gz"
+    },
+    {
+      "type": "way",
+      "id": 685470338,
+      "tags": {
+        "landuse": "residential",
+        "name": "오송역파라곤센트럴시티3차아파트",
+        "residential": "apartments"
+      },
+      "geometry_in": "osm-objects.json.gz"
+    },
+    {
+      "type": "way",
+      "id": 685470339,
+      "tags": {
+        "landuse": "residential",
+        "name": "오송역제일풍경채아파트",
+        "residential": "apartments"
+      },
+      "geometry_in": "osm-objects.json.gz"
+    },
+    {
+      "type": "way",
+      "id": 685470340,
+      "tags": {
+        "landuse": "residential",
+        "name": "오송역파라곤센트럴시티2차아파트",
+        "residential": "apartments"
+      },
+      "geometry_in": "osm-objects.json.gz"
+    },
+    {
+      "type": "way",
+      "id": 815671909,
+      "tags": {
+        "landuse": "residential",
+        "name": "힐스테이트오송역퍼스트",
+        "name:en": "Osong Hyundai Hillstate Apts.",
+        "name:ko": "힐스테이트오송역퍼스트",
+        "residential": "apartments"
+      },
+      "geometry_in": "osm-objects.json.gz"
+    },
+    {
+      "type": "way",
+      "id": 910787981,
+      "tags": {
+        "addr:city": "청주시",
+        "addr:district": "흥덕구",
+        "addr:housenumber": "178",
+        "addr:postcode": "28222",
+        "addr:province": "충청북도",
+        "addr:street": "오송생명8로",
+        "landuse": "residential",
+        "name": "오송역대광로제비앙아파트",
+        "residential": "apartments"
+      },
+      "geometry_in": "osm-objects.json.gz"
+    },
+    {
+      "type": "way",
+      "id": 910787982,
+      "tags": {
+        "addr:city": "청주시",
+        "addr:district": "흥덕구",
+        "addr:housenumber": "151",
+        "addr:postcode": "28222",
+        "addr:province": "충청북도",
+        "addr:street": "오송생명7로",
+        "landuse": "residential",
+        "name": "오송역파라곤센트럴시티1차아파트",
+        "residential": "apartments"
+      },
+      "geometry_in": "osm-objects.json.gz"
+    },
+    {
+      "type": "way",
+      "id": 1423171859,
+      "tags": {
+        "addr:city": "청주시",
+        "addr:housenumber": "250",
+        "addr:postcode": "28167",
+        "addr:province": "충청북도",
+        "addr:street": "오송생명로",
+        "addr:subdistrict": "만수리",
+        "addr:town": "오송읍",
+        "amenity": "conference_centre",
+        "building": "yes",
+        "name": "청주 오스코",
+        "name:en": "OSCO",
+        "name:ko": "청주 오스코"
+      },
+      "geometry_in": "osm-objects.json.gz"
+    }
+  ],
+  "assets": [
+    {
+      "path": "derived/osm-objects.json.gz",
+      "bytes": 1817031,
+      "sha256": "617ac8f19d08954982107b4bdc88c0c2da2157b56fa2e74a8ec32702f73413ae"
+    },
+    {
+      "path": "derived/osm-facilities.geojson",
+      "bytes": 1077548,
+      "sha256": "2dffbb5a0eafeceed36a4b0b7c1dee1fbba115fc3f4b88dca4aff1ddaadfccf3"
+    },
+    {
+      "path": "derived/osm-transport.geojson",
+      "bytes": 324657,
+      "sha256": "63a893e9cf5d24d205d099f4fddc5d07474f1f27d53d690956ec3a7278ff7790"
+    },
+    {
+      "path": "derived/osm-access_points.geojson",
+      "bytes": 677299,
+      "sha256": "cff7f8fc55f502df9de8dfa9f0e0f8aa144e0d5d69761e1b5f08a8a9121380d8"
+    },
+    {
+      "path": "derived/osm-land_water_green.geojson",
+      "bytes": 1767925,
+      "sha256": "d96ac41e0c0e4b46ebb27bc363f2fe442973577353d637b8820575db5c72ac6e"
+    },
+    {
+      "path": "derived/osm-roads.geojson",
+      "bytes": 3262685,
+      "sha256": "e87539c1d499a492e108aec0cffd17aa8f384cf09cc56eaef79798130e21c5e6"
+    },
+    {
+      "path": "derived/osm-buildings.geojson",
+      "bytes": 2715621,
+      "sha256": "06a4940fea9e8244d12b92e0115f6a382d40cb9d21d37175a413a2eb3738e220"
+    }
+  ]
+}

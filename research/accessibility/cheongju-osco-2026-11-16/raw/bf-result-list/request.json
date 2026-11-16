@@ -1,0 +1,23 @@
+{
+  "id": "bf-result-list",
+  "url": "https://www.koddi.or.kr/bf/state/resultDataList.do",
+  "timeout": 40,
+  "requested_at_utc": "2026-11-16T15:09:22.805325+00:00",
+  "requested_at_kst": "2026-11-17T00:09:22.805333+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://www.koddi.or.kr/bf/state/resultDataList.do",
+  "response_headers": {
+    "date": "Mon, 16 Nov 2026 15:09:26 GMT",
+    "server": "envoy",
+    "content-type": "text/html;charset=UTF-8"
+  },
+  "bytes": 49345,
+  "sha256": "7eca42bd9829fdf04112760ba44b360e571b4bab3dea4260e511d425106623e0",
+  "response_path": "raw/bf-result-list/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:09:27.877452+00:00"
+}

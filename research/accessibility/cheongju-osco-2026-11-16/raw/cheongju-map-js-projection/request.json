@@ -1,0 +1,26 @@
+{
+  "id": "cheongju-map-js-projection",
+  "url": "https://www.cjtgis.go.kr/js/map/proj/projection.js",
+  "timeout": 40,
+  "requested_at_utc": "2026-11-16T15:38:30.026533+00:00",
+  "requested_at_kst": "2026-11-17T00:38:30.026538+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://www.cjtgis.go.kr/js/map/proj/projection.js",
+  "response_headers": {
+    "date": "Mon, 16 Nov 2026 15:38:30 GMT",
+    "etag": "\"577-6ad07869\"",
+    "content-type": "application/javascript",
+    "last-modified": "Thu, 15 Oct 2026 06:53:29 GMT",
+    "content-length": "1399",
+    "server": "envoy"
+  },
+  "bytes": 1399,
+  "sha256": "ab3db4d5bfac6fe01d67a32cf6b38ca97e504f90a8bc85b3e8f783dddd316d3b",
+  "response_path": "raw/cheongju-map-js-projection/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:38:30.830921+00:00"
+}

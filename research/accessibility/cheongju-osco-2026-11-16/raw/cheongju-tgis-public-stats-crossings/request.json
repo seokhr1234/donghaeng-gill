@@ -1,0 +1,23 @@
+{
+  "id": "cheongju-tgis-public-stats-crossings",
+  "url": "https://www.cjtgis.go.kr/statistics/totalStatisticsPopE.do?facilityId=GT_A004_A",
+  "timeout": 40,
+  "requested_at_utc": "2026-11-16T15:30:00.872458+00:00",
+  "requested_at_kst": "2026-11-17T00:30:00.872463+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://www.cjtgis.go.kr/statistics/totalStatisticsPopE.do?facilityId=GT_A004_A",
+  "response_headers": {
+    "date": "Mon, 16 Nov 2026 15:30:01 GMT",
+    "content-type": "text/html; charset=UTF-8",
+    "server": "envoy"
+  },
+  "bytes": 2941,
+  "sha256": "32e4c2cb6fc048a55b3525dcd283eb4a52001d462354424f47f9ab5853a2bc65",
+  "response_path": "raw/cheongju-tgis-public-stats-crossings/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:30:01.508367+00:00"
+}

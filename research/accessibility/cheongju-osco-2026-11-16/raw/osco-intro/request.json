@@ -1,0 +1,23 @@
+{
+  "id": "osco-intro",
+  "url": "https://osco.or.kr/osco/",
+  "timeout": 40,
+  "requested_at_utc": "2026-11-16T14:59:52.374864+00:00",
+  "requested_at_kst": "2026-11-16T23:59:52.374872+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://osco.or.kr/osco/",
+  "response_headers": {
+    "date": "Mon, 16 Nov 2026 14:59:53 GMT",
+    "content-type": "text/html; charset=UTF-8",
+    "server": "envoy"
+  },
+  "bytes": 1264652,
+  "sha256": "9cb96772cc2fd649b1a436122db129b36229758eecb389347b7e99fe3fb924d9",
+  "response_path": "raw/osco-intro/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T14:59:54.311214+00:00"
+}

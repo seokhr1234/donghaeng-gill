@@ -1,0 +1,23 @@
+{
+  "id": "osco-architect",
+  "url": "https://www.haeahn.com/ko/project/detail.do?prjctSeq=3204",
+  "timeout": 40,
+  "requested_at_utc": "2026-11-16T15:09:31.934412+00:00",
+  "requested_at_kst": "2026-11-17T00:09:31.934417+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://www.haeahn.com/ko/project/detail.do?prjctSeq=3204",
+  "response_headers": {
+    "date": "Mon, 16 Nov 2026 15:09:32 GMT",
+    "server": "envoy",
+    "content-type": "text/html;charset=utf-8"
+  },
+  "bytes": 21266,
+  "sha256": "d979694090cc7b6de9b60cd3bbb39f8a45588b7c94901e86b6eb801ed48fa4b0",
+  "response_path": "raw/osco-architect/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:09:33.009783+00:00"
+}

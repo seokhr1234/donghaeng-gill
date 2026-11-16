@@ -1,0 +1,77 @@
+[
+  {
+    "id": "secondary-heat-csv",
+    "url": "https://python-choigosu.com/data/shelter-2026.csv",
+    "timeout": 80
+  },
+  {
+    "id": "bf-result-list",
+    "url": "https://www.koddi.or.kr/bf/state/resultDataList.do",
+    "timeout": 40
+  },
+  {
+    "id": "bf-apply-list",
+    "url": "https://www.koddi.or.kr/bf/state/applyDataList.do",
+    "timeout": 40
+  },
+  {
+    "id": "cheongju-happycall-city",
+    "url": "https://parking.cheongju.go.kr/travis/ext/chachacha/menu1/menu7.do",
+    "timeout": 40
+  },
+  {
+    "id": "cheongju-happycall-municipal",
+    "url": "https://toktalk.cheongju.go.kr/home/sub.do?cate4=372&menukey=7403&mode=view&no=1303763",
+    "timeout": 40
+  },
+  {
+    "id": "cheongju-facilities-home",
+    "url": "https://www.cjsisul.or.kr/",
+    "timeout": 40
+  },
+  {
+    "id": "kric-station-facilities",
+    "url": "https://data.kric.go.kr/rips/M_01_02/detail.do?id=430&operation=stationCnvFacl&service=handicapped",
+    "timeout": 40
+  },
+  {
+    "id": "cbdc-osco-construction",
+    "url": "https://www.cbdc.co.kr/zboard/read.do?lmCode=BBSMSTR_000000000193&pageIndex=1&pd_pkid=7205",
+    "timeout": 40
+  },
+  {
+    "id": "copernicus-readme",
+    "url": "https://copernicus-dem-30m.s3.amazonaws.com/readme.html",
+    "timeout": 40
+  },
+  {
+    "id": "copernicus-tile-stac",
+    "url": "https://copernicus-dem-30m-stac.s3.amazonaws.com/Copernicus_DSM_COG_10_N36_00_E127_00_DEM/Copernicus_DSM_COG_10_N36_00_E127_00_DEM.json",
+    "timeout": 40
+  },
+  {
+    "id": "osco-architect",
+    "url": "https://www.haeahn.com/ko/project/detail.do?prjctSeq=3204",
+    "timeout": 40
+  },
+  {
+    "id": "cheongju-osong-government",
+    "url": "https://www.cheongju.go.kr/osong/index.do",
+    "timeout": 40
+  },
+  {
+    "id": "secondary-osong-home",
+    "url": "https://hiosong.kr/",
+    "timeout": 40
+  },
+  {
+    "id": "cheongju-tgis-menu-js",
+    "url": "https://www.cjtgis.go.kr/js/custom/menu.js",
+    "timeout": 40
+  },
+  {
+    "id": "cheongju-tgis-common-js",
+    "url": "https://www.cjtgis.go.kr/js/custom/common.js",
+    "timeout": 40
+  }
+]

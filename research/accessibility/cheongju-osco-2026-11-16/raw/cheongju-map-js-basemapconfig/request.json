@@ -1,0 +1,26 @@
+{
+  "id": "cheongju-map-js-basemapconfig",
+  "url": "https://www.cjtgis.go.kr/js/map/BaseMapConfig.js",
+  "timeout": 40,
+  "requested_at_utc": "2026-11-16T15:38:27.582499+00:00",
+  "requested_at_kst": "2026-11-17T00:38:27.582502+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://www.cjtgis.go.kr/js/map/BaseMapConfig.js",
+  "response_headers": {
+    "date": "Mon, 16 Nov 2026 15:38:29 GMT",
+    "etag": "\"203a-6ad07869\"",
+    "content-type": "application/javascript",
+    "last-modified": "Thu, 15 Oct 2026 06:53:29 GMT",
+    "content-length": "8250",
+    "server": "envoy"
+  },
+  "bytes": 8250,
+  "sha256": "6e626271e767907bec36836686c00c3ef2d3734010d19710c54d058a5e7fb029",
+  "response_path": "raw/cheongju-map-js-basemapconfig/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:38:29.449275+00:00"
+}

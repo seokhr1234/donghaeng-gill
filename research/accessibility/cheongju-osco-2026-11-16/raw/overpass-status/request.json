@@ -1,0 +1,24 @@
+{
+  "id": "overpass-status",
+  "url": "https://overpass-api.de/api/status",
+  "timeout": 40,
+  "requested_at_utc": "2026-11-16T15:00:07.269496+00:00",
+  "requested_at_kst": "2026-11-17T00:00:07.269502+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 502,
+  "final_url": "https://overpass-api.de/api/status",
+  "response_headers": {
+    "server": "envoy",
+    "date": "Mon, 16 Nov 2026 15:00:08 GMT",
+    "content-type": "text/plain",
+    "content-length": "534"
+  },
+  "bytes": 534,
+  "sha256": "8084e21e11df846a2e41bb93ddaf66961aa2ef71e9a9fc1f46debc960b303042",
+  "response_path": "raw/overpass-status/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:00:08.205939+00:00"
+}

@@ -1,0 +1,26 @@
+{
+  "id": "geofabrik-korea-261115-pbf",
+  "url": "https://download.geofabrik.de/asia/south-korea-261115.osm.pbf",
+  "timeout": 180,
+  "requested_at_utc": "2026-11-16T15:02:29.248653+00:00",
+  "requested_at_kst": "2026-11-17T00:02:29.248659+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://download.geofabrik.de/asia/south-korea-261115.osm.pbf",
+  "response_headers": {
+    "date": "Mon, 16 Nov 2026 00:23:13 GMT",
+    "server": "envoy",
+    "last-modified": "Sun, 15 Nov 2026 23:50:35 GMT",
+    "etag": "\"1165ff37-6605953d9f89b\"",
+    "content-length": "291897143",
+    "content-type": "application/octet-stream"
+  },
+  "bytes": 291897143,
+  "sha256": "d3dcc6478ee3dfc9898956211009bfc88300ca918edb30e34848fa817e881a89",
+  "response_path": "raw/geofabrik-korea-261115-pbf/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:04:11.661395+00:00"
+}

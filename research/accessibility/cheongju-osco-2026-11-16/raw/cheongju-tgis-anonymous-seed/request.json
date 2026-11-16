@@ -1,0 +1,27 @@
+{
+  "id": "cheongju-tgis-anonymous-seed",
+  "url": "https://www.cjtgis.go.kr/statistics/selectRodInfo.do",
+  "method": "GET",
+  "form_without_csrf_token": null,
+  "public_anonymous_session": true,
+  "login_attempted": false,
+  "csrf_parameter_sent": false,
+  "csrf_token_in_request_log": false,
+  "requested_at_utc": "2026-11-16T15:33:57.106758+00:00",
+  "requested_at_kst": "2026-11-17T00:33:57.106770+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://www.cjtgis.go.kr/statistics/selectRodInfo.do",
+  "response_headers": {
+    "date": "Mon, 16 Nov 2026 15:33:58 GMT",
+    "content-type": "text/html; charset=UTF-8"
+  },
+  "bytes": 7454,
+  "sha256": "0b7fd2c7b544414facf991fb766d5e158c615965359b3b4de3dce504c47dcf5b",
+  "response_path": "raw/cheongju-tgis-anonymous-seed/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:33:58.774186+00:00"
+}

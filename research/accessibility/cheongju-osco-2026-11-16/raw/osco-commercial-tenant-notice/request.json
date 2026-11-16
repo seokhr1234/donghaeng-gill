@@ -1,0 +1,23 @@
+{
+  "id": "osco-commercial-tenant-notice",
+  "url": "https://osco.or.kr/cs-center/notice/?mod=document&pageid=1&uid=1153",
+  "timeout": 40,
+  "requested_at_utc": "2026-11-16T15:20:46.965815+00:00",
+  "requested_at_kst": "2026-11-17T00:20:46.965821+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://osco.or.kr/cs-center/notice/?mod=document&pageid=1&uid=1153",
+  "response_headers": {
+    "date": "Mon, 16 Nov 2026 15:20:48 GMT",
+    "content-type": "text/html; charset=UTF-8",
+    "server": "envoy"
+  },
+  "bytes": 1271884,
+  "sha256": "45dcf31d7276059ac07709b5d18c80f8fc9d1797de5927b714788074067c89dc",
+  "response_path": "raw/osco-commercial-tenant-notice/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:20:49.182981+00:00"
+}

@@ -1,0 +1,26 @@
+{
+  "id": "osco-floor-image",
+  "url": "https://d2u77gqg41v474.cloudfront.net/app/uploads/2024/09/27115359/floor.png",
+  "timeout": 45,
+  "requested_at_utc": "2026-11-16T15:06:15.984116+00:00",
+  "requested_at_kst": "2026-11-17T00:06:15.984123+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://d2u77gqg41v474.cloudfront.net/app/uploads/2024/09/27115359/floor.png",
+  "response_headers": {
+    "content-type": "image/png",
+    "content-length": "1312033",
+    "date": "Mon, 16 Nov 2026 15:06:16 GMT",
+    "server": "envoy",
+    "last-modified": "Fri, 27 Sep 2024 02:54:00 GMT",
+    "etag": "\"1af1bde80e0b56ddd7716137561f5efe\""
+  },
+  "bytes": 1312033,
+  "sha256": "39f5376be00d0d150d02493b2fbfeb893c6554a1924ab7ab1bb53ae3cd406b92",
+  "response_path": "raw/osco-floor-image/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:06:17.417025+00:00"
+}

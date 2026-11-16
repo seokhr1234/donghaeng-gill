@@ -1,0 +1,24 @@
+{
+  "id": "secondary-heat-provenance",
+  "url": "https://python-choigosu.com/data/shelter-2026/",
+  "timeout": 45,
+  "requested_at_utc": "2026-11-16T15:06:25.483781+00:00",
+  "requested_at_kst": "2026-11-17T00:06:25.483787+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://python-choigosu.com/data/shelter-2026/",
+  "response_headers": {
+    "date": "Mon, 16 Nov 2026 15:06:25 GMT",
+    "content-type": "text/html; charset=utf-8",
+    "last-modified": "Mon, 16 Nov 2026 10:34:36 GMT",
+    "server": "envoy"
+  },
+  "bytes": 45722,
+  "sha256": "346f782daed4ed9ab0d1f6875720d692434f05b00f1e6206eb7f175adbe83f96",
+  "response_path": "raw/secondary-heat-provenance/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:06:25.830976+00:00"
+}

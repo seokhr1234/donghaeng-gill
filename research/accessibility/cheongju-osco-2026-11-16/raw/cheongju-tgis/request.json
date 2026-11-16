@@ -1,0 +1,23 @@
+{
+  "id": "cheongju-tgis",
+  "url": "https://www.cjtgis.go.kr/index.do",
+  "timeout": 35,
+  "requested_at_utc": "2026-11-16T15:03:26.884652+00:00",
+  "requested_at_kst": "2026-11-17T00:03:26.884657+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://www.cjtgis.go.kr/index.do",
+  "response_headers": {
+    "date": "Mon, 16 Nov 2026 15:03:28 GMT",
+    "content-type": "text/html; charset=UTF-8",
+    "server": "envoy"
+  },
+  "bytes": 18375,
+  "sha256": "8d8975afcdceda06218254871578c0e768fac5d5bbb5cd2538efa0ceee53c304",
+  "response_path": "raw/cheongju-tgis/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:03:28.707737+00:00"
+}

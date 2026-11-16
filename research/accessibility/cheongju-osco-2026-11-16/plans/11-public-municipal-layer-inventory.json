@@ -1,0 +1,37 @@
+[
+  {
+    "id": "cheongju-tgis-public-menu",
+    "url": "https://www.cjtgis.go.kr/system/menu/userMenu.json",
+    "timeout": 40
+  },
+  {
+    "id": "copernicus-product-page",
+    "url": "https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM",
+    "timeout": 45
+  },
+  {
+    "id": "cheongju-tgis-public-stats-tactile",
+    "url": "https://www.cjtgis.go.kr/statistics/totalStatisticsPopE.do?facilityId=GT_C094_A",
+    "timeout": 40
+  },
+  {
+    "id": "cheongju-tgis-public-stats-crossings",
+    "url": "https://www.cjtgis.go.kr/statistics/totalStatisticsPopE.do?facilityId=GT_A004_A",
+    "timeout": 40
+  },
+  {
+    "id": "cheongju-tgis-public-stats-audible-signals",
+    "url": "https://www.cjtgis.go.kr/statistics/totalStatisticsPopE.do?facilityId=GT_A119_P",
+    "timeout": 40
+  },
+  {
+    "id": "cheongju-tgis-public-stats-grade-separated-crossings",
+    "url": "https://www.cjtgis.go.kr/statistics/totalStatisticsPopE.do?facilityId=GT_C095_A",
+    "timeout": 40
+  },
+  {
+    "id": "cheongju-tgis-public-stats-ground-walk-signals",
+    "url": "https://www.cjtgis.go.kr/statistics/totalStatisticsPopE.do?facilityId=GT_A089_A",
+    "timeout": 40
+  }
+]

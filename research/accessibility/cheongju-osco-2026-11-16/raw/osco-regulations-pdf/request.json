@@ -1,0 +1,26 @@
+{
+  "id": "osco-regulations-pdf",
+  "url": "https://d2u77gqg41v474.cloudfront.net/kboard_attached/5/202606/6a261527cfdca4683221.pdf",
+  "timeout": 80,
+  "requested_at_utc": "2026-11-16T15:06:15.018784+00:00",
+  "requested_at_kst": "2026-11-17T00:06:15.018789+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://d2u77gqg41v474.cloudfront.net/kboard_attached/5/202606/6a261527cfdca4683221.pdf",
+  "response_headers": {
+    "content-type": "application/pdf",
+    "content-length": "90139",
+    "date": "Mon, 16 Nov 2026 15:06:15 GMT",
+    "server": "envoy",
+    "last-modified": "Mon, 08 Jun 2026 01:04:41 GMT",
+    "etag": "\"801fce54e2be58f5c446328c22abf312\""
+  },
+  "bytes": 90139,
+  "sha256": "7ca28af784d5158b1a185a9e6be6d6973e6101827e3a925ed116f21caff06678",
+  "response_path": "raw/osco-regulations-pdf/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:06:15.982910+00:00"
+}

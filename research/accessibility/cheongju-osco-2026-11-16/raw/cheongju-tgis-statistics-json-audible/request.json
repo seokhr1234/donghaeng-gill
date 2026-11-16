@@ -1,0 +1,29 @@
+{
+  "id": "cheongju-tgis-statistics-json-audible",
+  "url": "https://www.cjtgis.go.kr/statistics/selectStatisticsInfo.json",
+  "method": "POST",
+  "form_without_csrf_token": {
+    "facilityId": "GT_A119_P"
+  },
+  "public_anonymous_session": true,
+  "login_attempted": false,
+  "csrf_parameter_sent": true,
+  "csrf_token_in_request_log": false,
+  "requested_at_utc": "2026-11-16T15:34:01.433971+00:00",
+  "requested_at_kst": "2026-11-17T00:34:01.433975+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://www.cjtgis.go.kr/statistics/selectStatisticsInfo.json",
+  "response_headers": {
+    "date": "Mon, 16 Nov 2026 15:34:02 GMT",
+    "content-type": "application/json;charset=UTF-8"
+  },
+  "bytes": 5421,
+  "sha256": "04b6c6c93bc639d11d8e3f966b94093d911bd9fd8294f3e0c9b8603317bf0c27",
+  "response_path": "raw/cheongju-tgis-statistics-json-audible/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:34:02.226838+00:00"
+}

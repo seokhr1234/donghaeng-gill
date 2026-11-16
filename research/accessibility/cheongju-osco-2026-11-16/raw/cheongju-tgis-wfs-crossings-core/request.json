@@ -1,0 +1,23 @@
+{
+  "id": "cheongju-tgis-wfs-crossings-core",
+  "url": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_A004_A&outputFormat=application%2Fjson&bbox=228170.34892551968%2C445779.2976607897%2C231312.53086467873%2C449119.2714837272%2CEPSG%3A5186&maxFeatures=1000",
+  "timeout": 60,
+  "requested_at_utc": "2026-11-16T15:40:56.568592+00:00",
+  "requested_at_kst": "2026-11-17T00:40:56.568603+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_A004_A&outputFormat=application%2Fjson&bbox=228170.34892551968%2C445779.2976607897%2C231312.53086467873%2C449119.2714837272%2CEPSG%3A5186&maxFeatures=1000",
+  "response_headers": {
+    "date": "Mon, 16 Nov 2026 15:40:58 GMT",
+    "content-type": "application/json;charset=UTF-8",
+    "server": "envoy"
+  },
+  "bytes": 471226,
+  "sha256": "de1bfffc450e6cec0f2ac51fcf1dc9dbac8591617ce2712696ccf1f447f8daf0",
+  "response_path": "raw/cheongju-tgis-wfs-crossings-core/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:40:58.786370+00:00"
+}

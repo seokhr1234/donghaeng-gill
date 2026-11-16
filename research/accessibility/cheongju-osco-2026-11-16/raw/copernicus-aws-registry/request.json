@@ -1,0 +1,26 @@
+{
+  "id": "copernicus-aws-registry",
+  "url": "https://registry.opendata.aws/copernicus-dem/",
+  "timeout": 35,
+  "requested_at_utc": "2026-11-16T15:03:33.863670+00:00",
+  "requested_at_kst": "2026-11-17T00:03:33.863675+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://registry.opendata.aws/copernicus-dem/",
+  "response_headers": {
+    "content-type": "text/html",
+    "content-length": "10002",
+    "server": "envoy",
+    "last-modified": "Fri, 13 Nov 2026 19:29:49 GMT",
+    "date": "Mon, 16 Nov 2026 15:03:35 GMT",
+    "etag": "\"131a88a4577e656bc855562868bf6377\""
+  },
+  "bytes": 10002,
+  "sha256": "04b2d63198acecd854a2a04100feb63d71aeecd83773c692b7f5093a0a4defca",
+  "response_path": "raw/copernicus-aws-registry/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:03:34.281151+00:00"
+}

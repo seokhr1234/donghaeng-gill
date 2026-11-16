@@ -1,0 +1,32 @@
+{
+  "id": "cheongju-tgis-wfs-grade-separated-crossings-study",
+  "url": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_C095_A&outputFormat=application%2Fjson&bbox=225030.58970356168%2C443550.1905484578%2C234900.12847381394%2C452462.21576077957%2CEPSG%3A5186&maxFeatures=5000",
+  "timeout": 80,
+  "layer": "GT_C095_A",
+  "declared_source_crs": "EPSG:5186",
+  "research_bbox_lonlat": [
+    127.28,
+    36.59,
+    127.39,
+    36.67
+  ],
+  "requested_at_utc": "2026-11-16T15:43:13.799014+00:00",
+  "requested_at_kst": "2026-11-17T00:43:13.799020+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_C095_A&outputFormat=application%2Fjson&bbox=225030.58970356168%2C443550.1905484578%2C234900.12847381394%2C452462.21576077957%2CEPSG%3A5186&maxFeatures=5000",
+  "response_headers": {
+    "date": "Mon, 16 Nov 2026 15:43:14 GMT",
+    "content-length": "4967",
+    "content-type": "application/json;charset=UTF-8",
+    "server": "envoy"
+  },
+  "bytes": 4967,
+  "sha256": "ebf1ab435d4d499f2ce6b2fce0c42e37cb0dd27ecde2bcf6488538ea9fcfe006",
+  "response_path": "raw/cheongju-tgis-wfs-grade-separated-crossings-study/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:43:14.387321+00:00"
+}

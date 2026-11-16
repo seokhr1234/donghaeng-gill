@@ -1,0 +1,23 @@
+{
+  "id": "osco-parking-discount",
+  "url": "https://osco.or.kr/cs-center/notice/?kboard_id=3&mod=document&pageid=1&uid=1108",
+  "timeout": 40,
+  "requested_at_utc": "2026-11-16T14:59:54.317979+00:00",
+  "requested_at_kst": "2026-11-16T23:59:54.317985+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://osco.or.kr/cs-center/notice/?kboard_id=3&mod=document&pageid=1&uid=1108",
+  "response_headers": {
+    "date": "Mon, 16 Nov 2026 14:59:54 GMT",
+    "content-type": "text/html; charset=UTF-8",
+    "server": "envoy"
+  },
+  "bytes": 1276448,
+  "sha256": "449dda960278e5d62217b01736ee9a5c3c831d3a9f132e084468c52785fa71b7",
+  "response_path": "raw/osco-parking-discount/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T14:59:55.200179+00:00"
+}

@@ -1,0 +1,155 @@
+{
+  "schema": "osco-primary-evidence-v1",
+  "field_verified": false,
+  "routing_eligible": false,
+  "venue": {
+    "name": "청주오스코",
+    "address": "충청북도 청주시 흥덕구 오송읍 오송생명로 250",
+    "source_ids": [
+      "osco-traffic",
+      "osco-floor",
+      "gallery-directions"
+    ],
+    "representative_point_lonlat": [
+      127.335363,
+      36.6267203
+    ],
+    "representative_point_source": "gallery-directions map-marker JavaScript",
+    "is_verified_pedestrian_entrance": false,
+    "osm_building_id": "way/1423171859",
+    "building_contains_official_representative_point": true,
+    "building_match_is_survey_validation": false
+  },
+  "bf_certificate": {
+    "registered_facility_name": "충북청주전시관",
+    "kind": "본",
+    "grade": "우수",
+    "certificate_number": "8244",
+    "issued": "2026-07-06",
+    "reported_expiry": "2036-07-05",
+    "issuer": "(사)한국녹색기후기술원",
+    "applicant": "충북개발공사",
+    "registered_floor_area_m2": "39725.19",
+    "source_ids": [
+      "bf-search-cheongju-exhibition",
+      "bf-osco-detail-main",
+      "bf-osco-excel"
+    ],
+    "html_excel_match": true,
+    "applies_to_external_station_approach": false,
+    "current_facility_operation_verified": false
+  },
+  "preliminary_bf_certificate": {
+    "number": "6908",
+    "issued": "2022-04-15",
+    "kind": "예비",
+    "grade": "우수",
+    "area_m2": "40059.14",
+    "source_ids": [
+      "bf-osco-detail-preliminary",
+      "bf-osco-excel"
+    ],
+    "not_substituted_for_main_certificate": true
+  },
+  "indoor_reference_plan": {
+    "source_id": "osco-facility-pdf",
+    "pages": 34,
+    "pdf_created_utc": "2026-03-24T06:41:35Z",
+    "pdf_modified_utc": "2026-03-24T06:43:00Z",
+    "survey_date": null,
+    "source_crs": null,
+    "georeferenced": false,
+    "floors": [
+      "B1",
+      "1F",
+      "2F"
+    ],
+    "legend_shows": [
+      "승강기",
+      "화물 승강기",
+      "장애인화장실",
+      "수유실"
+    ],
+    "medical_support_room_page": 5,
+    "legend_and_plan_page": 6,
+    "notice": "Official guide says reference imagery may differ from actual facilities; no present opening or operability is inferred"
+  },
+  "parking_claims": {
+    "operator_parking_plan_total": 991,
+    "operator_plan_breakdown": {
+      "P1": 234,
+      "P2": 80,
+      "P3": 380,
+      "basement": 202,
+      "loading": 95
+    },
+    "disabled_spaces_in_plan": 50,
+    "electric_vehicle_spaces_in_plan": 52,
+    "special_spaces_already_included_in_total": true,
+    "facility_pdf_overview_total": 1114,
+    "capacity_difference": 123,
+    "source_ids": [
+      "osco-parking-plan-image",
+      "gallery-usage",
+      "osco-facility-pdf"
+    ],
+    "merged_into_single_current_capacity": false,
+    "actual_available_spaces_verified": false
+  },
+  "parking_fee_claims": {
+    "ordinary_vehicle_first_30min_krw": 500,
+    "ordinary_vehicle_extra_10min_krw": 200,
+    "ordinary_vehicle_daily_max_krw": 8000,
+    "reported_discount_percent": 50,
+    "source_ids": [
+      "osco-parking",
+      "gallery-usage"
+    ],
+    "conditions_and_real_time_status_must_be_checked": true
+  },
+  "gallery_claims": {
+    "gallery_web_reported_area_m2": 649,
+    "facility_pdf_gallery_reported_area_m2": 823,
+    "areas_may_have_different_measurement_definitions": true,
+    "hours_reported": "화~토09:00–18:00, 일10:00–17:00; 전시별 다를 수 있음",
+    "closed_reported": "월요일, 1월1일, 설·추석 당일",
+    "source_ids": [
+      "gallery-usage",
+      "gallery-floor",
+      "osco-facility-pdf"
+    ],
+    "automatically_eligible_as_rest_stop": false
+  },
+  "approach_claims": {
+    "rail_exit_label": "오송역8번출구",
+    "official_operator_walk_time_text": "도보10분",
+    "gallery_bus_walk_time_text": "하차후도보약3~5분",
+    "operator_bus_table_refs": [
+      "53",
+      "518",
+      "521",
+      "535",
+      "B3"
+    ],
+    "gallery_bus_refs": [
+      "53",
+      "502",
+      "511",
+      "535",
+      "B3"
+    ],
+    "source_ids": [
+      "osco-traffic",
+      "gallery-directions"
+    ],
+    "actual_timetable_verified": false,
+    "accessible_transfer_verified": false,
+    "notice": "Static references differ by source and may omit services; numbers are not a current complete network. Bus stop named 오송역8 is not automatically exit8."
+  },
+  "commercial_facilities": {
+    "source_id": "osco-commercial-tenant-notice",
+    "posted": "2026-07-27",
+    "title": "[모집 마감] 청주오스코 근린생활시설 임차인 모집 공고",
+    "operating_cafe_or_shop_inferred_from_planned_space": false
+  }
+}

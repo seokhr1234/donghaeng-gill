@@ -1,0 +1,238 @@
+{
+  "pass": true,
+  "raw_complete_response_files_present": 181,
+  "raw_byte_hashes_verified_by": "collection-summary.json / catalog_sources.py",
+  "official_bf_html_excel_claims_match": true,
+  "source_geometry_asset_hashes_match": true,
+  "bus_relation_members_complete": true,
+  "saved_municipal_geometry_count_checked": 5462,
+  "projection_numeric_tolerance_m": 0.01,
+  "numeric_tolerance_is_field_accuracy": false,
+  "invalid_original_geometries_not_silently_repaired": true,
+  "source_code_and_prior_research_preserved": true,
+  "base_commit": "bea574660cb8107c19dafd12c9d865cb8582c46a",
+  "field_verified": false,
+  "new_slope_values_promoted": 0,
+  "app_runtime_changed": false,
+  "vercel_deployed": false,
+  "apk_rebuilt": false,
+  "new_paid_provider_calls": 0,
+  "artifacts": [
+    {
+      "file": "derived/LICENSE-COPDEM-GLO30F.txt",
+      "bytes": 9154,
+      "sha256": "fdbc8d83651cdf4d125e5e47dc6f4a88e9d4269bf659afd14145568c06fb6942",
+      "distribution_status": "attribution_and_licence_required"
+    },
+    {
+      "file": "derived/osco-context-dem30m.tif",
+      "bytes": 408413,
+      "sha256": "6809f919c8869d4a2e4e29154e4783db36caec5a139e176478a705440a7eb4ba",
+      "distribution_status": "attribution_and_licence_required"
+    },
+    {
+      "file": "derived/osm-access_points.geojson",
+      "bytes": 677299,
+      "sha256": "cff7f8fc55f502df9de8dfa9f0e0f8aa144e0d5d69761e1b5f08a8a9121380d8",
+      "distribution_status": "attribution_and_licence_required"
+    },
+    {
+      "file": "derived/osm-buildings.geojson",
+      "bytes": 2715621,
+      "sha256": "06a4940fea9e8244d12b92e0115f6a382d40cb9d21d37175a413a2eb3738e220",
+      "distribution_status": "attribution_and_licence_required"
+    },
+    {
+      "file": "derived/osm-bus-complete-context-v2.json.gz",
+      "bytes": 363975,
+      "sha256": "e334b2d3555bb7f089e74b33963fc8106df6834dad720dd73dc4df88ea225da4",
+      "distribution_status": "attribution_and_licence_required"
+    },
+    {
+      "file": "derived/osm-bus-complete-context.json.gz",
+      "bytes": 363931,
+      "sha256": "7f9cd3a140e7d564104c684f4dc5996a5193c85f0c743bb45603955058a0ccc2",
+      "distribution_status": "attribution_and_licence_required"
+    },
+    {
+      "file": "derived/osm-bus-reference-lines.geojson",
+      "bytes": 1046142,
+      "sha256": "244e101719cac0d1a03042a72287eb44207ee8c9db027b3334ee06a9577ee9b0",
+      "distribution_status": "attribution_and_licence_required"
+    },
+    {
+      "file": "derived/osm-bus-relations.csv",
+      "bytes": 4136,
+      "sha256": "ce2a60c11e475f473a758e76cf2018cc6a279da8e7760b9a9ed53e4fb933c393",
+      "distribution_status": "attribution_and_licence_required"
+    },
+    {
+      "file": "derived/osm-facilities.geojson",
+      "bytes": 1077548,
+      "sha256": "2dffbb5a0eafeceed36a4b0b7c1dee1fbba115fc3f4b88dca4aff1ddaadfccf3",
+      "distribution_status": "attribution_and_licence_required"
+    },
+    {
+      "file": "derived/osm-land_water_green.geojson",
+      "bytes": 1767925,
+      "sha256": "d96ac41e0c0e4b46ebb27bc363f2fe442973577353d637b8820575db5c72ac6e",
+      "distribution_status": "attribution_and_licence_required"
+    },
+    {
+      "file": "derived/osm-objects.json.gz",
+      "bytes": 1817031,
+      "sha256": "617ac8f19d08954982107b4bdc88c0c2da2157b56fa2e74a8ec32702f73413ae",
+      "distribution_status": "attribution_and_licence_required"
+    },
+    {
+      "file": "derived/osm-roads.geojson",
+      "bytes": 3262685,
+      "sha256": "e87539c1d499a492e108aec0cffd17aa8f384cf09cc56eaef79798130e21c5e6",
+      "distribution_status": "attribution_and_licence_required"
+    },
+    {
+      "file": "derived/osm-transport.geojson",
+      "bytes": 324657,
+      "sha256": "63a893e9cf5d24d205d099f4fddc5d07474f1f27d53d690956ec3a7278ff7790",
+      "distribution_status": "attribution_and_licence_required"
+    },
+    {
+      "file": "municipal-derived/GT_A001_A.geojson",
+      "bytes": 686985,
+      "sha256": "e2054c6e2ae4c71f0339678db7afb60364e2bb22c15b7eefce9b069faf705f98",
+      "distribution_status": "private_research_hold"
+    },
+    {
+      "file": "municipal-derived/GT_A004_A.geojson",
+      "bytes": 940489,
+      "sha256": "b03af1ef32455ca360698264101f3bbbafae620dacefb3e181ec00f3df6fb370",
+      "distribution_status": "private_research_hold"
+    },
+    {
+      "file": "municipal-derived/GT_A067_A.geojson",
+      "bytes": 272672,
+      "sha256": "e4adf7f783461e4a81c0dd2a2a6b33415add125bf677b9ff25fa771383928459",
+      "distribution_status": "private_research_hold"
+    },
+    {
+      "file": "municipal-derived/GT_A089_A.geojson",
+      "bytes": 6555,
+      "sha256": "f7047914a5f73260ff5de5a7c5dfb5c54462e6fdb08874cee8089a3d8a196e22",
+      "distribution_status": "private_research_hold"
+    },
+    {
+      "file": "municipal-derived/GT_A090_P.geojson",
+      "bytes": 29704,
+      "sha256": "6c7850fed783d9b2177d1aa412efe6958d9776c3ad548c69984b79fb4fb5de37",
+      "distribution_status": "private_research_hold"
+    },
+    {
+      "file": "municipal-derived/GT_A111_A.geojson",
+      "bytes": 646,
+      "sha256": "fbcd68a388c91e65d96d85bca5a43c542b24bffb41527984be0aa4ab7528b8bd",
+      "distribution_status": "private_research_hold"
+    },
+    {
+      "file": "municipal-derived/GT_A119_P.geojson",
+      "bytes": 187878,
+      "sha256": "251e2c8b38e280c0509a65d1287cc442accc92dd1e88040fe551d0f92f61faab",
+      "distribution_status": "private_research_hold"
+    },
+    {
+      "file": "municipal-derived/GT_C022_P.geojson",
+      "bytes": 391046,
+      "sha256": "2e9b93f3e7aeaa6c12c866645bbc2c65d5194350c36856f69f5fe9f32b9ad663",
+      "distribution_status": "private_research_hold"
+    },
+    {
+      "file": "municipal-derived/GT_C059_A.geojson",
+      "bytes": 947085,
+      "sha256": "1d05628d9d7962977410f5fc507653b9a7d9302db5ffe31b3045168436b69bfe",
+      "distribution_status": "private_research_hold"
+    },
+    {
+      "file": "municipal-derived/GT_C094_A.geojson",
+      "bytes": 1739271,
+      "sha256": "2c2d89ec82ff5bca0165c5789d81e2a226d328a948da50c0b270b20cd3c384d7",
+      "distribution_status": "private_research_hold"
+    },
+    {
+      "file": "municipal-derived/GT_C095_A.geojson",
+      "bytes": 5135,
+      "sha256": "89778bc8cc85c7c25ed29840271505bf2cf779fd85f7006a20f5b05216d62b9c",
+      "distribution_status": "private_research_hold"
+    },
+    {
+      "file": "municipal-derived/GT_C101_A.geojson",
+      "bytes": 22033,
+      "sha256": "c7d64cf60c25314f68b84acd7984315957f0f2a26a0062c4502cb1b229f6e280",
+      "distribution_status": "private_research_hold"
+    },
+    {
+      "file": "municipal-derived/GT_C109_A.geojson",
+      "bytes": 173266,
+      "sha256": "fe56861bbabe406aec3cbfdc203225dc5b59638b33c71e9c130fc6a96383accb",
+      "distribution_status": "private_research_hold"
+    },
+    {
+      "file": "municipal-derived/GT_C114_A.geojson",
+      "bytes": 71088,
+      "sha256": "2d2664b4085d1a6e05f8de8dd54c0d58dccba37082dc893c1f54aaccf8e8c4a3",
+      "distribution_status": "private_research_hold"
+    },
+    {
+      "file": "municipal-derived/GT_C115_A.geojson",
+      "bytes": 26711,
+      "sha256": "12359d51683af67ad58e12e05decafdae47b643bbdf70a3ccf20e2e1116b18e5",
+      "distribution_status": "private_research_hold"
+    },
+    {
+      "file": "municipal-derived/GT_C117_A.geojson",
+      "bytes": 663,
+      "sha256": "c44320bab4680d4736327bc21440eb6dea1e8088e6af844b278dd7e0ded10f10",
+      "distribution_status": "private_research_hold"
+    },
+    {
+      "file": "municipal-derived/GT_C118_P.geojson",
+      "bytes": 154610,
+      "sha256": "2e30f95a486361831387147013c96bd15d8d718660e40edf72474f34ffa191da",
+      "distribution_status": "private_research_hold"
+    },
+    {
+      "file": "municipal-derived/GT_C130_P.geojson",
+      "bytes": 89848,
+      "sha256": "2ce3770ad661263095a3449277442df16b00a34060975e5d2a7cf740a006b4bf",
+      "distribution_status": "private_research_hold"
+    },
+    {
+      "file": "municipal-derived/GT_C131_P.geojson",
+      "bytes": 12102,
+      "sha256": "6456559750cfbf00951101b9cbdf581e39ca1d9db527e82ac59273864d5011c1",
+      "distribution_status": "private_research_hold"
+    },
+    {
+      "file": "municipal-derived/osm-municipal-crossing-core-review.csv",
+      "bytes": 759,
+      "sha256": "5ee817f9522bd801d536e6076d891d4720ec732ba1e61cbecde932faa7aa9a79",
+      "distribution_status": "private_research_hold"
+    },
+    {
+      "file": "municipal-derived/osm-municipal-crossing-review-candidates.csv",
+      "bytes": 35996,
+      "sha256": "258837c22aee6b173f610c03b8f496c7263ec4cd2c6128068037aa4724da9d05",
+      "distribution_status": "private_research_hold"
+    },
+    {
+      "file": "previews/osco-osm-coverage.png",
+      "bytes": 1101877,
+      "sha256": "022ef45f76762f7dc9f025a027f9d670abbf1b936eef85c4e40c0521784d499c",
+      "distribution_status": "attribution_and_licence_required"
+    },
+    {
+      "file": "previews/osco-osm-coverage.svg",
+      "bytes": 5382766,
+      "sha256": "82a149aa7296dba914f4a01a89fa061ba14faf0bcfb8d8ad1bc692e4b88a5f76",
+      "distribution_status": "attribution_and_licence_required"
+    }
+  ]
+}

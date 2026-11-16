@@ -1,0 +1,54 @@
+{
+  "roads": {
+    "features": 6644,
+    "invalid_geometries": [],
+    "counts": {
+      "surface": 681,
+      "foot": 248,
+      "lit": 36,
+      "width": 11,
+      "incline": 46,
+      "smoothness": 7,
+      "sidewalk": 2,
+      "wheelchair": 2
+    }
+  },
+  "buildings": {
+    "features": 4690,
+    "invalid_geometries": [],
+    "counts": {},
+    "contains_official_representative_point": [
+      "way/1423171859"
+    ]
+  },
+  "facilities": {
+    "features": 2357,
+    "invalid_geometries": [],
+    "counts": {}
+  },
+  "access_points": {
+    "features": 1764,
+    "invalid_geometries": [],
+    "counts": {}
+  },
+  "transport": {
+    "features": 446,
+    "invalid_geometries": [],
+    "counts": {
+      "station": 3,
+      "bus_stop": 133,
+      "level_crossing": 15,
+      "switch": 13,
+      "subway_entrance": 5,
+      "buffer_stop": 6,
+      "railway_crossing": 8,
+      "crossing": 2,
+      "train_station_entrance": 3,
+      "stop": 6,
+      "service_station": 1,
+      "rail": 237,
+      "platform": 10,
+      "construction": 4
+    }
+  }
+}

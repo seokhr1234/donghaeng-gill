@@ -1,0 +1,23 @@
+{
+  "id": "bf-apply-list",
+  "url": "https://www.koddi.or.kr/bf/state/applyDataList.do",
+  "timeout": 40,
+  "requested_at_utc": "2026-11-16T15:09:22.806101+00:00",
+  "requested_at_kst": "2026-11-17T00:09:22.806108+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://www.koddi.or.kr/bf/state/applyDataList.do",
+  "response_headers": {
+    "date": "Mon, 16 Nov 2026 15:09:24 GMT",
+    "server": "envoy",
+    "content-type": "text/html;charset=UTF-8"
+  },
+  "bytes": 55196,
+  "sha256": "ac73fe52aedea26d5763ba50066b9ca689f877e4935e65bcd5dfdc4462c8ee4c",
+  "response_path": "raw/bf-apply-list/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:09:26.369954+00:00"
+}

@@ -1,0 +1,26 @@
+{
+  "id": "copernicus-n36e127",
+  "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N36_00_E127_00_DEM/Copernicus_DSM_COG_10_N36_00_E127_00_DEM.tif",
+  "timeout": 180,
+  "requested_at_utc": "2026-11-16T15:02:30.571937+00:00",
+  "requested_at_kst": "2026-11-17T00:02:30.571946+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N36_00_E127_00_DEM/Copernicus_DSM_COG_10_N36_00_E127_00_DEM.tif",
+  "response_headers": {
+    "content-length": "49583060",
+    "date": "Mon, 16 Nov 2026 15:02:31 GMT",
+    "server": "envoy",
+    "last-modified": "Mon, 09 May 2022 14:18:49 GMT",
+    "etag": "\"4862a6502ac485e86dbb17e2759f1a4f\"",
+    "content-type": "image/tiff"
+  },
+  "bytes": 49583060,
+  "sha256": "5acd8774fc11205e1029b20a59f3444750ac5546a5186e936b8bf334a0f9f48e",
+  "response_path": "raw/copernicus-n36e127/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:02:34.411035+00:00"
+}

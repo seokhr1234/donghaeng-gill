@@ -1,0 +1,27 @@
+{
+  "id": "cheongju-tgis-public-menu-post",
+  "url": "https://www.cjtgis.go.kr/system/menu/userMenu.json",
+  "method": "POST",
+  "form_without_csrf_token": {},
+  "public_anonymous_session": true,
+  "login_attempted": false,
+  "csrf_parameter_sent": true,
+  "csrf_token_in_request_log": false,
+  "requested_at_utc": "2026-11-16T15:33:58.775445+00:00",
+  "requested_at_kst": "2026-11-17T00:33:58.775451+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://www.cjtgis.go.kr/system/menu/userMenu.json",
+  "response_headers": {
+    "date": "Mon, 16 Nov 2026 15:33:59 GMT",
+    "content-type": "application/json;charset=UTF-8"
+  },
+  "bytes": 9834,
+  "sha256": "7951602e0c7339f13ab95414648adedf83ad3ae24dcdabfb3d4e67cbe9436958",
+  "response_path": "raw/cheongju-tgis-public-menu-post/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:33:59.613070+00:00"
+}

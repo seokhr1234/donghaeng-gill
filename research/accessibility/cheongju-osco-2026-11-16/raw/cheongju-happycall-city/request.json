@@ -1,0 +1,24 @@
+{
+  "id": "cheongju-happycall-city",
+  "url": "https://parking.cheongju.go.kr/travis/ext/chachacha/menu1/menu7.do",
+  "timeout": 40,
+  "requested_at_utc": "2026-11-16T15:09:23.345166+00:00",
+  "requested_at_kst": "2026-11-17T00:09:23.345174+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 503,
+  "final_url": "https://parking.cheongju.go.kr/travis/ext/chachacha/menu1/menu7.do",
+  "response_headers": {
+    "content-length": "91",
+    "content-type": "text/plain",
+    "date": "Mon, 16 Nov 2026 15:09:28 GMT",
+    "server": "envoy"
+  },
+  "bytes": 91,
+  "sha256": "2f85832e31ca57711e6107af6b142363351ae516adb71c69afc643fac26be7f6",
+  "response_path": "raw/cheongju-happycall-city/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:09:29.085677+00:00"
+}

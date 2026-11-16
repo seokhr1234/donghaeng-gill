@@ -1,0 +1,25 @@
+{
+  "id": "secondary-osong-station",
+  "url": "https://hiosong.kr/cheongju/place/?id=a3a72a21-c7ff-4a38-bfb8-7f477021faca",
+  "timeout": 45,
+  "requested_at_utc": "2026-11-16T15:06:24.369721+00:00",
+  "requested_at_kst": "2026-11-17T00:06:24.369727+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://hiosong.kr/cheongju/place/?id=a3a72a21-c7ff-4a38-bfb8-7f477021faca",
+  "response_headers": {
+    "content-type": "text/html; charset=UTF-8",
+    "date": "Mon, 16 Nov 2026 15:06:25 GMT",
+    "etag": "\"2c096a6f37efbfc17a6997cf844e6a25-ssl\"",
+    "server": "envoy",
+    "content-length": "184996"
+  },
+  "bytes": 184996,
+  "sha256": "edeb0324edcf4b20ca99ffc7114f21cd44a9814c8a82d14fdf58001ebe416474",
+  "response_path": "raw/secondary-osong-station/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:06:25.483528+00:00"
+}

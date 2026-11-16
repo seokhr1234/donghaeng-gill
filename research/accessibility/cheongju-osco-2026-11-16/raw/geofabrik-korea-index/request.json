@@ -1,0 +1,26 @@
+{
+  "id": "geofabrik-korea-index",
+  "url": "https://download.geofabrik.de/asia/south-korea.html",
+  "timeout": 40,
+  "requested_at_utc": "2026-11-16T15:00:07.268937+00:00",
+  "requested_at_kst": "2026-11-17T00:00:07.268941+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://download.geofabrik.de/asia/south-korea.html",
+  "response_headers": {
+    "date": "Mon, 16 Nov 2026 14:59:50 GMT",
+    "server": "envoy",
+    "last-modified": "Mon, 16 Nov 2026 14:45:06 GMT",
+    "etag": "\"5a09-66065d2ed18b3\"",
+    "content-length": "23049",
+    "content-type": "text/html"
+  },
+  "bytes": 23049,
+  "sha256": "a56bcdace84805d996172404d29aab342fde4df1444eb15ceafba0c87466e394",
+  "response_path": "raw/geofabrik-korea-index/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:00:08.414114+00:00"
+}

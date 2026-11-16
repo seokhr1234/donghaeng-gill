@@ -1,0 +1,32 @@
+{
+  "id": "cheongju-tgis-wfs-public-parking-study",
+  "url": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_A111_A&outputFormat=application%2Fjson&bbox=225030.58970356168%2C443550.1905484578%2C234900.12847381394%2C452462.21576077957%2CEPSG%3A5186&maxFeatures=5000",
+  "timeout": 60,
+  "layer": "GT_A111_A",
+  "declared_source_crs": "EPSG:5186",
+  "research_bbox_lonlat": [
+    127.28,
+    36.59,
+    127.39,
+    36.67
+  ],
+  "requested_at_utc": "2026-11-16T15:45:14.736757+00:00",
+  "requested_at_kst": "2026-11-17T00:45:14.736761+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_A111_A&outputFormat=application%2Fjson&bbox=225030.58970356168%2C443550.1905484578%2C234900.12847381394%2C452462.21576077957%2CEPSG%3A5186&maxFeatures=5000",
+  "response_headers": {
+    "date": "Mon, 16 Nov 2026 15:45:14 GMT",
+    "content-length": "147",
+    "content-type": "application/json;charset=UTF-8",
+    "server": "envoy"
+  },
+  "bytes": 147,
+  "sha256": "8ebaead92547f1fc738bc8e7dc05694379ef7e2c647d20c37fdd16aebdb74625",
+  "response_path": "raw/cheongju-tgis-wfs-public-parking-study/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:45:14.931803+00:00"
+}

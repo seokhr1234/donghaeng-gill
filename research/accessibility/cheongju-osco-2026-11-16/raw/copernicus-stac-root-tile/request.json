@@ -1,0 +1,23 @@
+{
+  "id": "copernicus-stac-root-tile",
+  "url": "https://copernicus-dem-30m-stac.s3.amazonaws.com/Copernicus_DSM_COG_10_N36_00_E127_00_DEM.json",
+  "timeout": 40,
+  "requested_at_utc": "2026-11-16T15:20:48.825899+00:00",
+  "requested_at_kst": "2026-11-17T00:20:48.825905+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 404,
+  "final_url": "https://copernicus-dem-30m-stac.s3.amazonaws.com/Copernicus_DSM_COG_10_N36_00_E127_00_DEM.json",
+  "response_headers": {
+    "date": "Mon, 16 Nov 2026 15:20:49 GMT",
+    "content-type": "application/xml",
+    "server": "envoy"
+  },
+  "bytes": 316,
+  "sha256": "38e89419c6e52c6f26efbabaf9ae9a5f1ee6f9b72564677bb0aa1767f5b2be1b",
+  "response_path": "raw/copernicus-stac-root-tile/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:20:49.437490+00:00"
+}

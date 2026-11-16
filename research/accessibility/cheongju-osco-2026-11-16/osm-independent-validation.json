@@ -1,0 +1,53 @@
+{
+  "pass": true,
+  "source_objects": 109381,
+  "duplicate_source_ids": 0,
+  "all_way_node_references_present": true,
+  "geometry_checks": [
+    {
+      "file": "osm-access_points.geojson",
+      "features": 1764,
+      "source_geometry_and_tags_match": true
+    },
+    {
+      "file": "osm-buildings.geojson",
+      "features": 4690,
+      "source_geometry_and_tags_match": true
+    },
+    {
+      "file": "osm-facilities.geojson",
+      "features": 2357,
+      "source_geometry_and_tags_match": true
+    },
+    {
+      "file": "osm-land_water_green.geojson",
+      "features": 4425,
+      "source_geometry_and_tags_match": true
+    },
+    {
+      "file": "osm-roads.geojson",
+      "features": 6644,
+      "source_geometry_and_tags_match": true
+    },
+    {
+      "file": "osm-transport.geojson",
+      "features": 446,
+      "source_geometry_and_tags_match": true
+    }
+  ],
+  "independent_live_api": {
+    "url": "https://api.openstreetmap.org/api/0.6/map?bbox=127.315,36.61,127.345,36.64",
+    "collected_at_utc": "2026-11-16T15:06:29.607477+00:00",
+    "source_as_of": null,
+    "note": "Live database response has per-object timestamps; no global snapshot time is claimed",
+    "objects": 14860,
+    "common_objects": 14847,
+    "same_version_objects": 14847,
+    "same_version_content_mismatches": [],
+    "changed_versions": [],
+    "unmatched_objects_treated_as_deletions": false
+  },
+  "active_runtime_replaced": false,
+  "new_slope_values_promoted": 0,
+  "field_verified": false
+}

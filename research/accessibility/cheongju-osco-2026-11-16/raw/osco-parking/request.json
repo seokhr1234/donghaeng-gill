@@ -1,0 +1,23 @@
+{
+  "id": "osco-parking",
+  "url": "https://osco.or.kr/facilities_guide/parking/",
+  "timeout": 45,
+  "requested_at_utc": "2026-11-16T15:02:12.469131+00:00",
+  "requested_at_kst": "2026-11-17T00:02:12.469136+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://osco.or.kr/facilities_guide/parking/",
+  "response_headers": {
+    "date": "Mon, 16 Nov 2026 15:02:13 GMT",
+    "content-type": "text/html; charset=UTF-8",
+    "server": "envoy"
+  },
+  "bytes": 1273825,
+  "sha256": "2106174ae1ab3dd5dbcf44aa9baf8f0376913eaf620e84eb93128867f0796662",
+  "response_path": "raw/osco-parking/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:02:14.480207+00:00"
+}

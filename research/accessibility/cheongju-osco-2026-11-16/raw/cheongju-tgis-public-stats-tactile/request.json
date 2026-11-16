@@ -1,0 +1,23 @@
+{
+  "id": "cheongju-tgis-public-stats-tactile",
+  "url": "https://www.cjtgis.go.kr/statistics/totalStatisticsPopE.do?facilityId=GT_C094_A",
+  "timeout": 40,
+  "requested_at_utc": "2026-11-16T15:29:59.458133+00:00",
+  "requested_at_kst": "2026-11-17T00:29:59.458139+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://www.cjtgis.go.kr/statistics/totalStatisticsPopE.do?facilityId=GT_C094_A",
+  "response_headers": {
+    "date": "Mon, 16 Nov 2026 15:30:01 GMT",
+    "content-type": "text/html; charset=UTF-8",
+    "server": "envoy"
+  },
+  "bytes": 2923,
+  "sha256": "3d2de856bc8ed2ab0f37d5e6aef3bccb202b1b7537b9d719cfa5e9edb1f11ec0",
+  "response_path": "raw/cheongju-tgis-public-stats-tactile/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:30:01.182435+00:00"
+}

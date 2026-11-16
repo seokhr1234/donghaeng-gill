@@ -1,0 +1,23 @@
+{
+  "id": "cbdc-osco-construction",
+  "url": "https://www.cbdc.co.kr/zboard/read.do?lmCode=BBSMSTR_000000000193&pageIndex=1&pd_pkid=7205",
+  "timeout": 40,
+  "requested_at_utc": "2026-11-16T15:09:29.086248+00:00",
+  "requested_at_kst": "2026-11-17T00:09:29.086254+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://www.cbdc.co.kr/zboard/read.do?lmCode=BBSMSTR_000000000193&pageIndex=1&pd_pkid=7205",
+  "response_headers": {
+    "date": "Mon, 16 Nov 2026 15:09:33 GMT",
+    "server": "envoy",
+    "content-type": "text/html;charset=utf-8"
+  },
+  "bytes": 72506,
+  "sha256": "12005bf1159fe33063c57445bae539e5da7deb5dfe3a111146880b345bfb3892",
+  "response_path": "raw/cbdc-osco-construction/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:09:35.212996+00:00"
+}

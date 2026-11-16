@@ -1,0 +1,23 @@
+{
+  "id": "bf-search-osong",
+  "url": "https://www.koddi.or.kr/bf/state/resultDataList.do?search=schTp1&keyword=%EC%98%A4%EC%86%A1&pageIndex=1",
+  "timeout": 45,
+  "requested_at_utc": "2026-11-16T15:10:41.001479+00:00",
+  "requested_at_kst": "2026-11-17T00:10:41.001485+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://www.koddi.or.kr/bf/state/resultDataList.do?search=schTp1&keyword=%EC%98%A4%EC%86%A1&pageIndex=1",
+  "response_headers": {
+    "date": "Mon, 16 Nov 2026 15:10:46 GMT",
+    "server": "envoy",
+    "content-type": "text/html;charset=UTF-8"
+  },
+  "bytes": 48330,
+  "sha256": "c984cf6859df250185bb0c7baa57d4ba81e5e7638b46fc8b656c9015794035b6",
+  "response_path": "raw/bf-search-osong/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:10:48.037836+00:00"
+}

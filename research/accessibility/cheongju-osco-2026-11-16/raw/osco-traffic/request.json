@@ -1,0 +1,23 @@
+{
+  "id": "osco-traffic",
+  "url": "https://osco.or.kr/traffic/traffic_guidance/",
+  "timeout": 40,
+  "requested_at_utc": "2026-11-16T14:59:52.374052+00:00",
+  "requested_at_kst": "2026-11-16T23:59:52.374062+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://osco.or.kr/traffic/traffic_guidance/",
+  "response_headers": {
+    "date": "Mon, 16 Nov 2026 14:59:53 GMT",
+    "content-type": "text/html; charset=UTF-8",
+    "server": "envoy"
+  },
+  "bytes": 1300699,
+  "sha256": "1f738a22ada52f86098630e32e770da847019d5d3eadab3920e44f93bca40bca",
+  "response_path": "raw/osco-traffic/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T14:59:54.317458+00:00"
+}

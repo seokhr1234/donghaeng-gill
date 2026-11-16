@@ -1,0 +1,23 @@
+{
+  "id": "cheongju-tgis-public-stats-ground-walk-signals",
+  "url": "https://www.cjtgis.go.kr/statistics/totalStatisticsPopE.do?facilityId=GT_A089_A",
+  "timeout": 40,
+  "requested_at_utc": "2026-11-16T15:30:01.509252+00:00",
+  "requested_at_kst": "2026-11-17T00:30:01.509258+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://www.cjtgis.go.kr/statistics/totalStatisticsPopE.do?facilityId=GT_A089_A",
+  "response_headers": {
+    "date": "Mon, 16 Nov 2026 15:30:02 GMT",
+    "content-type": "text/html; charset=UTF-8",
+    "server": "envoy"
+  },
+  "bytes": 2958,
+  "sha256": "9409f2b06bafd83938cc50e3b8e384b7a91d7318e0db1d4f9bee5f2d64cf6ba6",
+  "response_path": "raw/cheongju-tgis-public-stats-ground-walk-signals/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:30:02.316257+00:00"
+}

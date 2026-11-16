@@ -1,0 +1,87 @@
+[
+  {
+    "id": "osco-home",
+    "url": "https://osco.or.kr/",
+    "timeout": 40
+  },
+  {
+    "id": "osco-traffic",
+    "url": "https://osco.or.kr/traffic/traffic_guidance/",
+    "timeout": 40
+  },
+  {
+    "id": "osco-intro",
+    "url": "https://osco.or.kr/osco/",
+    "timeout": 40
+  },
+  {
+    "id": "osco-rental-files",
+    "url": "https://osco.or.kr/article/",
+    "timeout": 40
+  },
+  {
+    "id": "osco-leaflet-page",
+    "url": "https://osco.or.kr/?kboard_id=2&mod=document&uid=10",
+    "timeout": 40
+  },
+  {
+    "id": "osco-parking-discount",
+    "url": "https://osco.or.kr/cs-center/notice/?kboard_id=3&mod=document&pageid=1&uid=1108",
+    "timeout": 40
+  },
+  {
+    "id": "osco-parking-rates",
+    "url": "https://osco.or.kr/?kboard_id=2&mod=document&uid=159",
+    "timeout": 40
+  },
+  {
+    "id": "gallery-directions",
+    "url": "https://www.cbartgallery-osco.com/cbart-osco/contents.do?key=851",
+    "timeout": 40
+  },
+  {
+    "id": "kto-osco",
+    "url": "https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=10ac590b-8fcb-4009-a5ff-1fd8a6cf5c79",
+    "timeout": 40
+  },
+  {
+    "id": "cheongju-gis",
+    "url": "https://map.cheongju.go.kr/",
+    "timeout": 40
+  },
+  {
+    "id": "cheongju-traffic",
+    "url": "https://www.cheongju.go.kr/traffic/index.do",
+    "timeout": 40
+  },
+  {
+    "id": "data-toilets",
+    "url": "https://www.data.go.kr/data/15012892/standard.do",
+    "timeout": 40
+  },
+  {
+    "id": "data-heat-shelters",
+    "url": "https://www.data.go.kr/data/15013199/standard.do",
+    "timeout": 40
+  },
+  {
+    "id": "data-bf-certification",
+    "url": "https://www.data.go.kr/data/3051093/fileData.do",
+    "timeout": 40
+  },
+  {
+    "id": "geofabrik-korea-index",
+    "url": "https://download.geofabrik.de/asia/south-korea.html",
+    "timeout": 40
+  },
+  {
+    "id": "overpass-status",
+    "url": "https://overpass-api.de/api/status",
+    "timeout": 40
+  },
+  {
+    "id": "osm-api-status",
+    "url": "https://api.openstreetmap.org/api/0.6/capabilities",
+    "timeout": 40
+  }
+]

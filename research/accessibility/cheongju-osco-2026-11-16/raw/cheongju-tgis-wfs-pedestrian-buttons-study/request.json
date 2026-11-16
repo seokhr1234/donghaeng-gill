@@ -1,0 +1,31 @@
+{
+  "id": "cheongju-tgis-wfs-pedestrian-buttons-study",
+  "url": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_A090_P&outputFormat=application%2Fjson&bbox=225030.58970356168%2C443550.1905484578%2C234900.12847381394%2C452462.21576077957%2CEPSG%3A5186&maxFeatures=5000",
+  "timeout": 80,
+  "layer": "GT_A090_P",
+  "declared_source_crs": "EPSG:5186",
+  "research_bbox_lonlat": [
+    127.28,
+    36.59,
+    127.39,
+    36.67
+  ],
+  "requested_at_utc": "2026-11-16T15:43:13.199690+00:00",
+  "requested_at_kst": "2026-11-17T00:43:13.199695+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_A090_P&outputFormat=application%2Fjson&bbox=225030.58970356168%2C443550.1905484578%2C234900.12847381394%2C452462.21576077957%2CEPSG%3A5186&maxFeatures=5000",
+  "response_headers": {
+    "date": "Mon, 16 Nov 2026 15:43:13 GMT",
+    "content-type": "application/json;charset=UTF-8",
+    "server": "envoy"
+  },
+  "bytes": 40847,
+  "sha256": "3c7263adb35680e458e9d6f9509612f38acce8cf8c6e563b3b30287d6776c9f9",
+  "response_path": "raw/cheongju-tgis-wfs-pedestrian-buttons-study/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:43:13.798602+00:00"
+}

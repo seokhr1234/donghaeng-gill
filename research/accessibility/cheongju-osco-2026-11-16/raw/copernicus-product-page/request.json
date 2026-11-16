@@ -1,0 +1,26 @@
+{
+  "id": "copernicus-product-page",
+  "url": "https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM",
+  "timeout": 45,
+  "requested_at_utc": "2026-11-16T15:29:59.457888+00:00",
+  "requested_at_kst": "2026-11-17T00:29:59.457893+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM",
+  "response_headers": {
+    "date": "Mon, 16 Nov 2026 15:30:00 GMT",
+    "last-modified": "Mon, 16 Nov 2026 09:59:25 GMT",
+    "etag": "\"1794823165\"",
+    "content-length": "115055",
+    "content-type": "text/html; charset=UTF-8",
+    "server": "envoy"
+  },
+  "bytes": 115055,
+  "sha256": "152965d65b9be7a8bfbd73e943d488769a489188c4362cdf43d562b58d2f5e74",
+  "response_path": "raw/copernicus-product-page/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:30:00.872026+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "cheongju-tgis-wfs-traffic-islands-study",
+  "url": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_C109_A&outputFormat=application%2Fjson&bbox=225030.58970356168%2C443550.1905484578%2C234900.12847381394%2C452462.21576077957%2CEPSG%3A5186&maxFeatures=5000",
+  "timeout": 80,
+  "layer": "GT_C109_A",
+  "declared_source_crs": "EPSG:5186",
+  "research_bbox_lonlat": [
+    127.28,
+    36.59,
+    127.39,
+    36.67
+  ],
+  "requested_at_utc": "2026-11-16T15:43:14.717400+00:00",
+  "requested_at_kst": "2026-11-17T00:43:14.717405+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_C109_A&outputFormat=application%2Fjson&bbox=225030.58970356168%2C443550.1905484578%2C234900.12847381394%2C452462.21576077957%2CEPSG%3A5186&maxFeatures=5000",
+  "response_headers": {
+    "date": "Mon, 16 Nov 2026 15:43:14 GMT",
+    "content-type": "application/json;charset=UTF-8",
+    "server": "envoy"
+  },
+  "bytes": 177298,
+  "sha256": "f12d0cab9039312d301e3c6cd94252bd5a0103fd122af2386e578db3a2ecdc18",
+  "response_path": "raw/cheongju-tgis-wfs-traffic-islands-study/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:43:15.200691+00:00"
+}

@@ -1,0 +1,131 @@
+{
+  "secondary_source_only": true,
+  "toilet_pages_collected": 5,
+  "toilet_visible_ids": 129,
+  "toilet_display_marker_ids": 64,
+  "toilet_display_coordinate_conflicts": [],
+  "toilet_markers_within_5km": 14,
+  "heat_csv_total": 62694,
+  "heat_csv_within_5km": 109,
+  "heat_osong_other_mirror_visible_ids": 11,
+  "heat_osong_other_mirror_markers": 11,
+  "heat_name_match_coordinate_comparisons": [
+    {
+      "name": "공북1구경로당",
+      "mirror_csv_id": "43113250077238",
+      "other_mirror_id": "ba6f4ef598d1",
+      "coordinate_separation_m": 0.5,
+      "match_method": "name plus Cheongju Osong address in CSV; tentative, not confirmed physical identity",
+      "identity_verified": false
+    },
+    {
+      "name": "공북2구경로당",
+      "mirror_csv_id": "43113250107417",
+      "other_mirror_id": "2362b88f755b",
+      "coordinate_separation_m": 0.6,
+      "match_method": "name plus Cheongju Osong address in CSV; tentative, not confirmed physical identity",
+      "identity_verified": false
+    },
+    {
+      "name": "궁평1경로당",
+      "mirror_csv_id": "43113250088434",
+      "other_mirror_id": "7a07859565de",
+      "coordinate_separation_m": 0.6,
+      "match_method": "name plus Cheongju Osong address in CSV; tentative, not confirmed physical identity",
+      "identity_verified": false
+    },
+    {
+      "name": "궁평4경로당",
+      "mirror_csv_id": "43113250077239",
+      "other_mirror_id": "1205e67c6f3d",
+      "coordinate_separation_m": 0.5,
+      "match_method": "name plus Cheongju Osong address in CSV; tentative, not confirmed physical identity",
+      "identity_verified": false
+    },
+    {
+      "name": "봉산3리경로당",
+      "mirror_csv_id": "43113250111910",
+      "other_mirror_id": "e12ed96d569e",
+      "coordinate_separation_m": 0.5,
+      "match_method": "name plus Cheongju Osong address in CSV; tentative, not confirmed physical identity",
+      "identity_verified": false
+    },
+    {
+      "name": "상봉1경로당",
+      "mirror_csv_id": "43113250072274",
+      "other_mirror_id": "5d6e490864a0",
+      "coordinate_separation_m": 0.1,
+      "match_method": "name plus Cheongju Osong address in CSV; tentative, not confirmed physical identity",
+      "identity_verified": false
+    },
+    {
+      "name": "연제2리경로당",
+      "mirror_csv_id": "43113250079089",
+      "other_mirror_id": "176822ae7bf7",
+      "coordinate_separation_m": 0.5,
+      "match_method": "name plus Cheongju Osong address in CSV; tentative, not confirmed physical identity",
+      "identity_verified": false
+    },
+    {
+      "name": "오송6리경로당",
+      "mirror_csv_id": "43113250120164",
+      "other_mirror_id": "3a6738ced29d",
+      "coordinate_separation_m": 0.5,
+      "match_method": "name plus Cheongju Osong address in CSV; tentative, not confirmed physical identity",
+      "identity_verified": false
+    },
+    {
+      "name": "오송읍행정복지센터",
+      "mirror_csv_id": "43113250072309",
+      "other_mirror_id": "c233a2ec32d7",
+      "coordinate_separation_m": 0.3,
+      "match_method": "name plus Cheongju Osong address in CSV; tentative, not confirmed physical identity",
+      "identity_verified": false
+    },
+    {
+      "name": "정중2리경로당",
+      "mirror_csv_id": "43113250072352",
+      "other_mirror_id": "2f15edb921b9",
+      "coordinate_separation_m": 0.4,
+      "match_method": "name plus Cheongju Osong address in CSV; tentative, not confirmed physical identity",
+      "identity_verified": false
+    },
+    {
+      "name": "호계경로당",
+      "mirror_csv_id": "43113250077236",
+      "other_mirror_id": "cd065383b70a",
+      "coordinate_separation_m": 0.3,
+      "match_method": "name plus Cheongju Osong address in CSV; tentative, not confirmed physical identity",
+      "identity_verified": false
+    }
+  ],
+  "within_meters": {
+    "1000": {
+      "toilet_display_markers": 2,
+      "shelter_mirror_csv_rows": 3
+    },
+    "2000": {
+      "toilet_display_markers": 7,
+      "shelter_mirror_csv_rows": 10
+    },
+    "5000": {
+      "toilet_display_markers": 14,
+      "shelter_mirror_csv_rows": 109
+    }
+  },
+  "provenance_conflicts": [
+    "Shelter HTML total62704 differs from downloaded CSV62694",
+    "Shelter page collected date2026-11-08 predates claimed source date2026-11-09",
+    "Shelter page claims17 provinces and16 provinces in different sections",
+    "Mirror explicitly states licence unconfirmed",
+    "Current official toilet standard says coordinates stopped in2025; mirror coordinate source needs independent verification",
+    "Blank flags mean unknown; name match alone does not prove same physical facility"
+  ],
+  "runtime_import_allowed": false,
+  "raw_official_dataset_verified": false,
+  "license_verified": false,
+  "full_secondary_rows_in_git": false,
+  "field_verified": false,
+  "agreement_between_mirrors_is_independent_field_verification": false,
+  "mirror_agreement_note": "Sub-metre rounded agreement may reflect shared upstream data; no new physical-location verification is claimed."
+}

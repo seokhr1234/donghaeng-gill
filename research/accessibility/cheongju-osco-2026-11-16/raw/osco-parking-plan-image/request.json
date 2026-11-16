@@ -1,0 +1,26 @@
+{
+  "id": "osco-parking-plan-image",
+  "url": "https://d2u77gqg41v474.cloudfront.net/app/uploads/2025/09/30090842/%EC%A3%BC%EC%B0%A8%EC%88%98%EC%A0%95-1024x376.png",
+  "timeout": 45,
+  "requested_at_utc": "2026-11-16T15:06:16.047895+00:00",
+  "requested_at_kst": "2026-11-17T00:06:16.047901+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://d2u77gqg41v474.cloudfront.net/app/uploads/2025/09/30090842/%EC%A3%BC%EC%B0%A8%EC%88%98%EC%A0%95-1024x376.png",
+  "response_headers": {
+    "content-type": "image/png",
+    "content-length": "448647",
+    "date": "Mon, 16 Nov 2026 15:06:16 GMT",
+    "server": "envoy",
+    "last-modified": "Tue, 30 Sep 2025 00:08:43 GMT",
+    "etag": "\"bafdcd87d9e91e40ae48e5399db1e990\""
+  },
+  "bytes": 448647,
+  "sha256": "83ab349fad8e162bd8770324d4ef26fad5f4e23c154aa1099dcea4396aa205ae",
+  "response_path": "raw/osco-parking-plan-image/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:06:17.150715+00:00"
+}

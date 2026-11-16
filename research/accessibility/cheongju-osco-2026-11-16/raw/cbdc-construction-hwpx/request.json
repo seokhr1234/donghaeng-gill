@@ -1,0 +1,25 @@
+{
+  "id": "cbdc-construction-hwpx",
+  "url": "https://www.cbdc.co.kr/zboard/printFileDown.do?atchFileId=FILE_000100000021645&fileSn=0&lmCode=BBSMSTR_000000000193",
+  "timeout": 50,
+  "requested_at_utc": "2026-11-16T15:10:48.012772+00:00",
+  "requested_at_kst": "2026-11-17T00:10:48.012778+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://www.cbdc.co.kr/zboard/printFileDown.do?atchFileId=FILE_000100000021645&fileSn=0&lmCode=BBSMSTR_000000000193",
+  "response_headers": {
+    "date": "Mon, 16 Nov 2026 15:10:52 GMT",
+    "server": "envoy",
+    "content-disposition": "attachment; filename=\"ììíì¬ì-ì¶©ë¶ ì²­ì£¼ì ìê´ ê±´ë¦½ì¬ì ì¶ì§íí©(ì¤ì¡ì¬ìë¨_03.31.).hwpx\"",
+    "content-length": "876451",
+    "content-type": "application/x-msdownload;charset=utf-8"
+  },
+  "bytes": 876451,
+  "sha256": "bfb52b0ec614944da4f037881d8865b57a350962812ef4174e8d6ccad40a74f9",
+  "response_path": "raw/cbdc-construction-hwpx/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:10:54.462820+00:00"
+}

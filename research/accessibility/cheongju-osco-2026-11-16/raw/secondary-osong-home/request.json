@@ -1,0 +1,25 @@
+{
+  "id": "secondary-osong-home",
+  "url": "https://hiosong.kr/",
+  "timeout": 40,
+  "requested_at_utc": "2026-11-16T15:09:33.010126+00:00",
+  "requested_at_kst": "2026-11-17T00:09:33.010132+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://hiosong.kr/",
+  "response_headers": {
+    "content-type": "text/html; charset=UTF-8",
+    "date": "Mon, 16 Nov 2026 15:09:33 GMT",
+    "etag": "\"0b6e17f308ef90b075b91f7bfce633ad-ssl\"",
+    "server": "envoy",
+    "content-length": "125716"
+  },
+  "bytes": 125716,
+  "sha256": "26222aebc27d93d3427e51ba160ae53b8d6422b2557c1ddbe4e70077ab6cac2c",
+  "response_path": "raw/secondary-osong-home/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:09:34.038385+00:00"
+}

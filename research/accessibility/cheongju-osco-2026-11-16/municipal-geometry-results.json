@@ -1,0 +1,1086 @@
+{
+  "pass": true,
+  "layers": [
+    {
+      "layer": "GT_A001_A",
+      "name": "도로면",
+      "unique_geometries": 466,
+      "source_crs": "EPSG:5186",
+      "derived_crs": "EPSG:4326",
+      "sources": [
+        {
+          "source_id": "cheongju-tgis-wfs-road-surfaces-core",
+          "source_sha256": "956e4560b1b859c1ebb2e1589d4c709dc37451098dde439003ac5c7dbb96c071",
+          "features_returned": 483,
+          "number_matched": 483,
+          "query_complete": true,
+          "response_generated_at": "2026-11-16T15:48:23.173Z",
+          "response_crs": "urn:ogc:def:crs:EPSG::5186",
+          "query_bbox": "228170.34892551968,445779.2976607897,231312.53086467873,449119.2714837272,EPSG:5186"
+        }
+      ],
+      "geometry_types": {
+        "Polygon": 466
+      },
+      "raw_date_fields": {
+        "REG_YMD": {
+          "nonempty_values": 32,
+          "earliest_raw": "2022-12-15T06:16:31Z",
+          "latest_raw": "2025-11-25T05:59:03Z",
+          "meaning": "registration/update/installation field; not asserted to be survey date"
+        },
+        "UPT_YMD": {
+          "nonempty_values": 55,
+          "earliest_raw": "2021-05-12T05:28:41Z",
+          "latest_raw": "2026-03-10T07:28:38Z",
+          "meaning": "registration/update/installation field; not asserted to be survey date"
+        }
+      },
+      "file": "municipal-derived/GT_A001_A.geojson",
+      "sha256": "e2054c6e2ae4c71f0339678db7afb60364e2bb22c15b7eefce9b069faf705f98",
+      "physical_absence_inferred_from_zero": false
+    },
+    {
+      "layer": "GT_A004_A",
+      "name": "횡단보도",
+      "unique_geometries": 1092,
+      "source_crs": "EPSG:5186",
+      "derived_crs": "EPSG:4326",
+      "sources": [
+        {
+          "source_id": "cheongju-tgis-wfs-crossings-core",
+          "source_sha256": "de1bfffc450e6cec0f2ac51fcf1dc9dbac8591617ce2712696ccf1f447f8daf0",
+          "features_returned": 441,
+          "number_matched": 441,
+          "query_complete": true,
+          "response_generated_at": "2026-11-16T15:40:58.159Z",
+          "response_crs": "urn:ogc:def:crs:EPSG::5186",
+          "query_bbox": "228170.34892551968,445779.2976607897,231312.53086467873,449119.2714837272,EPSG:5186"
+        },
+        {
+          "source_id": "cheongju-tgis-wfs-crossings-study",
+          "source_sha256": "3f7a5e061e5a66f90b5c18d9cea0c91a762d39d18f192c7736cd30507d5e0f6d",
+          "features_returned": 1092,
+          "number_matched": 1092,
+          "query_complete": true,
+          "response_generated_at": "2026-11-16T15:43:12.664Z",
+          "response_crs": "urn:ogc:def:crs:EPSG::5186",
+          "query_bbox": "225030.58970356168,443550.1905484578,234900.12847381394,452462.21576077957,EPSG:5186"
+        }
+      ],
+      "geometry_types": {
+        "Polygon": 1092
+      },
+      "raw_date_fields": {
+        "REG_YMD": {
+          "nonempty_values": 374,
+          "earliest_raw": "2021-03-03T05:05:05Z",
+          "latest_raw": "2026-10-01T15:00:00Z",
+          "meaning": "registration/update/installation field; not asserted to be survey date"
+        },
+        "UPT_YMD": {
+          "nonempty_values": 451,
+          "earliest_raw": "2021-03-03T05:12:16Z",
+          "latest_raw": "2026-10-01T15:00:00Z",
+          "meaning": "registration/update/installation field; not asserted to be survey date"
+        },
+        "ESB_YMD": {
+          "nonempty_values": 35,
+          "earliest_raw": "2005-12-31T15:00:00Z",
+          "latest_raw": "2017-04-20T15:00:00Z",
+          "meaning": "registration/update/installation field; not asserted to be survey date"
+        }
+      },
+      "file": "municipal-derived/GT_A004_A.geojson",
+      "sha256": "b03af1ef32455ca360698264101f3bbbafae620dacefb3e181ec00f3df6fb370",
+      "physical_absence_inferred_from_zero": false
+    },
+    {
+      "layer": "GT_A067_A",
+      "name": "과속방지턱",
+      "unique_geometries": 339,
+      "source_crs": "EPSG:5186",
+      "derived_crs": "EPSG:4326",
+      "sources": [
+        {
+          "source_id": "cheongju-tgis-wfs-speed-humps-study",
+          "source_sha256": "22e7532953de77e17082b9daf97456843b23ef550f45027e151cab0040232038",
+          "features_returned": 339,
+          "number_matched": 339,
+          "query_complete": true,
+          "response_generated_at": "2026-11-16T15:43:15.670Z",
+          "response_crs": "urn:ogc:def:crs:EPSG::5186",
+          "query_bbox": "225030.58970356168,443550.1905484578,234900.12847381394,452462.21576077957,EPSG:5186"
+        }
+      ],
+      "geometry_types": {
+        "Polygon": 339
+      },
+      "raw_date_fields": {
+        "REG_YMD": {
+          "nonempty_values": 136,
+          "earliest_raw": "2021-03-03T05:41:37Z",
+          "latest_raw": "2026-08-30T15:00:00Z",
+          "meaning": "registration/update/installation field; not asserted to be survey date"
+        },
+        "UPT_YMD": {
+          "nonempty_values": 46,
+          "earliest_raw": "2021-07-07T09:28:42Z",
+          "latest_raw": "2026-07-16T04:35:34Z",
+          "meaning": "registration/update/installation field; not asserted to be survey date"
+        },
+        "ESB_YMD": {
+          "nonempty_values": 10,
+          "earliest_raw": "2005-12-31T15:00:00Z",
+          "latest_raw": "2011-11-20T15:00:00Z",
+          "meaning": "registration/update/installation field; not asserted to be survey date"
+        }
+      },
+      "file": "municipal-derived/GT_A067_A.geojson",
+      "sha256": "e4adf7f783461e4a81c0dd2a2a6b33415add125bf677b9ff25fa771383928459",
+      "physical_absence_inferred_from_zero": false
+    },
+    {
+      "layer": "GT_A089_A",
+      "name": "바닥보행신호등",
+      "unique_geometries": 4,
+      "source_crs": "EPSG:5186",
+      "derived_crs": "EPSG:4326",
+      "sources": [
+        {
+          "source_id": "cheongju-tgis-wfs-ground-walk-signals-study",
+          "source_sha256": "08775e498aee6a63229585ca649a44dc9bbff2ed5e735be7341a82f33ab639cd",
+          "features_returned": 4,
+          "number_matched": 4,
+          "query_complete": true,
+          "response_generated_at": "2026-11-16T15:43:14.638Z",
+          "response_crs": "urn:ogc:def:crs:EPSG::5186",
+          "query_bbox": "225030.58970356168,443550.1905484578,234900.12847381394,452462.21576077957,EPSG:5186"
+        }
+      ],
+      "geometry_types": {
+        "Polygon": 4
+      },
+      "raw_date_fields": {
+        "REG_YMD": {
+          "nonempty_values": 4,
+          "earliest_raw": "2026-11-11T15:00:00Z",
+          "latest_raw": "2026-11-11T15:00:00Z",
+          "meaning": "registration/update/installation field; not asserted to be survey date"
+        },
+        "ESB_YMD": {
+          "nonempty_values": 4,
+          "earliest_raw": "2026-05-27T15:00:00Z",
+          "latest_raw": "2026-05-27T15:00:00Z",
+          "meaning": "registration/update/installation field; not asserted to be survey date"
+        }
+      },
+      "file": "municipal-derived/GT_A089_A.geojson",
+      "sha256": "f7047914a5f73260ff5de5a7c5dfb5c54462e6fdb08874cee8089a3d8a196e22",
+      "physical_absence_inferred_from_zero": false
+    },
+    {
+      "layer": "GT_A090_P",
+      "name": "보행자버튼",
+      "unique_geometries": 44,
+      "source_crs": "EPSG:5186",
+      "derived_crs": "EPSG:4326",
+      "sources": [
+        {
+          "source_id": "cheongju-tgis-wfs-pedestrian-buttons-study",
+          "source_sha256": "3c7263adb35680e458e9d6f9509612f38acce8cf8c6e563b3b30287d6776c9f9",
+          "features_returned": 44,
+          "number_matched": 44,
+          "query_complete": true,
+          "response_generated_at": "2026-11-16T15:43:13.589Z",
+          "response_crs": "urn:ogc:def:crs:EPSG::5186",
+          "query_bbox": "225030.58970356168,443550.1905484578,234900.12847381394,452462.21576077957,EPSG:5186"
+        }
+      ],
+      "geometry_types": {
+        "Point": 44
+      },
+      "raw_date_fields": {
+        "REG_YMD": {
+          "nonempty_values": 16,
+          "earliest_raw": "2023-10-10T03:55:43Z",
+          "latest_raw": "2026-03-09T04:06:39Z",
+          "meaning": "registration/update/installation field; not asserted to be survey date"
+        },
+        "UPT_YMD": {
+          "nonempty_values": 14,
+          "earliest_raw": "2023-10-27T03:09:42Z",
+          "latest_raw": "2024-10-10T06:15:07Z",
+          "meaning": "registration/update/installation field; not asserted to be survey date"
+        },
+        "ESB_YMD": {
+          "nonempty_values": 28,
+          "earliest_raw": "2020-03-15T15:00:00Z",
+          "latest_raw": "2024-05-30T15:00:00Z",
+          "meaning": "registration/update/installation field; not asserted to be survey date"
+        }
+      },
+      "file": "municipal-derived/GT_A090_P.geojson",
+      "sha256": "6c7850fed783d9b2177d1aa412efe6958d9776c3ad548c69984b79fb4fb5de37",
+      "physical_absence_inferred_from_zero": false
+    },
+    {
+      "layer": "GT_A111_A",
+      "name": "공영주차장",
+      "unique_geometries": 0,
+      "source_crs": "EPSG:5186",
+      "derived_crs": "EPSG:4326",
+      "sources": [
+        {
+          "source_id": "cheongju-tgis-wfs-public-parking-study",
+          "source_sha256": "8ebaead92547f1fc738bc8e7dc05694379ef7e2c647d20c37fdd16aebdb74625",
+          "features_returned": 0,
+          "number_matched": 0,
+          "query_complete": true,
+          "response_generated_at": "2026-11-16T15:45:14.854Z",
+          "response_crs": null,
+          "query_bbox": "225030.58970356168,443550.1905484578,234900.12847381394,452462.21576077957,EPSG:5186"
+        }
+      ],
+      "geometry_types": {},
+      "raw_date_fields": {},
+      "file": "municipal-derived/GT_A111_A.geojson",
+      "sha256": "fbcd68a388c91e65d96d85bca5a43c542b24bffb41527984be0aa4ab7528b8bd",
+      "physical_absence_inferred_from_zero": false
+    },
+    {
+      "layer": "GT_A119_P",
+      "name": "음향신호기",
+      "unique_geometries": 294,
+      "source_crs": "EPSG:5186",
+      "derived_crs": "EPSG:4326",
+      "sources": [
+        {
+          "source_id": "cheongju-tgis-wfs-audible-signals-study",
+          "source_sha256": "e284c0e66df61d338e5615965eca2ae4309c9d55d73a865a81cc09e6b1251b26",
+          "features_returned": 294,
+          "number_matched": 294,
+          "query_complete": true,
+          "response_generated_at": "2026-11-16T15:43:13.208Z",
+          "response_crs": "urn:ogc:def:crs:EPSG::5186",
+          "query_bbox": "225030.58970356168,443550.1905484578,234900.12847381394,452462.21576077957,EPSG:5186"
+        }
+      ],
+      "geometry_types": {
+        "Point": 294
+      },
+      "raw_date_fields": {
+        "ESB_YMD": {
+          "nonempty_values": 227,
+          "earliest_raw": "2018-12-30T15:00:00Z",
+          "latest_raw": "2024-11-29T15:00:00Z",
+          "meaning": "registration/update/installation field; not asserted to be survey date"
+        },
+        "REG_YMD": {
+          "nonempty_values": 120,
+          "earliest_raw": "2021-09-03T01:34:56Z",
+          "latest_raw": "2026-10-26T15:00:00Z",
+          "meaning": "registration/update/installation field; not asserted to be survey date"
+        },
+        "UPT_YMD": {
+          "nonempty_values": 67,
+          "earliest_raw": "2021-04-05T08:05:17Z",
+          "latest_raw": "2026-10-26T15:00:00Z",
+          "meaning": "registration/update/installation field; not asserted to be survey date"
+        }
+      },
+      "file": "municipal-derived/GT_A119_P.geojson",
+      "sha256": "251e2c8b38e280c0509a65d1287cc442accc92dd1e88040fe551d0f92f61faab",
+      "physical_absence_inferred_from_zero": false
+    },
+    {
+      "layer": "GT_C022_P",
+      "name": "보행용조명",
+      "unique_geometries": 610,
+      "source_crs": "EPSG:5186",
+      "derived_crs": "EPSG:4326",
+      "sources": [
+        {
+          "source_id": "cheongju-tgis-wfs-walk-lighting-study",
+          "source_sha256": "d5b0b383ab0c114be8be0b280f0f08e12f9411d0aa5b33d9767aab195b86c56b",
+          "features_returned": 610,
+          "number_matched": 610,
+          "query_complete": true,
+          "response_generated_at": "2026-11-16T15:43:14.868Z",
+          "response_crs": "urn:ogc:def:crs:EPSG::5186",
+          "query_bbox": "225030.58970356168,443550.1905484578,234900.12847381394,452462.21576077957,EPSG:5186"
+        }
+      ],
+      "geometry_types": {
+        "Point": 610
+      },
+      "raw_date_fields": {
+        "REG_YMD": {
+          "nonempty_values": 169,
+          "earliest_raw": "2021-04-09T04:19:12Z",
+          "latest_raw": "2026-10-01T15:00:00Z",
+          "meaning": "registration/update/installation field; not asserted to be survey date"
+        },
+        "ESB_YMD": {
+          "nonempty_values": 347,
+          "earliest_raw": "2018-12-30T15:00:00Z",
+          "latest_raw": "2025-04-30T15:00:00Z",
+          "meaning": "registration/update/installation field; not asserted to be survey date"
+        },
+        "UPT_YMD": {
+          "nonempty_values": 135,
+          "earliest_raw": "2021-06-25T04:03:20Z",
+          "latest_raw": "2026-10-01T15:00:00Z",
+          "meaning": "registration/update/installation field; not asserted to be survey date"
+        }
+      },
+      "file": "municipal-derived/GT_C022_P.geojson",
+      "sha256": "2e9b93f3e7aeaa6c12c866645bbc2c65d5194350c36856f69f5fe9f32b9ad663",
+      "physical_absence_inferred_from_zero": false
+    },
+    {
+      "layer": "GT_C059_A",
+      "name": "방호울타리",
+      "unique_geometries": 773,
+      "source_crs": "EPSG:5186",
+      "derived_crs": "EPSG:4326",
+      "sources": [
+        {
+          "source_id": "cheongju-tgis-wfs-safety-fences-study",
+          "source_sha256": "7a3d1a413e8bc78429773f333868ff806c928e8ba74270911b8e940c5327083b",
+          "features_returned": 775,
+          "number_matched": 775,
+          "query_complete": true,
+          "response_generated_at": "2026-11-16T15:43:15.672Z",
+          "response_crs": "urn:ogc:def:crs:EPSG::5186",
+          "query_bbox": "225030.58970356168,443550.1905484578,234900.12847381394,452462.21576077957,EPSG:5186"
+        }
+      ],
+      "geometry_types": {
+        "Polygon": 773
+      },
+      "raw_date_fields": {
+        "REG_YMD": {
+          "nonempty_values": 553,
+          "earliest_raw": "2021-03-03T06:45:50Z",
+          "latest_raw": "2026-10-05T15:00:00Z",
+          "meaning": "registration/update/installation field; not asserted to be survey date"
+        },
+        "UPT_YMD": {
+          "nonempty_values": 196,
+          "earliest_raw": "2021-03-03T07:10:42Z",
+          "latest_raw": "2026-10-01T15:00:00Z",
+          "meaning": "registration/update/installation field; not asserted to be survey date"
+        },
+        "ESB_YMD": {
+          "nonempty_values": 8,
+          "earliest_raw": "2005-12-31T15:00:00Z",
+          "latest_raw": "2011-11-20T15:00:00Z",
+          "meaning": "registration/update/installation field; not asserted to be survey date"
+        }
+      },
+      "file": "municipal-derived/GT_C059_A.geojson",
+      "sha256": "1d05628d9d7962977410f5fc507653b9a7d9302db5ffe31b3045168436b69bfe",
+      "physical_absence_inferred_from_zero": false
+    },
+    {
+      "layer": "GT_C094_A",
+      "name": "점자블럭",
+      "unique_geometries": 1241,
+      "source_crs": "EPSG:5186",
+      "derived_crs": "EPSG:4326",
+      "sources": [
+        {
+          "source_id": "cheongju-tgis-wfs-tactile-core",
+          "source_sha256": "e78df0fb8e7f778717e111d04bec01002141cc35dd3f6d7f4368bf98854a69fa",
+          "features_returned": 604,
+          "number_matched": 604,
+          "query_complete": true,
+          "response_generated_at": "2026-11-16T15:47:16.828Z",
+          "response_crs": "urn:ogc:def:crs:EPSG::5186",
+          "query_bbox": "228170.34892551968,445779.2976607897,231312.53086467873,449119.2714837272,EPSG:5186"
+        },
+        {
+          "source_id": "cheongju-tgis-wfs-tactile-ne-d1-0",
+          "source_sha256": "0746763e3eb83f300ab34a783ec2fd9228aebe7f62033fa2e778bdd98c30e973",
+          "features_returned": 45,
+          "number_matched": 45,
+          "query_complete": true,
+          "response_generated_at": "2026-11-16T15:49:31.398Z",
+          "response_crs": "urn:ogc:def:crs:EPSG::5186",
+          "query_bbox": "229955.07560559933,448004.77223244973,232422.4636412153,450233.1360458666,EPSG:5186"
+        },
+        {
+          "source_id": "cheongju-tgis-wfs-tactile-ne-d1-1",
+          "source_sha256": "b0ca0ebc226e6c35136e2f4d33ec3e8abce167d2f4a91c1dbe2542f29daef099",
+          "features_returned": 0,
+          "number_matched": 0,
+          "query_complete": true,
+          "response_generated_at": "2026-11-16T15:49:31.063Z",
+          "response_crs": null,
+          "query_bbox": "232414.08350794698,448013.7049851168,234882.10947167678,450242.77523342194,EPSG:5186"
+        },
+        {
+          "source_id": "cheongju-tgis-wfs-tactile-ne-d1-2",
+          "source_sha256": "354b9bf9e8ddd4727f8dfe725dd3177c37a5a9569e47038b90a48314fc701313",
+          "features_returned": 0,
+          "number_matched": 0,
+          "query_complete": true,
+          "response_generated_at": "2026-11-16T15:49:31.669Z",
+          "response_crs": null,
+          "query_bbox": "229947.3275681587,450224.2014097583,232414.08350794698,452452.57454597397,EPSG:5186"
+        },
+        {
+          "source_id": "cheongju-tgis-wfs-tactile-ne-d1-3-d2-0",
+          "source_sha256": "dc80cb2ca66673fd8c1edc683c58de34aa00399b330824e4d67b9610780be8a8",
+          "features_returned": 0,
+          "number_matched": 0,
+          "query_complete": true,
+          "response_generated_at": "2026-11-16T15:49:32.301Z",
+          "response_crs": null,
+          "query_bbox": "232409.89195600292,450233.1360458666,233643.58826128874,451347.5863881987,EPSG:5186"
+        },
+        {
+          "source_id": "cheongju-tgis-wfs-tactile-ne-d1-3-d2-1-d3-0",
+          "source_sha256": "602dd93fcddef84fe9e57a3da71f076c17705036a494f3928eb9d0fd96bbdd4e",
+          "features_returned": 0,
+          "number_matched": 0,
+          "query_complete": true,
+          "response_generated_at": "2026-11-16T15:49:33.100Z",
+          "response_crs": null,
+          "query_bbox": "233641.413115585,450237.86757032346,234258.3408474904,450795.15868898004,EPSG:5186"
+        },
+        {
+          "source_id": "cheongju-tgis-wfs-tactile-ne-d1-3-d2-1-d3-1",
+          "source_sha256": "2a226066d78d1964c1f68d9a4be81c99c7cb939b77821e0580cb4f0d8c1f3910",
+          "features_returned": 0,
+          "number_matched": 0,
+          "query_complete": true,
+          "response_generated_at": "2026-11-16T15:49:33.225Z",
+          "response_crs": null,
+          "query_bbox": "234256.12595490454,450240.2993844912,234873.09357680223,450797.634668199,EPSG:5186"
+        },
+        {
+          "source_id": "cheongju-tgis-wfs-tactile-ne-d1-3-d2-1-d3-2",
+          "source_sha256": "b100fcf978450e4c1e1a6aaf3c41649f905c6f49e1850dc27c7b2cab69e35af1",
+          "features_returned": 43,
+          "number_matched": 43,
+          "query_complete": true,
+          "response_generated_at": "2026-11-16T15:49:33.291Z",
+          "response_crs": "urn:ogc:def:crs:EPSG::5186",
+          "query_bbox": "233639.23771296663,450792.726746841,234256.12595490454,451350.01845823624,EPSG:5186"
+        },
+        {
+          "source_id": "cheongju-tgis-wfs-tactile-ne-d1-3-d2-2",
+          "source_sha256": "0ec3117f04bb422d95d2cdb62755516b7b9b19a2c582ca15dd91978923178aca",
+          "features_returned": 4,
+          "number_matched": 4,
+          "query_complete": true,
+          "response_generated_at": "2026-11-16T15:49:32.363Z",
+          "response_crs": "urn:ogc:def:crs:EPSG::5186",
+          "query_bbox": "232405.6994140171,451342.85436590126,233639.23771296663,452457.30706553697,EPSG:5186"
+        },
+        {
+          "source_id": "cheongju-tgis-wfs-tactile-ne-d1-3-d2-3",
+          "source_sha256": "55072a47bcece657853701e9adf379d7d9190bb29433a73f7e296f8efdb9bb34",
+          "features_returned": 14,
+          "number_matched": 14,
+          "query_complete": true,
+          "response_generated_at": "2026-11-16T15:49:32.632Z",
+          "response_crs": "urn:ogc:def:crs:EPSG::5186",
+          "query_bbox": "233634.88613705017,451347.5863881987,234868.58403137876,452462.21576077957,EPSG:5186"
+        },
+        {
+          "source_id": "cheongju-tgis-wfs-tactile-nw",
+          "source_sha256": "1e60ecc323960d61357f0f86e6762b0377fa7a162ca8f142ece7ddd5a58c10da",
+          "features_returned": 422,
+          "number_matched": 422,
+          "query_complete": true,
+          "response_generated_at": "2026-11-16T15:47:18.139Z",
+          "response_crs": "urn:ogc:def:crs:EPSG::5186",
+          "query_bbox": "225030.58970356168,447989.01991264196,229962.81998283733,452443.6380307744,EPSG:5186"
+        },
+        {
+          "source_id": "cheongju-tgis-wfs-tactile-se",
+          "source_sha256": "05261641318694c991287aa5f58046d0def507f66a7552b929e4d9c69d2ea63b",
+          "features_returned": 300,
+          "number_matched": 300,
+          "query_complete": true,
+          "response_generated_at": "2026-11-16T15:47:17.472Z",
+          "response_crs": "urn:ogc:def:crs:EPSG::5186",
+          "query_bbox": "229962.81998283733,443565.9362025362,234900.12847381394,448023.3421407313,EPSG:5186"
+        },
+        {
+          "source_id": "cheongju-tgis-wfs-tactile-sw",
+          "source_sha256": "7a1119818d44393f551655baa0e555af2cb3654f0ec6999caeacf906c85dce70",
+          "features_returned": 418,
+          "number_matched": 418,
+          "query_complete": true,
+          "response_generated_at": "2026-11-16T15:47:17.190Z",
+          "response_crs": "urn:ogc:def:crs:EPSG::5186",
+          "query_bbox": "225043.53852326877,443550.1905484578,229978.29775305127,448004.77223244973,EPSG:5186"
+        }
+      ],
+      "geometry_types": {
+        "Polygon": 1241
+      },
+      "raw_date_fields": {
+        "REG_YMD": {
+          "nonempty_values": 520,
+          "earliest_raw": "2021-07-08T07:47:15Z",
+          "latest_raw": "2026-10-05T15:00:00Z",
+          "meaning": "registration/update/installation field; not asserted to be survey date"
+        },
+        "UPT_YMD": {
+          "nonempty_values": 27,
+          "earliest_raw": "2023-10-17T00:23:30Z",
+          "latest_raw": "2026-07-19T23:44:23Z",
+          "meaning": "registration/update/installation field; not asserted to be survey date"
+        }
+      },
+      "file": "municipal-derived/GT_C094_A.geojson",
+      "sha256": "2c2d89ec82ff5bca0165c5789d81e2a226d328a948da50c0b270b20cd3c384d7",
+      "physical_absence_inferred_from_zero": false
+    },
+    {
+      "layer": "GT_C095_A",
+      "name": "입체횡단시설",
+      "unique_geometries": 3,
+      "source_crs": "EPSG:5186",
+      "derived_crs": "EPSG:4326",
+      "sources": [
+        {
+          "source_id": "cheongju-tgis-wfs-grade-separated-crossings-study",
+          "source_sha256": "ebf1ab435d4d499f2ce6b2fce0c42e37cb0dd27ecde2bcf6488538ea9fcfe006",
+          "features_returned": 3,
+          "number_matched": 3,
+          "query_complete": true,
+          "response_generated_at": "2026-11-16T15:43:14.311Z",
+          "response_crs": "urn:ogc:def:crs:EPSG::5186",
+          "query_bbox": "225030.58970356168,443550.1905484578,234900.12847381394,452462.21576077957,EPSG:5186"
+        }
+      ],
+      "geometry_types": {
+        "Polygon": 3
+      },
+      "raw_date_fields": {
+        "REG_YMD": {
+          "nonempty_values": 1,
+          "earliest_raw": "2025-04-28T02:09:14Z",
+          "latest_raw": "2025-04-28T02:09:14Z",
+          "meaning": "registration/update/installation field; not asserted to be survey date"
+        },
+        "UPT_YMD": {
+          "nonempty_values": 2,
+          "earliest_raw": "2025-04-29T00:55:14Z",
+          "latest_raw": "2025-05-09T07:07:18Z",
+          "meaning": "registration/update/installation field; not asserted to be survey date"
+        }
+      },
+      "file": "municipal-derived/GT_C095_A.geojson",
+      "sha256": "89778bc8cc85c7c25ed29840271505bf2cf779fd85f7006a20f5b05216d62b9c",
+      "physical_absence_inferred_from_zero": false
+    },
+    {
+      "layer": "GT_C101_A",
+      "name": "어린이보호구역",
+      "unique_geometries": 13,
+      "source_crs": "EPSG:5186",
+      "derived_crs": "EPSG:4326",
+      "sources": [
+        {
+          "source_id": "cheongju-tgis-wfs-school-protection-zones-study",
+          "source_sha256": "526063349903ed0ffe6038408ef196d2293fdcf87b05cec8e0bf05c6c6b1eab1",
+          "features_returned": 16,
+          "number_matched": 16,
+          "query_complete": true,
+          "response_generated_at": "2026-11-16T15:45:15.143Z",
+          "response_crs": "urn:ogc:def:crs:EPSG::5186",
+          "query_bbox": "225030.58970356168,443550.1905484578,234900.12847381394,452462.21576077957,EPSG:5186"
+        }
+      ],
+      "geometry_types": {
+        "Polygon": 13
+      },
+      "raw_date_fields": {
+        "REG_YMD": {
+          "nonempty_values": 13,
+          "earliest_raw": "1995-12-17T15:00:00Z",
+          "latest_raw": "2024-11-03T15:00:00Z",
+          "meaning": "registration/update/installation field; not asserted to be survey date"
+        },
+        "UPT_YMD": {
+          "nonempty_values": 13,
+          "earliest_raw": "2026-03-11T01:01:01Z",
+          "latest_raw": "2026-10-06T15:00:00Z",
+          "meaning": "registration/update/installation field; not asserted to be survey date"
+        },
+        "ESB_YMD": {
+          "nonempty_values": 9,
+          "earliest_raw": "2003-12-30T15:00:00Z",
+          "latest_raw": "2024-11-03T15:00:00Z",
+          "meaning": "registration/update/installation field; not asserted to be survey date"
+        }
+      },
+      "file": "municipal-derived/GT_C101_A.geojson",
+      "sha256": "c7d64cf60c25314f68b84acd7984315957f0f2a26a0062c4502cb1b229f6e280",
+      "physical_absence_inferred_from_zero": false
+    },
+    {
+      "layer": "GT_C109_A",
+      "name": "교통섬",
+      "unique_geometries": 90,
+      "source_crs": "EPSG:5186",
+      "derived_crs": "EPSG:4326",
+      "sources": [
+        {
+          "source_id": "cheongju-tgis-wfs-traffic-islands-study",
+          "source_sha256": "f12d0cab9039312d301e3c6cd94252bd5a0103fd122af2386e578db3a2ecdc18",
+          "features_returned": 90,
+          "number_matched": 90,
+          "query_complete": true,
+          "response_generated_at": "2026-11-16T15:43:15.000Z",
+          "response_crs": "urn:ogc:def:crs:EPSG::5186",
+          "query_bbox": "225030.58970356168,443550.1905484578,234900.12847381394,452462.21576077957,EPSG:5186"
+        }
+      ],
+      "geometry_types": {
+        "Polygon": 90
+      },
+      "raw_date_fields": {
+        "REG_YMD": {
+          "nonempty_values": 46,
+          "earliest_raw": "2021-07-07T10:27:43Z",
+          "latest_raw": "2026-10-01T15:00:00Z",
+          "meaning": "registration/update/installation field; not asserted to be survey date"
+        },
+        "UPT_YMD": {
+          "nonempty_values": 25,
+          "earliest_raw": "2021-07-08T06:57:43Z",
+          "latest_raw": "2026-10-01T15:00:00Z",
+          "meaning": "registration/update/installation field; not asserted to be survey date"
+        }
+      },
+      "file": "municipal-derived/GT_C109_A.geojson",
+      "sha256": "fe56861bbabe406aec3cbfdc203225dc5b59638b33c71e9c130fc6a96383accb",
+      "physical_absence_inferred_from_zero": false
+    },
+    {
+      "layer": "GT_C114_A",
+      "name": "자전거전용도로",
+      "unique_geometries": 59,
+      "source_crs": "EPSG:5186",
+      "derived_crs": "EPSG:4326",
+      "sources": [
+        {
+          "source_id": "cheongju-tgis-wfs-cycleway-areas-core",
+          "source_sha256": "1ce86f11aca4182f587beecae6774d03e68deb8561cc0d54e19b56254260b447",
+          "features_returned": 59,
+          "number_matched": 59,
+          "query_complete": true,
+          "response_generated_at": "2026-11-16T15:48:22.579Z",
+          "response_crs": "urn:ogc:def:crs:EPSG::5186",
+          "query_bbox": "228170.34892551968,445779.2976607897,231312.53086467873,449119.2714837272,EPSG:5186"
+        }
+      ],
+      "geometry_types": {
+        "Polygon": 59
+      },
+      "raw_date_fields": {
+        "REG_YMD": {
+          "nonempty_values": 12,
+          "earliest_raw": "2021-07-08T08:23:40Z",
+          "latest_raw": "2024-10-28T05:37:32Z",
+          "meaning": "registration/update/installation field; not asserted to be survey date"
+        },
+        "UPT_YMD": {
+          "nonempty_values": 10,
+          "earliest_raw": "2022-12-15T08:06:07Z",
+          "latest_raw": "2024-10-28T00:39:33Z",
+          "meaning": "registration/update/installation field; not asserted to be survey date"
+        }
+      },
+      "file": "municipal-derived/GT_C114_A.geojson",
+      "sha256": "2d2664b4085d1a6e05f8de8dd54c0d58dccba37082dc893c1f54aaccf8e8c4a3",
+      "physical_absence_inferred_from_zero": false
+    },
+    {
+      "layer": "GT_C115_A",
+      "name": "노인보호구역",
+      "unique_geometries": 17,
+      "source_crs": "EPSG:5186",
+      "derived_crs": "EPSG:4326",
+      "sources": [
+        {
+          "source_id": "cheongju-tgis-wfs-elderly-protection-zones-study",
+          "source_sha256": "de19bd2a5b17828d391ccdd3e98f79682592bf88d4b4db2bd652639e4df59870",
+          "features_returned": 17,
+          "number_matched": 17,
+          "query_complete": true,
+          "response_generated_at": "2026-11-16T15:45:14.169Z",
+          "response_crs": "urn:ogc:def:crs:EPSG::5186",
+          "query_bbox": "225030.58970356168,443550.1905484578,234900.12847381394,452462.21576077957,EPSG:5186"
+        }
+      ],
+      "geometry_types": {
+        "Polygon": 17
+      },
+      "raw_date_fields": {
+        "REG_YMD": {
+          "nonempty_values": 17,
+          "earliest_raw": "2018-04-17T15:00:00Z",
+          "latest_raw": "2026-02-26T15:00:00Z",
+          "meaning": "registration/update/installation field; not asserted to be survey date"
+        },
+        "UPT_YMD": {
+          "nonempty_values": 15,
+          "earliest_raw": "2026-01-08T04:00:31Z",
+          "latest_raw": "2026-10-07T15:00:00Z",
+          "meaning": "registration/update/installation field; not asserted to be survey date"
+        }
+      },
+      "file": "municipal-derived/GT_C115_A.geojson",
+      "sha256": "12359d51683af67ad58e12e05decafdae47b643bbdf70a3ccf20e2e1116b18e5",
+      "physical_absence_inferred_from_zero": false
+    },
+    {
+      "layer": "GT_C117_A",
+      "name": "장애인보호구역",
+      "unique_geometries": 0,
+      "source_crs": "EPSG:5186",
+      "derived_crs": "EPSG:4326",
+      "sources": [
+        {
+          "source_id": "cheongju-tgis-wfs-disabled-protection-zones-study",
+          "source_sha256": "9a460a53ba55488fe01c8252f2c6ce139a49d29e014b6f092905ba9749a0785d",
+          "features_returned": 0,
+          "number_matched": 0,
+          "query_complete": true,
+          "response_generated_at": "2026-11-16T15:45:14.479Z",
+          "response_crs": null,
+          "query_bbox": "225030.58970356168,443550.1905484578,234900.12847381394,452462.21576077957,EPSG:5186"
+        }
+      ],
+      "geometry_types": {},
+      "raw_date_fields": {},
+      "file": "municipal-derived/GT_C117_A.geojson",
+      "sha256": "c44320bab4680d4736327bc21440eb6dea1e8088e6af844b278dd7e0ded10f10",
+      "physical_absence_inferred_from_zero": false
+    },
+    {
+      "layer": "GT_C118_P",
+      "name": "승강장",
+      "unique_geometries": 263,
+      "source_crs": "EPSG:5186",
+      "derived_crs": "EPSG:4326",
+      "sources": [
+        {
+          "source_id": "cheongju-tgis-wfs-platforms-study",
+          "source_sha256": "9bb2dddb3a3da9dfbdbb08aa6a42ceaecc4f5cc246f52bd109de8fe35490fa13",
+          "features_returned": 263,
+          "number_matched": 263,
+          "query_complete": true,
+          "response_generated_at": "2026-11-16T15:45:14.655Z",
+          "response_crs": "urn:ogc:def:crs:EPSG::5186",
+          "query_bbox": "225030.58970356168,443550.1905484578,234900.12847381394,452462.21576077957,EPSG:5186"
+        }
+      ],
+      "geometry_types": {
+        "Point": 263
+      },
+      "raw_date_fields": {},
+      "file": "municipal-derived/GT_C118_P.geojson",
+      "sha256": "2e30f95a486361831387147013c96bd15d8d718660e40edf72474f34ffa191da",
+      "physical_absence_inferred_from_zero": false
+    },
+    {
+      "layer": "GT_C130_P",
+      "name": "투광기(횡단보도조명)",
+      "unique_geometries": 137,
+      "source_crs": "EPSG:5186",
+      "derived_crs": "EPSG:4326",
+      "sources": [
+        {
+          "source_id": "cheongju-tgis-wfs-crosswalk-lighting-core",
+          "source_sha256": "a6be6de188e7c238b3fcac84eb39aa84cdc26616c752c0d3f3279f1ce32c3671",
+          "features_returned": 137,
+          "number_matched": 137,
+          "query_complete": true,
+          "response_generated_at": "2026-11-16T15:47:18.434Z",
+          "response_crs": "urn:ogc:def:crs:EPSG::5186",
+          "query_bbox": "228170.34892551968,445779.2976607897,231312.53086467873,449119.2714837272,EPSG:5186"
+        }
+      ],
+      "geometry_types": {
+        "Point": 137
+      },
+      "raw_date_fields": {
+        "REG_YMD": {
+          "nonempty_values": 133,
+          "earliest_raw": "2021-05-12T05:33:54Z",
+          "latest_raw": "2025-04-28T05:02:30Z",
+          "meaning": "registration/update/installation field; not asserted to be survey date"
+        },
+        "ESB_YMD": {
+          "nonempty_values": 81,
+          "earliest_raw": "2021-03-19T15:00:00Z",
+          "latest_raw": "2025-04-29T15:00:00Z",
+          "meaning": "registration/update/installation field; not asserted to be survey date"
+        },
+        "UPT_YMD": {
+          "nonempty_values": 39,
+          "earliest_raw": "2024-02-29T04:14:02Z",
+          "latest_raw": "2025-05-09T05:45:44Z",
+          "meaning": "registration/update/installation field; not asserted to be survey date"
+        }
+      },
+      "file": "municipal-derived/GT_C130_P.geojson",
+      "sha256": "2ce3770ad661263095a3449277442df16b00a34060975e5d2a7cf740a006b4bf",
+      "physical_absence_inferred_from_zero": false
+    },
+    {
+      "layer": "GT_C131_P",
+      "name": "보행신호 음성안내 보조장치",
+      "unique_geometries": 17,
+      "source_crs": "EPSG:5186",
+      "derived_crs": "EPSG:4326",
+      "sources": [
+        {
+          "source_id": "cheongju-tgis-wfs-pedestrian-voice-guides-study",
+          "source_sha256": "de90643d79e374aefa2e1f96f59910e249600c9da5462dcc86a1ecdfeeba9776",
+          "features_returned": 17,
+          "number_matched": 17,
+          "query_complete": true,
+          "response_generated_at": "2026-11-16T15:43:13.784Z",
+          "response_crs": "urn:ogc:def:crs:EPSG::5186",
+          "query_bbox": "225030.58970356168,443550.1905484578,234900.12847381394,452462.21576077957,EPSG:5186"
+        }
+      ],
+      "geometry_types": {
+        "Point": 17
+      },
+      "raw_date_fields": {
+        "REG_YMD": {
+          "nonempty_values": 17,
+          "earliest_raw": "2021-11-12T05:10:29Z",
+          "latest_raw": "2026-11-11T15:00:00Z",
+          "meaning": "registration/update/installation field; not asserted to be survey date"
+        },
+        "ESB_YMD": {
+          "nonempty_values": 17,
+          "earliest_raw": "2013-05-28T15:00:00Z",
+          "latest_raw": "2026-05-27T15:00:00Z",
+          "meaning": "registration/update/installation field; not asserted to be survey date"
+        },
+        "UPT_YMD": {
+          "nonempty_values": 13,
+          "earliest_raw": "2022-03-28T05:58:22Z",
+          "latest_raw": "2022-04-01T05:44:43Z",
+          "meaning": "registration/update/installation field; not asserted to be survey date"
+        }
+      },
+      "file": "municipal-derived/GT_C131_P.geojson",
+      "sha256": "6456559750cfbf00951101b9cbdf581e39ca1d9db527e82ac59273864d5011c1",
+      "physical_absence_inferred_from_zero": false
+    }
+  ],
+  "unique_geometries": 5462,
+  "duplicate_features_deduplicated_by_exact_id_and_content": 1050,
+  "changed_source_conflicts": [],
+  "withheld_invalid_geometries": [
+    {
+      "id": "GT_A001_A.407719",
+      "layer": "GT_A001_A",
+      "source_id": "cheongju-tgis-wfs-road-surfaces-core",
+      "reason": "invalid original geometry; not repaired"
+    },
+    {
+      "id": "GT_A001_A.405558",
+      "layer": "GT_A001_A",
+      "source_id": "cheongju-tgis-wfs-road-surfaces-core",
+      "reason": "invalid original geometry; not repaired"
+    },
+    {
+      "id": "GT_A001_A.408646",
+      "layer": "GT_A001_A",
+      "source_id": "cheongju-tgis-wfs-road-surfaces-core",
+      "reason": "invalid original geometry; not repaired"
+    },
+    {
+      "id": "GT_A001_A.408301",
+      "layer": "GT_A001_A",
+      "source_id": "cheongju-tgis-wfs-road-surfaces-core",
+      "reason": "invalid original geometry; not repaired"
+    },
+    {
+      "id": "GT_A001_A.407790",
+      "layer": "GT_A001_A",
+      "source_id": "cheongju-tgis-wfs-road-surfaces-core",
+      "reason": "invalid original geometry; not repaired"
+    },
+    {
+      "id": "GT_A001_A.408459",
+      "layer": "GT_A001_A",
+      "source_id": "cheongju-tgis-wfs-road-surfaces-core",
+      "reason": "invalid original geometry; not repaired"
+    },
+    {
+      "id": "GT_A001_A.407725",
+      "layer": "GT_A001_A",
+      "source_id": "cheongju-tgis-wfs-road-surfaces-core",
+      "reason": "invalid original geometry; not repaired"
+    },
+    {
+      "id": "GT_A001_A.408803",
+      "layer": "GT_A001_A",
+      "source_id": "cheongju-tgis-wfs-road-surfaces-core",
+      "reason": "invalid original geometry; not repaired"
+    },
+    {
+      "id": "GT_A001_A.409080",
+      "layer": "GT_A001_A",
+      "source_id": "cheongju-tgis-wfs-road-surfaces-core",
+      "reason": "invalid original geometry; not repaired"
+    },
+    {
+      "id": "GT_A001_A.407819",
+      "layer": "GT_A001_A",
+      "source_id": "cheongju-tgis-wfs-road-surfaces-core",
+      "reason": "invalid original geometry; not repaired"
+    },
+    {
+      "id": "GT_A001_A.408487",
+      "layer": "GT_A001_A",
+      "source_id": "cheongju-tgis-wfs-road-surfaces-core",
+      "reason": "invalid original geometry; not repaired"
+    },
+    {
+      "id": "GT_A001_A.408286",
+      "layer": "GT_A001_A",
+      "source_id": "cheongju-tgis-wfs-road-surfaces-core",
+      "reason": "invalid original geometry; not repaired"
+    },
+    {
+      "id": "GT_A001_A.408304",
+      "layer": "GT_A001_A",
+      "source_id": "cheongju-tgis-wfs-road-surfaces-core",
+      "reason": "invalid original geometry; not repaired"
+    },
+    {
+      "id": "GT_A001_A.400714",
+      "layer": "GT_A001_A",
+      "source_id": "cheongju-tgis-wfs-road-surfaces-core",
+      "reason": "invalid original geometry; not repaired"
+    },
+    {
+      "id": "GT_A001_A.401229",
+      "layer": "GT_A001_A",
+      "source_id": "cheongju-tgis-wfs-road-surfaces-core",
+      "reason": "invalid original geometry; not repaired"
+    },
+    {
+      "id": "GT_A001_A.401438",
+      "layer": "GT_A001_A",
+      "source_id": "cheongju-tgis-wfs-road-surfaces-core",
+      "reason": "invalid original geometry; not repaired"
+    },
+    {
+      "id": "GT_A001_A.400814",
+      "layer": "GT_A001_A",
+      "source_id": "cheongju-tgis-wfs-road-surfaces-core",
+      "reason": "invalid original geometry; not repaired"
+    },
+    {
+      "id": "GT_C059_A.38996",
+      "layer": "GT_C059_A",
+      "source_id": "cheongju-tgis-wfs-safety-fences-study",
+      "reason": "invalid original geometry; not repaired"
+    },
+    {
+      "id": "GT_C059_A.36185",
+      "layer": "GT_C059_A",
+      "source_id": "cheongju-tgis-wfs-safety-fences-study",
+      "reason": "invalid original geometry; not repaired"
+    },
+    {
+      "id": "GT_C101_A.1296",
+      "layer": "GT_C101_A",
+      "source_id": "cheongju-tgis-wfs-school-protection-zones-study",
+      "reason": "invalid original geometry; not repaired"
+    },
+    {
+      "id": "GT_C101_A.1277",
+      "layer": "GT_C101_A",
+      "source_id": "cheongju-tgis-wfs-school-protection-zones-study",
+      "reason": "invalid original geometry; not repaired"
+    },
+    {
+      "id": "GT_C101_A.1391",
+      "layer": "GT_C101_A",
+      "source_id": "cheongju-tgis-wfs-school-protection-zones-study",
+      "reason": "invalid original geometry; not repaired"
+    }
+  ],
+  "failed_requests": [
+    {
+      "source_id": "cheongju-tgis-wfs-aux-walk-signals-study",
+      "layer": "GT_A112_P",
+      "http_status": 400,
+      "reason": "Feature type tgis:GT_A112_P unknown",
+      "treated_as_zero": false
+    },
+    {
+      "source_id": "cheongju-tgis-wfs-crosswalk-lighting-study",
+      "layer": "GT_C130_P",
+      "http_status": 200,
+      "reason": "The read operation timed out",
+      "treated_as_zero": false
+    },
+    {
+      "source_id": "cheongju-tgis-wfs-tactile-ne",
+      "layer": "GT_C094_A",
+      "http_status": 400,
+      "reason": "java.lang.RuntimeException: java.io.IOException\njava.io.IOExceptionJDBC-10034:Internal error: IllegalArgumentException: Points of LinearRing do not form a closed linestring.",
+      "treated_as_zero": false
+    },
+    {
+      "source_id": "cheongju-tgis-wfs-tactile-ne-d1-3",
+      "layer": "GT_C094_A",
+      "http_status": 400,
+      "reason": "java.lang.RuntimeException: java.io.IOException\njava.io.IOExceptionJDBC-10034:Internal error: IllegalArgumentException: Points of LinearRing do not form a closed linestring.",
+      "treated_as_zero": false
+    },
+    {
+      "source_id": "cheongju-tgis-wfs-tactile-ne-d1-3-d2-1",
+      "layer": "GT_C094_A",
+      "http_status": 400,
+      "reason": "java.lang.RuntimeException: java.io.IOException\njava.io.IOExceptionJDBC-10034:Internal error: IllegalArgumentException: Points of LinearRing do not form a closed linestring.",
+      "treated_as_zero": false
+    },
+    {
+      "source_id": "cheongju-tgis-wfs-tactile-ne-d1-3-d2-1-d3-3",
+      "layer": "GT_C094_A",
+      "http_status": 400,
+      "reason": "java.lang.RuntimeException: java.io.IOException\njava.io.IOExceptionJDBC-10034:Internal error: IllegalArgumentException: Points of LinearRing do not form a closed linestring.",
+      "treated_as_zero": false
+    },
+    {
+      "source_id": "cheongju-tgis-wfs-tactile-study",
+      "layer": "GT_C094_A",
+      "http_status": 400,
+      "reason": "java.lang.RuntimeException: java.io.IOException\njava.io.IOExceptionJDBC-10034:Internal error: IllegalArgumentException: Points of LinearRing do not form a closed linestring.",
+      "treated_as_zero": false
+    }
+  ],
+  "ignored_transient_field": "GEOM only when exactly a Java byte-array identity [B@hex; original geometry and other attributes still compared; raw responses preserved",
+  "source_rings_closed_without_repair": true,
+  "projection_roundtrip_tolerance_m": 0.01,
+  "projection_check_is_survey_accuracy": false,
+  "z_promoted_to_ground_elevation": false,
+  "active_runtime_replaced": false,
+  "field_verified": false,
+  "routing_eligible": false,
+  "redistribution_terms_verified": false,
+  "withheld_invalid_unique_count": 22,
+  "withheld_invalid_observation_count": 22
+}

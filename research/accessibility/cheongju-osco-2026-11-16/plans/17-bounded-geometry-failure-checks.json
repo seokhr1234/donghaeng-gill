@@ -1,0 +1,80 @@
+[
+  {
+    "id": "cheongju-tgis-wfs-tactile-core",
+    "url": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_C094_A&outputFormat=application%2Fjson&bbox=228170.34892551968%2C445779.2976607897%2C231312.53086467873%2C449119.2714837272%2CEPSG%3A5186&maxFeatures=2000",
+    "timeout": 40,
+    "layer": "GT_C094_A",
+    "research_bbox_lonlat": [
+      127.315,
+      36.61,
+      127.35,
+      36.64
+    ],
+    "retry_reason": "Broad query failed with an invalid source LinearRing; smaller public map extents test whether unaffected geometry is retrievable"
+  },
+  {
+    "id": "cheongju-tgis-wfs-tactile-sw",
+    "url": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_C094_A&outputFormat=application%2Fjson&bbox=225043.53852326877%2C443550.1905484578%2C229978.29775305127%2C448004.77223244973%2CEPSG%3A5186&maxFeatures=2000",
+    "timeout": 40,
+    "layer": "GT_C094_A",
+    "research_bbox_lonlat": [
+      127.28,
+      36.59,
+      127.335,
+      36.63
+    ],
+    "retry_reason": "Broad query failed with an invalid source LinearRing; smaller public map extents test whether unaffected geometry is retrievable"
+  },
+  {
+    "id": "cheongju-tgis-wfs-tactile-se",
+    "url": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_C094_A&outputFormat=application%2Fjson&bbox=229962.81998283733%2C443565.9362025362%2C234900.12847381394%2C448023.3421407313%2CEPSG%3A5186&maxFeatures=2000",
+    "timeout": 40,
+    "layer": "GT_C094_A",
+    "research_bbox_lonlat": [
+      127.335,
+      36.59,
+      127.39,
+      36.63
+    ],
+    "retry_reason": "Broad query failed with an invalid source LinearRing; smaller public map extents test whether unaffected geometry is retrievable"
+  },
+  {
+    "id": "cheongju-tgis-wfs-tactile-nw",
+    "url": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_C094_A&outputFormat=application%2Fjson&bbox=225030.58970356168%2C447989.01991264196%2C229962.81998283733%2C452443.6380307744%2CEPSG%3A5186&maxFeatures=2000",
+    "timeout": 40,
+    "layer": "GT_C094_A",
+    "research_bbox_lonlat": [
+      127.28,
+      36.63,
+      127.335,
+      36.67
+    ],
+    "retry_reason": "Broad query failed with an invalid source LinearRing; smaller public map extents test whether unaffected geometry is retrievable"
+  },
+  {
+    "id": "cheongju-tgis-wfs-tactile-ne",
+    "url": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_C094_A&outputFormat=application%2Fjson&bbox=229947.3275681587%2C448004.77223244973%2C234882.10947167678%2C452462.21576077957%2CEPSG%3A5186&maxFeatures=2000",
+    "timeout": 40,
+    "layer": "GT_C094_A",
+    "research_bbox_lonlat": [
+      127.335,
+      36.63,
+      127.39,
+      36.67
+    ],
+    "retry_reason": "Broad query failed with an invalid source LinearRing; smaller public map extents test whether unaffected geometry is retrievable"
+  },
+  {
+    "id": "cheongju-tgis-wfs-crosswalk-lighting-core",
+    "url": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_C130_P&outputFormat=application%2Fjson&bbox=228170.34892551968%2C445779.2976607897%2C231312.53086467873%2C449119.2714837272%2CEPSG%3A5186&maxFeatures=1000",
+    "timeout": 55,
+    "layer": "GT_C130_P",
+    "research_bbox_lonlat": [
+      127.315,
+      36.61,
+      127.35,
+      36.64
+    ],
+    "retry_reason": "Broad query read timed out"
+  }
+]

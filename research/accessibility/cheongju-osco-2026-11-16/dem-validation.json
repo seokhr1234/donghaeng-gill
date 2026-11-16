@@ -1,0 +1,10 @@
+{
+  "pass": true,
+  "source_sha256": "5acd8774fc11205e1029b20a59f3444750ac5546a5186e936b8bf334a0f9f48e",
+  "clip_sha256": "6809f919c8869d4a2e4e29154e4783db36caec5a139e176478a705440a7eb4ba",
+  "pixels_equal_to_original_window": true,
+  "resampling": false,
+  "surface_grade_derived": false,
+  "vertical_datum_source": "Copernicus product documentation, not encoded in tile CRS",
+  "field_verified": false
+}

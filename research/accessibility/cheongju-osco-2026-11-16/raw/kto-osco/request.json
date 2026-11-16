@@ -1,0 +1,24 @@
+{
+  "id": "kto-osco",
+  "url": "https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=10ac590b-8fcb-4009-a5ff-1fd8a6cf5c79",
+  "timeout": 40,
+  "requested_at_utc": "2026-11-16T14:59:55.808161+00:00",
+  "requested_at_kst": "2026-11-16T23:59:55.808166+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 503,
+  "final_url": "https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=10ac590b-8fcb-4009-a5ff-1fd8a6cf5c79",
+  "response_headers": {
+    "content-length": "91",
+    "content-type": "text/plain",
+    "date": "Mon, 16 Nov 2026 15:00:01 GMT",
+    "server": "envoy"
+  },
+  "bytes": 91,
+  "sha256": "2f85832e31ca57711e6107af6b142363351ae516adb71c69afc643fac26be7f6",
+  "response_path": "raw/kto-osco/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:00:01.700639+00:00"
+}

@@ -1,0 +1,21 @@
+{
+  "source_ui": "raw/cheongju-map-js-mapmaker/request.json",
+  "source_client_read_query": "raw/cheongju-map-js-maplayermng/request.json",
+  "source_crs_explicit": "EPSG:5186",
+  "query_bbox_lonlat": [
+    127.315,
+    36.61,
+    127.35,
+    36.64
+  ],
+  "query_bbox_native": [
+    228170.34892551968,
+    445779.2976607897,
+    231312.53086467873,
+    449119.2714837272
+  ],
+  "purpose": "anonymous public map read only",
+  "max_features_requested": 1000,
+  "management_api_calls": 0,
+  "field_verified": false
+}

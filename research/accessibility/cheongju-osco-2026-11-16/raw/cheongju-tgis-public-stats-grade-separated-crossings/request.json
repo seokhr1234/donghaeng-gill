@@ -1,0 +1,23 @@
+{
+  "id": "cheongju-tgis-public-stats-grade-separated-crossings",
+  "url": "https://www.cjtgis.go.kr/statistics/totalStatisticsPopE.do?facilityId=GT_C095_A",
+  "timeout": 40,
+  "requested_at_utc": "2026-11-16T15:30:01.336951+00:00",
+  "requested_at_kst": "2026-11-17T00:30:01.336959+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://www.cjtgis.go.kr/statistics/totalStatisticsPopE.do?facilityId=GT_C095_A",
+  "response_headers": {
+    "date": "Mon, 16 Nov 2026 15:30:02 GMT",
+    "content-type": "text/html; charset=UTF-8",
+    "server": "envoy"
+  },
+  "bytes": 2989,
+  "sha256": "ee91b33ea0ecbdefd2103f049980beda746378ccbf2cf4df6ca8fe37e85a082a",
+  "response_path": "raw/cheongju-tgis-public-stats-grade-separated-crossings/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:30:02.498571+00:00"
+}

@@ -1,0 +1,121 @@
+{
+  "scope_lonlat": [
+    127.315,
+    36.61,
+    127.35,
+    36.64
+  ],
+  "municipal_geometries_intersecting_core": 438,
+  "osm_crossing_point_records": 1,
+  "osm_crossing_way_records": 9,
+  "nearest_map_distance_counts": {
+    "5": 8,
+    "10": 8,
+    "25": 8,
+    "50": 8
+  },
+  "candidate_rows": [
+    {
+      "osm_id": "node/8336649325",
+      "object_kind": "point",
+      "nearest_registered_geometry_distance_m": 263.5,
+      "candidate_polygon_ids_within10m": "",
+      "candidate_count": 0,
+      "matched_identity_verified": false,
+      "routing_eligible": false
+    },
+    {
+      "osm_id": "way/684367944",
+      "object_kind": "way",
+      "nearest_registered_geometry_distance_m": 0.0,
+      "candidate_polygon_ids_within10m": "GT_A004_A.59869;GT_A004_A.59870;GT_A004_A.59873",
+      "candidate_count": 3,
+      "matched_identity_verified": false,
+      "routing_eligible": false
+    },
+    {
+      "osm_id": "way/684378000",
+      "object_kind": "way",
+      "nearest_registered_geometry_distance_m": 0.03,
+      "candidate_polygon_ids_within10m": "GT_A004_A.59870;GT_A004_A.59873",
+      "candidate_count": 2,
+      "matched_identity_verified": false,
+      "routing_eligible": false
+    },
+    {
+      "osm_id": "way/684378001",
+      "object_kind": "way",
+      "nearest_registered_geometry_distance_m": 0.0,
+      "candidate_polygon_ids_within10m": "GT_A004_A.60493;GT_A004_A.61380",
+      "candidate_count": 2,
+      "matched_identity_verified": false,
+      "routing_eligible": false
+    },
+    {
+      "osm_id": "way/684378005",
+      "object_kind": "way",
+      "nearest_registered_geometry_distance_m": 2.38,
+      "candidate_polygon_ids_within10m": "GT_A004_A.61161;GT_A004_A.61374;GT_A004_A.61380",
+      "candidate_count": 3,
+      "matched_identity_verified": false,
+      "routing_eligible": false
+    },
+    {
+      "osm_id": "way/684378013",
+      "object_kind": "way",
+      "nearest_registered_geometry_distance_m": 0.0,
+      "candidate_polygon_ids_within10m": "GT_A004_A.60497",
+      "candidate_count": 1,
+      "matched_identity_verified": false,
+      "routing_eligible": false
+    },
+    {
+      "osm_id": "way/684378018",
+      "object_kind": "way",
+      "nearest_registered_geometry_distance_m": 132.81,
+      "candidate_polygon_ids_within10m": "",
+      "candidate_count": 0,
+      "matched_identity_verified": false,
+      "routing_eligible": false
+    },
+    {
+      "osm_id": "way/684378021",
+      "object_kind": "way",
+      "nearest_registered_geometry_distance_m": 2.26,
+      "candidate_polygon_ids_within10m": "GT_A004_A.60499",
+      "candidate_count": 1,
+      "matched_identity_verified": false,
+      "routing_eligible": false
+    },
+    {
+      "osm_id": "way/684378028",
+      "object_kind": "way",
+      "nearest_registered_geometry_distance_m": 1.25,
+      "candidate_polygon_ids_within10m": "GT_A004_A.60498",
+      "candidate_count": 1,
+      "matched_identity_verified": false,
+      "routing_eligible": false
+    },
+    {
+      "osm_id": "way/684378030",
+      "object_kind": "way",
+      "nearest_registered_geometry_distance_m": 0.0,
+      "candidate_polygon_ids_within10m": "GT_A004_A.64414",
+      "candidate_count": 1,
+      "matched_identity_verified": false,
+      "routing_eligible": false
+    }
+  ],
+  "identity_automatically_merged": 0,
+  "coordinate_changes": 0,
+  "new_topology_connections": 0,
+  "field_verified": false,
+  "routing_eligible": false,
+  "positional_accuracy_established": false,
+  "superseded_analysis": "osm-municipal-position-review-v1-mixed-scope.json included Sejong/Jochiwon OSM nodes while municipal dataset is Cheongju; excluded from final comparison",
+  "notes": [
+    "Point, crossing way and registered polygon are different object units; counts do not establish coverage rates",
+    "Distance compares source geometry only; agreement does not establish actual curb/width/grade or identity",
+    "No point snapping, new crossings or route topology promotion"
+  ]
+}

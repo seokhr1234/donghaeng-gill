@@ -1,0 +1,30 @@
+{
+  "id": "cheongju-tgis-wfs-cycleway-areas-core",
+  "url": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_C114_A&outputFormat=application%2Fjson&bbox=228170.34892551968%2C445779.2976607897%2C231312.53086467873%2C449119.2714837272%2CEPSG%3A5186&maxFeatures=1000",
+  "timeout": 90,
+  "layer": "GT_C114_A",
+  "research_bbox_lonlat": [
+    127.315,
+    36.61,
+    127.35,
+    36.64
+  ],
+  "requested_at_utc": "2026-11-16T15:48:21.997318+00:00",
+  "requested_at_kst": "2026-11-17T00:48:21.997330+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_C114_A&outputFormat=application%2Fjson&bbox=228170.34892551968%2C445779.2976607897%2C231312.53086467873%2C449119.2714837272%2CEPSG%3A5186&maxFeatures=1000",
+  "response_headers": {
+    "date": "Mon, 16 Nov 2026 15:48:22 GMT",
+    "content-type": "application/json;charset=UTF-8",
+    "server": "envoy"
+  },
+  "bytes": 75477,
+  "sha256": "1ce86f11aca4182f587beecae6774d03e68deb8561cc0d54e19b56254260b447",
+  "response_path": "raw/cheongju-tgis-wfs-cycleway-areas-core/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:48:22.926081+00:00"
+}

@@ -1,0 +1,26 @@
+{
+  "id": "copernicus-license",
+  "url": "https://dataspace.copernicus.eu/sites/default/files/media/files/2025-06/copernicus_contributing_mission_data_access_v2_cop_dem_licenses.pdf",
+  "timeout": 60,
+  "requested_at_utc": "2026-11-16T15:15:18.977364+00:00",
+  "requested_at_kst": "2026-11-17T00:15:18.977370+09:00",
+  "field_verified": false,
+  "source_as_of": null,
+  "source_crs": null,
+  "vertical_datum": null,
+  "http_status": 200,
+  "final_url": "https://dataspace.copernicus.eu/sites/default/files/media/files/2025-06/copernicus_contributing_mission_data_access_v2_cop_dem_licenses.pdf",
+  "response_headers": {
+    "date": "Mon, 16 Nov 2026 15:15:20 GMT",
+    "last-modified": "Wed, 04 Jun 2025 09:02:52 GMT",
+    "etag": "\"7a0ca-636bb431b8d6e\"",
+    "content-length": "499914",
+    "content-type": "application/pdf",
+    "server": "envoy"
+  },
+  "bytes": 499914,
+  "sha256": "bb4a01dcd7f61acefa81c9ccd76af975e12096158169acf0d7b5c44c26c8701f",
+  "response_path": "raw/copernicus-license/response.bin",
+  "transport_result": "http_response",
+  "completed_at_utc": "2026-11-16T15:15:20.519702+00:00"
+}

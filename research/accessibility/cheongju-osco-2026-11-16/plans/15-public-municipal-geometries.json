@@ -1,0 +1,171 @@
+[
+  {
+    "id": "cheongju-tgis-wfs-crossings-study",
+    "url": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_A004_A&outputFormat=application%2Fjson&bbox=225030.58970356168%2C443550.1905484578%2C234900.12847381394%2C452462.21576077957%2CEPSG%3A5186&maxFeatures=5000",
+    "timeout": 80,
+    "layer": "GT_A004_A",
+    "declared_source_crs": "EPSG:5186",
+    "research_bbox_lonlat": [
+      127.28,
+      36.59,
+      127.39,
+      36.67
+    ]
+  },
+  {
+    "id": "cheongju-tgis-wfs-tactile-study",
+    "url": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_C094_A&outputFormat=application%2Fjson&bbox=225030.58970356168%2C443550.1905484578%2C234900.12847381394%2C452462.21576077957%2CEPSG%3A5186&maxFeatures=5000",
+    "timeout": 80,
+    "layer": "GT_C094_A",
+    "declared_source_crs": "EPSG:5186",
+    "research_bbox_lonlat": [
+      127.28,
+      36.59,
+      127.39,
+      36.67
+    ]
+  },
+  {
+    "id": "cheongju-tgis-wfs-audible-signals-study",
+    "url": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_A119_P&outputFormat=application%2Fjson&bbox=225030.58970356168%2C443550.1905484578%2C234900.12847381394%2C452462.21576077957%2CEPSG%3A5186&maxFeatures=5000",
+    "timeout": 80,
+    "layer": "GT_A119_P",
+    "declared_source_crs": "EPSG:5186",
+    "research_bbox_lonlat": [
+      127.28,
+      36.59,
+      127.39,
+      36.67
+    ]
+  },
+  {
+    "id": "cheongju-tgis-wfs-pedestrian-buttons-study",
+    "url": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_A090_P&outputFormat=application%2Fjson&bbox=225030.58970356168%2C443550.1905484578%2C234900.12847381394%2C452462.21576077957%2CEPSG%3A5186&maxFeatures=5000",
+    "timeout": 80,
+    "layer": "GT_A090_P",
+    "declared_source_crs": "EPSG:5186",
+    "research_bbox_lonlat": [
+      127.28,
+      36.59,
+      127.39,
+      36.67
+    ]
+  },
+  {
+    "id": "cheongju-tgis-wfs-pedestrian-voice-guides-study",
+    "url": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_C131_P&outputFormat=application%2Fjson&bbox=225030.58970356168%2C443550.1905484578%2C234900.12847381394%2C452462.21576077957%2CEPSG%3A5186&maxFeatures=5000",
+    "timeout": 80,
+    "layer": "GT_C131_P",
+    "declared_source_crs": "EPSG:5186",
+    "research_bbox_lonlat": [
+      127.28,
+      36.59,
+      127.39,
+      36.67
+    ]
+  },
+  {
+    "id": "cheongju-tgis-wfs-aux-walk-signals-study",
+    "url": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_A112_P&outputFormat=application%2Fjson&bbox=225030.58970356168%2C443550.1905484578%2C234900.12847381394%2C452462.21576077957%2CEPSG%3A5186&maxFeatures=5000",
+    "timeout": 80,
+    "layer": "GT_A112_P",
+    "declared_source_crs": "EPSG:5186",
+    "research_bbox_lonlat": [
+      127.28,
+      36.59,
+      127.39,
+      36.67
+    ]
+  },
+  {
+    "id": "cheongju-tgis-wfs-grade-separated-crossings-study",
+    "url": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_C095_A&outputFormat=application%2Fjson&bbox=225030.58970356168%2C443550.1905484578%2C234900.12847381394%2C452462.21576077957%2CEPSG%3A5186&maxFeatures=5000",
+    "timeout": 80,
+    "layer": "GT_C095_A",
+    "declared_source_crs": "EPSG:5186",
+    "research_bbox_lonlat": [
+      127.28,
+      36.59,
+      127.39,
+      36.67
+    ]
+  },
+  {
+    "id": "cheongju-tgis-wfs-ground-walk-signals-study",
+    "url": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_A089_A&outputFormat=application%2Fjson&bbox=225030.58970356168%2C443550.1905484578%2C234900.12847381394%2C452462.21576077957%2CEPSG%3A5186&maxFeatures=5000",
+    "timeout": 80,
+    "layer": "GT_A089_A",
+    "declared_source_crs": "EPSG:5186",
+    "research_bbox_lonlat": [
+      127.28,
+      36.59,
+      127.39,
+      36.67
+    ]
+  },
+  {
+    "id": "cheongju-tgis-wfs-walk-lighting-study",
+    "url": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_C022_P&outputFormat=application%2Fjson&bbox=225030.58970356168%2C443550.1905484578%2C234900.12847381394%2C452462.21576077957%2CEPSG%3A5186&maxFeatures=5000",
+    "timeout": 80,
+    "layer": "GT_C022_P",
+    "declared_source_crs": "EPSG:5186",
+    "research_bbox_lonlat": [
+      127.28,
+      36.59,
+      127.39,
+      36.67
+    ]
+  },
+  {
+    "id": "cheongju-tgis-wfs-crosswalk-lighting-study",
+    "url": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_C130_P&outputFormat=application%2Fjson&bbox=225030.58970356168%2C443550.1905484578%2C234900.12847381394%2C452462.21576077957%2CEPSG%3A5186&maxFeatures=5000",
+    "timeout": 80,
+    "layer": "GT_C130_P",
+    "declared_source_crs": "EPSG:5186",
+    "research_bbox_lonlat": [
+      127.28,
+      36.59,
+      127.39,
+      36.67
+    ]
+  },
+  {
+    "id": "cheongju-tgis-wfs-traffic-islands-study",
+    "url": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_C109_A&outputFormat=application%2Fjson&bbox=225030.58970356168%2C443550.1905484578%2C234900.12847381394%2C452462.21576077957%2CEPSG%3A5186&maxFeatures=5000",
+    "timeout": 80,
+    "layer": "GT_C109_A",
+    "declared_source_crs": "EPSG:5186",
+    "research_bbox_lonlat": [
+      127.28,
+      36.59,
+      127.39,
+      36.67
+    ]
+  },
+  {
+    "id": "cheongju-tgis-wfs-safety-fences-study",
+    "url": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_C059_A&outputFormat=application%2Fjson&bbox=225030.58970356168%2C443550.1905484578%2C234900.12847381394%2C452462.21576077957%2CEPSG%3A5186&maxFeatures=5000",
+    "timeout": 80,
+    "layer": "GT_C059_A",
+    "declared_source_crs": "EPSG:5186",
+    "research_bbox_lonlat": [
+      127.28,
+      36.59,
+      127.39,
+      36.67
+    ]
+  },
+  {
+    "id": "cheongju-tgis-wfs-speed-humps-study",
+    "url": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_A067_A&outputFormat=application%2Fjson&bbox=225030.58970356168%2C443550.1905484578%2C234900.12847381394%2C452462.21576077957%2CEPSG%3A5186&maxFeatures=5000",
+    "timeout": 80,
+    "layer": "GT_A067_A",
+    "declared_source_crs": "EPSG:5186",
+    "research_bbox_lonlat": [
+      127.28,
+      36.59,
+      127.39,
+      36.67
+    ]
+  }
+]
