@@ -1,0 +1,12 @@
+{
+  "checkedDateKst": "2026-11-16",
+  "calls": 1,
+  "source": "build-environment-native-equivalent-https",
+  "sample": "Seoul Station to Seongbuk-gu Office public reference coordinates",
+  "androidDeviceTest": false,
+  "keyPrinted": false,
+  "requestUrlStored": false,
+  "httpStatus": 200,
+  "pathCount": 21,
+  "pass": true
+}

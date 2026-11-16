@@ -3,6 +3,9 @@ apply plugin: 'com.android.application'
 def demoKeys = new Properties()
 def demoKeyFile = rootProject.file('../key.properties')
 if (demoKeyFile.exists()) demoKeyFile.withInputStream { demoKeys.load(it) }
+def demoSigning = new Properties()
+def demoSigningFile = rootProject.file('../signing.properties')
+if (demoSigningFile.exists()) demoSigningFile.withInputStream { demoSigning.load(it) }
 
 android {
     buildFeatures { buildConfig true }
@@ -13,8 +16,8 @@ android {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         buildConfigField "String", "ODSAY_ANDROID_KEY", groovy.json.JsonOutput.toJson(demoKeys.getProperty("ODSAY_ANDROID_KEY", ""))
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.0.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         aaptOptions {
              // Files and dirs to omit from the packaged assets dir, modified to accommodate modern web apps.
@@ -22,8 +25,19 @@ android {
             ignoreAssetsPattern = '!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~'
         }
     }
+    signingConfigs {
+        if (demoSigningFile.exists()) {
+            demoRelease {
+                storeFile rootProject.file('../' + demoSigning.getProperty('storeFile'))
+                storePassword demoSigning.getProperty('storePassword')
+                keyAlias demoSigning.getProperty('keyAlias')
+                keyPassword demoSigning.getProperty('keyPassword')
+            }
+        }
+    }
     buildTypes {
         release {
+            if (demoSigningFile.exists()) signingConfig signingConfigs.demoRelease
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }

@@ -18,9 +18,11 @@ navigation-private-logs/
 # Android build outputs and local demo keys
 donghaeng-nav/mobile/www/
 donghaeng-nav/mobile/android/.gradle/
+donghaeng-nav/mobile/android/.kotlin/
 donghaeng-nav/mobile/android/**/build/
 donghaeng-nav/mobile/android/local.properties
 donghaeng-nav/mobile/key.properties
+donghaeng-nav/mobile/signing.properties
 donghaeng-nav/mobile/*.apk
 *.keystore
 donghaeng-nav/mobile/android/app/src/main/assets/public/

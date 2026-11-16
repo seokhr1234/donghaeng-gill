@@ -5,10 +5,13 @@
 
 ## 설치 후 사용
 
-디버그 APK를 지정한 기기에 설치하고 오른쪽 위 **교통 키**에서 ODsay **Android용 키**를 입력한다.
+2026-11-15 디버그 APK는 키가 없으며, 오른쪽 위 **교통 키**에서 ODsay **Android용 키**를 입력한다.
+2026-11-16의 1.0.1 Release APK는 사용자가 제공한 Android 키를 네이티브 빌드에 포함한다.
+새 설치에서는 키를 다시 입력할 필요가 없으며 같은 버튼으로 교체/삭제할 수 있다.
 ODsay 애플리케이션의 Android 플랫폼에 위 패키지명을 등록한다. Server 키의 IP 제한을 우회하지 않는다.
 키는 네이티브 앱의 비공개 설정에 저장하며 JS/HTML/로그로 반환하지 않는다. 삭제 버튼으로 지울 수 있다.
-제공한 APK에는 실제 키가 없다. 실제 인증·실기기 GPS는 사용자가 키를 설정한 기기에서 별도 검사해야 한다.
+1.0.1 키의 실제 공급자 샘플 검색은 빌드 환경에서 1회 성공했다. 실기기 설치·네이티브 통신·GPS 검사는 별도다.
+1.0 디버그판과 1.0.1 Release판은 서명이 달라 이전 디버그판을 삭제해야 설치할 수 있다. 삭제하면 기기 내 앱 데이터도 지워진다.
 
 ODsay 직접 요청은 Android 네이티브 통신부에서 수행하며 기기별 KST 일일20회·동시2개 제한을 둔다.
 계정 전체 한도는 ODsay 설정에서 관리해야 한다. 조회 전 좌표 전송을 안내하며 자동 재시도는 없다.
@@ -45,6 +48,23 @@ SDK 경로는 Android Studio의 로컬 설정 또는 ANDROID_HOME에 둔다. loc
 `android/app/build/outputs/apk/debug/app-debug.apk`다.
 Android의 gzip 자산 이름 충돌 때문에 원본 JSON만 패키징하며 APK ZIP이 압축한다.
 원래 dist의 JSON/gzip은 그대로 보존한다. 고정 IP 서버는 필요하지 않다.
+
+## 서명된 Release 빌드
+
+로컬에서 서명용 keystore를 생성하고 `signing.properties.example`을 `signing.properties`로 복사해
+keystore 파일명·별칭·비밀번호를 설정한다. 둘 다 Git 제외 대상이며 업데이트 APK에는 동일한 서명키가 필요하다.
+`storeFile`은 이 mobile 폴더를 기준으로 해석한다. 설정이 없으면 Gradle은 설치용 서명이 없는 APK를 만든다.
+
+```sh
+npm run sync --prefix donghaeng-nav/mobile
+cd donghaeng-nav/mobile/android
+./gradlew assembleRelease
+```
+
+출력은 `android/app/build/outputs/apk/release/app-release.apk`다. 버전1.0.1/versionCode2, 패키지는
+`app.donghaeng.gill.demo`로 유지한다. 실제 키·서명 설정·keystore는 소스 커밋/로그에 넣지 않는다.
+키가 포함된 APK의 GitHub Release 업로드는 저장소가 비공개인지 확인한 후 수행한다.
+이번 작업과 게시 상태는 [Release 기록](../docs/android-release-2026-11-16.md)을 참고한다.
 
 검증: `npm run prepare:web --prefix donghaeng-nav/mobile` 뒤 이 디렉터리에서
 `node scripts/test-native-frontend.mjs`. OS 브리지는 모의이고 보행 API는 실제 보존 망을 사용한다.
