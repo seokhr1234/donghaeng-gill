@@ -1,0 +1,20 @@
+{
+  "pass": true,
+  "checked_date_kst": "2026-11-17",
+  "repository_private": true,
+  "source_commit": "3d92224367a07fe57ded94af0fae31026336e787",
+  "download_tag": "android-demo-v1.0.3-download",
+  "distribution_commit": "4526d73555208320bf72622414150e82e6f7d9eb",
+  "download_url": "https://github.com/seokhr1234/aiaiaiaiaiaiaiai/archive/refs/tags/android-demo-v1.0.3-download.zip",
+  "downloaded_github_zip_bytes": 17434422,
+  "zip_crc_verified": true,
+  "apk_sha256": "39a47b44875a442bb842455d5a5eb0d414f76ac233d8f910729f4a80e3af23d9",
+  "download_matches_signed_apk": true,
+  "direct_asset_upload_attempts_this_release": 0,
+  "delivery": "verified private download tag, matching prior successful delivery",
+  "published": true,
+  "release_url": "https://github.com/seokhr1234/aiaiaiaiaiaiaiai/releases/tag/android-demo-v1.0.3",
+  "field_verified": false,
+  "published_at_kst": "2026-11-17T08:28:52+09:00",
+  "release_direct_assets": 0
+}

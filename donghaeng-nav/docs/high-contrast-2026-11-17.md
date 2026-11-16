@@ -24,3 +24,12 @@
 - [Android 프런트엔드](android-demo-results.json): APK 자산에서 고대비와320px의 교통 키/모드 버튼, 기존 네이티브 통신 모의 검사를 수행한다. 실제 Android 휴대폰 설치·색각 사용자 평가·GPS·현장 통행은 별도다.
 
 Android는 **1.0.3 / versionCode4**, 패키지 `app.donghaeng.gill.demo`다. 이전1.0.2와 같은 로컬 서명/네이티브 Android 키를 사용한다. 키·서명 설정·keystore는 Git/웹/로그에 포함하지 않는다. 최종 APK·푸시·Vercel·다운로드 검증은 게시 결과에 기록한다. 공개 웹은 도보 전용이고 Android 대중교통 시연은 그대로다.
+
+
+## 게시 완료
+
+- 앱 소스 `3d92224367a07fe57ded94af0fae31026336e787`를 `feature/cheongju-osco-demo`와 `main`에 강제 변경 없이 푸시했다. Vercel 두 프로젝트 배포 성공과 [운영 앱](https://donghaeng-gill.vercel.app)의 새 파일7개 해시 일치·서울963,670구간·공개 대중교통4경로 차단을 확인했다. [운영 검사](high-contrast-production-results-2026-11-17.json).
+- [Android1.0.3 Release](https://github.com/seokhr1234/aiaiaiaiaiaiaiai/releases/tag/android-demo-v1.0.3)와 **[설치용 APK ZIP](https://github.com/seokhr1234/aiaiaiaiaiaiaiai/archive/refs/tags/android-demo-v1.0.3-download.zip)**을 게시했다. GitHub 로그인이 필요하며 압축을 풀고APK를 설치한다. 이전1.0.2와 같은 서명이며 사용자 기기 설치는 별도다.
+- APK17,922,274bytes, SHA256 `39a47b44875a442bb842455d5a5eb0d414f76ac233d8f910729f4a80e3af23d9`. 서명·비디버그·API24~36·패키지/버전·모든 패키징 자산과 최종 소스·고대비 파일 일치·키가 네이티브DEX에만 포함됨을 확인했다. [APK 검사](high-contrast-apk-results-2026-11-17.json).
+- 이전 직접첨부 인증 문제로 성공했던APK 전용 다운로드 태그 방식을 유지했다. 이번 직접첨부 재시도0회, Release 직접첨부0개이며 본문의 검증된ZIP링크로 제공한다. 태그 `android-demo-v1.0.3-download`, 배포 스냅샷 `4526d73555208320bf72622414150e82e6f7d9eb`에는APK/체크섬/빌드정보/설치안내4개만 포함한다. 개발 소스 브랜치와 구분하며 원시 키·서명 파일은 없다.
+- 실제 GitHub ZIP17,434,422bytes를 다시 내려받아 CRC·내부APK 해시 일치를 확인했다.2026-11-17 08:28:52 KST 게시했고 저장소PRIVATE를 유지한다. [다운로드 검사](high-contrast-download-results-2026-11-17.json). 실제 색각 사용자·실기기GPS·현장 통행 검증은 미완료다.

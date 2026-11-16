@@ -1,6 +1,6 @@
 # 동행길 Android 시연 APK
 
-2026-11-17 최신: **1.0.3/versionCode4**에 고대비 버튼과 색상 외 지도 구분을 추가했습니다. [검사·설치 파일 게시 기록](../docs/high-contrast-2026-11-17.md). 기존1.0.2와 같은 패키지/서명/네이티브 키를 사용합니다.
+2026-11-17 최신: **1.0.3/versionCode4**에 고대비 버튼과 색상 외 지도 구분을 추가했습니다. [검사·설치 파일 게시 기록](../docs/high-contrast-2026-11-17.md). 기존1.0.2와 같은 패키지/서명/네이티브 키를 사용합니다. [설치ZIP](https://github.com/seokhr1234/aiaiaiaiaiaiaiai/archive/refs/tags/android-demo-v1.0.3-download.zip)을 내려받아 압축을 풀고 설치하세요. GitHub 로그인이 필요합니다.
 
 공통 소스는 `../dist/`, 웹 공개판은 도보 전용이며 Android 자산 빌드만 대중교통을 활성화한다.
 2026-11-17: **1.0.2/versionCode3**는 청주오스코 주변 지도·공식 안내·등록 지물을 포함하며 해당 지역으로 시작합니다. 키와 서명은 기존1.0.1 Release 설정을 유지합니다. [앱 연결·검사·게시 기록](../docs/osco-app-integration-2026-11-17.md). 청주 도보 계산은 미지원이며 네이티브 대중교통 참고 검색과 구분합니다. [설치용1.0.2 APK ZIP](https://github.com/seokhr1234/aiaiaiaiaiaiaiai/archive/refs/tags/android-demo-v1.0.2-download.zip)을 내려받아 압축을 풀고 설치하세요. 비공개 GitHub 로그인이 필요합니다.

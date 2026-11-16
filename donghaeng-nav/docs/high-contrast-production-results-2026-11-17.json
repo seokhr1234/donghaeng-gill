@@ -1,0 +1,88 @@
+{
+  "pass": true,
+  "checked_date_kst": "2026-11-17",
+  "source_commit": "3d92224367a07fe57ded94af0fae31026336e787",
+  "origin": "https://donghaeng-gill.vercel.app",
+  "files": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "matches_source": true,
+      "sha256": "fa0c63d15462dd296cdcc5f3eead586552b9420970f30e7150ed68b728813e30"
+    },
+    {
+      "path": "app.js",
+      "status": 200,
+      "matches_source": true,
+      "sha256": "a6bf5357c5f7faf72bc8138b88ef27268d950ea3cff560d31cb7355ad014291f"
+    },
+    {
+      "path": "high-contrast.js",
+      "status": 200,
+      "matches_source": true,
+      "sha256": "cbb29968cd8d89440e2bd259426b4db433fa1af319847e5bfbee136b597af2f9"
+    },
+    {
+      "path": "high-contrast.css",
+      "status": 200,
+      "matches_source": true,
+      "sha256": "a3233e1c66052b476d20a9f513b7c2a353afbcdb0e55cb63ff6f0fa6dc18eeb7"
+    },
+    {
+      "path": "osco-map.js",
+      "status": 200,
+      "matches_source": true,
+      "sha256": "6e3cbfe344143010aa2fce8bae2bbc74feb7cf02a75f959d69cc806622213a22"
+    },
+    {
+      "path": "expansion.html",
+      "status": 200,
+      "matches_source": true,
+      "sha256": "140f3c17a8a1525ac6b6e0cf7369da812f673fd62a1a749157b1fd6b77e418ea"
+    },
+    {
+      "path": "build-profile.js",
+      "status": 200,
+      "matches_source": true,
+      "sha256": "28c7a02d601f2bf45d1241787e0401a8a3240daf28c75c4ad48167e40fa37a1a"
+    }
+  ],
+  "deployment_statuses": [
+    {
+      "context": "Vercel – donghaeng",
+      "state": "success",
+      "target_url": "https://vercel.com/snu-clab/donghaeng/7Q9hRRTvGhsLWvkvnjZPmGRbADic"
+    },
+    {
+      "context": "Vercel – aiaiaiaiaiaiaiai",
+      "state": "success",
+      "target_url": "https://vercel.com/snu-clab/aiaiaiaiaiaiaiai/9m4zwRxGRHQeZ7fUTxpNtuLKL89C"
+    }
+  ],
+  "web_transit_enabled": false,
+  "blocked_transit_paths": [
+    {
+      "path": "/api/routes/transit",
+      "status": 404,
+      "code": "transit_not_in_web_build"
+    },
+    {
+      "path": "/api/transit/walk-review",
+      "status": 404,
+      "code": "transit_not_in_web_build"
+    },
+    {
+      "path": "/api/journeys",
+      "status": 404,
+      "code": "transit_not_in_web_build"
+    },
+    {
+      "path": "/api/index?route=routes/transit",
+      "status": 404,
+      "code": "transit_not_in_web_build"
+    }
+  ],
+  "preserved_city_segments": 963670,
+  "actual_paid_provider_calls": 0,
+  "field_verified": false
+}

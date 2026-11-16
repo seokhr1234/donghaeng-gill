@@ -4,7 +4,7 @@
 
 전체 변경은 [수정이력.md](수정이력.md), 작업 규칙은 [AGENTS.md](AGENTS.md), 이번 전환의 근거와 검사 범위는 [메인 전환 기록](donghaeng-nav/docs/main-navigation-promotion.md)을 참고하세요.
 
-2026-11-17 고대비: 화면 위 **◐ 고대비**에서 흰/검정 중심의 화면, 지도 선 모양·글자 기호와 큰 대비를 사용할 수 있습니다. 선택은 기기에 저장하고 시스템 고대비 기본값도 지원합니다. [구현·검증·Android1.0.3 기록](donghaeng-nav/docs/high-contrast-2026-11-17.md). 경로·조사 근거·웹 도보 전용/Android 대중교통 분리는 유지합니다.
+2026-11-17 고대비: 화면 위 **◐ 고대비**에서 흰/검정 중심의 화면, 지도 선 모양·글자 기호와 큰 대비를 사용할 수 있습니다. 선택은 기기에 저장하고 시스템 고대비 기본값도 지원합니다. [구현·검증·Android1.0.3 기록](donghaeng-nav/docs/high-contrast-2026-11-17.md). 경로·조사 근거·웹 도보 전용/Android 대중교통 분리는 유지합니다. [고대비 APK1.0.3 설치 ZIP](https://github.com/seokhr1234/aiaiaiaiaiaiaiai/archive/refs/tags/android-demo-v1.0.3-download.zip)을 게시했습니다. 비공개 저장소 GitHub 로그인이 필요합니다.
 
 2026-11-16 착수: [청주오스코 주변 사전 자료조사](research/accessibility/cheongju-osco-2026-11-16/README.md). 사용자 장소 변경에 따라 자료조사만 진행했습니다. 공식 BF 인증·시설/주차 도면, 청주시 보행 안전시설 등록 도형19종, 최신 OSM 지역 원본·버스 관계, 공개 표고를 확보·대조했습니다. 원본 기준일/수집일/좌표계/현장 미검증과 결측·상충을 구분하며 앱 반영·Vercel·APK 후속 작업은 보류합니다.
 
