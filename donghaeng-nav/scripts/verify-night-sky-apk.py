@@ -34,6 +34,8 @@ with zipfile.ZipFile(APK) as archive:
     assert archive.testzip() is None
     for name in archive.namelist():
         assert not name.endswith(('.keystore', 'key.properties', 'signing.properties'))
+        if not name.endswith('/'):
+            assert key.encode() not in archive.read(name), 'Local credential remains in public APK entry'
         if name.startswith('assets/public/') and not name.endswith('/'):
             raw = archive.read(name)
             assert key.encode() not in raw
@@ -48,7 +50,8 @@ with zipfile.ZipFile(APK) as archive:
             for token in ['configureGemini', 'clearGemini', 'resetKey', 'x-goog-api-key']:
                 if token.encode() in raw_dex:
                     native_strings.add(token)
-    assert native_key_found
+    # Public distribution gate: the known local credential must be absent.
+    assert not native_key_found
     assert native_strings == {'configureGemini', 'clearGemini', 'resetKey', 'x-goog-api-key'}
     assert b'configureGemini' in archive.read('assets/public/native-runtime.js')
     profile = archive.read('assets/public/build-profile.js').decode()
@@ -71,6 +74,7 @@ result = {'pass': True, 'checked_date_kst': '2026-11-17', 'app_id': 'app.donghae
           'certificate_sha256': certificate, 'same_signing_certificate_as_1_0_3': True,
           'apk_bytes': APK.stat().st_size, 'apk_sha256': sha(APK.read_bytes()),
           'theme': 'night-sky', 'natural_map_colors': True, 'nested_number_borders_removed': True, 'high_contrast_assets_verified': True, 'android_transit_enabled': True, 'initial_area': 'osco', 'native_key_embedded': native_key_found,
+          'public_distribution_keyless': not native_key_found,
           'gemini_input_native_supported': True, 'gemini_personal_key_embedded': False,
           'gemini_uses_device_private_settings_or_server': True,
           'key_in_web_assets': False, 'key_or_signing_files_in_apk': False, 'key_in_build_logs': False,

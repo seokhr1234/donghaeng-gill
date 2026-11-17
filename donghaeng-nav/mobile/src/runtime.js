@@ -43,11 +43,11 @@ globalThis.fetch=async(resource,options={})=>{
   }
   if(url.pathname==='/api/routes/transit'){
    const input=walkingInput(JSON.parse(options.body));if(transitDistance(input.origin,input.destination)<=700)throw shortTransitError();
-   const r=await native('search',{origin:input.origin,destination:input.destination},signal);if(r.status!==200)throw new ServiceError(r.status,'android_transit_unavailable','대중교통 검색에 실패했어요. 오른쪽 위 교통 키 설정과 인터넷 연결을 확인해 주세요.');return respond(normalizeOdsay(json(r.body),input));
+   const r=await native('search',{origin:input.origin,destination:input.destination},signal);if(r.status!==200)throw new ServiceError(r.status,'android_transit_unavailable','대중교통 검색에 실패했어요. 오른쪽 위 API 설정과 인터넷 연결을 확인해 주세요.');return respond(normalizeOdsay(json(r.body),input));
   }
   if(url.pathname==='/api/transit/walk-review')return respond(await review.review(JSON.parse(options.body),{signal}));
   const r=await native('backend',{path:url.pathname+url.search,method:options.method||'GET',body:options.body||''},signal);return new Response(r.body,{status:r.status,headers:{'Content-Type':'application/json'}});
- }catch(e){signal?.throwIfAborted();return respond({code:e.code||'android_service_unavailable',error:e.status?e.message:'앱 연결에 실패했어요. 교통 키와 인터넷 연결을 확인해 주세요.',...(e.providerCode?{providerCode:e.providerCode}:{})},e.status&&e.status>=400&&e.status<=599?e.status:503)}
+ }catch(e){signal?.throwIfAborted();return respond({code:e.code||'android_service_unavailable',error:e.status?e.message:'앱 연결에 실패했어요. API 설정과 인터넷 연결을 확인해 주세요.',...(e.providerCode?{providerCode:e.providerCode}:{})},e.status&&e.status>=400&&e.status<=599?e.status:503)}
 };
 // Preserve the original filter/accuracy handling: only replace the device source.
 const locationError=e=>({code:/denied|0003/i.test(String(e?.message||e?.code))?1:2,message:'위치 권한과 기기의 위치 서비스를 확인해 주세요.'});

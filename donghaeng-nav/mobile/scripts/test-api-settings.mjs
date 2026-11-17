@@ -6,9 +6,9 @@ import {createRequire} from 'node:module';
 import {build} from 'esbuild';
 const {chromium} = createRequire(import.meta.url)('playwright'), mobile = path.resolve('.');
 const checks = [], errors = [], geminiRequests = [], backendRequests = [];
-let deviceGemini = false, keySource = 'bundled', failure = null;
+let deviceGemini = false, keySource = 'bundled', failure = null, bundledKeyAvailable = true;
 const profile = {wheelchair: false, avoidSteps: true, avoidSlope: false, rest: false, short: false, recognized: true, restMinutes: null, restKind: 'any', maxSlope: null};
-const state = () => ({configured: keySource !== 'disabled', keySource, bundledKeyAvailable: true, geminiConfigured: deviceGemini, used: 0, dailyLimit: 20});
+const state = () => ({configured: !['disabled', 'missing'].includes(keySource), keySource, bundledKeyAvailable, geminiConfigured: deviceGemini, used: 0, dailyLimit: 20});
 await build({entryPoints: ['src/runtime.js'], bundle: true, format: 'iife', platform: 'browser', target: 'chrome100', outfile: '/tmp/donghaeng-api-settings-test.js', plugins: [{name: 'native-doubles', setup(b) {
  b.onResolve({filter: /^@capacitor\/core$/}, () => ({path: 'core', namespace: 'test'}));
  b.onResolve({filter: /^@capacitor\/geolocation$/}, () => ({path: 'gps', namespace: 'test'}));
@@ -85,6 +85,12 @@ try {
  await page.waitForFunction(() => document.querySelector('#android-traffic-key-state').textContent.includes('내장 키 적용 중'));
  await page.getByRole('button', {name: 'API 설정 닫기', exact: true}).click();
  const googleBefore = geminiRequests.length; assert.equal((await analyze()).data.keySource, 'server'); assert.equal(geminiRequests.length, googleBefore);
+ bundledKeyAvailable = false; keySource = 'missing';
+ await page.getByRole('button', {name: 'API 설정', exact: true}).click();
+ await page.waitForFunction(() => document.querySelector('#android-traffic-key-state').textContent.includes('공개 배포판'));
+ assert(await page.getByRole('button', {name: '대중교통 내장 키 복원', exact: true}).isHidden());
+ assert(await page.getByRole('button', {name: '대중교통 키 입력·변경', exact: true}).isVisible());
+ await page.getByRole('button', {name: 'API 설정 닫기', exact: true}).click();
  checks.push('Saved native-state mock survives page restart; Gemini deletion returns to server mode, disabled ODsay can restore the embedded default, and the settings dialog fits small/landscape screens.');
  assert.deepEqual(errors, []);
  const report = {pass: true, checks, browserErrors: errors, nativeBridgeMocked: true, actualGoogleCalls: 0, actualOdsayCalls: 0, realGeminiKeyInTests: false, actualAndroidDeviceTest: false, fieldVerified: false};

@@ -19,6 +19,9 @@
   "field_verified": false,
   "later_user_instruction": "User requested proceeding with APK publication including the Android key and adding Gemini API input.",
   "publication_hold_superseded": true,
-  "latest_status": "Gemini input added and verified; final APK publication in progress.",
-  "latest_apk_sha256": "c61129e58e981fc7733cf8397c9acdb810feb70ff9842c14845e2b36771053a2"
+  "latest_status": "Public keyless build and verification in progress; rejected keyed upload was not executed.",
+  "latest_apk_sha256": "c61129e58e981fc7733cf8397c9acdb810feb70ff9842c14845e2b36771053a2",
+  "public_keyed_upload_auto_review_rejected": true,
+  "auto_review_reason": "Embedding the ODsay credential in a public APK/tag/ZIP publicly exposes a credential, even with user request.",
+  "safe_alternative": "Rebuild public APK without any embedded key; ODsay and Gemini use native device input, Gemini can also use the existing server."
 }

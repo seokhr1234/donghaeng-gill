@@ -1,0 +1,379 @@
+{
+  "pass": true,
+  "checked_date_kst": "2026-11-17",
+  "app_id": "app.donghaeng.gill.demo",
+  "version_name": "1.0.4",
+  "version_code": 5,
+  "min_sdk": 24,
+  "target_sdk": 36,
+  "build": "release",
+  "debuggable": false,
+  "signature_verified": true,
+  "signature_scheme_v2": true,
+  "certificate_sha256": "373a74a0fabf8ace1ff783c28b766b976856999035e50f49a6d82ee45092ee73",
+  "same_signing_certificate_as_1_0_3": true,
+  "apk_bytes": 17926782,
+  "apk_sha256": "c61129e58e981fc7733cf8397c9acdb810feb70ff9842c14845e2b36771053a2",
+  "theme": "night-sky",
+  "natural_map_colors": true,
+  "nested_number_borders_removed": true,
+  "high_contrast_assets_verified": true,
+  "android_transit_enabled": true,
+  "initial_area": "osco",
+  "native_key_embedded": true,
+  "gemini_input_native_supported": true,
+  "gemini_personal_key_embedded": false,
+  "gemini_uses_device_private_settings_or_server": true,
+  "key_in_web_assets": false,
+  "key_or_signing_files_in_apk": false,
+  "key_in_build_logs": false,
+  "packaged_assets_match_synced_source": true,
+  "osco_packet_matches_dist": true,
+  "web_asset_manifest": [
+    {
+      "file": "LEAFLET-LICENSE.txt",
+      "bytes": 1395,
+      "sha256": "53e8dc25862014e4324741ca18fbe3611e11d42ef69f59f86ea8c5389647d4cb"
+    },
+    {
+      "file": "access-review.js",
+      "bytes": 4670,
+      "sha256": "12b042aca301113e62c45c823751819a65fd96f3ca8f5331af91f27b5dc72493"
+    },
+    {
+      "file": "app.js",
+      "bytes": 99190,
+      "sha256": "11af141b0d1f7a191f39dee719d53fae3ac3fd3060ed775599e428279996d562"
+    },
+    {
+      "file": "build-profile.js",
+      "bytes": 106,
+      "sha256": "ee08b0f47f504dc86e568394ce176aa73ed89cfe045543109e9f01969ef1d13d"
+    },
+    {
+      "file": "city-map.js",
+      "bytes": 822,
+      "sha256": "d9a41a75d0d243a022ceb978ab2bd4a940cf95727c708a434fb0c5c8904e25a8"
+    },
+    {
+      "file": "condition-ai.js",
+      "bytes": 2029,
+      "sha256": "6af1d3a63ec647e26cdd3d688198908fa8a456d9266ec7ea803471ea6c4e1062"
+    },
+    {
+      "file": "condition-request.js",
+      "bytes": 2377,
+      "sha256": "9d46513541a0af3dbc3693e0033337dfdb1a54e84a02a0458b12813d39012b51"
+    },
+    {
+      "file": "cordova.js",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "cordova_plugins.js",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "data-loader.js",
+      "bytes": 2532,
+      "sha256": "f1acdda5d3f55c73a7049568628d7866382583351ba603ccccd562ce59c40bcc"
+    },
+    {
+      "file": "data/accessibility/benches/benches.geojson",
+      "bytes": 56345,
+      "sha256": "d32aa6fea8e206d4a0b06a80294ea071d935fd4bea79da21243eb808e70e7a7e"
+    },
+    {
+      "file": "data/accessibility/benches/expanded/benches-expanded.geojson",
+      "bytes": 236378,
+      "sha256": "5cbd2f42c2487d92d0d3680e30a9c336dab76fced12aeae01d3afb8366ea8e32"
+    },
+    {
+      "file": "data/accessibility/school-facilities.geojson",
+      "bytes": 186869,
+      "sha256": "8006ea771159e993a35167602943aa1cbf0c542176f0e9fbfd608d9f64bada25"
+    },
+    {
+      "file": "data/accessibility/seoul/registered-slopes.geojson",
+      "bytes": 1020389,
+      "sha256": "5b6f69bcc2d721764f7064888035a033324e0728001cfacb8ee079c78ea2dcee"
+    },
+    {
+      "file": "data/accessibility/seoul/seoul-base.json",
+      "bytes": 26970635,
+      "sha256": "8632d2b544225662243e1a5b953fd8914c558295f2a626d1cdd1b9f9c0a11e3f"
+    },
+    {
+      "file": "data/accessibility/seoul/seoul-facilities.geojson",
+      "bytes": 21316977,
+      "sha256": "cb16455270e7492755a96bf4a742c06a41da41a6efe81cb7d6e3a4366061a3f9"
+    },
+    {
+      "file": "data/accessibility/seoul/steep-roads.json",
+      "bytes": 5213314,
+      "sha256": "9dde6026028d74c9be8f8381103c717fa89519f67975674fa38f255ef3eb8fa7"
+    },
+    {
+      "file": "data/accessibility/seoul/summary.json",
+      "bytes": 1525,
+      "sha256": "61158e3a2ff23e86d8f48932b09d15a6ee8cb96ccc2ec0971c9872b60480de77"
+    },
+    {
+      "file": "data/accessibility/source-audit.json",
+      "bytes": 203,
+      "sha256": "70eac1742e820922a0cac80992a73392af05207785821056e1ffe85470cae6e6"
+    },
+    {
+      "file": "data/osco/context.json",
+      "bytes": 8054905,
+      "sha256": "5824deec3c23975b189b13207fe64f854e83be4081424e4417d3ff85898a39ba"
+    },
+    {
+      "file": "data/osco/info.json",
+      "bytes": 6948,
+      "sha256": "49d4e042ee425e1951e299dd0617acd9e98f16cb33964a836fc62ce81f8f8102"
+    },
+    {
+      "file": "data/precision/access-reports.json",
+      "bytes": 1144,
+      "sha256": "e33c45500f53d385a1884f1bad5fc130857bfd2de5a6d3e04c685f1764b7d6c3"
+    },
+    {
+      "file": "data/precision/crossings-review.geojson",
+      "bytes": 811494,
+      "sha256": "615aec503786dd1ea5d4e3ff5cbb5cbb7af34d50be5ad587fd2c4d1b17c96435"
+    },
+    {
+      "file": "data/precision/precision-map.geojson",
+      "bytes": 15947826,
+      "sha256": "876ad5216be134b779aab319386e3addbd06a4500029eebec35256c91cf6c6c8"
+    },
+    {
+      "file": "data/terrain/evidence.json",
+      "bytes": 5553154,
+      "sha256": "a94f671ddc81b4831aacf872fa243cde25473ebbaf51690b8c8479327afdabcc"
+    },
+    {
+      "file": "endpoint-routing.js",
+      "bytes": 5589,
+      "sha256": "a9e717e856a6d55ed624b1de3080644228d8bbcf90c7d16100bca00da030b606"
+    },
+    {
+      "file": "engine.js",
+      "bytes": 25551,
+      "sha256": "02b0f3ba11442bd2e3cf675dd97b15472e5f2c29ecfd3b85d8cb36f60cb2d651"
+    },
+    {
+      "file": "expansion.css",
+      "bytes": 1809,
+      "sha256": "efb954689f01636662f38d0958c8bc14d6ccc04b875271da5b36a38fc8579462"
+    },
+    {
+      "file": "expansion.html",
+      "bytes": 4031,
+      "sha256": "9c67866793883cd24592a31c24d243c2df5a025a546b63d3c52988f624477dfd"
+    },
+    {
+      "file": "expansion.js",
+      "bytes": 14428,
+      "sha256": "1047f78fe6e0782698cea1a216f6046e113977c6aca8345626285957853a889b"
+    },
+    {
+      "file": "facilities.js",
+      "bytes": 25511,
+      "sha256": "f43a3ba63022b9e191867c1153f7c45c5f40d5ad0d5d07ca46493f95895f81fd"
+    },
+    {
+      "file": "final-model.js",
+      "bytes": 4184,
+      "sha256": "f05592756fa21e66968205dde41d4bba65bdf05a91cc826da87a1f114ea66426"
+    },
+    {
+      "file": "gps-quality.js",
+      "bytes": 3133,
+      "sha256": "81b64a4b9a714dc5f994572e08de9d105b2d76b64360756a64f712c6e48a83d6"
+    },
+    {
+      "file": "gps-tracker.js",
+      "bytes": 2132,
+      "sha256": "75cb8f9b1553be32a955f63983c31accc0c341f11a148daf35c27851cbf83838"
+    },
+    {
+      "file": "high-contrast.css",
+      "bytes": 8330,
+      "sha256": "28e6efcaa0ccc15ceaa8fc4156517a08d18c1dffea3a16d0d9be520c44928af2"
+    },
+    {
+      "file": "high-contrast.js",
+      "bytes": 4916,
+      "sha256": "414f300f77dccd926a6b98c864a444825ed20976a9a51d6db45c2ac2d075ede3"
+    },
+    {
+      "file": "index.html",
+      "bytes": 24016,
+      "sha256": "7648d4fbcbd3c424dad559c167fe5f9a2de6443e3b085c519811912b3cfd3de4"
+    },
+    {
+      "file": "journey-review.js",
+      "bytes": 8535,
+      "sha256": "3e8a2bca92d7b758637a9500865d4b63183bcf61c0029f1ad8aec70026efc95c"
+    },
+    {
+      "file": "leaflet.css",
+      "bytes": 14806,
+      "sha256": "a7837102824184820dfa198d1ebcd109ff6d0ff9a2672a074b9a1b4d147d04c6"
+    },
+    {
+      "file": "leaflet.js",
+      "bytes": 147552,
+      "sha256": "db49d009c841f5ca34a888c96511ae936fd9f5533e90d8b2c4d57596f4e5641a"
+    },
+    {
+      "file": "map-context.json",
+      "bytes": 3340812,
+      "sha256": "ee61ec66d6916edce5d01a48b4888860ffdfb822386b92d9465c63aaa1c35872"
+    },
+    {
+      "file": "map-data.json",
+      "bytes": 2678726,
+      "sha256": "2767976879707815903b2123114f3aa2f1d88f2079b4dd2ec04ea218b4d75a12"
+    },
+    {
+      "file": "map-layers.js",
+      "bytes": 7149,
+      "sha256": "449201f5f9c04919c51f5705e82dc30166945bb51bca7e6a6961ceef67293da9"
+    },
+    {
+      "file": "native-runtime.js",
+      "bytes": 81012,
+      "sha256": "b0a8691527f3052c6f6242c4de19a9405c4a01f599d2717975ea2b6d88c8a05d"
+    },
+    {
+      "file": "navigation-core.js",
+      "bytes": 8136,
+      "sha256": "aa344a5c2f0da6c4bd4fe2b4a60f005393359a35b50559eb258effbd116550db"
+    },
+    {
+      "file": "navigation-plan.js",
+      "bytes": 7159,
+      "sha256": "46b8c2759f9c05e1e1823a931e3bec8dff06609358632f44f0cd6ffaea9d10a3"
+    },
+    {
+      "file": "navigation-policy.js",
+      "bytes": 563,
+      "sha256": "c525bbf7e99fdef95778bde74c3754f941cc58324949c685c7fa3615e9e2d1d1"
+    },
+    {
+      "file": "navigation-routing.js",
+      "bytes": 3681,
+      "sha256": "d619babe4424862ea721e29a4e2ace362b11bb8e8cc1edd735307729bcb2ad86"
+    },
+    {
+      "file": "navigation-session.js",
+      "bytes": 5713,
+      "sha256": "80de01464a955f7a10a46beec5b843946803c9dae5e2ccd3b6f3927be0ce4d7a"
+    },
+    {
+      "file": "navigation-ui.js",
+      "bytes": 6968,
+      "sha256": "8bf9630245073d50273e2310a07eee4252f54ec753223c0a890b5c12acb82108"
+    },
+    {
+      "file": "osco-map.css",
+      "bytes": 1926,
+      "sha256": "f0d17feb4ae50f399d04964016db58679ea9feb9ef29f3452ae425831e70da8f"
+    },
+    {
+      "file": "osco-map.js",
+      "bytes": 16147,
+      "sha256": "280c02ebaa9935ce8ad316a48a5a9638919437eab8818ff51f2c2fcc24caf4b9"
+    },
+    {
+      "file": "portable-ai.js",
+      "bytes": 4652,
+      "sha256": "5755a83354c1b032bda2d7dbca649ed4a9fbaa6f1302d24d7aec6d2abd1c7be4"
+    },
+    {
+      "file": "precision-connections.js",
+      "bytes": 6453,
+      "sha256": "f6ed2afb3928c2b19bdb18b829620595b6677eb4b9b3be53f22a17a5d3b8ac74"
+    },
+    {
+      "file": "precision-map.js",
+      "bytes": 11497,
+      "sha256": "cc44d5457120f4e2000e7ac95dd769fdb47ed12067a7617034904a7153225aa7"
+    },
+    {
+      "file": "region-client.js",
+      "bytes": 1170,
+      "sha256": "ed0b5c4c72d14ccec8bd07545d35d8f6b51cbdbf7df5297dac17cb7474966d77"
+    },
+    {
+      "file": "route-candidates.js",
+      "bytes": 8043,
+      "sha256": "f8be3593704fc85574cadd3fcaf2bbce2de45b1dc407adef5b3dbfcfdeb28e90"
+    },
+    {
+      "file": "route-choice.js",
+      "bytes": 6254,
+      "sha256": "c0c4f3273e6dc63ed48f93464b4b363147b3dfc8e45e95ee13c8cca7b8f4573d"
+    },
+    {
+      "file": "runtime-integrity.json",
+      "bytes": 24569,
+      "sha256": "c48da4a493aa1cb85feb460237e2a69571dc700b6b23a5af20f9fae17e67414f"
+    },
+    {
+      "file": "saved-data.js",
+      "bytes": 878,
+      "sha256": "8440c0b9883dbd26c4ac5658883c4192f001a34fdc0a2e93a2763612d66512f7"
+    },
+    {
+      "file": "seoul-base.js",
+      "bytes": 7295,
+      "sha256": "131f48cbf9155c4e4661b840d7512b0b3a8aa1aa6871ec36a7e01056e657d319"
+    },
+    {
+      "file": "style.css",
+      "bytes": 85394,
+      "sha256": "84fa51c649df8197b93a46711074796c790a07ebdd7d1aa1eec8d6d25f356e1d"
+    },
+    {
+      "file": "terrain-data.json",
+      "bytes": 12290459,
+      "sha256": "bc2a1db535b7346f3d585cf269acc799b410b056c52124c52a3c7e8d98b12594"
+    },
+    {
+      "file": "terrain-evidence.js",
+      "bytes": 1496,
+      "sha256": "9bb1879ad6f11240ec636b00d7bf715e88189dd909449009d0fa78a99a5aec72"
+    },
+    {
+      "file": "transit-ui.js",
+      "bytes": 9167,
+      "sha256": "cc8541687ac7d9fbf45ecf0e382c3cae45f9d82b74fc0d98a3cba2ef263f3f7f"
+    },
+    {
+      "file": "transit-walk-review.js",
+      "bytes": 11345,
+      "sha256": "ea420b302fa5563effc93163db713da92479d879b63e01065b6e8d8770f8b1e7"
+    },
+    {
+      "file": "transit.css",
+      "bytes": 4357,
+      "sha256": "a96051c8770fb13f827e6433ef927238c2d2f201553182e0a627d277c5d5d19c"
+    },
+    {
+      "file": "trip-questions.js",
+      "bytes": 8757,
+      "sha256": "409dc9083631c22a3c9297b8be259b2d6be80e350fc358ab4267b477d126f781"
+    }
+  ],
+  "new_provider_calls": 0,
+  "actual_android_device_test": false,
+  "gps_field_test": false,
+  "field_verified": false,
+  "source_commit": "d010b24accf93755b61c2d799dcd4a9e63b2dbd3"
+}

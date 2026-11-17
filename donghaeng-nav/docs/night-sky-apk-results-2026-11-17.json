@@ -12,15 +12,16 @@
   "signature_scheme_v2": true,
   "certificate_sha256": "373a74a0fabf8ace1ff783c28b766b976856999035e50f49a6d82ee45092ee73",
   "same_signing_certificate_as_1_0_3": true,
-  "apk_bytes": 17926782,
-  "apk_sha256": "c61129e58e981fc7733cf8397c9acdb810feb70ff9842c14845e2b36771053a2",
+  "apk_bytes": 17926946,
+  "apk_sha256": "aa3f3129ed322be6f6a77f441fa6fa91db615c50bffb5037e9957479c49977b1",
   "theme": "night-sky",
   "natural_map_colors": true,
   "nested_number_borders_removed": true,
   "high_contrast_assets_verified": true,
   "android_transit_enabled": true,
   "initial_area": "osco",
-  "native_key_embedded": true,
+  "native_key_embedded": false,
+  "public_distribution_keyless": true,
   "gemini_input_native_supported": true,
   "gemini_personal_key_embedded": false,
   "gemini_uses_device_private_settings_or_server": true,
@@ -247,8 +248,8 @@
     },
     {
       "file": "native-runtime.js",
-      "bytes": 81012,
-      "sha256": "b0a8691527f3052c6f6242c4de19a9405c4a01f599d2717975ea2b6d88c8a05d"
+      "bytes": 81214,
+      "sha256": "4a34389b4e91e77b447babf9980c7294ab8037bb917b85a11035c342c67e0813"
     },
     {
       "file": "navigation-core.js",

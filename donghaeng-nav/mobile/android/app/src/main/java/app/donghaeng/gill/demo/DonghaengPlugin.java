@@ -65,7 +65,7 @@ public class DonghaengPlugin extends Plugin {
             EditText input = new EditText(getContext()); input.setSingleLine(true); input.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
             input.setHint("ODsay Android용 키");
             new AlertDialog.Builder(getActivity()).setTitle("시연용 교통 키 설정")
-                .setMessage(key().isEmpty() ? "현재 교통 키가 비어 있습니다. 새 Android 키를 입력하거나 API 설정에서 내장 키를 복원하세요." : "현재 교통 키가 적용되어 있습니다. 보안을 위해 입력란은 비워 둡니다. 변경할 때만 새 Android 키를 입력하세요.")
+                .setMessage(key().isEmpty() ? (BuildConfig.ODSAY_ANDROID_KEY.trim().isEmpty() ? "공개 배포판에는 교통 키를 내장하지 않습니다. 본인의 ODsay Android 키를 입력하면 이 기기에 저장합니다." : "현재 교통 키가 비어 있습니다. 새 Android 키를 입력하거나 API 설정에서 내장 키를 복원하세요.") : "현재 교통 키가 적용되어 있습니다. 보안을 위해 입력란은 비워 둡니다. 변경할 때만 새 Android 키를 입력하세요.")
                 .setView(input).setPositiveButton("저장",(dialog,which) -> {
                     String value=input.getText().toString().trim();
                     if(value.isEmpty() || value.length()>1024 || value.contains("\n") || value.contains("\r")){call.reject("새 키를 입력하거나 취소해 주세요. 기존 설정은 유지됩니다.");return;}
@@ -107,7 +107,7 @@ public class DonghaengPlugin extends Plugin {
                     body=request.toString();if(body.getBytes(StandardCharsets.UTF_8).length>65536)throw new IllegalArgumentException();
                     url=new URL("https://generativelanguage.googleapis.com/v1beta/models/"+model+":generateContent");method="POST";
                 }else if(search){
-                    String token=key();if(token.isEmpty()){result(call,503,failure("android_key_missing","오른쪽 위 교통 키에서 ODsay Android 키를 설정해 주세요."));return;}
+                    String token=key();if(token.isEmpty()){result(call,503,failure("android_key_missing","오른쪽 위 API 설정에서 ODsay Android 키를 입력해 주세요."));return;}
                     JSArray a=call.getArray("origin"),b=call.getArray("destination");if(a==null||b==null||a.length()!=2||b.length()!=2)throw new IllegalArgumentException();
                     double ay=a.getDouble(0),ax=a.getDouble(1),by=b.getDouble(0),bx=b.getDouble(1);
                     if(!Double.isFinite(ay)||!Double.isFinite(ax)||!Double.isFinite(by)||!Double.isFinite(bx)||Math.abs(ay)>90||Math.abs(by)>90||Math.abs(ax)>180||Math.abs(bx)>180)throw new IllegalArgumentException();

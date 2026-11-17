@@ -3,6 +3,8 @@ apply plugin: 'com.android.application'
 def demoKeys = new Properties()
 def demoKeyFile = rootProject.file('../key.properties')
 if (demoKeyFile.exists()) demoKeyFile.withInputStream { demoKeys.load(it) }
+// Public downloads must never embed the local credential by default.
+def embedOdsayKey = providers.gradleProperty('donghaengEmbedOdsayKey').getOrElse('false').toBoolean()
 def demoSigning = new Properties()
 def demoSigningFile = rootProject.file('../signing.properties')
 if (demoSigningFile.exists()) demoSigningFile.withInputStream { demoSigning.load(it) }
@@ -15,7 +17,7 @@ android {
         applicationId "app.donghaeng.gill.demo"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        buildConfigField "String", "ODSAY_ANDROID_KEY", groovy.json.JsonOutput.toJson(demoKeys.getProperty("ODSAY_ANDROID_KEY", ""))
+        buildConfigField "String", "ODSAY_ANDROID_KEY", groovy.json.JsonOutput.toJson(embedOdsayKey ? demoKeys.getProperty("ODSAY_ANDROID_KEY", "") : "")
         versionCode 5
         versionName "1.0.4"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"

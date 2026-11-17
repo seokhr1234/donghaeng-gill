@@ -36,7 +36,7 @@ export function setupApiSettings({bridge, native, onChanged, getStatus = () => b
  async function refresh() {
   const s = await getStatus();
   traffic.textContent = s.keySource === 'bundled' ? 'APK 내장 키 적용 중 · 새 입력 불필요' :
-   s.keySource === 'device' ? '기기에 입력한 키 적용 중' : s.configured ? '교통 키 적용 중' : '교통 키 미설정 · 새 키를 입력하거나 내장 키를 복원해 주세요.';
+   s.keySource === 'device' ? '기기에 입력한 키 적용 중' : s.configured ? '교통 키 적용 중' : s.bundledKeyAvailable ? '교통 키 미설정 · 새 키를 입력하거나 내장 키를 복원해 주세요.' : '공개 배포판은 교통 키 미내장 · 아래에서 본인의 ODsay Android 키를 입력해 주세요.';
   restore.hidden = !s.bundledKeyAvailable;
   if (s.geminiConfigured) ai.textContent = '기기에 입력한 Gemini 키 적용 중 · 실제 연결은 요청 시 확인';
   else {

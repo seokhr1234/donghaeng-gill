@@ -1,6 +1,6 @@
 # 동행길 Android 시연 APK
 
-2026-11-17 현재: **1.0.4/versionCode5**는 밤하늘 고대비, 컬러 지도 유지와 숫자 안쪽 사각 테두리 제거를 포함합니다. [정정·검사·게시](../docs/night-sky-2026-11-17.md). 최종 빌드에는 **API 설정 → Gemini API 키 입력·변경**과 대중교통 내장 키 상태/복원을 추가했습니다. [사용법·비밀 분리·검사](../docs/android-gemini-settings-2026-11-17.md). 개인 Gemini 키가 없으면 기존 서버를 사용합니다. 사용자의 후속 진행 요청에 따라 설치ZIP 게시를 진행합니다. 아래1.0.3의 흑백 디자인 기록은 이전 상태입니다.
+2026-11-17 현재: **1.0.4/versionCode5**는 밤하늘 고대비, 컬러 지도 유지와 숫자 안쪽 사각 테두리 제거를 포함합니다. [정정·검사·게시](../docs/night-sky-2026-11-17.md). 최종 빌드에는 **API 설정 → Gemini API 키 입력·변경**과 대중교통 내장 키 상태/복원을 추가했습니다. [사용법·비밀 분리·검사](../docs/android-gemini-settings-2026-11-17.md). 개인 Gemini 키가 없으면 기존 서버를 사용합니다. 공개 배포판은 키를 내장하지 않으며 API 설정에서 ODsay·Gemini 키를 기기에 입력합니다. 키 포함 공개 업로드는 자동 승인 검토가 거부해 제외했습니다. 아래1.0.3의 흑백 디자인 기록은 이전 상태입니다.
 
 2026-11-17 최신: **1.0.3/versionCode4**에 고대비 버튼과 색상 외 지도 구분을 추가했습니다. [검사·설치 파일 게시 기록](../docs/high-contrast-2026-11-17.md). 기존1.0.2와 같은 패키지/서명/네이티브 키를 사용합니다. [설치ZIP](https://github.com/seokhr1234/aiaiaiaiaiaiaiai/archive/refs/tags/android-demo-v1.0.3-download.zip)을 내려받아 압축을 풀고 설치하세요. GitHub 로그인이 필요합니다.
 
@@ -27,7 +27,9 @@ ODsay 직접 요청은 Android 네이티브 통신부에서 수행하며 기기�
 서울 보행 계산·Gemini 해석 등은 기존 `https://donghaeng-gill.vercel.app`의 API를 사용한다.
 ODsay 키는 Vercel로 보내지 않는다. 인터넷 연결이 필요하며 전체 기능 오프라인 APK가 아니다.
 
-## 실제 키를 빌드에 포함할 때
+## 과거 비공개 키 포함 빌드 안내
+
+현재 공개 빌드는 `key.properties`가 있어도 기본적으로 키를 APK에 포함하지 않습니다. 공개용은 `-PdonghaengEmbedOdsayKey=false`와 공개 APK 검사를 사용하며, ODsay/Gemini 키는 앱의 API 설정에서 입력합니다. 아래는 이전 비공개 빌드 설정 파일의 형식 기록입니다.
 
 Git에 포함하지 않는 `key.properties`를 이 폴더에 만들고 다음 형식으로 입력한다.
 
@@ -64,7 +66,7 @@ keystore 파일명·별칭·비밀번호를 설정한다. 둘 다 Git 제외 대
 ```sh
 npm run sync --prefix donghaeng-nav/mobile
 cd donghaeng-nav/mobile/android
-./gradlew assembleRelease
+./gradlew -PdonghaengEmbedOdsayKey=false assembleRelease
 ```
 
 출력은 `android/app/build/outputs/apk/release/app-release.apk`다. 최신 버전1.0.4/versionCode5, 패키지는
