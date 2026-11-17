@@ -1,0 +1,13 @@
+동행길 밤하늘 + API 입력 1.0.4 설치 안내
+
+압축을 풀고 donghaeng-android-demo-1.0.4.apk를 설치하세요. Android7 이상입니다.
+패키지 app.donghaeng.gill.demo / versionCode5 / 이전1.0.3과 같은 서명입니다.
+공개 배포판에는 ODsay/Gemini 고정 키가 없습니다.
+상단 API 설정 → 대중교통 키 입력·변경에서 본인의 ODsay Android 키를 입력합니다.
+상단 API 설정 → Gemini API 키 입력·변경에서 개인 Gemini 키를 입력할 수 있습니다.
+입력값은 기기 네이티브 설정에 보관합니다. Gemini 개인 키가 없으면 기존 Vercel 서버 설정을 사용합니다.
+상단 고대비 → 밤하늘: 검정 배경·흰 글자·노란 테두리·보라색 선택 상태이며 지도는 원래 색입니다.
+숫자 안쪽의 사각 테두리를 제거했습니다.
+실기기 입력/개인키 인증·GPS·현장 통행은 미검증이고 청주 도보 계산은 아직 미지원입니다.
+SHA256 파일은 무결성 확인용이며 설치 파일이 아닙니다.
+지도 © OpenStreetMap contributors, ODbL-1.0 https://www.openstreetmap.org/copyright
