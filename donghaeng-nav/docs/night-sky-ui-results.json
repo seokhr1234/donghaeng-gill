@@ -1,0 +1,186 @@
+{
+  "pass": true,
+  "theme": "night-sky",
+  "mapColorPreserved": true,
+  "nestedNumericBordersRemoved": true,
+  "nightPalette": {
+    "background": "rgb(0, 0, 0)",
+    "text": "rgb(255, 255, 255)",
+    "selected": "rgb(214, 180, 252)",
+    "tileFilter": "none"
+  },
+  "overviewDigits": [
+    {
+      "text": "1540",
+      "border": "0px",
+      "shadow": "none",
+      "outerRadius": "50%"
+    },
+    {
+      "text": "153",
+      "border": "0px",
+      "shadow": "none",
+      "outerRadius": "50%"
+    },
+    {
+      "text": "721",
+      "border": "0px",
+      "shadow": "none",
+      "outerRadius": "50%"
+    },
+    {
+      "text": "57",
+      "border": "0px",
+      "shadow": "none",
+      "outerRadius": "50%"
+    },
+    {
+      "text": "53",
+      "border": "0px",
+      "shadow": "none",
+      "outerRadius": "50%"
+    },
+    {
+      "text": "257",
+      "border": "0px",
+      "shadow": "none",
+      "outerRadius": "50%"
+    },
+    {
+      "text": "596",
+      "border": "0px",
+      "shadow": "none",
+      "outerRadius": "50%"
+    },
+    {
+      "text": "148",
+      "border": "0px",
+      "shadow": "none",
+      "outerRadius": "50%"
+    },
+    {
+      "text": "85",
+      "border": "0px",
+      "shadow": "none",
+      "outerRadius": "50%"
+    },
+    {
+      "text": "548",
+      "border": "0px",
+      "shadow": "none",
+      "outerRadius": "50%"
+    },
+    {
+      "text": "146",
+      "border": "0px",
+      "shadow": "none",
+      "outerRadius": "50%"
+    },
+    {
+      "text": "47",
+      "border": "0px",
+      "shadow": "none",
+      "outerRadius": "50%"
+    },
+    {
+      "text": "261",
+      "border": "0px",
+      "shadow": "none",
+      "outerRadius": "50%"
+    },
+    {
+      "text": "775",
+      "border": "0px",
+      "shadow": "none",
+      "outerRadius": "50%"
+    },
+    {
+      "text": "131",
+      "border": "0px",
+      "shadow": "none",
+      "outerRadius": "50%"
+    },
+    {
+      "text": "33",
+      "border": "0px",
+      "shadow": "none",
+      "outerRadius": "50%"
+    }
+  ],
+  "checks": [
+    "Night-sky controls use black/white/yellow/lavender; natural map colors have no filter and overview cluster digits have no inner rectangular border.",
+    "Keyboard and pointer toggles expose aria-pressed, persist locally, recolor an existing real Seoul route and restore it without recomputing or changing geometry.",
+    "Selected routes, alternatives, registered/estimated risk and unknown connections have distinct line styles; low-opacity GPS quality is preserved and sampled text contrast exceeds 7:1.",
+    "Reload retains the mode; OSCO points use letters and shapes, returning to normal preserves feature counts; 320px/393px/landscape keep the toggle tappable without overflow.",
+    "Expansion and standalone share the mode; cross-tab changes synchronize, system high contrast is the default, manual opt-out wins, forced colors stays usable and blocked storage does not break the toggle."
+  ],
+  "sampledTextContrast": [
+    {
+      "selector": "#condition",
+      "foreground": "rgb(255, 255, 255)",
+      "background": "rgb(0, 0, 0)",
+      "ratio": 21
+    },
+    {
+      "selector": "#find-route",
+      "foreground": "rgb(0, 0, 0)",
+      "background": "rgb(214, 180, 252)",
+      "ratio": 11.793386578291903
+    },
+    {
+      "selector": "[data-contrast-toggle]",
+      "foreground": "rgb(0, 0, 0)",
+      "background": "rgb(214, 180, 252)",
+      "ratio": 11.793386578291903
+    },
+    {
+      "selector": ".sidebar",
+      "foreground": "rgb(255, 255, 255)",
+      "background": "rgb(0, 0, 0)",
+      "ratio": 21
+    }
+  ],
+  "mapStyles": [
+    {
+      "role": "route",
+      "color": "#003fbd",
+      "dash": null,
+      "opacity": 0.35
+    },
+    {
+      "role": "alternative",
+      "color": "#111111",
+      "dash": "16 9",
+      "opacity": 0.35
+    },
+    {
+      "role": "registered-risk",
+      "color": "#111111",
+      "dash": "5 3",
+      "opacity": 0.35
+    },
+    {
+      "role": "estimated-risk",
+      "color": "#111111",
+      "dash": "13 7",
+      "opacity": 0.35
+    },
+    {
+      "role": "unverified",
+      "color": "#111111",
+      "dash": "2 8",
+      "opacity": 0.35
+    },
+    {
+      "role": "steep",
+      "color": "#111111",
+      "dash": "14 5 3 5",
+      "opacity": 0.35
+    }
+  ],
+  "browserErrors": [],
+  "actualPaidProviderCalls": 0,
+  "clinicalColorVisionTest": false,
+  "physicalAndroidDeviceTest": false,
+  "fieldVerified": false
+}

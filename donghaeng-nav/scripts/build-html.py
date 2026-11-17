@@ -134,7 +134,7 @@ def build():
         path.write_text(html, encoding='utf-8', newline='\n')
     facilities = json.loads(local_file(datasets['bundled-facilities-seoul']['path']).read_bytes())['features']
     manifest = {
-        'version': '2026-11-17-high-contrast',
+        'version': '2026-11-17-night-sky',
         'main_source': 'donghaeng-nav/dist/index.html',
         'expansion': {'online_page': 'expansion.html', 'service_code_files': len(services['files']), 'review_asset_files': len(services.get('review_assets', {})),
                       'service_integrity_sha256': sha(service_path.read_bytes()), 'citywide_routing': False,
@@ -145,7 +145,7 @@ def build():
                                         'reviewed_date': review_points['metadata']['reviewed_date'], 'display_only': True, 'field_verified': False, 'routing_eligible': False}},
         'compressed_assets': compressed_assets,
         'project_name': '동행길',
-        'high_contrast': {'toggle': True, 'local_preference': True, 'system_preference_default': True, 'line_patterns': True, 'color_only_status': False},
+        'high_contrast': {'theme': 'night-sky', 'natural_map_colors': True, 'nested_number_borders': False, 'toggle': True, 'local_preference': True, 'system_preference_default': True, 'line_patterns': True, 'color_only_status': False},
         'osco_research': {'display_only': True, 'routing_eligible': False, 'field_verified': False,
                           'venue_facts_and_osm_layers': True, 'municipal_geometry_published': False,
                           'new_slope_values_promoted': 0, 'report': 'docs/osco-map-data-results.json'},

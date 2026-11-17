@@ -202,7 +202,7 @@
    for (const group of symbolGroups.values()) {
     const {features, ll, kind} = group, symbol = features.length > 1 ? String(features.length) : symbolFor(features[0], kind);
     L.marker(ll, {title: kinds.find(k => k[0] === kind)[1] + ' · ' + features.length + '건 · 현장 미확인', icon: L.divIcon({
-     className: 'hc-osco-marker hc-osco-' + kind, html: '<span>' + symbol + '</span>', iconSize: [24, 24], iconAnchor: [12, 12],
+     className: 'hc-osco-marker hc-osco-' + kind + (features.length > 1 ? ' hc-osco-count' : ''), html: '<span>' + symbol + '</span>', iconSize: [24, 24], iconAnchor: [12, 12],
     })}).bindPopup(() => {
      if (features.length === 1) return featurePopup(features[0], kind);
      const box = el('section', undefined, 'osco-popup');

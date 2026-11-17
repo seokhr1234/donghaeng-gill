@@ -15,7 +15,8 @@ root.DONGHAENG_BUILD=Object.freeze({target:'web-walk',transitEnabled:false});
   doc.documentElement.dataset.contrast = high ? 'high' : 'standard';
   doc.querySelectorAll('[data-contrast-toggle]').forEach(button => {
    button.setAttribute('aria-pressed', String(high));
-   button.textContent = high ? '◐ 고대비 켜짐' : '◐ 고대비';
+   button.textContent = high ? '◐ 밤하늘' : '◐ 고대비';
+   button.title = '고대비 · 밤하늘 테마';
   });
   doc.dispatchEvent(new CustomEvent('donghaeng-contrast-change', {detail: {high}}));
   return high;
@@ -1077,34 +1078,51 @@ body[data-build-profile="web-walk"] .travel-mode-control,body[data-build-profile
 .hc-osco-marker span {display:grid;place-items:center;width:24px;height:24px;border:2px solid #111;background:white;color:#111;font:800 12px/1 sans-serif;box-sizing:border-box}
 .hc-osco-transport span {border-radius:50%;background:#111;color:white}
 .hc-osco-facilities span {border-style:double;border-width:3px}
-html[data-contrast=high] .hc-osco-transport span {color:#fff!important}
-html[data-contrast=high] {color-scheme:light;--green:#111;--ink:#111;--muted:#222;--line:#111}
-html[data-contrast=high] body {background:#fff!important;color:#111!important}
+html[data-contrast=high] {
+ color-scheme:dark;
+ --hc-background:#000;--hc-text:#fff;--hc-control:#ffff00;--hc-link:#9696ff;
+ --hc-selected:#d6b4fc;--hc-selected-text:#000;--hc-muted:#c5c5c5;
+ --green:var(--hc-control);--ink:var(--hc-text);--muted:var(--hc-muted);--line:var(--hc-control);
+}
+html[data-contrast=high] body {background:var(--hc-background)!important;color:var(--hc-text)!important}
 html[data-contrast=high] :is(p,small,label,summary,dt,dd,li,h1,h2,h3,h4,b,strong,span) {color:inherit!important;text-shadow:none!important}
-html[data-contrast=high] :is(.header,.sidebar,.sheet-header,.sheet-scroll,.question-card,.question-top,.question-input,.question-controls,.question-summary,.location-box,.destination-field,.route-card,.route-header,.route-limits,.city-review-details,.navigation-panel,.navigation-status,.navigation-trip-summary,.navigation-cue,.usage-header,.usage-body,.usage-footer,.usage-notice,.map-layers-control,.map-layers-body,.facility-control,.precision-control,.map-source-control,.map-top .area,.map-legend,.route-callout,.leaflet-popup-content-wrapper,.leaflet-popup-tip,.leaflet-tooltip,.leaflet-control-attribution,.leaflet-bar,.transit-card,.transit-trip-detail,.transit-source-info,.journey-review,.transit-walk-review,.tools,.result,.mobile-tabs,.mobile-route-action,.question-map-return,dialog,header,footer) {background:#fff!important;color:#111!important;border-color:#111!important;box-shadow:none!important}
-html[data-contrast=high] :is(button,input,textarea,select) {background:#fff!important;color:#111!important;border-color:#111!important;border-width:2px!important;box-shadow:none!important;accent-color:#111}
-html[data-contrast=high] :is(input,textarea)::placeholder {color:#333!important;opacity:1}
-html[data-contrast=high] :is(a,.leaflet-container a) {color:#003fbd!important;text-decoration:underline!important;text-underline-offset:3px}
-html[data-contrast=high] :is(.primary,button[aria-pressed=true],button[aria-selected=true],button[aria-current],.nav.active,.mobile-tabs button[aria-current],.navigation-start) {background:#111!important;color:#fff!important;border-color:#111!important}
-html[data-contrast=high] :is(.primary,button[aria-pressed=true],button[aria-selected=true],button[aria-current],.nav.active,.navigation-start) :is(span,b,small,strong) {color:#fff!important;background:transparent!important}
+html[data-contrast=high] :is(.header,.sidebar,.sheet-header,.sheet-scroll,.question-card,.question-top,.question-input,.question-controls,.question-summary,.location-box,.destination-field,.route-card,.route-header,.route-limits,.city-review-details,.navigation-panel,.navigation-status,.navigation-trip-summary,.navigation-cue,.usage-header,.usage-body,.usage-footer,.usage-notice,.map-layers-control,.map-layers-body,.facility-control,.precision-control,.map-source-control,.map-top .area,.map-legend,.route-callout,.leaflet-popup-content-wrapper,.leaflet-popup-tip,.leaflet-tooltip,.leaflet-control-attribution,.leaflet-bar,.transit-card,.transit-trip-detail,.transit-source-info,.journey-review,.transit-walk-review,.tools,.result,.mobile-tabs,.mobile-route-action,.question-map-return,dialog,header,footer) {background:var(--hc-background)!important;color:var(--hc-text)!important;border-color:var(--hc-control)!important;box-shadow:none!important}
+html[data-contrast=high] :is(button,input,textarea,select) {background:var(--hc-background)!important;color:var(--hc-text)!important;border-color:var(--hc-control)!important;border-width:2px!important;box-shadow:none!important;accent-color:var(--hc-selected)}
+html[data-contrast=high] button {color:var(--hc-control)!important}
+html[data-contrast=high] :is(input,textarea)::placeholder {color:var(--hc-muted)!important;opacity:1}
+html[data-contrast=high] :is(a,.leaflet-container a) {color:var(--hc-link)!important;text-decoration:underline!important;text-underline-offset:3px}
+html[data-contrast=high] .leaflet-bar a {background:var(--hc-background)!important;color:var(--hc-control)!important;border-color:var(--hc-control)!important}
+html[data-contrast=high] .leaflet-bar a:hover {background:var(--hc-selected)!important;color:var(--hc-selected-text)!important}
+html[data-contrast=high] :is(.primary,button[aria-pressed=true],button[aria-selected=true],button[aria-current],.nav.active,.mobile-tabs button[aria-current],.navigation-start) {background:var(--hc-selected)!important;color:var(--hc-selected-text)!important;border-color:var(--hc-selected)!important}
+html[data-contrast=high] :is(.primary,button[aria-pressed=true],button[aria-selected=true],button[aria-current],.nav.active,.navigation-start) :is(span,b,small,strong) {color:var(--hc-selected-text)!important;background:transparent!important}
 html[data-contrast=high] :is(button,input,textarea,select):disabled {opacity:1!important;border-style:dashed!important}
-html[data-contrast=high] :focus-visible {outline:3px solid #003fbd!important;outline-offset:3px!important}
-html[data-contrast=high] :is(.osco-warning,.facility-evidence-warning,.question-error,.usage-notice,.review-badge,.demo-banner,.gap-note) {background:#fff1a8!important;color:#111!important;border:2px solid #111!important}
-html[data-contrast=high] :is(.map-source-control,.map-layers-control,.route-card,.question-card,.navigation-cue,dialog) {border:2px solid #111!important}
-html[data-contrast=high] .leaflet-tile-pane {filter:grayscale(1) contrast(1.15)}
-html[data-contrast=high] :is(.facility-marker-icon,.facility-cluster-icon,.facility-symbol,.transit-stop,.order-map-marker) {color:#111!important}
-html[data-contrast=high] :is(.facility-marker-icon,.facility-symbol) {background:#fff!important;border:2px solid #111!important;color:#111!important;box-shadow:none!important}
-html[data-contrast=high] .facility-cluster b {background:#111!important;color:white!important;border:1px solid white!important}
-html[data-contrast=high] :is(.facility-marker-icon,.facility-cluster-icon,.facility-symbol,.transit-stop,.order-map-marker) span,
-html[data-contrast=high] .facility-marker {background:#fff!important;color:#111!important;border:2px solid #111!important;box-shadow:none!important}
-html[data-contrast=high] .facility-marker-icon svg {color:#111!important}
-html[data-contrast=high] :is(.osco-pin,.transit-bus,.map-pin.origin) span {background:#111!important;color:#fff!important;border:2px solid #fff!important;box-shadow:0 0 0 2px #111!important}
-html[data-contrast=high] :is(.transit-subway,.map-pin.destination) span {background:#fff!important;color:#111!important;border:3px double #111!important;border-radius:3px!important}
+html[data-contrast=high] :focus-visible {outline:3px solid var(--hc-control)!important;outline-offset:3px!important}
+html[data-contrast=high] :is(.osco-warning,.facility-evidence-warning,.question-error,.usage-notice,.review-badge,.demo-banner,.gap-note) {background:var(--hc-background)!important;color:var(--hc-control)!important;border:2px solid var(--hc-control)!important}
+html[data-contrast=high] :is(.map-source-control,.map-layers-control,.route-card,.question-card,.navigation-cue,dialog) {border:2px solid var(--hc-control)!important}
+/* Theme the controls, never desaturate or recolor the map tiles. */
+html[data-contrast=high] .leaflet-tile-pane {filter:none!important;forced-color-adjust:none}
+html[data-contrast=high] :is(.facility-marker-icon,.facility-cluster-icon,.facility-symbol,.transit-stop,.order-map-marker) {color:var(--hc-control)!important}
+html[data-contrast=high] :is(.facility-marker-icon,.facility-symbol) {background:var(--hc-background)!important;border:2px solid var(--hc-control)!important;color:var(--hc-control)!important;box-shadow:none!important}
+/* One round badge, plain digits: no second rectangular border on its children. */
+html[data-contrast=high] .facility-cluster>span {background:transparent!important;color:inherit!important;border:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important}
+html[data-contrast=high] .facility-cluster>b {background:var(--hc-background)!important;color:var(--hc-text)!important;border:0!important;border-radius:50%!important;box-shadow:none!important}
+html[data-contrast=high] .facility-marker-icon svg {color:var(--hc-control)!important}
+html[data-contrast=high] .facility-symbol svg {color:var(--hc-control)!important}
+html[data-contrast=high] :is(.osco-pin,.transit-stop,.map-pin.origin,.order-map-marker) span {background:var(--hc-background)!important;color:var(--hc-control)!important;border:2px solid var(--hc-control)!important;box-shadow:none!important}
+html[data-contrast=high] :is(.transit-subway,.map-pin.destination) span {background:var(--hc-selected)!important;color:var(--hc-selected-text)!important;border:3px double var(--hc-background)!important;border-radius:3px!important}
+html[data-contrast=high] .hc-osco-marker span {background:var(--hc-background)!important;color:var(--hc-control)!important;border-color:var(--hc-control)!important}
+html[data-contrast=high] .hc-osco-transport span {background:var(--hc-selected)!important;color:var(--hc-selected-text)!important}
+.hc-osco-count span {border-radius:50%!important;border-style:solid!important}
 html[data-contrast=high] .map-slope-key::before {height:4px;background:repeating-linear-gradient(to right,#111 0 10px,transparent 10px 13px,#111 13px 15px,transparent 15px 18px)}
-html[data-contrast=high] .contrast-legend {display:block;color:#111}
+html[data-contrast=high] .contrast-legend {display:block;color:var(--hc-text)}
+html[data-contrast=high] .contrast-sample {box-shadow:0 0 0 3px #fff}
 html[data-contrast=high] .map-legend {display:none}
 @media(max-width:700px) {.header>.contrast-toggle {padding:7px 9px;font-size:12px;min-height:44px}.header {gap:8px}.contrast-legend {font-size:12px}}
-@media(forced-colors:active) {.contrast-toggle {border:2px solid ButtonText}.contrast-sample {border-color:CanvasText}.contrast-sample.contrast-route {border-color:LinkText}.hc-osco-marker span {forced-color-adjust:none}.contrast-legend {display:block}}
+@media(forced-colors:active) {
+ html[data-contrast=high] {--hc-background:Canvas;--hc-text:CanvasText;--hc-control:ButtonText;--hc-link:LinkText;--hc-selected:Highlight;--hc-selected-text:HighlightText;--hc-muted:GrayText}
+ .contrast-toggle {border:2px solid ButtonText}.contrast-legend {display:block}
+ .contrast-sample {forced-color-adjust:none}.hc-osco-marker span {forced-color-adjust:none}
+}
 </style></head><body>
 <header class="header"><button id="mobile-back" class="mobile-only icon-button" type="button" aria-label="이전 화면">‹</button><a class="brand" href="#"><span class="brand-icon companion-brand"><svg class="companion-character" viewBox="0 0 120 120" role="img" aria-labelledby="companion-name"><title id="companion-name">동행 캐릭터 동글이</title><ellipse cx="61" cy="107" rx="32" ry="6" fill="#dce9df"/><path d="M43 93 37 106h17l4-14M69 93l4 13h17L81 90" fill="#235a47"/><path d="M31 59C11 62 16 87 30 81" fill="#c6dfc5" stroke="#235a47" stroke-width="3.5"/><path class="companion-arm" d="M88 59c17 1 18 21 3 24" fill="#c6dfc5" stroke="#235a47" stroke-width="3.5" stroke-linecap="round"/><path d="M25 53c0-24 13-35 35-35s35 11 35 35v21c0 20-14 29-35 29S25 94 25 74Z" fill="#c6dfc5" stroke="#235a47" stroke-width="3.5"/><path d="M60 19C45 17 43 7 43 7c15-1 19 5 17 12Z" fill="#71a66e"/><path d="M60 18C61 6 75 5 75 5c-1 10-7 15-15 13Z" fill="#235a47"/><ellipse cx="60" cy="60" rx="25" ry="23" fill="#f8fbf3"/><g class="companion-eyes" fill="#235a47"><circle cx="50" cy="55" r="3"/><circle cx="70" cy="55" r="3"/></g><path d="M54 65q6 7 12 0" fill="none" stroke="#235a47" stroke-width="3" stroke-linecap="round"/><ellipse cx="42" cy="63" rx="5" ry="3" fill="#e9b4a0"/><ellipse cx="78" cy="63" rx="5" ry="3" fill="#e9b4a0"/><path d="m34 81 44 16" stroke="#b07d46" stroke-width="4"/><rect x="65" y="81" width="22" height="19" rx="6" fill="#efbd73" stroke="#b07d46" stroke-width="2.5"/><path d="M72 81v-3q4-4 8 0v3" fill="none" stroke="#b07d46" stroke-width="2.5"/></svg></span><span class="brand-name">동행길</span><span class="brand-sub">모두를 위한 이동</span></a><nav><button class="nav active" data-view="route">길 찾기</button><button class="nav" data-view="saved">저장한 경로</button><button class="nav" id="about">이용 안내</button></nav><button type="button" class="contrast-toggle" data-contrast-toggle aria-label="고대비 모드" aria-pressed="false">◐ 고대비</button><button id="mobile-more" class="mobile-only icon-button" type="button" aria-label="이용 안내와 시연 메뉴" aria-haspopup="dialog">⋯</button><span class="demo"><i></i> 서울 전역 지도·도보</span></header>
 <main><aside class="sidebar" aria-label="이동 계획"><div class="sheet-header mobile-only"><button id="sheet-toggle" type="button" aria-expanded="true" aria-controls="sheet-content"><span class="sheet-grip" aria-hidden="true"></span><span id="sheet-title">어디로 갈까요?</span><span id="sheet-toggle-label">지도 넓게 보기 ⌄</span></button></div><div class="sheet-scroll" id="sheet-content"><div class="intro companion-intro"><div><h1>어디로 갈까요?</h1><p>천천히, 함께 가요.</p></div></div><div id="planner">
@@ -2189,7 +2207,7 @@ const api={BOUNDS,inScope,places};if(typeof module!=='undefined')module.exports=
    for (const group of symbolGroups.values()) {
     const {features, ll, kind} = group, symbol = features.length > 1 ? String(features.length) : symbolFor(features[0], kind);
     L.marker(ll, {title: kinds.find(k => k[0] === kind)[1] + ' · ' + features.length + '건 · 현장 미확인', icon: L.divIcon({
-     className: 'hc-osco-marker hc-osco-' + kind, html: '<span>' + symbol + '</span>', iconSize: [24, 24], iconAnchor: [12, 12],
+     className: 'hc-osco-marker hc-osco-' + kind + (features.length > 1 ? ' hc-osco-count' : ''), html: '<span>' + symbol + '</span>', iconSize: [24, 24], iconAnchor: [12, 12],
     })}).bindPopup(() => {
      if (features.length === 1) return featurePopup(features[0], kind);
      const box = el('section', undefined, 'osco-popup');

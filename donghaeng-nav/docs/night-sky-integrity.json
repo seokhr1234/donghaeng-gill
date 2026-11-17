@@ -1,0 +1,22 @@
+{
+  "pass": true,
+  "baseline": "406c11b594c4e6de51f3191ae91b8588c217e9c3",
+  "runtime_datasets_byte_identical": 11,
+  "research_preserved": true,
+  "service_graph_and_slope_assets_preserved": true,
+  "engine_and_navigation_policy_preserved": true,
+  "modified_display_code": [
+    "high-contrast.js",
+    "osco-map.js"
+  ],
+  "existing_real_route_geometry_unchanged_under_toggle": true,
+  "paid_provider_calls": 0,
+  "html_outputs_identical": 5,
+  "sampled_text_contrast_minimum": 11.793386578291903,
+  "night_sky_palette": true,
+  "natural_map_colors": true,
+  "nested_number_borders_removed": true,
+  "web_transit_enabled": false,
+  "new_slope_values_promoted": 0,
+  "field_verified": false
+}

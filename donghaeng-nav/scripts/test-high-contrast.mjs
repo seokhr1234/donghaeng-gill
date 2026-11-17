@@ -20,6 +20,25 @@ try {
  await toggle.focus(); await page.keyboard.press('Space');
  assert.equal(await toggle.getAttribute('aria-pressed'), 'true');
  assert.equal(await page.evaluate(() => localStorage.getItem('donghaeng.display.contrast')), 'high');
+ const night = await page.evaluate(() => ({
+  background: getComputedStyle(document.body).backgroundColor,
+  text: getComputedStyle(document.body).color,
+  selected: getComputedStyle(document.querySelector('[data-contrast-toggle]')).backgroundColor,
+  tileFilter: getComputedStyle(document.querySelector('.leaflet-tile-pane')).filter,
+ }));
+ assert.equal(night.background, 'rgb(0, 0, 0)'); assert.equal(night.text, 'rgb(255, 255, 255)');
+ assert.equal(night.selected, 'rgb(214, 180, 252)'); assert.equal(night.tileFilter, 'none');
+ await page.waitForFunction(() => document.querySelectorAll('.facility-overview>span').length > 0);
+ const digits = await page.locator('.facility-overview>span').evaluateAll(nodes => nodes.map(n => ({
+  text: n.textContent, border: getComputedStyle(n).borderTopWidth, shadow: getComputedStyle(n).boxShadow,
+  outerRadius: getComputedStyle(n.parentElement).borderTopLeftRadius,
+ })));
+ assert(digits.every(n => n.border === '0px' && n.shadow === 'none' && n.outerRadius === '50%'));
+ await page.evaluate(() => window.dispatchEvent(new Event('offline')));
+ await page.waitForFunction(() => document.querySelectorAll('.leaflet-tile-pane canvas').length > 0);
+ await page.screenshot({path: new URL('../docs/night-sky-overview.png', import.meta.url).pathname});
+ await page.evaluate(() => window.dispatchEvent(new Event('online')));
+ checks.push('Night-sky controls use black/white/yellow/lavender; natural map colors have no filter and overview cluster digits have no inner rectangular border.');
  await page.evaluate(() => {tripQuestions.close(); setOrigin([37.5665, 126.978], '공개 시험 출발'); setDestination({name: '공개 시험 도착', ll: [37.573, 126.98]}, {pan: false}); setCondition('계단을 피해서 걷고 싶어요.');});
  await page.locator('#find-route').click();
  await page.waitForFunction(() => cityRoute && !document.querySelector('#find-route').disabled, null, {timeout: 30000});
@@ -63,11 +82,13 @@ try {
  await page.locator('#osco-access_points').check(); await page.locator('#osco-transport').check(); await page.locator('#osco-facilities').check();
  await page.waitForFunction(() => oscoController.snapshot().loaded && oscoController.snapshot().rendered > 0);
  assert((await page.locator('.hc-osco-marker span').count()) > 0);
+ const oscoCounts = await page.locator('.hc-osco-count span').evaluateAll(nodes => nodes.map(n => getComputedStyle(n).borderTopLeftRadius));
+ assert(oscoCounts.every(radius => radius === '50%'));
  const count = await page.evaluate(() => oscoController.snapshot().rendered);
  await toggle.click(); assert.equal(await page.locator('.hc-osco-marker').count(), 0);
  assert.equal(await page.evaluate(() => oscoController.snapshot().rendered), count);
  await toggle.click();
- await page.screenshot({path: new URL('../docs/high-contrast-desktop.png', import.meta.url).pathname});
+ await page.screenshot({path: new URL('../docs/night-sky-desktop.png', import.meta.url).pathname});
  for (const viewport of [{width: 320, height: 568}, {width: 393, height: 852}, {width: 667, height: 375}]) {
   await page.setViewportSize(viewport); await page.waitForTimeout(180);
   assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
@@ -76,7 +97,7 @@ try {
   assert(await toggle.evaluate(e => {const b = e.getBoundingClientRect(); return e.contains(document.elementFromPoint(b.x + b.width / 2, b.y + b.height / 2));}));
  }
  await page.setViewportSize({width: 393, height: 852});
- await page.screenshot({path: new URL('../docs/high-contrast-mobile.png', import.meta.url).pathname});
+ await page.screenshot({path: new URL('../docs/night-sky-mobile.png', import.meta.url).pathname});
  checks.push('Reload retains the mode; OSCO points use letters and shapes, returning to normal preserves feature counts; 320px/393px/landscape keep the toggle tappable without overflow.');
  const expanded = await context.newPage(); expanded.on('pageerror', e => errors.push(e.message));
  await expanded.goto(base + '/expansion.html');
@@ -95,6 +116,8 @@ try {
  await auto.getByRole('button', {name: '고대비 모드', exact: true}).click(); await auto.reload();
  assert.equal(await auto.evaluate(() => HighContrast.active()), false);
  await auto.emulateMedia({forcedColors: 'active'});
+ await auto.evaluate(() => HighContrast.set(true));
+ assert.equal(await auto.locator('.leaflet-tile-pane').evaluate(n => getComputedStyle(n).filter), 'none');
  assert(await auto.getByRole('button', {name: '고대비 모드', exact: true}).isVisible()); await system.close();
  const restricted = await browser.newContext(); await restricted.route('https://**', r => r.abort());
  await restricted.addInitScript(() => {Storage.prototype.getItem = () => {throw new Error('blocked');}; Storage.prototype.setItem = () => {throw new Error('blocked');};});
@@ -103,8 +126,9 @@ try {
  assert.match(await blocked.locator('.contrast-announcement').innerText(), /이 창에서만/); await restricted.close();
  checks.push('Expansion and standalone share the mode; cross-tab changes synchronize, system high contrast is the default, manual opt-out wins, forced colors stays usable and blocked storage does not break the toggle.');
  assert.deepEqual(errors, []);
- const report = {pass: true, checks, sampledTextContrast: contrasts, mapStyles: vectors.result, browserErrors: errors,
+ const report = {pass: true, theme: 'night-sky', mapColorPreserved: true, nestedNumericBordersRemoved: true,
+  nightPalette: night, overviewDigits: digits, checks, sampledTextContrast: contrasts, mapStyles: vectors.result, browserErrors: errors,
   actualPaidProviderCalls: 0, clinicalColorVisionTest: false, physicalAndroidDeviceTest: false, fieldVerified: false};
- await writeFile(new URL('../docs/high-contrast-ui-results.json', import.meta.url), JSON.stringify(report, null, 2) + '\n');
+ await writeFile(new URL('../docs/night-sky-ui-results.json', import.meta.url), JSON.stringify(report, null, 2) + '\n');
  console.log(JSON.stringify(report, null, 2));
 } finally {await browser?.close(); app.closeAllConnections(); await new Promise(r => app.close(r));}

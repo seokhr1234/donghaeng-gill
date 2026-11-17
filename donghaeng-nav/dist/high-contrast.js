@@ -11,7 +11,8 @@
   doc.documentElement.dataset.contrast = high ? 'high' : 'standard';
   doc.querySelectorAll('[data-contrast-toggle]').forEach(button => {
    button.setAttribute('aria-pressed', String(high));
-   button.textContent = high ? '◐ 고대비 켜짐' : '◐ 고대비';
+   button.textContent = high ? '◐ 밤하늘' : '◐ 고대비';
+   button.title = '고대비 · 밤하늘 테마';
   });
   doc.dispatchEvent(new CustomEvent('donghaeng-contrast-change', {detail: {high}}));
   return high;
