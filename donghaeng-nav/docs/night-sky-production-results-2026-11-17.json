@@ -1,0 +1,78 @@
+{
+  "pass": true,
+  "checked_date_kst": "2026-11-17",
+  "source_commit": "df13ee717e8aea04b028e60e07d46c780e4c3769",
+  "origin": "https://donghaeng-gill.vercel.app",
+  "theme": "night-sky",
+  "map_color_preserved": true,
+  "inner_numeric_rectangles_removed": true,
+  "files": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "matches_source": true,
+      "sha256": "fa0c63d15462dd296cdcc5f3eead586552b9420970f30e7150ed68b728813e30"
+    },
+    {
+      "path": "high-contrast.js",
+      "status": 200,
+      "matches_source": true,
+      "sha256": "414f300f77dccd926a6b98c864a444825ed20976a9a51d6db45c2ac2d075ede3"
+    },
+    {
+      "path": "high-contrast.css",
+      "status": 200,
+      "matches_source": true,
+      "sha256": "28e6efcaa0ccc15ceaa8fc4156517a08d18c1dffea3a16d0d9be520c44928af2"
+    },
+    {
+      "path": "osco-map.js",
+      "status": 200,
+      "matches_source": true,
+      "sha256": "280c02ebaa9935ce8ad316a48a5a9638919437eab8818ff51f2c2fcc24caf4b9"
+    },
+    {
+      "path": "build-profile.js",
+      "status": 200,
+      "matches_source": true,
+      "sha256": "28c7a02d601f2bf45d1241787e0401a8a3240daf28c75c4ad48167e40fa37a1a"
+    }
+  ],
+  "deployment_statuses": [
+    {
+      "context": "Vercel – donghaeng",
+      "state": "success",
+      "target_url": "https://vercel.com/snu-clab/donghaeng/4psqXi6aWzJLyFfRHepf5SPYxYK6"
+    },
+    {
+      "context": "Vercel – aiaiaiaiaiaiaiai",
+      "state": "success",
+      "target_url": "https://vercel.com/snu-clab/aiaiaiaiaiaiaiai/GFQrJBpyartSkwUyXP17Fk5KhEah"
+    }
+  ],
+  "web_transit_enabled": false,
+  "blocked_transit_paths": [
+    {
+      "path": "/api/routes/transit",
+      "status": 404,
+      "code": "transit_not_in_web_build"
+    },
+    {
+      "path": "/api/transit/walk-review",
+      "status": 404,
+      "code": "transit_not_in_web_build"
+    },
+    {
+      "path": "/api/journeys",
+      "status": 404,
+      "code": "transit_not_in_web_build"
+    },
+    {
+      "path": "/api/index?route=routes/transit",
+      "status": 404,
+      "code": "transit_not_in_web_build"
+    }
+  ],
+  "actual_paid_provider_calls": 0,
+  "field_verified": false
+}

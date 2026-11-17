@@ -250,7 +250,7 @@ function info(title,text){$('#info-title').textContent=title;$('#info-text').tex
 function openUsageGuide(){
  const guide=$('#usage-guide'),fileMode=['file:','content:'].includes(location.protocol);
  const portable=fileMode&&globalThis.PortableAI?.isFile();
- $('#usage-ai-flow').textContent=portable?'AI 키를 설정하면 상태 문장과 후보별 거리·경사 요약을 Google Gemini로 직접 보내요. 키는 이 창의 메모리에서만 사용해요.':fileMode?'파일 실행에서는 기기 내 해석을 사용해요. 상태 문장을 외부 AI로 보내지 않아요.':'길 찾기를 누르면 상태 문장과 후보별 거리·경사·미확인 구간 요약을 서버를 거쳐 Google Gemini로 보내요. 서버는 상태 문장을 저장하지 않아요.';
+ $('#usage-ai-flow').textContent=globalThis.DonghaengAndroidAI?.deviceKey?'기기에 저장한 개인 Gemini 키로 상태 문장과 익명 경로 요약을 Android 네이티브 통신을 통해 Google에 직접 보내요. 키 값은 웹 화면이나 Vercel 서버로 보내지 않아요.':portable?'AI 키를 설정하면 상태 문장과 후보별 거리·경사 요약을 Google Gemini로 직접 보내요. 키는 이 창의 메모리에서만 사용해요.':fileMode?'파일 실행에서는 기기 내 해석을 사용해요. 상태 문장을 외부 AI로 보내지 않아요.':'길 찾기를 누르면 상태 문장과 후보별 거리·경사·미확인 구간 요약을 서버를 거쳐 Google Gemini로 보내요. 서버는 상태 문장을 저장하지 않아요.';
  $('#usage-ai-boundary').textContent=fileMode&&!portable?'출발지·목적지·지도 자료도 AI로 보내지 않아요.':'좌표·목적지 이름·지도 도형은 자동으로 보내지 않아요. AI 연결에 실패하면 기기 내 해석과 알고리즘 선택을 사용해요.';
  $('#usage-precision-note').hidden=!document.getElementById('bundled-precision-map');
  guide.querySelectorAll('details').forEach(item=>item.open=false);

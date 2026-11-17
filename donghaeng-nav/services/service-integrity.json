@@ -85,7 +85,7 @@
     "donghaeng-nav/services/transit/evidence.mjs": "54f780292a9a100c75a96dff3991e127b8991e9d7fd9fc5487a9faf99bbc2759",
     "donghaeng-nav/services/transit/journey-review.mjs": "95cef7786a5905812000346595bbc47a39762313022f510314c6251daab1fe95",
     "donghaeng-nav/services/transit/configured-review.mjs": "a09977b4ba31d5376d306c1d1b0d0d99500f74d814926b0db8d3c99b0f483e80",
-    "donghaeng-nav/dist/app.js": "a6bf5357c5f7faf72bc8138b88ef27268d950ea3cff560d31cb7355ad014291f",
+    "donghaeng-nav/dist/app.js": "11af141b0d1f7a191f39dee719d53fae3ac3fd3060ed775599e428279996d562",
     "donghaeng-nav/dist/index.html": "fa0c63d15462dd296cdcc5f3eead586552b9420970f30e7150ed68b728813e30",
     "donghaeng-nav/dist/journey-review.js": "3e8a2bca92d7b758637a9500865d4b63183bcf61c0029f1ad8aec70026efc95c",
     "donghaeng-nav/dist/style.css": "84fa51c649df8197b93a46711074796c790a07ebdd7d1aa1eec8d6d25f356e1d",

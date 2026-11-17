@@ -6,6 +6,7 @@
   "service_graph_and_slope_assets_preserved": true,
   "engine_and_navigation_policy_preserved": true,
   "modified_display_code": [
+    "app.js",
     "high-contrast.js",
     "osco-map.js"
   ],

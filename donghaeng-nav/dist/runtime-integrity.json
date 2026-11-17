@@ -96,7 +96,7 @@
     "terrain-evidence.js": "9bb1879ad6f11240ec636b00d7bf715e88189dd909449009d0fa78a99a5aec72",
     "facilities.js": "f43a3ba63022b9e191867c1153f7c45c5f40d5ad0d5d07ca46493f95895f81fd",
     "final-model.js": "f05592756fa21e66968205dde41d4bba65bdf05a91cc826da87a1f114ea66426",
-    "app.js": "a6bf5357c5f7faf72bc8138b88ef27268d950ea3cff560d31cb7355ad014291f",
+    "app.js": "11af141b0d1f7a191f39dee719d53fae3ac3fd3060ed775599e428279996d562",
     "data-loader.js": "f1acdda5d3f55c73a7049568628d7866382583351ba603ccccd562ce59c40bcc",
     "seoul-base.js": "131f48cbf9155c4e4661b840d7512b0b3a8aa1aa6871ec36a7e01056e657d319",
     "saved-data.js": "8440c0b9883dbd26c4ac5658883c4192f001a34fdc0a2e93a2763612d66512f7",
@@ -115,10 +115,11 @@
   "precision_role": "Review geometry and building-overlap screening; not a verified pedestrian network",
   "code_revision": {
     "date": "2026-11-17",
-    "change": "User-requested Night Sky palette, natural map colors and plain digits inside round cluster badges; routing/data unchanged.",
+    "change": "User-requested Night Sky palette, natural map colors and plain digits inside round cluster badges; routing/data unchanged. Android Gemini device-key input and native HTTPS; server default remains available.",
     "validation": [
       "docs/night-sky-ui-results.json",
-      "docs/night-sky-integrity.json"
+      "docs/night-sky-integrity.json",
+      "docs/android-api-settings-results.json"
     ],
     "field_verified": false,
     "new_slope_values_promoted": 0,

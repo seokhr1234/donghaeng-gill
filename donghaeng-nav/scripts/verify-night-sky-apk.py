@@ -29,6 +29,7 @@ key = next(line.split('=', 1)[1].strip() for line in (MOBILE / 'key.properties')
 assert key
 web_assets = []
 native_key_found = False
+native_strings = set()
 with zipfile.ZipFile(APK) as archive:
     assert archive.testzip() is None
     for name in archive.namelist():
@@ -42,7 +43,14 @@ with zipfile.ZipFile(APK) as archive:
             web_assets.append({'file': relative, 'bytes': len(raw), 'sha256': sha(raw)})
         if re.fullmatch(r'classes\d*\.dex', name) and key.encode() in archive.read(name):
             native_key_found = True
+        if re.fullmatch(r'classes\d*\.dex', name):
+            raw_dex = archive.read(name)
+            for token in ['configureGemini', 'clearGemini', 'resetKey', 'x-goog-api-key']:
+                if token.encode() in raw_dex:
+                    native_strings.add(token)
     assert native_key_found
+    assert native_strings == {'configureGemini', 'clearGemini', 'resetKey', 'x-goog-api-key'}
+    assert b'configureGemini' in archive.read('assets/public/native-runtime.js')
     profile = archive.read('assets/public/build-profile.js').decode()
     assert "target:'android-demo'" in profile and 'transitEnabled:true' in profile and "initialArea:'osco'" in profile
     assert b'osco-map.js' in archive.read('assets/public/index.html')
@@ -63,6 +71,8 @@ result = {'pass': True, 'checked_date_kst': '2026-11-17', 'app_id': 'app.donghae
           'certificate_sha256': certificate, 'same_signing_certificate_as_1_0_3': True,
           'apk_bytes': APK.stat().st_size, 'apk_sha256': sha(APK.read_bytes()),
           'theme': 'night-sky', 'natural_map_colors': True, 'nested_number_borders_removed': True, 'high_contrast_assets_verified': True, 'android_transit_enabled': True, 'initial_area': 'osco', 'native_key_embedded': native_key_found,
+          'gemini_input_native_supported': True, 'gemini_personal_key_embedded': False,
+          'gemini_uses_device_private_settings_or_server': True,
           'key_in_web_assets': False, 'key_or_signing_files_in_apk': False, 'key_in_build_logs': False,
           'packaged_assets_match_synced_source': True, 'osco_packet_matches_dist': True,
           'web_asset_manifest': web_assets, 'new_provider_calls': 0,

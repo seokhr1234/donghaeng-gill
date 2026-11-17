@@ -23,7 +23,7 @@ for name, digest in lock['protected_code'].items():
     assert sha((BASE / name).read_bytes()) == digest
     if old_lock['protected_code'].get(name) != digest:
         changed.add(name)
-assert changed == {'osco-map.js', 'high-contrast.js'}
+assert changed == {'app.js', 'osco-map.js', 'high-contrast.js'}
 for item in lock['data']:
     relative = 'donghaeng-nav/dist/' + item['path']
     assert (ROOT / relative).read_bytes() == original(relative)

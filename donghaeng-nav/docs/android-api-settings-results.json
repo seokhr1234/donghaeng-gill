@@ -1,0 +1,15 @@
+{
+  "pass": true,
+  "checks": [
+    "API settings clearly distinguishes bundled ODsay and server Gemini; configuring a device Gemini key routes validated condition-only requests through the native bridge with no key or coordinates in the JS payload.",
+    "Anonymous candidate comparison uses the existing validators; extra coordinate fields are rejected before Google, quota and malformed responses fail honestly without an automatic paid server retry.",
+    "Saved native-state mock survives page restart; Gemini deletion returns to server mode, disabled ODsay can restore the embedded default, and the settings dialog fits small/landscape screens."
+  ],
+  "browserErrors": [],
+  "nativeBridgeMocked": true,
+  "actualGoogleCalls": 0,
+  "actualOdsayCalls": 0,
+  "realGeminiKeyInTests": false,
+  "actualAndroidDeviceTest": false,
+  "fieldVerified": false
+}
