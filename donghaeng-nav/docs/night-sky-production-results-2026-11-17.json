@@ -1,7 +1,7 @@
 {
   "pass": true,
   "checked_date_kst": "2026-11-17",
-  "source_commit": "df13ee717e8aea04b028e60e07d46c780e4c3769",
+  "source_commit": "742fb01ba08e5a06847a8d9ff6037b536976c18b",
   "origin": "https://donghaeng-gill.vercel.app",
   "theme": "night-sky",
   "map_color_preserved": true,
@@ -12,6 +12,12 @@
       "status": 200,
       "matches_source": true,
       "sha256": "fa0c63d15462dd296cdcc5f3eead586552b9420970f30e7150ed68b728813e30"
+    },
+    {
+      "path": "app.js",
+      "status": 200,
+      "matches_source": true,
+      "sha256": "11af141b0d1f7a191f39dee719d53fae3ac3fd3060ed775599e428279996d562"
     },
     {
       "path": "high-contrast.js",
@@ -40,14 +46,14 @@
   ],
   "deployment_statuses": [
     {
-      "context": "Vercel – donghaeng",
-      "state": "success",
-      "target_url": "https://vercel.com/snu-clab/donghaeng/4psqXi6aWzJLyFfRHepf5SPYxYK6"
-    },
-    {
       "context": "Vercel – aiaiaiaiaiaiaiai",
       "state": "success",
-      "target_url": "https://vercel.com/snu-clab/aiaiaiaiaiaiaiai/GFQrJBpyartSkwUyXP17Fk5KhEah"
+      "target_url": "https://vercel.com/snu-clab/aiaiaiaiaiaiaiai/FgcaRhZmp4jCovF87pdAzJncdFSX"
+    },
+    {
+      "context": "Vercel – donghaeng",
+      "state": "success",
+      "target_url": "https://vercel.com/snu-clab/donghaeng/GnVXP1o1XCYNKVKKuNZvikpnqJYB"
     }
   ],
   "web_transit_enabled": false,
@@ -74,5 +80,7 @@
     }
   ],
   "actual_paid_provider_calls": 0,
-  "field_verified": false
+  "field_verified": false,
+  "gemini_api_status_configured": true,
+  "gemini_provider_actual_call_verified": false
 }

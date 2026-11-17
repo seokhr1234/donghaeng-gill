@@ -30,3 +30,12 @@
 ## 공개 배포 게이트
 
 사용자가 키 포함APK 게시를 요청했으나, 자동 승인 검토가 **공개 저장소에 자격 증명이 내장된 APK/tag/ZIP 업로드**를 자격 증명 노출을 이유로 거부했다. 이 작업은 실행되지 않았으며 새 태그/Release가 생성되지 않았다. 위의 게시 진행 지시는 허용을 뜻하는 최종 정책으로 취급하지 않는다. 검토 거부를 우회하지 않고, **고정 키가 없는 공개 APK**로 다시 빌드해 두 키의 네이티브 기기 입력 기능을 제공한다. Gemini 서버 기본 연결은 그대로다. 로컬 키 포함 미게시 빌드는공개파일과분리해보관하고 배포하지 않는다.
+
+
+## 최종 공개 배포 완료
+
+**[APK1.0.4 설치ZIP](https://github.com/seokhr1234/donghaeng-gill/archive/refs/tags/android-demo-v1.0.4-download.zip)** · [GitHub Release](https://github.com/seokhr1234/donghaeng-gill/releases/tag/android-demo-v1.0.4). ZIP을풀고APK를설치한다. API설정에서ODsay/Gemini키를기기에입력하며, Gemini개인키가없으면기존서버설정을사용한다. **공개APK에는고정키가없다.**
+
+공개용APK17,926,946bytes·SHA256 `aa3f3129ed322be6f6a77f441fa6fa91db615c50bffb5037e9957479c49977b1`, 동일서명1.0.4/versionCode5다. 소스 `742fb01ba08e5a06847a8d9ff6037b536976c18b`, 배포스냅샷 `1c6e10e35981ea8e45213071f77ac4a19a3edc32`를구분한다. 실제GitHub ZIP17,438,333bytes의CRC/내부APK해시일치를확인하고 2026-11-17T13:15:09+09:00에게시했다. 직접첨부0개이며본문의다운로드태그ZIP으로제공한다. 로컬설치ZIP은17,435,971bytes다. 공개키포함업로드의자동검토거부는우회하지않았고자격증명0개인새공개빌드를별도로검증했다.
+
+최신상태는 [전달검증](night-sky-delivery-status-2026-11-17.json), [APK검사](night-sky-apk-results-2026-11-17.json), [운영배포](night-sky-production-results-2026-11-17.json)다. 앞선로컬키포함빌드·보류기록은중간상태이며사용/배포하지않는다. 실제개인키인증/실기기GPS·현장통행은미검증이다.

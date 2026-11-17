@@ -375,5 +375,7 @@
   "new_provider_calls": 0,
   "actual_android_device_test": false,
   "gps_field_test": false,
-  "field_verified": false
+  "field_verified": false,
+  "source_commit": "742fb01ba08e5a06847a8d9ff6037b536976c18b",
+  "all_apk_entries_checked_for_local_credential": true
 }
