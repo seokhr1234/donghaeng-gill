@@ -3,12 +3,14 @@
   "checks": [
     "Three distinct constrained candidates; Gemini R2 applied; original explanation and comparison shown with no request on repeated clicks",
     "Manual route selection does not inherit the AI-selected route explanation",
+    "On a 393px phone, route times and route info stay tappable while the actions scroll with the result sheet",
     "Mobile reason dialog and invalid AI route ID use honest algorithm fallback",
     "Editing during comparison aborts selection and discards a late decision/explanation",
     "Comparison deadline/abort branch retains a valid algorithm result without losing candidates",
     "No eligible candidates are never sent to AI; review alternative cannot start live GPS",
     "A genuine single route skips AI and explains bounded search/deduplication as algorithm output",
-    "Current runtime graph Luna-center road reference to school with leg-pain/uphill condition supplies multiple valid candidates to mocked Gemini; exact user pin/field access unverified"
+    "Current runtime graph Luna-center road reference to school with leg-pain/uphill condition supplies multiple valid candidates to mocked Gemini; exact user pin/field access unverified",
+    "When the Luna-to-school trip has no qualifying route, both reviews show separate reasons and no map line until explicitly selected, and live guidance stays blocked"
   ],
   "browserErrors": [],
   "syntheticRouteFixture": true,

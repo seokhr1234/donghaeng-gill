@@ -31,7 +31,19 @@ async function main(){
   checks.push('Three distinct constrained candidates; Gemini R2 applied; original explanation and comparison shown with no request on repeated clicks');
   await p.locator('.route-card').first().locator(':scope > button').click();await p.locator('.route-reason-button').click();assert.match(await p.locator('#route-reason-title').innerText(),/직접 선택/);assert.match(await p.locator('#route-reason-content').innerText(),/원래 추천은 경로 2/);await p.locator('#route-reason-dialog .close').click();
   checks.push('Manual route selection does not inherit the AI-selected route explanation');
-  await p.setViewportSize({width:393,height:852});await p.locator('.route-reason-button').click();assert(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));await p.locator('#route-reason-dialog').screenshot({path:path.join(out,'route-choice-reason-mobile.png')});await p.keyboard.press('Escape');
+  await p.setViewportSize({width:393,height:852});
+  await p.waitForFunction(()=>document.body.dataset.mobileMode==='results');
+  assert.equal(await p.locator('#mobile-route-action').evaluate(node=>getComputedStyle(node).position),'static');
+  const alternativeTime=p.locator('.route-card').nth(1).locator('.route-time');
+  await alternativeTime.scrollIntoViewIfNeeded();
+  assert(await alternativeTime.evaluate(node=>{
+   const rect=node.getBoundingClientRect();
+   return node.contains(document.elementFromPoint(rect.left+rect.width/2,rect.top+rect.height/2));
+  }));
+  await p.locator('.route-card.selected .route-limits summary').click();
+  assert(await p.locator('.route-card.selected .route-limits').evaluate(node=>node.open));
+  await p.locator('.route-reason-button').click();assert(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));await p.locator('#route-reason-dialog').screenshot({path:path.join(out,'route-choice-reason-mobile.png')});await p.keyboard.press('Escape');
+  checks.push('On a 393px phone, route times and route info stay tappable while the actions scroll with the result sheet');
   await p.setViewportSize({width:1440,height:1000});mode='bad';await search('휠체어로 오르막을 피해 주세요.');assert.equal(await p.evaluate(()=>routeSelection.source),'algorithm');await p.locator('.route-reason-button').click();assert.match(await p.locator('#route-reason-title').innerText(),/알고리즘/);await p.locator('#route-reason-dialog .close').click();
   checks.push('Mobile reason dialog and invalid AI route ID use honest algorithm fallback');
   mode='slow';await p.locator('#condition').fill('휠체어로 경사를 꼭 피해 주세요.');await p.locator('#find-route').click();await p.waitForFunction(()=>document.querySelector('#search-status').textContent.includes('Gemini가'));
@@ -48,6 +60,34 @@ async function main(){
   await p.evaluate(()=>{graph=window.routeChoiceRuntime.graph;precisionController=window.routeChoiceRuntime.precisionController;setOrigin(EndpointRouting.arrivalNear(graph,[37.5989,127.042]).ll,'루나밸리 부근 도로 기준점');chooseDestination('school')});
   await search('다리가 아파서 오르막이 어려워요');assert.equal(selections,count+1);assert.equal(await p.evaluate(()=>routeSelection.source),'Gemini');assert(await p.evaluate(()=>routes.length>=3&&routes.length<=5));assert.equal(await p.evaluate(()=>profile.wheelchair),false);assert(await p.evaluate(()=>routes.every(r=>r.edges.every(e=>!e.steps))));
   checks.push('Current runtime graph Luna-center road reference to school with leg-pain/uphill condition supplies multiple valid candidates to mocked Gemini; exact user pin/field access unverified');
+  await p.evaluate(()=>{document.getElementById('luna-origin').click();chooseDestination('school');});
+  await search('휠체어로 이동해요. 계단과 경사를 피하고 싶어요.');
+  assert.equal(selections,count+1);
+  assert(await p.evaluate(()=>routeSelection.source==='unavailable'&&selected===-1&&routeLayer.getLayers().length===0&&snapLayer.getLayers().length===0));
+  await p.setViewportSize({width:393,height:852});
+  await p.waitForFunction(()=>document.body.dataset.mobileMode==='results');
+  assert.equal(await p.locator('#sheet-title').innerText(),'검토용 경로');
+  assert.match(await p.locator('#mobile-route-status').innerText(),/조건에 맞는 추천 경로를 찾지 못했어요/);
+  assert.equal(await p.locator('.review-preview').count(),2);
+  assert.equal(await p.locator('.review-preview-button[aria-pressed="true"]').count(),0);
+  assert(await p.locator('#route-callout').isHidden());
+  assert(await p.locator('#mobile-save').isHidden());
+  assert.equal(await p.locator('.route-go,.navigation-start').count(),0);
+  assert.match(await p.locator('.review-preview').filter({hasText:'우회 경로'}).innerText(),/참고 경사 상단.*적용 기준 5% 초과/);
+  assert.match(await p.locator('.review-preview').filter({hasText:'육교 경로'}).innerText(),/승강기 운행·보도 접속·육교 상판 경사 미확인/);
+  const bridge=p.getByRole('button',{name:'육교 경로 지도에서 확인',exact:true});
+  const detour=p.getByRole('button',{name:'우회 경로 지도에서 확인',exact:true});
+  await bridge.click();
+  assert.equal(await bridge.getAttribute('aria-pressed'),'true');
+  assert(await p.evaluate(()=>routes[selected].accessReview===true&&routeLayer.getLayers().length>0&&routeLayer.getLayers().every(layer=>layer.options.contrastRole!=='alternative')));
+  assert.match(await p.locator('#route-callout').innerText(),/검토 중 · 육교 경로/);
+  await p.evaluate(()=>startNavigation(false));
+  assert.equal(await p.evaluate(()=>navigationSession),null);
+  await detour.click();
+  assert.equal(await bridge.getAttribute('aria-pressed'),'false');
+  assert.equal(await detour.getAttribute('aria-pressed'),'true');
+  assert.match(await p.locator('#route-callout').innerText(),/검토 중 · 우회 경로/);
+  checks.push('When the Luna-to-school trip has no qualifying route, both reviews show separate reasons and no map line until explicitly selected, and live guidance stays blocked');
   assert.deepEqual(errors,[]);const result={pass:true,checks,browserErrors:errors,syntheticRouteFixture:true,realGemini:false,physicalGps:false};fs.writeFileSync(path.join(out,'route-choice-ui-results.json'),JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result,null,2));
  }finally{release?.();await browser?.close();app.closeAllConnections();await new Promise(r=>app.close(r))}
 }

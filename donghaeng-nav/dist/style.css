@@ -131,8 +131,11 @@ main{grid-template-columns:430px 1fr;align-items:start}.sidebar{padding-top:25px
  .route-card{padding:10px}.route-card .route-description,.route-card .route-features{display:none}.route-card .route-time{margin:5px 0;font-size:27px}.route-card .route-header{margin:0}.route-limits>summary{min-height:32px;font-size:11px}.mobile-card-notice{margin:5px 0;font-size:11px}
  .route-card:not(.selected){padding:9px 11px}.route-card:not(.selected) .route-time{font-size:20px}.route-card:not(.selected) .route-limits,.route-card:not(.selected) .route-status{display:none}
  #route-evidence{margin:10px 0}#route-evidence>summary{min-height:42px;font-size:12px}
- #mobile-route-action{order:5;position:sticky;bottom:-1px;z-index:5;background:#fffefc;padding:8px 0 3px;box-shadow:0 7px 0 7px #fffefc}
- #mobile-route-action .route-go{margin:0;min-height:48px}
+ #mobile-route-action{order:5;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:8px 0}
+ #mobile-route-action:empty{display:none}
+ #mobile-route-action .route-go,#mobile-route-action .route-reason-button{grid-column:1/-1}
+ #mobile-route-action button{margin:0;min-height:44px}
+ #mobile-route-action .route-go{min-height:48px}
  .sheet-header button{grid-template-columns:minmax(0,1fr) auto}.sheet-header #sheet-title{min-width:0;white-space:nowrap}.sheet-header #sheet-toggle-label{white-space:nowrap;font-size:10px}
 }
 
@@ -365,3 +368,19 @@ body[data-build-profile=android-demo] #mobile-more {display:grid;place-items:cen
  .origin-change {display:inline}
  .examples-disclosure>summary,#route-evidence>summary,.order-all>summary,.route-limits>summary {display:list-item}
 }
+
+.review-options-note {margin:0 0 10px;color:var(--ink);font-size:13px;line-height:1.55}
+.route-review-options {
+ display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,205px),1fr));gap:10px;
+}
+.route-card.review-preview {
+ display:flex;flex-direction:column;gap:8px;margin:0;padding:14px;min-width:0;
+ border:1px solid #dbe5df;border-radius:14px;background:#f7faf7;color:var(--ink);
+}
+.route-card.review-preview.is-viewed {border-color:#47806f;box-shadow:inset 0 0 0 1px #47806f}
+.review-preview h3,.review-preview-summary {margin:0}
+.review-preview h3 {font-size:15px}
+.review-preview-summary {font-weight:700;font-size:17px}
+.review-preview-reasons {margin:0;padding-inline-start:16px;font-size:12px;line-height:1.55}
+.review-preview-button {margin-top:auto}
+.review-preview-button,.review-replay-button {min-height:44px;padding:6px 10px}
