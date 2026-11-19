@@ -1,0 +1,17 @@
+{
+  "pass": true,
+  "checked_date_kst": "2026-11-19",
+  "package": "app.donghaeng.gill.demo",
+  "version": "1.0.6",
+  "version_code": 7,
+  "verified_signature_v2": true,
+  "same_signing_certificate_as_1_0_5": true,
+  "certificate_sha256": "373a74a0fabf8ace1ff783c28b766b976856999035e50f49a6d82ee45092ee73",
+  "fixed_provider_keys_embedded": false,
+  "archive_crc_verified": true,
+  "packaged_asset_count": 68,
+  "packaged_assets_match_source": true,
+  "apk_bytes": 17932314,
+  "apk_sha256": "d91dc27ba92386466a6558ea2fafbca7491909a4b8628a54741721520fdaf5bb",
+  "actual_device_test": false
+}

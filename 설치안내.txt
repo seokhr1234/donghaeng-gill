@@ -1,0 +1,5 @@
+동행길 Android 1.0.6 (versionCode 7)
+패키지 app.donghaeng.gill.demo
+
+압축을 풀고 APK를 Android 휴대폰에서 여세요. 1.0.5와 서명이 같아 업데이트할 수 있습니다.
+ODsay와 Gemini 개인 키는 더보기(⋯) → API 설정에서 입력합니다.
