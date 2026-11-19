@@ -1,0 +1,11 @@
+{
+  "version": "1.0.7",
+  "versionCode": 8,
+  "package": "app.donghaeng.gill.demo",
+  "apk_sha256": "13775bb835eceed23d40eeb369cf839c634682ffb3a306a667324e2059690116",
+  "signed_with_1_0_6_certificate": true,
+  "assets_verified": 68,
+  "inline_keyboard_webview_packaged": true,
+  "fixed_keys_embedded": false,
+  "galaxy_tab_s5e_actual_device_tested": false
+}
