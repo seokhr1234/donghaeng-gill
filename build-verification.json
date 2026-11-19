@@ -1,0 +1,18 @@
+{
+  "pass": true,
+  "checked_date_kst": "2026-11-19",
+  "package": "app.donghaeng.gill.demo",
+  "version": "1.0.8",
+  "version_code": 9,
+  "verified_signature_v2": true,
+  "same_signing_certificate_as_1_0_7": true,
+  "certificate_sha256": "373a74a0fabf8ace1ff783c28b766b976856999035e50f49a6d82ee45092ee73",
+  "fixed_provider_keys_embedded": false,
+  "packaged_asset_count": 68,
+  "packaged_assets_match_source": true,
+  "archive_crc_verified": true,
+  "tablet_keyboard_webview_packaged": true,
+  "apk_bytes": 17934758,
+  "apk_sha256": "4d87dc52b6631f6e9e0e18c8c92b0a711cadf93ef28ec4453dff27ae86f33577",
+  "actual_device_test": false
+}
