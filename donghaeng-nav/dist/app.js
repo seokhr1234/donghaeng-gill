@@ -374,22 +374,35 @@ $('#present-mode').onclick=()=>{if(!graph){toast('지도 준비가 끝나면 발
 // Mobile app shell shares the existing route engine, forms and storage.
 let mobileMode='input',sheetSize='default',sheetDrag=null,sheetGestureUntil=0;
 let sheetFrame=0,sheetGeometry=null,sheetRenderedHeight=null,sheetContentTouch=null;
-const mobileLayout=matchMedia('(max-width:700px), (max-width:1000px) and (max-height:500px) and (pointer:coarse)');
+const mobileLayout=matchMedia('(max-width:700px), (max-width:1440px) and (any-pointer:coarse)');
 let viewportWidth=0, restingHeight=0, pendingMapFit=null, resizeFitTimer=0;
 function isMobileUI(){return mobileLayout.matches}
 function isTextInput(element){
  return element?.matches('textarea,[contenteditable=true],input:not([type]),input[type=text],input[type=search],input[type=password],input[type=email],input[type=tel],input[type=url]');
 }
-function measureSheetGeometry(){
+function measureViewport(){
  const height=window.visualViewport?.height||innerHeight;
- document.documentElement.style.setProperty('--app-height',Math.round(height)+'px');
- document.documentElement.style.setProperty('--app-top',Math.round(window.visualViewport?.offsetTop||0)+'px');
  const editing=isTextInput(document.activeElement);
  // Android WebView may resize both the layout and visual viewport when the IME opens.
  if(viewportWidth!==innerWidth){viewportWidth=innerWidth;restingHeight=innerHeight;}
- if(!editing)restingHeight=innerHeight;
- const keyboard=editing&&Math.max(restingHeight,innerHeight)-height>100;
+ if(!editing||innerHeight>restingHeight)restingHeight=innerHeight;
+ const touchLayout=isMobileUI();
+ const usesSoftKeyboard=touchLayout||document.body.dataset.buildProfile==='android-demo';
+ const keyboard=Boolean(usesSoftKeyboard&&editing&&restingHeight-height>80);
+ const root=document.documentElement;
+ if(keyboard||touchLayout){
+  root.style.setProperty('--app-height',Math.round(height)+'px');
+  root.style.setProperty('--app-top',Math.round(window.visualViewport?.offsetTop||0)+'px');
+ }else{
+  root.style.removeProperty('--app-height');
+  root.style.removeProperty('--app-top');
+ }
  document.body.classList.toggle('keyboard-open',keyboard);
+ document.body.classList.toggle('keyboard-compact',keyboard&&height<280);
+ return {height,keyboard};
+}
+function measureSheetGeometry(){
+ const {height,keyboard}=measureViewport();
  const keyboardInset=keyboard?0:44;
 
  const header=$('.header').getBoundingClientRect().height,nav=$('.mobile-tabs').getBoundingClientRect().height,available=height-header-nav;
@@ -410,7 +423,7 @@ function settleSheetVisibility(){
 }
 function abortSheetDrag(){const drag=sheetDrag;sheetDrag=null;if(drag?.capture?.hasPointerCapture(drag.id))drag.capture.releasePointerCapture(drag.id);sheetContentTouch=null;document.body.classList.remove('sheet-dragging')}
 function syncMobileViewport(){
- if(!isMobileUI()){stopSheetFrame();abortSheetDrag();sheetGeometry=null;sheetRenderedHeight=null;document.documentElement.style.removeProperty('--app-height');document.body.classList.remove('keyboard-open','sheet-is-collapsed');return}
+ if(!isMobileUI()){stopSheetFrame();abortSheetDrag();sheetGeometry=null;sheetRenderedHeight=null;measureViewport();document.body.classList.remove('sheet-is-collapsed');return}
  const geometry=measureSheetGeometry(),changed=!sheetGeometry||geometry.height!==sheetGeometry.height||geometry.nav!==sheetGeometry.nav||geometry.mode!==sheetGeometry.mode;
  sheetGeometry=geometry;
  if(changed){stopSheetFrame();abortSheetDrag();paintSheetHeight(geometry.points[sheetSize]);settleSheetVisibility()}
@@ -551,20 +564,24 @@ $('#mobile-overview').onclick=()=>{setMobileMode('results');if(routes[selected])
 $('#mobile-detail').onclick=showDetails;
 $$('[data-mobile-tab]').forEach(b=>b.onclick=()=>{const tab=b.dataset.mobileTab;if(tab==='report'){$('#report-open').click();return}if(tab==='saved'){renderSaved();setMobileMode('saved')}else setMobileMode(navigationSession&&!['ended','arrived'].includes(navigationSession.snapshot().phase)?'navigation':routes.length||transitResult||cityRoute?'results':'input')});
 $('#mobile-more').onclick=()=>$('#mobile-menu').showModal();
+$('#mobile-menu').addEventListener('close',()=>{
+ if(!document.querySelector('dialog[open]'))$('#mobile-more').focus({preventScroll:true});
+});
 for(const [source,target] of [['mobile-about','about'],['mobile-demo','demo-open'],['mobile-reset','school-reset']])$('#'+source).onclick=()=>{$('#mobile-menu').close();$('#'+target).click()};
 $('#mobile-map-jump').onclick=()=>{if(isMobileUI())setSheetSize('collapsed');else $('#live-map').scrollIntoView({behavior:'smooth',block:'start'});map?.invalidateSize()};
 function revealEditor(){
  const editor=document.activeElement;
- if(!isMobileUI()||!isTextInput(editor))return;
- const scroller=editor.closest('.question-body,.sheet-scroll');
+ if(!isTextInput(editor)||!isMobileUI()&&!document.body.classList.contains('keyboard-open'))return;
+ const scroller=editor.closest('.question-body')||editor.closest(isMobileUI()?'.sheet-scroll':'.sidebar');
  if(!scroller)return;
  const field=editor.getBoundingClientRect(),panel=scroller.getBoundingClientRect();
  if(field.top<panel.top)scroller.scrollTop+=field.top-panel.top-4;
  else if(field.bottom>panel.bottom)scroller.scrollTop+=field.bottom-panel.bottom+4;
 }
 $('#search').addEventListener('focusin',event=>{
- if(!isMobileUI()||!isTextInput(event.target))return;
- if(!event.target.closest('.question-card'))setSheetSize('expanded',{animate:false});
+ if(!isTextInput(event.target))return;
+ if(isMobileUI()&&!event.target.closest('.question-card'))setSheetSize('expanded',{animate:false});
+ syncMobileViewport();
  requestAnimationFrame(revealEditor);
 });
 function visualViewportChanged(){

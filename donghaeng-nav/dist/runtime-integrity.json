@@ -96,7 +96,7 @@
     "terrain-evidence.js": "9bb1879ad6f11240ec636b00d7bf715e88189dd909449009d0fa78a99a5aec72",
     "facilities.js": "f43a3ba63022b9e191867c1153f7c45c5f40d5ad0d5d07ca46493f95895f81fd",
     "final-model.js": "f05592756fa21e66968205dde41d4bba65bdf05a91cc826da87a1f114ea66426",
-    "app.js": "742fcd914fdea74ddd99842fb5cab4e3953ce4b6515eac987823a5b6e1d04da1",
+    "app.js": "bf23e2ad069ecede1f4c736cca711425404aece5b5c94b15a347fe3286b644b5",
     "data-loader.js": "f1acdda5d3f55c73a7049568628d7866382583351ba603ccccd562ce59c40bcc",
     "seoul-base.js": "131f48cbf9155c4e4661b840d7512b0b3a8aa1aa6871ec36a7e01056e657d319",
     "saved-data.js": "8440c0b9883dbd26c4ac5658883c4192f001a34fdc0a2e93a2763612d66512f7",
@@ -115,160 +115,158 @@
   "precision_role": "Review geometry and building-overlap screening; not a verified pedestrian network",
   "code_revision": {
     "date": "2026-11-19",
-    "change": "Compare adjacent endpoint approaches using registered geometry and weighted endpoint costs; original graphs and slope evidence unchanged.",
+    "change": "Responsive touch tablet controls and visual keyboard viewport; map datasets and routing unchanged.",
     "validation": [
-      "scripts/test-endpoint-approaches.mjs",
-      "docs/route-choice-real-results.json",
-      "docs/city-walk-api-results.json"
+      "scripts/test-mobile-layout.mjs",
+      "mobile/scripts/test-native-frontend.mjs"
     ],
     "field_verified": false,
     "new_slope_values_promoted": 0,
     "previous_revision": {
       "date": "2026-11-19",
-      "change": "Display current approximate fixes and last-seen positions; preserve walking progress, arrival and reroute checks. Transit reference candidates can show device location.",
+      "change": "Compare adjacent endpoint approaches using registered geometry and weighted endpoint costs; original graphs and slope evidence unchanged.",
       "validation": [
-        "docs/gps-quality-results.json",
-        "docs/gps-quality-ui-results.json",
-        "docs/android-demo-results.json"
+        "scripts/test-endpoint-approaches.mjs",
+        "docs/route-choice-real-results.json",
+        "docs/city-walk-api-results.json"
       ],
       "field_verified": false,
       "new_slope_values_promoted": 0,
       "previous_revision": {
         "date": "2026-11-19",
-        "change": "Mobile viewport and keyboard, OSCO dialog, and route framing. Walking graph and reference datasets unchanged.",
+        "change": "Display current approximate fixes and last-seen positions; preserve walking progress, arrival and reroute checks. Transit reference candidates can show device location.",
         "validation": [
-          "scripts/test-mobile-layout.mjs",
-          "scripts/test-web-walk-build.mjs",
-          "mobile/scripts/test-api-settings.mjs"
+          "docs/gps-quality-results.json",
+          "docs/gps-quality-ui-results.json",
+          "docs/android-demo-results.json"
         ],
         "field_verified": false,
         "new_slope_values_promoted": 0,
         "previous_revision": {
-          "date": "2026-11-17",
-          "change": "User-requested Night Sky palette, natural map colors and plain digits inside round cluster badges; routing/data unchanged. Android Gemini device-key input and native HTTPS; server default remains available.",
+          "date": "2026-11-19",
+          "change": "Mobile viewport and keyboard, OSCO dialog, and route framing. Walking graph and reference datasets unchanged.",
           "validation": [
-            "docs/night-sky-ui-results.json",
-            "docs/night-sky-integrity.json",
-            "docs/android-api-settings-results.json"
+            "scripts/test-mobile-layout.mjs",
+            "scripts/test-web-walk-build.mjs",
+            "mobile/scripts/test-api-settings.mjs"
           ],
           "field_verified": false,
           "new_slope_values_promoted": 0,
           "previous_revision": {
             "date": "2026-11-17",
-            "change": "Persistent user-selectable high contrast with system default, keyboard toggle, independent map line patterns and OSCO letter markers; routing/data unchanged.",
+            "change": "User-requested Night Sky palette, natural map colors and plain digits inside round cluster badges; routing/data unchanged. Android Gemini device-key input and native HTTPS; server default remains available.",
             "validation": [
-              "docs/high-contrast-ui-results.json",
-              "docs/high-contrast-integrity.json"
+              "docs/night-sky-ui-results.json",
+              "docs/night-sky-integrity.json",
+              "docs/android-api-settings-results.json"
             ],
             "field_verified": false,
             "new_slope_values_promoted": 0,
             "previous_revision": {
               "date": "2026-11-17",
-              "change": "Display-only Cheongju OSCO OSM/official evidence; regional search and explicit unsupported walking; native Android starts at OSCO. Existing graphs, slopes and web transit block unchanged.",
+              "change": "Persistent user-selectable high contrast with system default, keyboard toggle, independent map line patterns and OSCO letter markers; routing/data unchanged.",
               "validation": [
-                "docs/osco-map-data-results.json",
-                "docs/osco-map-ui-results.json",
-                "docs/osco-integration-integrity.json"
+                "docs/high-contrast-ui-results.json",
+                "docs/high-contrast-integrity.json"
               ],
               "field_verified": false,
               "new_slope_values_promoted": 0,
               "previous_revision": {
-                "date": "2026-11-15",
-                "change": "Walking-only public build and shared Android demo profile; public transit API disabled; mobile origin/map overlap fixed",
+                "date": "2026-11-17",
+                "change": "Display-only Cheongju OSCO OSM/official evidence; regional search and explicit unsupported walking; native Android starts at OSCO. Existing graphs, slopes and web transit block unchanged.",
                 "validation": [
-                  "docs/web-walk-results.json",
-                  "docs/web-walk-bundle-results.json",
-                  "docs/android-demo-results.json"
+                  "docs/osco-map-data-results.json",
+                  "docs/osco-map-ui-results.json",
+                  "docs/osco-integration-integrity.json"
                 ],
                 "field_verified": false,
+                "new_slope_values_promoted": 0,
                 "previous_revision": {
                   "date": "2026-11-15",
-                  "change": "Use display-only Seoul GLO-30 slope estimates and registered inclines for a single red steep-road overlay",
+                  "change": "Walking-only public build and shared Android demo profile; public transit API disabled; mobile origin/map overlap fixed",
                   "validation": [
-                    "docs/steep-road-source-results.json",
-                    "docs/steep-roads-ui-results.json",
-                    "docs/steep-roads-bundle-ui-results.json"
+                    "docs/web-walk-results.json",
+                    "docs/web-walk-bundle-results.json",
+                    "docs/android-demo-results.json"
                   ],
                   "field_verified": false,
-                  "new_slope_values_promoted": 0,
                   "previous_revision": {
                     "date": "2026-11-15",
-                    "change": "Merge map display controls; display-only sparse registered Seoul inclines and existing local terrain estimates; original nine datasets/route weights preserved",
+                    "change": "Use display-only Seoul GLO-30 slope estimates and registered inclines for a single red steep-road overlay",
                     "validation": [
-                      "docs/slope-source-results.json",
-                      "docs/map-layers-ui-results.json",
-                      "docs/map-layers-bundle-ui-results.json"
+                      "docs/steep-road-source-results.json",
+                      "docs/steep-roads-ui-results.json",
+                      "docs/steep-roads-bundle-ui-results.json"
                     ],
                     "field_verified": false,
                     "new_slope_values_promoted": 0,
                     "previous_revision": {
-                      "date": "2026-11-14",
-                      "change": "Origin name/address lookup shares the existing destination catalog; selected coordinates/pins and question validation stay synchronized with map/GPS and text editing",
+                      "date": "2026-11-15",
+                      "change": "Merge map display controls; display-only sparse registered Seoul inclines and existing local terrain estimates; original nine datasets/route weights preserved",
                       "validation": [
-                        "docs/origin-search-ui-results.json",
-                        "docs/origin-search-bundle-ui-results.json",
-                        "docs/corner-companion-ui-results.json"
+                        "docs/slope-source-results.json",
+                        "docs/map-layers-ui-results.json",
+                        "docs/map-layers-bundle-ui-results.json"
                       ],
                       "field_verified": false,
                       "new_slope_values_promoted": 0,
                       "previous_revision": {
                         "date": "2026-11-14",
-                        "change": "Replace central questions with a bottom-right speech bubble and one round-armed finger-free companion; map remains interactive, collapse/reopen preserves answers",
+                        "change": "Origin name/address lookup shares the existing destination catalog; selected coordinates/pins and question validation stay synchronized with map/GPS and text editing",
                         "validation": [
-                          "docs/corner-companion-ui-results.json",
-                          "docs/corner-companion-bundle-ui-results.json",
-                          "docs/compact-ui-results.json"
+                          "docs/origin-search-ui-results.json",
+                          "docs/origin-search-bundle-ui-results.json",
+                          "docs/corner-companion-ui-results.json"
                         ],
                         "field_verified": false,
                         "new_slope_values_promoted": 0,
                         "previous_revision": {
                           "date": "2026-11-14",
-                          "change": "Handle ODsay -98 as a <=700m provider limit; prevent avoidable requests and offer explicit same-condition walking or endpoint correction without auto-switching modes",
+                          "change": "Replace central questions with a bottom-right speech bubble and one round-armed finger-free companion; map remains interactive, collapse/reopen preserves answers",
                           "validation": [
-                            "docs/transit-distance-core-results.json",
-                            "docs/transit-distance-ui-results.json",
-                            "docs/transit-distance-bundle-ui-results.json"
+                            "docs/corner-companion-ui-results.json",
+                            "docs/corner-companion-bundle-ui-results.json",
+                            "docs/compact-ui-results.json"
                           ],
                           "field_verified": false,
                           "new_slope_values_promoted": 0,
                           "previous_revision": {
                             "date": "2026-11-14",
-                            "change": "Centered character-led origin/destination/condition/travel-mode questions; shared original form, explicit final search, map/GPS fallback and preserved answers",
+                            "change": "Handle ODsay -98 as a <=700m provider limit; prevent avoidable requests and offer explicit same-condition walking or endpoint correction without auto-switching modes",
                             "validation": [
-                              "docs/trip-questions-ui-results.json",
-                              "docs/trip-questions-bundle-ui-results.json",
-                              "docs/compact-ui-results.json"
+                              "docs/transit-distance-core-results.json",
+                              "docs/transit-distance-ui-results.json",
+                              "docs/transit-distance-bundle-ui-results.json"
                             ],
                             "field_verified": false,
                             "new_slope_values_promoted": 0,
                             "previous_revision": {
                               "date": "2026-11-14",
-                              "change": "User-requested compact UI: short summaries, native evidence disclosures and one inline SVG guide character; routing, GPS safety gates and source datasets unchanged",
+                              "change": "Centered character-led origin/destination/condition/travel-mode questions; shared original form, explicit final search, map/GPS fallback and preserved answers",
                               "validation": [
-                                "docs/compact-ui-results.json",
-                                "docs/compact-bundle-ui-results.json",
-                                "docs/journey-offline-core-results.json",
-                                "docs/transit-timing-core-results.json"
+                                "docs/trip-questions-ui-results.json",
+                                "docs/trip-questions-bundle-ui-results.json",
+                                "docs/compact-ui-results.json"
                               ],
                               "field_verified": false,
                               "new_slope_values_promoted": 0,
                               "previous_revision": {
                                 "date": "2026-11-14",
-                                "change": "Whole-journey requirements review, server-owned access/rest evidence, manual and simulated mixed-trip steps, optional local-file transit search; original nine datasets and walking/GPS engines preserved",
+                                "change": "User-requested compact UI: short summaries, native evidence disclosures and one inline SVG guide character; routing, GPS safety gates and source datasets unchanged",
                                 "validation": [
+                                  "docs/compact-ui-results.json",
+                                  "docs/compact-bundle-ui-results.json",
                                   "docs/journey-offline-core-results.json",
-                                  "docs/transit-walk-review-core-results.json",
-                                  "docs/transit-walk-review-ui-results.json",
-                                  "docs/transit-walk-review-bundle-ui-results.json",
-                                  "docs/expansion-core-results.json"
+                                  "docs/transit-timing-core-results.json"
                                 ],
                                 "field_verified": false,
                                 "new_slope_values_promoted": 0,
                                 "previous_revision": {
                                   "date": "2026-11-14",
-                                  "change": "Walking-time comparison and honest unknown journey timing; local service-date timetable adapter remains unconfigured; original walking/GPS engine and nine datasets preserved",
+                                  "change": "Whole-journey requirements review, server-owned access/rest evidence, manual and simulated mixed-trip steps, optional local-file transit search; original nine datasets and walking/GPS engines preserved",
                                   "validation": [
-                                    "docs/transit-timing-core-results.json",
+                                    "docs/journey-offline-core-results.json",
+                                    "docs/transit-walk-review-core-results.json",
                                     "docs/transit-walk-review-ui-results.json",
                                     "docs/transit-walk-review-bundle-ui-results.json",
                                     "docs/expansion-core-results.json"
@@ -277,122 +275,134 @@
                                   "new_slope_values_promoted": 0,
                                   "previous_revision": {
                                     "date": "2026-11-14",
-                                    "change": "On-demand same-profile Seoul walking reference review for transit access/transfer/egress; indoor transfer and stop mapping remain unknown; original engine and nine datasets unchanged",
+                                    "change": "Walking-time comparison and honest unknown journey timing; local service-date timetable adapter remains unconfigured; original walking/GPS engine and nine datasets preserved",
                                     "validation": [
-                                      "docs/transit-walk-review-core-results.json",
+                                      "docs/transit-timing-core-results.json",
                                       "docs/transit-walk-review-ui-results.json",
                                       "docs/transit-walk-review-bundle-ui-results.json",
-                                      "docs/city-walk-api-results.json"
+                                      "docs/expansion-core-results.json"
                                     ],
                                     "field_verified": false,
                                     "new_slope_values_promoted": 0,
                                     "previous_revision": {
                                       "date": "2026-11-14",
-                                      "change": "Main transit reference search, shared stop/line/fare details and reference markers; DTO preserves user constraints while excluding internal policy metadata; no transit GPS or accessibility promotion. Original nine runtime inputs and walking/navigation algorithms unchanged.",
+                                      "change": "On-demand same-profile Seoul walking reference review for transit access/transfer/egress; indoor transfer and stop mapping remain unknown; original engine and nine datasets unchanged",
                                       "validation": [
-                                        "docs/transit-main-core-results.json",
-                                        "docs/transit-main-ui-results.json",
-                                        "docs/transit-main-bundle-ui-results.json",
-                                        "docs/main-navigation-results.json",
-                                        "docs/city-map-ui-results.json"
+                                        "docs/transit-walk-review-core-results.json",
+                                        "docs/transit-walk-review-ui-results.json",
+                                        "docs/transit-walk-review-bundle-ui-results.json",
+                                        "docs/city-walk-api-results.json"
                                       ],
                                       "field_verified": false,
                                       "new_slope_values_promoted": 0,
-                                      "dataset_scope": "Original nine inputs and city/review assets byte-identical; only reference transit UI and API diagnostics.",
                                       "previous_revision": {
-                                        "date": "2026-11-13",
-                                        "change": "Seoul initial map, registered facility search and endpoint selection; optional precision overlay with zoom/viewport limits; mixed facility clustering; separate online source-bound city reference walking API. Original local engine, nine datasets and slope/navigation policies preserved.",
+                                        "date": "2026-11-14",
+                                        "change": "Main transit reference search, shared stop/line/fare details and reference markers; DTO preserves user constraints while excluding internal policy metadata; no transit GPS or accessibility promotion. Original nine runtime inputs and walking/navigation algorithms unchanged.",
                                         "validation": [
-                                          "docs/city-walk-source-results.json",
-                                          "docs/city-walk-building-results.json",
-                                          "docs/city-walk-api-results.json",
-                                          "docs/city-map-ui-results.json",
+                                          "docs/transit-main-core-results.json",
+                                          "docs/transit-main-ui-results.json",
+                                          "docs/transit-main-bundle-ui-results.json",
                                           "docs/main-navigation-results.json",
-                                          "docs/audit-fixes-ui-results.json",
-                                          "docs/city-layers-core-results.json",
-                                          "docs/gps-quality-ui-results.json"
+                                          "docs/city-map-ui-results.json"
                                         ],
                                         "field_verified": false,
                                         "new_slope_values_promoted": 0,
-                                        "dataset_scope": "Original nine files unchanged. New independent reference graph is online-only and not verified accessible routing.",
+                                        "dataset_scope": "Original nine inputs and city/review assets byte-identical; only reference transit UI and API diagnostics.",
                                         "previous_revision": {
-                                          "date": "2026-11-11",
-                                          "change": "Reuse identity of server graphs already disallowing assistance previews to retain building-audit cache; isolate callers allowing previews; original routing rules and nine datasets unchanged",
+                                          "date": "2026-11-13",
+                                          "change": "Seoul initial map, registered facility search and endpoint selection; optional precision overlay with zoom/viewport limits; mixed facility clustering; separate online source-bound city reference walking API. Original local engine, nine datasets and slope/navigation policies preserved.",
                                           "validation": [
-                                            "docs/candidate-cache-results.json",
-                                            "docs/expansion-core-results.json",
-                                            "docs/route-choice-core-results.json",
-                                            "docs/route-choice-real-results.json",
-                                            "docs/route-choice-ui-results.json",
-                                            "docs/main-navigation-results.json"
+                                            "docs/city-walk-source-results.json",
+                                            "docs/city-walk-building-results.json",
+                                            "docs/city-walk-api-results.json",
+                                            "docs/city-map-ui-results.json",
+                                            "docs/main-navigation-results.json",
+                                            "docs/audit-fixes-ui-results.json",
+                                            "docs/city-layers-core-results.json",
+                                            "docs/gps-quality-ui-results.json"
                                           ],
                                           "field_verified": false,
                                           "new_slope_values_promoted": 0,
-                                          "dataset_scope": "Original nine runtime inputs and building/slope/condition policies unchanged; performance optimization only",
+                                          "dataset_scope": "Original nine files unchanged. New independent reference graph is online-only and not verified accessible routing.",
                                           "previous_revision": {
                                             "date": "2026-11-11",
-                                            "change": "Seoul expansion foundations: reference source acquisition, worker HTTP walking service and region exploration; original runtime graph/data unchanged",
+                                            "change": "Reuse identity of server graphs already disallowing assistance previews to retain building-audit cache; isolate callers allowing previews; original routing rules and nine datasets unchanged",
                                             "validation": [
+                                              "docs/candidate-cache-results.json",
                                               "docs/expansion-core-results.json",
-                                              "docs/expansion-ui-results.json"
+                                              "docs/route-choice-core-results.json",
+                                              "docs/route-choice-real-results.json",
+                                              "docs/route-choice-ui-results.json",
+                                              "docs/main-navigation-results.json"
                                             ],
                                             "field_verified": false,
                                             "new_slope_values_promoted": 0,
-                                            "dataset_scope": "Original nine runtime inputs unchanged; new wider OSM extraction is research-only",
+                                            "dataset_scope": "Original nine runtime inputs and building/slope/condition policies unchanged; performance optimization only",
                                             "previous_revision": {
-                                              "date": "2026-11-10",
-                                              "change": "Audit fixes: preserve reroute/rest contract, arrival-time shelter check, local negations/downhill, responsive evidence popups, storage recovery, explicit entry selection, focus restoration and compressed/deferred boot",
+                                              "date": "2026-11-11",
+                                              "change": "Seoul expansion foundations: reference source acquisition, worker HTTP walking service and region exploration; original runtime graph/data unchanged",
                                               "validation": [
-                                                "docs/audit-fixes-unit-results.json",
-                                                "docs/navigation-core-results.json",
-                                                "docs/route-choice-core-results.json",
-                                                "docs/route-choice-real-results.json",
-                                                "docs/audit-fixes-ui-results.json",
-                                                "docs/audit-fixes-boot-results.json",
-                                                "docs/main-navigation-results.json"
+                                                "docs/expansion-core-results.json",
+                                                "docs/expansion-ui-results.json"
                                               ],
                                               "field_verified": false,
                                               "new_slope_values_promoted": 0,
-                                              "dataset_scope": "All nine original runtime datasets byte-identical; deterministic gzip assets generated separately; routing data and slope weights unchanged",
+                                              "dataset_scope": "Original nine runtime inputs unchanged; new wider OSM extraction is research-only",
                                               "previous_revision": {
-                                                "date": "2026-11-05",
-                                                "change": "Attach round4 official CSV recheck to 4092 existing shelters and three address-matched notices; flag two hours conflicts and withhold them from automatic rest; no geometry or slope changes",
+                                                "date": "2026-11-10",
+                                                "change": "Audit fixes: preserve reroute/rest contract, arrival-time shelter check, local negations/downhill, responsive evidence popups, storage recovery, explicit entry selection, focus restoration and compressed/deferred boot",
                                                 "validation": [
-                                                  "docs/research-map-linkage-results.json",
-                                                  "docs/evidence-results.json",
-                                                  "docs/research-map-linkage-ui-results.json",
+                                                  "docs/audit-fixes-unit-results.json",
                                                   "docs/navigation-core-results.json",
-                                                  "docs/main-navigation-results.json",
-                                                  "docs/route-choice-real-results.json"
+                                                  "docs/route-choice-core-results.json",
+                                                  "docs/route-choice-real-results.json",
+                                                  "docs/audit-fixes-ui-results.json",
+                                                  "docs/audit-fixes-boot-results.json",
+                                                  "docs/main-navigation-results.json"
                                                 ],
                                                 "field_verified": false,
                                                 "new_slope_values_promoted": 0,
-                                                "dataset_scope": "One facility metadata dataset updated; eight other runtime datasets and thirteen previously protected code files unchanged; facility display and rest selection added to protected code",
+                                                "dataset_scope": "All nine original runtime datasets byte-identical; deterministic gzip assets generated separately; routing data and slope weights unchanged",
                                                 "previous_revision": {
                                                   "date": "2026-11-05",
-                                                  "change": "Shared GPS quality gating and conservative display stabilization; 15 existing shelters enriched with 26 official evidence entries; supplied OA-22241 source re-extracted for graph-bound support metadata, no new routing slopes",
+                                                  "change": "Attach round4 official CSV recheck to 4092 existing shelters and three address-matched notices; flag two hours conflicts and withhold them from automatic rest; no geometry or slope changes",
                                                   "validation": [
-                                                    "docs/gps-quality-results.json",
-                                                    "docs/gps-quality-ui-results.json",
+                                                    "docs/research-map-linkage-results.json",
                                                     "docs/evidence-results.json",
+                                                    "docs/research-map-linkage-ui-results.json",
                                                     "docs/navigation-core-results.json",
                                                     "docs/main-navigation-results.json",
                                                     "docs/route-choice-real-results.json"
                                                   ],
                                                   "field_verified": false,
                                                   "new_slope_values_promoted": 0,
-                                                  "dataset_scope": "One existing facility metadata dataset changed; seven previous datasets byte-identical; one supplementary terrain-evidence dataset added",
+                                                  "dataset_scope": "One facility metadata dataset updated; eight other runtime datasets and thirteen previously protected code files unchanged; facility display and rest selection added to protected code",
                                                   "previous_revision": {
-                                                    "date": "2026-11-04",
-                                                    "change": "Preserve geographically distinct alternatives, bounded segment/branch searches with fixed endpoint projections, honest single-candidate diagnostics; runtime data and global slope coefficient unchanged",
+                                                    "date": "2026-11-05",
+                                                    "change": "Shared GPS quality gating and conservative display stabilization; 15 existing shelters enriched with 26 official evidence entries; supplied OA-22241 source re-extracted for graph-bound support metadata, no new routing slopes",
                                                     "validation": [
-                                                      "docs/route-choice-core-results.json",
-                                                      "docs/route-choice-ui-results.json",
-                                                      "docs/route-choice-real-results.json",
-                                                      "docs/navigation-core-results.json"
+                                                      "docs/gps-quality-results.json",
+                                                      "docs/gps-quality-ui-results.json",
+                                                      "docs/evidence-results.json",
+                                                      "docs/navigation-core-results.json",
+                                                      "docs/main-navigation-results.json",
+                                                      "docs/route-choice-real-results.json"
                                                     ],
                                                     "field_verified": false,
-                                                    "previous_change": "Bounded alternative generation and validated Gemini candidate selection; data hashes unchanged"
+                                                    "new_slope_values_promoted": 0,
+                                                    "dataset_scope": "One existing facility metadata dataset changed; seven previous datasets byte-identical; one supplementary terrain-evidence dataset added",
+                                                    "previous_revision": {
+                                                      "date": "2026-11-04",
+                                                      "change": "Preserve geographically distinct alternatives, bounded segment/branch searches with fixed endpoint projections, honest single-candidate diagnostics; runtime data and global slope coefficient unchanged",
+                                                      "validation": [
+                                                        "docs/route-choice-core-results.json",
+                                                        "docs/route-choice-ui-results.json",
+                                                        "docs/route-choice-real-results.json",
+                                                        "docs/navigation-core-results.json"
+                                                      ],
+                                                      "field_verified": false,
+                                                      "previous_change": "Bounded alternative generation and validated Gemini candidate selection; data hashes unchanged"
+                                                    }
                                                   }
                                                 }
                                               }

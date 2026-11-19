@@ -3,6 +3,7 @@
   "checks": [
     "Packaged Android profile keeps four questions and native key settings; startup does not spend a transit call",
     "Packaged Android high contrast toggles without a native/provider call and preserves the key settings and transit profile",
+    "Android landscape tablet keeps the origin editor in view as the keyboard opens and all four rounded menu items work with focus return",
     "Native bridge response uses the exact shared ODsay normalization and original mobility constraints, with no server-side transit request",
     "Transit result shows coarse Android position with one location watch, preserves the candidate and origin, and releases the watch on stop",
     "Android computes walking/all-leg review through the preserved public walking API; Node-only services bundle for browser, unknown access/schedule stays unknown and no extra transit query is made"
@@ -10,6 +11,6 @@
   "osBridgeMocked": true,
   "actualOdsayCalls": 0,
   "actualAndroidDeviceTest": false,
-  "backendCalls": 3,
+  "backendCalls": 4,
   "fieldVerified": false
 }

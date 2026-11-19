@@ -9,7 +9,7 @@ const url = 'http://127.0.0.1:' + server.address().port;
 let browser;
 try {
  browser = await chromium.launch({executablePath:process.env.CHROME_PATH || '/usr/bin/chromium', args:['--no-sandbox']});
- for (const [width,height] of [[320,568],[393,852],[667,375],[844,390]]) {
+ for (const [width,height] of [[320,568],[393,852],[667,375],[844,390],[800,1280],[1280,800]]) {
   const context = await browser.newContext({viewport:{width,height}, isMobile:true, hasTouch:true, reducedMotion:'reduce'});
   await context.route('https://**',route=>route.abort());
   const page = await context.newPage(), errors = [];
@@ -25,6 +25,19 @@ try {
 
   for (const night of [false,true]) {
    await page.evaluate(high=>HighContrast.set(high),night);
+   await page.getByRole('button',{name:'더보기',exact:true}).tap();
+   const menu=page.locator('#mobile-menu');
+   await menu.waitFor({state:'visible'});
+   assert(await menu.evaluate((dialog,high)=>{
+    const opener=document.querySelector('#mobile-more'),style=getComputedStyle(opener);
+    const items=[...dialog.querySelectorAll(':scope > button:not([hidden])')];
+    const rounded=element=>parseFloat(getComputedStyle(element).borderRadius)>=14;
+    return style.borderRadius==='50%'&&opener.getBoundingClientRect().width>=44&&dialog.getBoundingClientRect().width<=420&&
+      items.length===3&&items.every(item=>rounded(item)&&item.getBoundingClientRect().height>=48&&
+       getComputedStyle(item).backgroundColor===(high?'rgb(0, 0, 0)':'rgb(245, 248, 242)'));
+   },night),`Rounded accessible menu fits at ${width}x${height}`);
+   await menu.getByRole('button',{name:'닫기',exact:true}).tap();
+   await page.waitForFunction(()=>document.activeElement?.id==='mobile-more');
    await page.locator('#osco-open').tap();
    await page.getByRole('tab',{name:'오스코',exact:true}).tap();
    await page.getByRole('button',{name:'행사장·공식 안내'}).tap();
@@ -45,7 +58,7 @@ try {
   const field=page.locator('#origin-query');
   await field.fill('서울');
   // Samsung WebView resizes its layout viewport, as well as its visual viewport.
-  const keyboardHeight=Math.max(260,height-230);
+  const keyboardHeight=width>1000?220:Math.max(260,height-230);
   await page.setViewportSize({width,height:keyboardHeight});
   await page.waitForFunction(()=>document.body.classList.contains('keyboard-open'));
   assert.equal(await page.locator('.mobile-tabs').isVisible(),false);
@@ -56,6 +69,26 @@ try {
    return field.top>=body.top-1 && field.bottom<=body.bottom+1 && action.bottom<=visualViewport.height;
   });
   assert(visible,`Editor and next button must fit above the keyboard at ${width}x${height}`);
+  if(width>1000){
+   // Overlay keyboard changes only the visual viewport; WebView layout height stays full.
+   await page.setViewportSize({width,height});
+   await page.evaluate(()=>{
+    Object.defineProperties(visualViewport,{height:{configurable:true,value:200},offsetTop:{configurable:true,value:18}});
+    visualViewport.dispatchEvent(new Event('resize'));
+   });
+   await page.waitForFunction(()=>{
+    const rect=document.querySelector('#origin-query').getBoundingClientRect();
+    const body=document.querySelector('.question-body').getBoundingClientRect();
+    const button=document.querySelector('.question-controls .primary').getBoundingClientRect();
+    return rect.top>=Math.max(body.top,visualViewport.offsetTop)-1&&rect.bottom<=body.bottom+1&&
+     button.bottom<=visualViewport.offsetTop+visualViewport.height;
+   });
+   await page.evaluate(()=>{
+    delete visualViewport.height;
+    delete visualViewport.offsetTop;
+    visualViewport.dispatchEvent(new Event('resize'));
+   });
+  }
   await page.setViewportSize({width,height});
   await field.blur();
   await page.waitForFunction(()=>!document.body.classList.contains('keyboard-open'));
@@ -77,7 +110,7 @@ try {
    });
   });
   assert(await framed(),`Walking route is obscured at ${width}x${height}`);
-  await page.setViewportSize({width:width<700?844:393,height:width<700?390:852});
+  await page.setViewportSize(width>=800&&height>=800?{width:height,height:width}:{width:width<700?844:393,height:width<700?390:852});
   await page.waitForTimeout(300);
   assert(await framed(),'Route points must remain above the results sheet after rotation');
   assert.deepEqual(errors,[]);

@@ -14,11 +14,37 @@ await build({entryPoints:['src/runtime.js'],bundle:true,format:'iife',platform:'
 const app=createApp();await new Promise(r=>app.listen(0,'127.0.0.1',r));const backend='http://127.0.0.1:'+app.address().port;
 const staticServer=createServer(async(req,res)=>{try{const pathname=new URL(req.url,'http://localhost').pathname;const target=pathname==='/native-runtime.js'?'/tmp/donghaeng-test-native-runtime.js':path.join(mobile,'www',pathname==='/'?'index.html':pathname);const raw=await readFile(target);res.setHeader('Content-Type',target.endsWith('.js')?'text/javascript':target.endsWith('.css')?'text/css':target.endsWith('.html')?'text/html':'application/octet-stream');res.end(raw)}catch{res.statusCode=404;res.end()}});await new Promise(r=>staticServer.listen(0,'127.0.0.1',r));let browser,calls=0,backendCalls=0;
 try{
- browser=await chromium.launch({headless:true,executablePath:'/usr/bin/chromium',args:['--no-sandbox']});const context=await browser.newContext({viewport:{width:393,height:852}});await context.route('https://**',r=>r.abort());const page=await context.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));
+ browser=await chromium.launch({headless:true,executablePath:'/usr/bin/chromium',args:['--no-sandbox']});const context=await browser.newContext({viewport:{width:393,height:852},hasTouch:true,isMobile:true});await context.route('https://**',r=>r.abort());const page=await context.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));
  await page.exposeFunction('testBackend',async o=>{backendCalls++;const r=await fetch(backend+o.path,{method:o.method,headers:{'Content-Type':'application/json'},...(o.method==='POST'?{body:o.body}:{})});return {status:r.status,body:await r.text()}});
  await page.exposeFunction('testSearch',async()=>{calls++;return {status:200,body:JSON.stringify({result:{path:[{info:{totalTime:35,payment:1500},subPath:[{trafficType:3,sectionTime:4},{trafficType:2,sectionTime:20,startX:126.98,startY:37.573,endX:127.0276,endY:37.49794,startName:'모의 승차',endName:'모의 하차',lane:[{busNo:'시연 시험'}]},{trafficType:3,sectionTime:4}]}]}})}});
  await page.addInitScript(()=>{window.NativeTest={status:async()=>({configured:true,used:0,dailyLimit:20}),search:o=>window.testSearch(o),backend:o=>window.testBackend(o),cancel:async()=>({}),configureKey:async()=>({configured:true})}});
  await page.goto('http://127.0.0.1:'+staticServer.address().port);await page.waitForFunction(()=>!document.querySelector('#find-route').disabled,null,{timeout:60000});assert.equal(await page.evaluate(()=>DONGHAENG_BUILD.transitEnabled),true);assert.equal(await page.evaluate(()=>DONGHAENG_BUILD.initialArea),'osco');await page.waitForFunction(()=>OscoMap.places().every(p=>map.getBounds().contains(p.ll))).catch(async e=>{console.log(JSON.stringify(await page.evaluate(()=>({publicDemoCenter:map.getCenter(),publicDemoBounds:map.getBounds(),zoom:map.getZoom(),boot:document.querySelector('#search-status').textContent}))));throw e});assert.equal(await page.evaluate(()=>OscoMap.places().length),2);assert.match(await page.locator('.question-progress').innerText(),/1 \/ 4/);assert.equal(calls,0);assert.equal(await page.locator('#mobile-menu #mobile-api-settings:not([hidden])').count(),1);checks.push('Packaged Android profile keeps four questions and native key settings; startup does not spend a transit call');await page.getByRole('button',{name:'고대비 모드',exact:true}).click();assert.equal(await page.evaluate(()=>HighContrast.active()),true);assert.equal(calls,0);for(const size of [{width:320,height:568},{width:393,height:852},{width:667,height:375}]){await page.setViewportSize(size);assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));assert(await page.getByRole('button',{name:'고대비 모드',exact:true}).isVisible());assert(await page.locator('#mobile-more').isVisible())}await page.setViewportSize({width:393,height:852});await page.getByRole('button',{name:'고대비 모드',exact:true}).click();checks.push('Packaged Android high contrast toggles without a native/provider call and preserves the key settings and transit profile');
+ await page.setViewportSize({width:1280,height:800});
+ assert(await page.evaluate(()=>isMobileUI()));
+ await page.locator('#origin-query').fill('서울');
+ await page.setViewportSize({width:1280,height:220});
+ await page.waitForFunction(()=>{
+  if(!document.body.classList.contains('keyboard-open'))return false;
+  const rect=document.querySelector('#origin-query').getBoundingClientRect();
+  const panel=document.querySelector('.question-body').getBoundingClientRect();
+  return rect.top>=panel.top-1&&rect.bottom<=panel.bottom+1&&panel.bottom<=visualViewport.height;
+ });
+ await page.setViewportSize({width:1280,height:800});
+ await page.getByRole('button',{name:'더보기',exact:true}).click();
+ const menu=page.locator('#mobile-menu');
+ const labels=['API 설정','이용 안내','비교 시연','서울 전체 지도'];
+ for(const label of labels){
+  const item=menu.getByRole('button',{name:label,exact:true});
+  assert(await item.isVisible());
+  assert(await item.evaluate(button=>parseFloat(getComputedStyle(button).borderRadius)>=14));
+ }
+ await menu.getByRole('button',{name:'API 설정',exact:true}).click();
+ await page.getByRole('button',{name:'메뉴로 돌아가기',exact:true}).click();
+ await page.waitForFunction(()=>document.activeElement?.id==='mobile-api-settings');
+ await menu.getByRole('button',{name:'닫기',exact:true}).click();
+ assert.equal(await page.locator('#origin-query').inputValue(),'서울');
+ await page.setViewportSize({width:393,height:852});
+ checks.push('Android landscape tablet keeps the origin editor in view as the keyboard opens and all four rounded menu items work with focus return');
  await page.evaluate(()=>{tripQuestions.close();setOrigin([37.5665,126.978],'공개 시험');setDestination({name:'공개 도착',ll:[37.505,127.0255]},{pan:false});setTravelMode('transit')});await page.locator('#condition').fill('계단을 피해서 가고 싶어요.');await page.locator('#find-route').click();await page.waitForFunction(()=>transitResult&&!document.querySelector('#find-route').disabled,null,{timeout:30000});assert.equal(calls,1);assert.equal(await page.evaluate(()=>transitResult.candidates[0].profile.avoidSteps),true);assert.equal(await page.evaluate(()=>transitResult.candidates[0].fieldVerified),false);checks.push('Native bridge response uses the exact shared ODsay normalization and original mobility constraints, with no server-side transit request');
  await page.getByRole('button',{name:'내 위치 보기',exact:true}).click();
  await page.waitForFunction(()=>document.querySelector('#gps-tracking-label').textContent.includes('280m'));

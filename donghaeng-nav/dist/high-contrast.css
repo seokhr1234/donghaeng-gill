@@ -54,7 +54,7 @@ html[data-contrast=high] .map-slope-key::before {height:4px;background:repeating
 html[data-contrast=high] .contrast-legend {display:block;color:var(--hc-text)}
 html[data-contrast=high] .contrast-sample {box-shadow:0 0 0 3px #fff}
 html[data-contrast=high] .map-legend {display:none}
-@media(max-width:700px), (max-width:1000px) and (max-height:500px) and (pointer:coarse) {.header>.contrast-toggle {padding:7px 9px;font-size:12px;min-height:44px}.header {gap:8px}.contrast-legend {font-size:12px}}
+@media(max-width:700px), (max-width:1440px) and (any-pointer:coarse) {.header>.contrast-toggle {padding:7px 9px;font-size:12px;min-height:44px}.header {gap:8px}.contrast-legend {font-size:12px}}
 @media(forced-colors:active) {
  html[data-contrast=high] {--hc-background:Canvas;--hc-text:CanvasText;--hc-control:ButtonText;--hc-link:LinkText;--hc-selected:Highlight;--hc-selected-text:HighlightText;--hc-muted:GrayText}
  .contrast-toggle {border:2px solid ButtonText}.contrast-legend {display:block}

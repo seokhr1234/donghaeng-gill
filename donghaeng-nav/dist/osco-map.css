@@ -21,7 +21,7 @@
 .osco-popup a,.osco-panel a {color:#226249;text-decoration:underline}
 .osco-pin {background:transparent;border:0}
 .osco-pin span {display:block;background:#245c43;color:#fff;border:2px solid white;border-radius:20px;text-align:center;padding:5px 3px;box-shadow:0 2px 6px #193c3933;font:700 12px sans-serif}
-@media(max-width:700px), (max-width:1000px) and (max-height:500px) and (pointer:coarse) {
+@media(max-width:700px), (max-width:1440px) and (any-pointer:coarse) {
  .map-top {max-width:calc(100% - 68px);gap:6px}
  .map-top #osco-open {padding:7px 10px;font-size:11px;min-height:36px}
  .osco-popup {max-width:calc(100vw - 76px)}
