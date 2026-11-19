@@ -1,0 +1,51 @@
+{
+  "pass": true,
+  "source_commit": "18d38bbbab459b02be0e820c2344c4f2575d87b7",
+  "checked_date_kst": "2026-11-19",
+  "origin": "https://donghaeng-gill.vercel.app",
+  "files": [
+    {
+      "file": "index.html",
+      "status": 200,
+      "matches_source": true,
+      "sha256": "2dc0ba035243d8295ee6e568b7ff7fa7af8973a641e6a09ebe180198fcbd7b0b"
+    },
+    {
+      "file": "style.css",
+      "status": 200,
+      "matches_source": true,
+      "sha256": "d05217f095af4f03d8bbb0665d811f1937d7e38ce39f99470a702697696be10b"
+    },
+    {
+      "file": "app.js",
+      "status": 200,
+      "matches_source": true,
+      "sha256": "9766319e326866028d8353933cf3efe3b598bb276a649054e56a0f6690f914f0"
+    },
+    {
+      "file": "route-candidates.js",
+      "status": 200,
+      "matches_source": true,
+      "sha256": "f8be3593704fc85574cadd3fcaf2bbce2de45b1dc407adef5b3dbfcfdeb28e90"
+    },
+    {
+      "file": "build-profile.js",
+      "status": 200,
+      "matches_source": true,
+      "sha256": "28c7a02d601f2bf45d1241787e0401a8a3240daf28c75c4ad48167e40fa37a1a"
+    }
+  ],
+  "deployments": [
+    {
+      "context": "Vercel – aiaiaiaiaiaiaiai",
+      "state": "success",
+      "target_url": "https://vercel.com/snu-clab/aiaiaiaiaiaiaiai/32PhVFvy33A4k9k4CC6ozDtyjLEC"
+    },
+    {
+      "context": "Vercel – donghaeng",
+      "state": "success",
+      "target_url": "https://vercel.com/snu-clab/donghaeng/DV3GHL4XAesm5GUhkMN2AYBRYYLm"
+    }
+  ],
+  "transit_web_block_confirmed": true
+}

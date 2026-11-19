@@ -1,5 +1,7 @@
 # 동행길 Android 시연 APK
 
+2026-11-19 배포판 **1.0.8 (versionCode 9)**은 검토 경로의 직접 선택과 함께 스크롤되는 결과 버튼을 제공합니다. 패키지는 `app.donghaeng.gill.demo`입니다. [설치 ZIP](https://github.com/seokhr1234/donghaeng-gill/archive/refs/tags/android-demo-v1.0.8-download.zip) · [Release](https://github.com/seokhr1234/donghaeng-gill/releases/tag/android-demo-v1.0.8)
+
 2026-11-19 배포판 **1.0.7 (versionCode 8)**은 태블릿 가로 키보드와 더보기 메뉴를 개선했습니다. 패키지는 `app.donghaeng.gill.demo`입니다. [설치 ZIP](https://github.com/seokhr1234/donghaeng-gill/archive/refs/tags/android-demo-v1.0.7-download.zip) · [Release](https://github.com/seokhr1234/donghaeng-gill/releases/tag/android-demo-v1.0.7)
 
 2026-11-19 배포판 **1.0.6 (versionCode 7)**은 보행 경로의 접근 거리, 대략적인 GPS, 메뉴 복귀 버튼을 개선했습니다. 패키지는 `app.donghaeng.gill.demo`입니다. [변경과 검증](../docs/endpoint-approaches-2026-11-19.md) · [설치 ZIP](https://github.com/seokhr1234/donghaeng-gill/archive/refs/tags/android-demo-v1.0.6-download.zip)
