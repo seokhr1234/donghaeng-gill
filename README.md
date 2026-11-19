@@ -4,6 +4,8 @@
 
 전체 변경은 [수정이력.md](수정이력.md), 작업 규칙은 [AGENTS.md](AGENTS.md), 이번 전환의 근거와 검사 범위는 [메인 전환 기록](donghaeng-nav/docs/main-navigation-promotion.md)을 참고하세요.
 
+2026-11-19 태블릿 개선. 가로 키보드가 열린 동안 출발지 입력을 표시하고 더보기 메뉴를 둥글게 정리했습니다. [Android 1.0.7 설치 ZIP](https://github.com/seokhr1234/donghaeng-gill/archive/refs/tags/android-demo-v1.0.7-download.zip) · [Release](https://github.com/seokhr1234/donghaeng-gill/releases/tag/android-demo-v1.0.7)
+
 2026-11-19 보행 경로 개선. 출발·도착의 등록 보행 연결을 함께 비교합니다. Android 1.0.6은 대략적인 GPS 위치와 API 설정 메뉴 버튼 개선도 포함합니다. [변경과 검증](donghaeng-nav/docs/endpoint-approaches-2026-11-19.md) · [Android 1.0.6 설치 ZIP](https://github.com/seokhr1234/donghaeng-gill/archive/refs/tags/android-demo-v1.0.6-download.zip)
 
 2026-11-19 모바일 개선. Android에서 **더보기(⋯) → API 설정**으로 키를 관리합니다. 질문창의 입력과 진행 버튼, 오스코 상세, 가로 화면의 경로 표시를 조정했습니다. [모바일 화면 변경 및 검증](donghaeng-nav/docs/mobile-layout-2026-11-19.md) · [Android 1.0.5 설치 ZIP](https://github.com/seokhr1234/donghaeng-gill/archive/refs/tags/android-demo-v1.0.5-download.zip)

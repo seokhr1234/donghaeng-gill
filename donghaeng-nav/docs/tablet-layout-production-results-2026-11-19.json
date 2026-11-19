@@ -1,0 +1,56 @@
+{
+  "pass": true,
+  "source_commit": "dcd244c9de52f844988c975b771134a09ab3f3d9",
+  "checked_date_kst": "2026-11-19",
+  "origin": "https://donghaeng-gill.vercel.app",
+  "files": [
+    {
+      "file": "index.html",
+      "status": 200,
+      "matches_source": true,
+      "sha256": "2dc0ba035243d8295ee6e568b7ff7fa7af8973a641e6a09ebe180198fcbd7b0b"
+    },
+    {
+      "file": "style.css",
+      "status": 200,
+      "matches_source": true,
+      "sha256": "e4d4c4dec15b77d2115523f44233b09561a278944cea138a476c7c9a3e0cda27"
+    },
+    {
+      "file": "app.js",
+      "status": 200,
+      "matches_source": true,
+      "sha256": "bf23e2ad069ecede1f4c736cca711425404aece5b5c94b15a347fe3286b644b5"
+    },
+    {
+      "file": "high-contrast.css",
+      "status": 200,
+      "matches_source": true,
+      "sha256": "dcd8f96eeb107122eae1f56f2c8159c6704c021b4037026226294668eabccc87"
+    },
+    {
+      "file": "osco-map.css",
+      "status": 200,
+      "matches_source": true,
+      "sha256": "575761cdef68fb952bf8afc5995b1bbe6eba289b822bbb615bef1d4f876f5c62"
+    },
+    {
+      "file": "build-profile.js",
+      "status": 200,
+      "matches_source": true,
+      "sha256": "28c7a02d601f2bf45d1241787e0401a8a3240daf28c75c4ad48167e40fa37a1a"
+    }
+  ],
+  "deployments": [
+    {
+      "context": "Vercel – donghaeng",
+      "state": "success",
+      "target_url": "https://vercel.com/snu-clab/donghaeng/23chN5hU2qz1epdbwujgcm7RJJpd"
+    },
+    {
+      "context": "Vercel – aiaiaiaiaiaiaiai",
+      "state": "success",
+      "target_url": "https://vercel.com/snu-clab/aiaiaiaiaiaiaiai/5WvCYfEruhX5eSQmuuz3wzxBE8aD"
+    }
+  ]
+}
