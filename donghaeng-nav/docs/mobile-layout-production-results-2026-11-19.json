@@ -1,0 +1,91 @@
+{
+  "pass": true,
+  "checked_date_kst": "2026-11-19",
+  "origin": "https://donghaeng-gill.vercel.app",
+  "source_commit": "284273f26df86b09b2665b2373357b6636a0e0a9",
+  "files": [
+    {
+      "file": "index.html",
+      "status": 200,
+      "sha256": "68aea653afc5e5ffa17700db100b948aab83bf44e3d64749cfd9f94c3f746a21",
+      "matches": true
+    },
+    {
+      "file": "app.js",
+      "status": 200,
+      "sha256": "4b6595c89fa8a9cbd29ec9600f8b4538e014f520e3ddfda8b1d74dc854655b24",
+      "matches": true
+    },
+    {
+      "file": "style.css",
+      "status": 200,
+      "sha256": "6f22a32bbcadb3b23916b2a8dfbb0db011f1e9f5279217175e7eb14c59e8cc43",
+      "matches": true
+    },
+    {
+      "file": "trip-questions.js",
+      "status": 200,
+      "sha256": "392ce611917e01921212886f2c44ecfd396134cced9fc50ddb97c4af44a81a2e",
+      "matches": true
+    },
+    {
+      "file": "osco-map.js",
+      "status": 200,
+      "sha256": "73a2ab024f3b30cbe6607792f5f2687a9c6f5d77f3b116f3204d292d9a425639",
+      "matches": true
+    },
+    {
+      "file": "osco-map.css",
+      "status": 200,
+      "sha256": "cae5c87939904fca43ad9629ef8e4e43d3f78deffed00f6aef8fcaad2dc44659",
+      "matches": true
+    },
+    {
+      "file": "high-contrast.css",
+      "status": 200,
+      "sha256": "58811fc2bcaeec7c676e6c4e73344d006b4cc692d6e3aa7e71c8bc2307309843",
+      "matches": true
+    },
+    {
+      "file": "build-profile.js",
+      "status": 200,
+      "sha256": "28c7a02d601f2bf45d1241787e0401a8a3240daf28c75c4ad48167e40fa37a1a",
+      "matches": true
+    }
+  ],
+  "deployment_statuses": [
+    {
+      "context": "Vercel – aiaiaiaiaiaiaiai",
+      "state": "success",
+      "target_url": "https://vercel.com/snu-clab/aiaiaiaiaiaiaiai/2bjASRwkbKTL8MofCtCsYHNj7Y7S"
+    },
+    {
+      "context": "Vercel – donghaeng",
+      "state": "success",
+      "target_url": "https://vercel.com/snu-clab/donghaeng/BDJMhecJTzus4ZUj7PRjAWaE8Yi2"
+    }
+  ],
+  "public_transit_checks": [
+    {
+      "path": "/api/routes/transit",
+      "status": 404,
+      "code": "transit_not_in_web_build"
+    },
+    {
+      "path": "/api/transit/walk-review",
+      "status": 404,
+      "code": "transit_not_in_web_build"
+    },
+    {
+      "path": "/api/journeys",
+      "status": 404,
+      "code": "transit_not_in_web_build"
+    },
+    {
+      "path": "/api/index?route=routes/transit",
+      "status": 404,
+      "code": "transit_not_in_web_build"
+    }
+  ],
+  "actual_provider_calls": 0
+}

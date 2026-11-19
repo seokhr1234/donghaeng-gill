@@ -14,3 +14,9 @@ Android 1.0.5의 공개 빌드에는 고정 API 키가 없다. 이전과 같은 
 브라우저의 320×568·393×852·667×375·844×390 터치 화면에서 일반·밤하늘 장소 선택, 키보드 높이 변화, 제보·저장 복귀, 서울 도보 경로 표시와 회전을 확인했다. 웹 소스와 단일 HTML에서 도보 질문 전체 흐름과 대중교통 API 차단을 검사했다. Android 테스트는 모의 브리지로 메뉴 이동, 키 설정과 서버 복귀, 대중교통 결과 경계를 검증했다. 이번 빌드의 실제 S22+ 설치, 삼성 키보드 및 OS 뒤로 가기, 실제 공급자 키 연결·GPS는 아직 확인하지 않았다.
 
 Android 1.0.5(versionCode 6)의 패키지는 `app.donghaeng.gill.demo`다. 서명은 1.0.4와 동일하며, 앱에 포함된 웹 자산 68개를 동기화된 소스와 대조했다. APK 파일과 모든 압축 항목에 고정 키와 서명용 설정이 없는 것을 확인했다. [APK 검사 결과](mobile-layout-apk-results-2026-11-19.json)
+
+## 배포
+
+소스 `284273f`를 `feature/cheongju-osco-demo`와 `main`에 푸시했다. 연결된 Vercel 두 프로젝트가 성공했고, 운영 주소에서 자산 8개의 해시가 소스와 일치했다. 공개판의 대중교통 API 4개 경로도 차단을 확인했다. [운영 배포 확인](mobile-layout-production-results-2026-11-19.json)
+
+GitHub 설치 ZIP을 실제로 내려받아 압축 무결성과 APK SHA-256을 확인했다. 압축을 풀고 APK를 열어 설치한 뒤 키 설정은 **더보기(⋯) → API 설정**에서 연다. [설치 ZIP](https://github.com/seokhr1234/donghaeng-gill/archive/refs/tags/android-demo-v1.0.5-download.zip) · [Release](https://github.com/seokhr1234/donghaeng-gill/releases/tag/android-demo-v1.0.5)
