@@ -4,6 +4,8 @@
 
 전체 변경은 [수정이력.md](수정이력.md), 작업 규칙은 [AGENTS.md](AGENTS.md), 이번 전환의 근거와 검사 범위는 [메인 전환 기록](donghaeng-nav/docs/main-navigation-promotion.md)을 참고하세요.
 
+2026-11-19 모바일 개선. Android에서 **더보기(⋯) → API 설정**으로 키를 관리합니다. 질문창의 입력과 진행 버튼, 오스코 상세, 가로 화면의 경로 표시를 조정했습니다. [모바일 화면 변경 및 검증](donghaeng-nav/docs/mobile-layout-2026-11-19.md)
+
 2026-11-17 밤하늘 정정: 고대비를 사용자 스크린샷의 **검정 배경·흰 글자·노란 테두리·보라색 선택 상태**로 바꿨습니다. 지도는 원래 색을 유지하고 숫자의 안쪽 사각 테두리를 제거했습니다. [수정·검증·Android1.0.4 기록](donghaeng-nav/docs/night-sky-2026-11-17.md). 저장소의 현재 정식 이름은 **seokhr1234/donghaeng-gill**입니다. 후속 요청으로 [APK의 Gemini 키 입력·교통 키 상태/복원](donghaeng-nav/docs/android-gemini-settings-2026-11-17.md)도 추가했습니다. API 설정에서 Gemini 개인 키를 넣을 수 있고 미입력 시 기존 서버를 사용합니다. 공개 APK는 고정 키 없이 **API 설정에서 ODsay·Gemini 키를 기기에 입력**하는 방식입니다. 키 포함 공개 업로드는 자동 승인 검토에서 거부되어 제외했습니다. [Gemini 입력·밤하늘 APK1.0.4 설치ZIP](https://github.com/seokhr1234/donghaeng-gill/archive/refs/tags/android-demo-v1.0.4-download.zip)을 게시했습니다. 아래1.0.3 기록은 정정 전 당시 상태입니다.
 
 2026-11-17 고대비: 화면 위 **◐ 고대비**에서 흰/검정 중심의 화면, 지도 선 모양·글자 기호와 큰 대비를 사용할 수 있습니다. 선택은 기기에 저장하고 시스템 고대비 기본값도 지원합니다. [구현·검증·Android1.0.3 기록](donghaeng-nav/docs/high-contrast-2026-11-17.md). 경로·조사 근거·웹 도보 전용/Android 대중교통 분리는 유지합니다. [고대비 APK1.0.3 설치 ZIP](https://github.com/seokhr1234/aiaiaiaiaiaiaiai/archive/refs/tags/android-demo-v1.0.3-download.zip)을 게시했습니다. 비공개 저장소 GitHub 로그인이 필요합니다.

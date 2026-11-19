@@ -57,7 +57,8 @@ public class DonghaengPlugin extends Plugin {
                     String value = input.getText().toString().trim();
                     if (!value.matches("[-A-Za-z0-9_.]{20,300}")) {input.setText(""); call.reject("Gemini 키 값만 입력해 주세요. 기존 설정은 유지됩니다."); return;}
                     prefs.edit().putString("geminiKey", value).apply(); input.setText(""); call.resolve(changedSettings());
-                }).setNegativeButton("취소", (dialog, which) -> call.resolve(settings())).show();
+                }).setNegativeButton("취소", (dialog, which) -> call.resolve(settings()))
+                .setOnCancelListener(dialog -> call.resolve(settings())).show();
         });
     }
     @PluginMethod public void configureKey(PluginCall call) {
@@ -70,7 +71,8 @@ public class DonghaengPlugin extends Plugin {
                     String value=input.getText().toString().trim();
                     if(value.isEmpty() || value.length()>1024 || value.contains("\n") || value.contains("\r")){call.reject("새 키를 입력하거나 취소해 주세요. 기존 설정은 유지됩니다.");return;}
                     prefs.edit().putString("odsayKey",value).apply(); input.setText(""); call.resolve(changedSettings());
-                }).setNegativeButton("취소",(dialog,which) -> call.resolve()).setNeutralButton("키 삭제",(dialog,which) -> {prefs.edit().putString("odsayKey","").apply();call.resolve(changedSettings());}).show();
+                }).setNegativeButton("취소",(dialog,which) -> call.resolve()).setNeutralButton("키 삭제",(dialog,which) -> {prefs.edit().putString("odsayKey","").apply();call.resolve(changedSettings());})
+                .setOnCancelListener(dialog -> call.resolve(settings())).show();
         });
     }
     @PluginMethod public void cancel(PluginCall call) {
@@ -107,7 +109,7 @@ public class DonghaengPlugin extends Plugin {
                     body=request.toString();if(body.getBytes(StandardCharsets.UTF_8).length>65536)throw new IllegalArgumentException();
                     url=new URL("https://generativelanguage.googleapis.com/v1beta/models/"+model+":generateContent");method="POST";
                 }else if(search){
-                    String token=key();if(token.isEmpty()){result(call,503,failure("android_key_missing","오른쪽 위 API 설정에서 ODsay Android 키를 입력해 주세요."));return;}
+                    String token=key();if(token.isEmpty()){result(call,503,failure("android_key_missing","더보기 → API 설정에서 ODsay Android 키를 입력해 주세요."));return;}
                     JSArray a=call.getArray("origin"),b=call.getArray("destination");if(a==null||b==null||a.length()!=2||b.length()!=2)throw new IllegalArgumentException();
                     double ay=a.getDouble(0),ax=a.getDouble(1),by=b.getDouble(0),bx=b.getDouble(1);
                     if(!Double.isFinite(ay)||!Double.isFinite(ax)||!Double.isFinite(by)||!Double.isFinite(bx)||Math.abs(ay)>90||Math.abs(by)>90||Math.abs(ax)>180||Math.abs(bx)>180)throw new IllegalArgumentException();

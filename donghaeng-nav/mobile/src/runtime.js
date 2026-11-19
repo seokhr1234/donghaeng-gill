@@ -43,7 +43,7 @@ globalThis.fetch=async(resource,options={})=>{
   }
   if(url.pathname==='/api/routes/transit'){
    const input=walkingInput(JSON.parse(options.body));if(transitDistance(input.origin,input.destination)<=700)throw shortTransitError();
-   const r=await native('search',{origin:input.origin,destination:input.destination},signal);if(r.status!==200)throw new ServiceError(r.status,'android_transit_unavailable','대중교통 검색에 실패했어요. 오른쪽 위 API 설정과 인터넷 연결을 확인해 주세요.');return respond(normalizeOdsay(json(r.body),input));
+   const r=await native('search',{origin:input.origin,destination:input.destination},signal);if(r.status!==200)throw new ServiceError(r.status,'android_transit_unavailable','대중교통 검색에 실패했어요. 더보기 → API 설정과 인터넷 연결을 확인해 주세요.');return respond(normalizeOdsay(json(r.body),input));
   }
   if(url.pathname==='/api/transit/walk-review')return respond(await review.review(JSON.parse(options.body),{signal}));
   const r=await native('backend',{path:url.pathname+url.search,method:options.method||'GET',body:options.body||''},signal);return new Response(r.body,{status:r.status,headers:{'Content-Type':'application/json'}});

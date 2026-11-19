@@ -40,7 +40,7 @@
   panel.append(el('h3', '청주오스코 주변'), el('p', 'OSM 등록 지물과 공식 안내를 함께 확인해요. 현장 통행·출입구는 미확인입니다.', 'osco-note'));
   const buttons = el('div', undefined, 'osco-actions');
   const source = id => data.sources.find(s => s.id === id);
-  const markers = L.layerGroup().addTo(map), layers = L.layerGroup().addTo(map);
+  const markers = L.layerGroup().addTo(map), layers = L.featureGroup().addTo(map);
   const venueMarkers = new Map(), checkboxes = {}, counts = {};
   let context = null, loading = false, failed = false, disposed = false, rendered = 0;
   const status = el('p', '', 'osco-layer-status'); status.role = 'status';
@@ -65,7 +65,7 @@
     '청주 주변은 자료 표시를 제공합니다. 도보 경로 계산은 서울 범위에서 사용할 수 있어요.', 'osco-note'));
   }
   function venuePopup(place) {
-   const box = el('section', undefined, 'osco-popup');
+   const box = el('section', undefined, 'osco-popup osco-venue-detail');
    box.append(el('h3', place.name), el('p', place.address),
     el('p', (place.id === 'osco:venue' ? '공식 안내의 대표점' : 'OSM 등록 대표점') + ' · 실제 보행 출입구 아님', 'osco-warning'));
    if (place.id === 'osco:venue') {
@@ -89,7 +89,7 @@
    box.append(details); selectButtons(place, box); return box;
   }
   function showPlace(place, popup = true) {
-   map.setView(place.ll, 17, {animate: false}); render();
+   map.stop().setView(place.ll, 17, {animate: false}); render();
    if (popup) venueMarkers.get(place.id)?.openPopup();
   }
   for (const place of data.places) {
@@ -97,7 +97,7 @@
    b.onclick = () => showPlace(place); buttons.append(b);
    const marker = L.marker(place.ll, {title: place.name, icon: L.divIcon({className: 'osco-pin',
     html: '<span>' + (place.id === 'osco:venue' ? '오스코' : '오송역') + '</span>', iconSize: [60, 30], iconAnchor: [30, 30]})});
-   marker.bindPopup(() => venuePopup(place), {maxWidth: 330, maxHeight: 360, autoPanPadding: [20, 70]});
+   marker.bindPopup(() => venuePopup(place), {maxWidth: 330, maxHeight: 360, autoPanPaddingTopLeft: [12, 20], autoPanPaddingBottomRight: [12, 84]});
    venueMarkers.set(place.id, marker);
   }
   panel.append(buttons);
@@ -169,8 +169,10 @@
    const b = map.getBounds(), zoom = map.getZoom(), selectedKinds = kinds.filter(([k]) => checkboxes[k].checked);
    for (const [id, m] of venueMarkers) {
     if (zoom >= 12 && b.pad(.1).contains(m.getLatLng())) { if (!markers.hasLayer(m)) markers.addLayer(m); }
-    else markers.removeLayer(m);
+    else if (!m.isPopupOpen()) markers.removeLayer(m);
    }
+   // Auto-pan must not rebuild the marker whose details are being read.
+   if (contextPopup) return;
    layers.clearLayers(); rendered = 0;
    let overflow = false, zoomHidden = false;
    const symbolGroups = new Map();
@@ -219,6 +221,12 @@
     zoomHidden ? '일부 자료는 16~17단계 이상 확대하면 표시돼요.' :
     rendered ? '현재 화면의 등록 객체 ' + rendered + '개 · 현장 미확인' : '이 화면에 표시할 등록 자료가 없어요. 미등록 시설이 있을 수 있어요.';
   }
+  let contextPopup = null;
+  layers.on('popupopen', event => {contextPopup = event.popup;});
+  layers.on('popupclose', event => {
+   if (contextPopup === event.popup) contextPopup = null;
+   requestAnimationFrame(render);
+  });
   retry.onclick = load; map.on('moveend', render); document.addEventListener('donghaeng-contrast-change', render); render();
   return {panel, places: data.places, show({popup = true} = {}) {
    const bounds = L.latLngBounds([[36.615, 127.322], [36.632, 127.342]]);
