@@ -1,0 +1,8 @@
+동행길 Android 1.0.5 (versionCode 6)
+패키지 app.donghaeng.gill.demo
+Android 7.0 이상
+
+압축을 풀고 APK를 휴대폰에서 열어 설치하세요. 기존 공개 1.0.4와 서명이 같아 업데이트할 수 있습니다.
+청주오스코 지도에서 시작합니다. 상단 더보기(⋯) → API 설정에서 ODsay Android 키 또는 개인 Gemini 키를 입력할 수 있습니다.
+개인 Gemini 키를 입력하지 않은 경우 앱이 설정된 서버를 사용합니다. 공개 APK에는 고정 API 키가 들어 있지 않습니다.
+APK의 SHA-256은 같이 들어 있는 .sha256 파일에서 확인할 수 있습니다.
