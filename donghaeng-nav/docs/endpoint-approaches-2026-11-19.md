@@ -11,3 +11,9 @@
 모의 선분에서는 불필요한 되돌아가기가 줄어 접근 포함 159m에서 123m로 바뀌었다. 조건을 위반하는 계단, 경사 미등록, 연결 없는 그래프를 검사했다. 원본 11개와 연구 자료, 서울 그래프는 같은 해시를 유지했다. [재현 검사](../scripts/test-endpoint-approaches.mjs)
 
 Android 1.0.6에는 대략적인 GPS 위치 표시와 **더보기 → API 설정 → ← 메뉴로** 버튼 개선도 포함된다. 앱 ID는 `app.donghaeng.gill.demo`이고 1.0.5와 서명이 같다. 공개용 빌드에는 고정 키가 없다. Android 모의 브리지와 Chromium을 검사했다. 실제 휴대폰에서 이 APK를 설치해 이동하는 시험은 남아 있다. [APK 확인 결과](endpoint-approaches-apk-results-2026-11-19.json)
+
+## 배포
+
+소스 `fd23f77`를 `feature/cheongju-osco-demo`와 `main`에 푸시했다. 연결된 Vercel 두 프로젝트가 배포에 성공했고, 운영 자산 8개 해시 일치와 강남 표본 1,019m 정상 응답, 웹 대중교통 차단을 확인했다. [운영 확인](endpoint-approaches-production-results-2026-11-19.json)
+
+공개 ZIP은 다운로드 태그 `2bc8b42`에서 제공한다. GitHub에서 실제 받은 ZIP의 CRC와 내부 APK SHA-256을 원본과 대조했다. [설치 ZIP](https://github.com/seokhr1234/donghaeng-gill/archive/refs/tags/android-demo-v1.0.6-download.zip) · [Release](https://github.com/seokhr1234/donghaeng-gill/releases/tag/android-demo-v1.0.6)

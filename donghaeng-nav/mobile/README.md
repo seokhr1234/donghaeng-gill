@@ -1,5 +1,7 @@
 # 동행길 Android 시연 APK
 
+2026-11-19 배포판 **1.0.6 (versionCode 7)**은 보행 경로의 접근 거리, 대략적인 GPS, 메뉴 복귀 버튼을 개선했습니다. 패키지는 `app.donghaeng.gill.demo`입니다. [변경과 검증](../docs/endpoint-approaches-2026-11-19.md) · [설치 ZIP](https://github.com/seokhr1234/donghaeng-gill/archive/refs/tags/android-demo-v1.0.6-download.zip)
+
 2026-11-19 배포판 **1.0.5 (versionCode 6)**는 API 설정을 **더보기(⋯)**에서 엽니다. 패키지는 `app.donghaeng.gill.demo`입니다. [모바일 개선과 검증](../docs/mobile-layout-2026-11-19.md) · [Android 1.0.5 설치 ZIP](https://github.com/seokhr1234/donghaeng-gill/archive/refs/tags/android-demo-v1.0.5-download.zip)
 
 2026-11-17 기록: **1.0.4/versionCode5**는 밤하늘 고대비, 컬러 지도 유지와 숫자 안쪽 사각 테두리 제거를 포함합니다. [정정·검사·게시](../docs/night-sky-2026-11-17.md). 최종 빌드에는 **API 설정 → Gemini API 키 입력·변경**과 대중교통 내장 키 상태/복원을 추가했습니다. [사용법·비밀 분리·검사](../docs/android-gemini-settings-2026-11-17.md). 개인 Gemini 키가 없으면 기존 서버를 사용합니다. 공개 배포판은 키를 내장하지 않으며 API 설정에서 ODsay·Gemini 키를 기기에 입력합니다. 키 포함 공개 업로드는 자동 승인 검토가 거부해 제외했습니다. [1.0.4 설치 ZIP](https://github.com/seokhr1234/donghaeng-gill/archive/refs/tags/android-demo-v1.0.4-download.zip)을 내려받아압축을풀고설치하세요. 아래1.0.3의 흑백 디자인 기록은 이전 상태입니다.

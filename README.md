@@ -4,6 +4,8 @@
 
 전체 변경은 [수정이력.md](수정이력.md), 작업 규칙은 [AGENTS.md](AGENTS.md), 이번 전환의 근거와 검사 범위는 [메인 전환 기록](donghaeng-nav/docs/main-navigation-promotion.md)을 참고하세요.
 
+2026-11-19 보행 경로 개선. 출발·도착의 등록 보행 연결을 함께 비교합니다. Android 1.0.6은 대략적인 GPS 위치와 API 설정 메뉴 버튼 개선도 포함합니다. [변경과 검증](donghaeng-nav/docs/endpoint-approaches-2026-11-19.md) · [Android 1.0.6 설치 ZIP](https://github.com/seokhr1234/donghaeng-gill/archive/refs/tags/android-demo-v1.0.6-download.zip)
+
 2026-11-19 모바일 개선. Android에서 **더보기(⋯) → API 설정**으로 키를 관리합니다. 질문창의 입력과 진행 버튼, 오스코 상세, 가로 화면의 경로 표시를 조정했습니다. [모바일 화면 변경 및 검증](donghaeng-nav/docs/mobile-layout-2026-11-19.md) · [Android 1.0.5 설치 ZIP](https://github.com/seokhr1234/donghaeng-gill/archive/refs/tags/android-demo-v1.0.5-download.zip)
 
 2026-11-17 밤하늘 정정: 고대비를 사용자 스크린샷의 **검정 배경·흰 글자·노란 테두리·보라색 선택 상태**로 바꿨습니다. 지도는 원래 색을 유지하고 숫자의 안쪽 사각 테두리를 제거했습니다. [수정·검증·Android1.0.4 기록](donghaeng-nav/docs/night-sky-2026-11-17.md). 저장소의 현재 정식 이름은 **seokhr1234/donghaeng-gill**입니다. 후속 요청으로 [APK의 Gemini 키 입력·교통 키 상태/복원](donghaeng-nav/docs/android-gemini-settings-2026-11-17.md)도 추가했습니다. API 설정에서 Gemini 개인 키를 넣을 수 있고 미입력 시 기존 서버를 사용합니다. 공개 APK는 고정 키 없이 **API 설정에서 ODsay·Gemini 키를 기기에 입력**하는 방식입니다. 키 포함 공개 업로드는 자동 승인 검토에서 거부되어 제외했습니다. [Gemini 입력·밤하늘 APK1.0.4 설치ZIP](https://github.com/seokhr1234/donghaeng-gill/archive/refs/tags/android-demo-v1.0.4-download.zip)을 게시했습니다. 아래1.0.3 기록은 정정 전 당시 상태입니다.

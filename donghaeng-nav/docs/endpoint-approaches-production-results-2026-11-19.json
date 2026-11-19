@@ -1,0 +1,79 @@
+{
+  "pass": true,
+  "source_commit": "fd23f77835e68ea0ec414fe9128c051820bb4358",
+  "checked_date_kst": "2026-11-19",
+  "origin": "https://donghaeng-gill.vercel.app",
+  "files": [
+    {
+      "file": "index.html",
+      "http_status": 200,
+      "sha256": "a4df6d995b9222b5f8070aeb315112bd169f108ab2d358721a6f1ca4a8670901",
+      "matches_source": true
+    },
+    {
+      "file": "app.js",
+      "http_status": 200,
+      "sha256": "742fcd914fdea74ddd99842fb5cab4e3953ce4b6515eac987823a5b6e1d04da1",
+      "matches_source": true
+    },
+    {
+      "file": "engine.js",
+      "http_status": 200,
+      "sha256": "2c4986124dad4ca44db965420d8979f5c571b51a9696c761495035c17d089081",
+      "matches_source": true
+    },
+    {
+      "file": "endpoint-routing.js",
+      "http_status": 200,
+      "sha256": "87e5c644b3c451e02256d2ce34dea88a8131711819c84e4cc8ff4368dee8c56c",
+      "matches_source": true
+    },
+    {
+      "file": "gps-quality.js",
+      "http_status": 200,
+      "sha256": "089f2ee72b0742c7803bc7aae77ebd8efd9103bac136075cd843d3b09cbf6f25",
+      "matches_source": true
+    },
+    {
+      "file": "gps-tracker.js",
+      "http_status": 200,
+      "sha256": "f93ef3b8b153c8d295af2b8c3cf8bd323473ffea78d928a4cc3e3ce146d4002c",
+      "matches_source": true
+    },
+    {
+      "file": "transit-ui.js",
+      "http_status": 200,
+      "sha256": "d188141b7b3053bacdd32e2c47c1b8f2541f82f8066dc066fd90aec734fca0d6",
+      "matches_source": true
+    },
+    {
+      "file": "build-profile.js",
+      "http_status": 200,
+      "sha256": "28c7a02d601f2bf45d1241787e0401a8a3240daf28c75c4ad48167e40fa37a1a",
+      "matches_source": true
+    }
+  ],
+  "deployments": [
+    {
+      "context": "Vercel – donghaeng",
+      "state": "success",
+      "target_url": "https://vercel.com/snu-clab/donghaeng/DrR5AeeLBrYBmgV7oLAwEQ7nGEZ4"
+    },
+    {
+      "context": "Vercel – aiaiaiaiaiaiaiai",
+      "state": "success",
+      "target_url": "https://vercel.com/snu-clab/aiaiaiaiaiaiaiai/Hrv3tDVArQ7RY66XYySgW1TgHyD2"
+    }
+  ],
+  "route_test": {
+    "status": 200,
+    "total_reference_meters": 1019,
+    "steps_meters": 0,
+    "endpoint_connections_verified": false,
+    "actual_route_field_verified": false
+  },
+  "web_transit": {
+    "status": 404,
+    "code": "transit_not_in_web_build"
+  }
+}
