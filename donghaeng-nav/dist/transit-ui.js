@@ -16,7 +16,7 @@ function toApiProfile(profile){const keys=['wheelchair','avoidSteps','avoidSlope
 function lineName(leg){const labels=leg.lines.map(l=>l.name).filter(Boolean);return labels.length?labels.join(' / '):names[leg.mode]+' 노선명 미확인'}
 function summary(c){const vehicles=c.legs.filter(l=>l.mode!=='walk'),walk=c.legs.filter(l=>l.mode==='walk').reduce((n,l)=>n+l.providerMinutes,0);return {minutes:c.providerTotalMinutes,walkMinutes:walk,transfers:Math.max(0,vehicles.length-1),lines:vehicles.map(lineName),fare:c.fareWon??null}}
 function observedTime(value){const at=Date.parse(value);return Number.isFinite(at)?new Intl.DateTimeFormat('ko-KR',{timeZone:'Asia/Seoul',dateStyle:'short',timeStyle:'short'}).format(at):'미확인'}
-function create({map,container,fitBounds,onSelect=()=>{}}){
+function create({map,container,fitBounds,onSelect=()=>{},onShowLocation}){
  const L=root.L,doc=container.ownerDocument,el=(tag,text,cls)=>{const n=doc.createElement(tag);if(text!=null)n.textContent=text;if(cls)n.className=cls;return n},layer=L.layerGroup().addTo(map);let active=false,result=null,selectedId=null,refs=[],context=null,effectiveProfile=null,walkView=null;const walkCache=new Map();
  if(!map.getPane('transit-references'))map.createPane('transit-references').style.zIndex='680';
  function clear(){walkView?.destroy();walkView=null;walkCache.clear();layer.clearLayers();refs=[];result=null;selectedId=null;if(active)container.replaceChildren();active=false}
@@ -31,6 +31,7 @@ function create({map,container,fitBounds,onSelect=()=>{}}){
  }
  function renderCards(markers){
   walkView?.destroy();walkView=null;container.replaceChildren();container.append(el('p','참고 후보 · 접근성·환승 시각 미확인','transit-reference-note'));
+  if(onShowLocation){const locate=el('button','내 위치 보기','secondary transit-reference-button');locate.type='button';locate.onclick=onShowLocation;container.append(locate)}
   const info=el('details',null,'transit-source-info');info.append(el('summary','검색 정보'),el('p',result.provider==='local_timetable'?'로컬 시간표 검색 · 실제 운행·지연 미확인':'승하차 위치는 업체 참고점입니다. 실제 출입구·역내 연결은 미확인입니다.','gap-note'),el('p','조회 '+observedTime(result.observedAt)+' · 출입구·접근성 확인 전 실제 안내 시작 불가','gap-note'));
   if(result.rejected>0)info.append(el('p','정보가 불완전한 일부 후보를 제외했어요.','gap-note'));if(result.candidates.length>5)info.append(el('p','업체 순서의 첫 5개 후보입니다.','gap-note'));container.append(info);
   for(const c of result.candidates.slice(0,5)){

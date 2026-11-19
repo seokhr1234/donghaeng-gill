@@ -1,0 +1,210 @@
+{
+  "checkedDateKst": "2026-11-19",
+  "baseline": "e16e15a",
+  "samples": [
+    {
+      "sample": "Jung",
+      "before": {
+        "status": 200,
+        "roadMeters": 973,
+        "totalWithApproachesMeters": 1026,
+        "stairsMeters": 0,
+        "fieldVerified": false
+      },
+      "after": {
+        "status": 200,
+        "roadMeters": 973,
+        "totalWithApproachesMeters": 1031,
+        "stairsMeters": 0,
+        "fieldVerified": false
+      }
+    },
+    {
+      "sample": "Gangnam",
+      "before": {
+        "status": 200,
+        "roadMeters": 964,
+        "totalWithApproachesMeters": 1058,
+        "stairsMeters": 0,
+        "fieldVerified": false
+      },
+      "after": {
+        "status": 200,
+        "roadMeters": 913,
+        "totalWithApproachesMeters": 1019,
+        "stairsMeters": 0,
+        "fieldVerified": false
+      }
+    },
+    {
+      "sample": "Mapo",
+      "before": {
+        "status": 200,
+        "roadMeters": 1514,
+        "totalWithApproachesMeters": 1591,
+        "stairsMeters": 0,
+        "fieldVerified": false
+      },
+      "after": {
+        "status": 200,
+        "roadMeters": 1514,
+        "totalWithApproachesMeters": 1619,
+        "stairsMeters": 0,
+        "fieldVerified": false
+      }
+    },
+    {
+      "sample": "Songpa",
+      "before": {
+        "status": 200,
+        "roadMeters": 1493,
+        "totalWithApproachesMeters": 1616,
+        "stairsMeters": 0,
+        "fieldVerified": false
+      },
+      "after": {
+        "status": 200,
+        "roadMeters": 1493,
+        "totalWithApproachesMeters": 1633,
+        "stairsMeters": 0,
+        "fieldVerified": false
+      }
+    },
+    {
+      "sample": "Gangseo",
+      "before": {
+        "status": 200,
+        "roadMeters": 850,
+        "totalWithApproachesMeters": 878,
+        "stairsMeters": 0,
+        "fieldVerified": false
+      },
+      "after": {
+        "status": 200,
+        "roadMeters": 841,
+        "totalWithApproachesMeters": 882,
+        "stairsMeters": 0,
+        "fieldVerified": false
+      }
+    },
+    {
+      "sample": "Geumcheon",
+      "before": {
+        "status": 422,
+        "code": "city_no_connected_route"
+      },
+      "after": {
+        "status": 422,
+        "code": "city_no_connected_route"
+      }
+    },
+    {
+      "sample": "Dobong",
+      "before": {
+        "status": 200,
+        "roadMeters": 1708,
+        "totalWithApproachesMeters": 1756,
+        "stairsMeters": 0,
+        "fieldVerified": false
+      },
+      "after": {
+        "status": 200,
+        "roadMeters": 1708,
+        "totalWithApproachesMeters": 1772,
+        "stairsMeters": 0,
+        "fieldVerified": false
+      }
+    },
+    {
+      "sample": "Eunpyeong",
+      "before": {
+        "status": 200,
+        "roadMeters": 1505,
+        "totalWithApproachesMeters": 1544,
+        "stairsMeters": 0,
+        "fieldVerified": false
+      },
+      "after": {
+        "status": 200,
+        "roadMeters": 1505,
+        "totalWithApproachesMeters": 1545,
+        "stairsMeters": 0,
+        "fieldVerified": false
+      }
+    },
+    {
+      "sample": "Gwanak",
+      "before": {
+        "status": 200,
+        "roadMeters": 1268,
+        "totalWithApproachesMeters": 1297,
+        "stairsMeters": 0,
+        "fieldVerified": false
+      },
+      "after": {
+        "status": 200,
+        "roadMeters": 1253,
+        "totalWithApproachesMeters": 1302,
+        "stairsMeters": 0,
+        "fieldVerified": false
+      }
+    },
+    {
+      "sample": "Gangdong",
+      "before": {
+        "status": 200,
+        "roadMeters": 1240,
+        "totalWithApproachesMeters": 1255,
+        "stairsMeters": 0,
+        "fieldVerified": false
+      },
+      "after": {
+        "status": 200,
+        "roadMeters": 1220,
+        "totalWithApproachesMeters": 1254,
+        "stairsMeters": 0,
+        "fieldVerified": false
+      }
+    },
+    {
+      "sample": "north-cross-district",
+      "before": {
+        "status": 200,
+        "roadMeters": 16913,
+        "totalWithApproachesMeters": 16973,
+        "stairsMeters": 0,
+        "fieldVerified": false
+      },
+      "after": {
+        "status": 200,
+        "roadMeters": 16913,
+        "totalWithApproachesMeters": 16989,
+        "stairsMeters": 0,
+        "fieldVerified": false
+      }
+    },
+    {
+      "sample": "south-cross-district",
+      "before": {
+        "status": 422,
+        "code": "city_no_connected_route"
+      },
+      "after": {
+        "status": 422,
+        "code": "city_no_connected_route"
+      }
+    },
+    {
+      "sample": "across-Han-withheld",
+      "before": {
+        "status": 422,
+        "code": "city_no_connected_route"
+      },
+      "after": {
+        "status": 422,
+        "code": "city_no_connected_route"
+      }
+    }
+  ],
+  "fieldVerified": false
+}

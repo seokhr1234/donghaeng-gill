@@ -3,7 +3,8 @@
   "checks": [
     "API settings clearly distinguishes bundled ODsay and server Gemini; configuring a device Gemini key routes validated condition-only requests through the native bridge with no key or coordinates in the JS payload.",
     "Anonymous candidate comparison uses the existing validators; extra coordinate fields are rejected before Google, quota and malformed responses fail honestly without an automatic paid server retry.",
-    "Saved native-state mock survives page restart; Gemini deletion returns to server mode, disabled ODsay can restore the embedded default, and the settings dialog fits small/landscape screens."
+    "Saved native-state mock survives page restart; Gemini deletion returns to server mode, disabled ODsay can restore the embedded default, and the settings dialog fits small/landscape screens.",
+    "The menu back button has a rounded 44-pixel touch target beside the title at three viewport sizes in both themes; tap and keyboard activation return focus to API settings in the menu."
   ],
   "browserErrors": [],
   "nativeBridgeMocked": true,

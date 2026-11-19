@@ -50,21 +50,88 @@ function nearest(g,p,profile){
  if(best<0||gap>80)fail(422,'city_endpoint_unresolved','80m 안에서 조건에 맞는 등록 보행 연결을 찾지 못했어요. 실제 보행로에서 위치를 다시 지정해 주세요.');
  return {node:best,gap};
 }
+// An endpoint may approach either end of its registered segment. Only the
+// perpendicular part of the approach is off-network and remains unverified.
+function approaches(g, point, profile) {
+ const nearestNode=nearest(g,point,profile);
+ const a=ll(g,nearestNode.node);
+ const scale=Math.cos(point[0]*Math.PI/180);
+ let best=null;
+ for(let j=g.offsets[nearestNode.node];j<g.offsets[nearestNode.node+1];j++){
+  const edge=g.edgeIndices[j];
+  if(!allowed(g,edge,profile))continue;
+  const node=g.targets[j],b=ll(g,node),x=(b[1]-a[1])*scale,y=b[0]-a[0];
+  const t=Math.max(0,Math.min(1,(((point[1]-a[1])*scale)*x+(point[0]-a[0])*y)/(x*x+y*y)));
+  if(!(t>0&&t<1))continue;
+  const projected=[a[0]+t*(b[0]-a[0]),a[1]+t*(b[1]-a[1])],offNetwork=distance(point,projected);
+  if(offNetwork>=nearestNode.gap||best&&offNetwork>=best.offNetwork)continue;
+  best={node,edge,t,offNetwork,projected};
+ }
+ if(!best)return [{...nearestNode,offNetwork:nearestNode.gap}];
+ const {edge,node,t,offNetwork,projected}=best,length=g.lengths[edge];
+ const options=[
+  {node:nearestNode.node,gap:offNetwork+t*length,offNetwork,edge,projected},
+  {node,gap:offNetwork+(1-t)*length,offNetwork,edge,projected}
+ ].filter(candidate=>candidate.gap<=80);
+ return options.length?options:[{...nearestNode,offNetwork:nearestNode.gap}];
+}
+function weight(g, edge, profile) {
+ return g.lengths[edge]*(1+(!profile.short&&(g.flags[edge]&2)?0.2:0));
+}
+function endpointCost(g, candidate, profile) {
+ if(candidate.edge===undefined)return candidate.gap;
+ return candidate.offNetwork+(candidate.gap-candidate.offNetwork)*weight(g,candidate.edge,profile)/g.lengths[candidate.edge];
+}
 class Heap{
  constructor(){this.a=[]}
  push(v){const a=this.a;let i=a.length;a.push(v);while(i){const p=(i-1)>>1;if(a[p][1]<=v[1])break;a[i]=a[p];i=p}a[i]=v}
  pop(){const a=this.a,v=a[0],last=a.pop();if(a.length){let i=0;while(i*2+1<a.length){let j=i*2+1;if(j+1<a.length&&a[j+1][1]<a[j][1])j++;if(a[j][1]>=last[1])break;a[i]=a[j];i=j}a[i]=last}return v}
 }
-export async function search(g,start,end,profile,{signal,timeoutMs=8000,maxVisited=600000}={}){
+export function search(g,start,end,profile,options){
+ return searchApproaches(g,[{node:start,gap:0}],[{node:end,gap:0}],profile,options);
+}
+async function searchApproaches(g,starts,ends,profile,{signal,timeoutMs=8000,maxVisited=600000}={}){
  const n=g.m.nodes,cost=new Float64Array(n).fill(Infinity),prev=new Int32Array(n).fill(-1),via=new Int32Array(n).fill(-1),closed=new Uint8Array(n),heap=new Heap(),deadline=Date.now()+timeoutMs;
- cost[start]=0;heap.push([start,distance(ll(g,start),ll(g,end))]);let visited=0;
- while(heap.a.length){
-  if((visited&4095)===0){await yieldLoop();if(signal?.aborted)throw new ServiceError(499,'cancelled','계산을 취소했어요.');if(Date.now()>deadline||visited>=maxVisited)fail(504,'city_route_timeout','서울 보행 계산 시간이 길어졌어요. 더 가까운 위치로 나누어 다시 요청해 주세요.')}
-  const [v]=heap.pop();if(closed[v])continue;closed[v]=1;visited++;if(v===end)break;
-  for(let j=g.offsets[v];j<g.offsets[v+1];j++){const e=g.edgeIndices[j],to=g.targets[j];if(closed[to]||!allowed(g,e,profile))continue;const weight=g.lengths[e]*(1+(!profile.short&&(g.flags[e]&2)?0.2:0)),next=cost[v]+weight;if(next>=cost[to])continue;cost[to]=next;prev[to]=v;via[to]=e;heap.push([to,next+distance(ll(g,to),ll(g,end))])}
+ const targets=new Map(ends.map(end=>[end.node,{...end,cost:endpointCost(g,end,profile),ll:ll(g,end.node)}]));
+ const goalNodes=[...targets.values()];
+ function heuristic(node){
+  const from=ll(g,node);let best=Infinity;
+  for(const goal of goalNodes)best=Math.min(best,distance(from,goal.ll)+goal.cost);
+  return best;
  }
- if(!closed[end])fail(422,'city_no_connected_route','등록 도로의 연결과 이동 조건을 만족하는 경로를 찾지 못했어요. 교량·지하·차단물 등 미확인 연결을 임의로 잇지 않았습니다.');
- const nodes=[end],edges=[];for(let v=end;v!==start;v=prev[v]){if(prev[v]<0)throw unavailable();nodes.push(prev[v]);edges.push(via[v])}nodes.reverse();edges.reverse();if(!edges.length)fail(422,'same_endpoint','같은 등록 지점입니다. 다른 출발·도착 위치를 선택해 주세요.');return {nodes,edges,visited};
+ for(const start of starts){
+  cost[start.node]=endpointCost(g,start,profile);
+  heap.push([start.node,cost[start.node]+heuristic(start.node)]);
+ }
+ let visited=0,best=null;
+ while(heap.a.length){
+  if((visited&4095)===0)await yieldLoop();
+  if(signal?.aborted)throw new ServiceError(499,'cancelled','계산을 취소했어요.');
+  if(Date.now()>deadline||visited>=maxVisited)fail(504,'city_route_timeout','서울 보행 계산 시간이 길어졌어요. 더 가까운 위치로 나누어 다시 요청해 주세요.');
+  const [v,bound]=heap.pop();
+  if(best&&bound>=best.cost)break;
+  if(closed[v])continue;
+  closed[v]=1;visited++;
+  const end=targets.get(v);
+  if(end){
+   const total=cost[v]+end.cost;
+   if(!best||total<best.cost)best={end,cost:total};
+  }
+  for(let j=g.offsets[v];j<g.offsets[v+1];j++){
+   const e=g.edgeIndices[j],to=g.targets[j];
+   if(closed[to]||!allowed(g,e,profile))continue;
+   const next=cost[v]+weight(g,e,profile);
+   if(next>=cost[to])continue;
+   cost[to]=next;prev[to]=v;via[to]=e;
+   heap.push([to,next+heuristic(to)]);
+  }
+ }
+ if(!best)fail(422,'city_no_connected_route','등록 도로의 연결과 이동 조건을 만족하는 경로를 찾지 못했어요. 교량·지하·차단물 등 미확인 연결을 임의로 잇지 않았습니다. 가까운 보행로에 핀을 다시 지정해 주세요.');
+ const nodes=[best.end.node],edges=[];
+ for(let v=best.end.node;prev[v]>=0;v=prev[v]){nodes.push(prev[v]);edges.push(via[v])}
+ nodes.reverse();edges.reverse();
+ if(!edges.length)fail(422,'same_endpoint','같은 등록 지점입니다. 다른 출발·도착 위치를 선택해 주세요.');
+ return {nodes,edges,visited,start:starts.find(candidate=>candidate.node===nodes[0]),end:best.end};
 }
 export function createCityWalkService({graph=createCityGraph()}={}){
  return {async coverage(){const m=await graph.manifest();return {schema:'donghaeng-city-walk-coverage-v1',state:'osm_reference_routing',datasetVersion:m.dataset_version,bounds:m.bounds,nodes:m.nodes,segments:m.segments,sourceMetadata:m.metadata,fieldVerified:false,accessibilityVerified:false,supportsRestRouting:false}},async route(input,{signal,timeoutMs=8000}={}){
@@ -72,10 +139,20 @@ export function createCityWalkService({graph=createCityGraph()}={}){
   for(const p of [origin,destination])if(p[1]<m.bounds[0]||p[1]>m.bounds[2]||p[0]<m.bounds[1]||p[0]>m.bounds[3])fail(422,'outside_city_coverage','서울 도보 자료 범위 안에서 출발·도착을 선택해 주세요.');
   if(profile.avoidSlope&&profile.maxSlope==null)fail(422,'city_slope_evidence_required','서울 전역 도로의 노면 경사를 확인할 자료가 부족해요. 경사 회피 조건을 충족한 경로로 추천할 수 없습니다.');
   if(profile.rest)fail(422,'city_rest_evidence_required','서울 전역의 휴식 장소 접속·운영시간·휴식 간격 검증은 아직 연결되지 않았어요. 휴식 조건을 충족한 경로로 추천할 수 없습니다.');
-  const g=await graph.load(),a=nearest(g,origin,profile),b=nearest(g,destination,profile),r=await search(g,a.node,b.node,profile,{signal,timeoutMs});
+  const g=await graph.load(),starts=approaches(g,origin,profile),ends=approaches(g,destination,profile);
+  let r;
+  try{r=await searchApproaches(g,starts,ends,profile,{signal,timeoutMs})}
+  catch(error){
+   if(error.code!=='same_endpoint'||!starts[0].projected&&!ends[0].projected)throw error;
+   const a=nearest(g,origin,profile),b=nearest(g,destination,profile);
+   if(a.node===b.node)throw error;
+   r=await searchApproaches(g,[{...a,offNetwork:a.gap}],[{...b,offNetwork:b.gap}],profile,{signal,timeoutMs});
+  }
+  const a=r.start,b=r.end;
+  const approachesOnRoad=[a,b].map(item=>item.projected&&item.gap-item.offNetwork>.01?{coordinates:[item.projected,ll(g,item.node)],wayId:g.ways[g.wayIndex[item.edge]][0],meters:item.gap-item.offNetwork}:null);
   let length=0,unknown=0,steps=0,maxIncline=null;const used=new Map();
   for(const e of r.edges){const d=g.lengths[e];length+=d;if(!Number.isFinite(g.slopes[e]))unknown+=d;else maxIncline=Math.max(maxIncline??0,g.slopes[e]);if(g.flags[e]&1)steps+=d;const w=g.ways[g.wayIndex[e]];used.set(w[0],{id:w[0],name:w[1],modifiedAt:w[2],highway:w[3],registeredIncline:w[4],footClaim:w[5],sourceUrl:'https://www.openstreetmap.org/way/'+w[0]})}
-  return {schema:'donghaeng-city-walk-v1',state:'reference_route',datasetVersion:m.dataset_version,sourceMetadata:m.metadata,profile,origin,destination,coordinates:r.nodes.map(i=>ll(g,i)),sourceNodeIds:r.nodes.map(i=>g.nodeIds[i]),sourceSegments:r.edges.map(e=>[g.ways[g.wayIndex[e]][0],g.parts[e]]),distanceMeters:length,minutes:Math.ceil(length/profile.speed),endpointGaps:[a.gap,b.gap],unknownInclineMeters:unknown,registeredInclineMax:maxIncline,stepsMeters:steps,sourceWays:[...used.values()],visited:r.visited,fieldVerified:false,accessibilityVerified:false,endpointConnectionsVerified:false,restVerified:false,notices:['서울 OSM 등록 도로를 이용한 보행 참고 경로입니다. 통행 허가·현재 상태와 턱·폭·노면 경사는 현장 미확인입니다.','교량·터널·실내·층위·차단물 접속 미확인 구간과 건물 내부 겹침은 보류했습니다. 연결이 없는 곳을 직선으로 잇지 않습니다.','등록 계단과 경사 조건은 적용하지만 미등록 시설/위험은 알 수 없습니다. 출발·도착 핀과 등록 도로 사이도 미검증입니다.']};
+  return {schema:'donghaeng-city-walk-v1',state:'reference_route',datasetVersion:m.dataset_version,sourceMetadata:m.metadata,profile,origin,destination,coordinates:r.nodes.map(i=>ll(g,i)),sourceNodeIds:r.nodes.map(i=>g.nodeIds[i]),sourceSegments:r.edges.map(e=>[g.ways[g.wayIndex[e]][0],g.parts[e]]),distanceMeters:length,minutes:Math.ceil(length/profile.speed),endpointGaps:[a.gap,b.gap],offNetworkGaps:[a.offNetwork,b.offNetwork],approachPolicy:'registered_segment_v1',approachesOnRoad,totalReferenceMeters:length+a.gap+b.gap,unknownInclineMeters:unknown,registeredInclineMax:maxIncline,stepsMeters:steps,sourceWays:[...used.values()],visited:r.visited,fieldVerified:false,accessibilityVerified:false,endpointConnectionsVerified:false,restVerified:false,notices:['서울 OSM 등록 도로를 이용한 보행 참고 경로입니다. 통행 허가·현재 상태와 턱·폭·노면 경사는 현장 미확인입니다.','교량·터널·실내·층위·차단물 접속 미확인 구간과 건물 내부 겹침은 보류했습니다. 연결이 없는 곳을 직선으로 잇지 않습니다.','등록 계단과 경사 조건은 적용하지만 미등록 시설/위험은 알 수 없습니다. 출발·도착 핀과 등록 도로 사이도 미검증입니다.']};
  }};
 }
 export const cityWalk=createCityWalkService();

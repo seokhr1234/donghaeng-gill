@@ -6,6 +6,7 @@
     "One jump cannot move the marker; three consistent displaced fixes over two seconds reacquire",
     "Poor accuracy, invalid/future/old/out-of-order fixes rejected; reset discards filter history",
     "Independent tracker holds jumps, marks stale data and ignores late callbacks after permission denial",
+    "Map-only fixes retain 2 km uncertainty, follow vehicle samples, hold an isolated jump and show last-seen age until a fresh fix returns",
     "Navigation blocks jump-driven progress/arrival, resumes on coherent raw fixes, clears display history across background resume"
   ],
   "metrics": {

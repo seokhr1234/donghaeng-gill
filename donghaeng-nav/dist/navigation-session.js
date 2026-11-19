@@ -1,27 +1,35 @@
 (function(root){'use strict';const Core=typeof module!=='undefined'?require('./navigation-core.js'):root.NavigationCore,Policy=typeof module!=='undefined'?require('./navigation-policy.js'):root.NavigationPolicy;
 const Quality=typeof module!=='undefined'?require('./gps-quality.js'):root.GPSQuality;
 function create(plan,{geolocation=globalThis.navigator?.geolocation,now=()=>Date.now(),onUpdate=()=>{},reroute=null,autoReroute=Policy.autoReroute,timers=globalThis}={}){
- const quality=Quality.create();let displayFix=null,qualityReason=null,qualityAccuracy=null;
+ const quality=Quality.create(),displayQuality=Quality.createDisplay();let displayFix=null,displayHeld=false,qualityReason=null,qualityAccuracy=null;
  let core=Core.create(plan),watch=null,pulse=null,epoch=0,active=false,mode='gps',phase='idle',inFlight=false,lastReroute=-Infinity,restOutcome=null,unavailableRestIds=new Set();
- function snapshot(){return {...core.snapshot(),phase:phase||core.snapshot().phase,mode,active,rerouting:inFlight,restOutcome,autoReroute,technicalTrial:true,displayFix,qualityReason,qualityAccuracy}}
+ function snapshot(){
+  const state=core.snapshot(),age=displayFix?Math.max(0,now()-displayFix.timestamp):0;
+  const displayStale=!!displayFix&&(age>=Quality.displayStaleMs||['timeout','unavailable','hidden','paused'].includes(phase));
+  return {...state,phase:phase||state.phase,mode,active,rerouting:inFlight,restOutcome,autoReroute,technicalTrial:true,displayFix,displayHeld,displayStale,displayAge:Math.floor(age/1000),qualityReason,qualityAccuracy};
+ }
+ function resetDisplay(){displayQuality.reset();displayFix=null;displayHeld=false;qualityReason=null;qualityAccuracy=null}
  function emit(){const value=snapshot();onUpdate(value);return value}
  function clear(){epoch++;if(watch!==null){geolocation?.clearWatch(watch);watch=null}if(pulse!==null){timers.clearInterval(pulse);pulse=null}inFlight=false}
  function accept(sample,time=now()){
   if(!active)return snapshot();
   if(mode==='gps'){
+   const shown=displayQuality.consume(sample,time);
+   if(shown.accepted)displayFix=shown.display;
+   if(shown.reason!=='duplicate')displayHeld=!shown.accepted;
    const result=quality.consume(sample,time);if(result.reason==='duplicate')return snapshot();qualityReason=result.reason;qualityAccuracy=Number.isFinite(result.raw?.accuracy)?result.raw.accuracy:null;
    if(!result.accepted){core.hold(result.message);phase=null;emit();return snapshot()}
-   if(result.reacquired)core.resetPosition();displayFix=result.display;sample=result.sample;
+   if(result.reacquired)core.resetPosition();sample=result.sample;
   }
   const s=core.consume(sample,time);phase=inFlight?'rerouting':null;emit();if(s.phase==='offroute'&&autoReroute)requestReroute();return snapshot();
  }
  function start({replay=false}={}){
   clear();mode=replay?'replay':'gps';if(!replay&&core.plan.assistancePreview){phase='blocked';active=false;emit();return false}
   if(!replay&&!geolocation){phase='unsupported';active=false;emit();return false}
-  active=true;phase='waiting';quality.reset();displayFix=null;qualityReason=null;qualityAccuracy=null;core.resetPosition();const generation=epoch;
+  active=true;phase='waiting';quality.reset();resetDisplay();core.resetPosition();const generation=epoch;
   if(!replay){
    pulse=timers.setInterval(()=>{if(active&&generation===epoch){core.tick(now());if(!['paused','hidden','rerouting','reroute-failed','unavailable','timeout'].includes(phase))phase=null;emit()}},1000);
-   try{const id=geolocation.watchPosition(pos=>{if(active&&generation===epoch)accept({latitude:pos.coords.latitude,longitude:pos.coords.longitude,accuracy:pos.coords.accuracy,heading:pos.coords.heading,speed:pos.coords.speed,timestamp:pos.timestamp})},err=>{if(generation!==epoch)return;if(err.code===1){clear();active=false;phase='denied'}else{quality.reset();displayFix=null;core.resetPosition();phase=err.code===3?'timeout':'unavailable'}emit()},{enableHighAccuracy:true,maximumAge:0,timeout:15000});if(active&&generation===epoch)watch=id;else geolocation.clearWatch(id)}catch{clear();active=false;phase='unavailable';emit();return false}
+   try{const id=geolocation.watchPosition(pos=>{if(active&&generation===epoch)accept({latitude:pos.coords.latitude,longitude:pos.coords.longitude,accuracy:pos.coords.accuracy,heading:pos.coords.heading,speed:pos.coords.speed,timestamp:pos.timestamp})},err=>{if(generation!==epoch)return;if(err.code===1){clear();resetDisplay();core.resetPosition();active=false;phase='denied'}else{quality.reset();core.resetPosition();phase=err.code===3?'timeout':'unavailable'}emit()},{enableHighAccuracy:true,maximumAge:0,timeout:15000});if(active&&generation===epoch)watch=id;else geolocation.clearWatch(id)}catch{clear();active=false;phase='unavailable';emit();return false}
   }
   emit();return true;
  }
@@ -32,7 +40,7 @@ function create(plan,{geolocation=globalThis.navigator?.geolocation,now=()=>Date
    if(!result||result.assistancePreview)throw Error('unsafe replacement');
    for(const key of ['wheelchair','avoidSteps','avoidSlope','rest','restKind','maxSlope','restMinutes'])if(key in profile&&result.profile?.[key]!==profile[key])throw Error('changed profile');
    if(profile.rest&&restOutcome!=='completed'&&(!result.rest||result.restFulfilled||profile.restKind==='shelter'&&result.rest.kind!=='shelter'||profile.restKind==='bench'&&result.rest.kind==='shelter'||profile.restMinutes&&(!Number.isFinite(result.rest.firstDistance)||result.rest.firstDistance/(profile.speed||65)>profile.restMinutes)))throw Error('missing required rest');
-   core=Core.create(result);quality.reset();displayFix=null;lastReroute=now();phase='waiting';emit();return true;
+   core=Core.create(result);quality.reset();resetDisplay();lastReroute=now();phase='waiting';emit();return true;
   }catch{if(generation===epoch&&active){lastReroute=now();phase='reroute-failed';emit()}return false}
   finally{if(generation===epoch){inFlight=false;emit()}}
  }

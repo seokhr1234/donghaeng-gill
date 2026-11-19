@@ -3,11 +3,12 @@
   "checks": [
     "Waiting for a 25m-quality origin fix preserves manual map position",
     "Poor initial accuracy cannot overwrite origin; one 250m jump holds the independent GPS marker",
+    "Approximate fix draws the reported radius in both themes and supports manual origin pinning, shows elapsed time after loss, and preserves the pin when reception returns",
     "Mobile navigation holds jump/poor-fix progress and arrival, reports latest raw uncertainty and resumes on coherent fixes",
     "Background resume waits for a fresh fix; stop clears all position watches",
     "Additional terrain evidence and 15 enriched shelters load in the same app"
   ],
   "browserErrors": [],
   "physicalGps": false,
-  "mode": "server-source"
+  "mode": "standalone-over-localhost"
 }

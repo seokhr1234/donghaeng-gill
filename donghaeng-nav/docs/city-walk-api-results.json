@@ -15,88 +15,88 @@
       "status": 200,
       "distanceMeters": 972.9537888965706,
       "visited": 306,
-      "elapsedMs": 16
+      "elapsedMs": 35
     },
     {
       "district": "Gangnam",
       "status": 200,
-      "distanceMeters": 964.1506004992482,
-      "visited": 188,
-      "elapsedMs": 5
+      "distanceMeters": 913.2453830912651,
+      "visited": 158,
+      "elapsedMs": 11
     },
     {
       "district": "Mapo",
       "status": 200,
       "distanceMeters": 1514.4605648871013,
       "visited": 417,
-      "elapsedMs": 3
+      "elapsedMs": 48
     },
     {
       "district": "Songpa",
       "status": 200,
       "distanceMeters": 1493.1265153528568,
       "visited": 767,
-      "elapsedMs": 6
+      "elapsedMs": 21
     },
     {
       "district": "Gangseo",
       "status": 200,
-      "distanceMeters": 850.189680511463,
-      "visited": 61,
-      "elapsedMs": 3
+      "distanceMeters": 840.6447757100666,
+      "visited": 60,
+      "elapsedMs": 39
     },
     {
       "district": "Geumcheon",
       "status": 422,
       "code": "city_no_connected_route",
-      "elapsedMs": 3
+      "elapsedMs": 57
     },
     {
       "district": "Dobong",
       "status": 200,
       "distanceMeters": 1707.9445838022207,
       "visited": 597,
-      "elapsedMs": 3
+      "elapsedMs": 7
     },
     {
       "district": "Eunpyeong",
       "status": 200,
       "distanceMeters": 1504.9460021758396,
       "visited": 592,
-      "elapsedMs": 3
+      "elapsedMs": 5
     },
     {
       "district": "Gwanak",
       "status": 200,
-      "distanceMeters": 1268.1641089422528,
-      "visited": 216,
-      "elapsedMs": 7
+      "distanceMeters": 1252.6616664685346,
+      "visited": 215,
+      "elapsedMs": 8
     },
     {
       "district": "Gangdong",
       "status": 200,
-      "distanceMeters": 1239.5474111894403,
-      "visited": 360,
-      "elapsedMs": 6
+      "distanceMeters": 1220.3828214178766,
+      "visited": 355,
+      "elapsedMs": 9
     },
     {
       "district": "north-cross-district",
       "status": 200,
       "distanceMeters": 16912.883949783238,
       "visited": 73865,
-      "elapsedMs": 85
+      "elapsedMs": 155
     },
     {
       "district": "south-cross-district",
       "status": 422,
       "code": "city_no_connected_route",
-      "elapsedMs": 32
+      "elapsedMs": 92
     },
     {
       "district": "across-Han-withheld",
       "status": 422,
       "code": "city_no_connected_route",
-      "elapsedMs": 114
+      "elapsedMs": 301
     }
   ],
   "datasetVersion": "city-walk-f62e7c99c4b31293ced41ae8960a0114758df02b5239fa90df12a5934a7b53fb",

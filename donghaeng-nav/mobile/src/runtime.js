@@ -52,10 +52,16 @@ globalThis.fetch=async(resource,options={})=>{
 // Preserve the original filter/accuracy handling: only replace the device source.
 const locationError=e=>({code:/denied|0003/i.test(String(e?.message||e?.code))?1:2,message:'위치 권한과 기기의 위치 서비스를 확인해 주세요.'});
 const watches=new Map();let serial=0;
-async function permitted(){const p=await Geolocation.checkPermissions();if(p.location!=='granted'){const next=await Geolocation.requestPermissions({permissions:['location']});if(next.location!=='granted')throw Error('denied')}}
+async function withLocationPermission(options){
+ let permission=await Geolocation.checkPermissions();
+ if(permission.location!=='granted'&&permission.coarseLocation!=='granted')permission=await Geolocation.requestPermissions({permissions:['location']});
+ if(permission.location==='granted')return options;
+ if(permission.coarseLocation==='granted')return {...options,enableHighAccuracy:false};
+ throw Error('denied');
+}
 Object.defineProperty(navigator,'geolocation',{value:{
- getCurrentPosition(ok,error,options={}){permitted().then(()=>Geolocation.getCurrentPosition(options)).then(ok,e=>error?.(locationError(e)))},
- watchPosition(ok,error,options={}){const key=++serial;const promise=permitted().then(()=>Geolocation.watchPosition(options,(p,e)=>e?error?.(locationError(e)):p&&ok(p)));watches.set(key,promise);promise.catch(e=>error?.(locationError(e)));return key},
+ getCurrentPosition(ok,error,options={}){withLocationPermission(options).then(config=>Geolocation.getCurrentPosition(config)).then(ok,e=>error?.(locationError(e)))},
+ watchPosition(ok,error,options={}){const key=++serial;const promise=withLocationPermission(options).then(config=>Geolocation.watchPosition(config,(p,e)=>e?error?.(locationError(e)):p&&ok(p)));watches.set(key,promise);promise.catch(e=>error?.(locationError(e)));return key},
  clearWatch(key){const p=watches.get(key);watches.delete(key);p?.then(id=>Geolocation.clearWatch({id})).catch(()=>{})}
 },configurable:true});
 window.addEventListener('pagehide',()=>{for(const key of watches.keys())navigator.geolocation.clearWatch(key)});

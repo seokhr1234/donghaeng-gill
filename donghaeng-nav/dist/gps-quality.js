@@ -1,8 +1,11 @@
 (function(root){'use strict';
 const distance=(a,b)=>Math.hypot((a[0]-b[0])*111195,(a[1]-b[1])*111195*Math.cos((a[0]+b[0])*Math.PI/360));
+const approximateAccuracy=50, displayStaleMs=15000;
+const formatAccuracy=meters=>meters<1000?Math.round(meters)+'m':(meters/1000).toLocaleString('ko-KR',{maximumFractionDigits:1})+'km';
+const formatAge=seconds=>seconds<60?seconds+'초 전':seconds<3600?Math.floor(seconds/60)+'분 전':Math.floor(seconds/3600)+'시간 전';
 // Display stabilization does not manufacture a better sensor accuracy. Routing
 // receives the accepted original fix; filtered coordinates are display-only.
-function create({maxAge=8000,maxAccuracy=50,maxSpeed=5}={}){
+function create({maxAge=8000,maxAccuracy=50,maxSpeed=5,jumpAccuracyCap=Infinity,rawDisplayAbove=Infinity}={}){
  let last=null,display=null,variance=0,seen=-Infinity,pending=null;
  function reset(){last=null;display=null;variance=0;seen=-Infinity;pending=null}
  function consume(input,now=Date.now()){
@@ -14,16 +17,18 @@ function create({maxAge=8000,maxAccuracy=50,maxSpeed=5}={}){
   if(raw.accuracy>maxAccuracy){pending=null;return reject('accuracy',`수신 오차 약 ${Math.round(raw.accuracy)}m · 탁 트인 곳에서 위치를 다시 확인해 주세요.`);}
   let reacquired=false;
   if(last){
-   const dt=(raw.timestamp-last.timestamp)/1000,jump=distance(last.ll,raw.ll),limit=Math.max(20,maxSpeed*dt+last.accuracy+raw.accuracy);
+   const dt=(raw.timestamp-last.timestamp)/1000,jump=distance(last.ll,raw.ll);
+   const uncertainty=point=>Math.min(point.accuracy,jumpAccuracyCap);
+   const limit=Math.max(20,maxSpeed*dt+uncertainty(last)+uncertainty(raw));
    if(dt>15){last=null;display=null;pending=null;reacquired=true}
    else if(jump>limit){
-    if(pending&&raw.timestamp-pending.last.timestamp<=4000&&distance(pending.last.ll,raw.ll)<=Math.max(10,raw.accuracy+pending.last.accuracy))pending={...pending,last:raw,count:pending.count+1};
+    if(pending&&raw.timestamp-pending.last.timestamp<=4000&&distance(pending.last.ll,raw.ll)<=Math.max(10,uncertainty(raw)+uncertainty(pending.last)))pending={...pending,last:raw,count:pending.count+1};
     else pending={last:raw,since:raw.timestamp,count:1};
     if(pending.count<3||raw.timestamp-pending.since<2000)return reject('jump','위치가 갑자기 바뀌어 연속 신호를 확인하고 있어요.');
     last=null;display=null;pending=null;reacquired=true;
    }else pending=null;
   }
-  if(!display){display={ll:raw.ll.slice()};variance=Math.pow(raw.accuracy/2,2)}
+  if(!display||raw.accuracy>rawDisplayAbove||last?.accuracy>rawDisplayAbove){display={ll:raw.ll.slice()};variance=Math.pow(raw.accuracy/2,2)}
   else{
    const dt=Math.max(.1,(raw.timestamp-last.timestamp)/1000),movement=distance(display.ll,raw.ll);
    const predicted=variance+Math.pow(1.5*dt,2),measurement=Math.pow(raw.accuracy/2,2);
@@ -36,5 +41,7 @@ function create({maxAge=8000,maxAccuracy=50,maxSpeed=5}={}){
  }
  return {consume,reset};
 }
-const api={create,distance};if(typeof module!=='undefined')module.exports=api;else root.GPSQuality=api;
+// Vehicle movement and coarse Android fixes are accepted only by the display filter.
+const createDisplay=()=>create({maxAccuracy:Infinity,maxSpeed:45,jumpAccuracyCap:75,rawDisplayAbove:approximateAccuracy});
+const api={create,createDisplay,distance,approximateAccuracy,displayStaleMs,formatAccuracy,formatAge};if(typeof module!=='undefined')module.exports=api;else root.GPSQuality=api;
 })(typeof globalThis==='undefined'?this:globalThis);

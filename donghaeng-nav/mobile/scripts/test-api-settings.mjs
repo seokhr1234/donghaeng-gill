@@ -49,12 +49,13 @@ try {
  await page.goto(base); await page.waitForFunction(() => !document.querySelector('#find-route').disabled, null, {timeout: 60000});
  await page.locator('#mobile-more').click();
  await page.locator('#mobile-menu').getByRole('button', {name: 'API 설정', exact: true}).click();
+ const back = page.getByRole('button', {name: '메뉴로 돌아가기', exact: true});
  await page.waitForFunction(() => document.querySelector('#android-gemini-key-state').textContent.includes('서버 Gemini 설정 사용'));
  assert.match(await page.locator('#android-traffic-key-state').innerText(), /내장 키 적용 중/);
  assert.equal(geminiRequests.length, 0);
  await page.getByRole('button', {name: 'Gemini API 키 입력·변경', exact: true}).click();
  await page.waitForFunction(() => document.querySelector('#android-gemini-key-state').textContent.includes('기기에 입력한'));
- await page.getByRole('button', {name: 'API 설정 닫기', exact: true}).click();
+ await back.click();
  await page.waitForFunction(() => document.activeElement?.id === 'mobile-api-settings');
  await page.locator('#mobile-menu .close').click();
  const analyze = () => page.evaluate(async () => {const r = await fetch('/api/analyze-condition', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({condition: '계단을 피해서 걷고 싶어요.'})}); return {status: r.status, data: await r.json()};});
@@ -81,13 +82,29 @@ try {
  await page.locator('#mobile-more').click();
  await page.locator('#mobile-menu').getByRole('button', {name: 'API 설정', exact: true}).click();
  await page.waitForFunction(() => document.querySelector('#android-gemini-key-state').textContent.includes('기기에 입력한'));
- for (const size of [{width: 320, height: 568}, {width: 393, height: 852}, {width: 667, height: 375}]) {await page.setViewportSize(size); assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));}
+ for (const high of [false, true]) {
+  await page.evaluate(value => window.HighContrast.set(value), high);
+  for (const size of [{width: 320, height: 568}, {width: 393, height: 852}, {width: 667, height: 375}]) {
+   await page.setViewportSize(size);
+   assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
+   assert(await back.evaluate((button, high) => {
+    const box = button.getBoundingClientRect(), title = document.getElementById('android-api-title').getBoundingClientRect();
+    const style = getComputedStyle(button), foreground = getComputedStyle(button.querySelector('span')).color;
+    return box.width >= 44 && box.height >= 44 && box.bottom <= innerHeight && box.right <= innerWidth
+     && title.right < box.left && parseFloat(style.borderRadius) >= box.height / 2
+     && foreground === style.color && (!high || (style.color === 'rgb(255, 255, 0)' && style.backgroundColor === 'rgb(0, 0, 0)'))
+     && button.contains(document.elementFromPoint(box.x + box.width / 2, box.y + box.height / 2));
+   }, high), `Menu back button fits and keeps theme contrast at ${size.width}×${size.height}, high=${high}`);
+  }
+ }
+ await page.evaluate(() => window.HighContrast.set(false));
  await page.setViewportSize({width: 393, height: 852}); await page.screenshot({path: '../docs/android-api-settings-mobile.png'});
  await page.getByRole('button', {name: 'Gemini 기기 키 삭제 · 서버 사용', exact: true}).click();
  await page.waitForFunction(() => document.querySelector('#android-gemini-key-state').textContent.includes('서버 Gemini 설정 사용'));
  keySource = 'disabled'; await page.getByRole('button', {name: '대중교통 내장 키 복원', exact: true}).click();
  await page.waitForFunction(() => document.querySelector('#android-traffic-key-state').textContent.includes('내장 키 적용 중'));
- await page.getByRole('button', {name: 'API 설정 닫기', exact: true}).click();
+ await back.focus();
+ await page.keyboard.press('Enter');
  await page.waitForFunction(() => document.activeElement?.id === 'mobile-api-settings');
  await page.locator('#mobile-menu .close').click();
  const googleBefore = geminiRequests.length; assert.equal((await analyze()).data.keySource, 'server'); assert.equal(geminiRequests.length, googleBefore);
@@ -97,10 +114,11 @@ try {
  await page.waitForFunction(() => document.querySelector('#android-traffic-key-state').textContent.includes('공개 배포판'));
  assert(await page.getByRole('button', {name: '대중교통 내장 키 복원', exact: true}).isHidden());
  assert(await page.getByRole('button', {name: '대중교통 키 입력·변경', exact: true}).isVisible());
- await page.getByRole('button', {name: 'API 설정 닫기', exact: true}).click();
+ await back.click();
  await page.waitForFunction(() => document.activeElement?.id === 'mobile-api-settings');
  await page.locator('#mobile-menu .close').click();
  checks.push('Saved native-state mock survives page restart; Gemini deletion returns to server mode, disabled ODsay can restore the embedded default, and the settings dialog fits small/landscape screens.');
+ checks.push('The menu back button has a rounded 44-pixel touch target beside the title at three viewport sizes in both themes; tap and keyboard activation return focus to API settings in the menu.');
  assert.deepEqual(errors, []);
  const report = {pass: true, checks, browserErrors: errors, nativeBridgeMocked: true, actualGoogleCalls: 0, actualOdsayCalls: 0, realGeminiKeyInTests: false, actualAndroidDeviceTest: false, fieldVerified: false};
  await writeFile('../docs/android-api-settings-results.json', JSON.stringify(report, null, 2) + '\n'); console.log(JSON.stringify(report, null, 2));

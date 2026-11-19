@@ -4,10 +4,18 @@ export function setupApiSettings({bridge, native, onChanged, getStatus = () => b
  if (!opener) return;
  const menu = doc.getElementById('mobile-menu');
  const dialog = el('dialog'); dialog.id = 'android-api-settings'; dialog.setAttribute('aria-labelledby', 'android-api-title');
- const head = el('div'); head.className = 'dialog-head';
+ const head = el('div'); head.className = 'dialog-head'; head.style.gap = '12px';
  const title = el('h2', 'API 설정'); title.id = 'android-api-title';
- const close = el('button', '메뉴로'); close.type = 'button'; close.setAttribute('aria-label', 'API 설정 닫기'); close.onclick = () => dialog.close();
- head.append(title, close); dialog.append(head);
+ const back = el('button'); back.type = 'button'; back.className = 'secondary';
+ back.setAttribute('aria-label', '메뉴로 돌아가기');
+ const arrow = el('span', '←'); arrow.setAttribute('aria-hidden', 'true');
+ back.append(arrow, doc.createTextNode('메뉴로'));
+ Object.assign(back.style, {
+  display: 'inline-flex', alignItems: 'center', gap: '6px', flexShrink: '0',
+  minHeight: '44px', padding: '0 12px', borderRadius: '999px', fontWeight: '600', whiteSpace: 'nowrap',
+ });
+ back.onclick = () => dialog.close();
+ head.append(title, back); dialog.append(head);
  const trafficTitle = el('h3', '대중교통 · ODsay'), traffic = el('p'); traffic.role = 'status'; traffic.id = 'android-traffic-key-state';
  const aiTitle = el('h3', 'AI · Gemini'), ai = el('p'); ai.role = 'status'; ai.id = 'android-gemini-key-state';
  const message = el('p'); message.role = 'status'; message.id = 'android-key-message';

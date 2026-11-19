@@ -18,6 +18,7 @@ async function main(){
   browser=await pw.chromium.launch({headless:true,...(process.env.CHROME_PATH?{executablePath:process.env.CHROME_PATH}:{}),args:['--no-sandbox']});const context=await browser.newContext({viewport:{width:1440,height:1000}});await context.route('https://**',r=>r.abort());
   const p=await context.newPage();p.on('pageerror',e=>errors.push(e.message));await p.goto(url+(process.env.ROUTE_CHOICE_BUNDLE?'/동행길-최종.html':'/'));await p.waitForFunction(()=>!document.querySelector('#find-route').disabled,null,{timeout:60000});
   await p.evaluate(()=>{
+   tripQuestions.close();
    window.routeChoiceRuntime={graph,precisionController};
    const data={elements:[...[[1,37.6,127.04],[2,37.6,127.045],[3,37.6001,127.0425],[4,37.6015,127.0425],[5,37.5975,127.0425]].map(([id,lat,lon])=>({type:'node',id,lat,lon})),...[[3,'4.5%'],[4,'3%'],[5,'1%']].map(([n,incline],i)=>({type:'way',id:100+i,nodes:[1,n,2],tags:{highway:'footway',incline}}))]};graph=NavEngine.createGraph(data);graph.meta.allowAssistancePreview=true;
    const audit=PrecisionConnections.create({features:[]});precisionController={ready:Promise.resolve(),getAudit:()=>audit,reviewRoute:(r,a,b)=>PrecisionConnections.routeReview(audit,r,a,b)};

@@ -1,7 +1,7 @@
 (function(root){'use strict';
 const P=typeof module!=='undefined'?require('./navigation-plan.js'):root.NavigationPlan;
 function forbidden(node,profile){const t=node.tags||{};return ['no','private'].includes(t.access)||['wall','fence','stile','turnstile'].includes(t.barrier)||profile.wheelchair&&(t.wheelchair==='no'||['gate','cycle_barrier','bollard'].includes(t.barrier)&&t.wheelchair!=='yes')}
-function nearestSegment(graph,ll,profile={}){
+function nearbySegments(graph,ll,profile){
  if(graph.meta?.buildingAudit)graph=graph.meta.buildingAudit.filterGraph(graph);
  const seen=new Set(),candidates=[];
  for(const node of graph.nodes.values())for(const edge of node.edges){if(seen.has(edge.key)||!graph.main.has(node.id))continue;seen.add(edge.key);const end=graph.nodes.get(edge.to);if(!end||!graph.main.has(end.id)||forbidden(node,profile)||forbidden(end,profile))continue;
@@ -12,15 +12,33 @@ function nearestSegment(graph,ll,profile={}){
  }
  candidates.sort((a,b)=>a.distance-b.distance);const best=candidates[0];
  if(!best||best.distance>180)throw Error('출발·도착 근처의 지상 도로 연결을 찾지 못했어요. 지도에서 위치를 확인해 주세요.');
- const ambiguous=candidates.find(c=>c.edge.id!==best.edge.id&&c.distance-best.distance<3&&P.distance(c.ll,best.ll)>4);
+ return candidates;
+}
+function checkAmbiguity(candidates){
+ const best=candidates[0],ambiguous=candidates.find(c=>c.edge.id!==best.edge.id&&c.distance-best.distance<3&&P.distance(c.ll,best.ll)>4);
  if(ambiguous)throw Error('가까운 평행 도로의 연결을 확정하기 어려워요. 지도에서 보행 위치를 더 정확히 지정해 주세요.');
  return best;
+}
+function nearestSegment(graph,ll,profile={}){
+ return checkAmbiguity(nearbySegments(graph,ll,profile));
+}
+function approaches(E,graph,ll,profile){
+ const all=nearbySegments(graph,ll,profile),audit=graph.meta?.buildingAudit;
+ const eligible=all.filter(candidate=>candidate.distance<=180&&Number.isFinite(E.cost(candidate.edge,profile))&&(!audit||audit.assess(ll,candidate.ll).status!=='building_overlap'));
+ // Retain the existing reviewed preview path when data rules out every approach.
+ if(!eligible.length)return [checkAmbiguity(all)];
+ const best=checkAmbiguity(eligible);
+ if(profile.rest||best.distance>25)return [best];
+ const neighbors=eligible.filter(candidate=>candidate===best||
+  candidate.distance<=Math.min(25,best.distance+8)&&[candidate.node.id,candidate.end.id].some(id=>id===best.node.id||id===best.end.id));
+ return neighbors.slice(0,4);
 }
 function arrivalNear(graph,ll){const s=nearestSegment(graph,ll);return {ll:s.ll,referenceGap:s.distance,wayId:s.edge.id,roadName:s.edge.name,fieldVerified:false,notice:'등록 도로 선분 위 도착 기준점 · 실제 보도·출입구 미확인'}}
 function route(E,graph,origin,destination,profile,{penalty,excludedKeys}={}){
  if(graph.meta?.buildingAudit)graph=graph.meta.buildingAudit.filterGraph(graph);
- const first=nearestSegment(graph,origin,profile),last=nearestSegment(graph,destination,profile),nodes=new Map(graph.nodes),main=new Set(graph.main),groups=new Map();let serial=0;
- for(const s of [first,last]){s.id='endpoint-projection-'+(++serial);while(nodes.has(s.id))s.id+='-';nodes.set(s.id,{id:s.id,ll:s.ll,tags:{},edges:[]});main.add(s.id);if(!groups.has(s.edge.key))groups.set(s.edge.key,[]);groups.get(s.edge.key).push(s)}
+ profile=E.wheelchairProfile(profile);
+ const starts=approaches(E,graph,origin,profile),ends=approaches(E,graph,destination,profile),nodes=new Map(graph.nodes),main=new Set(graph.main),groups=new Map();let serial=0;
+ for(const s of [...starts,...ends]){s.id='endpoint-projection-'+(++serial);while(nodes.has(s.id))s.id+='-';nodes.set(s.id,{id:s.id,ll:s.ll,tags:{},edges:[]});main.add(s.id);if(!groups.has(s.edge.key))groups.set(s.edge.key,[]);groups.get(s.edge.key).push(s)}
  const writable=new Set();function edit(id){if(!writable.has(id)){const n=nodes.get(id);nodes.set(id,{...n,edges:n.edges.slice()});writable.add(id)}return nodes.get(id)}
  for(const group of groups.values()){
   const base=group[0],forward=base.edge,reverse=base.end.edges.find(e=>e.to===base.node.id&&e.key===forward.key);if(!reverse)throw Error('도로 연결 방향을 확인하지 못했어요.');
@@ -31,8 +49,31 @@ function route(E,graph,origin,destination,profile,{penalty,excludedKeys}={}){
  // Exclusions apply after projecting the same endpoints, in both directions.
  // A candidate search must not silently snap onto a different parallel road.
  if(excludedKeys?.size)for(const [id,node] of nodes){const edges=node.edges.filter(e=>!excludedKeys.has(e.parentKey||e.key));if(edges.length!==node.edges.length)nodes.set(id,{...node,edges})}
- let internal=profile;if(profile.rest&&profile.restMinutes){const budget=profile.restMinutes-first.distance/(profile.speed||65);if(budget<=0)throw Error('출발 연결만으로 요청한 첫 휴식 간격을 넘어요. 출발 위치를 확인해 주세요.');internal={...profile,restMinutes:budget}}if(profile.rest)internal={...internal,atTime:new Date(new Date(profile.atTime||Date.now()).getTime()+first.distance/(profile.speed||65)*60000).toISOString()};const working={...graph,nodes,main};if(profile.rest&&graph.meta?.buildingAudit){const eligible=place=>{const near=E.nearest(working,place.ll,profile);return near&&graph.meta.buildingAudit.assess(near.node.ll,place.ll).status!=='building_overlap'};working.benches=(graph.benches||[]).filter(eligible);if(graph.restPlaces)working.restPlaces=graph.restPlaces.filter(eligible)}const result=E.route(working,first.ll,last.ll,internal,penalty),gaps=[first.distance,last.distance];if(result.restStop)result.restStop.firstDistance+=first.distance;
- result.gaps=gaps;result.totalLength=result.length+gaps[0]+gaps[1]+(result.restStop?2*result.restStop.gap:0);result.minutes=Math.max(1,Math.ceil(result.totalLength/(profile.speed||65)));result.endpointProjection={version:1,origin:{ll:first.ll,gap:first.distance,wayId:first.edge.id},destination:{ll:last.ll,gap:last.distance,wayId:last.edge.id},fieldVerified:false};
+ const working={...graph,nodes,main};
+ let first=starts[0],last=ends[0],matched;
+ if(starts.length>1||ends.length>1){
+  const scores=candidates=>new Map(candidates.map(candidate=>[candidate.id,candidate.distance]));
+  matched=E.shortestApproaches(working,scores(starts),scores(ends),profile,penalty);
+  if(matched?.edges.some(edge=>edge.d>0)){
+   first=starts.find(candidate=>candidate.id===matched.ids[0]);
+   last=ends.find(candidate=>candidate.id===matched.ids.at(-1));
+  }else matched=null;
+ }
+ let internal=profile;
+ if(profile.rest&&profile.restMinutes){
+  const budget=profile.restMinutes-first.distance/(profile.speed||65);
+  if(budget<=0)throw Error('출발 연결만으로 요청한 첫 휴식 간격을 넘어요. 출발 위치를 확인해 주세요.');
+  internal={...profile,restMinutes:budget};
+ }
+ if(profile.rest)internal={...internal,atTime:new Date(new Date(profile.atTime||Date.now()).getTime()+first.distance/(profile.speed||65)*60000).toISOString()};
+ if(profile.rest&&graph.meta?.buildingAudit){
+  const eligible=place=>{const near=E.nearest(working,place.ll,profile);return near&&graph.meta.buildingAudit.assess(near.node.ll,place.ll).status!=='building_overlap'};
+  working.benches=(graph.benches||[]).filter(eligible);
+  if(graph.restPlaces)working.restPlaces=graph.restPlaces.filter(eligible);
+ }
+ const result=E.route(working,first.ll,last.ll,internal,penalty,{start:first.id,end:last.id,base:matched}),gaps=[first.distance,last.distance];
+ if(result.restStop)result.restStop.firstDistance+=first.distance;
+ result.gaps=gaps;result.totalLength=result.length+gaps[0]+gaps[1]+(result.restStop?2*result.restStop.gap:0);result.minutes=Math.max(1,Math.ceil(result.totalLength/(profile.speed||65)));result.endpointProjection={version:1,candidates:[starts.length,ends.length],origin:{ll:first.ll,gap:first.distance,wayId:first.edge.id},destination:{ll:last.ll,gap:last.distance,wayId:last.edge.id},fieldVerified:false};
  return result;
 }
 const api={nearestSegment,arrivalNear,route};if(typeof module!=='undefined')module.exports=api;else root.EndpointRouting=api;
