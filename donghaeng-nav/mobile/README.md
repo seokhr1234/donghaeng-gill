@@ -1,5 +1,7 @@
 # 동행길 Android 시연 APK
 
+**1.0.10-beta.1 (versionCode 11)**의 패키지는 `app.donghaeng.gill.demo.beta`입니다. 정식 앱과 함께 설치할 수 있습니다. **더보기 → 월곡 오프라인 예시**에서 휴식 경유와 모의 재생을 실행합니다. ODsay 실시간 검색에 사용할 Android 키에는 베타 패키지 등록이 필요합니다. [베타 설치 ZIP](https://github.com/seokhr1234/donghaeng-gill/archive/refs/tags/android-demo-v1.0.10-beta.1-download.zip)
+
 **1.0.9 (versionCode 10)**은 서울 시설 지도와 강북구 한파쉼터 주소록을 추가합니다. **더보기 → 서울 전체 지도 → 시설·지도**에서 찾아볼 수 있습니다. [Android 1.0.9 Release](https://github.com/seokhr1234/donghaeng-gill/releases/tag/android-demo-v1.0.9)
 
 2026-11-19 배포판 **1.0.8 (versionCode 9)**은 검토 경로의 직접 선택과 함께 스크롤되는 결과 버튼을 제공합니다. 패키지는 `app.donghaeng.gill.demo`입니다. [설치 ZIP](https://github.com/seokhr1234/donghaeng-gill/archive/refs/tags/android-demo-v1.0.8-download.zip) · [Release](https://github.com/seokhr1234/donghaeng-gill/releases/tag/android-demo-v1.0.8)

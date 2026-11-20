@@ -1,11 +1,16 @@
 {
-  "version": "2026-11-20-seoul-rest-map",
+  "version": "2026-11-20-demo-beta",
+  "demo_beta": {
+    "ignores_rest_availability": true,
+    "offline_example": true,
+    "local_routes_simulation_only": true
+  },
   "main_source": "donghaeng-nav/dist/index.html",
   "expansion": {
     "online_page": "expansion.html",
-    "service_code_files": 56,
+    "service_code_files": 57,
     "review_asset_files": 2,
-    "service_integrity_sha256": "5a42fd7b63e6f308afa217325f9b089eb35bd57a028f9a11d63b2a00751b32cf",
+    "service_integrity_sha256": "333fce9841ab32bde9d31c583629405a7a3af841026442e720fdd97c1e54a29e",
     "citywide_routing": false,
     "authenticated_transit_verified": false,
     "new_slope_values_promoted": 0,
@@ -231,8 +236,8 @@
   "precision_records": 16169,
   "precision_field_verified": false,
   "runtime_validation": "Exact hashes and graph binding; supplied OA-22241 archive re-extracted as supplementary evidence only; existing route slopes and precision map unchanged",
-  "html_sha256": "c909727130c257f0506dd44cba711af6e920363cb4f7a299515eb2982d918c51",
-  "html_bytes": 19284241,
+  "html_sha256": "bdfb3174f20359a78349763e48de6bb0acb8d50deb13e79a316a4e55ca3c6b78",
+  "html_bytes": 19293621,
   "external_requests_required": false,
   "online_basemap": "OpenStreetMap raster tiles via Leaflet; HTTP(S) only",
   "offline_basemap": "Embedded OSM snapshot via Leaflet GridLayer",

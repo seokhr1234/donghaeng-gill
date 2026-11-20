@@ -393,3 +393,8 @@ body[data-build-profile=android-demo] #mobile-more {display:grid;place-items:cen
 .review-preview-reasons {margin:0;padding-inline-start:16px;font-size:12px;line-height:1.55}
 .review-preview-button {margin-top:auto}
 .review-preview-button,.review-replay-button {min-height:44px;padding:6px 10px}
+
+.demo-beta{margin:0 0 12px;padding:10px 12px;border:1px solid #bdcde3;border-radius:12px;background:#eef4fd;color:#24436a}
+.demo-beta p{margin:0 0 6px;font-size:13px;line-height:1.5}
+.demo-beta button{min-height:38px}
+.demo-beta-rest{margin:6px 0;font-size:13px;line-height:1.5;overflow-wrap:anywhere}

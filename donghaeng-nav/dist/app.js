@@ -2,6 +2,14 @@
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],E=NavEngine,F=DonghaengFinal;
 if(/^https?:$/.test(location.protocol))$('#expansion-link').hidden=false;
 document.body.dataset.buildProfile=globalThis.DONGHAENG_BUILD?.target||'web-walk';
+const demoBeta=globalThis.DONGHAENG_BUILD?.demoBeta===true;
+if(demoBeta){
+ $('#demo-beta').hidden=false;
+ document.title='동행길 시연 베타';
+ $('#demo-beta-example').onclick=startBetaExample;
+ $('#mobile-beta-example').hidden=false;
+ $('#mobile-beta-example').onclick=()=>{$('#mobile-menu').close();startBetaExample()};
+}
 $('#mode-transit').hidden=!globalThis.DONGHAENG_BUILD?.transitEnabled;
 const storageIssues={};const read=k=>{try{const value=SavedData.decode(k,localStorage.getItem(k));storageIssues[k]=value.invalid;return value.items}catch{storageIssues[k]=0;return []}},write=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v));return true}catch{toast('브라우저 저장 공간에 접근할 수 없어요.');return false}};
 let graph,map,precisionController,origin=null,originName='출발 위치를 선택해 주세요',destination=null,profile,analyzed='',routes=[],selected=0,watchId=null,currentStep=-1,detailGroups=[],toastTimer,pickMode=null,gpsMarker,accuracyCircle;
@@ -30,7 +38,7 @@ function cancelAnalysis(){clearRouteSelection();analysisVersion++;if(analysisReq
 function conditionChanged(){cancelAnalysis();autoAnalyzedText='';profile=null;analyzed='';invalidate();$('#parser-note').textContent=travelMode==='transit'?'길 찾기를 누르면 이동 상태를 읽어요. 대중교통 후보의 조건 충족은 아직 미확인입니다.':'길 찾기를 누르면 AI가 문장을 해석해 이동 조건을 자동으로 반영해요.';$('#search-status').textContent='상태를 바꿨어요. 길 찾기를 눌러 주세요.'}
 function setCondition(text){$('#condition').value=text;conditionChanged()}
 function applyProfile(next,source){profile=E.wheelchairProfile({...next,avoidSteps:next.avoidSteps||next.wheelchair,avoidSlope:next.avoidSlope||next.wheelchair});analyzed=$('#condition').value;$('#parser-note').textContent=source+' · '+(travelMode==='transit'?'입력한 이동 조건을 읽었어요. 대중교통 후보의 조건 충족은 아직 미확인입니다.':profile.recognized?'이동 조건을 경로에 반영했어요.':'추가 이동 제약을 찾지 못해 기본 보행 경로를 추천해요. 상태를 구체적으로 적으면 다시 반영해요.')+(profile.restMinutes?` · ${profile.restMinutes}분 휴식 간격 요청`:'');return profile}
-async function analyzeWithGemini(){const raw=$('#condition').value;if(!raw.trim()){toast('먼저 현재 상태를 적어 주세요.');return false}cancelAnalysis();invalidate();if(PortableAI.isFile()&&!PortableAI.hasKey()){applyProfile(E.parseState(raw),'AI 키 미입력 · 기기 내 해석');return true}const version=analysisVersion,controller=new AbortController();analysisRequest=controller;$('#find-route').disabled=true;$('#search').setAttribute('aria-busy','true');searchLabel('AI가 상태를 해석하고 있어요…');$('#parser-note').textContent='입력한 상태 문장으로 이동 조건을 확인하고 있어요.';const deadline=setTimeout(()=>controller.abort(),18000);try{let data;if(PortableAI.isFile()){data={profile:await PortableAI.analyze(raw,{signal:controller.signal})}}else{const response=await fetch('/api/analyze-condition',{method:'POST',headers:{'Content-Type':'application/json'},signal:controller.signal,body:JSON.stringify({condition:raw})});data=await response.json();if(!response.ok)throw Error(data.error||'AI 연결에 실패했어요.')}if(version!==analysisVersion||raw!==$('#condition').value)return false;applyProfile(ConditionAI.merge(E.parseState(raw),data.profile),'Gemini 해석');autoAnalyzedText=raw;return true}catch(error){if(version!==analysisVersion||raw!==$('#condition').value)return false;applyProfile(E.parseState(raw),'AI 연결 실패 · 기기 내 해석');autoAnalyzedText='';$('#parser-note').title=error.message;$('#parser-note').textContent=(error.name==='AbortError'?'AI 응답 시간 초과':error.message.replace(/기기 내 해석.*$/,'').trim().slice(0,80))+' · 기기 내 해석'+(travelMode==='transit'?' · 대중교통 조건 충족은 아직 미확인':'');return true}finally{clearTimeout(deadline);if(version===analysisVersion){analysisRequest=null;searchLabel();$('#search').removeAttribute('aria-busy');$('#find-route').disabled=!graph}}}
+async function analyzeWithGemini(){const raw=$('#condition').value;if(demoBeta){cancelAnalysis();invalidate();applyProfile(E.parseState(raw),'시연 베타 · 기기 내 해석');autoAnalyzedText=raw;return true}if(!raw.trim()){toast('먼저 현재 상태를 적어 주세요.');return false}cancelAnalysis();invalidate();if(PortableAI.isFile()&&!PortableAI.hasKey()){applyProfile(E.parseState(raw),'AI 키 미입력 · 기기 내 해석');return true}const version=analysisVersion,controller=new AbortController();analysisRequest=controller;$('#find-route').disabled=true;$('#search').setAttribute('aria-busy','true');searchLabel('AI가 상태를 해석하고 있어요…');$('#parser-note').textContent='입력한 상태 문장으로 이동 조건을 확인하고 있어요.';const deadline=setTimeout(()=>controller.abort(),18000);try{let data;if(PortableAI.isFile()){data={profile:await PortableAI.analyze(raw,{signal:controller.signal})}}else{const response=await fetch('/api/analyze-condition',{method:'POST',headers:{'Content-Type':'application/json'},signal:controller.signal,body:JSON.stringify({condition:raw})});data=await response.json();if(!response.ok)throw Error(data.error||'AI 연결에 실패했어요.')}if(version!==analysisVersion||raw!==$('#condition').value)return false;applyProfile(ConditionAI.merge(E.parseState(raw),data.profile),'Gemini 해석');autoAnalyzedText=raw;return true}catch(error){if(version!==analysisVersion||raw!==$('#condition').value)return false;applyProfile(E.parseState(raw),'AI 연결 실패 · 기기 내 해석');autoAnalyzedText='';$('#parser-note').title=error.message;$('#parser-note').textContent=(error.name==='AbortError'?'AI 응답 시간 초과':error.message.replace(/기기 내 해석.*$/,'').trim().slice(0,80))+' · 기기 내 해석'+(travelMode==='transit'?' · 대중교통 조건 충족은 아직 미확인':'');return true}finally{clearTimeout(deadline);if(version===analysisVersion){analysisRequest=null;searchLabel();$('#search').removeAttribute('aria-busy');$('#find-route').disabled=!graph}}}
 function effectiveProfile(){if(!profile||analyzed!==$('#condition').value)throw Error('상태를 다시 입력하고 길 찾기를 눌러 주세요.');return {...profile}}
 $$('[data-example]').forEach(b=>b.onclick=()=>setCondition(b.dataset.example));$('#condition').oninput=conditionChanged;
 function matchingPlaces(query){const q=query.trim().toLowerCase().replace(/\s/g,'');return q.length<2?[]:cityDestinations.filter(p=>(p.name+' '+(p.address||'')).toLowerCase().replace(/\s/g,'').includes(q)).slice(0,10)}
@@ -114,6 +122,37 @@ $('#gps-tracking-follow').onclick=followCurrentLocation;
 window.addEventListener('pagehide',()=>{transitRequest?.abort();transitStatusRequest?.abort();transitView?.destroy();cityJourneyView?.destroy();stopLocationTracking();endNavigation()});
 function resetTrip(){if(!graph)return;setTravelMode('walk');$('.quick-destinations').hidden=false;setOrigin(F.STATION.slice(),'월곡역 · 시연 기준점');$('#location-status').textContent='시연 위치 · GPS 아님. 출발 핀을 맞춰 주세요.';const library=localDestinations.find(p=>p.name==='월곡꿈그림도서관');if(library)setDestination(library,{pan:false});map.setView(F.STATION,17,{animate:false});if(isMobileUI())frameVisibleLocation(origin,17)}
 function showSeoul(){if(map)fitMobileAware(L.latLngBounds(CityMap.BOUNDS))}
+function startBetaExample(){
+ if(!graph){toast('지도 준비가 끝나면 예시를 실행할 수 있어요.');return}
+ tripQuestions.close();
+ resetTrip();
+ setCondition(F.SCENARIOS.rest.text);
+ pickMode=null;
+ entryReference=null;
+ $('#map-instruction').hidden=true;
+ $('#search').requestSubmit();
+}
+function betaPlaces(local=false){
+ const places=DonghaengDemoBeta.places(facilityController.getMapFeatures());
+ return local?places.filter(place=>F.inCoverage(place.ll)):places;
+}
+function showBetaFallback(message){
+ const card=textEl('article','','route-card review-preview');
+ card.append(textEl('h3','시연 예시를 실행할 수 있어요'),textEl('p',message,'gap-note'));
+ const example=textEl('button','월곡 오프라인 예시 실행','secondary');
+ example.type='button';example.onclick=startBetaExample;card.append(example);
+ $('#routes').replaceChildren(card);
+ $('#result-title').textContent='베타 시연 예시';
+ $('#mobile-save').hidden=true;
+ $('#search-status').textContent=message;
+ $('#mobile-route-status').textContent='월곡 오프라인 예시 사용 가능';
+ if(isMobileUI()){setMobileMode('results');$('.sheet-scroll').scrollTop=0}
+}
+function showBetaRestPin(place,layer){
+ if(!place)return;
+ L.circleMarker(place.ll,{contrastRole:'simulation',radius:8,color:'#315783',fillOpacity:.8})
+  .bindTooltip('주변 휴식 참고점 · '+place.name).addTo(layer);
+}
 $('#school-reset').onclick=showSeoul;
 let routeSelection=null,selectionRequest=null;
 function clearRouteSelection(){selectionRequest?.abort();selectionRequest=null;routeSelection=null;$('#route-reason-dialog')?.close()}
@@ -128,7 +167,7 @@ $('#search').onsubmit=async ev=>{
  if(!origin){toast('GPS 또는 지도에서 출발 위치를 먼저 선택해 주세요.');$('#origin-name').focus?.();return}
  if(!destination){toast('검색 결과에서 목적지를 선택하거나 지도를 눌러 주세요.');return}
  if(travelMode==='transit'){await findTransitRoute();return}
- if(destinationEntryReview&&!destinationPreviewAllowed){$('#search-status').textContent='먼저 지도에서 도착할 진입 위치를 지정해 주세요. 검토용 보기로 원래 기준점의 연결을 확인할 수도 있어요.';chooseOnMap('destination');return}
+ if(!demoBeta&&destinationEntryReview&&!destinationPreviewAllowed){$('#search-status').textContent='먼저 지도에서 도착할 진입 위치를 지정해 주세요. 검토용 보기로 원래 기준점의 연결을 확인할 수도 있어요.';chooseOnMap('destination');return}
  if(!F.inCoverage(origin)||!F.inCoverage(destination.ll)){await findCityRoute();return}
  if(isMobileUI()){document.activeElement?.blur();setSheetSize('default')}
  const requestText=$('#condition').value,tripKey=JSON.stringify([origin,destination.ll]);
@@ -139,6 +178,17 @@ $('#search').onsubmit=async ev=>{
  $('#find-route').disabled=true;searchLabel('경로 후보를 찾고 있어요…');$('#search').setAttribute('aria-busy','true');
  try{
   await precisionController.ready;if(!current())return;graph.meta.buildingAudit=precisionController.getAudit();
+  if(demoBeta){
+   routes=[DonghaengDemoBeta.localRoute(E,EndpointRouting,graph,origin,destination.ll,p,betaPlaces(true))];
+   selected=0;
+   routeSelection={source:'unavailable',summaries:[],createdAt:new Date().toISOString(),message:'시연 경로 · 시설 실제 운영과 통행 상태는 미확인'};
+   if(isMobileUI())setMobileMode('results');
+   renderRoutes();drawRoutes(true);
+   $('#result-title').textContent='베타 시연 경로';
+   $('#search-status').textContent=routeSelection.message;
+   if(isMobileUI())$('.sheet-scroll').scrollTop=0;
+   return;
+  }
   const generated=await RouteCandidates.generate(E,EndpointRouting,graph,origin,destination.ll,p,{signal:controller.signal,onProgress:()=>$('#search-status').textContent='서로 다른 경로 후보를 찾고 있어요…'});
   if(!current())return;
   routes=generated.routes.map(r=>({...r,label:r.variantLabel}));selected=0;
@@ -173,7 +223,7 @@ $('#search').onsubmit=async ev=>{
   $('#result-title').textContent=routeSelection.source==='Gemini'?'Gemini가 비교한 경로':routeSelection.source==='unavailable'?'검토용 경로':'경로 후보';
   $('#search-status').textContent=routeSelection.source==='Gemini'?routes.length+'개 후보 중 Gemini가 경로를 선택했어요.':routeSelection.message;
   if(isMobileUI())$('.sheet-scroll').scrollTop=0;else $('#routes').scrollIntoView({behavior:'smooth',block:'start'});
- }catch(error){if(version!==analysisVersion)return;routes=[];routeSelection=null;routeLayer.clearLayers();snapLayer.clearLayers();$('#routes').replaceChildren();$('#mobile-route-action').replaceChildren();clearOrder();$('#search-status').textContent=error.message;if(isMobileUI())setMobileMode('input')}
+ }catch(error){if(version!==analysisVersion)return;routes=[];routeSelection=null;routeLayer.clearLayers();snapLayer.clearLayers();$('#routes').replaceChildren();$('#mobile-route-action').replaceChildren();clearOrder();if(demoBeta)showBetaFallback('입력 위치를 연결할 수 있는 보행 경로가 없어요.');else{$('#search-status').textContent=error.message;if(isMobileUI())setMobileMode('input')}}
  finally{if(version===analysisVersion){selectionRequest=null;searchLabel();$('#search').removeAttribute('aria-busy');$('#find-route').disabled=!graph}}
 };
 function showRouteReason(){
@@ -229,40 +279,60 @@ function showShortTransitNotice(){
 }
 async function findTransitRoute(){
  if(!globalThis.DONGHAENG_BUILD?.transitEnabled)return;
- if(!/^https?:$/.test(location.protocol)){$('#search-status').textContent='대중교통 검색은 온라인 동행길에서 사용할 수 있어요.';return}
+ if(!/^https?:$/.test(location.protocol)){if(demoBeta)showBetaFallback('온라인에서 대중교통 후보를 받을 수 있어요.');else $('#search-status').textContent='대중교통 검색은 온라인 동행길에서 사용할 수 있어요.';return}
  if(transitRequest)return;
- if(transitSearchSource==='ODsay'&&E.distance(origin,destination.ll)<=700){invalidate();showShortTransitNotice();return}
+ if(transitSearchSource==='ODsay'&&E.distance(origin,destination.ll)<=700){invalidate();if(demoBeta)showBetaFallback('700m 이내는 대중교통 검색 범위 밖이에요.');else showShortTransitNotice();return}
  const text=$('#condition').value,trip=JSON.stringify([origin,destination.ll]);
  if(autoAnalyzedText!==text||!profile){const ok=await analyzeWithGemini();if(!ok||text!==$('#condition').value||trip!==JSON.stringify([origin,destination?.ll])||travelMode!=='transit')return}
- invalidate();const p=effectiveProfile(),controller=new AbortController();transitRequest=controller;const timer=setTimeout(()=>controller.abort(),18000);
+ invalidate();const p=effectiveProfile(),controller=new AbortController();transitRequest=controller;const timer=setTimeout(()=>controller.abort(),demoBeta?6500:18000);
  $('#find-route').disabled=true;$('#transit-cancel').hidden=false;$('#search').setAttribute('aria-busy','true');searchLabel('대중교통 후보를 검색하고 있어요…');$('#search-status').textContent='설정된 교통 자료에서 참고 후보를 찾고 있어요.';
  try{const response=await fetch('/api/routes/transit',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({origin,destination:destination.ll,profile:TransitUI.toApiProfile(p),atTime:new Date().toISOString()}),signal:controller.signal}),data=await response.json();if(transitRequest!==controller||travelMode!=='transit'||trip!==JSON.stringify([origin,destination?.ll])||text!==$('#condition').value)return;
-  if(!response.ok&&(data.code==='transit_distance_too_short'||String(data.providerCode)==='-98')){showShortTransitNotice();return}
-  if(!response.ok)throw Error(data.error||'대중교통 연결을 완료하지 못했어요.');TransitUI.validate(data,p);transitResult=data;$('#result-title').textContent='대중교통 참고 후보';$('#mobile-route-status').textContent='이동 조건·환승 시각 미확인 · 참고 후보';if(isMobileUI())setMobileMode('results');transitView.show(data,p,{origin,destination:destination.ll,atTime:data.requestedAtTime});$('#search-status').textContent=data.candidates.length?'노선과 승하차 순서를 확인하세요. 요청한 이동 조건·운행편·환승 가능 여부는 아직 미확인입니다.':'제공업체에서 참고 후보를 받지 못했어요. 다른 위치로 확인해 주세요.';
- }catch(error){if(transitRequest===controller){transitResult=null;transitView?.clear();$('#search-status').textContent=error.name==='AbortError'?'대중교통 검색을 취소했거나 응답 시간이 초과됐어요.':error.message}}
+  if(!response.ok&&(data.code==='transit_distance_too_short'||String(data.providerCode)==='-98')){if(demoBeta)showBetaFallback('700m 이내는 대중교통 검색 범위 밖이에요.');else showShortTransitNotice();return}
+  if(!response.ok)throw Error(data.error||'대중교통 연결을 완료하지 못했어요.');TransitUI.validate(data,p);if(demoBeta&&!data.candidates.length){showBetaFallback('대중교통 참고 후보를 받지 못했어요.');return}transitResult=data;$('#result-title').textContent='대중교통 참고 후보';$('#mobile-route-status').textContent='이동 조건·환승 시각 미확인 · 참고 후보';if(isMobileUI())setMobileMode('results');transitView.show(data,p,{origin,destination:destination.ll,atTime:data.requestedAtTime});$('#search-status').textContent=data.candidates.length?'노선과 승하차 순서를 확인하세요. 요청한 이동 조건·운행편·환승 가능 여부는 아직 미확인입니다.':'제공업체에서 참고 후보를 받지 못했어요. 다른 위치로 확인해 주세요.';
+ }catch(error){if(transitRequest===controller){transitResult=null;transitView?.clear();const message=error.name==='AbortError'?'대중교통 검색을 취소했거나 응답 시간이 초과됐어요.':error.message;if(demoBeta)showBetaFallback(message);else $('#search-status').textContent=message}}
  finally{clearTimeout(timer);if(transitRequest===controller){transitRequest=null;$('#transit-cancel').hidden=true;$('#find-route').disabled=!graph;$('#search').removeAttribute('aria-busy');searchLabel()}}
 }
 async function findCityRoute(){
- if(!CityMap.inScope(origin)||!CityMap.inScope(destination.ll)){invalidate();$('#search-status').textContent='청주오스코 주변은 조사 자료 표시를 제공합니다. 도보 경로 계산은 서울 범위에서 사용할 수 있어요. 출입구·보행 연결은 미확인입니다.';$('#routes').replaceChildren(textEl('p','이 지역의 검증된 도보 경로망은 아직 연결하지 않았어요.','empty-note'));return}
- if(!/^https?:$/.test(location.protocol)){$('#search-status').textContent='서울 전역 도보 계산은 온라인 동행길에서 지원합니다. 파일 실행은 월곡 상세 시연을 사용할 수 있어요.';return}
+ if(!CityMap.inScope(origin)||!CityMap.inScope(destination.ll)){invalidate();if(demoBeta){showBetaFallback('입력 위치는 서울 등록 보행망의 범위 밖이에요.');return}$('#search-status').textContent='청주오스코 주변은 조사 자료 표시를 제공합니다. 도보 경로 계산은 서울 범위에서 사용할 수 있어요. 출입구·보행 연결은 미확인입니다.';$('#routes').replaceChildren(textEl('p','이 지역의 검증된 도보 경로망은 아직 연결하지 않았어요.','empty-note'));return}
+ if(!/^https?:$/.test(location.protocol)){if(demoBeta)showBetaFallback('서울 전역 보행망은 온라인 연결이 필요해요.');else $('#search-status').textContent='서울 전역 도보 계산은 온라인 동행길에서 지원합니다. 파일 실행은 월곡 상세 시연을 사용할 수 있어요.';return}
  const inputText=$('#condition').value,trip=JSON.stringify([origin,destination.ll]);
  if(autoAnalyzedText!==inputText||!profile){const ok=await analyzeWithGemini();if(!ok||inputText!==$('#condition').value||trip!==JSON.stringify([origin,destination?.ll]))return}
- invalidate();const controller=new AbortController();cityRequest=controller;const atTime=new Date().toISOString(),timeout=setTimeout(()=>controller.abort(),18000),p=effectiveProfile();$('#find-route').disabled=true;searchLabel('서울 보행 경로를 계산하고 있어요…');$('#search').setAttribute('aria-busy','true');$('#search-status').textContent='서울 등록 도로의 연결과 이동 조건을 확인하고 있어요.';
- try{const response=await fetch('/api/routes/city-walk',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({origin,destination:destination.ll,profile:TransitUI.toApiProfile(p),atTime}),signal:controller.signal}),data=await response.json();if(cityRequest!==controller||trip!==JSON.stringify([origin,destination?.ll]))return;if(!response.ok)throw Error(data.error||'서울 보행 계산에 실패했어요.');if(data.schema!=='donghaeng-city-walk-v1'||data.fieldVerified!==false||data.accessibilityVerified!==false||!Array.isArray(data.coordinates)||data.coordinates.length<2)throw Error('서울 보행 결과를 확인하지 못했어요.');cityRoute=data;
+ invalidate();const controller=new AbortController();cityRequest=controller;const atTime=new Date().toISOString(),timeout=setTimeout(()=>controller.abort(),demoBeta?12000:18000),p=effectiveProfile();$('#find-route').disabled=true;searchLabel('서울 보행 경로를 계산하고 있어요…');$('#search').setAttribute('aria-busy','true');$('#search-status').textContent='서울 등록 도로의 연결과 이동 조건을 확인하고 있어요.';
+ try{
+  const request=selectedProfile=>fetch('/api/routes/city-walk',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({origin,destination:destination.ll,profile:TransitUI.toApiProfile(selectedProfile),atTime}),signal:controller.signal});
+  let response=await request(demoBeta?DonghaengDemoBeta.cityProfile(p):p),basic=false;
+  const current=()=>cityRequest===controller&&trip===JSON.stringify([origin,destination?.ll]);
+  if(!current())return;
+  if(demoBeta&&response.status===422&&(p.avoidSteps||p.wheelchair||p.maxSlope!=null)){
+   basic=true;
+   response=await request(DonghaengDemoBeta.cityProfile(p,true));
+  }
+  const data=await response.json();if(!current())return;if(!response.ok)throw Error(data.error||'서울 보행 계산에 실패했어요.');if(data.schema!=='donghaeng-city-walk-v1'||data.fieldVerified!==false||data.accessibilityVerified!==false||!Array.isArray(data.coordinates)||data.coordinates.length<2)throw Error('서울 보행 결과를 확인하지 못했어요.');cityRoute=data;
   const approachCoordinates=(data.approachesOnRoad||[]).flatMap(item=>item?.coordinates||[]);
   for(const item of data.approachesOnRoad||[])if(item)L.polyline(item.coordinates,{contrastRole:'route',color:'#176d52',weight:5,opacity:.95}).addTo(routeLayer);
-  L.polyline(data.coordinates,{color:'#fff',weight:9,opacity:.95}).addTo(routeLayer);L.polyline(data.coordinates,{contrastRole:'route',color:'#176d52',weight:5,opacity:.95}).addTo(routeLayer);$('#routes').replaceChildren();const card=textEl('article','','route-card');card.append(textEl('h3','서울 보행 참고 경로'),textEl('p',Math.round(data.totalReferenceMeters??data.distanceMeters).toLocaleString()+'m · 약 '+(data.totalReferenceMeters==null?data.minutes:Math.ceil(data.totalReferenceMeters/data.profile.speed))+'분','city-route-summary'),textEl('p','계단 등록 구간 '+Math.round(data.stepsMeters)+'m · 경사 미등록 '+Math.round(data.unknownInclineMeters)+'m','city-route-note'));
-  card.append(textEl('p','참고 경로 · 출입구와 접근성 미확인','review-badge'));const reviewDetails=textEl('details','','city-review-details');reviewDetails.append(textEl('summary','경로 주의사항'));for(const note of data.notices)reviewDetails.append(textEl('p',note,'gap-note'));reviewDetails.append(textEl('p','출발/도착 등록 도로까지 약 '+(data.offNetworkGaps||data.endpointGaps).map(Math.round).join('m / ')+'m · 접속 미확인','city-route-note'));card.append(reviewDetails);
-  const details=textEl('details',''),summary=textEl('summary','자료 출처와 기준일');details.append(summary,textEl('p','OSM 자료 기준 '+data.sourceMetadata.source_as_of+' · 수집 '+data.sourceMetadata.collected_date+' · EPSG:4326 · ODbL-1.0'));for(const w of data.sourceWays.slice(0,30)){const a=textEl('a',w.name||'OSM way/'+w.id);a.href='https://www.openstreetmap.org/way/'+w.id;a.target='_blank';a.rel='noopener noreferrer';details.append(a,document.createElement('br'))}card.append(details);cityJourneyView=JourneyReview.createWalking(data,{map,fitBounds:fitMobileAware});card.append(cityJourneyView.element);$('#routes').append(card);$('#result-title').textContent='서울 보행 경로';$('#search-status').textContent='참고 경로 · 현장 통행·접근성 미확인';if(isMobileUI())setMobileMode('results');fitMobileAware(L.latLngBounds([...data.coordinates,...approachCoordinates,origin,destination.ll]));
- }catch(error){if(cityRequest===controller)$('#search-status').textContent=error.name==='AbortError'?'계산을 취소했거나 응답 시간이 초과됐어요.':error.message}
+  L.polyline(data.coordinates,{color:'#fff',weight:9,opacity:.95}).addTo(routeLayer);L.polyline(data.coordinates,{contrastRole:'route',color:'#176d52',weight:5,opacity:.95}).addTo(routeLayer);$('#routes').replaceChildren();const card=textEl('article','','route-card');card.append(textEl('h3',demoBeta?'서울 베타 시연 경로':'서울 보행 참고 경로'),textEl('p',Math.round(data.totalReferenceMeters??data.distanceMeters).toLocaleString()+'m · 약 '+(data.totalReferenceMeters==null?data.minutes:Math.ceil(data.totalReferenceMeters/data.profile.speed))+'분','city-route-summary'),textEl('p','계단 등록 구간 '+Math.round(data.stepsMeters)+'m · 경사 미등록 '+Math.round(data.unknownInclineMeters)+'m','city-route-note'));
+  card.append(textEl('p','참고 경로 · 출입구와 접근성 미확인','review-badge'));
+  if(demoBeta){
+   $('#mobile-save').hidden=true;
+   if(basic||p.avoidSlope&&p.maxSlope==null)card.append(textEl('p','등록 보행망으로 계산한 시연 경로예요. 입력한 일부 이동 조건을 충족하지 않을 수 있어요.','gap-note'));
+   if(p.rest){
+    const nearby=DonghaengDemoBeta.nearbyRest(E,data.coordinates,betaPlaces(),p);
+    const note=nearby?nearby.name+' · 운영시간을 적용하지 않은 주변 참고점 · 실제 경유 연결 미확인':'이 경로 주변 150m 안에서 등록 휴식 참고점을 찾지 못했어요.';
+    card.append(textEl('p',note,'demo-beta-rest'));
+    showBetaRestPin(nearby,routeLayer);
+   }
+  }
+  const reviewDetails=textEl('details','','city-review-details');reviewDetails.append(textEl('summary','경로 주의사항'));for(const note of data.notices)reviewDetails.append(textEl('p',note,'gap-note'));reviewDetails.append(textEl('p','출발/도착 등록 도로까지 약 '+(data.offNetworkGaps||data.endpointGaps).map(Math.round).join('m / ')+'m · 접속 미확인','city-route-note'));card.append(reviewDetails);
+  const details=textEl('details',''),summary=textEl('summary','자료 출처와 기준일');details.append(summary,textEl('p','OSM 자료 기준 '+data.sourceMetadata.source_as_of+' · 수집 '+data.sourceMetadata.collected_date+' · EPSG:4326 · ODbL-1.0'));for(const w of data.sourceWays.slice(0,30)){const a=textEl('a',w.name||'OSM way/'+w.id);a.href='https://www.openstreetmap.org/way/'+w.id;a.target='_blank';a.rel='noopener noreferrer';details.append(a,document.createElement('br'))}card.append(details);cityJourneyView=JourneyReview.createWalking(data,{map,fitBounds:fitMobileAware});card.append(cityJourneyView.element);$('#routes').append(card);$('#result-title').textContent=demoBeta?'베타 시연 경로':'서울 보행 경로';$('#search-status').textContent='참고 경로 · 현장 통행·접근성 미확인';if(isMobileUI())setMobileMode('results');fitMobileAware(L.latLngBounds([...data.coordinates,...approachCoordinates,origin,destination.ll]));
+ }catch(error){if(cityRequest===controller){const message=error.name==='AbortError'?'계산을 취소했거나 응답 시간이 초과됐어요.':error.message;if(demoBeta)showBetaFallback(message);else $('#search-status').textContent=message}}
  finally{clearTimeout(timeout);if(cityRequest===controller){cityRequest=null;$('#find-route').disabled=!graph;$('#search').removeAttribute('aria-busy');searchLabel()}}
 }
 function endpointReview(route,start=origin,end=destination.ll){return precisionController.reviewRoute(route,start,end)}
 function reviewRouteTitle(route){
- return route.accessReview?'육교 경로':route.assistancePreview?'우회 경로':'보행 경로';
+ return route.demoNotes?'베타 시연 경로':route.accessReview?'육교 경로':route.assistancePreview?'우회 경로':'보행 경로';
 }
 function reviewRouteReasons(route){
- const reasons=[];
+ const reasons=[...(route.demoNotes||[])];
  if(route.accessReview)reasons.push('승강기 운행·보도 접속·육교 상판 경사 미확인');
  const grades=route.edges.map(E.screeningGrade).filter(Number.isFinite);
  const limit=route.p.maxSlope,maxGrade=grades.length?Math.max(...grades):null;
@@ -283,6 +353,10 @@ function renderReviewOptions(container){
   const reasons=textEl('ul','','review-preview-reasons');
   for(const reason of reviewRouteReasons(route))reasons.append(textEl('li',reason));
   card.append(reasons);
+  if(route.demoNotes){
+   if(route.restStop)card.append(textEl('p','시연 경유 · '+route.restStop.name,'demo-beta-rest'));
+   else if(route.demoNearbyRest)card.append(textEl('p','주변 휴식 참고점 · '+route.demoNearbyRest.name+' · 경유 연결 미확인','demo-beta-rest'));
+  }
   const choose=textEl('button',active?'지도에서 확인 중':'지도에서 확인','secondary review-preview-button');
   choose.type='button';choose.setAttribute('aria-label',title+' 지도에서 확인');choose.setAttribute('aria-pressed',String(active));
   choose.onclick=()=>{
@@ -310,7 +384,7 @@ function renderRoutes(){for(const route of routes)route.connectionReview=endpoin
 function drawRoutes(fit){
  routeLayer.clearLayers();snapLayer.clearLayers();
  const reviewing=routeSelection?.source==='unavailable';
- if(!reviewing)routes.forEach((r,i)=>{if(i===selected)return;L.polyline(r.coords,{contrastRole:'alternative',color:'#8d9895',weight:5,opacity:.8,dashArray:'7 8'}).addTo(routeLayer)});const r=routes[selected];if(!r){clearOrder();updateRouteCallout();return}const preview=reviewing||r.assistancePreview;L.polyline(r.coords,{color:'white',weight:12,opacity:.95}).addTo(routeLayer);L.polyline(r.coords,{contrastRole:preview?'unverified':'route',color:preview?'#61788b':'#176d52',dashArray:preview?'5 7':null,weight:7,opacity:.95}).addTo(routeLayer);r.edges.forEach((e,i)=>{if(e.approximateConnection){L.polyline([r.coords[i],r.coords[i+1]],{contrastRole:'unverified',color:'#8653a3',weight:8,dashArray:'3 7'}).bindTooltip('사용자 제보 연결 가설 · 승강기 문 위치 아님 · 접근·운행 미확인').addTo(routeLayer);return}const info=e.slopeScreening,grade=E.screeningGrade(e),color=grade>(r.p.maxSlope??5)?(e.incline!=null?'#c5352f':'#b3905e'):info?.kind==='source_range'?'#d9871d':info?.kind==='structure_unresolved'||info?.kind==='no_dem'?'#8653a3':null;if(color)L.polyline([r.coords[i],r.coords[i+1]],{contrastRole:color==='#c5352f'?'registered-risk':color==='#8653a3'?'unverified':'estimated-risk',color,weight:8,opacity:.95}).bindTooltip(slopeDescription(e)).addTo(routeLayer)});[[origin,r.from],[r.to,destination.ll]].forEach((coords,i)=>{const overlap=r.connectionReview?.[i?'destination':'origin']?.status==='building_overlap';if(overlap)return;L.polyline(coords,{contrastRole:'unverified',color:overlap?'#b63c32':'#cc9344',weight:3,dashArray:'4 6'}).bindTooltip(overlap?'정밀지도 건물과 겹침 · 진입 위치 재확인 필요':'도로까지 미검증 연결 · 현장에서 확인').addTo(snapLayer)});if(r.restStop&&r.connectionReview?.rest?.status!=='building_overlap')L.polyline([r.restStop.snap,r.restStop.ll],{contrastRole:'unverified',color:'#cc9344',weight:3,dashArray:'4 6'}).addTo(snapLayer);if(fit)fitMobileAware(L.latLngBounds([...r.coords,origin,destination.ll]));if(reviewing)clearOrder();else buildOrder(r);renderPlanReason(r,r.p);updateRouteCallout()}
+ if(!reviewing)routes.forEach((r,i)=>{if(i===selected)return;L.polyline(r.coords,{contrastRole:'alternative',color:'#8d9895',weight:5,opacity:.8,dashArray:'7 8'}).addTo(routeLayer)});const r=routes[selected];if(!r){clearOrder();updateRouteCallout();return}const preview=reviewing||r.assistancePreview;L.polyline(r.coords,{color:'white',weight:12,opacity:.95}).addTo(routeLayer);L.polyline(r.coords,{contrastRole:preview?'unverified':'route',color:preview?'#61788b':'#176d52',dashArray:preview?'5 7':null,weight:7,opacity:.95}).addTo(routeLayer);r.edges.forEach((e,i)=>{if(e.approximateConnection){L.polyline([r.coords[i],r.coords[i+1]],{contrastRole:'unverified',color:'#8653a3',weight:8,dashArray:'3 7'}).bindTooltip('사용자 제보 연결 가설 · 승강기 문 위치 아님 · 접근·운행 미확인').addTo(routeLayer);return}const info=e.slopeScreening,grade=E.screeningGrade(e),color=grade>(r.p.maxSlope??5)?(e.incline!=null?'#c5352f':'#b3905e'):info?.kind==='source_range'?'#d9871d':info?.kind==='structure_unresolved'||info?.kind==='no_dem'?'#8653a3':null;if(color)L.polyline([r.coords[i],r.coords[i+1]],{contrastRole:color==='#c5352f'?'registered-risk':color==='#8653a3'?'unverified':'estimated-risk',color,weight:8,opacity:.95}).bindTooltip(slopeDescription(e)).addTo(routeLayer)});[[origin,r.from],[r.to,destination.ll]].forEach((coords,i)=>{const overlap=r.connectionReview?.[i?'destination':'origin']?.status==='building_overlap';if(overlap)return;L.polyline(coords,{contrastRole:'unverified',color:overlap?'#b63c32':'#cc9344',weight:3,dashArray:'4 6'}).bindTooltip(overlap?'정밀지도 건물과 겹침 · 진입 위치 재확인 필요':'도로까지 미검증 연결 · 현장에서 확인').addTo(snapLayer)});if(r.restStop&&r.connectionReview?.rest?.status!=='building_overlap')L.polyline([r.restStop.snap,r.restStop.ll],{contrastRole:'unverified',color:'#cc9344',weight:3,dashArray:'4 6'}).addTo(snapLayer);if(r.demoNotes)showBetaRestPin(r.restStop||r.demoNearbyRest,snapLayer);if(fit)fitMobileAware(L.latLngBounds([...r.coords,origin,destination.ll]));if(reviewing)clearOrder();else buildOrder(r);renderPlanReason(r,r.p);updateRouteCallout()}
 $('#fit-route').onclick=()=>{if(routes.length)drawRoutes(true);else if(transitView?.hasData())transitView.fit();else if(cityRoute)fitMobileAware(L.latLngBounds(cityRoute.coordinates));else showSeoul();};
 
 function clearOrder(){journeyStages=[];stageMarkers.clearLayers();stageFocus.clearLayers();$('#route-order').hidden=true;$('#order-list').replaceChildren()}
@@ -661,6 +735,7 @@ let navigationSession=null,navigationView=null,replayTimer=null,replayProgress=0
 function endNavigation(){document.body.classList.remove('is-navigating');if(replayTimer!==null)clearInterval(replayTimer);replayTimer=null;navigationSession?.stop();navigationView?.destroy();navigationSession=null;navigationView=null;$('#navigation-panel').hidden=true}
 function startNavigation(replay=false){
  const route=routes[selected];if(!route)return;
+ if(demoBeta&&!replay){toast('시연 베타에서는 모의 재생을 사용할 수 있어요.');return}
  route.connectionReview=endpointReview(route);if(route.connectionReview.needsGeometryReview&&!replay){toast('지도 경로 또는 연결이 건물 도형과 겹쳐요. 다시 계산하고 지도 위치를 확인해 주세요.');return}
  if((route.assistancePreview||route.selectionIneligible)&&!replay){toast('접근 연결의 현장 확인이 필요해요. 우선 경로 재생을 이용해 주세요.');return}
  if(!replay&&!window.isSecureContext){toast('실제 GPS 안내는 신뢰할 수 있는 HTTPS 또는 PC localhost에서 실행해 주세요.');return}
