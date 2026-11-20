@@ -87,6 +87,11 @@ def build():
         raise ValueError('정밀지도 스키마가 다릅니다.')
     if any(f['properties'].get('field_verified') is not False or f['properties'].get('routing_eligible') is not False for f in precision['features']):
         raise ValueError('검토용 정밀지도를 현장 검증·경로망으로 승격할 수 없습니다.')
+    rest_update = json.loads(local_file(datasets['bundled-seoul-rest-update']['path']).read_bytes())
+    if (rest_update.get('version') != 1 or rest_update.get('field_verified') is not False
+            or rest_update.get('routing_eligible') is not False
+            or any('coordinate' in row for row in rest_update['coldShelters'])):
+        raise ValueError('휴식 자료의 참고용 상태 또는 한파쉼터 좌표 결측을 확인하세요.')
     compressed_assets = []
     for item in datasets.values():
         source = local_file(item['path']).read_bytes()
@@ -108,7 +113,7 @@ def build():
             raise ValueError('알 수 없는 데이터 블록: ' + ident)
         used.add(ident)
         packed = packed_data(relative)
-        return '<script id="' + ident + '" type="application/octet-stream" data-encoding="gzip-base64"' + (' data-lazy="true"' if ident in ['bundled-seoul-base', 'bundled-terrain-evidence', 'bundled-osco-context'] else '') + '>' + base64.b64encode(packed).decode() + '</script>'
+        return '<script id="' + ident + '" type="application/octet-stream" data-encoding="gzip-base64"' + (' data-lazy="true"' if ident in ['bundled-seoul-base', 'bundled-terrain-evidence', 'bundled-osco-context', 'bundled-seoul-rest-update'] else '') + '>' + base64.b64encode(packed).decode() + '</script>'
     html = re.sub(r'<script id="([^"]+)"(?: data-lazy="true")? type="application/json" data-src="([^"]+)"[^>]*></script>', data_block, html)
     optional = 'data/accessibility/seoul/steep-roads.json'
     if 'donghaeng-nav/dist/' + optional not in services.get('slope_assets', {}):
@@ -134,7 +139,7 @@ def build():
         path.write_text(html, encoding='utf-8', newline='\n')
     facilities = json.loads(local_file(datasets['bundled-facilities-seoul']['path']).read_bytes())['features']
     manifest = {
-        'version': '2026-11-19-route-review-layout',
+        'version': '2026-11-20-seoul-rest-map',
         'main_source': 'donghaeng-nav/dist/index.html',
         'expansion': {'online_page': 'expansion.html', 'service_code_files': len(services['files']), 'review_asset_files': len(services.get('review_assets', {})),
                       'service_integrity_sha256': sha(service_path.read_bytes()), 'citywide_routing': False,
@@ -155,6 +160,14 @@ def build():
         'facility_records': len(facilities),
         'counts': dict(Counter(f['properties']['kind'] for f in facilities)),
         'source_sha256': datasets['bundled-facilities-seoul']['sha256'],
+        'seoul_rest_map': {
+            'osm_source_as_of': rest_update['osmSnapshot'],
+            'osm_records': len(rest_update['osm']),
+            'public_library_reference_points': len(rest_update['libraries']),
+            'gangbuk_cold_shelter_addresses': len(rest_update['coldShelters']),
+            'routing_eligible': False,
+            'field_verified': False,
+        },
         'terrain': terrain['meta'],
         'supplementary_evidence': {
             'review_date': evidence['reviewed_date'],
@@ -186,7 +199,7 @@ def build():
     (ROOT / 'donghaeng-nav/docs/final-build.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n')
     handoff_path = ROOT / '전달-검증.json'
     handoff = json.loads(handoff_path.read_text())
-    handoff.update(html_sha256=manifest['html_sha256'], updated='2026-11-19', main_program='동행길', precision_runtime_included=True, precision_runtime_loader_implemented=True)
+    handoff.update(html_sha256=manifest['html_sha256'], updated='2026-11-20', main_program='동행길', precision_runtime_included=True, precision_runtime_loader_implemented=True)
     handoff['main_promotion'] = {'version': manifest['version'], 'review': 'donghaeng-nav/docs/main-navigation-promotion.md', 'original_gis_reprocessed': False, 'field_verified': False}
     handoff['supplementary_evidence'] = manifest['supplementary_evidence']
     handoff['gps_stabilization'] = manifest['gps']

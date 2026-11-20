@@ -6,7 +6,7 @@
   "credentials_included": true,
   "source_project": "동행길-Codex-전달; bbb referenced for Leaflet OSM tiles",
   "files": 428,
-  "html_sha256": "b580be8132daa32e081bebd98014f32e8275a67b412286d4152e19849995df1c",
+  "html_sha256": "c909727130c257f0506dd44cba711af6e920363cb4f7a299515eb2982d918c51",
   "verification": {
     "copied_project_build": true,
     "server_root_app_setup_http_200": true,
@@ -33,7 +33,7 @@
     "vercel_api_deployed": false,
     "real_gemini_for_vercel_verified": false
   },
-  "updated": "2026-11-19",
+  "updated": "2026-11-20",
   "credential_scope": "User-authorized local donghaeng-nav/.env only; ignored by version control, never bundled in HTML",
   "folder_bytes_at_update": 518293146,
   "user_reported_phone_observation": {
@@ -56,7 +56,7 @@
   "precision_runtime_included": true,
   "precision_runtime_loader_implemented": true,
   "main_promotion": {
-    "version": "2026-11-19-route-review-layout",
+    "version": "2026-11-20-seoul-rest-map",
     "review": "donghaeng-nav/docs/main-navigation-promotion.md",
     "original_gis_reprocessed": false,
     "field_verified": false

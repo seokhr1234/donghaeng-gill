@@ -78,6 +78,16 @@
       "role": "display_only_not_routing",
       "field_verified": false,
       "routing_eligible": false
+    },
+    {
+      "id": "bundled-seoul-rest-update",
+      "path": "data/accessibility/seoul/seoul-rest-update.json",
+      "sha256": "e8e1d4108a7ec727165d77b5ed1b6995c6cc2f591eb89f53f1fcc13ff47bef47",
+      "bytes": 1364162,
+      "source": "research/accessibility/seoul-rest-2026-11-20/README.md",
+      "role": "display_only_not_routing",
+      "field_verified": false,
+      "routing_eligible": false
     }
   ],
   "protected_code": {
@@ -94,9 +104,9 @@
     "navigation-session.js": "2212622ad138bdbd5f5e3c33cebb45d48290058acb350be2dd13523e59769772",
     "navigation-ui.js": "03d541c30defd3ee0c913c90a0af74667bffaf10bf250721d1d35c6e00273c04",
     "terrain-evidence.js": "9bb1879ad6f11240ec636b00d7bf715e88189dd909449009d0fa78a99a5aec72",
-    "facilities.js": "f43a3ba63022b9e191867c1153f7c45c5f40d5ad0d5d07ca46493f95895f81fd",
+    "facilities.js": "e5735742a521bbe74d72c79a2c39366b1559ba10c26341fc09337dcfffeb7371",
     "final-model.js": "f05592756fa21e66968205dde41d4bba65bdf05a91cc826da87a1f114ea66426",
-    "app.js": "9766319e326866028d8353933cf3efe3b598bb276a649054e56a0f6690f914f0",
+    "app.js": "47d2d4d7592a2999683d2065ae0f4a9932986f47eb3ea63b7eee9f7c2fd66208",
     "data-loader.js": "f1acdda5d3f55c73a7049568628d7866382583351ba603ccccd562ce59c40bcc",
     "seoul-base.js": "131f48cbf9155c4e4661b840d7512b0b3a8aa1aa6871ec36a7e01056e657d319",
     "saved-data.js": "8440c0b9883dbd26c4ac5658883c4192f001a34fdc0a2e93a2763612d66512f7",
@@ -109,7 +119,8 @@
     "map-layers.js": "449201f5f9c04919c51f5705e82dc30166945bb51bca7e6a6961ceef67293da9",
     "build-profile.js": "28c7a02d601f2bf45d1241787e0401a8a3240daf28c75c4ad48167e40fa37a1a",
     "osco-map.js": "73a2ab024f3b30cbe6607792f5f2687a9c6f5d77f3b116f3204d292d9a425639",
-    "high-contrast.js": "414f300f77dccd926a6b98c864a444825ed20976a9a51d6db45c2ac2d075ede3"
+    "high-contrast.js": "414f300f77dccd926a6b98c864a444825ed20976a9a51d6db45c2ac2d075ede3",
+    "rest-places.js": "9e7961d90632f84c2a8996c15cbc0edc361cce00e5579e2459347670ef3d8a6a"
   },
   "field_verified": false,
   "precision_role": "Review geometry and building-overlap screening; not a verified pedestrian network",

@@ -1,0 +1,10 @@
+district,facility_group,schedule_start,schedule_end,registered_count,hours_or_conditions,published_date,reviewed_date,source_url,field_verified
+강북구,구청,2026-11-15,2027-03-15,,매일 09:00~22:00,2026-11-13,2026-11-20,https://www.snsgangbuk.com/sub/notice.html?type=view&bsNo=3404&page=1,false
+강북구,주민센터·경로당·복지관·한전·삼양동종합복지센터,2026-11-15,2027-03-15,,평일 09:00~18:00,2026-11-13,2026-11-20,https://www.snsgangbuk.com/sub/notice.html?type=view&bsNo=3404&page=1,false
+강북구,스마트팜 센터,2026-11-15,2027-03-15,,월요일 09:00~18:00 · 그 외 09:00~21:00,2026-11-13,2026-11-20,https://www.snsgangbuk.com/sub/notice.html?type=view&bsNo=3404&page=1,false
+강북구,강북문화예술회관,2026-11-15,2027-03-15,,평일 09:00~22:00 · 주말 09:00~18:00,2026-11-13,2026-11-20,https://www.snsgangbuk.com/sub/notice.html?type=view&bsNo=3404&page=1,false
+강북구,강북웰빙스포츠센터,2026-11-15,2027-03-15,,평일 09:00~22:00 · 토요일 09:00~17:00 · 일요일 정보 없음,2026-11-13,2026-11-20,https://www.snsgangbuk.com/sub/notice.html?type=view&bsNo=3404&page=1,false
+강북구,도서관과 기타 시설,2026-11-15,2027-03-15,,시설별 운영시간 상이 · 공식 첨부 명단 미확보,2026-11-13,2026-11-20,https://www.snsgangbuk.com/sub/notice.html?type=view&bsNo=3404&page=1,false
+강동구,구 지정 한파쉼터,2026-11-15,2027-03-15,117,공공청사 21곳 · 문화체육 19곳 · 민간 30곳 · 노인이용시설 47곳 · 구립경로당 회원 대상이며 한파경보 시 일반 개방,,2026-11-20,https://culture.gangdong.go.kr/web/newportal/bbs/b_133,false
+금천구,구 지정 한파쉼터,2026-11-15,2027-03-15,50,주민 누구나,2026-11-15,2026-11-20,https://www.geumcheon.go.kr/portal/selectBbsNttView.do?bbsNo=8&key=297&nttNo=271818,false
+중구,구 지정 한파쉼터,,,69,중구의 2026~2027년 겨울 대책에 발표된 운영 규모,2026-11-16,2026-11-20,https://www.junggu.seoul.kr/content.do?cid=148973239&cmsid=14390&mode=view,false

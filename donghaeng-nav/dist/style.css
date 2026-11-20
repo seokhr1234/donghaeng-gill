@@ -226,6 +226,15 @@ main{grid-template-columns:430px 1fr;align-items:start}.sidebar{padding-top:25px
 .facility-popup .facility-evidence-warning{padding:10px;border:1px solid #a15c15;border-radius:8px;background:#fff4df;color:#623707;font-weight:600;line-height:1.5}
 
 .facility-popup h3{white-space:normal;overflow-wrap:anywhere}
+.facility-library .facility-symbol{color:#514185;background:#eee8fa}
+.facility-marker-icon.facility-library{background:#514185}
+.facility-directory{margin-block:8px;border:1px solid #d8e2d0;border-radius:8px;padding:0 8px}
+.facility-directory summary{box-sizing:border-box;min-height:44px;padding-block:10px;cursor:pointer;font-weight:700}
+.facility-directory-entry{border-top:1px solid #d8e2d0}
+.facility-directory-entry p,.facility-directory .facility-notice{margin:4px 0 8px;font-size:12px;overflow-wrap:anywhere}
+.facility-directory-results{margin-top:8px}
+.facility-hours,.facility-popup dd{white-space:pre-line}
+.facility-notice:empty{display:none}
 
 .facility-popup dl,.facility-popup p{font-size:13px;line-height:1.6}.facility-popup dt{color:#4c5d49}.facility-popup p{color:#475846}.storage-recovery{color:#71460e;font-size:14px;line-height:1.6}
 

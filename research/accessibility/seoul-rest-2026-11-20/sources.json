@@ -1,0 +1,98 @@
+{
+  "review_date_kst": "2026-11-20",
+  "sources": [
+    {
+      "id": "geofabrik-osm",
+      "publisher": "Geofabrik, © OpenStreetMap contributors",
+      "download": "https://download.geofabrik.de/asia/south-korea/south-korea-261119.osm.pbf",
+      "retrieved_date_kst": "2026-11-20",
+      "http_status": 200,
+      "bytes": 292303012,
+      "sha256": "7fb2770e9886faab3aeda88567d9d2ce057cf548f7d01b924f1a24180058ab35",
+      "raw_handling": "검증한 배포 원본은 임시 작업 공간에 저장. 저장소는 서울 추출물과 원본 체크섬을 보관.",
+      "source_as_of": "derived/osm-extraction.json의 PBF replication timestamp",
+      "source_crs": "EPSG:4326",
+      "license_url": "https://www.openstreetmap.org/copyright",
+      "field_verified": false
+    },
+    {
+      "id": "OA-21065-preserved",
+      "publisher": "서울특별시 열린데이터광장",
+      "catalog": "https://data.seoul.go.kr/dataList/OA-21065/S/1/datasetView.do",
+      "download": "https://datafile.seoul.go.kr/bigfile/iot/sheet/csv/download.do",
+      "raw_path": "../round4-2026-11-05/raw/seoul-shelter-csv/response.bin",
+      "retrieved_date_kst": "2026-11-05",
+      "facility_year": 2026,
+      "latest_catalog_update_seen": "2026-11-20",
+      "today_download_http_status": 503,
+      "sha256": "9b2d96168234870dd78f4246f4062c668c2fd86a3cf8e4f0907e9247d01625ac",
+      "source_crs": "EPSG:4326, EPSG:5186",
+      "field_verified": false
+    },
+    {
+      "id": "OA-21066",
+      "publisher": "서울특별시 열린데이터광장",
+      "catalog": "https://data.seoul.go.kr/dataList/OA-21066/S/1/datasetView.do",
+      "latest_catalog_update_seen": "2026-11-20",
+      "source_crs_as_documented": "GRS80 중부원점 XY",
+      "download": "https://datafile.seoul.go.kr/bigfile/iot/sheet/csv/download.do",
+      "today_download_http_status": 503,
+      "map": "https://safecity.seoul.go.kr/distFclt/cfMapDs/cfMapDs.page?layer=coldShelter&menuId=MENU_SSNS_000176&type=heat&upMenuId=MENU_SSNS_000012",
+      "map_request_http_status": 503,
+      "rows_acquired": null,
+      "field_verified": false
+    },
+    {
+      "id": "gangbuk-cold-shelters-2026-2027",
+      "publisher": "서울특별시 강북구",
+      "publication": "https://m.blog.naver.com/gangbuk_official/224475389845",
+      "official_notice": "https://www.snsgangbuk.com/sub/notice.html?type=view&bsNo=3404&page=1",
+      "published_date_kst": "2026-11-13",
+      "retrieved_date_kst": "2026-11-20",
+      "operating_period": ["2026-11-15", "2027-03-15"],
+      "raw_path": "raw/gangbuk-cold-shelters-2026-2027.pdf",
+      "http_status": 200,
+      "bytes": 142719,
+      "sha256": "db4f3f24b2c5304eac9a8d92b705df9dbc4fe09c7675c2c24db9d6f4dbe9a8ac",
+      "rows_acquired": 96,
+      "source_crs": null,
+      "field_verified": false
+    },
+    {
+      "id": "OA-394",
+      "publisher": "서울특별시 열린데이터광장",
+      "catalog": "https://data.seoul.go.kr/dataList/OA-394/A/1/datasetView.do",
+      "latest_catalog_update_seen": "2026-09-23",
+      "sheet_csv_request_http_status": 503
+    },
+    {
+      "id": "OA-15480",
+      "publisher": "서울특별시 열린데이터광장",
+      "catalog": "https://data.seoul.go.kr/dataList/OA-15480/S/1/datasetView.do",
+      "latest_catalog_update_seen": "2026-11-18",
+      "sheet_csv_request_http_status": 503
+    },
+    {
+      "id": "national-library-statistics-2025-seoul",
+      "publisher": "문화체육관광부 국가도서관통계시스템",
+      "catalog": "https://www.libsta.go.kr/libsta/statistics/public/stat",
+      "request_record": "derived/seoul-public-libraries-2025-summary.json",
+      "source_as_of": "2025",
+      "retrieved_date_kst": "2026-11-20",
+      "http_status": 200,
+      "bytes": 292486,
+      "sha256": "3cb7ecd3b8e8da2d5754b4eeb3907e5c0503152fcff6446b505ddc41e0ca24e3",
+      "rows_acquired": 214,
+      "source_crs": null,
+      "raw_handling": "원본 처리 결과 중 검수 담당자 필드를 제외하고 공개 시설 데이터만 추출했다.",
+      "field_verified": false
+    },
+    {
+      "id": "seoul-operations-notice",
+      "publisher": "서울특별시 열린데이터광장",
+      "url": "https://data.seoul.go.kr/together/notice/datasetNoticeView.do?bbsCd=10008&ditcCd=&pageIndex=1&seq=552ad1ea807ba3f76993094832133b55",
+      "published_date_kst": "2026-11-18",
+      "planned_change_date_kst": "2026-12-02"
+    }
+  ]
+}
