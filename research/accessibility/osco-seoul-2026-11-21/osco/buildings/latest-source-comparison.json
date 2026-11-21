@@ -1,0 +1,21 @@
+{
+  "osm_source": "2026-11-20T21:21:21Z",
+  "osm_area_records": 4700,
+  "overture_release": "2026-11-18.0",
+  "overture_records_by_upstream": {
+    "doi:10.5281/zenodo.8174931": 7359,
+    "OpenStreetMap": 4544
+  },
+  "counts": {
+    "non_osm_overlap": 114,
+    "non_osm_iou_ge_0_5": 45,
+    "non_osm_no_overlap": 7245,
+    "shared_osm_ids": 4528,
+    "shared_osm_versions": 4220,
+    "same_version_equal_geometry": 4177
+  },
+  "comparison_epsg": 5186,
+  "field_verified": false,
+  "routing_eligible": false,
+  "merged_records": 0
+}

@@ -1,0 +1,116 @@
+{
+  "retrieved_date_kst": "2026-11-21",
+  "field_verified": false,
+  "routing_eligible": false,
+  "crs": "EPSG:4326",
+  "osm": {
+    "source_url": "https://api.openstreetmap.org/api/0.6/nodes?nodes=8213401393,368637868,10196145723",
+    "http_status": 200,
+    "raw_path": "station-osm.xml",
+    "bytes": 2289,
+    "sha256": "0535f1ff61aaa2d828e0fafc86331a316dbf8aca8cfba8b7d46423625424611c",
+    "anchors": [
+      {
+        "id": "node/368637868",
+        "osm_node": 368637868,
+        "name": "오송역",
+        "coordinates": [
+          127.3273629,
+          36.6202295
+        ],
+        "coordinate_role": "station_reference",
+        "source_url": "https://www.openstreetmap.org/node/368637868",
+        "source_as_of": "2026-10-02T09:40:02Z",
+        "tags": {
+          "name": "오송",
+          "name:en": "Osong",
+          "name:ja": "五松",
+          "name:ko": "오송",
+          "name:ko-Latn": "Osong",
+          "name:zh": "五松",
+          "name:zh-Hans": "五松",
+          "name:zh-Hant": "五松",
+          "name:zh-Latn": "Wusong",
+          "network": "KTX",
+          "network:wikidata": "Q167674",
+          "operator": "한국철도공사",
+          "operator:en": "Korea Railroad Corporation",
+          "operator:ko": "한국철도공사",
+          "operator:short": "KORAIL",
+          "operator:type": "public",
+          "operator:wikidata": "Q18169",
+          "operator:wikipedia": "en:Korail",
+          "public_transport": "station",
+          "railway": "station",
+          "railway:ref": "오송",
+          "station": "train",
+          "train": "yes",
+          "wikidata": "Q54285",
+          "wikipedia": "ko:오송역"
+        }
+      },
+      {
+        "id": "node/8213401393",
+        "osm_node": 8213401393,
+        "name": "오송역 8번 출구",
+        "coordinates": [
+          127.3265951,
+          36.6216899
+        ],
+        "coordinate_role": "mapped_exit_reference",
+        "source_url": "https://www.openstreetmap.org/node/8213401393",
+        "source_as_of": "2020-12-10T11:22:59Z",
+        "tags": {
+          "railway": "subway_entrance",
+          "ref": "8"
+        }
+      },
+      {
+        "id": "node/10196145723",
+        "osm_node": 10196145723,
+        "name": "오송역8 (517번) 버스정류장",
+        "coordinates": [
+          127.3267299,
+          36.619526
+        ],
+        "coordinate_role": "mapped_bus_stop",
+        "source_url": "https://www.openstreetmap.org/node/10196145723",
+        "source_as_of": "2025-06-24T07:02:34Z",
+        "tags": {
+          "bench": "yes",
+          "bin": "yes",
+          "bus": "yes",
+          "departures_board": "realtime",
+          "highway": "bus_stop",
+          "lit": "yes",
+          "name": "오송역8 (517번)",
+          "name:en": "Osong Station 8 (Bus No. 517)",
+          "name:ko": "오송역8 (517번)",
+          "public_transport": "platform",
+          "ref": "1462",
+          "shelter": "yes",
+          "tactile_paving": "yes"
+        }
+      }
+    ]
+  },
+  "venue": {
+    "id": "osco:venue",
+    "name": "청주오스코",
+    "coordinates": [
+      127.335363,
+      36.6267203
+    ],
+    "coordinate_role": "official_site_representative_point",
+    "source_url": "https://www.cbartgallery-osco.com/cbart-osco/contents.do?key=851"
+  },
+  "operator": {
+    "source_url": "https://osco.or.kr/traffic/traffic_guidance/",
+    "http_status": 200,
+    "bytes": 1300699,
+    "sha256": "a318d58c2da6629a53ee9af966886b2ac98476c96bd5cdb02fc09597982f148b",
+    "published_walking_reference": "8번 출구에서 도보 약 10분",
+    "step_free_route_verified": false
+  },
+  "note": "운영사 안내 시간, OSM 등록 좌표, 현장 확인 여부를 각각 표시한다."
+}

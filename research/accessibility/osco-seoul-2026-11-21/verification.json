@@ -1,0 +1,39 @@
+{
+  "field_verified": false,
+  "routing_eligible": false,
+  "verified": {
+    "osco": {
+      "pedestrian": 2383,
+      "road_context": 6596,
+      "rest": 415,
+      "buildings": 4700,
+      "access": 1787,
+      "transit": 156,
+      "support": 45
+    },
+    "seoul": {
+      "pedestrian": 7597,
+      "road_context": 21627,
+      "rest": 1340,
+      "buildings": 20766,
+      "access": 10438,
+      "transit": 1821,
+      "support": 224
+    },
+    "seoul-citywide": {
+      "pedestrian": 48281,
+      "rest": 10523,
+      "buildings": 171939
+    },
+    "seoul-districts": 25
+  },
+  "checks": [
+    "gzip checksums",
+    "unique IDs",
+    "valid geometries",
+    "matching source node/way vertex counts",
+    "per-radius extract counts",
+    "city layer geometry counts",
+    "city boundary intersection"
+  ]
+}

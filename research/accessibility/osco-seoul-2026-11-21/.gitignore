@@ -1,0 +1,7 @@
+/osco/municipal/wfs-originals.tar.gz
+/osco/municipal/municipal-derived/
+/osco/rest-evidence/*.html.gz
+/seoul/official/smap-local/
+__pycache__/
+/seoul/official/raw/
+/seoul/official/wolgok-*.geojson.gz

@@ -1,0 +1,203 @@
+{
+  "source": {
+    "scope_id": "osco",
+    "scope_name": "청주오스코 / 오송역",
+    "source": "OpenStreetMap / Geofabrik",
+    "source_url": "https://download.geofabrik.de/asia/south-korea/south-korea-261120.osm.pbf",
+    "source_as_of": "2026-11-20T21:21:21Z",
+    "retrieved_at_kst": "2026-11-21T14:17:43+09:00",
+    "source_crs": "EPSG:4326",
+    "distance_calculation_crs": "EPSG:5186",
+    "license": "ODbL-1.0",
+    "attribution": "© OpenStreetMap contributors",
+    "license_url": "https://www.openstreetmap.org/copyright",
+    "field_verified": false,
+    "routing_eligible": false,
+    "source_pbf_sha256": "492ceebb946500fa54dd1b460b4ff923884dd9e673f65d3750e1d60122b85a8e",
+    "source_pbf_bytes": 292399858,
+    "source_pbf_md5": "85bf57c0652e9bb68e74e667e1f4fa13",
+    "publisher_md5_verified": true,
+    "reference_point_source": "https://www.cbartgallery-osco.com/cbart-osco/contents.do?key=851",
+    "bounds_lon_lat": [
+      127.28,
+      36.59,
+      127.39,
+      36.67
+    ],
+    "reference_point_lon_lat": [
+      127.335363,
+      36.6267203
+    ],
+    "distance_definition": "Minimum straight-line planar distance from reference point to registered geometry in EPSG:5186; original geometry retained; 1/3 km circles are within bbox.",
+    "coverage_limit": "Visible registration in a single OSM release. Geometry is not field surveying, and registered ways/areas may include closed, private, stairs or grade-separated passages.",
+    "allowed_geometry_differences": "OSM IDs are counted once per layer, layers can overlap, tags preserved. No snapped connection, entrance point, or new slope."
+  },
+  "source_crs": "EPSG:4326",
+  "field_verified": false,
+  "routing_eligible": false,
+  "reference_point_connection_limit_m": 150,
+  "records": [
+    {
+      "id": "osong-exit-8-to-osco",
+      "from": {
+        "id": "node/8213401393",
+        "osm_node": 8213401393,
+        "name": "오송역 8번 출구",
+        "coordinates": [
+          127.3265951,
+          36.6216899
+        ],
+        "coordinate_role": "mapped_exit_reference",
+        "source_url": "https://www.openstreetmap.org/node/8213401393",
+        "source_as_of": "2020-12-10T11:22:59Z",
+        "tags": {
+          "railway": "subway_entrance",
+          "ref": "8"
+        }
+      },
+      "to": {
+        "id": "osco:venue",
+        "name": "청주오스코",
+        "coordinates": [
+          127.335363,
+          36.6267203
+        ],
+        "coordinate_role": "official_site_representative_point",
+        "source_url": "https://www.cbartgallery-osco.com/cbart-osco/contents.do?key=851"
+      },
+      "registered_start": {
+        "node": 4089924012,
+        "gap_m": 160.7,
+        "basis": "nearest_registered_node"
+      },
+      "registered_end": {
+        "node": 5522843702,
+        "gap_m": 605.0,
+        "basis": "nearest_registered_node"
+      },
+      "profile": "dedicated_paths_only",
+      "status": "path_unresolved",
+      "field_verified": false,
+      "routing_eligible": false
+    },
+    {
+      "id": "osco-to-osong-lake-park",
+      "from": {
+        "id": "osco:venue",
+        "name": "청주오스코",
+        "coordinates": [
+          127.335363,
+          36.6267203
+        ],
+        "coordinate_role": "official_site_representative_point",
+        "source_url": "https://www.cbartgallery-osco.com/cbart-osco/contents.do?key=851"
+      },
+      "to": {
+        "id": "kto:osong-lake-park",
+        "name": "오송호수공원",
+        "coordinates": [
+          127.3235,
+          36.6315
+        ],
+        "coordinate_role": "official_visitor_map_representative_point",
+        "source_url": "https://access.visitkorea.or.kr/ms/detail.do?cotId=b1136625-007e-4c71-b9c0-5b8800c41e66",
+        "page_updated_date": "2026-11-10"
+      },
+      "registered_start": {
+        "node": 5522843702,
+        "gap_m": 605.0,
+        "basis": "nearest_registered_node"
+      },
+      "registered_end": {
+        "node": 9141033355,
+        "gap_m": 350.4,
+        "basis": "nearest_registered_node"
+      },
+      "profile": "dedicated_paths_only",
+      "status": "path_unresolved",
+      "field_verified": false,
+      "routing_eligible": false
+    },
+    {
+      "id": "osong-exit-8-to-osco",
+      "from": {
+        "id": "node/8213401393",
+        "osm_node": 8213401393,
+        "name": "오송역 8번 출구",
+        "coordinates": [
+          127.3265951,
+          36.6216899
+        ],
+        "coordinate_role": "mapped_exit_reference",
+        "source_url": "https://www.openstreetmap.org/node/8213401393",
+        "source_as_of": "2020-12-10T11:22:59Z",
+        "tags": {
+          "railway": "subway_entrance",
+          "ref": "8"
+        }
+      },
+      "to": {
+        "id": "osco:venue",
+        "name": "청주오스코",
+        "coordinates": [
+          127.335363,
+          36.6267203
+        ],
+        "coordinate_role": "official_site_representative_point",
+        "source_url": "https://www.cbartgallery-osco.com/cbart-osco/contents.do?key=851"
+      },
+      "registered_start": {
+        "node": 667248433,
+        "gap_m": 18.6,
+        "basis": "nearest_registered_node"
+      },
+      "registered_end": {
+        "node": 13780104590,
+        "gap_m": 100.4,
+        "basis": "nearest_registered_node"
+      },
+      "profile": "dedicated_and_local_streets",
+      "status": "path_unresolved",
+      "field_verified": false,
+      "routing_eligible": false
+    },
+    {
+      "id": "osco-to-osong-lake-park",
+      "from": {
+        "id": "osco:venue",
+        "name": "청주오스코",
+        "coordinates": [
+          127.335363,
+          36.6267203
+        ],
+        "coordinate_role": "official_site_representative_point",
+        "source_url": "https://www.cbartgallery-osco.com/cbart-osco/contents.do?key=851"
+      },
+      "to": {
+        "id": "kto:osong-lake-park",
+        "name": "오송호수공원",
+        "coordinates": [
+          127.3235,
+          36.6315
+        ],
+        "coordinate_role": "official_visitor_map_representative_point",
+        "source_url": "https://access.visitkorea.or.kr/ms/detail.do?cotId=b1136625-007e-4c71-b9c0-5b8800c41e66",
+        "page_updated_date": "2026-11-10"
+      },
+      "registered_start": {
+        "node": 13780104590,
+        "gap_m": 100.4,
+        "basis": "nearest_registered_node"
+      },
+      "registered_end": {
+        "node": 9141361068,
+        "gap_m": 107.6,
+        "basis": "nearest_registered_node"
+      },
+      "profile": "dedicated_and_local_streets",
+      "status": "path_unresolved",
+      "field_verified": false,
+      "routing_eligible": false
+    }
+  ]
+}

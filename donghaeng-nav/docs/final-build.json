@@ -1,11 +1,11 @@
 {
-  "version": "2026-11-20-seoul-rest-map",
+  "version": "2026-11-22-osco-seoul-map",
   "main_source": "donghaeng-nav/dist/index.html",
   "expansion": {
     "online_page": "expansion.html",
     "service_code_files": 56,
     "review_asset_files": 2,
-    "service_integrity_sha256": "5a42fd7b63e6f308afa217325f9b089eb35bd57a028f9a11d63b2a00751b32cf",
+    "service_integrity_sha256": "e3a972e35b3babb9d67afc29dcfc0dd503ce0cb5a056844299af2404ed326c00",
     "citywide_routing": false,
     "authenticated_transit_verified": false,
     "new_slope_values_promoted": 0,
@@ -88,15 +88,15 @@
     },
     {
       "path": "data/osco/info.json.gz",
-      "sha256": "ad613e81cc45c2f255c080d2743000fc6708ef50db47e06aa9bd0a512d84d1e7",
-      "bytes": 2981,
-      "source_sha256": "49d4e042ee425e1951e299dd0617acd9e98f16cb33964a836fc62ce81f8f8102"
+      "sha256": "a9163549f0578a950d09893f9ddc4569205745a2ce637f638ea1b602eda222ae",
+      "bytes": 3380,
+      "source_sha256": "d872d02bc418b7478f4c5a9eafbae10e7e3aa532fccb2b72dc168368813eadde"
     },
     {
       "path": "data/osco/context.json.gz",
-      "sha256": "126a3007ad03bee8ba61c0679a6184ccb6cb2dc91f462e1117b2dd6d9a9658e1",
-      "bytes": 1054570,
-      "source_sha256": "5824deec3c23975b189b13207fe64f854e83be4081424e4417d3ff85898a39ba"
+      "sha256": "aa85176a9a9180be8123b25956ff3f2cb6804ec099ff67387f4c4fbdcfca5ebc",
+      "bytes": 2158984,
+      "source_sha256": "227d1c9b9195d9da3866cb2138dae47c1b5ec7285b8d3b0960d94c6401cbbf41"
     },
     {
       "path": "data/accessibility/seoul/seoul-rest-update.json.gz",
@@ -123,7 +123,7 @@
     "venue_facts_and_osm_layers": true,
     "municipal_geometry_published": false,
     "new_slope_values_promoted": 0,
-    "report": "docs/osco-map-data-results.json"
+    "report": "docs/survey-map-data-results-2026-11-22.json"
   },
   "transit_main": {
     "mode_selector": false,
@@ -231,8 +231,8 @@
   "precision_records": 16169,
   "precision_field_verified": false,
   "runtime_validation": "Exact hashes and graph binding; supplied OA-22241 archive re-extracted as supplementary evidence only; existing route slopes and precision map unchanged",
-  "html_sha256": "c909727130c257f0506dd44cba711af6e920363cb4f7a299515eb2982d918c51",
-  "html_bytes": 19284241,
+  "html_sha256": "14282f222bcc37022ff05357318968196b79a91bc1a0356e3bf417c351a74f5e",
+  "html_bytes": 20758379,
   "external_requests_required": false,
   "online_basemap": "OpenStreetMap raster tiles via Leaflet; HTTP(S) only",
   "offline_basemap": "Embedded OSM snapshot via Leaflet GridLayer",

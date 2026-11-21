@@ -64,8 +64,8 @@
     {
       "id": "bundled-osco-info",
       "path": "data/osco/info.json",
-      "sha256": "49d4e042ee425e1951e299dd0617acd9e98f16cb33964a836fc62ce81f8f8102",
-      "source": "research/accessibility/cheongju-osco-2026-11-16/README.md",
+      "sha256": "d872d02bc418b7478f4c5a9eafbae10e7e3aa532fccb2b72dc168368813eadde",
+      "source": "research/accessibility/osco-seoul-2026-11-21/README.md",
       "role": "display_only_not_routing",
       "field_verified": false,
       "routing_eligible": false
@@ -73,8 +73,8 @@
     {
       "id": "bundled-osco-context",
       "path": "data/osco/context.json",
-      "sha256": "5824deec3c23975b189b13207fe64f854e83be4081424e4417d3ff85898a39ba",
-      "source": "research/accessibility/cheongju-osco-2026-11-16/README.md",
+      "sha256": "227d1c9b9195d9da3866cb2138dae47c1b5ec7285b8d3b0960d94c6401cbbf41",
+      "source": "research/accessibility/osco-seoul-2026-11-21/README.md",
       "role": "display_only_not_routing",
       "field_verified": false,
       "routing_eligible": false
@@ -116,9 +116,9 @@
     "transit-walk-review.js": "ea420b302fa5563effc93163db713da92479d879b63e01065b6e8d8770f8b1e7",
     "journey-review.js": "3e8a2bca92d7b758637a9500865d4b63183bcf61c0029f1ad8aec70026efc95c",
     "trip-questions.js": "392ce611917e01921212886f2c44ecfd396134cced9fc50ddb97c4af44a81a2e",
-    "map-layers.js": "449201f5f9c04919c51f5705e82dc30166945bb51bca7e6a6961ceef67293da9",
+    "map-layers.js": "e247354fc103e24dc5804077800955c169c110dec2105a3392ad2577886c202f",
     "build-profile.js": "28c7a02d601f2bf45d1241787e0401a8a3240daf28c75c4ad48167e40fa37a1a",
-    "osco-map.js": "73a2ab024f3b30cbe6607792f5f2687a9c6f5d77f3b116f3204d292d9a425639",
+    "osco-map.js": "0577335ffc61539376db6ffaa4a61765ac2ea96ac678605d86f9f8b4e2dbde8d",
     "high-contrast.js": "414f300f77dccd926a6b98c864a444825ed20976a9a51d6db45c2ac2d075ede3",
     "rest-places.js": "9e7961d90632f84c2a8996c15cbc0edc361cce00e5579e2459347670ef3d8a6a"
   },

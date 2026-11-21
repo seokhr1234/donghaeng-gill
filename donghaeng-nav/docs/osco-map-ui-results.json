@@ -4,6 +4,7 @@
     "Public web retains Seoul initial view and walking-only profile; OSCO geometry is lazy, no paid provider request.",
     "Venue/station representative markers, official BF certificate, conflicting parking counts, original PDF links and provenance are visible without claiming a verified entrance.",
     "503 and invalid routing-eligible payload stay undrawn and can retry successfully; viewport/zoom filtering and a 600-object cap prevent an all-roads overlay.",
+    "Seoul rest observations and Wolgok pedestrian and building overlays reuse the lazy, bounded map display.",
     "OSCO/station are searchable and selectable; unsupported walking gives an explicit notice before AI, routing or transit calls, with no GPS guidance or invented route.",
     "320px, 393px and landscape retain an accessible shortcut and no horizontal overflow; standalone HTML embeds the same lazy geometry and OSCO deep link."
   ],

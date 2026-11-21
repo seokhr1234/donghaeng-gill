@@ -139,7 +139,7 @@ def build():
         path.write_text(html, encoding='utf-8', newline='\n')
     facilities = json.loads(local_file(datasets['bundled-facilities-seoul']['path']).read_bytes())['features']
     manifest = {
-        'version': '2026-11-20-seoul-rest-map',
+        'version': '2026-11-22-osco-seoul-map',
         'main_source': 'donghaeng-nav/dist/index.html',
         'expansion': {'online_page': 'expansion.html', 'service_code_files': len(services['files']), 'review_asset_files': len(services.get('review_assets', {})),
                       'service_integrity_sha256': sha(service_path.read_bytes()), 'citywide_routing': False,
@@ -153,7 +153,7 @@ def build():
         'high_contrast': {'theme': 'night-sky', 'natural_map_colors': True, 'nested_number_borders': False, 'toggle': True, 'local_preference': True, 'system_preference_default': True, 'line_patterns': True, 'color_only_status': False},
         'osco_research': {'display_only': True, 'routing_eligible': False, 'field_verified': False,
                           'venue_facts_and_osm_layers': True, 'municipal_geometry_published': False,
-                          'new_slope_values_promoted': 0, 'report': 'docs/osco-map-data-results.json'},
+                          'new_slope_values_promoted': 0, 'report': 'docs/survey-map-data-results-2026-11-22.json'},
         'transit_main': {'mode_selector': False, 'web_transit_enabled': False, 'android_demo_transit_enabled': True, 'line_stop_details': True, 'reference_markers_only': False, 'walking_reference_geometry': True, 'walking_time_comparison': True, 'whole_journey_review': True, 'mixed_steps_replay': True, 'offline_transit_provider': True, 'repeat_rest_validator': True, 'local_timetable_adapter': True, 'operational_timetable_configured': False, 'vehicle_geometry_verified': False, 'stop_mapping_verified': False, 'timetable_verified': False, 'accessible_journey_verified': False, 'provider_search_verified': False, 'full_ui_optimization_deferred': True},
         'route_choice': {'max_attempts': 24, 'time_budget_ms': 4000, 'max_candidates': 5, 'explanation': 'Decision-time final response; no new request on click', 'real_gemini_verified': False},
         'source_snapshot': lock['source'],

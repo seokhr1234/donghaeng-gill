@@ -1,0 +1,85 @@
+{
+  "release": "2026-11-18.0",
+  "retrieved_at_kst": "2026-11-21T14:19:21.878967+09:00",
+  "completed_at_kst": "2026-11-21T14:19:45.400016+09:00",
+  "source_shard": "https://overturemaps-us-west-2.s3.us-west-2.amazonaws.com/release/2026-11-18.0/theme=buildings/type=building/part-00505-af8bcada-b4be-5fb4-8892-e17e1c6d54f1-c000.zstd.parquet",
+  "source_shard_bytes": 515369862,
+  "source_index": "https://stac.overturemaps.org/2026-11-18.0/collections.parquet",
+  "geo_metadata": {
+    "version": "1.1.0",
+    "primary_column": "geometry",
+    "columns": {
+      "geometry": {
+        "encoding": "WKB",
+        "geometry_types": [
+          "MultiPolygon",
+          "Polygon"
+        ],
+        "bbox": [
+          124.70819854736328,
+          36.10726547241211,
+          129.96766662597656,
+          43.714134216308594
+        ],
+        "covering": {
+          "bbox": {
+            "xmin": [
+              "bbox",
+              "xmin"
+            ],
+            "ymin": [
+              "bbox",
+              "ymin"
+            ],
+            "xmax": [
+              "bbox",
+              "xmax"
+            ],
+            "ymax": [
+              "bbox",
+              "ymax"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "scope": [
+    127.28,
+    36.59,
+    127.39,
+    36.67
+  ],
+  "core": [
+    127.315,
+    36.61,
+    127.35,
+    36.64
+  ],
+  "source_row_groups": 128,
+  "searched_row_groups": [
+    82,
+    83
+  ],
+  "candidate_bbox_records": 11904,
+  "study_count": 11903,
+  "core_count": 1929,
+  "upstream_rows_study": {
+    "doi:10.5281/zenodo.8174931": 7359,
+    "OpenStreetMap": 4544
+  },
+  "upstream_rows_core": {
+    "doi:10.5281/zenodo.8174931": 1127,
+    "OpenStreetMap": 802
+  },
+  "held": [],
+  "range_count": 92,
+  "overture-buildings-study.geojson": {
+    "bytes": 12907900,
+    "sha256": "5bfd78a701a8b91d0b19f0e4e89173634b1e989624f53f032ea0102abdb81fa8"
+  },
+  "overture-buildings-study.parquet": {
+    "bytes": 1423483,
+    "sha256": "ea9f6a662cb2d11b6269750ca05a16cfa1b70b3fa8617086b7379c5bdf87d8b6"
+  }
+}

@@ -4,6 +4,8 @@
 
 전체 변경은 [수정이력.md](수정이력.md), 작업 규칙은 [AGENTS.md](AGENTS.md), 이번 전환의 근거와 검사 범위는 [메인 전환 기록](donghaeng-nav/docs/main-navigation-promotion.md)을 참고하세요.
 
+2026-11-22 청주오스코·서울 지도 갱신. **시설·지도 → 조사 지도**에서 오스코 주변 등록 보행로·휴식 장소·건물, 서울 전역의 추가 휴식 지물과 월곡역 주변 상세 자료를 확인할 수 있습니다. [조사 자료](research/accessibility/osco-seoul-2026-11-21/README.md) · [Android 설치 ZIP](https://github.com/seokhr1234/donghaeng-gill/archive/refs/tags/android-demo-v1.0.10-download.zip)
+
 2026-11-20 서울 휴식 장소. **시설·지도 → 시설**에서 최신 OSM 벤치·쉼터, 공공도서관, 무더위쉼터 등록 시간과 강북구 한파쉼터 주소록을 볼 수 있습니다. [자료 출처와 현장 확인 범위](research/accessibility/seoul-rest-2026-11-20/README.md) · [Android 1.0.9 Release](https://github.com/seokhr1234/donghaeng-gill/releases/tag/android-demo-v1.0.9)
 
 2026-11-19 경로 검토 및 결과 화면 개선. 추천 조건을 만족하는 경로가 없으면 사용자가 고른 검토 경로만 지도에 표시합니다. 모바일 결과 버튼은 목록과 함께 스크롤됩니다. [Android 1.0.8 설치 ZIP](https://github.com/seokhr1234/donghaeng-gill/archive/refs/tags/android-demo-v1.0.8-download.zip) · [Release](https://github.com/seokhr1234/donghaeng-gill/releases/tag/android-demo-v1.0.8)

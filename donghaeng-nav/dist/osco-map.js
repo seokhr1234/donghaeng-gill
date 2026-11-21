@@ -36,10 +36,12 @@
  }
  function create(map, {fitBounds, onSelectOrigin, onSelectDestination} = {}) {
   const L = root.L, data = info(), panel = el('section', undefined, 'osco-panel');
-  panel.setAttribute('aria-label', '청주오스코 조사 지도');
+  const demoBeta = root.DONGHAENG_BUILD?.demoBeta === true;
+  panel.setAttribute('aria-label', '청주오스코·서울 조사 지도');
   panel.append(el('h3', '청주오스코 주변'), el('p', 'OSM 등록 지물과 공식 안내를 함께 확인해요. 현장 통행·출입구는 미확인입니다.', 'osco-note'));
   const buttons = el('div', undefined, 'osco-actions');
   const source = id => data.sources.find(s => s.id === id);
+  const osm = source(data.active_osm_source_id);
   const markers = L.layerGroup().addTo(map), layers = L.featureGroup().addTo(map);
   const venueMarkers = new Map(), checkboxes = {}, counts = {};
   let context = null, loading = false, failed = false, disposed = false, rendered = 0;
@@ -50,9 +52,13 @@
   const retry = el('button', '자료 다시 불러오기'); retry.type = 'button'; retry.hidden = true;
   const kinds = [
    ['roads', '등록 보행로·계단', 16], ['access_points', '횡단·출입 등록', 17],
-   ['transport', '정류장·철도 등록', 16], ['facilities', '휴식·화장실·주차 등록', 17],
-   ['buildings', '건물 윤곽', 17],
+   ['transport', '정류장·철도 등록', 16], ['rest', '등록 휴식 장소', 16, 'facilities'],
+   ['facilities', '화장실·주차 등 편의시설', 17], ['buildings', '건물 윤곽', 17],
+   ['seoul_rest', '서울 전역 등록 휴식 장소', 16, 'facilities'],
+   ['seoul_roads', '월곡역 3km 보행로·계단', 16, 'roads'],
+   ['seoul_buildings', '월곡역 3km 건물 윤곽', 17, 'buildings'],
   ];
+  const restKinds = ['rest', 'seoul_rest'];
   function selectButtons(place, box) {
    const actions = el('div', undefined, 'osco-actions');
    for (const [text, callback] of [['출발지로 선택', onSelectOrigin], ['목적지로 선택', onSelectDestination]]) {
@@ -84,7 +90,7 @@
      link('OSM 등록 원문', place.sourceUrl));
    }
    const details = el('details'); details.append(el('summary', '출처·자료 기준·수집일'));
-   for (const id of place.id === 'osco:venue' ? ['gallery-directions', 'bf-osco-detail-main', 'osco-parking', 'osco-facility-pdf'] : ['geofabrik-korea-261115-pbf']) details.append(sourceLine(source(id)));
+   for (const id of place.id === 'osco:venue' ? ['gallery-directions', 'bf-osco-detail-main', 'osco-parking', 'osco-facility-pdf'] : [osm.id]) details.append(sourceLine(source(id)));
    details.append(el('p', '현장 확인: 미실시 · 대표점 좌표 EPSG:4326 · 내부 도면 좌표계 미확인', 'osco-note'));
    box.append(details); selectButtons(place, box); return box;
   }
@@ -102,11 +108,19 @@
   }
   panel.append(buttons);
   for (const [kind, title] of kinds) {
+   if (kind === 'seoul_rest') {
+    const seoul = el('div', undefined, 'osco-actions'), wolgok = el('button', '월곡역 주변 보기');
+    wolgok.type = 'button';
+    wolgok.onclick = () => map.stop().setView(data.seoul_reference_lonlat.slice().reverse(), 16, {animate: false});
+    seoul.append(wolgok);
+    panel.append(el('h3', '서울 조사 자료'), seoul);
+   }
    const label = el('label', undefined, 'osco-toggle'), c = el('input'); c.type = 'checkbox'; c.id = 'osco-' + kind;
    c.onchange = () => { if (c.checked && !context) load(); else render(); };
    label.append(c, document.createTextNode(title)); panel.append(label); checkboxes[kind] = c;
   }
   panel.append(status, retry, el('p', '확대 후 현재 화면의 지물만 표시해요. 건수는 등록 객체 수이며 실제 시설 수와 다를 수 있어요.', 'osco-note'));
+  if (demoBeta) panel.append(el('p', '시연에서는 모든 등록 휴식 장소를 개방으로 가정해요. 실제 운영·출입은 현장에서 확인해 주세요.', 'osco-warning'));
   const evidence = el('details'); evidence.append(el('summary', '조사 출처와 적용 범위'));
   evidence.append(el('p', 'OSM 자료 기준 ' + data.osm_source_metadata.source_as_of + ' · EPSG:4326 · ODbL-1.0'),
    el('p', data.terrain_notice), el('p', '청주시 상세 도형과 가공 쉼터·화장실은 재이용 조건을 확인 중이라 표시에서 보류했습니다.'),
@@ -115,10 +129,8 @@
   panel.append(evidence);
   function eligible(kind, f) {
    const t = f.properties.tags || {};
-   if (kind === 'roads') return ['footway', 'path', 'pedestrian', 'steps'].includes(t.highway);
    if (kind === 'transport') return f.geometry.type === 'Point' &&
     (t.highway === 'bus_stop' || t.public_transport === 'platform' || t.public_transport === 'station' || t.railway === 'station');
-   if (kind === 'facilities') return ['bench', 'toilets', 'parking', 'shelter', 'drinking_water'].includes(t.amenity) || t.highway === 'rest_area';
    return true;
   }
   function bounds(geometry) {
@@ -134,7 +146,8 @@
    loading = true; failed = false; render();
    try {
     const raw = JSON.parse(await root.DONGHAENG_LOAD_DATA('bundled-osco-context'));
-    if (raw.schema !== 'donghaeng-osco-context-v1' || raw.display_only !== true || raw.field_verified !== false || raw.routing_eligible !== false) throw Error('오스코 도형 형식 오류');
+    if (raw.schema !== 'donghaeng-osco-context-v1' || raw.display_only !== true || raw.field_verified !== false || raw.routing_eligible !== false ||
+        raw.source_metadata?.source_as_of !== osm.source_as_of) throw Error('조사 도형 형식 오류');
     const prepared = {};
     for (const [kind] of kinds) {
      if (!Array.isArray(raw.layers?.[kind]) || raw.layers[kind].length !== data.osm_layer_counts[kind]) throw Error('오스코 도형 수 불일치');
@@ -149,15 +162,17 @@
   }
   function featurePopup(f, kind) {
    const p = f.properties, t = p.tags || {}, box = el('section', undefined, 'osco-popup');
-   box.append(el('h3', t.name || kinds.find(k => k[0] === kind)[1]), el('p', 'OSM 등록 · 현장 미확인', 'osco-warning'));
+   const title = f.id === 'node/8213401393' ? '오송역 8번 출입구 · OSM 등록점' : t.name || kinds.find(k => k[0] === kind)[1];
+   box.append(el('h3', title), el('p', 'OSM 등록 · 현장 미확인', 'osco-warning'));
+   if (demoBeta && restKinds.includes(kind)) box.append(el('p', '시연용 개방 가정 · 실제 운영·출입 확인 필요', 'osco-warning'));
    const dl = el('dl');
    for (const [key, title] of [['highway', '도로 종류'], ['amenity', '시설 종류'], ['public_transport', '교통 등록'],
     ['crossing', '횡단 등록'], ['entrance', '출입 등록'], ['wheelchair', '휠체어 표기'], ['tactile_paving', '점자블록 표기'],
     ['kerb', '턱 표기'], ['width', '폭 원문'], ['incline', '경사 원문'], ['access', '출입 표기'], ['opening_hours', '운영시간 표기']]) {
     if (t[key] !== undefined) dl.append(el('dt', title), el('dd', String(t[key])));
    }
-   dl.append(el('dt', '객체 갱신'), el('dd', p.osm_timestamp || '미확인'), el('dt', '자료 기준'), el('dd', data.osm_source_metadata.source_as_of),
-    el('dt', '수집'), el('dd', source('geofabrik-korea-261115-pbf').requested_at_kst), el('dt', '좌표계'), el('dd', 'EPSG:4326'));
+   dl.append(el('dt', '객체 갱신'), el('dd', p.osm_timestamp || '미확인'), el('dt', '자료 기준'), el('dd', osm.source_as_of),
+    el('dt', '수집'), el('dd', osm.requested_at_kst), el('dt', '좌표계'), el('dd', osm.declared_source_crs));
    box.append(dl, el('p', '표기는 등록 원문입니다. 빠진 값은 미확인이며 통행·턱·유효폭·운영을 확인한 것이 아닙니다.'),
     link('OSM 원문 · ' + f.id, 'https://www.openstreetmap.org/' + f.id));
    return box;
@@ -182,7 +197,7 @@
      kind === 'access_points' ? (t.highway === 'crossing' ? '횡' : t.entrance ? '입' : t.barrier === 'kerb' ? '턱' : '접') :
      ({bench: '의', toilets: '화', parking: 'P', shelter: '쉼', drinking_water: '물'}[t.amenity] || '시');
    };
-   for (const [kind, , minZoom] of selectedKinds) {
+   for (const [kind, , minZoom, styleKind = kind] of selectedKinds) {
     counts[kind] = 0;
     if (zoom < minZoom) {zoomHidden = true; continue;}
     for (const {feature: f, bounds: box} of context?.[kind] || []) {
@@ -191,20 +206,21 @@
      if (root.HighContrast?.active() && f.geometry.type === 'Point') {
       const c = f.geometry.coordinates, ll = [c[1], c[0]], pixel = map.latLngToContainerPoint(ll);
       const key = kind + ':' + Math.floor(pixel.x / 32) + ':' + Math.floor(pixel.y / 32);
-      if (!symbolGroups.has(key)) symbolGroups.set(key, {kind, ll, features: []});
+      if (!symbolGroups.has(key)) symbolGroups.set(key, {kind, styleKind, ll, features: []});
       symbolGroups.get(key).features.push(f); rendered++; counts[kind]++; continue;
      }
-     const color = {roads: '#487b72', buildings: '#858b88', access_points: '#aa6431', transport: '#31678b', facilities: '#387e50'}[kind];
-     L.geoJSON(f, {style: {contrastRole: kind === 'buildings' ? 'building' : 'context', color, weight: kind === 'buildings' ? 1 : 2, opacity: .65, fillOpacity: kind === 'buildings' ? .06 : .12},
+     const color = {roads: '#487b72', buildings: '#858b88', access_points: '#aa6431', transport: '#31678b', facilities: '#387e50'}[styleKind];
+     const building = styleKind === 'buildings';
+     L.geoJSON(f, {style: {contrastRole: building ? 'building' : 'context', color, weight: building ? 1 : 2, opacity: .65, fillOpacity: building ? .06 : .12},
       pointToLayer: (feature, ll) => L.circleMarker(ll, {radius: 5, color: '#fff', weight: 1.5, fillColor: color, fillOpacity: .9}),
       onEachFeature: (feature, layer) => layer.bindPopup(() => featurePopup(feature, kind), {maxWidth: 320, maxHeight: 300}),
      }).addTo(layers); rendered++; counts[kind]++;
     }
    }
    for (const group of symbolGroups.values()) {
-    const {features, ll, kind} = group, symbol = features.length > 1 ? String(features.length) : symbolFor(features[0], kind);
+    const {features, ll, kind, styleKind} = group, symbol = features.length > 1 ? String(features.length) : symbolFor(features[0], styleKind);
     L.marker(ll, {title: kinds.find(k => k[0] === kind)[1] + ' · ' + features.length + '건 · 현장 미확인', icon: L.divIcon({
-     className: 'hc-osco-marker hc-osco-' + kind + (features.length > 1 ? ' hc-osco-count' : ''), html: '<span>' + symbol + '</span>', iconSize: [24, 24], iconAnchor: [12, 12],
+     className: 'hc-osco-marker hc-osco-' + styleKind + (features.length > 1 ? ' hc-osco-count' : ''), html: '<span>' + symbol + '</span>', iconSize: [24, 24], iconAnchor: [12, 12],
     })}).bindPopup(() => {
      if (features.length === 1) return featurePopup(features[0], kind);
      const box = el('section', undefined, 'osco-popup');
@@ -215,8 +231,8 @@
     }, {maxWidth: 320, maxHeight: 300}).addTo(layers);
    }
    retry.hidden = !failed || !selectedKinds.length;
-   status.textContent = !selectedKinds.length ? '표시할 자료를 선택해 주세요.' : loading ? '오스코 등록 자료를 불러오는 중…' :
-    failed ? '오스코 자료를 불러오지 못했어요. 다시 시도해 주세요.' :
+   status.textContent = !selectedKinds.length ? '표시할 자료를 선택해 주세요.' : loading ? '등록 자료를 불러오는 중…' :
+    failed ? '조사 자료를 불러오지 못했어요. 다시 시도해 주세요.' :
     overflow ? '화면당 600개까지 표시해요. 확대하거나 표시 항목을 줄여 주세요.' :
     zoomHidden ? '일부 자료는 16~17단계 이상 확대하면 표시돼요.' :
     rendered ? '현재 화면의 등록 객체 ' + rendered + '개 · 현장 미확인' : '이 화면에 표시할 등록 자료가 없어요. 미등록 시설이 있을 수 있어요.';

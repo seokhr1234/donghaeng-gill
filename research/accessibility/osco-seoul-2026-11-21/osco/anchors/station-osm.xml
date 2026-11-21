@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="openstreetmap-cgimap 2.1.1 (2374560 spike-07.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <node id="368637868" visible="true" version="14" changeset="189868333" timestamp="2026-10-02T09:40:02Z" user="Ginsway" uid="23797984" lat="36.6202295" lon="127.3273629">
+  <tag k="name" v="오송"/>
+  <tag k="name:en" v="Osong"/>
+  <tag k="name:ja" v="五松"/>
+  <tag k="name:ko" v="오송"/>
+  <tag k="name:ko-Latn" v="Osong"/>
+  <tag k="name:zh" v="五松"/>
+  <tag k="name:zh-Hans" v="五松"/>
+  <tag k="name:zh-Hant" v="五松"/>
+  <tag k="name:zh-Latn" v="Wusong"/>
+  <tag k="network" v="KTX"/>
+  <tag k="network:wikidata" v="Q167674"/>
+  <tag k="operator" v="한국철도공사"/>
+  <tag k="operator:en" v="Korea Railroad Corporation"/>
+  <tag k="operator:ko" v="한국철도공사"/>
+  <tag k="operator:short" v="KORAIL"/>
+  <tag k="operator:type" v="public"/>
+  <tag k="operator:wikidata" v="Q18169"/>
+  <tag k="operator:wikipedia" v="en:Korail"/>
+  <tag k="public_transport" v="station"/>
+  <tag k="railway" v="station"/>
+  <tag k="railway:ref" v="오송"/>
+  <tag k="station" v="train"/>
+  <tag k="train" v="yes"/>
+  <tag k="wikidata" v="Q54285"/>
+  <tag k="wikipedia" v="ko:오송역"/>
+ </node>
+ <node id="8213401393" visible="true" version="1" changeset="95612674" timestamp="2020-12-10T11:22:59Z" user="user_5292863" uid="5292863" lat="36.6216899" lon="127.3265951">
+  <tag k="railway" v="subway_entrance"/>
+  <tag k="ref" v="8"/>
+ </node>
+ <node id="10196145723" visible="true" version="8" changeset="168033257" timestamp="2025-06-24T07:02:34Z" user="대전맨" uid="14672717" lat="36.6195260" lon="127.3267299">
+  <tag k="bench" v="yes"/>
+  <tag k="bin" v="yes"/>
+  <tag k="bus" v="yes"/>
+  <tag k="departures_board" v="realtime"/>
+  <tag k="highway" v="bus_stop"/>
+  <tag k="lit" v="yes"/>
+  <tag k="name" v="오송역8 (517번)"/>
+  <tag k="name:en" v="Osong Station 8 (Bus No. 517)"/>
+  <tag k="name:ko" v="오송역8 (517번)"/>
+  <tag k="public_transport" v="platform"/>
+  <tag k="ref" v="1462"/>
+  <tag k="shelter" v="yes"/>
+  <tag k="tactile_paving" v="yes"/>
+ </node>
+</osm>

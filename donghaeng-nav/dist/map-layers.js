@@ -7,7 +7,7 @@ function create(map,{onOpen=()=>{},researchPanel=null}={}){
  const tabs=doc.createElement('div');tabs.className='map-layer-tabs';tabs.role='tablist';tabs.setAttribute('aria-label','지도 표시');body.append(tabs);
  const originals=[doc.querySelector('.facility-control'),doc.querySelector('.precision-control')];
  const panels=[],buttons=[];let active=0;
- const names=['시설','경사','지도 자료',...(researchPanel?['오스코']:[])];
+ const names=['시설','경사','지도 자료',...(researchPanel?['조사 지도']:[])];
  for(const [i,name] of names.entries()){
   const button=doc.createElement('button');button.type='button';button.role='tab';button.id='map-layer-tab-'+i;button.textContent=name;button.setAttribute('aria-controls','map-layer-panel-'+i);tabs.append(button);buttons.push(button);
   const panel=doc.createElement('div');panel.id='map-layer-panel-'+i;panel.role='tabpanel';panel.setAttribute('aria-labelledby',button.id);body.append(panel);panels.push(panel);

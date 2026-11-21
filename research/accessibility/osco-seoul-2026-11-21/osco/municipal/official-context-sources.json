@@ -1,0 +1,105 @@
+{
+  "collected_date_kst": "2026-11-21",
+  "sources": [
+    {
+      "name": "cjmap-user-manual",
+      "url": "https://map.cheongju.go.kr/cp_manual.pdf",
+      "http_status": 503,
+      "body_path": "primary/cjmap-user-manual.html",
+      "bytes": 91,
+      "sha256": "2f85832e31ca57711e6107af6b142363351ae516adb71c69afc643fac26be7f6",
+      "observation": "청주시 지도모아 매뉴얼 원본 직접 확보 실패.",
+      "field_verified": false
+    },
+    {
+      "name": "geomarket-crossings",
+      "url": "https://geomarket.kr/user/dataset/view.do?data_sn=474",
+      "http_status": 200,
+      "body_path": "primary/geomarket-crossings.html",
+      "bytes": 48634,
+      "sha256": "1814516f7f9860329f3943469fc98faed75fcf9410b4d7612d4030a003412f07",
+      "observation": "카탈로그 실제 HTTP 200 확인. 오송역 주변 포함 2023-09-18 갱신의 EPSG:5186 가공 횡단보도. 전체 ZIP 1만원, 샘플 회원전용. 원본 미확보.",
+      "field_verified": false
+    },
+    {
+      "name": "map-cheongju",
+      "url": "https://map.cheongju.go.kr/main.do",
+      "http_status": 503,
+      "body_path": "primary/map-cheongju.html",
+      "bytes": 91,
+      "sha256": "2f85832e31ca57711e6107af6b142363351ae516adb71c69afc643fac26be7f6",
+      "observation": "청주시 지도모아 공개 화면 검색 색인의 1:1,000 수치지형도 선택 확인. 오스코 도엽의 원본 내려받기 미확보.",
+      "field_verified": false
+    },
+    {
+      "name": "ngii-map-download",
+      "url": "https://www.data.go.kr/data/15059719/fileData.do",
+      "http_status": 503,
+      "body_path": "primary/ngii-map-download.html",
+      "bytes": 91,
+      "sha256": "2f85832e31ca57711e6107af6b142363351ae516adb71c69afc643fac26be7f6",
+      "observation": "공공데이터포털 검색 색인이 국토정보플랫폼 로그인 및 수치지도 다운로드 프로그램을 안내. 오스코 도엽 원본 미확보.",
+      "field_verified": false
+    },
+    {
+      "name": "planning-osong-man-suri",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=620932",
+      "http_status": 503,
+      "body_path": "primary/planning-osong-man-suri.html",
+      "bytes": 91,
+      "sha256": "2f85832e31ca57711e6107af6b142363351ae516adb71c69afc643fac26be7f6",
+      "observation": "토지이음 검색 색인에서 2025-433호 고시와 오송읍 만수리 887-3 일원 확인. 원본 지형도면 미확보.",
+      "field_verified": false
+    },
+    {
+      "name": "station-connection",
+      "url": "https://toktalk.cheongju.go.kr/home/sub.do?menukey=7401&mode=view&no=615151&no=620316&page=32",
+      "http_status": 503,
+      "body_path": "primary/station-connection.html",
+      "bytes": 91,
+      "sha256": "2f85832e31ca57711e6107af6b142363351ae516adb71c69afc643fac26be7f6",
+      "observation": "청주시 공개 민원 검색 색인에 봉산리 102-2 일원 개설공사 안전시설 협의 및 연말 개통 계획 표기. 개통과 현재 보도 상태 미확인.",
+      "field_verified": false
+    },
+    {
+      "name": "tdata-catalog",
+      "url": "https://tdata.cheongju.go.kr/data/dwnld/treePage",
+      "http_status": 503,
+      "body_path": "primary/tdata-catalog.html",
+      "bytes": 91,
+      "sha256": "2f85832e31ca57711e6107af6b142363351ae516adb71c69afc643fac26be7f6",
+      "observation": "청주교통 빅데이터 자료 카탈로그 본문 직접 확보 실패.",
+      "field_verified": false
+    },
+    {
+      "name": "tdata-terms",
+      "url": "https://tdata.cheongju.go.kr/utgu/dtup/page",
+      "http_status": 503,
+      "body_path": "primary/tdata-terms.html",
+      "bytes": 91,
+      "sha256": "2f85832e31ca57711e6107af6b142363351ae516adb71c69afc643fac26be7f6",
+      "observation": "청주교통 빅데이터 포털 수록 공공데이터는 CC 적용과 개별 이용허락 확인을 안내. 별도 시스템으로 교통지리정보시스템 WFS 도형에 자동 적용하지 않음.",
+      "field_verified": false
+    },
+    {
+      "name": "tgis-crs-doc",
+      "url": "https://www.cjtgis.go.kr/introduce/introduce01.do",
+      "http_status": 200,
+      "body_path": "primary/tgis-crs-doc.html",
+      "bytes": 7161,
+      "sha256": "44b6ad36e679ddd9737a3b3bd1a3bd68c0e7b2936ced6c2b7d7fe37d2aa51d96",
+      "observation": "교통지리정보시스템 공식 좌표계 설명 본문을 직접 확보. GIS 원본 EPSG 코드는 WFS 응답 명시 기준.",
+      "field_verified": false
+    },
+    {
+      "name": "tgis-layer-doc",
+      "url": "https://www.cjtgis.go.kr/introduce/introduce02.do",
+      "http_status": 200,
+      "body_path": "primary/tgis-layer-doc.html",
+      "bytes": 17850,
+      "sha256": "77b23eb805769dbb93bb28ec8847ec15fb9abd0fd05c43c2c0526445e788b3dc",
+      "observation": "교통지리정보시스템 공식 레이어 설명 본문을 직접 확보.",
+      "field_verified": false
+    }
+  ]
+}

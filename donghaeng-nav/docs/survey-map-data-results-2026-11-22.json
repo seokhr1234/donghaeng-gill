@@ -1,0 +1,44 @@
+{
+  "pass": true,
+  "source_snapshot": "2026-11-20T21:21:21Z",
+  "inputs": {
+    "osco/osm/osm-pedestrian.geojson.gz": "d97ffca840a377cf75e87305d5e7b1de9816ebff67ea3668be9f4ee864930f38",
+    "osco/osm/osm-access.geojson.gz": "f70cdca6cc74159ef27252bb59430d8c9b4c77e80463b72bb67f7f6ce8883f82",
+    "osco/osm/osm-transit.geojson.gz": "a6d4bb860196814306b1e7cc4c78467d06a64fdc1494dff88d6e15efca1add4d",
+    "osco/osm/osm-support.geojson.gz": "5908d9d021052f5ca016cb6938036c3636f5333b85ab312aa5680490cda05b2e",
+    "osco/osm/osm-rest.geojson.gz": "949b597525af6dd88b5825475cd138c8e19a9f4dec6736084f81deef679c9c55",
+    "osco/osm/osm-buildings.geojson.gz": "0f65f56b869479d4a0f22277cb90dc8f88d6894593d5721ed6f2a202c96b8d00",
+    "seoul/osm/osm-pedestrian.geojson.gz": "df1ffb73528a5e25bea9b772fa03f25a650c9099e03cf4c761053ee1f3536308",
+    "seoul/osm/osm-buildings.geojson.gz": "43be919986efdd7ec5ca01e46412469f9ccc63cab9530596f67fca8e564522fa",
+    "seoul/osm/seoul-citywide-rest.geojson.gz": "0dbb45e6d4a2c256706e3831575dd9a10ff56d09cedbc307171054b7437ccd0d"
+  },
+  "outputs": [
+    {
+      "path": "data/osco/info.json",
+      "sha256": "d872d02bc418b7478f4c5a9eafbae10e7e3aa532fccb2b72dc168368813eadde",
+      "bytes": 8149
+    },
+    {
+      "path": "data/osco/context.json",
+      "sha256": "227d1c9b9195d9da3866cb2138dae47c1b5ec7285b8d3b0960d94c6401cbbf41",
+      "bytes": 14213505
+    }
+  ],
+  "counts": {
+    "roads": 2383,
+    "access_points": 1787,
+    "transport": 156,
+    "facilities": 45,
+    "rest": 415,
+    "buildings": 4700,
+    "seoul_roads": 3182,
+    "seoul_buildings": 9236,
+    "seoul_rest": 10523
+  },
+  "source_geometry_and_tags_preserved": true,
+  "municipal_or_secondary_geometry_published": false,
+  "new_routing_edges": 0,
+  "new_slope_values_promoted": 0,
+  "field_verified": false,
+  "routing_eligible": false
+}

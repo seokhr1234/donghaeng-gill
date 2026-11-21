@@ -1,0 +1,13 @@
+{
+  "source_url": "https://access.visitkorea.or.kr/ms/detail.do?cotId=b1136625-007e-4c71-b9c0-5b8800c41e66",
+  "final_url": "https://access.visitkorea.or.kr/ms/detail.do?cotId=b1136625-007e-4c71-b9c0-5b8800c41e66",
+  "status": 200,
+  "headers": {
+    "date": "Sat, 21 Nov 2026 05:13:18 GMT",
+    "content-type": "text/html;charset=UTF-8"
+  },
+  "sha256": "eb8bb08a67596457c749689f3681493c6f81e0161feb1a5e6e18695417706b6c",
+  "bytes": 42693,
+  "requested_at_kst": "2026-11-21T14:13:16.809655+09:00",
+  "completed_at_kst": "2026-11-21T14:13:18.339727+09:00"
+}

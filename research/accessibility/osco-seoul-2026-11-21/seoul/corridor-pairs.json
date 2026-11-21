@@ -1,0 +1,26 @@
+[
+  {
+    "id": "wolgok-exit-4-to-library",
+    "from": {
+      "id": "node/3401296560",
+      "name": "월곡역 4번 출구",
+      "osm_node": 3401296560,
+      "coordinates": [
+        127.0421491,
+        37.6023859
+      ],
+      "coordinate_role": "OSM 등록 출구 위치",
+      "source_url": "https://www.openstreetmap.org/node/3401296560"
+    },
+    "to": {
+      "id": "way/1149429846",
+      "name": "월곡꿈그림도서관",
+      "coordinates": [
+        127.04179198949807,
+        37.60414075
+      ],
+      "coordinate_role": "OSM 도서관 폴리곤 대표점",
+      "source_url": "https://www.openstreetmap.org/way/1149429846"
+    }
+  }
+]

@@ -60,6 +60,16 @@ try {
  await page.evaluate(() => map.setZoom(13, {animate: false}));
  assert.equal(await page.evaluate(() => oscoController.snapshot().rendered), 0);
  checks.push('503 and invalid routing-eligible payload stay undrawn and can retry successfully; viewport/zoom filtering and a 600-object cap prevent an all-roads overlay.');
+ await page.getByRole('button', {name: '월곡역 주변 보기', exact: true}).click();
+ await page.locator('#osco-seoul_rest').check();
+ await page.waitForFunction(() => oscoController.snapshot().rendered > 0);
+ await page.locator('#osco-seoul_roads').check();
+ await page.locator('#osco-seoul_buildings').check();
+ await page.evaluate(() => map.setZoom(17, {animate: false}));
+ assert.match(await page.locator('#map-area-label').innerText(), /서울/);
+ assert((await page.evaluate(() => oscoController.snapshot().rendered)) <= 600);
+ assert.match(await page.locator('.osco-panel').textContent(), /2026-11-20T21:21:21Z/);
+ checks.push('Seoul rest observations and Wolgok pedestrian and building overlays reuse the lazy, bounded map display.');
  await page.evaluate(() => {
   tripQuestions.close();
   const [venue, station] = OscoMap.places();

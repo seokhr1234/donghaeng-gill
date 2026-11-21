@@ -1,0 +1,243 @@
+{
+  "study_bbox_lonlat": [
+    127.28,
+    36.59,
+    127.39,
+    36.67
+  ],
+  "core_bbox_lonlat": [
+    127.315,
+    36.61,
+    127.35,
+    36.64
+  ],
+  "field_verified": false,
+  "routing_eligible": false,
+  "records": [
+    {
+      "name": "오송호수공원",
+      "provider": "한국관광공사 열린관광",
+      "category": "공원 대표점",
+      "source_modified_date": "2026-11-10",
+      "coordinates": [
+        127.3235,
+        36.6315
+      ],
+      "coordinate_role": "provider_map_reference",
+      "source_crs_documented": null,
+      "coordinate_order_assumed": "WGS84-style longitude,latitude from map link",
+      "address_as_listed": "충청북도 청주시 흥덕구 오송읍 오송생명로 150",
+      "hours_as_listed": "상시 개방, 연중무휴",
+      "document_findings": [
+        "호수 주변 수상 데크 안내",
+        "한국관광공사 접근 안내의 넓은 이동경로와 내부 턱 없음 표기",
+        "공원 주변 주차 공간 2곳 안내"
+      ],
+      "reference_distance_from_osco_m_approx": 1186,
+      "osm_review": "기존 OSM 2026-11-15 스냅샷의 이름 미등록 공원 way/575590555 외곽과 약 10m. 동일 지점 또는 해당 공원 출입구로 확정하지 않음.",
+      "unverified": [
+        "개별 벤치 위치·수",
+        "보행 연결과 현재 노면·폭",
+        "공원 주요 출입구",
+        "실제 개방과 저상버스",
+        "주차 가용"
+      ],
+      "source": {
+        "source_url": "https://access.visitkorea.or.kr/ms/detail.do?cotId=b1136625-007e-4c71-b9c0-5b8800c41e66",
+        "status": 200,
+        "sha256": "eb8bb08a67596457c749689f3681493c6f81e0161feb1a5e6e18695417706b6c",
+        "bytes": 42693,
+        "requested_at_kst": "2026-11-21T14:13:16.809655+09:00",
+        "completed_at_kst": "2026-11-21T14:13:18.339727+09:00"
+      },
+      "same_provider_detail_response": {
+        "source_url": "https://korean.visitkorea.or.kr/call",
+        "form_data": {
+          "cmd": "TOUR_CONTENT_BODY_DETAIL",
+          "cotId": "31b27d23-ceab-4d6e-8ce7-8f30cd41a00e",
+          "locationx": "",
+          "locationy": "",
+          "stampId": ""
+        },
+        "status": 200,
+        "bytes": 13772,
+        "sha256": "9ab639b1addd62eedb0ec1bc77cffa09ee6f9b69e72c3e08e9d589f5ad6c7703",
+        "retrieved_at_kst": "2026-11-21T14:22:32.385600+09:00",
+        "completed_at_kst": "2026-11-21T14:22:33.468643+09:00"
+      }
+    },
+    {
+      "name": "청주오스코",
+      "provider": "행정안전부 자료, 괴산군 게시",
+      "category": "행사장 층별 도면",
+      "source_document": "2025 대한민국 정부혁신 박람회 행사계획 2025년 11월",
+      "source_document_pdf_creation_timestamp": "2025-11-13T04:20:16Z",
+      "pdf_pages": 21,
+      "relevant_pdf_page": 14,
+      "document_findings": [
+        "1층 레이아웃",
+        "전시장 도면",
+        "2층 레이아웃"
+      ],
+      "coordinate_role": "floor_plan_ungeoreferenced",
+      "coordinates": null,
+      "unverified": [
+        "현재 실내 배치",
+        "이용자 개방 범위",
+        "실내 좌표",
+        "출입문·층간 연결"
+      ],
+      "source": {
+        "source_url": "https://www.goesan.go.kr/DATA/bbs/251/7518D116-5CE1-E705-61F6-BD2F681967F6.pdf",
+        "status": 200,
+        "sha256": "5b7fc8e76dc167881c7ceffecf5da53efde94222bd06efeacb99bdff6fe332e3",
+        "bytes": 1874271,
+        "requested_at_kst": "2026-11-21T14:17:57.640049+09:00",
+        "completed_at_kst": "2026-11-21T14:18:02.662803+09:00"
+      }
+    },
+    {
+      "name": "조천연꽃공원",
+      "provider": "한국관광공사 열린관광",
+      "category": "조사 상자 남쪽의 참고 공원",
+      "coordinates": [
+        127.300687218499,
+        36.5852633384906
+      ],
+      "coordinate_role": "provider_map_reference",
+      "source_crs_documented": null,
+      "included_in_study_counts": false,
+      "source": {
+        "source_url": "https://access.visitkorea.or.kr/ms/detail.do?cotId=e9669bce-a3df-41b9-9e21-4beba354e061",
+        "status": 200,
+        "sha256": "8afa5602112d94468c062bb51819e36dc464e9a70f9031c1a8d0b06adb636d87",
+        "bytes": 42863,
+        "requested_at_kst": "2026-11-21T14:14:56.844917+09:00",
+        "completed_at_kst": "2026-11-21T14:14:58.340248+09:00"
+      }
+    },
+    {
+      "name": "드롭탑 오송역언더패스점",
+      "provider": "한국관광공사 대한민국 구석구석",
+      "category": "민간 카페 참고",
+      "coordinates": [
+        127.32974063729958,
+        36.616667582261236
+      ],
+      "coordinate_role": "provider_map_reference_private_facility",
+      "hours_as_listed": "상시 개방 · 연중무휴",
+      "unverified": [
+        "현재 영업·일반 접근",
+        "비구매자 대기 가능",
+        "개별 좌석·출입문"
+      ],
+      "source": {
+        "source_url": "https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=c199869a-34a5-4d98-ba37-dc95be1d43e0",
+        "status": 200,
+        "sha256": "f6d62a331fb85d87be7c99182752c06add67ec8a58b93c183a95a64d4a654506",
+        "bytes": 112572,
+        "requested_at_kst": "2026-11-21T14:14:57.062677+09:00",
+        "completed_at_kst": "2026-11-21T14:14:59.015320+09:00"
+      },
+      "source_crs_documented": null,
+      "coordinate_order_assumed": "WGS84-style longitude,latitude as in KTO map",
+      "address_as_listed": "충청북도 청주시 흥덕구 오송읍 오송7길 48",
+      "public_rest_inventory": false,
+      "detail_response": {
+        "source_url": "https://korean.visitkorea.or.kr/call",
+        "form_data": {
+          "cmd": "TOUR_CONTENT_BODY_DETAIL",
+          "cotId": "c199869a-34a5-4d98-ba37-dc95be1d43e0",
+          "locationx": "",
+          "locationy": "",
+          "stampId": ""
+        },
+        "status": 200,
+        "bytes": 8176,
+        "sha256": "b08bfc34b2e893e9a2372aac4768b7ab9e3eb5abcc5d77bf2d5a9bc407d7fdb4",
+        "retrieved_at_kst": "2026-11-21T14:22:30.897480+09:00",
+        "completed_at_kst": "2026-11-21T14:22:32.385235+09:00"
+      }
+    }
+  ],
+  "acquisition_limits": [
+    {
+      "dataset": "청주시 연도별 도시공원 현황",
+      "source": {
+        "source_url": "https://www.data.go.kr/download/15162266/fileData.do",
+        "status": 503,
+        "sha256": "2f85832e31ca57711e6107af6b142363351ae516adb71c69afc643fac26be7f6",
+        "bytes": 91,
+        "requested_at_kst": "2026-11-21T14:14:16.661836+09:00",
+        "completed_at_kst": "2026-11-21T14:14:22.257750+09:00"
+      }
+    },
+    {
+      "dataset": "공공데이터포털 전국도시공원 표준데이터",
+      "source": {
+        "source_url": "https://www.data.go.kr/download/15012890/standard.do?dataType=csv",
+        "status": 503,
+        "sha256": "2f85832e31ca57711e6107af6b142363351ae516adb71c69afc643fac26be7f6",
+        "bytes": 91,
+        "requested_at_kst": "2026-11-21T14:14:16.662556+09:00",
+        "completed_at_kst": "2026-11-21T14:14:22.257846+09:00"
+      }
+    },
+    {
+      "dataset": "국토교통부 GIS건물통합정보 충청북도 SHP",
+      "source": {
+        "source_url": "https://www.vworld.kr/dtmk/downloadResourceFile.do?ds_id=20171128DS00010&fileNo=4495",
+        "status": 503,
+        "sha256": "4dc259c6b598cc194255ee5bd4566fa85fcce887296d64b64a7e549522cbc108",
+        "bytes": 100,
+        "requested_at_kst": "2026-11-21T14:14:16.663119+09:00",
+        "completed_at_kst": "2026-11-21T14:14:17.842387+09:00"
+      }
+    },
+    {
+      "dataset": "국토지리정보원 연속수치지형도 건물 충청북도 SHP",
+      "source": {
+        "source_url": "https://www.vworld.kr/dtmk/downloadResourceFile.do?ds_id=30162&fileNo=16",
+        "status": 503,
+        "sha256": "4dc259c6b598cc194255ee5bd4566fa85fcce887296d64b64a7e549522cbc108",
+        "bytes": 100,
+        "requested_at_kst": "2026-11-21T14:14:16.663558+09:00",
+        "completed_at_kst": "2026-11-21T14:14:17.982331+09:00"
+      }
+    },
+    {
+      "dataset": "청주시 도로명주소 건물 WFS 질의",
+      "source": {
+        "source_url": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3ATL_SPBD_BULD&outputFormat=application%2Fjson&bbox=229000%2C447500%2C231100%2C448900%2CEPSG%3A5186&maxFeatures=1000",
+        "status": 400,
+        "sha256": "c6a684f409217cfdb13bf9557c16ccb789465ef5cc35b2fe5f0ca3ec4a61f87e",
+        "bytes": 526,
+        "requested_at_kst": "2026-11-21T14:15:57.185116+09:00",
+        "completed_at_kst": "2026-11-21T14:15:57.638514+09:00"
+      },
+      "application_response": "Feature type tgis:TL_SPBD_BULD unknown"
+    },
+    {
+      "dataset": "국민안전24 쉼터 공개 지도",
+      "source": {
+        "source_url": "https://www.safekorea.go.kr/safekorea-kor/flsm/flsm/facilitiesSafteyMap.do?menuSn=2",
+        "status": 503,
+        "sha256": "2f85832e31ca57711e6107af6b142363351ae516adb71c69afc643fac26be7f6",
+        "bytes": 91,
+        "requested_at_kst": "2026-11-21T14:14:56.842511+09:00",
+        "completed_at_kst": "2026-11-21T14:15:02.069505+09:00"
+      }
+    },
+    {
+      "dataset": "나라장터 오송역 2층 예전 공고 첨부 도면",
+      "source": {
+        "source_url": "https://www.g2b.go.kr/pn/pnp/pnpe/UntyAtchFile/downloadFile.do?bidPbancNo=R26BK01271354&bidPbancOrd=000&fileSeq=2&fileType=&prcmBsneSeCd=03",
+        "status": 503,
+        "sha256": "2f85832e31ca57711e6107af6b142363351ae516adb71c69afc643fac26be7f6",
+        "bytes": 91,
+        "requested_at_kst": "2026-11-21T14:17:57.633740+09:00",
+        "completed_at_kst": "2026-11-21T14:18:03.003400+09:00"
+      }
+    }
+  ]
+}

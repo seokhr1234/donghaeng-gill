@@ -1,0 +1,16 @@
+{
+  "source_url": "https://docs.overturemaps.org/attribution/",
+  "final_url": "https://docs.overturemaps.org/attribution/",
+  "status": 200,
+  "headers": {
+    "content-type": "text/html; charset=utf-8",
+    "last-modified": "Fri, 20 Nov 2026 17:30:31 GMT",
+    "etag": "\"6b0083b7-1f994\"",
+    "date": "Sat, 21 Nov 2026 05:15:57 GMT",
+    "content-length": "129428"
+  },
+  "sha256": "41b2e066da82bbcd9a3567115b877da0d86ec2f4cd1cdbb66818912d16fefada",
+  "bytes": 129428,
+  "requested_at_kst": "2026-11-21T14:15:57.192039+09:00",
+  "completed_at_kst": "2026-11-21T14:15:57.734302+09:00"
+}
