@@ -1,0 +1,397 @@
+{
+  "source_metadata": {
+    "scope_id": "wolgok",
+    "scope_name": "서울 월곡역 생활권",
+    "source": "OpenStreetMap / Geofabrik",
+    "source_url": "https://download.geofabrik.de/asia/south-korea/south-korea-261120.osm.pbf",
+    "source_as_of": "2026-11-20T21:21:21Z",
+    "retrieved_at_kst": "2026-11-21T14:17:43+09:00",
+    "source_crs": "EPSG:4326",
+    "distance_calculation_crs": "EPSG:5186",
+    "license": "ODbL-1.0",
+    "attribution": "© OpenStreetMap contributors",
+    "license_url": "https://www.openstreetmap.org/copyright",
+    "field_verified": false,
+    "routing_eligible": false,
+    "source_pbf_sha256": "492ceebb946500fa54dd1b460b4ff923884dd9e673f65d3750e1d60122b85a8e",
+    "source_pbf_bytes": 292399858,
+    "source_pbf_md5": "85bf57c0652e9bb68e74e667e1f4fa13",
+    "publisher_md5_verified": true,
+    "reference_point_source": "existing repository donghaeng-nav/dist/final-model.js",
+    "bounds_lon_lat": [
+      126.995,
+      37.568,
+      127.089,
+      37.637
+    ],
+    "reference_point_lon_lat": [
+      127.0414554,
+      37.60192
+    ],
+    "distance_definition": "Minimum straight-line planar distance from reference point to registered geometry in EPSG:5186; original geometry retained; 1/3 km circles are within bbox.",
+    "coverage_limit": "Visible registration in a single OSM release. Geometry is not field surveying, and registered ways/areas may include closed, private, stairs or grade-separated passages.",
+    "allowed_geometry_differences": "OSM IDs are counted once per layer, layers can overlap, tags preserved. No snapped connection, entrance point, or new slope."
+  },
+  "counts": {
+    "pedestrian": {
+      "bbox": 7597,
+      "within_1000m": 265,
+      "within_3000m": 3182,
+      "geometry_types": {
+        "MultiPolygon": 20,
+        "LineString": 7442,
+        "Polygon": 135
+      },
+      "coverage_tags": {
+        "access": 103,
+        "wheelchair": 2,
+        "incline": 178,
+        "width": 235,
+        "est_width": 0,
+        "surface": 1770,
+        "smoothness": 34,
+        "kerb": 0,
+        "kerb:height": 0,
+        "tactile_paving": 85,
+        "crossing": 1892,
+        "lit": 226,
+        "handrail": 129,
+        "bridge": 238,
+        "tunnel": 101,
+        "layer": 369,
+        "opening_hours": 0,
+        "level": 4,
+        "sidewalk": 135,
+        "sidewalk:left": 11,
+        "sidewalk:right": 11,
+        "sidewalk:both": 0
+      }
+    },
+    "road_context": {
+      "bbox": 21627,
+      "within_1000m": 1008,
+      "within_3000m": 9936,
+      "geometry_types": {
+        "LineString": 21506,
+        "Polygon": 121
+      },
+      "coverage_tags": {
+        "access": 186,
+        "wheelchair": 2,
+        "incline": 240,
+        "width": 367,
+        "est_width": 0,
+        "surface": 3525,
+        "smoothness": 80,
+        "kerb": 0,
+        "kerb:height": 0,
+        "tactile_paving": 89,
+        "crossing": 1895,
+        "lit": 294,
+        "handrail": 129,
+        "bridge": 447,
+        "tunnel": 241,
+        "layer": 771,
+        "opening_hours": 0,
+        "level": 4,
+        "sidewalk": 249,
+        "sidewalk:left": 101,
+        "sidewalk:right": 101,
+        "sidewalk:both": 59
+      }
+    },
+    "rest": {
+      "bbox": 1340,
+      "within_1000m": 46,
+      "within_3000m": 577,
+      "geometry_types": {
+        "Point": 598,
+        "MultiPolygon": 13,
+        "Polygon": 710,
+        "LineString": 19
+      },
+      "coverage_tags": {
+        "access": 9,
+        "wheelchair": 7,
+        "incline": 0,
+        "width": 0,
+        "est_width": 0,
+        "surface": 1,
+        "smoothness": 0,
+        "kerb": 0,
+        "kerb:height": 0,
+        "tactile_paving": 167,
+        "crossing": 0,
+        "lit": 126,
+        "handrail": 0,
+        "bridge": 0,
+        "tunnel": 0,
+        "layer": 6,
+        "opening_hours": 20,
+        "level": 2,
+        "sidewalk": 0,
+        "sidewalk:left": 0,
+        "sidewalk:right": 0,
+        "sidewalk:both": 0
+      }
+    },
+    "buildings": {
+      "bbox": 20766,
+      "within_1000m": 877,
+      "within_3000m": 9260,
+      "geometry_types": {
+        "Point": 38,
+        "MultiPolygon": 74,
+        "Polygon": 20654
+      },
+      "coverage_tags": {
+        "access": 6,
+        "wheelchair": 14,
+        "incline": 0,
+        "width": 0,
+        "est_width": 0,
+        "surface": 1,
+        "smoothness": 0,
+        "kerb": 0,
+        "kerb:height": 0,
+        "tactile_paving": 0,
+        "crossing": 0,
+        "lit": 0,
+        "handrail": 0,
+        "bridge": 1,
+        "tunnel": 0,
+        "layer": 316,
+        "opening_hours": 32,
+        "level": 9,
+        "sidewalk": 0,
+        "sidewalk:left": 0,
+        "sidewalk:right": 0,
+        "sidewalk:both": 0
+      }
+    },
+    "access": {
+      "bbox": 10438,
+      "within_1000m": 329,
+      "within_3000m": 4544,
+      "geometry_types": {
+        "Point": 7741,
+        "MultiPolygon": 1,
+        "LineString": 2667,
+        "Polygon": 29
+      },
+      "coverage_tags": {
+        "access": 54,
+        "wheelchair": 167,
+        "incline": 148,
+        "width": 78,
+        "est_width": 0,
+        "surface": 856,
+        "smoothness": 3,
+        "kerb": 116,
+        "kerb:height": 0,
+        "tactile_paving": 776,
+        "crossing": 4031,
+        "lit": 209,
+        "handrail": 125,
+        "bridge": 17,
+        "tunnel": 2,
+        "layer": 19,
+        "opening_hours": 23,
+        "level": 51,
+        "sidewalk": 0,
+        "sidewalk:left": 0,
+        "sidewalk:right": 0,
+        "sidewalk:both": 0
+      }
+    },
+    "transit": {
+      "bbox": 1821,
+      "within_1000m": 65,
+      "within_3000m": 803,
+      "geometry_types": {
+        "Point": 1753,
+        "Polygon": 30,
+        "LineString": 38
+      },
+      "coverage_tags": {
+        "access": 4,
+        "wheelchair": 59,
+        "incline": 0,
+        "width": 0,
+        "est_width": 0,
+        "surface": 0,
+        "smoothness": 0,
+        "kerb": 0,
+        "kerb:height": 0,
+        "tactile_paving": 216,
+        "crossing": 0,
+        "lit": 173,
+        "handrail": 0,
+        "bridge": 0,
+        "tunnel": 15,
+        "layer": 21,
+        "opening_hours": 0,
+        "level": 10,
+        "sidewalk": 0,
+        "sidewalk:left": 0,
+        "sidewalk:right": 0,
+        "sidewalk:both": 0
+      }
+    },
+    "support": {
+      "bbox": 224,
+      "within_1000m": 6,
+      "within_3000m": 81,
+      "geometry_types": {
+        "Point": 174,
+        "Polygon": 35,
+        "LineString": 15
+      },
+      "coverage_tags": {
+        "access": 16,
+        "wheelchair": 14,
+        "incline": 0,
+        "width": 0,
+        "est_width": 0,
+        "surface": 0,
+        "smoothness": 0,
+        "kerb": 0,
+        "kerb:height": 0,
+        "tactile_paving": 0,
+        "crossing": 0,
+        "lit": 1,
+        "handrail": 0,
+        "bridge": 0,
+        "tunnel": 0,
+        "layer": 0,
+        "opening_hours": 4,
+        "level": 0,
+        "sidewalk": 0,
+        "sidewalk:left": 0,
+        "sidewalk:right": 0,
+        "sidewalk:both": 0
+      }
+    }
+  },
+  "rest_primary_categories": {
+    "bbox": {
+      "bench=yes": 195,
+      "shelter=yes": 27,
+      "amenity=library": 117,
+      "leisure=garden": 186,
+      "amenity=bench": 207,
+      "leisure=playground": 195,
+      "amenity=shelter": 52,
+      "leisure=picnic_table": 73,
+      "leisure=park": 282,
+      "amenity=smoking_area": 3,
+      "amenity=public_building": 1,
+      "landuse=recreation_ground": 1,
+      "amenity=place_of_worship": 1
+    },
+    "1000": {
+      "bench=yes": 1,
+      "amenity=library": 5,
+      "amenity=bench": 3,
+      "leisure=garden": 2,
+      "leisure=park": 32,
+      "leisure=playground": 3
+    },
+    "3000": {
+      "bench=yes": 94,
+      "shelter=yes": 17,
+      "amenity=library": 62,
+      "leisure=garden": 22,
+      "leisure=playground": 72,
+      "amenity=bench": 103,
+      "amenity=shelter": 9,
+      "leisure=picnic_table": 56,
+      "leisure=park": 139,
+      "amenity=public_building": 1,
+      "landuse=recreation_ground": 1,
+      "amenity=smoking_area": 1
+    }
+  },
+  "invalid_geometries_inside_bbox": 2,
+  "national_scan_notes": {},
+  "named_landmarks": {
+    "node/357827455": {
+      "name": "월곡역",
+      "distance_m": 37.21,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "월곡역",
+        "name:en": "Wolgok Station",
+        "name:ko": "월곡역",
+        "name:ko-Latn": "Wolgokyeok",
+        "network": "서울특별시 시내버스",
+        "network:ko": "서울특별시 시내버스",
+        "network:wikidata": "Q3724007",
+        "public_transport": "platform",
+        "route_ref": "148;163;1113;120;1226"
+      },
+      "source_url": "https://www.openstreetmap.org/node/357827455"
+    },
+    "node/357863050": {
+      "name": "월곡역",
+      "distance_m": 123.88,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "월곡역",
+        "name:en": "Wolgok Station",
+        "name:ko": "월곡역",
+        "name:ko-Latn": "Wolgokyeok",
+        "network": "서울특별시 시내버스",
+        "network:ko": "서울특별시 시내버스",
+        "network:wikidata": "Q3724007",
+        "public_transport": "platform",
+        "route_ref": "1113;163;120;148"
+      },
+      "source_url": "https://www.openstreetmap.org/node/357863050"
+    }
+  },
+  "assets": [
+    {
+      "path": "osm-pedestrian.geojson.gz",
+      "bytes": 717062,
+      "sha256": "df1ffb73528a5e25bea9b772fa03f25a650c9099e03cf4c761053ee1f3536308"
+    },
+    {
+      "path": "osm-road_context.geojson.gz",
+      "bytes": 2083602,
+      "sha256": "1e79f456f847e05106cd305b0926bb432ae6796aba162fffab21184537f591f7"
+    },
+    {
+      "path": "osm-rest.geojson.gz",
+      "bytes": 134182,
+      "sha256": "d53277e82e988d2a8bc8f49265bc85537b7726342eb92464f3e07dab4eb6ea88"
+    },
+    {
+      "path": "osm-buildings.geojson.gz",
+      "bytes": 1677534,
+      "sha256": "43be919986efdd7ec5ca01e46412469f9ccc63cab9530596f67fca8e564522fa"
+    },
+    {
+      "path": "osm-access.geojson.gz",
+      "bytes": 426908,
+      "sha256": "88ab55e07246b94c520d2197ddcaa0299f2b7ae56c375f5b215aaae613d12191"
+    },
+    {
+      "path": "osm-transit.geojson.gz",
+      "bytes": 122512,
+      "sha256": "0e6f08b136097c31e725efa32a9c455212c6cd7ff45ac7e37b795fe05c8fbd13"
+    },
+    {
+      "path": "osm-support.geojson.gz",
+      "bytes": 16558,
+      "sha256": "415f85fe64ce8c6c251bb57b9111fda854c398ec6a67b0921d274c6f2aaf1f94"
+    },
+    {
+      "path": "osm-invalid-geometries.json.gz",
+      "bytes": 1700,
+      "sha256": "cc339262f98096d838df75d2a4f848a308592cea193000683fbeaff67faaaa09"
+    }
+  ]
+}

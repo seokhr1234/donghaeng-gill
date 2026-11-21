@@ -8,10 +8,14 @@ const Beta = require('../dist/demo-beta.js');
 const Endpoint = require('../dist/endpoint-routing.js');
 const {chromium} = require('playwright');
 const shelter = {id: 'closed', kind: 'shelter', geometry: {type: 'Point', coordinates: [127.04, 37.59]},
-  properties: {name: '등록 쉼터', official_hours_conflict: true, operation: 'closed'}};
+  properties: {name: '등록 쉼터', official_hours_conflict: true, operation: 'closed', access: 'private'}};
 const [candidate] = Beta.places([shelter, {...shelter, geometry: null}]);
 assert.equal(candidate.id, 'closed');
-assert.equal(Beta.places([{...shelter, properties: {access: 'private'}}]).length, 0);
+for (const properties of [{access: 'private'}, {osm_tags: {access: 'no'}}]) {
+  const [limited] = Beta.places([{...shelter, properties: {...shelter.properties, ...properties}}]);
+  assert.equal(limited.id, 'closed');
+  assert.match(limited.evidenceNotice, /개방으로 가정/);
+}
 assert.equal(E.restStatus({...candidate, operation: 'closed'}).eligible, false);
 assert.equal(E.restStatus(candidate).eligible, true);
 assert.equal(Beta.nearbyRest(E, [candidate.ll], [candidate], {rest: true}).id, 'closed');

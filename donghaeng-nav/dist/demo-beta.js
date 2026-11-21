@@ -5,14 +5,13 @@
   'use strict';
 
   const kinds = ['bench', 'seating', 'shelter', 'library'];
-  const availabilityNote = '운영시간과 자료 확인 상태를 제외한 시연 후보예요. 실제 개방·출입은 확인이 필요해요.';
+  const availabilityNote = '시연에서는 운영시간·출입 제한·자료 확인 상태와 관계없이 개방으로 가정해요. 실제 개방·출입은 확인이 필요해요.';
 
   function places(features) {
     return features.flatMap(({id, kind, properties, geometry}) => {
       if (!kinds.includes(kind) || geometry?.type !== 'Point') return [];
       const ll = [geometry.coordinates[1], geometry.coordinates[0]];
       if (!ll.every(Number.isFinite)) return [];
-      if (['no', 'private'].includes(properties.access || properties.osm_tags?.access)) return [];
       return [{
         id, kind: kind === 'library' ? 'shelter' : kind, ll,
         name: properties.name || ({bench: '등록 벤치', seating: '등록 의자 시설', shelter: '등록 쉼터'}[kind] || '공공도서관'),
@@ -65,7 +64,7 @@
       result = Endpoint.route(E, working, from, to, cityProfile(profile, true));
     }
     const notes = ['시연 전용 · 실제 이용과 안전은 현장에서 확인해 주세요.'];
-    if (profile.rest) notes.push('시설 운영시간·검증 상태와 요청한 휴식 간격을 경유 제외 기준으로 쓰지 않았어요.');
+    if (profile.rest) notes.push('시설은 모두 개방으로 가정했어요. 운영시간·출입 제한·검증 상태와 요청한 휴식 간격은 적용하지 않았어요.');
     if (basic) notes.push('기본 보행망에서 찾은 예시로, 입력한 계단·경사 등 이동 조건을 충족하지 않을 수 있어요.');
     return {
       ...result, p: profile, label: '베타 시연 경로', selectionIneligible: true, demoNotes: notes,

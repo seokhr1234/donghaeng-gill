@@ -1,0 +1,15 @@
+{
+  "field_verified": false,
+  "routing_eligible": false,
+  "osco_municipal_geometries": 11145,
+  "osco_municipal_original_bodies_hashed": 46,
+  "osco_overture_building_records": 11903,
+  "seoul_smap": {
+    "bbox_unique_raw": 70879,
+    "invalid_withheld": 0,
+    "within_3000m": 56179,
+    "within_1000m": 4678
+  },
+  "wolgok_2026_crossing_points_3km": 2942,
+  "wolgok_2021_crossing_polygons_3km": 2767
+}

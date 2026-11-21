@@ -1,0 +1,116 @@
+{
+  "source_url": "https://data.seoul.go.kr/dataList/OA-15554/S/1/datasetView.do",
+  "file_published_date": "2021-08-09",
+  "retrieved_date_kst": "2026-11-21",
+  "source_crs": "EPSG:5186",
+  "export_crs": "EPSG:4326",
+  "raw_archive": "raw/oa15554-crossing-facilities-2021.zip",
+  "raw_sha256": "a99a0e19c0b0c50013ca2261bd885ab91f2cc81a72348dfa9136f8f2167b9cdd",
+  "raw_http_status": 200,
+  "raw_bytes": 20500176,
+  "crosswalk_polygon_shp_count": 37324,
+  "within_query_bbox": 3480,
+  "within_1000m": 285,
+  "within_3000m": 2767,
+  "invalid_in_bbox_withheld": [
+    {
+      "source_fid": 1157,
+      "reason": "Original SHP ring is open"
+    },
+    {
+      "source_fid": 10385,
+      "reason": "Self-intersection[203071.681832353 555459.391667029]"
+    },
+    {
+      "source_fid": 16928,
+      "reason": "Self-intersection[201089.027892491 553628.558085247]"
+    },
+    {
+      "source_fid": 17541,
+      "reason": "Original SHP ring is open"
+    },
+    {
+      "source_fid": 19081,
+      "reason": "Ring Self-intersection[202682.697154744 553123.556392155]"
+    },
+    {
+      "source_fid": 19228,
+      "reason": "Original SHP ring is open"
+    },
+    {
+      "source_fid": 22140,
+      "reason": "Self-intersection[200754.83572576 555156.24584437]"
+    },
+    {
+      "source_fid": 22870,
+      "reason": "Original SHP ring is open"
+    },
+    {
+      "source_fid": 24120,
+      "reason": "Original SHP ring is open"
+    },
+    {
+      "source_fid": 25014,
+      "reason": "Original SHP ring is open"
+    },
+    {
+      "source_fid": 25181,
+      "reason": "Self-intersection[203078.484120164 554849.679550869]"
+    },
+    {
+      "source_fid": 25777,
+      "reason": "Self-intersection[206446.969508963 557104.280272307]"
+    },
+    {
+      "source_fid": 27534,
+      "reason": "Self-intersection[203080.70446835 554850.883539396]"
+    },
+    {
+      "source_fid": 27609,
+      "reason": "Self-intersection[203365.371179657 555900.566346073]"
+    },
+    {
+      "source_fid": 27624,
+      "reason": "Original SHP ring is open"
+    },
+    {
+      "source_fid": 27675,
+      "reason": "Original SHP ring is open"
+    },
+    {
+      "source_fid": 27676,
+      "reason": "Original SHP ring is open"
+    },
+    {
+      "source_fid": 28497,
+      "reason": "Original SHP ring is open"
+    },
+    {
+      "source_fid": 30023,
+      "reason": "Original SHP ring is open"
+    },
+    {
+      "source_fid": 30156,
+      "reason": "Original SHP ring is open"
+    },
+    {
+      "source_fid": 30922,
+      "reason": "Self-intersection[203035.34519669 553701.317280692]"
+    },
+    {
+      "source_fid": 30986,
+      "reason": "Self-intersection[204364.906664846 553262.171968361]"
+    },
+    {
+      "source_fid": 34529,
+      "reason": "Original SHP ring is open"
+    },
+    {
+      "source_fid": 35208,
+      "reason": "Ring Self-intersection[203042.099283665 554958.68942586]"
+    }
+  ],
+  "field_verified": false,
+  "routing_eligible": false,
+  "derived_sha256": "a2daf2a6fa989a071289b4be9a9a48ff8ce8a97b38f131f8ec7cc06ec206aafd"
+}

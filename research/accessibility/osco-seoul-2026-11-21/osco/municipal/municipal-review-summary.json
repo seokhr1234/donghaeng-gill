@@ -1,0 +1,1669 @@
+{
+  "schema": "osco-municipal-pedestrian-review-v1",
+  "checked_at_kst": "2026-11-21T14:19:43.044309+09:00",
+  "core_bbox_lonlat": [
+    127.315,
+    36.61,
+    127.35,
+    36.64
+  ],
+  "study_bbox_lonlat": [
+    127.28,
+    36.59,
+    127.39,
+    36.67
+  ],
+  "layer_statistics": [
+    {
+      "layer": "GT_A001_A",
+      "name": "도로면",
+      "path": "municipal-derived/GT_A001_A.geojson",
+      "sha256": "3ed195d709e4dd1635a016ca730acbd1018f310ee73ccac7c0014eaac0e26f9a",
+      "study_geo_intersects_valid": 936,
+      "core_geo_intersects_valid": 465,
+      "previous_scope_total_context_only": 466,
+      "core_snapshot_comparison": {
+        "older_core": 465,
+        "common_identity_in_core": 465,
+        "common_identical_geometry": 465,
+        "latest_core_only": 0,
+        "older_core_only": 0,
+        "matched_on_database_geoms_and_management_codes_when_id_is_generated": 0,
+        "ids_alone_do_not_prove_installation_or_removal": true
+      },
+      "returned_raw_observations_across_selected_requests": 968,
+      "distinct_seen_ids": 968,
+      "outside_exact_study_polygon_excluded": 4,
+      "complete_query_envelope_coverage": true,
+      "unretrieved_study_boxes": [],
+      "geometry_types": {
+        "Polygon": 936
+      },
+      "physical_counts_equal_registered_geometry_counts": false,
+      "source_ids": [
+        "study-GT_A001_A"
+      ],
+      "registered_dates_raw": {
+        "REG_YMD": {
+          "min": "1899-12-29T15:00:00Z",
+          "max": "2026-10-01T15:00:00Z",
+          "unique_values": 141
+        },
+        "UPT_YMD": {
+          "min": "1899-12-29T15:00:00Z",
+          "max": "2026-10-05T15:00:00Z",
+          "unique_values": 173
+        }
+      }
+    },
+    {
+      "layer": "GT_A003_A",
+      "name": "인도",
+      "path": "municipal-derived/GT_A003_A.geojson",
+      "sha256": "b55ecb5a68c191524018cba9283db78afb5473624d5e3e7d990db4ec41b6f594",
+      "study_geo_intersects_valid": 1518,
+      "core_geo_intersects_valid": 614,
+      "previous_scope_total_context_only": null,
+      "core_snapshot_comparison": null,
+      "returned_raw_observations_across_selected_requests": 1557,
+      "distinct_seen_ids": 1557,
+      "outside_exact_study_polygon_excluded": 1,
+      "complete_query_envelope_coverage": true,
+      "unretrieved_study_boxes": [],
+      "geometry_types": {
+        "Polygon": 1518
+      },
+      "physical_counts_equal_registered_geometry_counts": false,
+      "source_ids": [
+        "study-GT_A003_A"
+      ],
+      "registered_dates_raw": {
+        "REG_YMD": {
+          "min": "2021-03-03T05:54:47Z",
+          "max": "2026-10-01T15:00:00Z",
+          "unique_values": 426
+        },
+        "UPT_YMD": {
+          "min": "2021-03-03T06:15:10Z",
+          "max": "2026-10-05T15:00:00Z",
+          "unique_values": 234
+        }
+      }
+    },
+    {
+      "layer": "GT_A004_A",
+      "name": "횡단보도",
+      "path": "municipal-derived/GT_A004_A.geojson",
+      "sha256": "0dd417a6ab75523d5ac253e3f818c9e2cc42bf68f2aed847f92d3033b856757f",
+      "study_geo_intersects_valid": 1085,
+      "core_geo_intersects_valid": 438,
+      "previous_scope_total_context_only": 1092,
+      "core_snapshot_comparison": {
+        "older_core": 438,
+        "common_identity_in_core": 438,
+        "common_identical_geometry": 438,
+        "latest_core_only": 0,
+        "older_core_only": 0,
+        "matched_on_database_geoms_and_management_codes_when_id_is_generated": 0,
+        "ids_alone_do_not_prove_installation_or_removal": true
+      },
+      "returned_raw_observations_across_selected_requests": 1092,
+      "distinct_seen_ids": 1092,
+      "outside_exact_study_polygon_excluded": 7,
+      "complete_query_envelope_coverage": true,
+      "unretrieved_study_boxes": [],
+      "geometry_types": {
+        "Polygon": 1085
+      },
+      "physical_counts_equal_registered_geometry_counts": false,
+      "source_ids": [
+        "study-GT_A004_A"
+      ],
+      "registered_dates_raw": {
+        "REG_YMD": {
+          "min": "2021-03-03T05:05:05Z",
+          "max": "2026-10-01T15:00:00Z",
+          "unique_values": 361
+        },
+        "UPT_YMD": {
+          "min": "2021-03-03T05:12:16Z",
+          "max": "2026-10-01T15:00:00Z",
+          "unique_values": 444
+        },
+        "ESB_YMD": {
+          "min": "2005-12-31T15:00:00Z",
+          "max": "2017-04-20T15:00:00Z",
+          "unique_values": 2
+        }
+      }
+    },
+    {
+      "layer": "GT_A005_A",
+      "name": "안전지대",
+      "path": "municipal-derived/GT_A005_A.geojson",
+      "sha256": "44747b55ee72418258fc3b0123b23ad50fc6ad94d8c734d400f7d2141274aa8e",
+      "study_geo_intersects_valid": 347,
+      "core_geo_intersects_valid": 116,
+      "previous_scope_total_context_only": null,
+      "core_snapshot_comparison": null,
+      "returned_raw_observations_across_selected_requests": 352,
+      "distinct_seen_ids": 352,
+      "outside_exact_study_polygon_excluded": 4,
+      "complete_query_envelope_coverage": true,
+      "unretrieved_study_boxes": [],
+      "geometry_types": {
+        "Polygon": 347
+      },
+      "physical_counts_equal_registered_geometry_counts": false,
+      "source_ids": [
+        "study-GT_A005_A"
+      ],
+      "registered_dates_raw": {
+        "REG_YMD": {
+          "min": "2021-06-25T04:23:31Z",
+          "max": "2026-10-01T15:00:00Z",
+          "unique_values": 234
+        },
+        "UPT_YMD": {
+          "min": "2021-06-29T01:12:21Z",
+          "max": "2026-10-01T15:00:00Z",
+          "unique_values": 110
+        }
+      }
+    },
+    {
+      "layer": "GT_A008_A",
+      "name": "교차로",
+      "path": "municipal-derived/GT_A008_A.geojson",
+      "sha256": "21fc2aa7d445d2286b08f577ef97c1bd83f7914257d4afc04906712472ad6124",
+      "study_geo_intersects_valid": 161,
+      "core_geo_intersects_valid": 72,
+      "previous_scope_total_context_only": null,
+      "core_snapshot_comparison": null,
+      "returned_raw_observations_across_selected_requests": 161,
+      "distinct_seen_ids": 161,
+      "outside_exact_study_polygon_excluded": 0,
+      "complete_query_envelope_coverage": true,
+      "unretrieved_study_boxes": [],
+      "geometry_types": {
+        "Polygon": 161
+      },
+      "physical_counts_equal_registered_geometry_counts": false,
+      "source_ids": [
+        "study-GT_A008_A"
+      ],
+      "registered_dates_raw": {
+        "REG_YMD": {
+          "min": "2021-04-08T11:39:25Z",
+          "max": "2025-09-12T06:42:25Z",
+          "unique_values": 33
+        },
+        "UPT_YMD": {
+          "min": "2021-04-27T03:28:22Z",
+          "max": "2026-04-27T00:35:28Z",
+          "unique_values": 149
+        },
+        "ESB_YMD": {
+          "min": "2018-12-30T15:00:00Z",
+          "max": "2025-04-29T15:00:00Z",
+          "unique_values": 5
+        }
+      }
+    },
+    {
+      "layer": "GT_A067_A",
+      "name": "과속방지턱",
+      "path": "municipal-derived/GT_A067_A.geojson",
+      "sha256": "aef037841ea23623c16ce3159c743a90193551e9acf357628588119bbd145e68",
+      "study_geo_intersects_valid": 339,
+      "core_geo_intersects_valid": 153,
+      "previous_scope_total_context_only": 339,
+      "core_snapshot_comparison": {
+        "older_core": 153,
+        "common_identity_in_core": 153,
+        "common_identical_geometry": 153,
+        "latest_core_only": 0,
+        "older_core_only": 0,
+        "matched_on_database_geoms_and_management_codes_when_id_is_generated": 0,
+        "ids_alone_do_not_prove_installation_or_removal": true
+      },
+      "returned_raw_observations_across_selected_requests": 339,
+      "distinct_seen_ids": 339,
+      "outside_exact_study_polygon_excluded": 0,
+      "complete_query_envelope_coverage": true,
+      "unretrieved_study_boxes": [],
+      "geometry_types": {
+        "Polygon": 339
+      },
+      "physical_counts_equal_registered_geometry_counts": false,
+      "source_ids": [
+        "study-GT_A067_A"
+      ],
+      "registered_dates_raw": {
+        "REG_YMD": {
+          "min": "2021-03-03T05:41:37Z",
+          "max": "2026-08-30T15:00:00Z",
+          "unique_values": 136
+        },
+        "UPT_YMD": {
+          "min": "2021-07-07T09:28:42Z",
+          "max": "2026-07-16T04:35:34Z",
+          "unique_values": 46
+        },
+        "ESB_YMD": {
+          "min": "2005-12-31T15:00:00Z",
+          "max": "2011-11-20T15:00:00Z",
+          "unique_values": 5
+        }
+      }
+    },
+    {
+      "layer": "GT_A068_P",
+      "name": "횡단보도예고표시",
+      "path": "municipal-derived/GT_A068_P.geojson",
+      "sha256": "3ba0d8cc4562e998fa1f22a7eaacf4977e2eb8bd320abe691a560c942a435af8",
+      "study_geo_intersects_valid": 624,
+      "core_geo_intersects_valid": 180,
+      "previous_scope_total_context_only": null,
+      "core_snapshot_comparison": null,
+      "returned_raw_observations_across_selected_requests": 625,
+      "distinct_seen_ids": 625,
+      "outside_exact_study_polygon_excluded": 1,
+      "complete_query_envelope_coverage": true,
+      "unretrieved_study_boxes": [],
+      "geometry_types": {
+        "Point": 624
+      },
+      "physical_counts_equal_registered_geometry_counts": false,
+      "source_ids": [
+        "study-GT_A068_P"
+      ],
+      "registered_dates_raw": {
+        "REG_YMD": {
+          "min": "2021-03-03T05:11:37Z",
+          "max": "2026-10-01T15:00:00Z",
+          "unique_values": 329
+        },
+        "UPT_YMD": {
+          "min": "2021-06-16T01:31:06Z",
+          "max": "2026-07-16T06:41:02Z",
+          "unique_values": 118
+        },
+        "ESB_YMD": {
+          "min": "2005-12-31T15:00:00Z",
+          "max": "2005-12-31T15:00:00Z",
+          "unique_values": 1
+        }
+      }
+    },
+    {
+      "layer": "GT_A089_A",
+      "name": "바닥보행신호등",
+      "path": "municipal-derived/GT_A089_A.geojson",
+      "sha256": "ab57fee92337808a0f300279efaed94160c14f1d4186511fed5e95653f67d7f9",
+      "study_geo_intersects_valid": 4,
+      "core_geo_intersects_valid": 0,
+      "previous_scope_total_context_only": 4,
+      "core_snapshot_comparison": {
+        "older_core": 0,
+        "common_identity_in_core": 0,
+        "common_identical_geometry": 0,
+        "latest_core_only": 0,
+        "older_core_only": 0,
+        "matched_on_database_geoms_and_management_codes_when_id_is_generated": 0,
+        "ids_alone_do_not_prove_installation_or_removal": true
+      },
+      "returned_raw_observations_across_selected_requests": 4,
+      "distinct_seen_ids": 4,
+      "outside_exact_study_polygon_excluded": 0,
+      "complete_query_envelope_coverage": true,
+      "unretrieved_study_boxes": [],
+      "geometry_types": {
+        "Polygon": 4
+      },
+      "physical_counts_equal_registered_geometry_counts": false,
+      "source_ids": [
+        "study-GT_A089_A"
+      ],
+      "registered_dates_raw": {
+        "REG_YMD": {
+          "min": "2026-11-11T15:00:00Z",
+          "max": "2026-11-11T15:00:00Z",
+          "unique_values": 1
+        },
+        "ESB_YMD": {
+          "min": "2026-05-27T15:00:00Z",
+          "max": "2026-05-27T15:00:00Z",
+          "unique_values": 1
+        }
+      }
+    },
+    {
+      "layer": "GT_A090_P",
+      "name": "보행자버튼",
+      "path": "municipal-derived/GT_A090_P.geojson",
+      "sha256": "05298100626fbec5b405bae6ec4536587f880d7795f3c15450bf1bbefa49e975",
+      "study_geo_intersects_valid": 44,
+      "core_geo_intersects_valid": 12,
+      "previous_scope_total_context_only": 44,
+      "core_snapshot_comparison": {
+        "older_core": 12,
+        "common_identity_in_core": 12,
+        "common_identical_geometry": 12,
+        "latest_core_only": 0,
+        "older_core_only": 0,
+        "matched_on_database_geoms_and_management_codes_when_id_is_generated": 12,
+        "ids_alone_do_not_prove_installation_or_removal": true
+      },
+      "returned_raw_observations_across_selected_requests": 44,
+      "distinct_seen_ids": 44,
+      "outside_exact_study_polygon_excluded": 0,
+      "complete_query_envelope_coverage": true,
+      "unretrieved_study_boxes": [],
+      "geometry_types": {
+        "Point": 44
+      },
+      "physical_counts_equal_registered_geometry_counts": false,
+      "source_ids": [
+        "study-GT_A090_P"
+      ],
+      "registered_dates_raw": {
+        "REG_YMD": {
+          "min": "2023-10-10T03:55:43Z",
+          "max": "2026-03-09T04:06:39Z",
+          "unique_values": 15
+        },
+        "UPT_YMD": {
+          "min": "2023-10-27T03:09:42Z",
+          "max": "2024-10-10T06:15:07Z",
+          "unique_values": 14
+        },
+        "ESB_YMD": {
+          "min": "2020-03-15T15:00:00Z",
+          "max": "2024-05-30T15:00:00Z",
+          "unique_values": 4
+        }
+      }
+    },
+    {
+      "layer": "GT_A110_P",
+      "name": "신호등",
+      "path": "municipal-derived/GT_A110_P.geojson",
+      "sha256": "ff9eb735791efcac187c99c31cba2e3e255b54cff9419de09ab76f739057d50e",
+      "study_geo_intersects_valid": 2190,
+      "core_geo_intersects_valid": 983,
+      "previous_scope_total_context_only": null,
+      "core_snapshot_comparison": null,
+      "returned_raw_observations_across_selected_requests": 2194,
+      "distinct_seen_ids": 2194,
+      "outside_exact_study_polygon_excluded": 4,
+      "complete_query_envelope_coverage": true,
+      "unretrieved_study_boxes": [],
+      "geometry_types": {
+        "Point": 2188,
+        "LineString": 2
+      },
+      "physical_counts_equal_registered_geometry_counts": false,
+      "source_ids": [
+        "study-GT_A110_P"
+      ],
+      "registered_dates_raw": {
+        "REG_YMD": {
+          "min": "2021-04-08T11:50:09Z",
+          "max": "2026-10-05T15:00:00Z",
+          "unique_values": 597
+        },
+        "UPT_YMD": {
+          "min": "2021-02-19T01:27:25Z",
+          "max": "2026-10-01T15:00:00Z",
+          "unique_values": 1243
+        },
+        "ESB_YMD": {
+          "min": "2005-12-31T15:00:00Z",
+          "max": "2026-04-29T15:00:00Z",
+          "unique_values": 25
+        }
+      }
+    },
+    {
+      "layer": "GT_A119_P",
+      "name": "음향신호기",
+      "path": "municipal-derived/GT_A119_P.geojson",
+      "sha256": "f50185f6772af5e2aa96a4d7cbff4defdf79ac263a76bca01c7de271d86f6d76",
+      "study_geo_intersects_valid": 294,
+      "core_geo_intersects_valid": 163,
+      "previous_scope_total_context_only": 294,
+      "core_snapshot_comparison": {
+        "older_core": 163,
+        "common_identity_in_core": 163,
+        "common_identical_geometry": 163,
+        "latest_core_only": 0,
+        "older_core_only": 0,
+        "matched_on_database_geoms_and_management_codes_when_id_is_generated": 0,
+        "ids_alone_do_not_prove_installation_or_removal": true
+      },
+      "returned_raw_observations_across_selected_requests": 294,
+      "distinct_seen_ids": 294,
+      "outside_exact_study_polygon_excluded": 0,
+      "complete_query_envelope_coverage": true,
+      "unretrieved_study_boxes": [],
+      "geometry_types": {
+        "Point": 294
+      },
+      "physical_counts_equal_registered_geometry_counts": false,
+      "source_ids": [
+        "study-GT_A119_P-retry"
+      ],
+      "registered_dates_raw": {
+        "REG_YMD": {
+          "min": "2021-09-03T01:34:56Z",
+          "max": "2026-10-26T15:00:00Z",
+          "unique_values": 104
+        },
+        "UPT_YMD": {
+          "min": "2021-04-05T08:05:17Z",
+          "max": "2026-10-26T15:00:00Z",
+          "unique_values": 67
+        },
+        "ESB_YMD": {
+          "min": "2018-12-30T15:00:00Z",
+          "max": "2024-11-29T15:00:00Z",
+          "unique_values": 6
+        }
+      }
+    },
+    {
+      "layer": "GT_C022_P",
+      "name": "보행용조명",
+      "path": "municipal-derived/GT_C022_P.geojson",
+      "sha256": "846f0cf5c6e08ad2033843b6146ff6ed2fa3c4deb762aa4be8dc5a669bac2863",
+      "study_geo_intersects_valid": 608,
+      "core_geo_intersects_valid": 246,
+      "previous_scope_total_context_only": 610,
+      "core_snapshot_comparison": {
+        "older_core": 246,
+        "common_identity_in_core": 246,
+        "common_identical_geometry": 246,
+        "latest_core_only": 0,
+        "older_core_only": 0,
+        "matched_on_database_geoms_and_management_codes_when_id_is_generated": 0,
+        "ids_alone_do_not_prove_installation_or_removal": true
+      },
+      "returned_raw_observations_across_selected_requests": 610,
+      "distinct_seen_ids": 610,
+      "outside_exact_study_polygon_excluded": 2,
+      "complete_query_envelope_coverage": true,
+      "unretrieved_study_boxes": [],
+      "geometry_types": {
+        "Point": 608
+      },
+      "physical_counts_equal_registered_geometry_counts": false,
+      "source_ids": [
+        "study-GT_C022_P"
+      ],
+      "registered_dates_raw": {
+        "REG_YMD": {
+          "min": "2021-04-09T04:19:12Z",
+          "max": "2026-10-01T15:00:00Z",
+          "unique_values": 135
+        },
+        "UPT_YMD": {
+          "min": "2021-06-25T04:03:20Z",
+          "max": "2026-10-01T15:00:00Z",
+          "unique_values": 131
+        },
+        "ESB_YMD": {
+          "min": "2018-12-30T15:00:00Z",
+          "max": "2025-04-30T15:00:00Z",
+          "unique_values": 15
+        }
+      }
+    },
+    {
+      "layer": "GT_C059_A",
+      "name": "방호울타리",
+      "path": "municipal-derived/GT_C059_A.geojson",
+      "sha256": "af5517f995b22f9f990d5a2cf7476c8230f07a95c3863fccf2fdbb4ec416d0b3",
+      "study_geo_intersects_valid": 772,
+      "core_geo_intersects_valid": 290,
+      "previous_scope_total_context_only": 773,
+      "core_snapshot_comparison": {
+        "older_core": 290,
+        "common_identity_in_core": 290,
+        "common_identical_geometry": 290,
+        "latest_core_only": 0,
+        "older_core_only": 0,
+        "matched_on_database_geoms_and_management_codes_when_id_is_generated": 0,
+        "ids_alone_do_not_prove_installation_or_removal": true
+      },
+      "returned_raw_observations_across_selected_requests": 775,
+      "distinct_seen_ids": 775,
+      "outside_exact_study_polygon_excluded": 1,
+      "complete_query_envelope_coverage": true,
+      "unretrieved_study_boxes": [],
+      "geometry_types": {
+        "Polygon": 772
+      },
+      "physical_counts_equal_registered_geometry_counts": false,
+      "source_ids": [
+        "study-GT_C059_A"
+      ],
+      "registered_dates_raw": {
+        "REG_YMD": {
+          "min": "2021-03-03T06:45:50Z",
+          "max": "2026-10-05T15:00:00Z",
+          "unique_values": 538
+        },
+        "UPT_YMD": {
+          "min": "2021-03-03T07:10:42Z",
+          "max": "2026-10-01T15:00:00Z",
+          "unique_values": 194
+        },
+        "ESB_YMD": {
+          "min": "2005-12-31T15:00:00Z",
+          "max": "2011-11-20T15:00:00Z",
+          "unique_values": 2
+        }
+      }
+    },
+    {
+      "layer": "GT_C091_A",
+      "name": "미끄럼방지시설",
+      "path": "municipal-derived/GT_C091_A.geojson",
+      "sha256": "3193905c36ab5a9b95708902ef3f7a875bcad1191a5531df879371ae05922cf7",
+      "study_geo_intersects_valid": 49,
+      "core_geo_intersects_valid": 19,
+      "previous_scope_total_context_only": null,
+      "core_snapshot_comparison": null,
+      "returned_raw_observations_across_selected_requests": 49,
+      "distinct_seen_ids": 49,
+      "outside_exact_study_polygon_excluded": 0,
+      "complete_query_envelope_coverage": true,
+      "unretrieved_study_boxes": [],
+      "geometry_types": {
+        "Polygon": 49
+      },
+      "physical_counts_equal_registered_geometry_counts": false,
+      "source_ids": [
+        "study-GT_C091_A"
+      ],
+      "registered_dates_raw": {
+        "REG_YMD": {
+          "min": "2021-06-28T02:02:31Z",
+          "max": "2026-08-30T15:00:00Z",
+          "unique_values": 12
+        },
+        "UPT_YMD": {
+          "min": "2021-06-28T04:28:36Z",
+          "max": "2025-04-28T07:35:37Z",
+          "unique_values": 3
+        }
+      }
+    },
+    {
+      "layer": "GT_C094_A",
+      "name": "점자블럭",
+      "path": "municipal-derived/GT_C094_A.geojson",
+      "sha256": "324618f2c94829a495d6e2aebca7e4a61db7806f7e9832a2e5bd3b3ee2610af5",
+      "study_geo_intersects_valid": 1236,
+      "core_geo_intersects_valid": 600,
+      "previous_scope_total_context_only": 1241,
+      "core_snapshot_comparison": {
+        "older_core": 600,
+        "common_identity_in_core": 600,
+        "common_identical_geometry": 600,
+        "latest_core_only": 0,
+        "older_core_only": 0,
+        "matched_on_database_geoms_and_management_codes_when_id_is_generated": 0,
+        "ids_alone_do_not_prove_installation_or_removal": true
+      },
+      "returned_raw_observations_across_selected_requests": 1246,
+      "distinct_seen_ids": 1241,
+      "outside_exact_study_polygon_excluded": 5,
+      "complete_query_envelope_coverage": false,
+      "unretrieved_study_boxes": [
+        [
+          127.383125,
+          36.655,
+          127.39,
+          36.660000000000004
+        ]
+      ],
+      "geometry_types": {
+        "Polygon": 1236
+      },
+      "physical_counts_equal_registered_geometry_counts": false,
+      "source_ids": [
+        "study-GT_C094_A-q0",
+        "study-GT_C094_A-q2",
+        "study-GT_C094_A-q1",
+        "study-GT_C094_A-q3-q0",
+        "study-GT_C094_A-q3-q2",
+        "study-GT_C094_A-q3-q1",
+        "study-GT_C094_A-q3-q3-q3",
+        "study-GT_C094_A-q3-q3-q0",
+        "study-GT_C094_A-q3-q3-q2",
+        "study-GT_C094_A-q3-q3-q1-q2",
+        "study-GT_C094_A-q3-q3-q1-q0",
+        "study-GT_C094_A-q3-q3-q1-q1"
+      ],
+      "registered_dates_raw": {
+        "REG_YMD": {
+          "min": "2021-07-08T07:47:15Z",
+          "max": "2026-10-05T15:00:00Z",
+          "unique_values": 478
+        },
+        "UPT_YMD": {
+          "min": "2023-10-17T00:23:30Z",
+          "max": "2026-07-19T23:44:23Z",
+          "unique_values": 27
+        }
+      }
+    },
+    {
+      "layer": "GT_C095_A",
+      "name": "입체횡단시설",
+      "path": "municipal-derived/GT_C095_A.geojson",
+      "sha256": "fc2ac024c8602def67cb10d5bfa6e0115c88a61b15cfec7802841528868df5c0",
+      "study_geo_intersects_valid": 3,
+      "core_geo_intersects_valid": 1,
+      "previous_scope_total_context_only": 3,
+      "core_snapshot_comparison": {
+        "older_core": 1,
+        "common_identity_in_core": 1,
+        "common_identical_geometry": 1,
+        "latest_core_only": 0,
+        "older_core_only": 0,
+        "matched_on_database_geoms_and_management_codes_when_id_is_generated": 0,
+        "ids_alone_do_not_prove_installation_or_removal": true
+      },
+      "returned_raw_observations_across_selected_requests": 3,
+      "distinct_seen_ids": 3,
+      "outside_exact_study_polygon_excluded": 0,
+      "complete_query_envelope_coverage": true,
+      "unretrieved_study_boxes": [],
+      "geometry_types": {
+        "Polygon": 3
+      },
+      "physical_counts_equal_registered_geometry_counts": false,
+      "source_ids": [
+        "study-GT_C095_A"
+      ],
+      "registered_dates_raw": {
+        "REG_YMD": {
+          "min": "2025-04-28T02:09:14Z",
+          "max": "2025-04-28T02:09:14Z",
+          "unique_values": 1
+        },
+        "UPT_YMD": {
+          "min": "2025-04-29T00:55:14Z",
+          "max": "2025-05-09T07:07:18Z",
+          "unique_values": 2
+        }
+      }
+    },
+    {
+      "layer": "GT_C104_A",
+      "name": "고원식교차로",
+      "path": "municipal-derived/GT_C104_A.geojson",
+      "sha256": "b877f939403d2d1fb140834fa2b512e1fe2f7fba040a015ae3bcd761de4e5a89",
+      "study_geo_intersects_valid": 62,
+      "core_geo_intersects_valid": 20,
+      "previous_scope_total_context_only": null,
+      "core_snapshot_comparison": null,
+      "returned_raw_observations_across_selected_requests": 62,
+      "distinct_seen_ids": 62,
+      "outside_exact_study_polygon_excluded": 0,
+      "complete_query_envelope_coverage": true,
+      "unretrieved_study_boxes": [],
+      "geometry_types": {
+        "Polygon": 62
+      },
+      "physical_counts_equal_registered_geometry_counts": false,
+      "source_ids": [
+        "study-GT_C104_A"
+      ],
+      "registered_dates_raw": {
+        "REG_YMD": {
+          "min": "2022-02-10T05:48:45Z",
+          "max": "2026-08-30T15:00:00Z",
+          "unique_values": 50
+        },
+        "UPT_YMD": {
+          "min": "2024-11-22T00:30:58Z",
+          "max": "2025-05-09T02:21:41Z",
+          "unique_values": 2
+        }
+      }
+    },
+    {
+      "layer": "GT_C109_A",
+      "name": "교통섬",
+      "path": "municipal-derived/GT_C109_A.geojson",
+      "sha256": "a65a3f1e34ba869c7b35c224b617a3c214ea2827f3019f64e13f447955b87ee8",
+      "study_geo_intersects_valid": 90,
+      "core_geo_intersects_valid": 23,
+      "previous_scope_total_context_only": 90,
+      "core_snapshot_comparison": {
+        "older_core": 23,
+        "common_identity_in_core": 23,
+        "common_identical_geometry": 23,
+        "latest_core_only": 0,
+        "older_core_only": 0,
+        "matched_on_database_geoms_and_management_codes_when_id_is_generated": 0,
+        "ids_alone_do_not_prove_installation_or_removal": true
+      },
+      "returned_raw_observations_across_selected_requests": 90,
+      "distinct_seen_ids": 90,
+      "outside_exact_study_polygon_excluded": 0,
+      "complete_query_envelope_coverage": true,
+      "unretrieved_study_boxes": [],
+      "geometry_types": {
+        "Polygon": 90
+      },
+      "physical_counts_equal_registered_geometry_counts": false,
+      "source_ids": [
+        "study-GT_C109_A"
+      ],
+      "registered_dates_raw": {
+        "REG_YMD": {
+          "min": "2021-07-07T10:27:43Z",
+          "max": "2026-10-01T15:00:00Z",
+          "unique_values": 45
+        },
+        "UPT_YMD": {
+          "min": "2021-07-08T06:57:43Z",
+          "max": "2026-10-01T15:00:00Z",
+          "unique_values": 25
+        }
+      }
+    },
+    {
+      "layer": "GT_C111_P",
+      "name": "버스정보안내기(BIT)",
+      "path": "municipal-derived/GT_C111_P.geojson",
+      "sha256": "4c65a09f12b56f992721c42325ff3434ad47013d9ff40917f7c57b68618429b7",
+      "study_geo_intersects_valid": 58,
+      "core_geo_intersects_valid": 28,
+      "previous_scope_total_context_only": null,
+      "core_snapshot_comparison": null,
+      "returned_raw_observations_across_selected_requests": 58,
+      "distinct_seen_ids": 58,
+      "outside_exact_study_polygon_excluded": 0,
+      "complete_query_envelope_coverage": true,
+      "unretrieved_study_boxes": [],
+      "geometry_types": {
+        "Point": 58
+      },
+      "physical_counts_equal_registered_geometry_counts": false,
+      "source_ids": [
+        "study-GT_C111_P"
+      ],
+      "registered_dates_raw": {}
+    },
+    {
+      "layer": "GT_C114_A",
+      "name": "자전거전용도로",
+      "path": "municipal-derived/GT_C114_A.geojson",
+      "sha256": "ccce744def86e5a7af626a49a00dcec4df50091e6f98cc7a53de9d8dd61ec2ce",
+      "study_geo_intersects_valid": 114,
+      "core_geo_intersects_valid": 58,
+      "previous_scope_total_context_only": 59,
+      "core_snapshot_comparison": {
+        "older_core": 58,
+        "common_identity_in_core": 58,
+        "common_identical_geometry": 58,
+        "latest_core_only": 0,
+        "older_core_only": 0,
+        "matched_on_database_geoms_and_management_codes_when_id_is_generated": 0,
+        "ids_alone_do_not_prove_installation_or_removal": true
+      },
+      "returned_raw_observations_across_selected_requests": 114,
+      "distinct_seen_ids": 114,
+      "outside_exact_study_polygon_excluded": 0,
+      "complete_query_envelope_coverage": true,
+      "unretrieved_study_boxes": [],
+      "geometry_types": {
+        "Polygon": 114
+      },
+      "physical_counts_equal_registered_geometry_counts": false,
+      "source_ids": [
+        "study-GT_C114_A"
+      ],
+      "registered_dates_raw": {
+        "REG_YMD": {
+          "min": "2021-07-08T08:23:40Z",
+          "max": "2026-07-15T06:15:56Z",
+          "unique_values": 31
+        },
+        "UPT_YMD": {
+          "min": "2022-12-15T08:06:07Z",
+          "max": "2026-07-16T07:02:54Z",
+          "unique_values": 28
+        }
+      }
+    },
+    {
+      "layer": "GT_C118_P",
+      "name": "승강장",
+      "path": "municipal-derived/GT_C118_P.geojson",
+      "sha256": "771106322bca55a95d829462eb101623a6bc1d72e45932369073148eb303c710",
+      "study_geo_intersects_valid": 259,
+      "core_geo_intersects_valid": 68,
+      "previous_scope_total_context_only": 263,
+      "core_snapshot_comparison": {
+        "older_core": 68,
+        "common_identity_in_core": 68,
+        "common_identical_geometry": 68,
+        "latest_core_only": 0,
+        "older_core_only": 0,
+        "matched_on_database_geoms_and_management_codes_when_id_is_generated": 0,
+        "ids_alone_do_not_prove_installation_or_removal": true
+      },
+      "returned_raw_observations_across_selected_requests": 263,
+      "distinct_seen_ids": 263,
+      "outside_exact_study_polygon_excluded": 4,
+      "complete_query_envelope_coverage": true,
+      "unretrieved_study_boxes": [],
+      "geometry_types": {
+        "Point": 259
+      },
+      "physical_counts_equal_registered_geometry_counts": false,
+      "source_ids": [
+        "study-GT_C118_P"
+      ],
+      "registered_dates_raw": {}
+    },
+    {
+      "layer": "GT_C130_P",
+      "name": "횡단보도조명",
+      "path": "municipal-derived/GT_C130_P.geojson",
+      "sha256": "ec217339dd55b97a3b89d15107bb53fe2503480f89e09c66ec2d5d1312352006",
+      "study_geo_intersects_valid": 335,
+      "core_geo_intersects_valid": 136,
+      "previous_scope_total_context_only": 137,
+      "core_snapshot_comparison": {
+        "older_core": 136,
+        "common_identity_in_core": 136,
+        "common_identical_geometry": 136,
+        "latest_core_only": 0,
+        "older_core_only": 0,
+        "matched_on_database_geoms_and_management_codes_when_id_is_generated": 0,
+        "ids_alone_do_not_prove_installation_or_removal": true
+      },
+      "returned_raw_observations_across_selected_requests": 476,
+      "distinct_seen_ids": 337,
+      "outside_exact_study_polygon_excluded": 2,
+      "complete_query_envelope_coverage": true,
+      "unretrieved_study_boxes": [],
+      "geometry_types": {
+        "Point": 335
+      },
+      "physical_counts_equal_registered_geometry_counts": false,
+      "source_ids": [
+        "study-GT_C130_P-q0-retry",
+        "study-GT_C130_P-q2",
+        "study-GT_C130_P-q1",
+        "study-GT_C130_P-q3",
+        "core-GT_C130_P-retry"
+      ],
+      "registered_dates_raw": {
+        "REG_YMD": {
+          "min": "2021-04-08T11:52:41Z",
+          "max": "2026-10-01T15:00:00Z",
+          "unique_values": 229
+        },
+        "UPT_YMD": {
+          "min": "2023-08-16T06:06:57Z",
+          "max": "2026-04-26T23:51:53Z",
+          "unique_values": 87
+        },
+        "ESB_YMD": {
+          "min": "2021-03-19T15:00:00Z",
+          "max": "2025-04-30T15:00:00Z",
+          "unique_values": 11
+        }
+      }
+    },
+    {
+      "layer": "GT_C131_P",
+      "name": "보행신호 음성안내 보조장치",
+      "path": "municipal-derived/GT_C131_P.geojson",
+      "sha256": "ee8464191560027a6321dadc6e03943d74bbf5ff10fa6082320f7a37d10b3828",
+      "study_geo_intersects_valid": 17,
+      "core_geo_intersects_valid": 13,
+      "previous_scope_total_context_only": 17,
+      "core_snapshot_comparison": {
+        "older_core": 13,
+        "common_identity_in_core": 13,
+        "common_identical_geometry": 13,
+        "latest_core_only": 0,
+        "older_core_only": 0,
+        "matched_on_database_geoms_and_management_codes_when_id_is_generated": 0,
+        "ids_alone_do_not_prove_installation_or_removal": true
+      },
+      "returned_raw_observations_across_selected_requests": 17,
+      "distinct_seen_ids": 17,
+      "outside_exact_study_polygon_excluded": 0,
+      "complete_query_envelope_coverage": true,
+      "unretrieved_study_boxes": [],
+      "geometry_types": {
+        "Point": 17
+      },
+      "physical_counts_equal_registered_geometry_counts": false,
+      "source_ids": [
+        "study-GT_C131_P"
+      ],
+      "registered_dates_raw": {
+        "REG_YMD": {
+          "min": "2021-11-12T05:10:29Z",
+          "max": "2026-11-11T15:00:00Z",
+          "unique_values": 9
+        },
+        "UPT_YMD": {
+          "min": "2022-03-28T05:58:22Z",
+          "max": "2022-04-01T05:44:43Z",
+          "unique_values": 13
+        },
+        "ESB_YMD": {
+          "min": "2013-05-28T15:00:00Z",
+          "max": "2026-05-27T15:00:00Z",
+          "unique_values": 3
+        }
+      }
+    }
+  ],
+  "raw_request_count": 49,
+  "complete_query_count": 39,
+  "valid_distinct_objects_by_layer_study_sum": 11145,
+  "valid_distinct_objects_by_layer_core_sum": 4698,
+  "unused_failed_request_count": 10,
+  "failed_requests": [
+    {
+      "id": "study-GT_A112_P",
+      "source_url": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_A112_P&outputFormat=application%2Fjson&bbox=225030.58970356168%2C443550.1905484578%2C234900.12847381394%2C452462.21576077957%2CEPSG%3A5186&maxFeatures=5000",
+      "layer": "GT_A112_P",
+      "name": "보행등보조장치",
+      "requested_at_kst": "2026-11-21T14:13:59.148741+09:00",
+      "bbox_lonlat": [
+        127.28,
+        36.59,
+        127.39,
+        36.67
+      ],
+      "bbox_epsg5186": [
+        225030.58970356168,
+        443550.1905484578,
+        234900.12847381394,
+        452462.21576077957
+      ],
+      "max_features": 5000,
+      "field_verified": false,
+      "routing_eligible": false,
+      "license": null,
+      "source_as_of": null,
+      "status": 400,
+      "content_type": "application/xml;charset=UTF-8",
+      "http_date": "Sat, 21 Nov 2026 05:13:59 GMT",
+      "url_final": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_A112_P&outputFormat=application%2Fjson&bbox=225030.58970356168%2C443550.1905484578%2C234900.12847381394%2C452462.21576077957%2CEPSG%3A5186&maxFeatures=5000",
+      "response_path": "raw/study-GT_A112_P/response.bin",
+      "sha256": "8c72400ad62a5a68b07391faa95d22f4f62cd463b7b4b64bb876f5eeb947c307",
+      "bytes": 523,
+      "complete": false,
+      "completed_at_kst": "2026-11-21T14:13:59.328435+09:00"
+    },
+    {
+      "id": "study-GT_A119_P",
+      "source_url": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_A119_P&outputFormat=application%2Fjson&bbox=225030.58970356168%2C443550.1905484578%2C234900.12847381394%2C452462.21576077957%2CEPSG%3A5186&maxFeatures=5000",
+      "layer": "GT_A119_P",
+      "name": "음향신호기",
+      "requested_at_kst": "2026-11-21T14:13:55.150913+09:00",
+      "bbox_lonlat": [
+        127.28,
+        36.59,
+        127.39,
+        36.67
+      ],
+      "bbox_epsg5186": [
+        225030.58970356168,
+        443550.1905484578,
+        234900.12847381394,
+        452462.21576077957
+      ],
+      "max_features": 5000,
+      "field_verified": false,
+      "routing_eligible": false,
+      "license": null,
+      "source_as_of": null,
+      "status": 200,
+      "content_type": "application/json;charset=UTF-8",
+      "http_date": "Sat, 21 Nov 2026 05:13:55 GMT",
+      "url_final": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_A119_P&outputFormat=application%2Fjson&bbox=225030.58970356168%2C443550.1905484578%2C234900.12847381394%2C452462.21576077957%2CEPSG%3A5186&maxFeatures=5000",
+      "transport_error": "The read operation timed out",
+      "complete": false,
+      "completed_at_kst": "2026-11-21T14:14:23.849363+09:00"
+    },
+    {
+      "id": "study-GT_C094_A",
+      "source_url": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_C094_A&outputFormat=application%2Fjson&bbox=225030.58970356168%2C443550.1905484578%2C234900.12847381394%2C452462.21576077957%2CEPSG%3A5186&maxFeatures=5000",
+      "layer": "GT_C094_A",
+      "name": "점자블럭",
+      "requested_at_kst": "2026-11-21T14:13:56.446088+09:00",
+      "bbox_lonlat": [
+        127.28,
+        36.59,
+        127.39,
+        36.67
+      ],
+      "bbox_epsg5186": [
+        225030.58970356168,
+        443550.1905484578,
+        234900.12847381394,
+        452462.21576077957
+      ],
+      "max_features": 5000,
+      "field_verified": false,
+      "routing_eligible": false,
+      "license": null,
+      "source_as_of": null,
+      "status": 400,
+      "content_type": "application/xml;charset=UTF-8",
+      "http_date": "Sat, 21 Nov 2026 05:13:56 GMT",
+      "url_final": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_C094_A&outputFormat=application%2Fjson&bbox=225030.58970356168%2C443550.1905484578%2C234900.12847381394%2C452462.21576077957%2CEPSG%3A5186&maxFeatures=5000",
+      "response_path": "raw/study-GT_C094_A/response.bin",
+      "sha256": "b2b616250a714f7a0c9e426836748af15855f5e2f9915514f24bdc57e23f74b4",
+      "bytes": 637,
+      "complete": false,
+      "completed_at_kst": "2026-11-21T14:13:57.004990+09:00"
+    },
+    {
+      "id": "study-GT_C094_A-q3",
+      "source_url": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_C094_A&outputFormat=application%2Fjson&bbox=229947.32756816098%2C448004.77223244973%2C234882.10947167678%2C452462.21576077957%2CEPSG%3A5186&maxFeatures=5000",
+      "layer": "GT_C094_A",
+      "name": "점자블럭",
+      "requested_at_kst": "2026-11-21T14:15:56.287120+09:00",
+      "bbox_lonlat": [
+        127.33500000000001,
+        36.63,
+        127.39,
+        36.67
+      ],
+      "bbox_epsg5186": [
+        229947.32756816098,
+        448004.77223244973,
+        234882.10947167678,
+        452462.21576077957
+      ],
+      "max_features": 5000,
+      "field_verified": false,
+      "routing_eligible": false,
+      "license": null,
+      "source_as_of": null,
+      "status": 400,
+      "content_type": "application/xml;charset=UTF-8",
+      "http_date": "Sat, 21 Nov 2026 05:15:56 GMT",
+      "url_final": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_C094_A&outputFormat=application%2Fjson&bbox=229947.32756816098%2C448004.77223244973%2C234882.10947167678%2C452462.21576077957%2CEPSG%3A5186&maxFeatures=5000",
+      "response_path": "raw/study-GT_C094_A-q3/response.bin",
+      "sha256": "b2b616250a714f7a0c9e426836748af15855f5e2f9915514f24bdc57e23f74b4",
+      "bytes": 637,
+      "complete": false,
+      "completed_at_kst": "2026-11-21T14:15:56.910542+09:00"
+    },
+    {
+      "id": "study-GT_C094_A-q3-q3",
+      "source_url": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_C094_A&outputFormat=application%2Fjson&bbox=232405.6994140171%2C450233.1360458666%2C234873.09357680223%2C452462.21576077957%2CEPSG%3A5186&maxFeatures=4900",
+      "layer": "GT_C094_A",
+      "name": "점자블럭",
+      "requested_at_kst": "2026-11-21T14:17:29.445153+09:00",
+      "bbox_lonlat": [
+        127.36250000000001,
+        36.650000000000006,
+        127.39,
+        36.67
+      ],
+      "bbox_epsg5186": [
+        232405.6994140171,
+        450233.1360458666,
+        234873.09357680223,
+        452462.21576077957
+      ],
+      "max_features": 4900,
+      "field_verified": false,
+      "routing_eligible": false,
+      "license": null,
+      "source_as_of": null,
+      "status": 400,
+      "content_type": "application/xml;charset=UTF-8",
+      "http_date": "Sat, 21 Nov 2026 05:17:29 GMT",
+      "url_final": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_C094_A&outputFormat=application%2Fjson&bbox=232405.6994140171%2C450233.1360458666%2C234873.09357680223%2C452462.21576077957%2CEPSG%3A5186&maxFeatures=4900",
+      "response_path": "raw/study-GT_C094_A-q3-q3/response.bin",
+      "sha256": "b2b616250a714f7a0c9e426836748af15855f5e2f9915514f24bdc57e23f74b4",
+      "bytes": 637,
+      "complete": false,
+      "completed_at_kst": "2026-11-21T14:17:29.761511+09:00"
+    },
+    {
+      "id": "study-GT_C094_A-q3-q3-q1",
+      "source_url": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_C094_A&outputFormat=application%2Fjson&bbox=233639.23771296663%2C450237.86757032346%2C234873.09357680223%2C451352.4945676677%2CEPSG%3A5186&maxFeatures=4900",
+      "layer": "GT_C094_A",
+      "name": "점자블럭",
+      "requested_at_kst": "2026-11-21T14:17:29.891207+09:00",
+      "bbox_lonlat": [
+        127.37625,
+        36.650000000000006,
+        127.39,
+        36.660000000000004
+      ],
+      "bbox_epsg5186": [
+        233639.23771296663,
+        450237.86757032346,
+        234873.09357680223,
+        451352.4945676677
+      ],
+      "max_features": 4900,
+      "field_verified": false,
+      "routing_eligible": false,
+      "license": null,
+      "source_as_of": null,
+      "status": 400,
+      "content_type": "application/xml;charset=UTF-8",
+      "http_date": "Sat, 21 Nov 2026 05:17:29 GMT",
+      "url_final": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_C094_A&outputFormat=application%2Fjson&bbox=233639.23771296663%2C450237.86757032346%2C234873.09357680223%2C451352.4945676677%2CEPSG%3A5186&maxFeatures=4900",
+      "response_path": "raw/study-GT_C094_A-q3-q3-q1/response.bin",
+      "sha256": "b2b616250a714f7a0c9e426836748af15855f5e2f9915514f24bdc57e23f74b4",
+      "bytes": 637,
+      "complete": false,
+      "completed_at_kst": "2026-11-21T14:17:30.074602+09:00"
+    },
+    {
+      "id": "study-GT_C094_A-q3-q3-q1-q3",
+      "source_url": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_C094_A&outputFormat=application%2Fjson&bbox=234253.91080070968%2C450795.15868898004%2C234870.83893724217%2C451352.4945676677%2CEPSG%3A5186&maxFeatures=4900",
+      "layer": "GT_C094_A",
+      "name": "점자블럭",
+      "requested_at_kst": "2026-11-21T14:17:30.652363+09:00",
+      "bbox_lonlat": [
+        127.383125,
+        36.655,
+        127.39,
+        36.660000000000004
+      ],
+      "bbox_epsg5186": [
+        234253.91080070968,
+        450795.15868898004,
+        234870.83893724217,
+        451352.4945676677
+      ],
+      "max_features": 4900,
+      "field_verified": false,
+      "routing_eligible": false,
+      "license": null,
+      "source_as_of": null,
+      "status": 400,
+      "content_type": "application/xml;charset=UTF-8",
+      "http_date": "Sat, 21 Nov 2026 05:17:30 GMT",
+      "url_final": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_C094_A&outputFormat=application%2Fjson&bbox=234253.91080070968%2C450795.15868898004%2C234870.83893724217%2C451352.4945676677%2CEPSG%3A5186&maxFeatures=4900",
+      "response_path": "raw/study-GT_C094_A-q3-q3-q1-q3/response.bin",
+      "sha256": "b2b616250a714f7a0c9e426836748af15855f5e2f9915514f24bdc57e23f74b4",
+      "bytes": 637,
+      "complete": false,
+      "completed_at_kst": "2026-11-21T14:17:30.835096+09:00"
+    },
+    {
+      "id": "study-GT_C130_P",
+      "source_url": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_C130_P&outputFormat=application%2Fjson&bbox=225030.58970356168%2C443550.1905484578%2C234900.12847381394%2C452462.21576077957%2CEPSG%3A5186&maxFeatures=5000",
+      "layer": "GT_C130_P",
+      "name": "횡단보도조명",
+      "requested_at_kst": "2026-11-21T14:13:57.458400+09:00",
+      "bbox_lonlat": [
+        127.28,
+        36.59,
+        127.39,
+        36.67
+      ],
+      "bbox_epsg5186": [
+        225030.58970356168,
+        443550.1905484578,
+        234900.12847381394,
+        452462.21576077957
+      ],
+      "max_features": 5000,
+      "field_verified": false,
+      "routing_eligible": false,
+      "license": null,
+      "source_as_of": null,
+      "status": 200,
+      "content_type": "application/json;charset=UTF-8",
+      "http_date": "Sat, 21 Nov 2026 05:13:57 GMT",
+      "url_final": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_C130_P&outputFormat=application%2Fjson&bbox=225030.58970356168%2C443550.1905484578%2C234900.12847381394%2C452462.21576077957%2CEPSG%3A5186&maxFeatures=5000",
+      "transport_error": "The read operation timed out",
+      "complete": false,
+      "completed_at_kst": "2026-11-21T14:14:25.842313+09:00"
+    },
+    {
+      "id": "study-GT_C130_P-q0",
+      "source_url": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_C130_P&outputFormat=application%2Fjson&bbox=225043.53852326877%2C443550.1905484578%2C229978.29775305357%2C448004.77223244973%2CEPSG%3A5186&maxFeatures=4900",
+      "layer": "GT_C130_P",
+      "name": "횡단보도조명",
+      "requested_at_kst": "2026-11-21T14:17:30.885635+09:00",
+      "bbox_lonlat": [
+        127.28,
+        36.59,
+        127.33500000000001,
+        36.63
+      ],
+      "bbox_epsg5186": [
+        225043.53852326877,
+        443550.1905484578,
+        229978.29775305357,
+        448004.77223244973
+      ],
+      "max_features": 4900,
+      "field_verified": false,
+      "routing_eligible": false,
+      "license": null,
+      "source_as_of": null,
+      "status": 200,
+      "content_type": "application/json;charset=UTF-8",
+      "http_date": "Sat, 21 Nov 2026 05:17:31 GMT",
+      "url_final": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_C130_P&outputFormat=application%2Fjson&bbox=225043.53852326877%2C443550.1905484578%2C229978.29775305357%2C448004.77223244973%2CEPSG%3A5186&maxFeatures=4900",
+      "transport_error": "The read operation timed out",
+      "complete": false,
+      "completed_at_kst": "2026-11-21T14:17:59.400468+09:00"
+    },
+    {
+      "id": "study-GT_C130_P-retry",
+      "source_url": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_C130_P&outputFormat=application%2Fjson&bbox=225030.58970356168%2C443550.1905484578%2C234900.12847381394%2C452462.21576077957%2CEPSG%3A5186&maxFeatures=4900",
+      "layer": "GT_C130_P",
+      "name": "횡단보도조명",
+      "requested_at_kst": "2026-11-21T14:17:27.213391+09:00",
+      "bbox_lonlat": [
+        127.28,
+        36.59,
+        127.39,
+        36.67
+      ],
+      "bbox_epsg5186": [
+        225030.58970356168,
+        443550.1905484578,
+        234900.12847381394,
+        452462.21576077957
+      ],
+      "max_features": 4900,
+      "field_verified": false,
+      "routing_eligible": false,
+      "license": null,
+      "source_as_of": null,
+      "status": 200,
+      "content_type": "application/json;charset=UTF-8",
+      "http_date": "Sat, 21 Nov 2026 05:17:27 GMT",
+      "url_final": "https://www.cjtgis.go.kr/map/proxy/wfs.do?request=GetFeature&version=1.1.1&typename=tgis%3AGT_C130_P&outputFormat=application%2Fjson&bbox=225030.58970356168%2C443550.1905484578%2C234900.12847381394%2C452462.21576077957%2CEPSG%3A5186&maxFeatures=4900",
+      "transport_error": "IncompleteRead(36890 bytes read)",
+      "response_path": "raw/study-GT_C130_P-retry/response.bin",
+      "sha256": "841af7780031fd868e54af96f07fab756f09c82590474759717e819912ce2ee8",
+      "bytes": 36890,
+      "complete": false,
+      "completed_at_kst": "2026-11-21T14:17:28.240625+09:00"
+    }
+  ],
+  "unavailable_layers": [
+    "GT_A112_P"
+  ],
+  "withheld_invalid_by_layer": {
+    "GT_A001_A": 28,
+    "GT_A003_A": 38,
+    "GT_A005_A": 1,
+    "GT_C059_A": 2
+  },
+  "withheld_invalid": [
+    {
+      "layer": "GT_A001_A",
+      "id": "GT_A001_A.400714",
+      "reason": "Self-intersection[228661.785895156 447384.140820955]"
+    },
+    {
+      "layer": "GT_A001_A",
+      "id": "GT_A001_A.400814",
+      "reason": "Self-intersection[228821.291687067 446898.880556708]"
+    },
+    {
+      "layer": "GT_A001_A",
+      "id": "GT_A001_A.401229",
+      "reason": "Self-intersection[228341.137480564 447253.810841503]"
+    },
+    {
+      "layer": "GT_A001_A",
+      "id": "GT_A001_A.401438",
+      "reason": "Self-intersection[228765.272700143 446673.261162629]"
+    },
+    {
+      "layer": "GT_A001_A",
+      "id": "GT_A001_A.402078",
+      "reason": "reprojected geometry invalid: Self-intersection[127.302886457374 36.6186438977574]"
+    },
+    {
+      "layer": "GT_A001_A",
+      "id": "GT_A001_A.402080",
+      "reason": "Self-intersection[227498.073671712 446511.635426793]"
+    },
+    {
+      "layer": "GT_A001_A",
+      "id": "GT_A001_A.402094",
+      "reason": "Self-intersection[226741.545519602 446820.027337226]"
+    },
+    {
+      "layer": "GT_A001_A",
+      "id": "GT_A001_A.405558",
+      "reason": "Self-intersection[228551.65983548 446413.76172091]"
+    },
+    {
+      "layer": "GT_A001_A",
+      "id": "GT_A001_A.407716",
+      "reason": "Self-intersection[227675.310920257 447140.929649691]"
+    },
+    {
+      "layer": "GT_A001_A",
+      "id": "GT_A001_A.407719",
+      "reason": "Self-intersection[228194.651638063 447366.901089703]"
+    },
+    {
+      "layer": "GT_A001_A",
+      "id": "GT_A001_A.407725",
+      "reason": "Self-intersection[229423.382133568 447882.117724255]"
+    },
+    {
+      "layer": "GT_A001_A",
+      "id": "GT_A001_A.407790",
+      "reason": "Self-intersection[228939.876313169 446922.784053608]"
+    },
+    {
+      "layer": "GT_A001_A",
+      "id": "GT_A001_A.407819",
+      "reason": "Self-intersection[228451.934580177 447162.175184323]"
+    },
+    {
+      "layer": "GT_A001_A",
+      "id": "GT_A001_A.407979",
+      "reason": "Ring Self-intersection[234067.42950804 447144.70012559]"
+    },
+    {
+      "layer": "GT_A001_A",
+      "id": "GT_A001_A.408039",
+      "reason": "Self-intersection[227466.088181717 447701.96697246]"
+    },
+    {
+      "layer": "GT_A001_A",
+      "id": "GT_A001_A.408055",
+      "reason": "Self-intersection[228101.484176501 446507.288657096]"
+    },
+    {
+      "layer": "GT_A001_A",
+      "id": "GT_A001_A.408286",
+      "reason": "Self-intersection[228492.00062284 446981.70322323]"
+    },
+    {
+      "layer": "GT_A001_A",
+      "id": "GT_A001_A.408301",
+      "reason": "Self-intersection[228589.632820163 447294.762912625]"
+    },
+    {
+      "layer": "GT_A001_A",
+      "id": "GT_A001_A.408304",
+      "reason": "Self-intersection[228503.22366365 446849.17737938]"
+    },
+    {
+      "layer": "GT_A001_A",
+      "id": "GT_A001_A.408305",
+      "reason": "Self-intersection[225688.140131264 448779.251303233]"
+    },
+    {
+      "layer": "GT_A001_A",
+      "id": "GT_A001_A.408443",
+      "reason": "Ring Self-intersection[233125.23079142 447942.36782476]"
+    },
+    {
+      "layer": "GT_A001_A",
+      "id": "GT_A001_A.408459",
+      "reason": "Self-intersection[229089.051338534 447332.282613159]"
+    },
+    {
+      "layer": "GT_A001_A",
+      "id": "GT_A001_A.408487",
+      "reason": "Self-intersection[228509.512487815 446769.215560097]"
+    },
+    {
+      "layer": "GT_A001_A",
+      "id": "GT_A001_A.408646",
+      "reason": "Self-intersection[228432.37947114 446928.36169841]"
+    },
+    {
+      "layer": "GT_A001_A",
+      "id": "GT_A001_A.408803",
+      "reason": "Ring Self-intersection[229696.49326003 447484.95753551]"
+    },
+    {
+      "layer": "GT_A001_A",
+      "id": "GT_A001_A.408823",
+      "reason": "Ring Self-intersection[233409.53889671 451919.72416203]"
+    },
+    {
+      "layer": "GT_A001_A",
+      "id": "GT_A001_A.409050",
+      "reason": "Self-intersection[232179.64609433 444518.93699633]"
+    },
+    {
+      "layer": "GT_A001_A",
+      "id": "GT_A001_A.409080",
+      "reason": "Ring Self-intersection[229746.03000361 447504.8549047]"
+    },
+    {
+      "layer": "GT_A003_A",
+      "id": "GT_A003_A.58731",
+      "reason": "Ring Self-intersection[228341.13749914 447253.81082074]"
+    },
+    {
+      "layer": "GT_A003_A",
+      "id": "GT_A003_A.58817",
+      "reason": "Self-intersection[228506.716993338 446965.254369273]"
+    },
+    {
+      "layer": "GT_A003_A",
+      "id": "GT_A003_A.58967",
+      "reason": "Self-intersection[228445.67871231 447157.95974515]"
+    },
+    {
+      "layer": "GT_A003_A",
+      "id": "GT_A003_A.59276",
+      "reason": "Self-intersection[226859.723120382 448188.947397542]"
+    },
+    {
+      "layer": "GT_A003_A",
+      "id": "GT_A003_A.59296",
+      "reason": "Self-intersection[228477.77007023 446740.8164314]"
+    },
+    {
+      "layer": "GT_A003_A",
+      "id": "GT_A003_A.59324",
+      "reason": "Self-intersection[227498.073671712 446511.635426793]"
+    },
+    {
+      "layer": "GT_A003_A",
+      "id": "GT_A003_A.59348",
+      "reason": "Self-intersection[233914.467084761 447205.347599166]"
+    },
+    {
+      "layer": "GT_A003_A",
+      "id": "GT_A003_A.59503",
+      "reason": "Self-intersection[232531.682323655 447449.784654666]"
+    },
+    {
+      "layer": "GT_A003_A",
+      "id": "GT_A003_A.59656",
+      "reason": "Self-intersection[228309.15301974 446796.59722912]"
+    },
+    {
+      "layer": "GT_A003_A",
+      "id": "GT_A003_A.59669",
+      "reason": "Self-intersection[226740.38826873 448591.890621335]"
+    },
+    {
+      "layer": "GT_A003_A",
+      "id": "GT_A003_A.59776",
+      "reason": "Self-intersection[228533.034505975 446875.847820902]"
+    },
+    {
+      "layer": "GT_A003_A",
+      "id": "GT_A003_A.60785",
+      "reason": "Self-intersection[228194.650750257 447366.902079177]"
+    },
+    {
+      "layer": "GT_A003_A",
+      "id": "GT_A003_A.60829",
+      "reason": "Self-intersection[232805.331669119 447400.086451799]"
+    },
+    {
+      "layer": "GT_A003_A",
+      "id": "GT_A003_A.60937",
+      "reason": "Self-intersection[228937.33375073 449560.38403973]"
+    },
+    {
+      "layer": "GT_A003_A",
+      "id": "GT_A003_A.61055",
+      "reason": "Self-intersection[228399.39435327 447025.220620442]"
+    },
+    {
+      "layer": "GT_A003_A",
+      "id": "GT_A003_A.61079",
+      "reason": "reprojected geometry invalid: Self-intersection[127.302886457374 36.6186438977574]"
+    },
+    {
+      "layer": "GT_A003_A",
+      "id": "GT_A003_A.61173",
+      "reason": "Self-intersection[228204.057426121 449196.44597693]"
+    },
+    {
+      "layer": "GT_A003_A",
+      "id": "GT_A003_A.61187",
+      "reason": "Self-intersection[228661.785895156 447384.140820955]"
+    },
+    {
+      "layer": "GT_A003_A",
+      "id": "GT_A003_A.61188",
+      "reason": "Self-intersection[228503.223928583 446849.177059997]"
+    },
+    {
+      "layer": "GT_A003_A",
+      "id": "GT_A003_A.62325",
+      "reason": "Ring Self-intersection[228244.37017148 448653.12859154]"
+    },
+    {
+      "layer": "GT_A003_A",
+      "id": "GT_A003_A.62504",
+      "reason": "Ring Self-intersection[228612.72781536 448560.00843879]"
+    },
+    {
+      "layer": "GT_A003_A",
+      "id": "GT_A003_A.62610",
+      "reason": "Self-intersection[227983.618543453 448977.703073896]"
+    },
+    {
+      "layer": "GT_A003_A",
+      "id": "GT_A003_A.62634",
+      "reason": "Self-intersection[228369.583775639 446998.549860026]"
+    },
+    {
+      "layer": "GT_A003_A",
+      "id": "GT_A003_A.62663",
+      "reason": "Self-intersection[234695.048954797 446899.669655452]"
+    },
+    {
+      "layer": "GT_A003_A",
+      "id": "GT_A003_A.62756",
+      "reason": "Self-intersection[226967.411757389 448807.939737807]"
+    },
+    {
+      "layer": "GT_A003_A",
+      "id": "GT_A003_A.62836",
+      "reason": "Self-intersection[227044.46641865 448264.025775022]"
+    },
+    {
+      "layer": "GT_A003_A",
+      "id": "GT_A003_A.62838",
+      "reason": "Self-intersection[227304.418928483 448101.322600076]"
+    },
+    {
+      "layer": "GT_A003_A",
+      "id": "GT_A003_A.63026",
+      "reason": "Self-intersection[228509.512487785 446769.21556007]"
+    },
+    {
+      "layer": "GT_A003_A",
+      "id": "GT_A003_A.63028",
+      "reason": "Self-intersection[228385.46346524 446726.300608871]"
+    },
+    {
+      "layer": "GT_A003_A",
+      "id": "GT_A003_A.63228",
+      "reason": "Self-intersection[228910.024353549 447211.742497541]"
+    },
+    {
+      "layer": "GT_A003_A",
+      "id": "GT_A003_A.63455",
+      "reason": "Self-intersection[227848.18433881 448719.09698643]"
+    },
+    {
+      "layer": "GT_A003_A",
+      "id": "GT_A003_A.63495",
+      "reason": "Self-intersection[228453.058183207 446917.247231853]"
+    },
+    {
+      "layer": "GT_A003_A",
+      "id": "GT_A003_A.63587",
+      "reason": "Self-intersection[229096.02243435 447486.01492684]"
+    },
+    {
+      "layer": "GT_A003_A",
+      "id": "GT_A003_A.63843",
+      "reason": "Self-intersection[232505.321470497 447441.208356536]"
+    },
+    {
+      "layer": "GT_A003_A",
+      "id": "GT_A003_A.63853",
+      "reason": "Self-intersection[227312.390945734 448101.991398516]"
+    },
+    {
+      "layer": "GT_A003_A",
+      "id": "GT_A003_A.64244",
+      "reason": "Self-intersection[228101.484176501 446507.288657096]"
+    },
+    {
+      "layer": "GT_A003_A",
+      "id": "GT_A003_A.64248",
+      "reason": "Ring Self-intersection[228313.07850071 449321.55332795]"
+    },
+    {
+      "layer": "GT_A003_A",
+      "id": "GT_A003_A.65074",
+      "reason": "Ring Self-intersection[227750.73999267 449351.81216087]"
+    },
+    {
+      "layer": "GT_A005_A",
+      "id": "GT_A005_A.17263",
+      "reason": "Self-intersection[233190.794702406 452073.630348855]"
+    },
+    {
+      "layer": "GT_C059_A",
+      "id": "GT_C059_A.36185",
+      "reason": "Self-intersection[229320.487187378 446765.441606309]"
+    },
+    {
+      "layer": "GT_C059_A",
+      "id": "GT_C059_A.38996",
+      "reason": "Self-intersection[234146.412866464 451328.34286883]"
+    }
+  ],
+  "projection_roundtrip_max_m": 2.7352956006796113e-09,
+  "projection_roundtrip_is_survey_accuracy": false,
+  "field_verified": false,
+  "routing_eligible": false,
+  "license_status": "재배포 이용조건 미확인 · 로컬 연구용"
+}

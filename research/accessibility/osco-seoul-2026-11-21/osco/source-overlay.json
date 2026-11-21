@@ -1,0 +1,24 @@
+{
+  "bbox_lonlat": [
+    127.315,
+    36.61,
+    127.35,
+    36.64
+  ],
+  "input_crs": "EPSG:4326",
+  "distance_analysis_crs": "EPSG:5186",
+  "official_sidewalk_geometries": 614,
+  "osm_explicit_sidewalk_geometries": 0,
+  "osm_explicit_sidewalk_length_m": 0,
+  "osm_sidewalk_length_m_within_5m_of_official_geometry": 0,
+  "official_crossing_geometries": 438,
+  "osm_crossing_lines": 9,
+  "osm_crossing_nodes": 1,
+  "osm_crossing_candidates_within_10m_of_official_geometry": 8,
+  "field_verified": false,
+  "routing_eligible": false,
+  "notes": [
+    "Calculated only inside the same station–OSCO rectangle.",
+    "Distances show source proximity. No objects were merged or converted into verified network links."
+  ]
+}

@@ -1,0 +1,327 @@
+{
+  "source_metadata": {
+    "scope_id": "seoul-citywide",
+    "scope_name": "서울시 경계 전체",
+    "source": "OpenStreetMap / Geofabrik",
+    "source_url": "https://download.geofabrik.de/asia/south-korea/south-korea-261120.osm.pbf",
+    "source_as_of": "2026-11-20T21:21:21Z",
+    "retrieved_at_kst": "2026-11-21T14:17:43+09:00",
+    "source_crs": "EPSG:4326",
+    "distance_calculation_crs": "EPSG:5186",
+    "license": "ODbL-1.0",
+    "attribution": "© OpenStreetMap contributors",
+    "license_url": "https://www.openstreetmap.org/copyright",
+    "field_verified": false,
+    "routing_eligible": false,
+    "source_pbf_sha256": "492ceebb946500fa54dd1b460b4ff923884dd9e673f65d3750e1d60122b85a8e",
+    "source_pbf_bytes": 292399858,
+    "source_pbf_md5": "85bf57c0652e9bb68e74e667e1f4fa13",
+    "publisher_md5_verified": true,
+    "bounds_lon_lat": [
+      126.7644328,
+      37.4285424,
+      127.1837702,
+      37.7014794
+    ],
+    "coverage_limit": "Visible registration in a single OSM release. Geometry is not field surveying, and registered ways/areas may include closed, private, stairs or grade-separated passages.",
+    "allowed_geometry_differences": "OSM IDs are counted once per layer, layers can overlap, tags preserved. No snapped connection, entrance point, or new slope.",
+    "boundary_source": "https://www.openstreetmap.org/relation/2297418",
+    "boundary_source_as_of": "2026-11-19T21:22:20Z",
+    "scope_selection": "Intersects preserved 26 administrative geometries. Cross-boundary objects may occur in multiple district counts. Source geometries stay whole."
+  },
+  "layers": {
+    "transit": 13880,
+    "access": 42223,
+    "rest": 10523,
+    "buildings": 171939,
+    "support": 1543,
+    "road_context": 129345,
+    "pedestrian": 48281
+  },
+  "geometry_types_by_layer": {
+    "transit": {
+      "Point": 13458,
+      "Polygon": 226,
+      "LineString": 195,
+      "MultiPolygon": 1
+    },
+    "access": {
+      "Point": 27766,
+      "LineString": 14297,
+      "Polygon": 158,
+      "MultiPolygon": 2
+    },
+    "rest": {
+      "Point": 5174,
+      "Polygon": 5148,
+      "MultiPolygon": 94,
+      "LineString": 107
+    },
+    "buildings": {
+      "Point": 363,
+      "Polygon": 170671,
+      "MultiPolygon": 905
+    },
+    "support": {
+      "Point": 1110,
+      "Polygon": 376,
+      "LineString": 54,
+      "MultiPolygon": 3
+    },
+    "road_context": {
+      "LineString": 128596,
+      "Polygon": 749
+    },
+    "pedestrian": {
+      "LineString": 47318,
+      "Polygon": 824,
+      "MultiPolygon": 139
+    }
+  },
+  "held_invalid_geometry_count": 6,
+  "no_matching_district": {},
+  "district_intersection_counts": {
+    "강남구": {
+      "transit": 889,
+      "access": 2188,
+      "rest": 575,
+      "support": 93,
+      "buildings": 18722,
+      "road_context": 6491,
+      "pedestrian": 1894
+    },
+    "강동구": {
+      "transit": 489,
+      "rest": 319,
+      "access": 1457,
+      "buildings": 3106,
+      "support": 24,
+      "road_context": 4257,
+      "pedestrian": 1620
+    },
+    "강북구": {
+      "transit": 299,
+      "rest": 56,
+      "access": 619,
+      "support": 33,
+      "buildings": 1423,
+      "road_context": 3455,
+      "pedestrian": 496
+    },
+    "강서구": {
+      "transit": 839,
+      "rest": 452,
+      "access": 1152,
+      "buildings": 10533,
+      "support": 37,
+      "road_context": 6156,
+      "pedestrian": 1609
+    },
+    "관악구": {
+      "transit": 600,
+      "rest": 306,
+      "access": 1284,
+      "support": 68,
+      "buildings": 7409,
+      "road_context": 4458,
+      "pedestrian": 1399
+    },
+    "광진구": {
+      "transit": 277,
+      "rest": 221,
+      "access": 1610,
+      "support": 54,
+      "buildings": 5842,
+      "road_context": 3766,
+      "pedestrian": 1206
+    },
+    "구로구": {
+      "transit": 687,
+      "access": 478,
+      "rest": 192,
+      "buildings": 3642,
+      "support": 24,
+      "road_context": 3871,
+      "pedestrian": 773
+    },
+    "금천구": {
+      "access": 717,
+      "transit": 424,
+      "rest": 198,
+      "support": 16,
+      "buildings": 1720,
+      "road_context": 2829,
+      "pedestrian": 960
+    },
+    "노원구": {
+      "transit": 606,
+      "access": 1707,
+      "rest": 454,
+      "buildings": 3461,
+      "support": 86,
+      "road_context": 5200,
+      "pedestrian": 2102
+    },
+    "도봉구": {
+      "transit": 409,
+      "access": 869,
+      "rest": 180,
+      "buildings": 1593,
+      "support": 42,
+      "road_context": 3263,
+      "pedestrian": 1174
+    },
+    "동대문구": {
+      "transit": 446,
+      "access": 4267,
+      "rest": 405,
+      "buildings": 6696,
+      "support": 52,
+      "road_context": 7269,
+      "pedestrian": 3375
+    },
+    "동작구": {
+      "transit": 591,
+      "rest": 226,
+      "access": 517,
+      "buildings": 7189,
+      "support": 40,
+      "road_context": 3173,
+      "pedestrian": 697
+    },
+    "마포구": {
+      "transit": 554,
+      "rest": 370,
+      "access": 1360,
+      "support": 106,
+      "buildings": 17997,
+      "road_context": 6744,
+      "pedestrian": 2616
+    },
+    "서대문구": {
+      "transit": 391,
+      "rest": 1042,
+      "access": 2818,
+      "buildings": 8393,
+      "support": 102,
+      "road_context": 8274,
+      "pedestrian": 4647
+    },
+    "서초구": {
+      "transit": 867,
+      "rest": 481,
+      "access": 1720,
+      "buildings": 5799,
+      "support": 60,
+      "road_context": 6172,
+      "pedestrian": 2049
+    },
+    "성동구": {
+      "transit": 439,
+      "access": 1649,
+      "rest": 375,
+      "buildings": 4995,
+      "support": 72,
+      "road_context": 4584,
+      "pedestrian": 1937
+    },
+    "성북구": {
+      "transit": 487,
+      "access": 1907,
+      "rest": 406,
+      "buildings": 4577,
+      "support": 36,
+      "road_context": 5730,
+      "pedestrian": 1650
+    },
+    "송파구": {
+      "transit": 805,
+      "rest": 792,
+      "access": 2242,
+      "support": 79,
+      "buildings": 8594,
+      "road_context": 8815,
+      "pedestrian": 4478
+    },
+    "양천구": {
+      "transit": 479,
+      "rest": 278,
+      "access": 700,
+      "support": 26,
+      "buildings": 4462,
+      "road_context": 3598,
+      "pedestrian": 1093
+    },
+    "영등포구": {
+      "transit": 772,
+      "rest": 236,
+      "access": 1033,
+      "support": 81,
+      "buildings": 3118,
+      "road_context": 4650,
+      "pedestrian": 1408
+    },
+    "용산구": {
+      "transit": 504,
+      "rest": 387,
+      "access": 1136,
+      "buildings": 6877,
+      "support": 55,
+      "road_context": 4696,
+      "pedestrian": 1364
+    },
+    "은평구": {
+      "access": 2562,
+      "transit": 596,
+      "rest": 356,
+      "support": 49,
+      "buildings": 8865,
+      "road_context": 7014,
+      "pedestrian": 2469
+    },
+    "종로구": {
+      "transit": 505,
+      "access": 2510,
+      "rest": 1101,
+      "support": 153,
+      "buildings": 11780,
+      "road_context": 6813,
+      "pedestrian": 4025
+    },
+    "중구": {
+      "transit": 442,
+      "rest": 781,
+      "access": 1916,
+      "support": 81,
+      "buildings": 6948,
+      "road_context": 4439,
+      "pedestrian": 2211
+    },
+    "중랑구": {
+      "transit": 509,
+      "rest": 410,
+      "access": 4041,
+      "support": 76,
+      "buildings": 8333,
+      "road_context": 5659,
+      "pedestrian": 1832
+    }
+  },
+  "citywide_assets": [
+    {
+      "path": "seoul-citywide-pedestrian.geojson.gz",
+      "bytes": 4752374,
+      "sha256": "d9838cc849276e2143acc4c3c134b9df1e4c721ad4640d80d0f81810d79d35b6"
+    },
+    {
+      "path": "seoul-citywide-rest.geojson.gz",
+      "bytes": 915514,
+      "sha256": "0dbb45e6d4a2c256706e3831575dd9a10ff56d09cedbc307171054b7437ccd0d"
+    },
+    {
+      "path": "seoul-citywide-buildings.geojson.gz",
+      "bytes": 12499903,
+      "sha256": "e9d77110d39b9adc9352bcd5024f5685079db277b7e6cf5030eefaeaec5c1ea7"
+    }
+  ]
+}

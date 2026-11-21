@@ -1,0 +1,429 @@
+{
+  "source_metadata": {
+    "scope_id": "osco",
+    "scope_name": "청주오스코 / 오송역",
+    "source": "OpenStreetMap / Geofabrik",
+    "source_url": "https://download.geofabrik.de/asia/south-korea/south-korea-261120.osm.pbf",
+    "source_as_of": "2026-11-20T21:21:21Z",
+    "retrieved_at_kst": "2026-11-21T14:17:43+09:00",
+    "source_crs": "EPSG:4326",
+    "distance_calculation_crs": "EPSG:5186",
+    "license": "ODbL-1.0",
+    "attribution": "© OpenStreetMap contributors",
+    "license_url": "https://www.openstreetmap.org/copyright",
+    "field_verified": false,
+    "routing_eligible": false,
+    "source_pbf_sha256": "492ceebb946500fa54dd1b460b4ff923884dd9e673f65d3750e1d60122b85a8e",
+    "source_pbf_bytes": 292399858,
+    "source_pbf_md5": "85bf57c0652e9bb68e74e667e1f4fa13",
+    "publisher_md5_verified": true,
+    "reference_point_source": "https://www.cbartgallery-osco.com/cbart-osco/contents.do?key=851",
+    "bounds_lon_lat": [
+      127.28,
+      36.59,
+      127.39,
+      36.67
+    ],
+    "reference_point_lon_lat": [
+      127.335363,
+      36.6267203
+    ],
+    "distance_definition": "Minimum straight-line planar distance from reference point to registered geometry in EPSG:5186; original geometry retained; 1/3 km circles are within bbox.",
+    "coverage_limit": "Visible registration in a single OSM release. Geometry is not field surveying, and registered ways/areas may include closed, private, stairs or grade-separated passages.",
+    "allowed_geometry_differences": "OSM IDs are counted once per layer, layers can overlap, tags preserved. No snapped connection, entrance point, or new slope."
+  },
+  "counts": {
+    "pedestrian": {
+      "bbox": 2383,
+      "within_1000m": 15,
+      "within_3000m": 132,
+      "geometry_types": {
+        "LineString": 2382,
+        "Polygon": 1
+      },
+      "coverage_tags": {
+        "access": 5,
+        "wheelchair": 1,
+        "incline": 44,
+        "width": 7,
+        "est_width": 0,
+        "surface": 268,
+        "smoothness": 3,
+        "kerb": 0,
+        "kerb:height": 0,
+        "tactile_paving": 8,
+        "crossing": 749,
+        "lit": 22,
+        "handrail": 16,
+        "bridge": 75,
+        "tunnel": 8,
+        "layer": 89,
+        "opening_hours": 0,
+        "level": 19,
+        "sidewalk": 2,
+        "sidewalk:left": 0,
+        "sidewalk:right": 0,
+        "sidewalk:both": 0
+      }
+    },
+    "road_context": {
+      "bbox": 6596,
+      "within_1000m": 264,
+      "within_3000m": 1399,
+      "geometry_types": {
+        "LineString": 6595,
+        "Polygon": 1
+      },
+      "coverage_tags": {
+        "access": 33,
+        "wheelchair": 2,
+        "incline": 46,
+        "width": 11,
+        "est_width": 0,
+        "surface": 681,
+        "smoothness": 7,
+        "kerb": 0,
+        "kerb:height": 0,
+        "tactile_paving": 8,
+        "crossing": 752,
+        "lit": 36,
+        "handrail": 16,
+        "bridge": 248,
+        "tunnel": 82,
+        "layer": 331,
+        "opening_hours": 0,
+        "level": 16,
+        "sidewalk": 2,
+        "sidewalk:left": 2,
+        "sidewalk:right": 2,
+        "sidewalk:both": 0
+      }
+    },
+    "rest": {
+      "bbox": 415,
+      "within_1000m": 33,
+      "within_3000m": 120,
+      "geometry_types": {
+        "Point": 128,
+        "MultiPolygon": 2,
+        "Polygon": 284,
+        "LineString": 1
+      },
+      "coverage_tags": {
+        "access": 6,
+        "wheelchair": 1,
+        "incline": 0,
+        "width": 0,
+        "est_width": 0,
+        "surface": 0,
+        "smoothness": 0,
+        "kerb": 0,
+        "kerb:height": 0,
+        "tactile_paving": 27,
+        "crossing": 0,
+        "lit": 38,
+        "handrail": 0,
+        "bridge": 0,
+        "tunnel": 0,
+        "layer": 0,
+        "opening_hours": 1,
+        "level": 0,
+        "sidewalk": 0,
+        "sidewalk:left": 0,
+        "sidewalk:right": 0,
+        "sidewalk:both": 0
+      }
+    },
+    "buildings": {
+      "bbox": 4700,
+      "within_1000m": 466,
+      "within_3000m": 1112,
+      "geometry_types": {
+        "MultiPolygon": 6,
+        "Polygon": 4694
+      },
+      "coverage_tags": {
+        "access": 6,
+        "wheelchair": 29,
+        "incline": 0,
+        "width": 0,
+        "est_width": 0,
+        "surface": 1,
+        "smoothness": 0,
+        "kerb": 0,
+        "kerb:height": 0,
+        "tactile_paving": 0,
+        "crossing": 0,
+        "lit": 3,
+        "handrail": 0,
+        "bridge": 0,
+        "tunnel": 0,
+        "layer": 29,
+        "opening_hours": 3,
+        "level": 0,
+        "sidewalk": 0,
+        "sidewalk:left": 0,
+        "sidewalk:right": 0,
+        "sidewalk:both": 0
+      }
+    },
+    "access": {
+      "bbox": 1787,
+      "within_1000m": 6,
+      "within_3000m": 59,
+      "geometry_types": {
+        "Point": 973,
+        "LineString": 810,
+        "Polygon": 4
+      },
+      "coverage_tags": {
+        "access": 6,
+        "wheelchair": 21,
+        "incline": 36,
+        "width": 0,
+        "est_width": 0,
+        "surface": 98,
+        "smoothness": 0,
+        "kerb": 35,
+        "kerb:height": 0,
+        "tactile_paving": 163,
+        "crossing": 1546,
+        "lit": 29,
+        "handrail": 16,
+        "bridge": 0,
+        "tunnel": 0,
+        "layer": 0,
+        "opening_hours": 11,
+        "level": 9,
+        "sidewalk": 0,
+        "sidewalk:left": 0,
+        "sidewalk:right": 0,
+        "sidewalk:both": 0
+      }
+    },
+    "transit": {
+      "bbox": 156,
+      "within_1000m": 10,
+      "within_3000m": 49,
+      "geometry_types": {
+        "Point": 146,
+        "Polygon": 9,
+        "LineString": 1
+      },
+      "coverage_tags": {
+        "access": 2,
+        "wheelchair": 3,
+        "incline": 0,
+        "width": 0,
+        "est_width": 0,
+        "surface": 0,
+        "smoothness": 0,
+        "kerb": 0,
+        "kerb:height": 0,
+        "tactile_paving": 30,
+        "crossing": 0,
+        "lit": 36,
+        "handrail": 0,
+        "bridge": 0,
+        "tunnel": 0,
+        "layer": 0,
+        "opening_hours": 0,
+        "level": 1,
+        "sidewalk": 0,
+        "sidewalk:left": 0,
+        "sidewalk:right": 0,
+        "sidewalk:both": 0
+      }
+    },
+    "support": {
+      "bbox": 45,
+      "within_1000m": 0,
+      "within_3000m": 3,
+      "geometry_types": {
+        "Point": 12,
+        "Polygon": 30,
+        "LineString": 3
+      },
+      "coverage_tags": {
+        "access": 7,
+        "wheelchair": 3,
+        "incline": 0,
+        "width": 0,
+        "est_width": 0,
+        "surface": 0,
+        "smoothness": 0,
+        "kerb": 0,
+        "kerb:height": 0,
+        "tactile_paving": 0,
+        "crossing": 0,
+        "lit": 0,
+        "handrail": 0,
+        "bridge": 0,
+        "tunnel": 0,
+        "layer": 0,
+        "opening_hours": 0,
+        "level": 0,
+        "sidewalk": 0,
+        "sidewalk:left": 0,
+        "sidewalk:right": 0,
+        "sidewalk:both": 0
+      }
+    }
+  },
+  "rest_primary_categories": {
+    "bbox": {
+      "amenity=library": 20,
+      "bench=yes": 47,
+      "amenity=bench": 51,
+      "amenity=shelter": 30,
+      "shelter=yes": 4,
+      "leisure=playground": 48,
+      "leisure=park": 140,
+      "leisure=garden": 35,
+      "landuse=village_green": 40
+    },
+    "1000": {
+      "bench=yes": 1,
+      "amenity=library": 3,
+      "leisure=playground": 3,
+      "leisure=park": 6,
+      "landuse=village_green": 20
+    },
+    "3000": {
+      "amenity=library": 7,
+      "amenity=bench": 1,
+      "bench=yes": 17,
+      "shelter=yes": 2,
+      "leisure=garden": 23,
+      "leisure=park": 32,
+      "leisure=playground": 3,
+      "landuse=village_green": 35
+    }
+  },
+  "invalid_geometries_inside_bbox": 0,
+  "national_scan_notes": {},
+  "named_landmarks": {
+    "way/1423171859": {
+      "name": "청주 오스코",
+      "distance_m": 0.0,
+      "tags": {
+        "addr:city": "청주시",
+        "addr:housenumber": "250",
+        "addr:postcode": "28167",
+        "addr:province": "충청북도",
+        "addr:street": "오송생명로",
+        "addr:subdistrict": "만수리",
+        "addr:town": "오송읍",
+        "amenity": "conference_centre",
+        "building": "yes",
+        "name": "청주 오스코",
+        "name:en": "OSCO",
+        "name:ko": "청주 오스코"
+      },
+      "source_url": "https://www.openstreetmap.org/way/1423171859"
+    },
+    "node/368637868": {
+      "name": "오송",
+      "distance_m": 1015.34,
+      "tags": {
+        "name": "오송",
+        "name:en": "Osong",
+        "name:ja": "五松",
+        "name:ko": "오송",
+        "name:ko-Latn": "Osong",
+        "name:zh": "五松",
+        "name:zh-Hans": "五松",
+        "name:zh-Hant": "五松",
+        "name:zh-Latn": "Wusong",
+        "network": "KTX",
+        "network:wikidata": "Q167674",
+        "operator": "한국철도공사",
+        "operator:en": "Korea Railroad Corporation",
+        "operator:ko": "한국철도공사",
+        "operator:short": "KORAIL",
+        "operator:type": "public",
+        "operator:wikidata": "Q18169",
+        "operator:wikipedia": "en:Korail",
+        "public_transport": "station",
+        "railway": "station",
+        "railway:ref": "오송",
+        "station": "train",
+        "train": "yes",
+        "wikidata": "Q54285",
+        "wikipedia": "ko:오송역"
+      },
+      "source_url": "https://www.openstreetmap.org/node/368637868"
+    },
+    "node/8213401393": {
+      "name": "",
+      "distance_m": 962.66,
+      "tags": {
+        "railway": "subway_entrance",
+        "ref": "8"
+      },
+      "source_url": "https://www.openstreetmap.org/node/8213401393"
+    },
+    "node/10196145723": {
+      "name": "오송역8 (517번)",
+      "distance_m": 1110.73,
+      "tags": {
+        "bench": "yes",
+        "bin": "yes",
+        "bus": "yes",
+        "departures_board": "realtime",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "오송역8 (517번)",
+        "name:en": "Osong Station 8 (Bus No. 517)",
+        "name:ko": "오송역8 (517번)",
+        "public_transport": "platform",
+        "ref": "1462",
+        "shelter": "yes",
+        "tactile_paving": "yes"
+      },
+      "source_url": "https://www.openstreetmap.org/node/10196145723"
+    }
+  },
+  "assets": [
+    {
+      "path": "osm-pedestrian.geojson.gz",
+      "bytes": 197474,
+      "sha256": "d97ffca840a377cf75e87305d5e7b1de9816ebff67ea3668be9f4ee864930f38"
+    },
+    {
+      "path": "osm-road_context.geojson.gz",
+      "bytes": 683344,
+      "sha256": "a9f115f6f493065a80bde22e90250d9dd99aedc41de1e3312aade4b0faa84189"
+    },
+    {
+      "path": "osm-rest.geojson.gz",
+      "bytes": 45608,
+      "sha256": "949b597525af6dd88b5825475cd138c8e19a9f4dec6736084f81deef679c9c55"
+    },
+    {
+      "path": "osm-buildings.geojson.gz",
+      "bytes": 372212,
+      "sha256": "0f65f56b869479d4a0f22277cb90dc8f88d6894593d5721ed6f2a202c96b8d00"
+    },
+    {
+      "path": "osm-access.geojson.gz",
+      "bytes": 84603,
+      "sha256": "f70cdca6cc74159ef27252bb59430d8c9b4c77e80463b72bb67f7f6ce8883f82"
+    },
+    {
+      "path": "osm-transit.geojson.gz",
+      "bytes": 11247,
+      "sha256": "a6d4bb860196814306b1e7cc4c78467d06a64fdc1494dff88d6e15efca1add4d"
+    },
+    {
+      "path": "osm-support.geojson.gz",
+      "bytes": 6072,
+      "sha256": "5908d9d021052f5ca016cb6938036c3636f5333b85ab312aa5680490cda05b2e"
+    },
+    {
+      "path": "osm-invalid-geometries.json.gz",
+      "bytes": 882,
+      "sha256": "48fd19b9d24edfe29b8d23072f8fbd52d023016690dfdc277e7df3cc4e75ec74"
+    }
+  ]
+}

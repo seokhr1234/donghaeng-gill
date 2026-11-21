@@ -1,0 +1,190 @@
+{
+  "sources": {
+    "22906": {
+      "id": "22906",
+      "dataset_url": "https://data.seoul.go.kr/dataList/OA-22906/S/1/datasetView.do",
+      "download_url": "https://datafile.seoul.go.kr/bigfile/iot/inf/nio_download.do?useCache=false&infId=OA-22906&infSeq=1&seq=4",
+      "retrieved_at_kst_from_http_date": "2026-11-21T14:17:54+09:00",
+      "http_status": 200,
+      "published_file_date": "2026-08-10",
+      "bytes": 4884124,
+      "sha256": "2ccd31ed15f9f9709f1fc838d30ee046c6a0029975805620728e876b91b7289f",
+      "coordinate_reference": "Original longitude and latitude columns; WGS84 projection used to calculate local distance.",
+      "field_verified": false,
+      "routing_eligible": false,
+      "matches_previous_raw_sha256": true,
+      "previous_retrieval_at_kst": "2026-10-31T21:20:40.861268+09:00"
+    },
+    "23081": {
+      "id": "23081",
+      "dataset_url": "https://data.seoul.go.kr/dataList/OA-23081/F/1/datasetView.do",
+      "download_url": "https://datafile.seoul.go.kr/bigfile/iot/inf/nio_download.do?useCache=false&infId=OA-23081&infSeq=1&seq=1",
+      "retrieved_at_kst_from_http_date": "2026-11-21T14:17:56+09:00",
+      "http_status": 200,
+      "published_file_date": "2026-09-07 (file dated 2026-08-24)",
+      "bytes": 1735662,
+      "sha256": "1a5db9ea7a1cd58e2d7f2b4246baf099a3e4d5278f2867a1b87f3d50d21541be",
+      "coordinate_reference": null,
+      "field_verified": false,
+      "routing_eligible": false,
+      "matches_previous_raw_sha256": true,
+      "previous_retrieval_at_kst": "2026-10-31T21:17:10.900833+09:00"
+    },
+    "22240": {
+      "id": "22240",
+      "dataset_url": "https://data.seoul.go.kr/dataList/OA-22240/F/1/datasetView.do",
+      "download_url": "https://datafile.seoul.go.kr/bigfile/iot/inf/nio_download.do?useCache=false&infId=OA-22240&infSeq=1&seq=4",
+      "retrieved_at_kst_from_http_date": "2026-11-21T14:17:57+09:00",
+      "http_status": 200,
+      "published_file_date": "2026-09-15 (reference 2025-12-31)",
+      "bytes": 576002,
+      "sha256": "f2e90f6f11625c17c7c9be0cdcc1b8299cc358f94561f24244d86c702efc01d6",
+      "coordinate_reference": null,
+      "field_verified": false,
+      "routing_eligible": false,
+      "matches_previous_raw_sha256": true,
+      "previous_retrieval_at_kst": "2026-10-31T21:17:08.196980+09:00"
+    }
+  },
+  "scope": {
+    "center_longitude_latitude": [
+      127.0414554,
+      37.60192
+    ],
+    "radii_meter": [
+      1000,
+      3000
+    ],
+    "metric_crs": "EPSG:5186",
+    "field_verified": false
+  },
+  "crosswalks": {
+    "rows": 40282,
+    "valid_in_broad_Seoul_bbox": 40281,
+    "invalid_reference_row_ids": [
+      "39695"
+    ],
+    "seoul_gu_records": 25,
+    "district_counts": {
+      "seoul": {
+        "강남구": 2745,
+        "강동구": 1808,
+        "강북구": 1313,
+        "강서구": 2179,
+        "관악구": 1039,
+        "광진구": 1115,
+        "구로구": 1810,
+        "금천구": 977,
+        "노원구": 1706,
+        "도봉구": 1116,
+        "동대문구": 1479,
+        "동작구": 1025,
+        "마포구": 1982,
+        "서대문구": 1176,
+        "서초구": 2293,
+        "성동구": 1184,
+        "성북구": 1859,
+        "송파구": 2324,
+        "양천구": 1748,
+        "영등포구": 2361,
+        "용산구": 1080,
+        "은평구": 1663,
+        "종로구": 1137,
+        "중구": 1502,
+        "중랑구": 1660
+      },
+      "3000m": {
+        "강북구": 459,
+        "노원구": 121,
+        "동대문구": 751,
+        "성북구": 1561,
+        "중랑구": 50
+      },
+      "1000m": {
+        "성북구": 288
+      }
+    },
+    "data_record_dates": {
+      "2026-03-20": 40282
+    },
+    "radius_checks": {
+      "1000m": {
+        "crosswalks": 288,
+        "unique_OA_23081_management_ids": 112,
+        "cross_reference_signal_agreement": 112,
+        "data_record_dates": {
+          "2026-03-20": 288
+        }
+      },
+      "3000m": {
+        "crosswalks": 2942,
+        "unique_OA_23081_management_ids": 1496,
+        "cross_reference_signal_agreement": 1496,
+        "data_record_dates": {
+          "2026-03-20": 2942
+        }
+      }
+    }
+  },
+  "spreadsheets": {
+    "intersection_workbook_rows": 21776,
+    "intersection_crs_officially_unconfirmed": true,
+    "repeated_management_ids_within_district": 0,
+    "sidewalk_workbook_rows": 5677,
+    "wolgok_named_road_candidates": 49,
+    "named_road_counts": {
+      "월곡로": 6,
+      "종암로": 18,
+      "화랑로": 25
+    },
+    "candidate_width_present": 37
+  },
+  "crossing_xy_crs_hypothesis_not_used_to_map": {
+    "EPSG:5174": {
+      "paired_median_m": 100310.647,
+      "pairs_within_20_m": 0,
+      "pairs_compared": 21148
+    },
+    "EPSG:5179": {
+      "paired_median_m": 1591123.206,
+      "pairs_within_20_m": 0,
+      "pairs_compared": 21148
+    },
+    "EPSG:5181": {
+      "paired_median_m": 100005.392,
+      "pairs_within_20_m": 0,
+      "pairs_compared": 21148
+    },
+    "EPSG:5186": {
+      "paired_median_m": 5.529,
+      "pairs_within_20_m": 21144,
+      "pairs_compared": 21148
+    }
+  },
+  "existing_precision": {
+    "file": "donghaeng-nav/dist/data/precision/precision-map.geojson",
+    "sha256": "876ad5216be134b779aab319386e3addbd06a4500029eebec35256c91cf6c6c8",
+    "source_as_of": "2025-08-14 고시 · 2024 촬영 / 2025 조사·제작",
+    "declared_source_crs": "EPSG:5186",
+    "crs_verification": "inferred_and_cross_checked_not_explicit_epsg_in_xml",
+    "source": "https://map.ngii.go.kr/ms/map/NlipMap.do",
+    "existing_records_geometry": {
+      "building:LineString": 10979,
+      "sidewalk:LineString": 798
+    },
+    "valid_geometry_touching_circle": {
+      "1000m": {
+        "building": 8161,
+        "sidewalk": 610
+      },
+      "3000m": {
+        "building": 10979,
+        "sidewalk": 798
+      }
+    },
+    "invalid_excluded": {},
+    "reacquired": false,
+    "routing_eligible": false,
+    "field_verified": false
+  }
+}

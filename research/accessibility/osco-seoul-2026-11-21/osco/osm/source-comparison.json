@@ -1,0 +1,93 @@
+{
+  "previous_extract_comparison": {
+    "road_context": {
+      "previous_objects": 6644,
+      "current_objects": 6596,
+      "same_id": 6594,
+      "previous_only": 50,
+      "current_only": 2,
+      "same_version": 6589,
+      "newer_version": 5,
+      "changed_tag_object_ids": [],
+      "changed_geojson_shape_ids": [
+        "way/1221896155",
+        "way/324942435",
+        "way/468379871"
+      ],
+      "note": "Layer definitions and bbox predicate are not identical. IDs present in only one extract are not proven construction/removal."
+    },
+    "buildings": {
+      "previous_objects": 4690,
+      "current_objects": 4700,
+      "same_id": 4690,
+      "previous_only": 0,
+      "current_only": 10,
+      "same_version": 4684,
+      "newer_version": 6,
+      "changed_tag_object_ids": [
+        "way/1420199321",
+        "way/777466756",
+        "way/956058145",
+        "way/956058146"
+      ],
+      "changed_geojson_shape_ids": [
+        "way/1420199320",
+        "way/1420199321",
+        "way/956058146"
+      ],
+      "note": "Layer definitions and bbox predicate are not identical. IDs present in only one extract are not proven construction/removal."
+    },
+    "access": {
+      "previous_objects": 1764,
+      "current_objects": 1787,
+      "same_id": 1764,
+      "previous_only": 0,
+      "current_only": 23,
+      "same_version": 1763,
+      "newer_version": 1,
+      "changed_tag_object_ids": [],
+      "changed_geojson_shape_ids": [],
+      "note": "Layer definitions and bbox predicate are not identical. IDs present in only one extract are not proven construction/removal."
+    },
+    "transit": {
+      "previous_objects": 446,
+      "current_objects": 156,
+      "same_id": 156,
+      "previous_only": 290,
+      "current_only": 0,
+      "same_version": 156,
+      "newer_version": 0,
+      "changed_tag_object_ids": [],
+      "changed_geojson_shape_ids": [],
+      "note": "Layer definitions and bbox predicate are not identical. IDs present in only one extract are not proven construction/removal."
+    }
+  },
+  "live_core_source_comparison": {
+    "live_core_bbox": [
+      127.315,
+      36.61,
+      127.35,
+      36.64
+    ],
+    "live_request": "https://api.openstreetmap.org/api/0.6/map?bbox=127.315,36.61,127.35,36.64",
+    "live_http_status": 200,
+    "live_api_server_date": "2026-11-21T05:14:01Z",
+    "live_api_sha256": "7d77f0d74c0f8447973178579dc43161f683e240183d93a635a9b4744eb7cabd",
+    "live_api_counts": {
+      "node": 14513,
+      "way": 1896,
+      "relation": 67
+    },
+    "matched_unique_objects": 1654,
+    "same_version": 1654,
+    "version_changed": 0,
+    "same_version_mismatches": {
+      "tags": [],
+      "way_refs": [],
+      "coordinate_sequence": []
+    },
+    "note": "Live API data may change after file distribution. Same-version way vertices may change if a member node was edited independently. This is a source cross-check, not a field survey."
+  },
+  "field_verified": false,
+  "routing_eligible": false
+}

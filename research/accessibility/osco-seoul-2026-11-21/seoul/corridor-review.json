@@ -1,0 +1,184 @@
+{
+  "source": {
+    "scope_id": "wolgok",
+    "scope_name": "서울 월곡역 생활권",
+    "source": "OpenStreetMap / Geofabrik",
+    "source_url": "https://download.geofabrik.de/asia/south-korea/south-korea-261120.osm.pbf",
+    "source_as_of": "2026-11-20T21:21:21Z",
+    "retrieved_at_kst": "2026-11-21T14:17:43+09:00",
+    "source_crs": "EPSG:4326",
+    "distance_calculation_crs": "EPSG:5186",
+    "license": "ODbL-1.0",
+    "attribution": "© OpenStreetMap contributors",
+    "license_url": "https://www.openstreetmap.org/copyright",
+    "field_verified": false,
+    "routing_eligible": false,
+    "source_pbf_sha256": "492ceebb946500fa54dd1b460b4ff923884dd9e673f65d3750e1d60122b85a8e",
+    "source_pbf_bytes": 292399858,
+    "source_pbf_md5": "85bf57c0652e9bb68e74e667e1f4fa13",
+    "publisher_md5_verified": true,
+    "reference_point_source": "existing repository donghaeng-nav/dist/final-model.js",
+    "bounds_lon_lat": [
+      126.995,
+      37.568,
+      127.089,
+      37.637
+    ],
+    "reference_point_lon_lat": [
+      127.0414554,
+      37.60192
+    ],
+    "distance_definition": "Minimum straight-line planar distance from reference point to registered geometry in EPSG:5186; original geometry retained; 1/3 km circles are within bbox.",
+    "coverage_limit": "Visible registration in a single OSM release. Geometry is not field surveying, and registered ways/areas may include closed, private, stairs or grade-separated passages.",
+    "allowed_geometry_differences": "OSM IDs are counted once per layer, layers can overlap, tags preserved. No snapped connection, entrance point, or new slope."
+  },
+  "source_crs": "EPSG:4326",
+  "field_verified": false,
+  "routing_eligible": false,
+  "reference_point_connection_limit_m": 150,
+  "records": [
+    {
+      "id": "wolgok-exit-4-to-library",
+      "from": {
+        "id": "node/3401296560",
+        "name": "월곡역 4번 출구",
+        "osm_node": 3401296560,
+        "coordinates": [
+          127.0421491,
+          37.6023859
+        ],
+        "coordinate_role": "OSM 등록 출구 위치",
+        "source_url": "https://www.openstreetmap.org/node/3401296560"
+      },
+      "to": {
+        "id": "way/1149429846",
+        "name": "월곡꿈그림도서관",
+        "coordinates": [
+          127.04179198949807,
+          37.60414075
+        ],
+        "coordinate_role": "OSM 도서관 폴리곤 대표점",
+        "source_url": "https://www.openstreetmap.org/way/1149429846"
+      },
+      "registered_start": {
+        "node": 3401296560,
+        "gap_m": 0.0,
+        "basis": "registered_osm_node"
+      },
+      "registered_end": {
+        "node": 10694682853,
+        "gap_m": 13.1,
+        "basis": "nearest_registered_node"
+      },
+      "profile": "dedicated_paths_only",
+      "status": "registered_path_for_review",
+      "field_verified": false,
+      "routing_eligible": false,
+      "length_m": 410.4,
+      "matched_way_count": 17,
+      "highway_types": {
+        "footway": 17
+      },
+      "ways_with_registered_width": 2,
+      "ways_with_registered_incline": 0,
+      "crossed_osm_node_ids": [
+        5216843559,
+        5247465906,
+        10694691648,
+        10694691650,
+        10694824217,
+        3836301762
+      ],
+      "osm_way_ids": [
+        535345483,
+        535345484,
+        569407068,
+        750361678,
+        750361679,
+        750361680,
+        780350790,
+        810683807,
+        810683808,
+        1149624375,
+        1149624460,
+        1149624465,
+        1149624466,
+        1149624467,
+        1149624470,
+        1149624473,
+        1149641037
+      ]
+    },
+    {
+      "id": "wolgok-exit-4-to-library",
+      "from": {
+        "id": "node/3401296560",
+        "name": "월곡역 4번 출구",
+        "osm_node": 3401296560,
+        "coordinates": [
+          127.0421491,
+          37.6023859
+        ],
+        "coordinate_role": "OSM 등록 출구 위치",
+        "source_url": "https://www.openstreetmap.org/node/3401296560"
+      },
+      "to": {
+        "id": "way/1149429846",
+        "name": "월곡꿈그림도서관",
+        "coordinates": [
+          127.04179198949807,
+          37.60414075
+        ],
+        "coordinate_role": "OSM 도서관 폴리곤 대표점",
+        "source_url": "https://www.openstreetmap.org/way/1149429846"
+      },
+      "registered_start": {
+        "node": 3401296560,
+        "gap_m": 0.0,
+        "basis": "registered_osm_node"
+      },
+      "registered_end": {
+        "node": 10694682853,
+        "gap_m": 13.1,
+        "basis": "nearest_registered_node"
+      },
+      "profile": "dedicated_and_local_streets",
+      "status": "registered_path_for_review",
+      "field_verified": false,
+      "routing_eligible": false,
+      "length_m": 388.8,
+      "matched_way_count": 15,
+      "highway_types": {
+        "footway": 14,
+        "residential": 1
+      },
+      "ways_with_registered_width": 2,
+      "ways_with_registered_incline": 0,
+      "crossed_osm_node_ids": [
+        5216843559,
+        5247465906,
+        10694691648,
+        10694691650,
+        10694691654,
+        3836301762
+      ],
+      "osm_way_ids": [
+        260063481,
+        535345483,
+        535345484,
+        569407068,
+        750361678,
+        750361679,
+        750361680,
+        780350790,
+        810683807,
+        810683808,
+        1149624375,
+        1149624465,
+        1149624466,
+        1149624467,
+        1149624473
+      ]
+    }
+  ]
+}

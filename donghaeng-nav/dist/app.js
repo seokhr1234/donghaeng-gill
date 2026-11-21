@@ -317,7 +317,7 @@ async function findCityRoute(){
    if(basic||p.avoidSlope&&p.maxSlope==null)card.append(textEl('p','등록 보행망으로 계산한 시연 경로예요. 입력한 일부 이동 조건을 충족하지 않을 수 있어요.','gap-note'));
    if(p.rest){
     const nearby=DonghaengDemoBeta.nearbyRest(E,data.coordinates,betaPlaces(),p);
-    const note=nearby?nearby.name+' · 운영시간을 적용하지 않은 주변 참고점 · 실제 경유 연결 미확인':'이 경로 주변 150m 안에서 등록 휴식 참고점을 찾지 못했어요.';
+    const note=nearby?nearby.name+' · 시연용 개방 가정 · 실제 운영·출입·경유 연결 미확인':'이 경로 주변 150m 안에서 등록 휴식 참고점을 찾지 못했어요.';
     card.append(textEl('p',note,'demo-beta-rest'));
     showBetaRestPin(nearby,routeLayer);
    }

@@ -1,0 +1,24 @@
+﻿layer,name,study_geo_intersects_valid,core_geo_intersects_valid,complete_query_envelope_coverage,path
+GT_A001_A,도로면,936,465,True,municipal-derived/GT_A001_A.geojson
+GT_A003_A,인도,1518,614,True,municipal-derived/GT_A003_A.geojson
+GT_A004_A,횡단보도,1085,438,True,municipal-derived/GT_A004_A.geojson
+GT_A005_A,안전지대,347,116,True,municipal-derived/GT_A005_A.geojson
+GT_A008_A,교차로,161,72,True,municipal-derived/GT_A008_A.geojson
+GT_A067_A,과속방지턱,339,153,True,municipal-derived/GT_A067_A.geojson
+GT_A068_P,횡단보도예고표시,624,180,True,municipal-derived/GT_A068_P.geojson
+GT_A089_A,바닥보행신호등,4,0,True,municipal-derived/GT_A089_A.geojson
+GT_A090_P,보행자버튼,44,12,True,municipal-derived/GT_A090_P.geojson
+GT_A110_P,신호등,2190,983,True,municipal-derived/GT_A110_P.geojson
+GT_A119_P,음향신호기,294,163,True,municipal-derived/GT_A119_P.geojson
+GT_C022_P,보행용조명,608,246,True,municipal-derived/GT_C022_P.geojson
+GT_C059_A,방호울타리,772,290,True,municipal-derived/GT_C059_A.geojson
+GT_C091_A,미끄럼방지시설,49,19,True,municipal-derived/GT_C091_A.geojson
+GT_C094_A,점자블럭,1236,600,False,municipal-derived/GT_C094_A.geojson
+GT_C095_A,입체횡단시설,3,1,True,municipal-derived/GT_C095_A.geojson
+GT_C104_A,고원식교차로,62,20,True,municipal-derived/GT_C104_A.geojson
+GT_C109_A,교통섬,90,23,True,municipal-derived/GT_C109_A.geojson
+GT_C111_P,버스정보안내기(BIT),58,28,True,municipal-derived/GT_C111_P.geojson
+GT_C114_A,자전거전용도로,114,58,True,municipal-derived/GT_C114_A.geojson
+GT_C118_P,승강장,259,68,True,municipal-derived/GT_C118_P.geojson
+GT_C130_P,횡단보도조명,335,136,True,municipal-derived/GT_C130_P.geojson
+GT_C131_P,보행신호 음성안내 보조장치,17,13,True,municipal-derived/GT_C131_P.geojson

@@ -1,0 +1,12 @@
+{
+  "active_clip_boundary_source": "research/accessibility/seoul-rest-2026-11-20/derived/osm-boundaries.geojson",
+  "active_clip_boundary_source_as_of": "2026-11-19T21:22:20Z",
+  "live_url": "https://api.openstreetmap.org/api/0.6/relation/2297418/full",
+  "live_http_status": 200,
+  "live_bytes": 887928,
+  "live_sha256": "9f0e2e0d2c673c2be59251a256cdbda24354f5749a11308de92f4b1155914517",
+  "live_relation_last_edit_utc": "2026-10-12T22:50:31Z",
+  "live_relation_version": 150,
+  "current_polygon_topologically_equal_to_clip": true,
+  "district_boundaries_rechecked_live": false
+}
