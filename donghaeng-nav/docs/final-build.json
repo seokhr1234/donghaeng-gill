@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-22-demo-beta",
+  "version": "2026-11-22-demo-beta-slope",
   "demo_beta": {
     "ignores_rest_availability": true,
     "offline_example": true,
@@ -10,7 +10,7 @@
     "online_page": "expansion.html",
     "service_code_files": 57,
     "review_asset_files": 2,
-    "service_integrity_sha256": "868655074fcd5fbdd1a1add94a50ab4d29683e6e6f2d15b668f63ee60aad92bc",
+    "service_integrity_sha256": "4f08e5cf70d02a074ea07c056a10db7588c54e9733da4be2f3c6a38654cab8b5",
     "citywide_routing": false,
     "authenticated_transit_verified": false,
     "new_slope_values_promoted": 0,
@@ -93,9 +93,9 @@
     },
     {
       "path": "data/osco/info.json.gz",
-      "sha256": "a9163549f0578a950d09893f9ddc4569205745a2ce637f638ea1b602eda222ae",
-      "bytes": 3380,
-      "source_sha256": "d872d02bc418b7478f4c5a9eafbae10e7e3aa532fccb2b72dc168368813eadde"
+      "sha256": "a0a43d5ecda779a5b253f47bc47a8555a079b73681da1d1e81b77b56ba4f6a55",
+      "bytes": 3590,
+      "source_sha256": "0b7f374c5f6933b8a447dd55c135fdaa3ebf4831e2f39d47e198a522683fccc8"
     },
     {
       "path": "data/osco/context.json.gz",
@@ -236,8 +236,8 @@
   "precision_records": 16169,
   "precision_field_verified": false,
   "runtime_validation": "Exact hashes and graph binding; supplied OA-22241 archive re-extracted as supplementary evidence only; existing route slopes and precision map unchanged",
-  "html_sha256": "7c6ba2ce77b2f157416ba73389ffe487e382952c7052bc82a62bcf4ca9bc4abf",
-  "html_bytes": 20768164,
+  "html_sha256": "36603b73a071ffb3490e79348f73105bf9810cec76c8607f099e724817872093",
+  "html_bytes": 20770468,
   "external_requests_required": false,
   "online_basemap": "OpenStreetMap raster tiles via Leaflet; HTTP(S) only",
   "offline_basemap": "Embedded OSM snapshot via Leaflet GridLayer",

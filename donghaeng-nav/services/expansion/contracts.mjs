@@ -21,12 +21,16 @@ export function integer(value, fallback, max) {
   if (!/^\d+$/.test(String(value)) || Number(value) > max) fail(400, 'invalid_limit', '요청 건수·페이지를 확인해 주세요.');
   return Number(value);
 }
-export function walkingInput(input) {
+export function walkingInput(input, {allowDemoSlopeFallback = false} = {}) {
   if (!input || Array.isArray(input) || Object.keys(input).some(k => !['origin','destination','profile','atTime'].includes(k)) || !point(input.origin) || !point(input.destination))
     fail(400, 'invalid_route', '출발·목적지 좌표를 확인해 주세요.');
   const p = input.profile ?? {};
   const flags = ['wheelchair','avoidSteps','avoidSlope','rest','short','recognized'];
   const keys = [...flags,'raw','source','restKind','restMinutes','maxSlope','speed'];
+  if (allowDemoSlopeFallback) {
+    flags.push('demoIgnoreSlope');
+    keys.push('demoIgnoreSlope');
+  }
   if (!p || Array.isArray(p) || typeof p !== 'object' || Object.keys(p).some(k => !keys.includes(k))
       || flags.some(k => k in p && typeof p[k] !== 'boolean')
       || ['raw','source'].some(k => k in p && (typeof p[k] !== 'string' || p[k].length > 500))
@@ -42,6 +46,7 @@ export function walkingInput(input) {
   // Same conservative wheelchair policy as the existing browser engine; this
   // normalizes the effective constraints before transit/worker comparisons.
   if(profile.wheelchair){profile.avoidSteps=true;profile.avoidSlope=true;profile.short=false;profile.maxSlope=Math.min(profile.maxSlope??5,5)}
+  if(profile.demoIgnoreSlope){profile.avoidSlope=false;profile.maxSlope=null}
   return {origin:[...input.origin],destination:[...input.destination],atTime,profile};
 }
 export async function jsonBody(req, limit = 8192) {

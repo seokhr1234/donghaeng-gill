@@ -15,8 +15,8 @@
   "outputs": [
     {
       "path": "data/osco/info.json",
-      "sha256": "d872d02bc418b7478f4c5a9eafbae10e7e3aa532fccb2b72dc168368813eadde",
-      "bytes": 8149
+      "sha256": "0b7f374c5f6933b8a447dd55c135fdaa3ebf4831e2f39d47e198a522683fccc8",
+      "bytes": 8845
     },
     {
       "path": "data/osco/context.json",

@@ -22,12 +22,25 @@
     });
   }
 
-  function cityProfile(profile, basic = false) {
+  function cityProfile(profile, relaxSlope = false) {
     return {
       ...profile, rest: false, restMinutes: null,
-      ...(basic ? {avoidSteps: false, wheelchair: false, maxSlope: null, avoidSlope: false} :
-        {avoidSlope: profile.maxSlope != null && profile.avoidSlope}),
+      ...(relaxSlope ? {demoIgnoreSlope: true, maxSlope: null, avoidSlope: false} : {}),
     };
+  }
+
+  function retryCityWithoutSlope(profile, status, code) {
+    return status === 422 && (profile.avoidSlope || profile.maxSlope != null || profile.wheelchair) &&
+      ['city_slope_evidence_required', 'city_endpoint_unresolved', 'city_no_connected_route'].includes(code);
+  }
+
+  function slopeNotes({registered, reference, unknown, relaxed}) {
+    const notes = [];
+    if (relaxed) notes.push('경사 조건으로 연결을 찾지 못해 경사 제한 없이 다시 계산했어요.');
+    if (Number.isFinite(registered)) notes.push('등록 구간 최대 경사 ' + registered.toFixed(1) + '%');
+    if (Number.isFinite(reference)) notes.push('지형 추정 구간 최대 경사 약 ' + reference.toFixed(1) + '%');
+    if (unknown > 0) notes.push('경사 미확인 ' + Math.round(unknown).toLocaleString() + 'm · 확인된 구간의 수치와 구분해요.');
+    return notes;
   }
 
   function nearbyRest(E, coords, candidates, profile) {
@@ -53,24 +66,28 @@
     const working = {...screened, restPlaces: candidates, meta: {...screened.meta, buildingAudit: null}};
     const preferred = {...profile, restMinutes: null};
     let result;
-    let basic = false;
+    const askedForSlope = profile.avoidSlope || profile.maxSlope != null || profile.wheelchair;
+    let relaxed = false;
     try {
       result = Endpoint.route(E, working, from, to, preferred);
+      relaxed = result.assistancePreview;
     } catch (error) {
-      if (!(profile.rest || profile.maxSlope != null || profile.avoidSlope || profile.avoidSteps || profile.wheelchair)) {
-        throw error;
-      }
-      basic = true;
-      result = Endpoint.route(E, working, from, to, cityProfile(profile, true));
+      if (!askedForSlope) throw error;
+      relaxed = true;
     }
-    const notes = ['시연 전용 · 실제 이용과 안전은 현장에서 확인해 주세요.'];
+    if (relaxed) result = Endpoint.route(E, working, from, to, {
+      ...preferred, demoIgnoreSlope: true, maxSlope: null, avoidSlope: false,
+    });
+    const notes = ['시연 전용 · 실제 이용과 안전은 현장에서 확인해 주세요.', ...slopeNotes({
+      registered: result.maxKnownSlope, reference: result.maxEstimatedSlope, unknown: result.unknown, relaxed,
+    })];
     if (profile.rest) notes.push('시설은 모두 개방으로 가정했어요. 운영시간·출입 제한·검증 상태와 요청한 휴식 간격은 적용하지 않았어요.');
-    if (basic) notes.push('기본 보행망에서 찾은 예시로, 입력한 계단·경사 등 이동 조건을 충족하지 않을 수 있어요.');
     return {
       ...result, p: profile, label: '베타 시연 경로', selectionIneligible: true, demoNotes: notes,
+      demoSlopeRelaxed: relaxed,
       demoNearbyRest: result.restStop ? null : nearbyRest(E, result.coords, candidates, profile),
     };
   }
 
-  return {places, cityProfile, nearbyRest, localRoute, availabilityNote};
+  return {places, cityProfile, retryCityWithoutSlope, slopeNotes, nearbyRest, localRoute, availabilityNote};
 });

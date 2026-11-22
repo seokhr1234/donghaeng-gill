@@ -299,22 +299,30 @@ async function findCityRoute(){
  if(autoAnalyzedText!==inputText||!profile){const ok=await analyzeWithGemini();if(!ok||inputText!==$('#condition').value||trip!==JSON.stringify([origin,destination?.ll]))return}
  invalidate();const controller=new AbortController();cityRequest=controller;const atTime=new Date().toISOString(),timeout=setTimeout(()=>controller.abort(),demoBeta?12000:18000),p=effectiveProfile();$('#find-route').disabled=true;searchLabel('서울 보행 경로를 계산하고 있어요…');$('#search').setAttribute('aria-busy','true');$('#search-status').textContent='서울 등록 도로의 연결과 이동 조건을 확인하고 있어요.';
  try{
-  const request=selectedProfile=>fetch('/api/routes/city-walk',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({origin,destination:destination.ll,profile:TransitUI.toApiProfile(selectedProfile),atTime}),signal:controller.signal});
-  let response=await request(demoBeta?DonghaengDemoBeta.cityProfile(p):p),basic=false;
+  const request=selectedProfile=>{
+   const bodyProfile=TransitUI.toApiProfile(selectedProfile);
+   if(selectedProfile.demoIgnoreSlope)bodyProfile.demoIgnoreSlope=true;
+   return fetch('/api/routes/city-walk',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({origin,destination:destination.ll,profile:bodyProfile,atTime}),signal:controller.signal});
+  };
   const current=()=>cityRequest===controller&&trip===JSON.stringify([origin,destination?.ll]);
+  let response=await request(demoBeta?DonghaengDemoBeta.cityProfile(p):p);
+  let data=await response.json(),relaxed=false;
   if(!current())return;
-  if(demoBeta&&response.status===422&&(p.avoidSteps||p.wheelchair||p.maxSlope!=null)){
-   basic=true;
+  if(demoBeta&&DonghaengDemoBeta.retryCityWithoutSlope(p,response.status,data.code)){
    response=await request(DonghaengDemoBeta.cityProfile(p,true));
+   data=await response.json();
+   relaxed=true;
   }
-  const data=await response.json();if(!current())return;if(!response.ok)throw Error(data.error||'서울 보행 계산에 실패했어요.');if(data.schema!=='donghaeng-city-walk-v1'||data.fieldVerified!==false||data.accessibilityVerified!==false||!Array.isArray(data.coordinates)||data.coordinates.length<2)throw Error('서울 보행 결과를 확인하지 못했어요.');cityRoute=data;
+  if(!current())return;if(!response.ok)throw Error(data.error||'서울 보행 계산에 실패했어요.');if(data.schema!=='donghaeng-city-walk-v1'||data.fieldVerified!==false||data.accessibilityVerified!==false||!Array.isArray(data.coordinates)||data.coordinates.length<2)throw Error('서울 보행 결과를 확인하지 못했어요.');cityRoute=data;
   const approachCoordinates=(data.approachesOnRoad||[]).flatMap(item=>item?.coordinates||[]);
   for(const item of data.approachesOnRoad||[])if(item)L.polyline(item.coordinates,{contrastRole:'route',color:'#176d52',weight:5,opacity:.95}).addTo(routeLayer);
-  L.polyline(data.coordinates,{color:'#fff',weight:9,opacity:.95}).addTo(routeLayer);L.polyline(data.coordinates,{contrastRole:'route',color:'#176d52',weight:5,opacity:.95}).addTo(routeLayer);$('#routes').replaceChildren();const card=textEl('article','','route-card');card.append(textEl('h3',demoBeta?'서울 베타 시연 경로':'서울 보행 참고 경로'),textEl('p',Math.round(data.totalReferenceMeters??data.distanceMeters).toLocaleString()+'m · 약 '+(data.totalReferenceMeters==null?data.minutes:Math.ceil(data.totalReferenceMeters/data.profile.speed))+'분','city-route-summary'),textEl('p','계단 등록 구간 '+Math.round(data.stepsMeters)+'m · 경사 미등록 '+Math.round(data.unknownInclineMeters)+'m','city-route-note'));
+  L.polyline(data.coordinates,{color:'#fff',weight:9,opacity:.95}).addTo(routeLayer);L.polyline(data.coordinates,{contrastRole:'route',color:'#176d52',weight:5,opacity:.95}).addTo(routeLayer);$('#routes').replaceChildren();const card=textEl('article','','route-card');card.append(textEl('h3',demoBeta?'서울 베타 시연 경로':'서울 보행 참고 경로'),textEl('p',Math.round(data.totalReferenceMeters??data.distanceMeters).toLocaleString()+'m · 약 '+(data.totalReferenceMeters==null?data.minutes:Math.ceil(data.totalReferenceMeters/data.profile.speed))+'분','city-route-summary'),textEl('p','계단 등록 구간 '+Math.round(data.stepsMeters)+'m'+(demoBeta?'':' · 경사 미등록 '+Math.round(data.unknownInclineMeters)+'m'),'city-route-note'));
   card.append(textEl('p','참고 경로 · 출입구와 접근성 미확인','review-badge'));
   if(demoBeta){
    $('#mobile-save').hidden=true;
-   if(basic||p.avoidSlope&&p.maxSlope==null)card.append(textEl('p','등록 보행망으로 계산한 시연 경로예요. 입력한 일부 이동 조건을 충족하지 않을 수 있어요.','gap-note'));
+   for(const note of DonghaengDemoBeta.slopeNotes({registered:data.registeredInclineMax,unknown:data.unknownInclineMeters,relaxed})) {
+    card.append(textEl('p',note,'gap-note demo-beta-slope'));
+   }
    if(p.rest){
     const nearby=DonghaengDemoBeta.nearbyRest(E,data.coordinates,betaPlaces(),p);
     const note=nearby?nearby.name+' · 시연용 개방 가정 · 실제 운영·출입·경유 연결 미확인':'이 경로 주변 150m 안에서 등록 휴식 참고점을 찾지 못했어요.';
@@ -336,7 +344,7 @@ function reviewRouteReasons(route){
  if(route.accessReview)reasons.push('승강기 운행·보도 접속·육교 상판 경사 미확인');
  const grades=route.edges.map(E.screeningGrade).filter(Number.isFinite);
  const limit=route.p.maxSlope,maxGrade=grades.length?Math.max(...grades):null;
- if(limit!=null&&maxGrade!=null&&maxGrade>limit)reasons.push(`참고 경사 상단 약 ${maxGrade.toFixed(1)}% · 적용 기준 ${limit}% 초과`);
+ if(!route.demoSlopeRelaxed&&limit!=null&&maxGrade!=null&&maxGrade>limit)reasons.push(`참고 경사 상단 약 ${maxGrade.toFixed(1)}% · 적용 기준 ${limit}% 초과`);
  if(route.connectionReview?.needsGeometryReview)reasons.push('건물 도형과 겹치는 연결 또는 구간이 있어요.');
  if(route.p.rest&&(!route.restStop||route.p.restKind==='shelter'&&route.restStop.kind!=='shelter'||route.p.restKind==='bench'&&route.restStop.kind==='shelter'))reasons.push('요청한 휴식 조건을 충족하는 지점을 찾지 못했어요.');
  if(!reasons.length)reasons.push('이동 조건과 실제 보행 연결을 확인해 주세요.');

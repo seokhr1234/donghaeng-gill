@@ -121,6 +121,16 @@
   }
   panel.append(status, retry, el('p', '확대 후 현재 화면의 지물만 표시해요. 건수는 등록 객체 수이며 실제 시설 수와 다를 수 있어요.', 'osco-note'));
   if (demoBeta) panel.append(el('p', '시연에서는 모든 등록 휴식 장소를 개방으로 가정해요. 실제 운영·출입은 현장에서 확인해 주세요.', 'osco-warning'));
+  if (data.terrain_reference?.samples?.length) {
+   const terrain = data.terrain_reference, details = el('details');
+   details.append(el('summary', '오스코 주변 지형 경사 참고'),
+    el('p', terrain.dem_vintage + '년 ' + terrain.dem_cell_size_m + 'm 표고모형 기반 지점 등급 · 보도 노면 실측과 도보 연결 미확인', 'osco-note'));
+   const list = el('ul');
+   for (const sample of terrain.samples) list.append(el('li', sample.name + ' · ' + (sample.class_label || '조회 실패')));
+   details.append(list, link(terrain.provider, terrain.source_url),
+    el('small', '조회 ' + terrain.samples[0].queried_at_kst.slice(0, 10) + ' (KST)'));
+   panel.append(details);
+  }
   const evidence = el('details'); evidence.append(el('summary', '조사 출처와 적용 범위'));
   evidence.append(el('p', 'OSM 자료 기준 ' + data.osm_source_metadata.source_as_of + ' · EPSG:4326 · ODbL-1.0'),
    el('p', data.terrain_notice), el('p', '청주시 상세 도형과 가공 쉼터·화장실은 재이용 조건을 확인 중이라 표시에서 보류했습니다.'),

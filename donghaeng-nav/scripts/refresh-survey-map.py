@@ -94,6 +94,14 @@ def main():
         'declared_source_crs': source['source_crs'],
     })
     info['active_osm_source_id'] = SOURCE_ID
+    terrain = read(RESEARCH.parent / 'osco-slope-2026-11-22/neins-point-slope-classes.json')
+    assert terrain['field_verified'] is False and terrain['routing_eligible'] is False
+    info['terrain_reference'] = {
+        'source_url': terrain['viewer_url'], 'provider': terrain['provider'],
+        'dem_vintage': terrain['provider_dem_vintage'], 'dem_cell_size_m': terrain['provider_dem_cell_size_m'],
+        'samples': [{key: sample.get(key) for key in ('name', 'class_label', 'queried_at_kst')}
+                    for sample in terrain['samples']],
+    }
     context = {
         'schema': 'donghaeng-osco-context-v1', 'display_only': True, 'field_verified': False,
         'routing_eligible': False, 'source_metadata': source, 'layers': layers,

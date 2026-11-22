@@ -1,0 +1,101 @@
+{
+  "field_verified": false,
+  "routing_eligible": false,
+  "new_slope_values_promoted": 0,
+  "reference_lonlat": [
+    127.335363,
+    36.6267203
+  ],
+  "osm": {
+    "source_as_of": "2026-11-20T21:21:21Z",
+    "collected_at_kst": "2026-11-21T14:17:43+09:00",
+    "url": "https://download.geofabrik.de/asia/south-korea/south-korea-261120.osm.pbf",
+    "source_crs": "EPSG:4326",
+    "coverage": {
+      "pedestrian": {
+        "bbox": {
+          "registered_objects": 2383,
+          "incline_tags": {
+            "0%": 1,
+            "down": 22,
+            "up": 21
+          }
+        },
+        "1000m": {
+          "registered_objects": 15,
+          "incline_tags": {}
+        },
+        "3000m": {
+          "registered_objects": 132,
+          "incline_tags": {}
+        }
+      },
+      "road_context": {
+        "bbox": {
+          "registered_objects": 6596,
+          "incline_tags": {
+            "-0%": 1,
+            "0%": 1,
+            "down": 23,
+            "up": 21
+          }
+        },
+        "1000m": {
+          "registered_objects": 264,
+          "incline_tags": {}
+        },
+        "3000m": {
+          "registered_objects": 1399,
+          "incline_tags": {}
+        }
+      },
+      "access": {
+        "bbox": {
+          "registered_objects": 1787,
+          "incline_tags": {
+            "down": 17,
+            "up": 19
+          }
+        },
+        "1000m": {
+          "registered_objects": 6,
+          "incline_tags": {}
+        },
+        "3000m": {
+          "registered_objects": 59,
+          "incline_tags": {}
+        }
+      }
+    }
+  },
+  "copernicus": {
+    "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N36_00_E127_00_DEM/Copernicus_DSM_COG_10_N36_00_E127_00_DEM.tif",
+    "source_collection": "Copernicus DEM 2021 release (AWS)",
+    "local_tile_acquisition_date": null,
+    "original_collected_at_kst": "2026-11-17T00:02:30.571946+09:00",
+    "source_crs": "EPSG:4326",
+    "vertical_datum": "EGM2008 (EPSG:3855), according to official Copernicus product documentation; not encoded in tile CRS",
+    "source_sha256": "5acd8774fc11205e1029b20a59f3444750ac5546a5186e936b8bf334a0f9f48e",
+    "input_clip_sha256": "6809f919c8869d4a2e4e29154e4783db36caec5a139e176478a705440a7eb4ba",
+    "derived_crs": "EPSG:5186",
+    "derived_pixel_spacing_m": 30,
+    "method": "Bilinear reprojection followed by a 3x3 Horn local surface gradient in percent",
+    "derived_raster": "osco-copernicus-surface-slope-percent.tif",
+    "derived_sha256": "41116155b588bf94d855ee29dffa28765c4daf8b6f2169c789a85af170cd7097",
+    "raster_summary": {
+      "1000m": {
+        "cells": 3494,
+        "cells_without_value": 0,
+        "median_percent": 1.74,
+        "p90_percent": 5.75
+      },
+      "3000m": {
+        "cells": 31414,
+        "cells_without_value": 0,
+        "median_percent": 3.44,
+        "p90_percent": 16.73
+      }
+    },
+    "attribution": "Produced using Copernicus WorldDEM-30 © DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved."
+  }
+}

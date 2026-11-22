@@ -4,6 +4,8 @@
 
 전체 변경은 [수정이력.md](수정이력.md), 작업 규칙은 [AGENTS.md](AGENTS.md), 이번 전환의 근거와 검사 범위는 [메인 전환 기록](donghaeng-nav/docs/main-navigation-promotion.md)을 참고하세요.
 
+2026-11-22 시연 베타 1.0.10-beta.3. 경사 조건으로 경로가 막히면 경사 제한만 풀어 다시 계산하고, 등록 경사와 미확인 구간을 구분합니다. [오스코 경사 자료](research/accessibility/osco-slope-2026-11-22/README.md)
+
 2026-11-22 시연 베타 1.0.10-beta.2. 모든 등록 휴식 시설을 개방으로 가정합니다. [조사 지도](research/accessibility/osco-seoul-2026-11-21/README.md) · [Android 설치 ZIP](https://github.com/seokhr1234/donghaeng-gill/archive/refs/tags/android-demo-v1.0.10-beta.2-download.zip)
 
 **시연 베타 1.0.10-beta.1**에서는 휴식시설의 등록 운영시간·자료 확인 상태를 후보 조건에서 뺍니다. 서울 전역은 등록 보행 경로와 주변 휴식시설을 함께 표시합니다. 인터넷 없이 시연하려면 **더보기 → 월곡 오프라인 예시**를 선택하세요. [Android 베타 다운로드](https://github.com/seokhr1234/donghaeng-gill/releases/tag/android-demo-v1.0.10-beta.1)

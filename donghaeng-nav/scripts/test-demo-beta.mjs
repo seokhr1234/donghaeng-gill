@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import {createRequire} from 'node:module';
 import {createApp} from '../server.mjs';
+import {walkingInput} from '../services/expansion/contracts.mjs';
 
 const require = createRequire(import.meta.url);
 const E = require('../dist/engine.js');
@@ -29,6 +30,25 @@ const restProfile = {rest: true, restKind: 'shelter', speed: 60, atTime: '2026-1
 closedOnly.restPlaces = [{...candidate, operation: 'closed'}];
 assert.equal(Endpoint.route(E, closedOnly, start, end, restProfile).restStop, null);
 assert.equal(Beta.localRoute(E, Endpoint, closedOnly, start, end, {...restProfile, restMinutes: 1}, [candidate]).restStop.id, 'closed');
+const wheelchair = {wheelchair: true, avoidSteps: true, avoidSlope: true, maxSlope: 3, speed: 55};
+const rampStart = [37.59, 127.037];
+const ramp = E.createGraph({elements: [
+  ...[rampStart, candidate.ll, end].map(([lat, lon], i) => ({type: 'node', id: i + 1, lat, lon})),
+  {type: 'way', id: 11, nodes: [1, 2], tags: {highway: 'footway', incline: '8%'}},
+  {type: 'way', id: 12, nodes: [2, 3], tags: {highway: 'footway'}},
+]});
+const missing = Beta.localRoute(E, Endpoint, closedOnly, start, end, wheelchair, []);
+assert(!missing.demoSlopeRelaxed && missing.unknown > 0 && missing.maxKnownSlope === null);
+const relaxed = Beta.localRoute(E, Endpoint, ramp, rampStart, end, wheelchair, []);
+assert(relaxed.demoSlopeRelaxed && relaxed.unknown > 0 && relaxed.maxKnownSlope === 8);
+const rejectedSteps = {...ramp, nodes: new Map([...ramp.nodes].map(([id,node]) =>
+  [id, {...node, edges: node.edges.map(edge => ({...edge, steps: true}))}]))};
+assert.throws(() => Beta.localRoute(E, Endpoint, rejectedSteps, rampStart, end, wheelchair, []));
+const input = {origin:start, destination:end, profile:Beta.cityProfile(wheelchair,true)};
+assert.throws(() => walkingInput(input), error => error.code === 'invalid_profile');
+const fallbackProfile = walkingInput(input,{allowDemoSlopeFallback:true}).profile;
+assert(fallbackProfile.wheelchair && fallbackProfile.avoidSteps);
+assert.equal(fallbackProfile.maxSlope, null);
 
 const server = createApp({});
 await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
@@ -69,23 +89,49 @@ try {
   assert.deepEqual(requests, []);
   await page.evaluate(() => endNavigation());
 
-  const runCity = () => page.evaluate(() => {
+  const runCity = (condition = '무더위쉼터에서 쉬고 싶어요.') => page.evaluate(condition => {
     setOrigin([37.49809, 127.02764], '강남역 시연 출발');
     setDestination({ll: [37.5045, 127.04907], name: '서울 시연 도착'});
-    setCondition('무더위쉼터에서 쉬고 싶어요.');
+    setCondition(condition);
     document.querySelector('#search').requestSubmit();
-  });
+  }, condition);
   await runCity();
   await page.getByRole('heading', {name: '서울 베타 시연 경로', exact: true}).waitFor({timeout: 25000});
   const city = requests.find(({url}) => url.endsWith('/api/routes/city-walk'));
   assert.equal(city?.body.profile.rest, false);
   assert(await page.locator('#routes .demo-beta-rest').isVisible());
+  const cityUrl = '**/api/routes/city-walk';
+  const actualCityResponse = await page.request.post(origin + '/api/routes/city-walk', {data: city.body});
+  const actualRoute = await actualCityResponse.json();
+  const attempted = [];
+  await page.route(cityUrl, route => {
+    const {profile} = route.request().postDataJSON();
+    attempted.push(profile);
+    return profile.demoIgnoreSlope
+      ? route.fulfill({status:200,json:{...actualRoute,registeredInclineMax:6,unknownInclineMeters:123}})
+      : route.fulfill({status:422,json:{code:'city_no_connected_route',error:'모의 경사 자료 부족'}});
+  });
+  await runCity('휠체어를 이용해요. 계단을 피하고 경사 3% 이내로 가고 싶어요.');
+  await page.locator('#routes .demo-beta-slope', {hasText:'경사 제한 없이'}).waitFor();
+  assert.equal(attempted.length,2);
+  assert.equal(attempted[0].maxSlope,3);
+  assert.equal(attempted[1].maxSlope,null);
+  assert(attempted[1].wheelchair && attempted[1].avoidSteps && attempted[1].demoIgnoreSlope);
+  assert.match(await page.locator('#routes').innerText(), /6\.0%/);
+  assert.match(await page.locator('#routes').innerText(), /경사 미확인 123m/);
+  await page.unroute(cityUrl);
 
   await page.route('**/api/routes/city-walk', route => route.fulfill({status: 503, json: {error: '모의 연결 실패'}}));
   await runCity();
   await page.getByRole('heading', {name: '시연 예시를 실행할 수 있어요'}).waitFor();
   await page.locator('#routes').getByRole('button', {name: '월곡 오프라인 예시 실행'}).click();
   await page.getByRole('button', {name: '경로 모의 재생', exact: true}).waitFor();
+  await page.evaluate(() => mapLayers.open(3));
+  await page.getByText('오스코 주변 지형 경사 참고', {exact:true}).click();
+  const terrain = page.locator('.osco-panel details', {hasText:'오스코 주변 지형 경사 참고'});
+  assert.match(await terrain.innerText(), /2022년 5m 표고모형/);
+  assert.match(await terrain.innerText(), /오송역 8번 출구 · 5도 미만/);
+  assert.match(await terrain.innerText(), /보도 노면 실측.*미확인/);
   assert.deepEqual(errors, []);
   console.log(JSON.stringify({pass: true, entry: portable ? 'single-html' : 'main-source',
     closedShelterIncluded: true, offlineSample: demo.sampleRest, cityRouteAndFailureFallback: true, realGps: false}));
