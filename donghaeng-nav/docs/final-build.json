@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-22-destination-review-beta",
+  "version": "2026-11-22-city-walk-shortest-beta",
   "demo_beta": {
     "ignores_rest_availability": true,
     "offline_example": true,
@@ -10,7 +10,7 @@
     "online_page": "expansion.html",
     "service_code_files": 58,
     "review_asset_files": 2,
-    "service_integrity_sha256": "37517adf8111cedc04f084fc7a71ac9c78761d6fd90734fca3a38abdbcacbc4d",
+    "service_integrity_sha256": "bf9ddb6b27aa1015ef7434fd4cd9a202909b43fe57fbbbeeac8cebfd0cef7feb",
     "citywide_routing": false,
     "authenticated_transit_verified": false,
     "new_slope_values_promoted": 0,
@@ -242,8 +242,8 @@
   "precision_records": 16169,
   "precision_field_verified": false,
   "runtime_validation": "Exact hashes and graph binding; supplied OA-22241 archive re-extracted as supplementary evidence only; existing route slopes and precision map unchanged",
-  "html_sha256": "2e0ecd759b2b275503b647266829a9dae169ade8a30bb34d3d5bc4ed2434dd52",
-  "html_bytes": 20790806,
+  "html_sha256": "e9c0a9fb95dab665bfa2d51cfa89b4f7b6ec06a9926472fb8e8b24bc28e1d999",
+  "html_bytes": 20790886,
   "external_requests_required": false,
   "online_basemap": "OpenStreetMap raster tiles via Leaflet; HTTP(S) only",
   "offline_basemap": "Embedded OSM snapshot via Leaflet GridLayer",

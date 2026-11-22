@@ -146,12 +146,14 @@ try {
   await page.evaluate(()=>startNavigation(false));
   assert.equal(await page.locator('#navigation-panel').getAttribute('hidden'),'');
 
-  const runCity = (condition = '무더위쉼터에서 쉬고 싶어요.') => page.evaluate(condition => {
-    setOrigin([37.49809, 127.02764], '강남역 시연 출발');
-    setDestination({ll: [37.5045, 127.04907], name: '서울 시연 도착'});
+  const runCity = (condition = '무더위쉼터에서 쉬고 싶어요.', {
+    origin = [37.49809, 127.02764], destination = [37.5045, 127.04907],
+  } = {}) => page.evaluate(({condition, origin, destination}) => {
+    setOrigin(origin, '강남역 시연 출발');
+    setDestination({ll: destination, name: '서울 시연 도착'});
     setCondition(condition);
     document.querySelector('#search').requestSubmit();
-  }, condition);
+  }, {condition, origin, destination});
   await runCity();
   await page.getByRole('heading', {name: '서울 베타 시연 경로', exact: true}).waitFor({timeout: 25000});
   const city = requests.find(({url}) => url.endsWith('/api/routes/city-walk'));
@@ -178,6 +180,15 @@ try {
   assert.match(await page.locator('#routes').innerText(), /6\.0%/);
   assert.match(await page.locator('#routes').innerText(), /경사 미확인 123m/);
   await page.unroute(cityUrl);
+
+  await runCity('휠체어를 이용해요. 계단을 피하고 경사 3% 이내로 가고 싶어요.', {
+    origin: [37.49794, 127.0276], destination: [37.50065, 127.03650],
+  });
+  await page.getByRole('heading', {name:'최단거리 참고 경로',exact:true}).waitFor();
+  assert.equal(await page.evaluate(()=>cityRoute.slopeFallback),true);
+  assert.equal(await page.evaluate(()=>cityRoute.profile.maxSlope),3);
+  assert.equal(await page.evaluate(()=>cityRoute.stepsMeters),0);
+  assert.match(await page.locator('#routes').innerText(), /경사 미확인/);
 
   await page.route('**/api/routes/city-walk', route => route.fulfill({status: 503, json: {error: '모의 연결 실패'}}));
   await runCity();
