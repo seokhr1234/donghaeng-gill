@@ -4,6 +4,8 @@
 
 전체 변경은 [수정이력.md](수정이력.md), 작업 규칙은 [AGENTS.md](AGENTS.md), 이번 전환의 근거와 검사 범위는 [메인 전환 기록](donghaeng-nav/docs/main-navigation-promotion.md)을 참고하세요.
 
+2026-11-22 Android 시연 베타 1.0.12-beta.1. 도착 위치 확인 안내와 버튼의 모바일·태블릿 배치를 개선했습니다. [설치 ZIP](https://github.com/seokhr1234/donghaeng-gill/archive/refs/tags/android-demo-v1.0.12-beta.1-download.zip)
+
 2026-11-22 Android 시연 베타 1.0.11-beta.1. 지도에서 내 위치로 이동하고 기기 방향을 화살표로 볼 수 있습니다. [설치 ZIP](https://github.com/seokhr1234/donghaeng-gill/archive/refs/tags/android-demo-v1.0.11-beta.1-download.zip)
 
 2026-11-22 시연 베타 1.0.10-beta.6. 연결되면 Gemini가 입력한 이동 상태를 해석합니다. 연결 실패 시 기기 내 해석으로 경로 계산을 이어가며, 월곡 육교 양쪽 엘리베이터는 시연에서 이용 가능으로 가정합니다. [Android 설치 ZIP](https://github.com/seokhr1234/donghaeng-gill/archive/refs/tags/android-demo-v1.0.10-beta.6-download.zip)

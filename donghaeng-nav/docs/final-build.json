@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-22-device-heading-beta",
+  "version": "2026-11-22-destination-review-beta",
   "demo_beta": {
     "ignores_rest_availability": true,
     "offline_example": true,
@@ -10,7 +10,7 @@
     "online_page": "expansion.html",
     "service_code_files": 58,
     "review_asset_files": 2,
-    "service_integrity_sha256": "0bb3f72426f8192033660fabd07b17c2203107a34c3f279087d820f8a5dddd41",
+    "service_integrity_sha256": "37517adf8111cedc04f084fc7a71ac9c78761d6fd90734fca3a38abdbcacbc4d",
     "citywide_routing": false,
     "authenticated_transit_verified": false,
     "new_slope_values_promoted": 0,
@@ -242,8 +242,8 @@
   "precision_records": 16169,
   "precision_field_verified": false,
   "runtime_validation": "Exact hashes and graph binding; supplied OA-22241 archive re-extracted as supplementary evidence only; existing route slopes and precision map unchanged",
-  "html_sha256": "2630147c4c4ba6b9182dc2a6d99a193d997130b5009857ca531ff401a91ec491",
-  "html_bytes": 20790061,
+  "html_sha256": "2e0ecd759b2b275503b647266829a9dae169ade8a30bb34d3d5bc4ed2434dd52",
+  "html_bytes": 20790806,
   "external_requests_required": false,
   "online_basemap": "OpenStreetMap raster tiles via Leaflet; HTTP(S) only",
   "offline_basemap": "Embedded OSM snapshot via Leaflet GridLayer",

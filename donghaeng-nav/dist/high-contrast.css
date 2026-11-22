@@ -34,6 +34,7 @@ html[data-contrast=high] :is(.primary,button[aria-pressed=true],button[aria-sele
 html[data-contrast=high] :is(.primary,button[aria-pressed=true],button[aria-selected=true],button[aria-current],.nav.active,.navigation-start) :is(span,b,small,strong) {color:var(--hc-selected-text)!important;background:transparent!important}
 html[data-contrast=high] :is(button,input,textarea,select):disabled {opacity:1!important;border-style:dashed!important}
 html[data-contrast=high] :focus-visible {outline:3px solid var(--hc-control)!important;outline-offset:3px!important}
+html[data-contrast=high] #destination-connection,
 html[data-contrast=high] :is(.osco-warning,.facility-evidence-warning,.question-error,.usage-notice,.review-badge,.demo-banner,.gap-note) {background:var(--hc-background)!important;color:var(--hc-control)!important;border:2px solid var(--hc-control)!important}
 html[data-contrast=high] :is(.map-source-control,.map-layers-control,.route-card,.question-card,.navigation-cue,dialog) {border:2px solid var(--hc-control)!important}
 /* Theme the controls, never desaturate or recolor the map tiles. */

@@ -993,7 +993,45 @@ main{grid-template-columns:430px 1fr;align-items:start}.sidebar{padding-top:25px
 
 .facility-popup dl,.facility-popup p{font-size:13px;line-height:1.6}.facility-popup dt{color:#4c5d49}.facility-popup p{color:#475846}.storage-recovery{color:#71460e;font-size:14px;line-height:1.6}
 
-#destination-connection{padding:12px;border:1px solid #b47b30;border-radius:10px;background:#fff7e9;color:#583b14;font-size:14px;line-height:1.6}#destination-connection p{margin:0 0 8px}#destination-connection button{min-height:44px;white-space:normal;margin:4px 4px 0 0}
+#destination-connection {
+ margin-top:10px;
+ padding:14px;
+ border:1px solid #e8d7bd;
+ border-radius:16px;
+ background:#fffbf2;
+ color:#59462e;
+ font-size:14px;
+ line-height:1.55;
+}
+#destination-connection h3 {
+ margin:0 0 4px;
+ font-size:15px;
+}
+#destination-connection p {
+ margin:0;
+}
+.destination-connection-actions {
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(min(100%,168px),1fr));
+ gap:8px;
+ margin-top:12px;
+}
+.destination-connection-actions button {
+ min-height:44px;
+ padding:9px 12px;
+ border-radius:12px;
+ font-weight:600;
+ line-height:1.4;
+ white-space:normal;
+ cursor:pointer;
+}
+.destination-connection-actions .secondary:hover {
+ background:#f3f7ef;
+}
+.destination-connection-actions button:focus-visible {
+ outline:2px solid var(--green);
+ outline-offset:2px;
+}
 
 @media(max-width:700px), (max-width:1440px) and (any-pointer:coarse){.leaflet-container:has(.facility-popup) .map-source-control{visibility:hidden}}
 @media(max-width:700px), (max-width:1440px) and (any-pointer:coarse){.leaflet-control-attribution{max-height:42px;overflow-y:auto;max-width:100%}}
@@ -1239,6 +1277,7 @@ html[data-contrast=high] :is(.primary,button[aria-pressed=true],button[aria-sele
 html[data-contrast=high] :is(.primary,button[aria-pressed=true],button[aria-selected=true],button[aria-current],.nav.active,.navigation-start) :is(span,b,small,strong) {color:var(--hc-selected-text)!important;background:transparent!important}
 html[data-contrast=high] :is(button,input,textarea,select):disabled {opacity:1!important;border-style:dashed!important}
 html[data-contrast=high] :focus-visible {outline:3px solid var(--hc-control)!important;outline-offset:3px!important}
+html[data-contrast=high] #destination-connection,
 html[data-contrast=high] :is(.osco-warning,.facility-evidence-warning,.question-error,.usage-notice,.review-badge,.demo-banner,.gap-note) {background:var(--hc-background)!important;color:var(--hc-control)!important;border:2px solid var(--hc-control)!important}
 html[data-contrast=high] :is(.map-source-control,.map-layers-control,.route-card,.question-card,.navigation-cue,dialog) {border:2px solid var(--hc-control)!important}
 /* Theme the controls, never desaturate or recolor the map tiles. */
@@ -1271,7 +1310,14 @@ html[data-contrast=high] .map-location-control{border:2px solid #ffe660;backgrou
 <header class="header"><button id="mobile-back" class="mobile-only icon-button" type="button" aria-label="이전 화면">‹</button><a class="brand" href="#"><span class="brand-icon companion-brand"><svg class="companion-character" viewBox="0 0 120 120" role="img" aria-labelledby="companion-name"><title id="companion-name">동행 캐릭터 동글이</title><ellipse cx="61" cy="107" rx="32" ry="6" fill="#dce9df"/><path d="M43 93 37 106h17l4-14M69 93l4 13h17L81 90" fill="#235a47"/><path d="M31 59C11 62 16 87 30 81" fill="#c6dfc5" stroke="#235a47" stroke-width="3.5"/><path class="companion-arm" d="M88 59c17 1 18 21 3 24" fill="#c6dfc5" stroke="#235a47" stroke-width="3.5" stroke-linecap="round"/><path d="M25 53c0-24 13-35 35-35s35 11 35 35v21c0 20-14 29-35 29S25 94 25 74Z" fill="#c6dfc5" stroke="#235a47" stroke-width="3.5"/><path d="M60 19C45 17 43 7 43 7c15-1 19 5 17 12Z" fill="#71a66e"/><path d="M60 18C61 6 75 5 75 5c-1 10-7 15-15 13Z" fill="#235a47"/><ellipse cx="60" cy="60" rx="25" ry="23" fill="#f8fbf3"/><g class="companion-eyes" fill="#235a47"><circle cx="50" cy="55" r="3"/><circle cx="70" cy="55" r="3"/></g><path d="M54 65q6 7 12 0" fill="none" stroke="#235a47" stroke-width="3" stroke-linecap="round"/><ellipse cx="42" cy="63" rx="5" ry="3" fill="#e9b4a0"/><ellipse cx="78" cy="63" rx="5" ry="3" fill="#e9b4a0"/><path d="m34 81 44 16" stroke="#b07d46" stroke-width="4"/><rect x="65" y="81" width="22" height="19" rx="6" fill="#efbd73" stroke="#b07d46" stroke-width="2.5"/><path d="M72 81v-3q4-4 8 0v3" fill="none" stroke="#b07d46" stroke-width="2.5"/></svg></span><span class="brand-name">동행길</span><span class="brand-sub">모두를 위한 이동</span></a><nav><button class="nav active" data-view="route">길 찾기</button><button class="nav" data-view="saved">저장한 경로</button><button class="nav" id="about">이용 안내</button></nav><button type="button" class="contrast-toggle" data-contrast-toggle aria-label="고대비 모드" aria-pressed="false">◐ 고대비</button><button id="mobile-more" class="mobile-only icon-button" type="button" aria-label="더보기" aria-haspopup="dialog">⋯</button><span class="demo"><i></i> 서울 전역 지도·도보</span></header>
 <main><aside class="sidebar" aria-label="이동 계획"><div class="sheet-header mobile-only"><button id="sheet-toggle" type="button" aria-expanded="true" aria-controls="sheet-content"><span class="sheet-grip" aria-hidden="true"></span><span id="sheet-title">어디로 갈까요?</span><span id="sheet-toggle-label">지도 넓게 보기 ⌄</span></button></div><div class="sheet-scroll" id="sheet-content"><div class="intro companion-intro"><div><h1>어디로 갈까요?</h1><p>천천히, 함께 가요.</p></div></div><div id="planner">
 <div id="demo-beta" class="demo-beta" hidden><p><strong>시연 베타</strong> · 운영시간 확인 없이 보는 모의 경로</p><button id="demo-beta-example" class="secondary" type="button">월곡 오프라인 예시 실행</button></div><form id="search"><div class="travel-mode-control" role="group" aria-label="이동 방법"><button id="mode-walk" type="button" class="secondary" data-travel-mode="walk" aria-pressed="true">도보</button><button id="mode-transit" type="button" class="secondary" data-travel-mode="transit" aria-pressed="false">버스·지하철</button></div><p id="transit-sharing" class="gap-note" hidden>교통 검색 시 출발·도착 좌표를 ODsay에 전송합니다.</p><p id="transit-connection" class="gap-note" role="status" hidden></p><details class="location-box origin-settings"><summary><span class="section-label">출발</span><b id="origin-name" tabindex="-1">출발 위치를 선택해 주세요</b><span class="origin-change">변경</span></summary><div class="origin-search"><label class="sr" for="origin-query">출발지 이름·주소 검색</label><div class="destination-row"><input id="origin-query" type="search" placeholder="출발지 이름·주소" autocomplete="off" maxlength="80" aria-controls="origin-places" aria-describedby="origin-search-status"><button id="clear-origin" type="button" aria-label="출발지 검색 지우기" hidden>×</button></div><div id="origin-places" class="place-results" aria-label="출발지 검색 결과"></div><p id="origin-search-status" role="status">서울 등록 장소의 이름·주소로 검색하세요.</p></div><div class="location-actions"><button type="button" id="locate">◎ GPS 추적 시작</button><button type="button" id="gps-stop" hidden>GPS 끄기</button><button type="button" id="pick-origin">지도에서 변경</button><button type="button" id="gps-pick-origin" hidden>이 위치로 핀 맞추기</button><button type="button" id="luna-origin">루나밸리 출발</button></div><p id="location-status" role="status">현재 위치가 아닙니다. GPS를 켜거나 출발 핀을 옮겨 주세요.</p></details>
-<div class="trip-separator" aria-hidden="true">↓</div><div class="destination-field"><label class="section-label" for="destination-query">어디로 가시나요?</label><div class="destination-row"><input id="destination-query" placeholder="목적지 이름·주소" autocomplete="off" maxlength="80"><button id="pick-destination" type="button" aria-label="지도에서 목적지 선택">⌖</button></div><div id="places" class="place-results"></div><span id="destination-status">장소 불러오는 중…</span><section id="destination-connection" hidden aria-live="polite"><p>시설 기준점의 도로 연결이 건물 도형과 겹쳐요. 실제로 도착할 보행 위치를 지도에서 확인해 주세요. 출입구·통행은 현장 미확인입니다.</p><button type="button" id="verify-destination">지도에서 진입 위치 지정</button><button type="button" id="preview-destination">검토용 경로만 보기</button></section></div>
+<div class="trip-separator" aria-hidden="true">↓</div><div class="destination-field"><label class="section-label" for="destination-query">어디로 가시나요?</label><div class="destination-row"><input id="destination-query" placeholder="목적지 이름·주소" autocomplete="off" maxlength="80"><button id="pick-destination" type="button" aria-label="지도에서 목적지 선택">⌖</button></div><div id="places" class="place-results"></div><span id="destination-status">장소 불러오는 중…</span><section id="destination-connection" hidden aria-live="polite" aria-labelledby="destination-connection-title">
+  <h3 id="destination-connection-title">도착 위치를 확인해 주세요</h3>
+  <p>시설과 보행로를 잇는 선이 건물과 겹쳐요. 출입구와 통행 여부는 현장에서 확인해 주세요.</p>
+  <div class="destination-connection-actions">
+    <button type="button" id="verify-destination" class="primary">지도에서 진입 위치 지정</button>
+    <button type="button" id="preview-destination" class="secondary">검토용 경로만 보기</button>
+  </div>
+</section></div>
 <div class="quick-destinations" hidden><button type="button" data-destination="school">서울사대부중</button><button type="button" data-destination="library">꿈그림도서관</button><button type="button" data-destination="triangle">삼각형 쉼터</button><button type="button" data-destination="stop">정류장 의자</button></div><label class="section-label" for="condition">오늘, 어떤 길이 편한가요?</label><textarea id="condition" rows="3" maxlength="500" placeholder="예: 무릎이 아파 계단과 오르막을 피하고 싶어요." required></textarea><button type="button" class="portable-key-button" data-open-portable-key hidden>AI 키 입력</button><button class="primary search-button" id="find-route" type="submit" disabled>길 찾기 <span>→</span></button><details class="input-details"><summary>도움말·개인정보</summary><details class="examples-disclosure"><summary>상태 예시</summary><div class="examples"><button type="button" data-example="무릎이 아파서 계단과 오르막을 피하고 싶어요.">무릎이 아파요</button><button type="button" data-example="휠체어를 타고 있어서 계단을 이용할 수 없어요.">휠체어 이용</button><button type="button" data-example="오래 걷기 힘들어서 중간에 벤치에 앉아 쉬고 싶어요.">중간에 쉬고 싶어요</button><button type="button" data-example="더위를 피할 수 있는 쉼터에서 쉬고 싶어요. 오르막은 피해주세요.">쉼터에서 쉴래요</button><button type="button" data-example="괜찮아요. 가장 짧은 거리로 가고 싶어요.">짧은 길 우선</button></div></details><p class="ai-sharing-note" id="ai-sharing-note">AI 비교: 상태 문장·경로 요약 전송 · 좌표 제외</p><p class="parser-note" id="parser-note" role="status">길 찾기를 누르면 상태를 해석해요.</p></details><button type="button" id="transit-cancel" class="secondary" hidden>검색 취소</button></form>
 <div id="search-status" role="status" aria-live="polite"></div><section id="navigation-panel" class="navigation-panel" hidden aria-label="GPS 안내"></section><div id="mobile-results"><p id="mobile-route-status" class="mobile-only" role="status"></p><div class="mobile-result-actions mobile-only"><button id="mobile-edit" type="button">‹ 조건 수정</button><button id="mobile-save" type="button" aria-label="선택한 경로 저장">♡ 저장</button></div><div class="result-heading"><h2 id="result-title">이동 준비</h2><button type="button" id="fit-route">지도 전체 보기</button></div><div id="routes"></div><details id="route-evidence" hidden><summary>이동 조건·자료 출처 <span>⌄</span></summary><section id="plan-reason" class="plan-reason" hidden aria-live="polite"></section></details><div id="mobile-route-action" class="mobile-only"></div></div><section id="route-order" class="route-order" aria-label="이동 순서" hidden><div class="order-heading"><div><h3>이동 순서</h3></div><span id="order-progress"></span></div><p class="mobile-only order-mode">시연 · 수동 단계 확인</p><div class="mobile-only" id="mobile-stage"></div><p class="order-help">구간을 누르면 지도에서 확인할 수 있어요.</p><details class="order-all" open><summary>전체 구간 목록</summary><ol id="order-list"></ol></details><div class="order-controls"><button type="button" id="order-prev">← 이전</button><button type="button" id="order-next">다음 구간 →</button></div><button type="button" id="mobile-overview" class="mobile-only">전체 경로 보기 ›</button><button type="button" id="mobile-detail" class="mobile-only">상세·시뮬레이션·GPS 확인</button></section></div>
 <div id="saved-view" hidden><h2>저장한 경로</h2><div id="saved-list"></div></div><details class="service-info"><summary>서비스 정보</summary><div class="service-tools"><button id="demo-open" type="button">비교 시연</button><button class="nav presentation-toggle" id="present-mode" type="button">발표 모드 ↗</button></div><p class="data-note" id="data-note">공개 지도 기반의 실험용 보행 경로입니다. 보도 턱·폭·출입 가능 여부는 현장 미검증입니다. 없는 경사 정보를 추정하지 않습니다.</p><p><a id="expansion-link" href="expansion.html" hidden>지역별 자료·경로 보기 →</a></p><section class="data-proof"><div><strong id="registered-records">—</strong><span>서울 등록 시설 기록</span></div><div><strong id="local-rest-count">—</strong><span>서울 벤치·의자 등록 기록</span></div><p id="data-source-caption">자료를 읽고 있습니다.</p></section></details></div></aside>
