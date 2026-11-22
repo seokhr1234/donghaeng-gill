@@ -57,6 +57,7 @@ function create(map,{onOpen=()=>{},researchPanel=null}={}){
  retry.textContent = '다시 불러오기';
  retry.hidden = true;
  slope.append(label, legend, status, retry, note, source);
+ const destroyLuna = root.DONGHAENG_BUILD?.demoBeta && root.LunaDemoSlopes?.create(map, slope);
 
  const minZoom = 14;
  map.createPane('slope-review');
@@ -145,6 +146,7 @@ function create(map,{onOpen=()=>{},researchPanel=null}={}){
   snapshot: () => ({tab: active, open: box.open, loaded: !!data, count: data?.segments.length || 0, visible}),
   destroy() {
    disposed = true;
+   if (destroyLuna) destroyLuna();
    map.off('moveend', render);
    lines.remove();
    if (map.hasLayer(renderer)) renderer.remove();

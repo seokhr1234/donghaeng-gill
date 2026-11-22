@@ -100,15 +100,18 @@
     const reference = route.edges.filter(edge => edge.incline == null).map(edge => edge.terrainSlope).filter(Number.isFinite);
     const limits = E.wheelchairProfile(profile);
     const demoSlopeRelaxed = limits.avoidSlope || limits.maxSlope != null;
+    const reportIds = new Set(route.edges.map(edge => edge.accessReport));
+    const demoPrefersLiftForSlope = reports.some(report => report.betaLowerSlopeAssumption && reportIds.has(report.id));
     const demoNotes = [
       '시연에서 양쪽 육교 엘리베이터를 이용 가능하다고 가정했어요.',
       '점선은 제보를 바탕으로 연결한 접근 가설이에요. 실제 엘리베이터 문 위치와 운행은 미확인이에요.',
       ...slopeNotes({registered: registered.length ? Math.max(...registered) : null,
         reference: reference.length ? Math.max(...reference) : null, unknown: evidence.unknownMeters}),
     ];
+    if (demoPrefersLiftForSlope) demoNotes.push('주변 길보다 육교 쪽이 완만하다고 가정한 시연이에요.');
     if (demoSlopeRelaxed) demoNotes.push('육교 시연 경로에는 요청한 경사 제한을 적용하지 않았어요.');
     return {...route, p: profile, label: '육교 엘리베이터 시연 경로', selectionIneligible: true,
-      demoElevator: true, demoNotes, demoSlopeRelaxed, demoNearbyRest: nearbyRest(E, route.coords, candidates, profile)};
+      demoElevator: true, demoPrefersLiftForSlope, demoNotes, demoSlopeRelaxed, demoNearbyRest: nearbyRest(E, route.coords, candidates, profile)};
   }
 
   return {places, cityProfile, retryCityWithoutSlope, slopeNotes, nearbyRest, localRoute, elevatorRoute, availabilityNote};

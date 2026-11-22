@@ -94,6 +94,27 @@ try {
   assert.deepEqual(requests, []);
   await page.evaluate(() => endNavigation());
 
+  await page.evaluate(() => mapLayers.open(1));
+  await page.getByRole('button',{name:'루나밸리 주변 보기',exact:true}).click();
+  await page.waitForFunction(() => map.getPane('luna-demo-slopes').querySelector('canvas'));
+  const grades = await page.evaluate(() => {
+    const rows=[];
+    map.eachLayer(layer=>{
+      const popup=layer.getPopup?.();
+      if (layer.options?.pane==='luna-demo-slopes' && popup) rows.push(popup.getContent().textContent);
+    });
+    return rows;
+  });
+  assert.equal(grades.length,70);
+  assert(grades.some(s=>s.includes('회기로5길')&&s.includes('참고 경사 추정')));
+  assert(grades.some(s=>s.includes('경사율 미확인')));
+  assert(grades.some(s=>s.includes('완만하다는 시연 가정')));
+  const slopeLayer=page.getByRole('checkbox',{name:'루나밸리 서쪽·남쪽 경사',exact:true});
+  await slopeLayer.uncheck();
+  assert.equal(await page.evaluate(()=>Object.values(map._layers).filter(layer=>layer.options?.pane==='luna-demo-slopes'&&layer.getPopup?.()).length),0);
+  await slopeLayer.check();
+  await page.evaluate(() => {document.querySelector('.map-layers-control').open=false});
+
   await page.evaluate(() => {
     document.querySelector('#luna-origin').click();
     chooseDestination('school');
@@ -103,8 +124,10 @@ try {
   const liftCard=page.locator('#routes .route-card',{hasText:'육교 엘리베이터 시연 경로'});
   await liftCard.waitFor();
   assert.match(await liftCard.innerText(),/양쪽 육교 엘리베이터를 이용 가능하다고 가정/);
+  assert.match(await liftCard.innerText(),/주변 길보다 육교 쪽이 완만하다고 가정/);
   assert.match(await liftCard.innerText(),/실제 엘리베이터 문 위치와 운행은 미확인/);
   assert.equal(await page.evaluate(()=>routes.find(route=>route.demoElevator).edges.filter(edge=>edge.approximateConnection).length),2);
+  assert.equal(await page.evaluate(()=>routes[selected].demoElevator),true);
   const viewLift=liftCard.getByRole('button',{name:'육교 엘리베이터 시연 경로 지도에서 확인',exact:true});
   if(await viewLift.getAttribute('aria-pressed')==='false')await viewLift.click();
   assert.equal(await liftCard.getByRole('button',{name:'경로 모의 재생',exact:true}).count(),1);

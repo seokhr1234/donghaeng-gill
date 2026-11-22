@@ -113,7 +113,7 @@ def build():
             raise ValueError('알 수 없는 데이터 블록: ' + ident)
         used.add(ident)
         packed = packed_data(relative)
-        return '<script id="' + ident + '" type="application/octet-stream" data-encoding="gzip-base64"' + (' data-lazy="true"' if ident in ['bundled-seoul-base', 'bundled-terrain-evidence', 'bundled-osco-context', 'bundled-seoul-rest-update'] else '') + '>' + base64.b64encode(packed).decode() + '</script>'
+        return '<script id="' + ident + '" type="application/octet-stream" data-encoding="gzip-base64"' + (' data-lazy="true"' if ident in ['bundled-seoul-base', 'bundled-terrain-evidence', 'bundled-osco-context', 'bundled-seoul-rest-update', 'bundled-luna-demo-slopes'] else '') + '>' + base64.b64encode(packed).decode() + '</script>'
     html = re.sub(r'<script id="([^"]+)"(?: data-lazy="true")? type="application/json" data-src="([^"]+)"[^>]*></script>', data_block, html)
     optional = 'data/accessibility/seoul/steep-roads.json'
     if 'donghaeng-nav/dist/' + optional not in services.get('slope_assets', {}):
@@ -139,7 +139,7 @@ def build():
         path.write_text(html, encoding='utf-8', newline='\n')
     facilities = json.loads(local_file(datasets['bundled-facilities-seoul']['path']).read_bytes())['features']
     manifest = {
-        'version': '2026-11-22-seoul-elevator-beta',
+        'version': '2026-11-22-luna-slope-beta',
         'demo_beta': {'ignores_rest_availability': True, 'offline_example': True, 'local_routes_simulation_only': True},
         'main_source': 'donghaeng-nav/dist/index.html',
         'expansion': {'online_page': 'expansion.html', 'service_code_files': len(services['files']), 'review_asset_files': len(services.get('review_assets', {})),

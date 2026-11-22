@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-22-seoul-elevator-beta",
+  "version": "2026-11-22-luna-slope-beta",
   "demo_beta": {
     "ignores_rest_availability": true,
     "offline_example": true,
@@ -10,7 +10,7 @@
     "online_page": "expansion.html",
     "service_code_files": 57,
     "review_asset_files": 2,
-    "service_integrity_sha256": "4f5c8b063c7046bdc5f5cdf5ae00588f120f5ab588c8816cebcd19425424b80b",
+    "service_integrity_sha256": "0e30e7a6d6524bcbaf8ea76fdbf920b44a91a2387ac4dee59b29f85b87d35a90",
     "citywide_routing": false,
     "authenticated_transit_verified": false,
     "new_slope_values_promoted": 0,
@@ -69,9 +69,9 @@
     },
     {
       "path": "data/precision/access-reports.json.gz",
-      "sha256": "604019b186ca8a591100a382d0f9555114d5839f4096febe6431f20a64ec1634",
-      "bytes": 728,
-      "source_sha256": "e33c45500f53d385a1884f1bad5fc130857bfd2de5a6d3e04c685f1764b7d6c3"
+      "sha256": "f368f766a0f66d3eee53416a515bd15ab9b832e38f725883578c0a067546e552",
+      "bytes": 749,
+      "source_sha256": "2d454f38e0ba06cdf4a7d96400fb260355eb487b9628a5f4b08ae6dc55fec9ae"
     },
     {
       "path": "data/precision/precision-map.geojson.gz",
@@ -108,6 +108,12 @@
       "sha256": "2e5cc84219df5a3b8d736b2bc9ccf5b74af8e9ca55087ef6b31a55335cb76b75",
       "bytes": 174168,
       "source_sha256": "e8e1d4108a7ec727165d77b5ed1b6995c6cc2f591eb89f53f1fcc13ff47bef47"
+    },
+    {
+      "path": "data/terrain/luna-demo-slopes.json.gz",
+      "sha256": "d538269d6a32e7f9a8a583daa4ca98041c0f40c2cbb7bb0ca57b7593f21231f5",
+      "bytes": 2100,
+      "source_sha256": "bd7e110ba795ff4e104b976610cbf7dd4f8de4c506822d7fadd2c00b30d5a2fc"
     }
   ],
   "project_name": "동행길",
@@ -236,8 +242,8 @@
   "precision_records": 16169,
   "precision_field_verified": false,
   "runtime_validation": "Exact hashes and graph binding; supplied OA-22241 archive re-extracted as supplementary evidence only; existing route slopes and precision map unchanged",
-  "html_sha256": "8f09e66af89d4b775f10dc8ce1e3c326e36339954bff15bbb2346ba93d778c33",
-  "html_bytes": 20772689,
+  "html_sha256": "2c7e9a790aa0bf1dfbf610f87e652d847e15ad425c910165fa6b4b69dc02c42b",
+  "html_bytes": 20781143,
   "external_requests_required": false,
   "online_basemap": "OpenStreetMap raster tiles via Leaflet; HTTP(S) only",
   "offline_basemap": "Embedded OSM snapshot via Leaflet GridLayer",

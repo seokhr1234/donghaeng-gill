@@ -185,7 +185,9 @@ $('#search').onsubmit=async ev=>{
    try{ordinary=DonghaengDemoBeta.localRoute(E,EndpointRouting,graph,origin,destination.ll,p,candidates)}
    catch(error){if(!elevator)throw error}
    routes=[ordinary,elevator].filter(Boolean);
-   selected=elevator&&(!ordinary||elevator.totalLength<ordinary.totalLength&&!(p.rest&&ordinary.restStop))?routes.indexOf(elevator):0;
+   const preferLiftForSlope=elevator?.demoPrefersLiftForSlope&&(p.avoidSlope||p.maxSlope!=null||p.wheelchair);
+   const preferLift=elevator&&(!ordinary||!(p.rest&&ordinary.restStop)&&(preferLiftForSlope||elevator.totalLength<ordinary.totalLength));
+   selected=preferLift?routes.indexOf(elevator):0;
    routeSelection={source:'unavailable',summaries:[],createdAt:new Date().toISOString(),message:'시연 경로 · 시설 실제 운영과 통행 상태는 미확인'};
    if(isMobileUI())setMobileMode('results');
    renderRoutes();drawRoutes(true);
