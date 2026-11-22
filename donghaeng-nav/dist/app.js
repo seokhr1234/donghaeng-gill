@@ -106,24 +106,72 @@ function chooseOnMap(mode){pickMode=mode;entryReference=mode==='destination'&&de
 $('#pick-origin').onclick=()=>{if(pickMode==='origin'){pickMode=null;$('#map-instruction').hidden=true}else chooseOnMap('origin')};$('#pick-destination').onclick=()=>{if(pickMode==='destination'){pickMode=null;$('#map-instruction').hidden=true}else chooseOnMap('destination')};
 // Independent GPS location tracking is available even when a route is preview-only.
 let locationTracker=null,trackingFirstFix=false,trackingOriginPending=false,trackingFollow=true;
+let mapLocationButton,mapHeadingButton,mapHeadingStatus,headingController,headingMarker,headingRotation=null,headingResume=false;
+function renderDeviceHeading(){
+ const state=headingController?.snapshot()||{active:false,phase:'off',degrees:null};
+ if(mapHeadingButton){
+  mapHeadingButton.setAttribute('aria-pressed',String(state.active));
+  mapHeadingButton.textContent=state.active?'방향 끄기':'방향 켜기';
+  const messages={off:'',waiting:'센서 연결 중',stale:'방향 수신 대기',denied:'방향 권한 꺼짐',unsupported:'방향 센서 없음',
+   unavailable:'방향 센서 확인 필요',insecure:'HTTPS 필요',calibrating:'기기를 움직여 보정'};
+  mapHeadingStatus.textContent=state.phase==='tracking'?'기기 방향 '+Math.round(state.degrees)+'°':messages[state.phase]||'';
+ }
+ const gps=locationTracker?.snapshot();
+ if(mapLocationButton){
+  mapLocationButton.setAttribute('aria-pressed',String(!!gps?.active&&trackingFollow));
+  mapLocationButton.title=gps?.active?'지도를 내 위치로 이동':'현재 위치를 확인하고 기기 방향 표시';
+ }
+ const fresh=gps&&['tracking','approximate'].includes(gps.phase)&&gps.fix&&Date.now()-gps.fix.timestamp<15000;
+ if(!map||state.phase!=='tracking'||!fresh){headingMarker?.remove();headingMarker=null;headingRotation=null;return;}
+ if(!headingMarker)headingMarker=L.marker(gps.displayFix.ll,{interactive:false,keyboard:false,zIndexOffset:700,
+  icon:L.divIcon({className:'device-heading-marker',html:'<span class="device-heading-arrow" aria-hidden="true"></span>',iconSize:[48,48],iconAnchor:[24,24]})}).addTo(map);
+ headingMarker.setLatLng(gps.displayFix.ll);
+ headingRotation=headingRotation===null?state.degrees:headingRotation+((state.degrees-headingRotation%360+540)%360-180);
+ const arrow=headingMarker.getElement()?.querySelector('.device-heading-arrow');
+ if(arrow)arrow.style.transform='rotate('+headingRotation+'deg)';
+}
+function createLocationControls(){
+ headingController=DeviceHeading.create({onUpdate:renderDeviceHeading});
+ const control=L.control({position:'topright'});
+ control.onAdd=()=>{
+  const box=L.DomUtil.create('div','map-location-control leaflet-bar');
+  L.DomEvent.disableClickPropagation(box);L.DomEvent.disableScrollPropagation(box);
+  mapLocationButton=textEl('button','◎ 내 위치');mapLocationButton.id='map-my-location';mapLocationButton.type='button';
+  mapLocationButton.setAttribute('aria-label','내 위치로 지도 이동');
+  mapLocationButton.onclick=()=>{headingResume=false;if(!headingController.snapshot().active)headingController.start();getPosition({useAsOrigin:false,preserveNavigation:true});};
+  mapHeadingButton=textEl('button','방향 켜기');mapHeadingButton.id='map-device-heading';mapHeadingButton.type='button';
+  mapHeadingButton.title='기기가 향하는 방향 표시 · 자북 기준 참고';
+  mapHeadingButton.onclick=()=>{headingResume=false;if(headingController.snapshot().active)headingController.stop();else{headingController.start();getPosition({useAsOrigin:false,preserveNavigation:true});}};
+  mapHeadingStatus=textEl('small','','map-heading-status');mapHeadingStatus.id='map-heading-status';mapHeadingStatus.setAttribute('role','status');
+  box.append(mapLocationButton,mapHeadingButton,mapHeadingStatus);return box;
+ };
+ control.addTo(map);renderDeviceHeading();
+}
+window.addEventListener('visibilitychange',()=>{
+ if(document.hidden){headingResume=!!headingController?.snapshot().active;headingController?.stop();}
+ else if(headingResume&&locationTracker?.snapshot().active){headingResume=false;headingController.start();}
+});
+
+
 function centerTrackedPosition(ll,zoom=map.getZoom()){
  if(isMobileUI())frameVisibleLocation(ll,zoom);else map.setView(ll,zoom,{animate:false});
 }
 function followCurrentLocation(){
  trackingFollow=true;$('#gps-tracking-follow').hidden=true;
- const fix=locationTracker?.snapshot().displayFix;if(fix)centerTrackedPosition(fix.ll);
+ const fix=locationTracker?.snapshot().displayFix;if(fix)centerTrackedPosition(fix.ll);renderDeviceHeading();
 }
-function stopLocationTracking(){locationTracker?.stop()}
-function getPosition({useAsOrigin=true}={}){
+function stopLocationTracking(){headingResume=false;headingController?.stop();locationTracker?.stop()}
+function getPosition({useAsOrigin=true,preserveNavigation=false}={}){
  if(!map)return;
  if(!window.isSecureContext){$('#location-status').textContent='GPS를 사용하려면 HTTPS 주소를 브라우저로 열어 주세요. 파일 미리보기에서는 제한될 수 있어요.';toast('GPS는 위치 권한을 지원하는 브라우저에서 실행해 주세요.');return}
  if(!useAsOrigin)trackingOriginPending=false;
  if(locationTracker?.snapshot().active){followCurrentLocation();return}
- endNavigation();trackingFirstFix=true;trackingOriginPending=useAsOrigin&&!origin;trackingFollow=true;
+ if(!preserveNavigation)endNavigation();trackingFirstFix=true;trackingOriginPending=useAsOrigin&&!origin;trackingFollow=true;
  if(!locationTracker)locationTracker=GPSTracker.create({onUpdate:renderTrackedPosition});
  locationTracker.start();
 }
 function renderTrackedPosition(s){
+ if(['denied','unsupported','stopped'].includes(s.phase))headingController?.stop();
  const fresh=s.phase==='tracking'||s.phase==='approximate',approximate=s.phase==='approximate';
  const messages={acquiring:s.qualityMessage||'GPS 위치 안정화 중',waiting:'GPS 연결 중 · 위치 권한을 허용해 주세요',denied:'위치 권한이 꺼져 있어요. 기기 설정을 확인해 주세요.',unsupported:'이 브라우저는 GPS를 지원하지 않아요.',timeout:'GPS 수신 대기 · 실외에서 다시 확인해 주세요',unavailable:'GPS 수신 대기 · 위치를 찾고 있어요',stopped:'GPS 추적 종료'};
  const text=fresh?(approximate?'대략적인 위치':'GPS 추적 중')+' · 수신 오차 약 '+GPSQuality.formatAccuracy(s.fix.accuracy):
@@ -152,6 +200,7 @@ function renderTrackedPosition(s){
  }else{
   gpsMarker?.remove();gpsMarker=null;accuracyCircle?.remove();accuracyCircle=null;
  }
+ renderDeviceHeading();
 }
 $('#locate').onclick=()=>getPosition();
 $('#gps-pick-origin').onclick=()=>{
@@ -499,7 +548,7 @@ function renderReports(){const c=$('#report-history'),items=read('donghaeng.scho
 $$('dialog .close').forEach(b=>b.onclick=()=>b.closest('dialog').close());document.addEventListener('click',e=>{if(!e.target.closest('.destination-field'))$('#places').replaceChildren()});window.addEventListener('pagehide',()=>{clearRouteSelection();stopTracking(false)});
 async function hashRoadText(text){if(!globalThis.crypto?.subtle)return null;return [...new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(text)))].map(x=>x.toString(16).padStart(2,'0')).join('')}
 async function loadTerrain(){try{const embedded=document.getElementById('bundled-terrain');let data;if(embedded)data=JSON.parse(embedded.textContent);else{const res=await fetch('terrain-data.json');if(!res.ok)throw Error('고도자료 로딩 실패');data=await res.json()}E.applyTerrain(graph,data);graph.meta.allowAssistancePreview=true;map.attributionControl.addAttribution('지형 © <a href="https://github.com/tilezen/joerd/blob/master/docs/attribution.md">Mapzen/Tilezen · USGS</a>')}catch{toast('추가 고도자료를 읽지 못해 OSM 경사 표기만 사용합니다.')}}
-async function init(){try{await window.DONGHAENG_DATA_READY;map=L.map('live-map',{zoomControl:false,minZoom:3,maxZoom:19}).fitBounds(CityMap.BOUNDS);HighContrast.bindMap(map);map.on('dragstart',()=>{pendingMapFit=null;if(locationTracker?.snapshot().active){trackingFollow=false;$('#gps-tracking-follow').hidden=false}});L.control.zoom({position:'topright'}).addTo(map);L.control.scale({imperial:false,position:'bottomleft'}).addTo(map);await SeoulBaseMap.create(map);routeLayer.addTo(map);snapLayer.addTo(map);stageMarkers.addTo(map);stageFocus.addTo(map);facilityController=FacilityMap.create(map,{onSelectDestination:facilityDestination,onMapFeatures:syncCityDestinations,onOpen:()=>{if(isMobileUI())setSheetSize('collapsed')}});precisionController=PrecisionMap.create(map,{onOpen:()=>{if(isMobileUI())setSheetSize('collapsed');const facilities=$('.facility-control');if(facilities)facilities.open=false}});oscoController=OscoMap.create(map,{fitBounds:fitMobileAware,onSelectOrigin:place=>{$('#mobile-place-detail').close();setOrigin(place.ll,place.name);$('#location-status').textContent='등록 대표점 · 실제 출입구·도보 연결 미확인';if(isMobileUI()){setMobileMode('input');tripQuestions.resume();}},onSelectDestination:place=>{$('#mobile-place-detail').close();setDestination(place,{pan:false});$('#destination-status').textContent='등록 대표점 · 실제 출입구·도보 연결 미확인';if(isMobileUI()){setMobileMode('input');tripQuestions.resume();}}});window.mapLayers=MapLayers.create(map,{researchPanel:oscoController.panel,onOpen:()=>{
+async function init(){try{await window.DONGHAENG_DATA_READY;map=L.map('live-map',{zoomControl:false,minZoom:3,maxZoom:19}).fitBounds(CityMap.BOUNDS);HighContrast.bindMap(map);map.on('dragstart',()=>{pendingMapFit=null;if(locationTracker?.snapshot().active){trackingFollow=false;$('#gps-tracking-follow').hidden=false;renderDeviceHeading()}});L.control.zoom({position:'topright'}).addTo(map);createLocationControls();L.control.scale({imperial:false,position:'bottomleft'}).addTo(map);await SeoulBaseMap.create(map);routeLayer.addTo(map);snapLayer.addTo(map);stageMarkers.addTo(map);stageFocus.addTo(map);facilityController=FacilityMap.create(map,{onSelectDestination:facilityDestination,onMapFeatures:syncCityDestinations,onOpen:()=>{if(isMobileUI())setSheetSize('collapsed')}});precisionController=PrecisionMap.create(map,{onOpen:()=>{if(isMobileUI())setSheetSize('collapsed');const facilities=$('.facility-control');if(facilities)facilities.open=false}});oscoController=OscoMap.create(map,{fitBounds:fitMobileAware,onSelectOrigin:place=>{$('#mobile-place-detail').close();setOrigin(place.ll,place.name);$('#location-status').textContent='등록 대표점 · 실제 출입구·도보 연결 미확인';if(isMobileUI()){setMobileMode('input');tripQuestions.resume();}},onSelectDestination:place=>{$('#mobile-place-detail').close();setDestination(place,{pan:false});$('#destination-status').textContent='등록 대표점 · 실제 출입구·도보 연결 미확인';if(isMobileUI()){setMobileMode('input');tripQuestions.resume();}}});window.mapLayers=MapLayers.create(map,{researchPanel:oscoController.panel,onOpen:()=>{
  if(isMobileUI()){map.closePopup();setSheetSize('collapsed',{animate:false});}
  tripQuestions?.collapse();
 }});

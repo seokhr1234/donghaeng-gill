@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-22-gemini-beta",
+  "version": "2026-11-22-device-heading-beta",
   "demo_beta": {
     "ignores_rest_availability": true,
     "offline_example": true,
@@ -8,9 +8,9 @@
   "main_source": "donghaeng-nav/dist/index.html",
   "expansion": {
     "online_page": "expansion.html",
-    "service_code_files": 57,
+    "service_code_files": 58,
     "review_asset_files": 2,
-    "service_integrity_sha256": "b2eceab4a41f10fcd46a7d97f4720cb02eeafaea1fb271e046838a2b9f2ac243",
+    "service_integrity_sha256": "0bb3f72426f8192033660fabd07b17c2203107a34c3f279087d820f8a5dddd41",
     "citywide_routing": false,
     "authenticated_transit_verified": false,
     "new_slope_values_promoted": 0,
@@ -242,8 +242,8 @@
   "precision_records": 16169,
   "precision_field_verified": false,
   "runtime_validation": "Exact hashes and graph binding; supplied OA-22241 archive re-extracted as supplementary evidence only; existing route slopes and precision map unchanged",
-  "html_sha256": "f268d2b16b040420eb8d99bca05a9072b2a4c2d9dced1fcf5baf25f42db027e7",
-  "html_bytes": 20781153,
+  "html_sha256": "2630147c4c4ba6b9182dc2a6d99a193d997130b5009857ca531ff401a91ec491",
+  "html_bytes": 20790061,
   "external_requests_required": false,
   "online_basemap": "OpenStreetMap raster tiles via Leaflet; HTTP(S) only",
   "offline_basemap": "Embedded OSM snapshot via Leaflet GridLayer",

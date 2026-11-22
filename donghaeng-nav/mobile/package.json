@@ -1,6 +1,6 @@
 {
   "name": "donghaeng-android-demo",
-  "version": "1.0.10-beta.6",
+  "version": "1.0.11-beta.1",
   "private": true,
   "scripts": {
     "prepare:web": "node scripts/prepare-web.mjs",

@@ -69,3 +69,14 @@ window.addEventListener('DOMContentLoaded',()=>{
  readSettings().catch(()=>{});
  setupApiSettings({bridge,native,getStatus:readSettings,onChanged:s=>{deviceGeminiConfigured=s.geminiConfigured===true;globalThis.conditionChanged?.();globalThis.refreshTransitStatus?.();}});
 });
+
+// Native rotation vector fuses gyro, acceleration and magnetic north on-device.
+
+const headingBridge=registerPlugin('DonghaengHeading');
+let headingGeneration=0;
+globalThis.DonghaengHeading={async start(onUpdate){
+ const generation=++headingGeneration;
+ const listener=await headingBridge.addListener('heading',onUpdate);
+ try{await headingBridge.start();}catch(cause){await listener.remove();throw cause;}
+ return ()=>{listener.remove().catch(()=>{});if(generation===headingGeneration)headingBridge.stop().catch(()=>{});};
+}};
