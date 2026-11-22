@@ -1,0 +1,51 @@
+{
+  "source_product": "Copernicus DEM GLO-30 DSM, 2021 release on AWS",
+  "acquisition_date_of_individual_pixels": null,
+  "collected_at_kst": "2026-11-22",
+  "source_url": "https://registry.opendata.aws/copernicus-dem/",
+  "tile_files": [
+    {
+      "name": "Copernicus_DSM_COG_10_N37_00_E126_00_DEM.tif",
+      "bytes": 29862574,
+      "sha256": "f530dd28308ecd6c5ceb0405dc1ffb7113bcafdec30d023de50f16dc433a274f",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N37_00_E126_00_DEM/Copernicus_DSM_COG_10_N37_00_E126_00_DEM.tif"
+    },
+    {
+      "name": "Copernicus_DSM_COG_10_N37_00_E127_00_DEM.tif",
+      "bytes": 49403795,
+      "sha256": "4f8fef79da8c18ed9a9a0fb97b3d2695c4681181e013e039d87044e5479f7df6",
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N37_00_E127_00_DEM/Copernicus_DSM_COG_10_N37_00_E127_00_DEM.tif"
+    }
+  ],
+  "boundary": {
+    "name": "서울특별시",
+    "osm_id": "relation/2297418",
+    "last_osm_edit": "2026-10-12T22:50:31+00:00",
+    "source_url": "https://www.openstreetmap.org/relation/2297418",
+    "source_as_of": "2026-11-19T21:22:20Z",
+    "retrieved_date": "2026-11-20",
+    "sha256": "5ced892ce696f2edf6f72f3a6543fb7ef94e56fc92142dccec8d26811d984caa",
+    "districts": 25
+  },
+  "source_horizontal_crs": "EPSG:4326",
+  "vertical_datum": "EGM2008 per product documentation",
+  "output_horizontal_crs": "EPSG:5186",
+  "resolution_m": 30,
+  "method": "Bilinear projection then Horn 3×3 steepest local surface gradient, in percent. 30m cell centers used for boundary clipping.",
+  "field_verified": false,
+  "routing_eligible": false,
+  "new_slope_values_promoted": 0,
+  "statistics": {
+    "valid_cells": 673674,
+    "nodata_cells": 0,
+    "median_grade_pct": 8.36,
+    "p90_grade_pct": 34.13,
+    "ten_pct_or_above_cells": 297907,
+    "cells_without_district_polygon": 0
+  },
+  "outputs": {
+    "seoul-copernicus-surface-grade-pct-30m.tif": "f8359080cf64ee0e528488ad90d1840441bb3b001b1629057f84f90521cf4376",
+    "copernicus-surface-grade-districts.csv": "bcf8fc4d48e71483e229090bafaa3528d4f7178d9df16bfcfd68d07eb2d2871c"
+  },
+  "attribution": "Produced using Copernicus WorldDEM-30 © DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved. Boundary © OpenStreetMap contributors."
+}

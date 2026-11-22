@@ -1,8 +1,8 @@
 (function(root){'use strict';
 // Reported connectivity is a review hypothesis, never a surveyed lift location.
-function graphWithReports(E,graph,reports){
+function graphWithReports(E,graph,reports,{assumeOperating=false}={}){
  const nodes=new Map([...graph.nodes].map(([id,n])=>[id,{...n,edges:n.edges.slice()}]));
- for(const r of reports){if(r.status!=='user_reported_both_sides'||r.operatingStatus==='closed')continue;
+ for(const r of reports){if(r.status!=='user_reported_both_sides'||!assumeOperating&&r.operatingStatus==='closed')continue;
   for(const [i,pair] of r.approachPairs.entries()){
    const a=nodes.get(pair.ground),b=nodes.get(pair.deck);if(!a||!b)continue;
    const key='reported-access:'+r.id+':'+i,meta={key,id:key,name:'육교 승강기 접근 확인 구간',d:E.distance(a.ll,b.ll),steps:false,bridge:true,layer:'review',highway:'footway',incline:null,terrainSlope:null,slopeScreening:{kind:'structure_unresolved',maxPercent:null},accessReport:r.id,approximateConnection:true,terrainReview:{status:'terrain_inapplicable',reasons:['user_reported_vertical_access_not_surveyed']}};
@@ -13,7 +13,8 @@ function graphWithReports(E,graph,reports){
 }
 function candidate(E,X,graph,origin,destination,p,reports,ceiling=null){
  if(!p.wheelchair||p.rest||!reports.length)return null;
- const g=graphWithReports(E,graph,reports),limit=ceiling==='diagnostic'?Infinity:Math.min(p.maxSlope??5,5);
+ const rehearsal=ceiling==='rehearsal';
+ const g=graphWithReports(E,graph,reports,{assumeOperating:rehearsal}),limit=ceiling==='diagnostic'||rehearsal?Infinity:Math.min(p.maxSlope??5,5);
  // Keep wheelchair exclusions and screening limits even though this diagnostic
  // uses distance/burden comparison instead of the engine's unknown-first order.
  for(const n of g.nodes.values())n.edges=n.edges.filter(e=>{const t=g.nodes.get(e.to)?.tags||{},grade=E.screeningGrade(e);return !e.steps&&e.wheelchair!=='no'&&t.wheelchair!=='no'&&!(['gate','cycle_barrier','bollard'].includes(t.barrier)&&t.wheelchair!=='yes')&&(!Number.isFinite(grade)||grade<=limit)});

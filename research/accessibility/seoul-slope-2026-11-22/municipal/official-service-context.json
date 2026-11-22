@@ -1,0 +1,106 @@
+{
+  "collected_kst": "2026-11-22",
+  "field_verified_by_donghaeng": false,
+  "routing_eligible": false,
+  "gnss_viewer_metadata": {
+    "viewer": "https://map.seoul.go.kr/smgis2/short/6OkfD",
+    "http_status": 200,
+    "theme_id": "1694517815685",
+    "theme_registered_at": "2023-09-12 00:00:00",
+    "theme_updated_at": "2025-03-17 09:30:48",
+    "mixed_content_count": 30722,
+    "mixed_content_count_note": "전체 테마 콘텐츠 수이며 보행 경사 실측 건수가 아님.",
+    "line_geometry_status": "HTTP 200 via public browser viewer. 확보한 테마 객체에서 경사 등급 선 12,205건을 검증했으며 필드 정의서·측정일·원값은 미확보.",
+    "official_pilot_report": "https://mas.smc.seoul.kr/attach/record/SEOUL/appendix/a11/A0059174.pdf?time=20260417132114",
+    "official_pilot_report_sha256": "f9be20fa55ae9e43570a9b8c90a1199f1d285122dbcb149e4a0c943d929bc2ce",
+    "pilot_area": "은평구 구산동 191-1 일대 1.38㎢",
+    "pilot_period_planned": "2022-12 to 2023-05",
+    "service_launch": "2024-03-20",
+    "published_route_sample": {
+      "url": "https://www.gangnam.go.kr/file/2/get/21f8716f-c46c-44c0-8a64-b948149465d4/download.do",
+      "format": "JPEG",
+      "http_status": 200,
+      "sha256": "e87c85f9d6ad7434616076a884d6c52208dbeb47fa33e53474c85587ea4a444f",
+      "route": "이태원역–보광동주민센터",
+      "georeferenced": false
+    },
+    "line_geometry_audit": "gnss-route-layer-audit.json"
+  },
+  "donghaengmap_station_surveys": {
+    "pilot_release": "https://news.seoul.go.kr/traffic/archives/512126",
+    "council_report": "https://ms.smc.seoul.kr/attach/record/SEOUL/appendix/a11/A0065056.pdf?time=20260525095044",
+    "council_report_sha256": "b05c2de8d8476e7dba218ab2462e8fedbaf71494f731097d423a8c7f6e289675",
+    "council_report_http_status": 200,
+    "stations": 308,
+    "radius_m": 300,
+    "mixed_issue_locations_approx": 3500,
+    "surveyed_features": [
+      "단차",
+      "경사",
+      "보도폭 좁음"
+    ],
+    "council_slope_threshold_ratio": "1/8",
+    "raw_acquisition": "공식 설명과 공개 앱만 확인. 전체 실측점/선과 재이용 조건을 확보하지 못함."
+  },
+  "eunpyeong_10m_retired": {
+    "catalog": "https://data.seoul.go.kr/dataList/OA-15927/L/1/datasetView.do",
+    "http_status": 200,
+    "described_coverage": "은평 전체 도로 구간 10m 간격의 평지·완경사·급경사 등",
+    "termination_date_heading": "2020-04-09",
+    "termination_date_metadata": "2020-03-18",
+    "raw_acquisition": "종료 카탈로그만 확보. 수치 원값과 도형 범위 미확인."
+  },
+  "eunpyeong_current_public_viewer": {
+    "viewer": "https://map.seoul.go.kr/smgis/webs/main/main.do?mode=seoulMapSearch&menuType=cityLife&themeId=1750212969170",
+    "theme_id": "1750212969170",
+    "theme_name": "은평구 이동약자 편의시설 스마트지도",
+    "viewer_response_http_status": 200,
+    "viewer_response_sha256": "6cec9d2fd20098121a21feca24108750286de3a5ade641cebc8ef45463bdc2e9",
+    "viewer_response_bytes": 840748,
+    "mixed_feature_count": 627,
+    "distinct_ids": 627,
+    "geometry_types": {
+      "Point": 627
+    },
+    "geometry_crs": "Geographic longitude/latitude coordinates; response does not declare CRS.",
+    "slope_points": 92,
+    "slope_raw_value_counts": {
+      "0": 14,
+      "1": 5,
+      "2": 3,
+      "3": 12,
+      "4": 33,
+      "5": 19,
+      "6": 6
+    },
+    "slope_categories": {
+      "전망대": 3,
+      "이정표(안내판)": 24,
+      "의자": 65
+    },
+    "slope_value_field": "cot_value_02 when cot_name_02 is 경사도",
+    "slope_units": null,
+    "measurement_date_each_point": null,
+    "slope_points_bounds_lon_lat": [
+      126.900399094,
+      37.592341739,
+      126.904765645,
+      37.616302619
+    ],
+    "trail_features_with_nested_lines": [
+      {
+        "name": "봉산무장애숲길 산책로",
+        "display_geometry_type": "Point",
+        "nested_geometry_type": "LineString",
+        "vertices": 176
+      },
+      {
+        "name": "봉산편백나무숲길 산책로",
+        "display_geometry_type": "Point",
+        "nested_geometry_type": "LineString",
+        "vertices": 155
+      }
+    ],
+    "redistribution_terms": "공개 앱 조회 성공, 데이터 재이용 조건 미확인"
+  }
+}

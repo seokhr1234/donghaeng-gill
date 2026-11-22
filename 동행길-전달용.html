@@ -2158,9 +2158,9 @@ const api={nearestSegment,arrivalNear,route};if(typeof module!=='undefined')modu
 })(typeof globalThis==='undefined'?this:globalThis);
 </script><script id="bundled-access-reports" type="application/octet-stream" data-encoding="gzip-base64">H4sIAAAAAAAAA21UXU8TQRT9Kzd9brFboFh4M1Ff/ECJ+GBIM929bSdsZ5rZaUtDmij6YNBESKwU0xIaExFDYkFUHuDFn9Od/gfvbAtV7NPOzJ45595zz+56rIoq4FLE5sGJQ0xhWSod0O7Zeox79IzVpF+Qq4m8lDqnuFfARCVAlRgiE6lkKu04yekYXQ400xV7N2YR2SECvWxO6mI24B4GEUpWlIsWZTaOzMdDs7cFliXhOInk9DwMdpumczZotsG0u/0fW/3ecwgP9kz7PDzsQfjpS7jRCntn4ecjMF8vfv8aNHcJZddgPmxHj50WvQ1P9k3ndPCqB2bvtem8tdoyKN2KenjK6lGTTspxMsnMTHo2Dlfr9IqFllExzUVhadyVcKXIc1VCz5LlOfreMipOC+tUnvkB0rkrpfK4YBofSz9q9PYaDywVPFy6D+QSVwlWLivJ3CIUlKwI74aH7iow4RalCoDs80AKvw55qYAByQp0Na9yXYdivUx+YsCDKXggNaCPVaYJ55EujMWDKVvkpc4iiY7Gaidhq7pXEQyWme9jHewZXNU0lrAUwwptQJxUai6dSc7MZOjYVvzP4c1GHMbsS9SK9GtMeVDDQCdyTKxOUlgAXGPu9TauWf1/CenkhBJm5xp2dAWUJdSqPmE2xGMH8SSIalRY5VjLukx43CPLstbzrJBZn1cxWyhH7eMaJYGjcPEOopdjkeT6xBib/Xb4/fSvNF9+FVhCoS22f3Ix2GmZly+Asgm0C7ttG3BaEQ2Ybq9/fArhtzPz89B0jwkUds7Dzfcw2G6bN22zswXhu13TaQ2aLXPwHExzcxRtLjSqskJSG37OsUcV5nO7rSL40mU+jFtZAEHRYRBUVBXrlLaCYh4ZVCsi+m6RwgJaMftvoGsuKk1GuhFzHGg81p/xxK4+FRj9AWzXI+K7lncRyarIAFHx/UZjpfEHxl3longEAAA=</script><script>(function(root){'use strict';
 // Reported connectivity is a review hypothesis, never a surveyed lift location.
-function graphWithReports(E,graph,reports){
+function graphWithReports(E,graph,reports,{assumeOperating=false}={}){
  const nodes=new Map([...graph.nodes].map(([id,n])=>[id,{...n,edges:n.edges.slice()}]));
- for(const r of reports){if(r.status!=='user_reported_both_sides'||r.operatingStatus==='closed')continue;
+ for(const r of reports){if(r.status!=='user_reported_both_sides'||!assumeOperating&&r.operatingStatus==='closed')continue;
   for(const [i,pair] of r.approachPairs.entries()){
    const a=nodes.get(pair.ground),b=nodes.get(pair.deck);if(!a||!b)continue;
    const key='reported-access:'+r.id+':'+i,meta={key,id:key,name:'육교 승강기 접근 확인 구간',d:E.distance(a.ll,b.ll),steps:false,bridge:true,layer:'review',highway:'footway',incline:null,terrainSlope:null,slopeScreening:{kind:'structure_unresolved',maxPercent:null},accessReport:r.id,approximateConnection:true,terrainReview:{status:'terrain_inapplicable',reasons:['user_reported_vertical_access_not_surveyed']}};
@@ -2171,7 +2171,8 @@ function graphWithReports(E,graph,reports){
 }
 function candidate(E,X,graph,origin,destination,p,reports,ceiling=null){
  if(!p.wheelchair||p.rest||!reports.length)return null;
- const g=graphWithReports(E,graph,reports),limit=ceiling==='diagnostic'?Infinity:Math.min(p.maxSlope??5,5);
+ const rehearsal=ceiling==='rehearsal';
+ const g=graphWithReports(E,graph,reports,{assumeOperating:rehearsal}),limit=ceiling==='diagnostic'||rehearsal?Infinity:Math.min(p.maxSlope??5,5);
  // Keep wheelchair exclusions and screening limits even though this diagnostic
  // uses distance/burden comparison instead of the engine's unknown-first order.
  for(const n of g.nodes.values())n.edges=n.edges.filter(e=>{const t=g.nodes.get(e.to)?.tags||{},grade=E.screeningGrade(e);return !e.steps&&e.wheelchair!=='no'&&t.wheelchair!=='no'&&!(['gate','cycle_barrier','bollard'].includes(t.barrier)&&t.wheelchair!=='yes')&&(!Number.isFinite(grade)||grade<=limit)});
@@ -3212,7 +3213,29 @@ root.MapLayers={create};
     };
   }
 
-  return {places, cityProfile, retryCityWithoutSlope, slopeNotes, nearbyRest, localRoute, availabilityNote};
+  function elevatorRoute(E, Endpoint, AccessReview, graph, from, to, profile, candidates, reports) {
+    if (!reports.length) return null;
+    const screened = graph.meta.buildingAudit?.filterGraph(graph) || graph;
+    const route = AccessReview.candidate(E, Endpoint, screened, from, to,
+      {...profile, wheelchair: true, rest: false}, reports, 'rehearsal');
+    if (!route || new Set(route.ids).size !== route.ids.length) return null;
+    const evidence = E.slopeSummary(route.edges);
+    const registered = route.edges.map(edge => edge.incline).filter(Number.isFinite);
+    const reference = route.edges.filter(edge => edge.incline == null).map(edge => edge.terrainSlope).filter(Number.isFinite);
+    const limits = E.wheelchairProfile(profile);
+    const demoSlopeRelaxed = limits.avoidSlope || limits.maxSlope != null;
+    const demoNotes = [
+      '시연에서 양쪽 육교 엘리베이터를 이용 가능하다고 가정했어요.',
+      '점선은 제보를 바탕으로 연결한 접근 가설이에요. 실제 엘리베이터 문 위치와 운행은 미확인이에요.',
+      ...slopeNotes({registered: registered.length ? Math.max(...registered) : null,
+        reference: reference.length ? Math.max(...reference) : null, unknown: evidence.unknownMeters}),
+    ];
+    if (demoSlopeRelaxed) demoNotes.push('육교 시연 경로에는 요청한 경사 제한을 적용하지 않았어요.');
+    return {...route, p: profile, label: '육교 엘리베이터 시연 경로', selectionIneligible: true,
+      demoElevator: true, demoNotes, demoSlopeRelaxed, demoNearbyRest: nearbyRest(E, route.coords, candidates, profile)};
+  }
+
+  return {places, cityProfile, retryCityWithoutSlope, slopeNotes, nearbyRest, localRoute, elevatorRoute, availabilityNote};
 });
 </script><script>'use strict';
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],E=NavEngine,F=DonghaengFinal;
@@ -3395,8 +3418,13 @@ $('#search').onsubmit=async ev=>{
  try{
   await precisionController.ready;if(!current())return;graph.meta.buildingAudit=precisionController.getAudit();
   if(demoBeta){
-   routes=[DonghaengDemoBeta.localRoute(E,EndpointRouting,graph,origin,destination.ll,p,betaPlaces(true))];
-   selected=0;
+   const candidates=betaPlaces(true);
+   const elevator=DonghaengDemoBeta.elevatorRoute(E,EndpointRouting,AccessReview,graph,origin,destination.ll,p,candidates,accessReports);
+   let ordinary=null;
+   try{ordinary=DonghaengDemoBeta.localRoute(E,EndpointRouting,graph,origin,destination.ll,p,candidates)}
+   catch(error){if(!elevator)throw error}
+   routes=[ordinary,elevator].filter(Boolean);
+   selected=elevator&&(!ordinary||elevator.totalLength<ordinary.totalLength&&!(p.rest&&ordinary.restStop))?routes.indexOf(elevator):0;
    routeSelection={source:'unavailable',summaries:[],createdAt:new Date().toISOString(),message:'시연 경로 · 시설 실제 운영과 통행 상태는 미확인'};
    if(isMobileUI())setMobileMode('results');
    renderRoutes();drawRoutes(true);
@@ -3553,7 +3581,7 @@ async function findCityRoute(){
 }
 function endpointReview(route,start=origin,end=destination.ll){return precisionController.reviewRoute(route,start,end)}
 function reviewRouteTitle(route){
- return route.demoNotes?'베타 시연 경로':route.accessReview?'육교 경로':route.assistancePreview?'우회 경로':'보행 경로';
+ return route.demoElevator?route.label:route.demoNotes?'베타 시연 경로':route.accessReview?'육교 경로':route.assistancePreview?'우회 경로':'보행 경로';
 }
 function reviewRouteReasons(route){
  const reasons=[...(route.demoNotes||[])];

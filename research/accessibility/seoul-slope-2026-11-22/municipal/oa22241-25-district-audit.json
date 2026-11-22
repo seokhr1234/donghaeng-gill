@@ -1,0 +1,355 @@
+{
+  "dataset_url": "https://data.seoul.go.kr/dataList/OA-22241/F/1/datasetView.do",
+  "source_reported_vintage": "2023년 기준 수치지형도",
+  "license_reported": "KOGL type 1",
+  "audited_at_kst": "2026-11-22T09:20:19.674145+09:00",
+  "boundaries_source": "https://www.openstreetmap.org/relation/2297418",
+  "boundaries_source_as_of": "2026-11-19T21:22:20Z",
+  "boundary_intersection_note": "Point or line intersects preserved OSM relation polygons. Border contour can count in several districts. Nonzero means presence, not dense or complete coverage.",
+  "vertical_datum": null,
+  "field_verified": false,
+  "routing_eligible": false,
+  "files": {
+    "seq1": {
+      "url": "https://datafile.seoul.go.kr/bigfile/iot/inf/nio_download.do?infId=OA-22241&infSeq=1&seq=1&useCache=false",
+      "bytes": 103960741,
+      "sha256": "0243111efc7bc30a03b992e92c419c9a9e891bc7df3094ffe0abf85dae24f44c",
+      "crc_valid": true,
+      "layers": {
+        "N3L_F001": {
+          "type": "Line String",
+          "fields": {
+            "UFID": {
+              "type": "String",
+              "width": 34,
+              "precision": 0
+            },
+            "DIVI": {
+              "type": "String",
+              "width": 6,
+              "precision": 0
+            },
+            "CONT": {
+              "type": "Real",
+              "width": 19,
+              "precision": 8
+            },
+            "SCLS": {
+              "type": "String",
+              "width": 8,
+              "precision": 0
+            },
+            "FMTA": {
+              "type": "String",
+              "width": 9,
+              "precision": 0
+            },
+            "HEIGHT": {
+              "type": "Real",
+              "width": 19,
+              "precision": 8
+            },
+            "SHAPE_LEN": {
+              "type": "Real",
+              "width": 19,
+              "precision": 11
+            }
+          },
+          "horizontal_crs": "EPSG:5174",
+          "geom_extent": {
+            "west": 173689.12920000032,
+            "east": 222056.35360000003,
+            "south": 416454.68480000086,
+            "north": 471968.9037999995
+          },
+          "total_raw": 13704,
+          "unique_ufid": 13704,
+          "height_comparison": {
+            "CONT_equals_HEIGHT": 13704
+          },
+          "height_range": [
+            0.0,
+            835.0
+          ],
+          "height_distinct_values": 168,
+          "seoul_boundary_intersections": 8281,
+          "district_intersections": {
+            "강남구": 485,
+            "강동구": 276,
+            "강북구": 851,
+            "강서구": 358,
+            "관악구": 657,
+            "광진구": 190,
+            "구로구": 465,
+            "금천구": 158,
+            "노원구": 461,
+            "도봉구": 378,
+            "동대문구": 110,
+            "동작구": 377,
+            "마포구": 267,
+            "서대문구": 430,
+            "서초구": 920,
+            "성동구": 196,
+            "성북구": 629,
+            "송파구": 301,
+            "양천구": 263,
+            "영등포구": 134,
+            "용산구": 286,
+            "은평구": 604,
+            "종로구": 624,
+            "중구": 252,
+            "중랑구": 247
+          },
+          "districts_with_at_least_one": 25
+        },
+        "N3P_F002": {
+          "type": "Point",
+          "fields": {
+            "UFID": {
+              "type": "String",
+              "width": 34,
+              "precision": 0
+            },
+            "NUME": {
+              "type": "Real",
+              "width": 19,
+              "precision": 8
+            },
+            "SCLS": {
+              "type": "String",
+              "width": 8,
+              "precision": 0
+            },
+            "FMTA": {
+              "type": "String",
+              "width": 9,
+              "precision": 0
+            },
+            "HEIGHT": {
+              "type": "Real",
+              "width": 19,
+              "precision": 8
+            }
+          },
+          "horizontal_crs": "EPSG:5174",
+          "geom_extent": {
+            "west": 176129.48039999977,
+            "east": 219160.08939999994,
+            "south": 433301.0240000002,
+            "north": 469520.86060000025
+          },
+          "total_raw": 76580,
+          "unique_ufid": 76580,
+          "height_comparison": {
+            "NUME_equals_HEIGHT": 76361,
+            "NUME_differs_from_HEIGHT": 219
+          },
+          "height_range": [
+            -1.73000002,
+            835.59997559
+          ],
+          "height_distinct_values": 14923,
+          "seoul_boundary_intersections": 47102,
+          "district_intersections": {
+            "강남구": 4372,
+            "강동구": 2130,
+            "강북구": 1687,
+            "강서구": 2056,
+            "관악구": 1646,
+            "광진구": 1240,
+            "구로구": 1734,
+            "금천구": 884,
+            "노원구": 3194,
+            "도봉구": 2001,
+            "동대문구": 998,
+            "동작구": 1100,
+            "마포구": 2061,
+            "서대문구": 2013,
+            "서초구": 3432,
+            "성동구": 1779,
+            "성북구": 1355,
+            "송파구": 2935,
+            "양천구": 944,
+            "영등포구": 1415,
+            "용산구": 1494,
+            "은평구": 2488,
+            "종로구": 1854,
+            "중구": 773,
+            "중랑구": 1517
+          },
+          "districts_with_at_least_one": 25
+        }
+      }
+    },
+    "seq2": {
+      "url": "https://datafile.seoul.go.kr/bigfile/iot/inf/nio_download.do?infId=OA-22241&infSeq=1&seq=2&useCache=false",
+      "bytes": 45852601,
+      "sha256": "4fbe3c7e061b5974e7403ec116855304ed8ae321eebcc0d12c31ca8fb7be30bf",
+      "crc_valid": true,
+      "layers": {
+        "N3L_F001": {
+          "type": "Line String",
+          "fields": {
+            "UFID": {
+              "type": "String",
+              "width": 34,
+              "precision": 0
+            },
+            "DIVI": {
+              "type": "String",
+              "width": 6,
+              "precision": 0
+            },
+            "CONT": {
+              "type": "Real",
+              "width": 19,
+              "precision": 8
+            },
+            "SCLS": {
+              "type": "String",
+              "width": 8,
+              "precision": 0
+            },
+            "FMTA": {
+              "type": "String",
+              "width": 9,
+              "precision": 0
+            },
+            "HEIGHT": {
+              "type": "Real",
+              "width": 19,
+              "precision": 8
+            },
+            "SHAPE_LEN": {
+              "type": "Real",
+              "width": 19,
+              "precision": 11
+            }
+          },
+          "horizontal_crs": "EPSG:5174",
+          "geom_extent": {
+            "west": 179278.2279000003,
+            "east": 216168.16160000023,
+            "south": 436259.8334999997,
+            "north": 466558.3286000006
+          },
+          "total_raw": 8570,
+          "unique_ufid": 8570,
+          "height_comparison": {
+            "CONT_equals_HEIGHT": 8570
+          },
+          "height_range": [
+            5.0,
+            770.0
+          ],
+          "height_distinct_values": 154,
+          "seoul_boundary_intersections": 8511,
+          "district_intersections": {
+            "강남구": 488,
+            "강동구": 344,
+            "강북구": 829,
+            "강서구": 393,
+            "관악구": 628,
+            "광진구": 201,
+            "구로구": 448,
+            "금천구": 159,
+            "노원구": 465,
+            "도봉구": 378,
+            "동대문구": 122,
+            "동작구": 414,
+            "마포구": 239,
+            "서대문구": 428,
+            "서초구": 938,
+            "성동구": 204,
+            "성북구": 637,
+            "송파구": 339,
+            "양천구": 268,
+            "영등포구": 142,
+            "용산구": 325,
+            "은평구": 603,
+            "종로구": 639,
+            "중구": 252,
+            "중랑구": 265
+          },
+          "districts_with_at_least_one": 25
+        },
+        "N3P_F002": {
+          "type": "Point",
+          "fields": {
+            "UFID": {
+              "type": "String",
+              "width": 34,
+              "precision": 0
+            },
+            "NUME": {
+              "type": "Real",
+              "width": 19,
+              "precision": 8
+            },
+            "SCLS": {
+              "type": "String",
+              "width": 8,
+              "precision": 0
+            },
+            "FMTA": {
+              "type": "String",
+              "width": 9,
+              "precision": 0
+            },
+            "HEIGHT": {
+              "type": "Real",
+              "width": 19,
+              "precision": 8
+            }
+          },
+          "horizontal_crs": "EPSG:5174",
+          "geom_extent": {
+            "west": 179287.75050000008,
+            "east": 216067.93450000044,
+            "south": 436265.9876000006,
+            "north": 466432.5918000005
+          },
+          "total_raw": 45870,
+          "unique_ufid": 45870,
+          "height_comparison": {
+            "NUME_equals_HEIGHT": 45870
+          },
+          "height_range": [
+            -0.54,
+            740.2
+          ],
+          "height_distinct_values": 11088,
+          "seoul_boundary_intersections": 45687,
+          "district_intersections": {
+            "강남구": 3964,
+            "강동구": 1617,
+            "강북구": 1659,
+            "강서구": 2249,
+            "관악구": 1665,
+            "광진구": 1197,
+            "구로구": 1985,
+            "금천구": 922,
+            "노원구": 3210,
+            "도봉구": 1968,
+            "동대문구": 1022,
+            "동작구": 1148,
+            "마포구": 1907,
+            "서대문구": 1867,
+            "서초구": 3258,
+            "성동구": 1679,
+            "성북구": 1338,
+            "송파구": 3009,
+            "양천구": 916,
+            "영등포구": 1251,
+            "용산구": 1360,
+            "은평구": 2415,
+            "종로구": 1827,
+            "중구": 754,
+            "중랑구": 1500
+          },
+          "districts_with_at_least_one": 25
+        }
+      }
+    }
+  }
+}

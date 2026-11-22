@@ -1,0 +1,48 @@
+{
+  "branch_snapshot": "fc83f87d4a58a1e0dbe615f30084ea164b9c053a",
+  "city_walk": {
+    "sha256": "57982a4ca3aea9e6a0818e557109ef0720724ade869edc808a8d4e53265452f8",
+    "bbox_lonlat": [
+      126.75,
+      37.4,
+      127.2,
+      37.72
+    ],
+    "segments": 963670,
+    "registered_numeric_incline_segments": 903,
+    "registered_incline_role": "OSM tag constraints only, not measured surface grades",
+    "source_as_of": "2026-11-09T21:22:17Z",
+    "field_verified": false
+  },
+  "steep_overlay": {
+    "sha256": "9dde6026028d74c9be8f8381103c717fa89519f67975674fa38f255ef3eb8fa7",
+    "reference_threshold_percent": 10,
+    "segments_by_source": {
+      "dem": 79597,
+      "osm": 85
+    },
+    "field_verified": false,
+    "display_only": true,
+    "routing_eligible": false
+  },
+  "registered_incline_overlay": {
+    "sha256": "5b6f69bcc2d721764f7064888035a033324e0728001cfacb8ee079c78ea2dcee",
+    "segments": 3921,
+    "segments_with_explicit_unit_numeric": 312,
+    "field_verified": false,
+    "display_only": true,
+    "routing_eligible": false
+  },
+  "wolgok_support": {
+    "sha256": "a94f671ddc81b4831aacf872fa243cde25473ebbaf51690b8c8479327afdabcc",
+    "elevation_points": 944,
+    "contours": 191,
+    "references_by_edge": {
+      "edges_with_support": 19548,
+      "edges_without_support": 2005
+    },
+    "field_verified": false,
+    "routing_eligible": false,
+    "display_only": true
+  }
+}

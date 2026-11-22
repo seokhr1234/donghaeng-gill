@@ -1,0 +1,124 @@
+{
+  "collected_kst": "2026-11-22",
+  "field_verified_by_donghaeng": false,
+  "routing_eligible": false,
+  "entrance": {
+    "file": "entrance-spatial.zip",
+    "url": "https://datafile.seoul.go.kr/bigfile/iot/inf/nio_download.do?infId=OA-21699&infSeq=3&seq=1&useCache=false",
+    "http_status": 200,
+    "bytes": 2486018,
+    "sha256": "cfcce59f1d61f6fd2393130b86a97a6b785f27134f1059f38451ba84fb82d933",
+    "catalog": "https://data.seoul.go.kr/dataList/OA-21699/S/1/datasetView.do?tab=A",
+    "catalog_license": "이용허락범위 제한 없음",
+    "date_basis": {
+      "2022-11-23": 16786
+    },
+    "shp_listing_date": "2023-01-02",
+    "dictionary_listing_date": "2023-04-21",
+    "crs": "EPSG:4326",
+    "records": 16786,
+    "unique_points": 12355,
+    "unique_facility_ids": 3349,
+    "ramp_installation_codes": {
+      "ER_N": 14857,
+      "ER_Y": 1856,
+      "unrecorded": 73
+    },
+    "access_type_codes": {
+      "ED_EA": 7067,
+      "ED_EB": 692,
+      "ED_EC": 603,
+      "ED_ED": 1811,
+      "unrecorded": 6558,
+      "ED_EX": 55
+    },
+    "numeric_grade_field": false,
+    "fields": [
+      "bcyclCmg",
+      "brllBlck",
+      "cmgSe",
+      "dnsescltr",
+      "entrcGap",
+      "entrcHeigh",
+      "entrcId",
+      "entrcSe",
+      "entrcSpce",
+      "entrcStle",
+      "entrcdoorB",
+      "escltr",
+      "etc",
+      "frontimage",
+      "hlOpertime",
+      "id",
+      "latitude",
+      "leftimage",
+      "longitude",
+      "nationIdxN",
+      "newadrId",
+      "ramp",
+      "refDate",
+      "rightimage",
+      "satOpertim",
+      "sisulId",
+      "sisulNm",
+      "sumOpertim",
+      "wkOpertime"
+    ],
+    "note": "ED_EB description includes stairs with accessible ramp or vertical lift etc. (under 5 degrees); access type code only, no ramp grade value.",
+    "dictionary": {
+      "file": "entrance-dictionary.hwpx",
+      "url": "https://datafile.seoul.go.kr/bigfile/iot/inf/nio_download.do?infId=OA-21699&infSeq=3&seq=20&useCache=false",
+      "http_status": 200,
+      "bytes": 88727,
+      "sha256": "e057f77b97faece8e8b48bef6a1deae552d437e771e144c929df18f54bb1fb35"
+    }
+  },
+  "sidewalk_statistics": {
+    "file": "seoul-sidewalk-stats-2025.xlsx",
+    "url": "https://datafile.seoul.go.kr/bigfile/iot/inf/nio_download.do?infId=OA-22240&infSeq=1&seq=4&useCache=false",
+    "http_status": 200,
+    "bytes": 576002,
+    "sha256": "f2e90f6f11625c17c7c9be0cdcc1b8299cc358f94561f24244d86c702efc01d6",
+    "catalog": "https://data.seoul.go.kr/dataList/OA-22240/F/1/datasetView.do",
+    "listing_date": "2026-09-15",
+    "date_basis": "2025-12-31",
+    "sheets": [
+      "자치구별 보도총괄현황(2025)",
+      "특별시도 보도 세부현황(2025)",
+      "작성양식(자치구도)"
+    ],
+    "detail_rows": 5677,
+    "districts_in_manager_field": 25,
+    "slope_field": false,
+    "coordinates_or_crs": null
+  },
+  "safe_route_inventory": {
+    "file": "gnss-route-inventory.xlsx",
+    "url": "https://www.gangnam.go.kr/file/1/get/21f8716f-c46c-44c0-8a64-b948149465d4/download.do",
+    "http_status": 200,
+    "bytes": 93501,
+    "sha256": "28fad03c52ad8ca43e1045280c172d76d3be9c7ca22052f4254b3477bb0751c0",
+    "notice": "https://www.gangnam.go.kr/center/board/B_000282/1096692/view.do?keyfield=bdm_main_title&mid=MC080301&office=3220052&pgno=10",
+    "theme": "https://map.seoul.go.kr/smgis2/short/6OkfD",
+    "theme_id": "1694517815685",
+    "launch_date": "2024-03-20",
+    "measurement_date_by_row": null,
+    "redistribution_terms": "separate inventory attachment re-use terms not verified",
+    "actual_rows": 608,
+    "named_destination_count": 607,
+    "degree_bands": {
+      "초록색 (0~5˚)": 512,
+      "노란색 (5~7˚)": 72,
+      "주황색 (7~9˚)": 21,
+      "빨간색 (9˚이상)": 3
+    },
+    "facility_groups": {
+      "공공시설": 451,
+      "교통시설": 35,
+      "문화시설": 29,
+      "복지시설": 93
+    },
+    "numeric_slope_field": false,
+    "coordinates_or_crs_in_workbook": null
+  }
+}

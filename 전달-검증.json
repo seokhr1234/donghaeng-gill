@@ -6,7 +6,7 @@
   "credentials_included": true,
   "source_project": "동행길-Codex-전달; bbb referenced for Leaflet OSM tiles",
   "files": 428,
-  "html_sha256": "36603b73a071ffb3490e79348f73105bf9810cec76c8607f099e724817872093",
+  "html_sha256": "8f09e66af89d4b775f10dc8ce1e3c326e36339954bff15bbb2346ba93d778c33",
   "verification": {
     "copied_project_build": true,
     "server_root_app_setup_http_200": true,
@@ -56,7 +56,7 @@
   "precision_runtime_included": true,
   "precision_runtime_loader_implemented": true,
   "main_promotion": {
-    "version": "2026-11-22-demo-beta-slope",
+    "version": "2026-11-22-seoul-elevator-beta",
     "review": "donghaeng-nav/docs/main-navigation-promotion.md",
     "original_gis_reprocessed": false,
     "field_verified": false

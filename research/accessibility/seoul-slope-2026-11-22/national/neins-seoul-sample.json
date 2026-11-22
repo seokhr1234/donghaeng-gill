@@ -1,0 +1,120 @@
+{
+  "provider": "기후에너지환경부·한국환경연구원 국토환경성평가지도",
+  "viewer_url": "https://webgis.neins.go.kr/map.do",
+  "source_url": "https://ecvam.neins.go.kr/board/faq/faqView.do?board_seq=270&pageIndex=1",
+  "query_url": "https://webgis.neins.go.kr/proxy/proxy.do?url=/proxy/raster/ghFeature",
+  "source_year_per_viewer": 2022,
+  "grid_size_m_per_viewer": 5,
+  "crs_request": "EPSG:3857",
+  "analysis_type": "terrain inclination category in degrees; slope azimuth and longitudinal/cross slope unpublished",
+  "observed_on_site": false,
+  "routing_eligible": false,
+  "selection_note": "Analyst-selected test coordinates, not official entrances, traversable sidewalk points or a representative citywide sample.",
+  "samples": [
+    {
+      "id": "jongno-south",
+      "description": "서울 도심 남측 시험점",
+      "coordinates_epsg4326": [
+        126.978,
+        37.5665
+      ],
+      "query_wkt_epsg3857": "POINT(14135126.301948 4518366.509982)",
+      "queried_at_kst": "2026-11-22T09:18:20+09:00",
+      "http_status": 200,
+      "response_content_type": "text/html;charset=UTF-8",
+      "sha256": "ea68559f059c6dfbb9a2eaefedf90dde9085c5d448f17b99d44deb6c8a2bac7d",
+      "class_code": 1,
+      "class_label_degrees": "5도 미만"
+    },
+    {
+      "id": "jongno-center",
+      "description": "종로 도심 시험점",
+      "coordinates_epsg4326": [
+        126.98,
+        37.573
+      ],
+      "query_wkt_epsg3857": "POINT(14135348.940930 4519279.411875)",
+      "queried_at_kst": "2026-11-22T09:18:23+09:00",
+      "http_status": 200,
+      "response_content_type": "text/html;charset=UTF-8",
+      "sha256": "6a92a83a9c15aa4ad5b9d3f6b74f0dc64ee44e315e101e0a4916edef2dbf8403",
+      "class_code": 1,
+      "class_label_degrees": "5도 미만"
+    },
+    {
+      "id": "namsan",
+      "description": "남산 일대 시험점",
+      "coordinates_epsg4326": [
+        126.9883,
+        37.55135
+      ],
+      "query_wkt_epsg3857": "POINT(14136272.892703 4516239.055490)",
+      "queried_at_kst": "2026-11-22T09:18:24+09:00",
+      "http_status": 200,
+      "response_content_type": "text/html;charset=UTF-8",
+      "sha256": "083953dfa828ee5979827a347b9d486ea6f6ca1fc9baa40257d78f622039f9f2",
+      "class_code": 5,
+      "class_label_degrees": "20~25도 미만"
+    },
+    {
+      "id": "bukak",
+      "description": "북악산 일대 시험점",
+      "coordinates_epsg4326": [
+        126.9805,
+        37.593
+      ],
+      "query_wkt_epsg3857": "POINT(14135404.600675 4522088.840669)",
+      "queried_at_kst": "2026-11-22T09:18:26+09:00",
+      "http_status": 200,
+      "response_content_type": "text/html;charset=UTF-8",
+      "sha256": "93868b097809810fd1d453906d2859d297ed95eba1aad1e8bcdbe8a11be2dd70",
+      "class_code": 5,
+      "class_label_degrees": "20~25도 미만"
+    },
+    {
+      "id": "hangang-north",
+      "description": "한강 북측 저지대 시험점",
+      "coordinates_epsg4326": [
+        126.94438,
+        37.52767
+      ],
+      "query_wkt_epsg3857": "POINT(14131383.740668 4512914.632898)",
+      "queried_at_kst": "2026-11-22T09:18:26+09:00",
+      "http_status": 200,
+      "response_content_type": "text/html;charset=UTF-8",
+      "sha256": "1ab54799912c7730e2d17d6d539d596648e32b15efaf2da1d35ab487b8c39ea1",
+      "class_code": 1,
+      "class_label_degrees": "5도 미만"
+    },
+    {
+      "id": "gangnam",
+      "description": "강남 도심 시험점",
+      "coordinates_epsg4326": [
+        127.028,
+        37.498
+      ],
+      "query_wkt_epsg3857": "POINT(14140692.276488 4508750.766540)",
+      "queried_at_kst": "2026-11-22T09:18:28+09:00",
+      "http_status": 200,
+      "response_content_type": "text/html;charset=UTF-8",
+      "sha256": "e4339da38907a6edce2e9a4593106b45954afa28f80a637b3ce6d1859e0a4a3e",
+      "class_code": 1,
+      "class_label_degrees": "5도 미만"
+    },
+    {
+      "id": "hangang-water",
+      "description": "한강 수면 부근 비교점",
+      "coordinates_epsg4326": [
+        126.9359,
+        37.53193
+      ],
+      "query_wkt_epsg3857": "POINT(14130439.751386 4513512.614157)",
+      "queried_at_kst": "2026-11-22T09:18:29+09:00",
+      "http_status": 200,
+      "response_content_type": "text/html;charset=UTF-8",
+      "sha256": "cad7147dd651b9aa7d0b75786e75a708214f14d0aa2a6b8bb14cc533e95706e7",
+      "class_code": 1,
+      "class_label_degrees": "5도 미만"
+    }
+  ]
+}

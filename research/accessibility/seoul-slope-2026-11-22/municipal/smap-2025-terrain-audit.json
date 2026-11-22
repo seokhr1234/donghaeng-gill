@@ -1,0 +1,159 @@
+{
+  "field_verified": false,
+  "routing_eligible": false,
+  "viewer_url": "https://smap.seoul.go.kr/smap/",
+  "official_guide": "https://smap.seoul.go.kr/guide/guide.html",
+  "checked_at_kst": "2026-11-22T09:23:06.225232+09:00",
+  "reported_layer": "seoul:seoul_1m_2025",
+  "raw_acquisition_date": null,
+  "vertical_datum": null,
+  "license_for_raw_bulk_or_redistribution": null,
+  "wms_capabilities": {
+    "path": "/geoserver/wms",
+    "status": 200,
+    "crs": "EPSG:5186",
+    "style": "Classic elevation color progression",
+    "native_wms_1_3_bbox_axis_order_north_east": {
+      "CRS": "EPSG:5186",
+      "minx": "536463.3968846806",
+      "miny": "179091.39695950833",
+      "maxx": "566963.3968846806",
+      "maxy": "216342.39695950833"
+    },
+    "estimated_epsg4326_sw_and_ne_from_native_bbox": [
+      [
+        126.76377435918845,
+        37.42731608826354
+      ],
+      [
+        127.18531635457228,
+        37.70221033001238
+      ]
+    ],
+    "warning": "Geographic bbox directly advertised in service capabilities is unreliable for this layer."
+  },
+  "wms_getmap_geotiff": {
+    "status": 200,
+    "size_bytes": 11936,
+    "sha256": "73d0705553ff5f50870338049d8474e2b8e3eefd6c629c9152ad8fae25009c34",
+    "width": 100,
+    "height": 100,
+    "bands": 1,
+    "native_exp": "5186",
+    "datatype": "Byte",
+    "color_interpretation": "Palette",
+    "raster_raw_elevations": false
+  },
+  "wms_getfeatureinfo_service_samples": [
+    {
+      "name": "월곡역 프로젝트 기준 표본",
+      "lon_lat_epsg_4326": [
+        127.0414554,
+        37.60192
+      ],
+      "east_north_epsg_5186": [
+        203660.72403897828,
+        555816.8281980202
+      ],
+      "request_url": "https://smap.seoul.go.kr/smap/imageProxy.do?svc=2D&param=%2Fgeoserver%2Fwms&service=WMS&version=1.1.1&request=GetFeatureInfo&layers=seoul%3Aseoul_1m_2025&query_layers=seoul%3Aseoul_1m_2025&styles=&srs=EPSG%3A5186&width=101&height=101&format=image%2Fpng&info_format=application%2Fjson&x=50&y=50&bbox=203610.224039%2C555766.328198%2C203711.224039%2C555867.328198",
+      "status": 200,
+      "bytes": 226,
+      "raw_sha256": "5e2a85585da1d70d7d2fc0dc6f8a0e33757e72c15eae3b7335bdbed0ac32f73e",
+      "gray_index_samples": [
+        25.042133331298828
+      ],
+      "source_response_time": "2026-11-22T00:23:07.145Z",
+      "retrieved_at_kst": "2026-11-22T09:23:07.222525+09:00"
+    },
+    {
+      "name": "시청 일대 참고 좌표",
+      "lon_lat_epsg_4326": [
+        126.978,
+        37.5665
+      ],
+      "east_north_epsg_5186": [
+        198056.36673702704,
+        551885.0305887164
+      ],
+      "request_url": "https://smap.seoul.go.kr/smap/imageProxy.do?svc=2D&param=%2Fgeoserver%2Fwms&service=WMS&version=1.1.1&request=GetFeatureInfo&layers=seoul%3Aseoul_1m_2025&query_layers=seoul%3Aseoul_1m_2025&styles=&srs=EPSG%3A5186&width=101&height=101&format=image%2Fpng&info_format=application%2Fjson&x=50&y=50&bbox=198005.866737%2C551834.530589%2C198106.866737%2C551935.530589",
+      "status": 200,
+      "bytes": 225,
+      "raw_sha256": "2c843bdf0194ce016ec410eee97f521a5847bf23405ed6f6e8c35fcc08910e48",
+      "gray_index_samples": [
+        29.11842918395996
+      ],
+      "source_response_time": "2026-11-22T00:23:07.805Z",
+      "retrieved_at_kst": "2026-11-22T09:23:07.885981+09:00"
+    },
+    {
+      "name": "남산 일대 참고 좌표",
+      "lon_lat_epsg_4326": [
+        126.9881,
+        37.5512
+      ],
+      "east_north_epsg_5186": [
+        198948.45611243765,
+        550186.7510129579
+      ],
+      "request_url": "https://smap.seoul.go.kr/smap/imageProxy.do?svc=2D&param=%2Fgeoserver%2Fwms&service=WMS&version=1.1.1&request=GetFeatureInfo&layers=seoul%3Aseoul_1m_2025&query_layers=seoul%3Aseoul_1m_2025&styles=&srs=EPSG%3A5186&width=101&height=101&format=image%2Fpng&info_format=application%2Fjson&x=50&y=50&bbox=198897.956112%2C550136.251013%2C198998.956112%2C550237.251013",
+      "status": 200,
+      "bytes": 226,
+      "raw_sha256": "caf6f4632f786e6490796bfbfa94afb80cdedd84f49ef9b016333a88921767cb",
+      "gray_index_samples": [
+        252.13754272460938
+      ],
+      "source_response_time": "2026-11-22T00:23:08.803Z",
+      "retrieved_at_kst": "2026-11-22T09:23:08.883726+09:00"
+    },
+    {
+      "name": "여의도 일대 참고 좌표",
+      "lon_lat_epsg_4326": [
+        126.924,
+        37.526
+      ],
+      "east_north_epsg_5186": [
+        193281.9965746946,
+        547392.5067787033
+      ],
+      "request_url": "https://smap.seoul.go.kr/smap/imageProxy.do?svc=2D&param=%2Fgeoserver%2Fwms&service=WMS&version=1.1.1&request=GetFeatureInfo&layers=seoul%3Aseoul_1m_2025&query_layers=seoul%3Aseoul_1m_2025&styles=&srs=EPSG%3A5186&width=101&height=101&format=image%2Fpng&info_format=application%2Fjson&x=50&y=50&bbox=193231.496575%2C547342.006779%2C193332.496575%2C547443.006779",
+      "status": 200,
+      "bytes": 226,
+      "raw_sha256": "0ed1e3c05d9656d880a549f0ab7c26fe0ad44c2e0bee0c93520bf9b662de785d",
+      "gray_index_samples": [
+        12.611307144165039
+      ],
+      "source_response_time": "2026-11-22T00:23:09.590Z",
+      "retrieved_at_kst": "2026-11-22T09:23:09.667750+09:00"
+    },
+    {
+      "name": "잠실 일대 참고 좌표",
+      "lon_lat_epsg_4326": [
+        127.1002,
+        37.5132
+      ],
+      "east_north_epsg_5186": [
+        208858.67075570335,
+        545973.8709630009
+      ],
+      "request_url": "https://smap.seoul.go.kr/smap/imageProxy.do?svc=2D&param=%2Fgeoserver%2Fwms&service=WMS&version=1.1.1&request=GetFeatureInfo&layers=seoul%3Aseoul_1m_2025&query_layers=seoul%3Aseoul_1m_2025&styles=&srs=EPSG%3A5186&width=101&height=101&format=image%2Fpng&info_format=application%2Fjson&x=50&y=50&bbox=208808.170756%2C545923.370963%2C208909.170756%2C546024.370963",
+      "status": 200,
+      "bytes": 225,
+      "raw_sha256": "af4ba90c0d7cd271ced7127fc7b9568973f22ee0303298bd96761ffc96b850ed",
+      "gray_index_samples": [
+        14.51170825958252
+      ],
+      "source_response_time": "2026-11-22T00:23:10.215Z",
+      "retrieved_at_kst": "2026-11-22T09:23:10.292716+09:00"
+    }
+  ],
+  "wcs": {
+    "get_capabilities_http_status": 400,
+    "describe_coverage_http_status": 400
+  },
+  "wfs": {
+    "listed_layers": 292,
+    "named_terrain_matches": []
+  },
+  "slope_workflow": "Viewer 3D MeasureProfile computes |end-start DZ| / total horizontal XY distance ×100; road walking-surface geometry and vertical accuracy unverified.",
+  "new_slopes_promoted": 0
+}

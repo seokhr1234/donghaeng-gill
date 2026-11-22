@@ -1,0 +1,210 @@
+{
+  "record_url": "https://zenodo.org/records/22908353",
+  "doi": "10.5281/zenodo.22908353",
+  "license": "CC0-1.0",
+  "record_published": "2026-09-23",
+  "survey_dates": [
+    "2026-07-07",
+    "2026-07-08",
+    "2026-07-10",
+    "2026-07-11"
+  ],
+  "survey_dates_source": "https://arxiv.org/html/2609.17882v1#S4.T2",
+  "source_spatial_columns": [
+    "longitude",
+    "latitude"
+  ],
+  "source_coordinate_reference_system": "not formally declared in the CSV or protocol",
+  "spatial_check_assumption": "Inputs treated as longitude-latitude coordinates for district comparison. This does not establish survey datum.",
+  "district_boundary_source": "/workspace/donghaeng-current-check-20261115/research/accessibility/seoul-rest-2026-11-20/derived/osm-boundaries.geojson",
+  "district_boundary_sha256": "5ced892ce696f2edf6f72f3a6543fb7ef94e56fc92142dccec8d26811d984caa",
+  "district_boundary_attribution": "© OpenStreetMap contributors (ODbL 1.0). Data distributed by Geofabrik.",
+  "district_counts": {
+    "강남구": {
+      "image_rows": 0,
+      "unique_coordinates": 0
+    },
+    "강동구": {
+      "image_rows": 0,
+      "unique_coordinates": 0
+    },
+    "강북구": {
+      "image_rows": 0,
+      "unique_coordinates": 0
+    },
+    "강서구": {
+      "image_rows": 99,
+      "unique_coordinates": 99,
+      "longitude_bounds": [
+        126.8413694,
+        126.8434667
+      ],
+      "latitude_bounds": [
+        37.5575944,
+        37.5594028
+      ]
+    },
+    "관악구": {
+      "image_rows": 118,
+      "unique_coordinates": 118,
+      "longitude_bounds": [
+        126.9371639,
+        126.9414444
+      ],
+      "latitude_bounds": [
+        37.4829861,
+        37.4845194
+      ]
+    },
+    "광진구": {
+      "image_rows": 0,
+      "unique_coordinates": 0
+    },
+    "구로구": {
+      "image_rows": 0,
+      "unique_coordinates": 0
+    },
+    "금천구": {
+      "image_rows": 0,
+      "unique_coordinates": 0
+    },
+    "노원구": {
+      "image_rows": 0,
+      "unique_coordinates": 0
+    },
+    "도봉구": {
+      "image_rows": 0,
+      "unique_coordinates": 0
+    },
+    "동대문구": {
+      "image_rows": 0,
+      "unique_coordinates": 0
+    },
+    "동작구": {
+      "image_rows": 0,
+      "unique_coordinates": 0
+    },
+    "마포구": {
+      "image_rows": 0,
+      "unique_coordinates": 0
+    },
+    "서대문구": {
+      "image_rows": 297,
+      "unique_coordinates": 296,
+      "longitude_bounds": [
+        126.9311444,
+        126.945075
+      ],
+      "latitude_bounds": [
+        37.556725,
+        37.564225
+      ]
+    },
+    "서초구": {
+      "image_rows": 0,
+      "unique_coordinates": 0
+    },
+    "성동구": {
+      "image_rows": 0,
+      "unique_coordinates": 0
+    },
+    "성북구": {
+      "image_rows": 0,
+      "unique_coordinates": 0
+    },
+    "송파구": {
+      "image_rows": 0,
+      "unique_coordinates": 0
+    },
+    "양천구": {
+      "image_rows": 0,
+      "unique_coordinates": 0
+    },
+    "영등포구": {
+      "image_rows": 0,
+      "unique_coordinates": 0
+    },
+    "용산구": {
+      "image_rows": 0,
+      "unique_coordinates": 0
+    },
+    "은평구": {
+      "image_rows": 0,
+      "unique_coordinates": 0
+    },
+    "종로구": {
+      "image_rows": 0,
+      "unique_coordinates": 0
+    },
+    "중구": {
+      "image_rows": 0,
+      "unique_coordinates": 0
+    },
+    "중랑구": {
+      "image_rows": 0,
+      "unique_coordinates": 0
+    }
+  },
+  "rows": 514,
+  "unique_coordinates": 513,
+  "unique_images": 514,
+  "coverage_type": "point samples paired with field images",
+  "csv_columns": [
+    "filename",
+    "width_px",
+    "height_px",
+    "latitude",
+    "longitude",
+    "width",
+    "running_slope",
+    "cross_slope",
+    "damage"
+  ],
+  "replication_field_verified": false,
+  "original_slope_measurement_type": "field measured",
+  "routing_eligible": false,
+  "measurement_summary": {
+    "width": {
+      "unit": "m",
+      "rows": 514,
+      "minimum": 0.92,
+      "maximum": 10.15,
+      "median": 2.85
+    },
+    "running_slope": {
+      "unit": "degree",
+      "rows": 514,
+      "minimum": -9.3,
+      "maximum": 11.8,
+      "median": 0.0
+    },
+    "cross_slope": {
+      "unit": "degree",
+      "rows": 514,
+      "minimum": -9.7,
+      "maximum": 8.0,
+      "median": 0.3
+    }
+  },
+  "damage_grade_counts": {
+    "A": 423,
+    "B": 81,
+    "C": 5,
+    "D": 5
+  },
+  "acquired_files": {
+    "summary_attributes.csv": {
+      "bytes": 32348,
+      "publisher_md5": "9f5da804df8ccdf95cf40403a0e21d60",
+      "sha256": "a084448366bc9ed12ca900f128818c4914bf46060e01a4bc743604be753bc91b",
+      "download": "https://zenodo.org/api/records/22908353/files/summary_attributes.csv/content"
+    },
+    "ground_truth_protocol.zip": {
+      "bytes": 55710,
+      "publisher_md5": "328b07c6f3648c7865174e48cb57c43a",
+      "sha256": "8256bf1a843c6cbe330d91f5c3ecbf0985f2660bd2ebcedbbeda5b509943d572",
+      "download": "https://zenodo.org/api/records/22908353/files/ground_truth_protocol.zip/content"
+    }
+  },
+  "imagery_downloaded": false
+}

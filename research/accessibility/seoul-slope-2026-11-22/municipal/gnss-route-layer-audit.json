@@ -1,0 +1,213 @@
+{
+  "source_theme_id": "1694517815685",
+  "source_viewer": "https://map.seoul.go.kr/smgis2/short/6OkfD",
+  "source_provider": "서울특별시 스마트서울맵 · 보행약자 안전 이동경로",
+  "theme_metadata_last_update": "2025-03-17T09:30:48+09:00",
+  "retrieved_date_kst": "2026-11-22",
+  "published_crs_label": null,
+  "geometry_format": "GeoJSON nested cot_coord_data LineString in WGS84-style lon/lat. Source payload has no CRS declaration.",
+  "dataset_measurement_dates": null,
+  "rights_status": "Local research only. Source API and dataset redistribution terms not verified.",
+  "field_verified_by_donghaeng": false,
+  "routing_eligible": false,
+  "viewer_http_status": 200,
+  "direct_response_body_retrieval": "Browser received HTTP 200. Saved theme object after its public client parsed the response. Saved SHA is of the browser object, not raw HTTP bytes.",
+  "captured_browser_object": {
+    "file": "gnss-theme-captured.json",
+    "bytes": 40330964,
+    "sha256": "544f22387ff6b058cd51dca120b60481f116dc30608666dd5b6cf6f9208f8c83"
+  },
+  "output_local_only": {
+    "file": "gnss-sloped-route-lines.geojson.gz",
+    "bytes": 1696427,
+    "sha256": "d80eba86f520cc93bb3d6ce1a54d94e196368a034a128e996a3eb9ae0065d749"
+  },
+  "viewer_top_level_feature_count": 30722,
+  "nested_geometry_types": {
+    "LineString": 12246,
+    "Point": 18476
+  },
+  "normalized_slope_class_records": 12205,
+  "valid_class_records": 12205,
+  "exact_geometry_distinct_ignoring_orientation": 7987,
+  "stated_district_code_count": 25,
+  "matched_districts_by_line_midpoint": 25,
+  "district_counts_by_midpoint": {
+    "강남구": 444,
+    "강동구": 616,
+    "강북구": 278,
+    "강서구": 540,
+    "관악구": 603,
+    "광진구": 427,
+    "구로구": 547,
+    "금천구": 416,
+    "노원구": 476,
+    "도봉구": 455,
+    "동대문구": 330,
+    "동작구": 442,
+    "마포구": 671,
+    "서대문구": 738,
+    "서초구": 433,
+    "성동구": 524,
+    "성북구": 451,
+    "송파구": 446,
+    "양천구": 470,
+    "영등포구": 398,
+    "용산구": 658,
+    "은평구": 398,
+    "종로구": 561,
+    "중구": 476,
+    "중랑구": 407
+  },
+  "not_matched_by_midpoint": 0,
+  "district_join_reference_sha256": "5ced892ce696f2edf6f72f3a6543fb7ef94e56fc92142dccec8d26811d984caa",
+  "slope_class_by_profile_and_color": {
+    "일반휠체어_보조인 동행 X / 중": {
+      "difficulty": "중",
+      "lower_deg": 1,
+      "upper_deg": 2,
+      "records": 1462,
+      "color": "#FFCC00"
+    },
+    "일반휠체어_보조인 동행 X / 하": {
+      "difficulty": "하",
+      "lower_deg": 0,
+      "upper_deg": 1,
+      "records": 1766,
+      "color": "#00FF00"
+    },
+    "일반휠체어_보조인 동행 X / 상": {
+      "difficulty": "상",
+      "lower_deg": 3,
+      "upper_deg": null,
+      "records": 493,
+      "color": "#FF0000"
+    },
+    "일반휠체어_보조인 동행 X / 중상": {
+      "difficulty": "중상",
+      "lower_deg": 2,
+      "upper_deg": 3,
+      "records": 691,
+      "color": "#FF6600"
+    },
+    "일반휠체어_보조인 동행 O / 중": {
+      "difficulty": "중",
+      "lower_deg": 2,
+      "upper_deg": 5,
+      "records": 1268,
+      "color": "#FFCC00"
+    },
+    "일반휠체어_보조인 동행 O / 하": {
+      "difficulty": "하",
+      "lower_deg": 0,
+      "upper_deg": 2,
+      "records": 1707,
+      "color": "#00FF00"
+    },
+    "일반휠체어_보조인 동행 O / 상": {
+      "difficulty": "상",
+      "lower_deg": 7,
+      "upper_deg": null,
+      "records": 130,
+      "color": "#FF0000"
+    },
+    "일반휠체어_보조인 동행 O / 중상": {
+      "difficulty": "중상",
+      "lower_deg": 5,
+      "upper_deg": 7,
+      "records": 234,
+      "color": "#FF6600"
+    },
+    "의료용 스쿠터 / 상": {
+      "difficulty": "상",
+      "lower_deg": 9,
+      "upper_deg": null,
+      "records": 33,
+      "color": "#FF0000"
+    },
+    "의료용 스쿠터 / 하": {
+      "difficulty": "하",
+      "lower_deg": 0,
+      "upper_deg": 7,
+      "records": 813,
+      "color": "#00FF00"
+    },
+    "의료용 스쿠터 / 중상": {
+      "difficulty": "중상",
+      "lower_deg": 8,
+      "upper_deg": 9,
+      "records": 43,
+      "color": "#FF6600"
+    },
+    "의료용 스쿠터 / 중": {
+      "difficulty": "중",
+      "lower_deg": 7,
+      "upper_deg": 8,
+      "records": 53,
+      "color": "#FFCC00"
+    },
+    "유모차 / 하": {
+      "difficulty": "하",
+      "lower_deg": 0,
+      "upper_deg": 3,
+      "records": 1248,
+      "color": "#00FF00"
+    },
+    "유모차 / 중상": {
+      "difficulty": "중상",
+      "lower_deg": 6,
+      "upper_deg": 8,
+      "records": 151,
+      "color": "#FF6600"
+    },
+    "유모차 / 중": {
+      "difficulty": "중",
+      "lower_deg": 3,
+      "upper_deg": 6,
+      "records": 683,
+      "color": "#FFCC00"
+    },
+    "유모차 / 상": {
+      "difficulty": "상",
+      "lower_deg": 8,
+      "upper_deg": null,
+      "records": 78,
+      "color": "#FF0000"
+    },
+    "전동휠체어 / 중": {
+      "difficulty": "중",
+      "lower_deg": 5,
+      "upper_deg": 7,
+      "records": 252,
+      "color": "#FFCC00"
+    },
+    "전동휠체어 / 하": {
+      "difficulty": "하",
+      "lower_deg": 0,
+      "upper_deg": 5,
+      "records": 963,
+      "color": "#00FF00"
+    },
+    "전동휠체어 / 상": {
+      "difficulty": "상",
+      "lower_deg": 9,
+      "upper_deg": null,
+      "records": 35,
+      "color": "#FF0000"
+    },
+    "전동휠체어 / 중상": {
+      "difficulty": "중상",
+      "lower_deg": 7,
+      "upper_deg": 9,
+      "records": 102,
+      "color": "#FF6600"
+    }
+  },
+  "bounds_lon_lat": [
+    126.798026524671,
+    37.4403238269285,
+    127.179935756672,
+    37.6806372409389
+  ],
+  "mapping": "Published style color identifies a category according to that mobility profile legend. Cross-profile duplicated lines are retained; no midpoint or exact slope is estimated. Raw route section orientation is retained; payload does not provide separate signed ascent and descent values."
+}

@@ -1,0 +1,48 @@
+{
+  "checked_date_kst": "2026-11-22",
+  "layer": "경사도",
+  "scope": "서울 전역의 길단위 세그먼트, 1:20,000 이상 확대",
+  "source_as_of": "2024-03",
+  "source": "국토지리정보원 연속수치지형도 등고선",
+  "response_unit": "percent classes",
+  "display_class_upper_bounds": [
+    1,
+    5,
+    10,
+    20,
+    30,
+    40,
+    50,
+    220
+  ],
+  "viewer": {
+    "url": "https://safecity.seoul.go.kr/distFclt/cfMapDs/cfMapDs.page?menuId=MENU_SSNS_000190",
+    "http_status": 200,
+    "bytes": 653690,
+    "sha256": "e3126b187f209f828b57e4a46978ae83d1682722c03f47c7946485caf9c69199"
+  },
+  "other_viewers": [
+    {
+      "url": "https://safecity.seoul.go.kr/distFclt/cfMapDs/cfMapDs.page?menuId=MENU_SSNS_000016",
+      "http_status_in_repeat_check": 503
+    },
+    {
+      "url": "https://safecity.seoul.go.kr/distFclt/cfMapDs/cfMapDs.page?menuId=MENU_SSNS_000192",
+      "http_status_in_repeat_check": 503
+    }
+  ],
+  "code_trace": {
+    "url": "https://safecity.seoul.go.kr/js/fclt/cfMapDs.js",
+    "http_status": 200,
+    "sha256": "a7c91acc0f29d6783a40f755d3ac847d2598c26a6c19ac336089ce29765f8ea2",
+    "format": "WMS 1.3.0 PNG, EPSG:5186"
+  },
+  "unavailable_config": {
+    "url": "https://safecity.seoul.go.kr/js/config/mapConfig_prod.js",
+    "http_status": 503
+  },
+  "geometry_downloaded": false,
+  "source_crs": null,
+  "field_verified": false,
+  "routing_eligible": false
+}

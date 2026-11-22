@@ -1,0 +1,120 @@
+[
+  {
+    "id": "platform",
+    "url": "https://map.ngii.go.kr/ms/map/NlipMap.do",
+    "started_at_kst": "2026-11-22T09:18:47+09:00",
+    "status": 503,
+    "final_url": "https://map.ngii.go.kr/ms/map/NlipMap.do",
+    "sample": "upstream connect error or disconnect/reset before headers. reset reason: connection timeout"
+  },
+  {
+    "id": "platform_home",
+    "url": "https://map.ngii.go.kr/",
+    "started_at_kst": "2026-11-22T09:18:47+09:00",
+    "status": 503,
+    "final_url": "https://map.ngii.go.kr/",
+    "sample": "upstream connect error or disconnect/reset before headers. reset reason: connection timeout"
+  },
+  {
+    "id": "ngii_dem_catalog",
+    "url": "https://www.data.go.kr/catalog/15059920/fileData.json",
+    "started_at_kst": "2026-11-22T09:18:47+09:00",
+    "status": 503,
+    "final_url": "https://www.data.go.kr/catalog/15059920/fileData.json",
+    "sample": "upstream connect error or disconnect/reset before headers. reset reason: connection timeout"
+  },
+  {
+    "id": "ngii_dem_quality_catalog",
+    "url": "https://www.data.go.kr/catalog/15067637/fileData.json",
+    "started_at_kst": "2026-11-22T09:18:47+09:00",
+    "status": 503,
+    "final_url": "https://www.data.go.kr/catalog/15067637/fileData.json",
+    "sample": "upstream connect error or disconnect/reset before headers. reset reason: connection timeout"
+  },
+  {
+    "id": "ngii_dem_details",
+    "url": "https://www.data.go.kr/data/15067637/fileData.do",
+    "started_at_kst": "2026-11-22T09:18:47+09:00",
+    "status": 503,
+    "final_url": "https://www.data.go.kr/data/15067637/fileData.do",
+    "sample": "upstream connect error or disconnect/reset before headers. reset reason: connection timeout"
+  },
+  {
+    "id": "ngii_dem_basic_metadata",
+    "url": "https://www.data.go.kr/data/15067632/fileData.do",
+    "started_at_kst": "2026-11-22T09:18:52+09:00",
+    "status": 503,
+    "final_url": "https://www.data.go.kr/data/15067632/fileData.do",
+    "sample": "upstream connect error or disconnect/reset before headers. reset reason: connection timeout"
+  },
+  {
+    "id": "ngii_topography_catalog",
+    "url": "https://www.data.go.kr/catalog/15059719/fileData.json",
+    "started_at_kst": "2026-11-22T09:18:52+09:00",
+    "status": 503,
+    "final_url": "https://www.data.go.kr/catalog/15059719/fileData.json",
+    "sample": "upstream connect error or disconnect/reset before headers. reset reason: connection timeout"
+  },
+  {
+    "id": "ngii_seamless_catalog",
+    "url": "https://www.data.go.kr/catalog/15059721/fileData.json",
+    "started_at_kst": "2026-11-22T09:18:52+09:00",
+    "status": 503,
+    "final_url": "https://www.data.go.kr/catalog/15059721/fileData.json",
+    "sample": "upstream connect error or disconnect/reset before headers. reset reason: connection timeout"
+  },
+  {
+    "id": "ngii_map_history",
+    "url": "https://www.data.go.kr/data/15148179/fileData.do",
+    "started_at_kst": "2026-11-22T09:18:52+09:00",
+    "status": 503,
+    "final_url": "https://www.data.go.kr/data/15148179/fileData.do",
+    "sample": "upstream connect error or disconnect/reset before headers. reset reason: connection timeout"
+  },
+  {
+    "id": "neins_faq",
+    "url": "https://ecvam.neins.go.kr/board/faq/faqView.do?board_seq=270&pageIndex=1",
+    "started_at_kst": "2026-11-22T09:18:52+09:00",
+    "final_url": "https://ecvam.neins.go.kr/board/faq/faqView.do?board_seq=270&pageIndex=1",
+    "status": 200,
+    "content_type": "text/html;charset=UTF-8",
+    "size": 35315,
+    "sha256": "c41072395232082f3b31bc505b3f9ff05f4df342b6751fccb0c64522d676977c"
+  },
+  {
+    "id": "neins_viewer",
+    "url": "https://webgis.neins.go.kr/map.do",
+    "started_at_kst": "2026-11-22T09:18:55+09:00",
+    "final_url": "https://webgis.neins.go.kr/map.do",
+    "status": 200,
+    "content_type": "text/html;charset=UTF-8",
+    "size": 183078,
+    "sha256": "bbf44db32083358d49089bc6be2cfc69b2dc9510819bfa1ea71617a14d19f4dd"
+  },
+  {
+    "id": "seoul_1000",
+    "url": "https://news.seoul.go.kr/gov/archives/528208",
+    "started_at_kst": "2026-11-22T09:18:57+09:00",
+    "final_url": "https://news.seoul.go.kr/gov/archives/528208",
+    "status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "size": 179169,
+    "sha256": "f28cfa7a00120becab3fd118e0566c06ec2650dfd1baec61899048e6d797d3d0"
+  },
+  {
+    "id": "vworld_contours",
+    "url": "https://www.vworld.kr/dtmk/dtmk_ntads_s002.do?dsId=30185",
+    "started_at_kst": "2026-11-22T09:18:58+09:00",
+    "status": 503,
+    "final_url": "https://www.vworld.kr/dtmk/dtmk_ntads_s002.do?dsId=30185",
+    "sample": "upstream connect error or disconnect/reset before headers. reset reason: remote refused stream reset"
+  },
+  {
+    "id": "vworld_spots",
+    "url": "https://www.vworld.kr/dtmk/dtmk_ntads_s002.do?dsId=30245",
+    "started_at_kst": "2026-11-22T09:18:58+09:00",
+    "status": 503,
+    "final_url": "https://www.vworld.kr/dtmk/dtmk_ntads_s002.do?dsId=30245",
+    "sample": "upstream connect error or disconnect/reset before headers. reset reason: remote refused stream reset"
+  }
+]

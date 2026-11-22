@@ -1,0 +1,315 @@
+{
+  "verification_scope": "Source point geometry compared with 25 Seoul OSM districts. Blank fields retained. ED_ED includes stairs as well as steep slopes.",
+  "fields_checked": [
+    "ramp",
+    "entrcHeigh",
+    "refDate",
+    "etc"
+  ],
+  "district_counts": {
+    "강남구": {
+      "points": 1558,
+      "ER_N": 1317,
+      "ED_EA": 671,
+      "ED_ED": 243,
+      "ER_Y": 228,
+      "ED_EB": 94,
+      "ED_EC": 57,
+      "ramp_empty": 13,
+      "grade_empty": 491,
+      "ED_EX": 2
+    },
+    "강동구": {
+      "points": 644,
+      "ER_N": 573,
+      "ED_EA": 246,
+      "ER_Y": 69,
+      "ED_EC": 17,
+      "grade_empty": 291,
+      "ED_ED": 64,
+      "ED_EB": 24,
+      "ramp_empty": 2,
+      "ED_EX": 2
+    },
+    "강북구": {
+      "points": 318,
+      "ER_N": 260,
+      "ED_EC": 13,
+      "ED_EA": 85,
+      "ER_Y": 58,
+      "ED_ED": 21,
+      "ED_EB": 18,
+      "grade_empty": 181
+    },
+    "강서구": {
+      "points": 1026,
+      "ER_Y": 74,
+      "ED_EB": 23,
+      "ER_N": 946,
+      "ED_EA": 366,
+      "grade_empty": 562,
+      "ED_ED": 62,
+      "ED_EC": 11,
+      "ramp_empty": 6,
+      "ED_EX": 2
+    },
+    "관악구": {
+      "points": 385,
+      "ER_N": 329,
+      "grade_empty": 200,
+      "ED_EA": 115,
+      "ED_ED": 61,
+      "ER_Y": 55,
+      "ED_EC": 5,
+      "ED_EB": 4,
+      "ramp_empty": 1
+    },
+    "광진구": {
+      "points": 329,
+      "ER_N": 299,
+      "ED_EA": 187,
+      "ER_Y": 28,
+      "ED_EB": 12,
+      "ED_ED": 42,
+      "ED_EX": 2,
+      "ED_EC": 15,
+      "ramp_empty": 2,
+      "grade_empty": 71
+    },
+    "구로구": {
+      "points": 895,
+      "ER_N": 845,
+      "ED_EA": 309,
+      "ED_ED": 154,
+      "ER_Y": 45,
+      "ED_EC": 123,
+      "grade_empty": 286,
+      "ED_EX": 5,
+      "ED_EB": 18,
+      "ramp_empty": 5
+    },
+    "금천구": {
+      "points": 658,
+      "ER_N": 612,
+      "grade_empty": 368,
+      "ER_Y": 45,
+      "ED_EA": 246,
+      "ED_EC": 7,
+      "ED_ED": 30,
+      "ED_EB": 7,
+      "ramp_empty": 1
+    },
+    "노원구": {
+      "points": 825,
+      "ER_N": 751,
+      "ED_EA": 280,
+      "ER_Y": 74,
+      "ED_EC": 15,
+      "ED_ED": 73,
+      "ED_EB": 23,
+      "grade_empty": 413,
+      "ED_EX": 21
+    },
+    "도봉구": {
+      "points": 285,
+      "ER_Y": 41,
+      "ED_EB": 12,
+      "ER_N": 244,
+      "ED_EA": 125,
+      "ED_EC": 14,
+      "ED_ED": 27,
+      "grade_empty": 107
+    },
+    "동대문구": {
+      "points": 377,
+      "ER_N": 335,
+      "ED_EA": 141,
+      "ED_ED": 59,
+      "ER_Y": 38,
+      "grade_empty": 154,
+      "ramp_empty": 4,
+      "ED_EB": 17,
+      "ED_EC": 6
+    },
+    "동작구": {
+      "points": 277,
+      "ER_N": 239,
+      "ED_EA": 94,
+      "grade_empty": 143,
+      "ER_Y": 35,
+      "ED_ED": 22,
+      "ED_EB": 10,
+      "ramp_empty": 3,
+      "ED_EC": 8
+    },
+    "마포구": {
+      "points": 645,
+      "ER_N": 571,
+      "ED_ED": 48,
+      "ED_EA": 265,
+      "ER_Y": 74,
+      "ED_EB": 45,
+      "grade_empty": 267,
+      "ED_EC": 15,
+      "ED_EX": 5
+    },
+    "서대문구": {
+      "points": 416,
+      "ER_N": 349,
+      "ED_EA": 124,
+      "ED_ED": 13,
+      "ED_EB": 14,
+      "grade_empty": 258,
+      "ER_Y": 65,
+      "ED_EC": 7,
+      "ramp_empty": 2
+    },
+    "서울25구 경계 밖": {
+      "points": 45,
+      "ER_N": 45,
+      "grade_empty": 45
+    },
+    "서초구": {
+      "points": 862,
+      "ER_N": 722,
+      "ED_EA": 353,
+      "ER_Y": 135,
+      "ED_EB": 60,
+      "ED_EC": 15,
+      "ED_ED": 99,
+      "grade_empty": 335,
+      "ramp_empty": 5
+    },
+    "성동구": {
+      "points": 464,
+      "ER_N": 364,
+      "ED_EA": 201,
+      "ED_ED": 51,
+      "ER_Y": 97,
+      "ED_EB": 32,
+      "ED_EC": 16,
+      "grade_empty": 162,
+      "ED_EX": 2,
+      "ramp_empty": 3
+    },
+    "성북구": {
+      "points": 356,
+      "ER_N": 313,
+      "ED_EA": 144,
+      "ER_Y": 42,
+      "ED_EC": 18,
+      "ED_ED": 32,
+      "grade_empty": 135,
+      "ED_EB": 27,
+      "ramp_empty": 1
+    },
+    "송파구": {
+      "points": 1908,
+      "ER_Y": 196,
+      "ED_EB": 63,
+      "ER_N": 1705,
+      "ED_EA": 892,
+      "ED_ED": 128,
+      "grade_empty": 700,
+      "ED_EC": 121,
+      "ramp_empty": 7,
+      "ED_EX": 4
+    },
+    "양천구": {
+      "points": 697,
+      "ER_N": 659,
+      "ED_EA": 248,
+      "grade_empty": 374,
+      "ED_ED": 49,
+      "ER_Y": 33,
+      "ED_EX": 2,
+      "ED_EC": 17,
+      "ramp_empty": 5,
+      "ED_EB": 7
+    },
+    "영등포구": {
+      "points": 689,
+      "ER_Y": 104,
+      "ED_EB": 56,
+      "ER_N": 584,
+      "grade_empty": 237,
+      "ED_EA": 305,
+      "ED_EC": 31,
+      "ED_ED": 60,
+      "ramp_empty": 1
+    },
+    "용산구": {
+      "points": 381,
+      "ER_N": 353,
+      "ED_EC": 16,
+      "ED_ED": 30,
+      "ED_EA": 226,
+      "grade_empty": 101,
+      "ER_Y": 27,
+      "ED_EB": 8,
+      "ramp_empty": 1
+    },
+    "은평구": {
+      "points": 516,
+      "ER_N": 458,
+      "grade_empty": 276,
+      "ER_Y": 55,
+      "ED_EB": 20,
+      "ED_EA": 188,
+      "ED_ED": 21,
+      "ED_EC": 11,
+      "ramp_empty": 3
+    },
+    "종로구": {
+      "points": 795,
+      "ER_N": 692,
+      "ED_EA": 404,
+      "ER_Y": 99,
+      "ED_ED": 194,
+      "grade_empty": 132,
+      "ED_EB": 38,
+      "ED_EC": 19,
+      "ED_EX": 8,
+      "ramp_empty": 4
+    },
+    "중구": {
+      "points": 1029,
+      "ER_N": 936,
+      "ED_EA": 649,
+      "ER_Y": 92,
+      "ED_EB": 41,
+      "ED_ED": 179,
+      "grade_empty": 147,
+      "ED_EC": 13,
+      "ramp_empty": 1
+    },
+    "중랑구": {
+      "points": 406,
+      "ER_N": 356,
+      "ED_EA": 203,
+      "ED_ED": 49,
+      "ER_Y": 47,
+      "ED_EB": 19,
+      "ED_EC": 13,
+      "ramp_empty": 3,
+      "grade_empty": 122
+    }
+  },
+  "free_text_counts": {
+    "unit-bearing note mentioning slope": 41
+  },
+  "source": {
+    "dataset": "OA-21699",
+    "portal_url": "https://data.seoul.go.kr/dataList/OA-21699/F/1/datasetView.do",
+    "license_portal": "이용허락범위 제한 없음",
+    "reference_date": "2022-11-23",
+    "crs": "EPSG:4326",
+    "shape_nodes": 16786,
+    "inside_OSM_district_boundaries": 16741,
+    "outside_OSM_district_boundaries": 45,
+    "archived_file_sha256": "cfcce59f1d61f6fd2393130b86a97a6b785f27134f1059f38451ba84fb82d933"
+  },
+  "numeric_grade_field_present": false,
+  "grade_note_spot_measuring_method": "unconfirmed",
+  "routing_eligible": false
+}

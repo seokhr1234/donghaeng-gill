@@ -179,8 +179,13 @@ $('#search').onsubmit=async ev=>{
  try{
   await precisionController.ready;if(!current())return;graph.meta.buildingAudit=precisionController.getAudit();
   if(demoBeta){
-   routes=[DonghaengDemoBeta.localRoute(E,EndpointRouting,graph,origin,destination.ll,p,betaPlaces(true))];
-   selected=0;
+   const candidates=betaPlaces(true);
+   const elevator=DonghaengDemoBeta.elevatorRoute(E,EndpointRouting,AccessReview,graph,origin,destination.ll,p,candidates,accessReports);
+   let ordinary=null;
+   try{ordinary=DonghaengDemoBeta.localRoute(E,EndpointRouting,graph,origin,destination.ll,p,candidates)}
+   catch(error){if(!elevator)throw error}
+   routes=[ordinary,elevator].filter(Boolean);
+   selected=elevator&&(!ordinary||elevator.totalLength<ordinary.totalLength&&!(p.rest&&ordinary.restStop))?routes.indexOf(elevator):0;
    routeSelection={source:'unavailable',summaries:[],createdAt:new Date().toISOString(),message:'시연 경로 · 시설 실제 운영과 통행 상태는 미확인'};
    if(isMobileUI())setMobileMode('results');
    renderRoutes();drawRoutes(true);
@@ -337,7 +342,7 @@ async function findCityRoute(){
 }
 function endpointReview(route,start=origin,end=destination.ll){return precisionController.reviewRoute(route,start,end)}
 function reviewRouteTitle(route){
- return route.demoNotes?'베타 시연 경로':route.accessReview?'육교 경로':route.assistancePreview?'우회 경로':'보행 경로';
+ return route.demoElevator?route.label:route.demoNotes?'베타 시연 경로':route.accessReview?'육교 경로':route.assistancePreview?'우회 경로':'보행 경로';
 }
 function reviewRouteReasons(route){
  const reasons=[...(route.demoNotes||[])];
