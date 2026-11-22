@@ -3,6 +3,7 @@ import {readFile,writeFile} from 'node:fs/promises';
 import {createServer} from 'node:http';
 import {createCityGraph,createCityWalkService,createCityWalkHandler,search,distance} from '../services/city-walk/router.mjs';
 import entry from '../../api/index.mjs';
+import {walkingInput} from '../services/expansion/contracts.mjs';
 const checks=[],samples=[],graph=createCityGraph(),service=createCityWalkService({graph}),handler=createCityWalkHandler({service});
 const m=await graph.manifest(),g=await graph.load();
 const core=createServer((req,res)=>handler(req,res)),vercel=createServer(entry);
@@ -21,8 +22,33 @@ try{
  const expected=await request(base,body);assert.equal(expected.status,200);
  for(const path of ['/api/routes/city-walk','/api/index?route=routes/city-walk']){const r=await request(edge,body,path);assert.equal(r.status,200);assert.deepEqual(r.data.sourceSegments,expected.data.sourceSegments);assert.equal(r.data.distanceMeters,expected.data.distanceMeters)}
  for(const path of ['/api/city/coverage','/api/index?route=city/coverage']){const r=await fetch(edge+path);assert.equal(r.status,200);assert.equal((await r.json()).segments,963670)}checks.push('Node and actual exported Vercel handler, original and rewritten URLs, return identical route/source segments; city coverage is independent of a backend or provider key');
- for(const [input,status,code] of [[{...body,origin:[35,129]},422,'outside_city_coverage'],[{...body,extra:true},400,'invalid_route'],[{...body,profile:{avoidSlope:true}},422,'city_slope_evidence_required'],[{...body,profile:{rest:true}},422,'city_rest_evidence_required'],[{...body,profile:{maxSlope:0,wheelchair:true}},422,'city_endpoint_unresolved'],[{...body,atTime:'2026-11-13'},400,'invalid_time'],[{...body,profile:{avoidSteps:'yes'}},400,'invalid_profile']]){const r=await request(edge,input);assert.equal(r.status,status);assert.equal(r.data.code,code)}
- assert.equal((await request(edge,body,undefined,{origin:'https://unrelated.example'})).status,403);assert.equal((await fetch(edge+'/api/routes/city-walk')).status,405);assert.equal((await request(edge,body,undefined,{'Content-Type':'text/plain'})).status,415);checks.push('Out-of-area, malformed keys/profile/time, unsupported rest evidence, absent wheelchair grade evidence, wrong method/type and foreign origin fail without relaxing the condition');
+ for(const [input,status,code] of [[{...body,origin:[35,129]},422,'outside_city_coverage'],[{...body,extra:true},400,'invalid_route'],[{...body,profile:{rest:true}},422,'city_rest_evidence_required'],[{...body,atTime:'2026-11-13'},400,'invalid_time'],[{...body,profile:{avoidSteps:'yes'}},400,'invalid_profile']]){const r=await request(edge,input);assert.equal(r.status,status);assert.equal(r.data.code,code)}
+ assert.equal((await request(edge,body,undefined,{origin:'https://unrelated.example'})).status,403);assert.equal((await fetch(edge+'/api/routes/city-walk')).status,405);assert.equal((await request(edge,body,undefined,{'Content-Type':'text/plain'})).status,415);checks.push('Out-of-area, malformed keys/profile/time, unsupported rest evidence, wrong method/type and foreign origin fail without relaxing the condition');
+ const cityDemoTrip={origin:[37.49794,127.0276],destination:[37.50065,127.03650]};
+ const wheelchairProfile={wheelchair:true,avoidSteps:true,avoidSlope:true,maxSlope:5};
+ await assert.rejects(service.route({...cityDemoTrip,profile:wheelchairProfile}),{code:'city_endpoint_unresolved'});
+ await assert.rejects(service.route({...body,profile:{avoidSlope:true}}),{code:'city_slope_evidence_required'});
+ for(const profile of [wheelchairProfile,{avoidSlope:true}]){
+  const fallback=await request(edge,{...cityDemoTrip,profile});
+  assert.equal(fallback.status,200);
+  assert.equal(fallback.data.slopeFallback,true);
+  assert(fallback.data.unknownInclineMeters>0);
+  assert.equal(fallback.data.accessibilityVerified,false);
+  assert(fallback.data.notices.some(notice=>notice.includes('최단거리 참고 경로')));
+ }
+ const betaRetry={...cityDemoTrip,profile:{...wheelchairProfile,avoidSlope:false,maxSlope:null,demoIgnoreSlope:true}};
+ assert.throws(()=>walkingInput(betaRetry),error=>error.code==='invalid_profile');
+ const demo=await request(edge,betaRetry);
+ assert.equal(demo.status,200);
+ assert.equal(demo.data.profile.wheelchair,true);
+ assert.equal(demo.data.profile.avoidSteps,true);
+ assert.equal(demo.data.profile.maxSlope,null);
+ assert.equal(demo.data.profile.demoIgnoreSlope,true);
+ assert.equal(demo.data.stepsMeters,0);
+ assert(demo.data.unknownInclineMeters>0);
+ assert.equal(demo.data.accessibilityVerified,false);
+ assert(demo.data.notices.some(notice=>notice.includes('시연용 경사 제한 없이')));
+ checks.push('The city HTTP API returns a labeled shortest reference route when grade evidence is missing; existing beta Android retry is supported and strict internal callers retain their policy');
  const corrupt=createCityGraph({read:async url=>{const b=await readFile(url);return String(url).endsWith('graph.bin.gz')?Buffer.from('corrupt'):b}});await assert.rejects(corrupt.load(),e=>e.code==='city_graph_unavailable');const missing=createCityGraph({read:async()=>{throw Error('missing')}});await assert.rejects(missing.load(),e=>e.code==='city_graph_unavailable');checks.push('Missing/corrupt source-bound city graph fails closed');
  assert.equal((await request(edge,{...body,profile:{raw:'x'.repeat(9000)}})).status,413);const malformed=await fetch(edge+'/api/routes/city-walk',{method:'POST',headers:{'Content-Type':'application/json'},body:'{broken'});assert.equal(malformed.status,400);
  const gateState={count:0};let release;const gate=new Promise(r=>release=r),limited=createServer(createCityWalkHandler({service:{route:async()=>{gateState.count++;await gate;return {state:'fixture'}},coverage:async()=>({})}}));await new Promise(r=>limited.listen(0,'127.0.0.1',r));const limitedBase='http://127.0.0.1:'+limited.address().port;const pending=[request(limitedBase,body),request(limitedBase,body)];try{for(let i=0;i<100&&gateState.count<2;i++)await new Promise(r=>setTimeout(r,5));assert.equal(gateState.count,2);assert.equal((await request(limitedBase,body)).status,429)}finally{release();await Promise.all(pending);limited.closeAllConnections();await new Promise(r=>limited.close(r))}checks.push('Oversized/malformed JSON is rejected and a controlled third concurrent request receives 429 while two active requests finish');

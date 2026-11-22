@@ -6,7 +6,7 @@
   "credentials_included": true,
   "source_project": "동행길-Codex-전달; bbb referenced for Leaflet OSM tiles",
   "files": 428,
-  "html_sha256": "4bdf2de4557d2d8dd4261d27cf5664ba9a05be53eeb4c6d445acf2ba6bc79c47",
+  "html_sha256": "d58040b4379e31a34d3fc706085bddda4864e3cef57fb9c154dde5ca37f56b29",
   "verification": {
     "copied_project_build": true,
     "server_root_app_setup_http_200": true,
@@ -56,7 +56,7 @@
   "precision_runtime_included": true,
   "precision_runtime_loader_implemented": true,
   "main_promotion": {
-    "version": "2026-11-22-destination-review-stable",
+    "version": "2026-11-22-city-walk-shortest-stable",
     "review": "donghaeng-nav/docs/main-navigation-promotion.md",
     "original_gis_reprocessed": false,
     "field_verified": false
