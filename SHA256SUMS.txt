@@ -1,1 +1,1 @@
-d72155714f2c6c4aa25e5163d449d14469fedf41729be9345b398ab5869bfb57  donghaeng-android-1.0.11.apk
+61d1d34e55ed0cc63f24b61fd8389f6c9f05ed2e6059fcf462661a48a2c318c8  donghaeng-android-1.0.11-beta.1.apk
