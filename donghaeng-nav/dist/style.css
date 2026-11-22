@@ -393,3 +393,12 @@ body[data-build-profile=android-demo] #mobile-more {display:grid;place-items:cen
 .review-preview-reasons {margin:0;padding-inline-start:16px;font-size:12px;line-height:1.55}
 .review-preview-button {margin-top:auto}
 .review-preview-button,.review-replay-button {min-height:44px;padding:6px 10px}
+
+/* Map location and device heading stay available above the input/result sheet. */
+.map-location-control{background:#fff;border-radius:12px;overflow:hidden;max-width:128px;box-shadow:0 2px 8px #0002}
+.map-location-control button{display:block;width:100%;min-height:44px;padding:8px 10px;border:0;background:#fff;color:#176d52;font-size:12px;font-weight:700;white-space:nowrap}
+.map-location-control button+button{border-top:1px solid #dce5dd}.map-location-control button[aria-pressed=true]{background:#e7f2fb;color:#075fae}
+.map-heading-status{display:block;max-width:128px;padding:3px 7px 6px;font-size:10px;line-height:1.4;color:#526d7b;text-align:center}.map-heading-status:empty{display:none}
+.device-heading-marker{pointer-events:none!important}.device-heading-arrow{display:block;width:48px;height:48px;transform-origin:center;transition:transform .12s linear}
+.device-heading-arrow::before{content:'';position:absolute;left:13px;top:-8px;border-left:11px solid transparent;border-right:11px solid transparent;border-bottom:22px solid #1675df;filter:drop-shadow(0 1px 2px #fff)}
+@media(prefers-reduced-motion:reduce){.device-heading-arrow{transition:none}}

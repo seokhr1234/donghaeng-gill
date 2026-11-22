@@ -8,6 +8,7 @@ public class MainActivity extends BridgeActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         registerPlugin(DonghaengPlugin.class);
+        registerPlugin(HeadingPlugin.class);
         super.onCreate(savedInstanceState);
         if (getBridge() == null) return;
 

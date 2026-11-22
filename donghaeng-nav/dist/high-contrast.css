@@ -60,3 +60,5 @@ html[data-contrast=high] .map-legend {display:none}
  .contrast-toggle {border:2px solid ButtonText}.contrast-legend {display:block}
  .contrast-sample {forced-color-adjust:none}.hc-osco-marker span {forced-color-adjust:none}
 }
+
+html[data-contrast=high] .map-location-control{border:2px solid #ffe660;background:#070914}html[data-contrast=high] .map-location-control button{background:#070914;color:#fff}html[data-contrast=high] .map-location-control button[aria-pressed=true]{background:#6040a8;color:#fff}html[data-contrast=high] .map-heading-status{color:#fff}html[data-contrast=high] .device-heading-arrow::before{border-bottom-color:#ffe660;filter:drop-shadow(0 1px 2px #070914)}
