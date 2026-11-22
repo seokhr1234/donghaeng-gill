@@ -139,7 +139,7 @@ def build():
         path.write_text(html, encoding='utf-8', newline='\n')
     facilities = json.loads(local_file(datasets['bundled-facilities-seoul']['path']).read_bytes())['features']
     manifest = {
-        'version': '2026-11-22-luna-slope-beta',
+        'version': '2026-11-22-gemini-beta',
         'demo_beta': {'ignores_rest_availability': True, 'offline_example': True, 'local_routes_simulation_only': True},
         'main_source': 'donghaeng-nav/dist/index.html',
         'expansion': {'online_page': 'expansion.html', 'service_code_files': len(services['files']), 'review_asset_files': len(services.get('review_assets', {})),

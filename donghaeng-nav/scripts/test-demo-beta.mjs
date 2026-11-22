@@ -115,14 +115,26 @@ try {
   await slopeLayer.check();
   await page.evaluate(() => {document.querySelector('.map-layers-control').open=false});
 
-  await page.evaluate(() => {
+  const conditionUrl = '**/api/analyze-condition';
+  const mobilityText = '앉아서 타는 전동 이동 보조기기를 이용해요. 덜 힘든 길로 가고 싶어요.';
+  assert.equal(E.parseState(mobilityText).wheelchair, false);
+  await page.route(conditionUrl, route => route.fulfill({json: {profile: {
+    wheelchair: true, avoidSteps: true, avoidSlope: true, rest: false,
+    short: false, recognized: true, restMinutes: null,
+  }}}));
+  await page.evaluate(condition => {
     document.querySelector('#luna-origin').click();
     chooseDestination('school');
-    setCondition('휠체어를 이용해요. 계단과 경사를 피하고 싶어요.');
+    setCondition(condition);
     document.querySelector('#search').requestSubmit();
-  });
+  }, mobilityText);
   const liftCard=page.locator('#routes .route-card',{hasText:'육교 엘리베이터 시연 경로'});
   await liftCard.waitFor();
+  assert.deepEqual(requests, [{url: origin + '/api/analyze-condition', body: {condition: mobilityText}}]);
+  assert.match(await page.locator('#parser-note').textContent(), /^Gemini 해석/);
+  assert.equal(await page.evaluate(() => profile.wheelchair), true);
+  await page.unroute(conditionUrl);
+  await page.route(conditionUrl, route => route.fulfill({status: 503, json: {error: '모의 연결 실패'}}));
   assert.match(await liftCard.innerText(),/양쪽 육교 엘리베이터를 이용 가능하다고 가정/);
   assert.match(await liftCard.innerText(),/주변 길보다 육교 쪽이 완만하다고 가정/);
   assert.match(await liftCard.innerText(),/실제 엘리베이터 문 위치와 운행은 미확인/);
@@ -144,6 +156,7 @@ try {
   await page.getByRole('heading', {name: '서울 베타 시연 경로', exact: true}).waitFor({timeout: 25000});
   const city = requests.find(({url}) => url.endsWith('/api/routes/city-walk'));
   assert.equal(city?.body.profile.rest, false);
+  assert.match(await page.locator('#parser-note').textContent(), /AI 연결 실패 · 기기 내 해석/);
   assert(await page.locator('#routes .demo-beta-rest').isVisible());
   const cityUrl = '**/api/routes/city-walk';
   const actualCityResponse = await page.request.post(origin + '/api/routes/city-walk', {data: city.body});
@@ -179,7 +192,7 @@ try {
   assert.match(await terrain.innerText(), /보도 노면 실측.*미확인/);
   assert.deepEqual(errors, []);
   console.log(JSON.stringify({pass: true, entry: portable ? 'single-html' : 'main-source',
-    closedShelterIncluded: true, offlineSample: demo.sampleRest, cityRouteAndFailureFallback: true, realGps: false}));
+    closedShelterIncluded: true, offlineSample: demo.sampleRest, geminiProfileAndLift: true, cityRouteAndFailureFallback: true, realGps: false}));
 } finally {
   await browser?.close();
   server.closeAllConnections();

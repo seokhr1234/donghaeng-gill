@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-22-luna-slope-beta",
+  "version": "2026-11-22-gemini-beta",
   "demo_beta": {
     "ignores_rest_availability": true,
     "offline_example": true,
@@ -10,7 +10,7 @@
     "online_page": "expansion.html",
     "service_code_files": 57,
     "review_asset_files": 2,
-    "service_integrity_sha256": "0e30e7a6d6524bcbaf8ea76fdbf920b44a91a2387ac4dee59b29f85b87d35a90",
+    "service_integrity_sha256": "b2eceab4a41f10fcd46a7d97f4720cb02eeafaea1fb271e046838a2b9f2ac243",
     "citywide_routing": false,
     "authenticated_transit_verified": false,
     "new_slope_values_promoted": 0,
@@ -242,8 +242,8 @@
   "precision_records": 16169,
   "precision_field_verified": false,
   "runtime_validation": "Exact hashes and graph binding; supplied OA-22241 archive re-extracted as supplementary evidence only; existing route slopes and precision map unchanged",
-  "html_sha256": "2c7e9a790aa0bf1dfbf610f87e652d847e15ad425c910165fa6b4b69dc02c42b",
-  "html_bytes": 20781143,
+  "html_sha256": "f268d2b16b040420eb8d99bca05a9072b2a4c2d9dced1fcf5baf25f42db027e7",
+  "html_bytes": 20781153,
   "external_requests_required": false,
   "online_basemap": "OpenStreetMap raster tiles via Leaflet; HTTP(S) only",
   "offline_basemap": "Embedded OSM snapshot via Leaflet GridLayer",

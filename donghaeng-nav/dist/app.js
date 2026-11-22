@@ -38,7 +38,53 @@ function cancelAnalysis(){clearRouteSelection();analysisVersion++;if(analysisReq
 function conditionChanged(){cancelAnalysis();autoAnalyzedText='';profile=null;analyzed='';invalidate();$('#parser-note').textContent=travelMode==='transit'?'길 찾기를 누르면 이동 상태를 읽어요. 대중교통 후보의 조건 충족은 아직 미확인입니다.':'길 찾기를 누르면 AI가 문장을 해석해 이동 조건을 자동으로 반영해요.';$('#search-status').textContent='상태를 바꿨어요. 길 찾기를 눌러 주세요.'}
 function setCondition(text){$('#condition').value=text;conditionChanged()}
 function applyProfile(next,source){profile=E.wheelchairProfile({...next,avoidSteps:next.avoidSteps||next.wheelchair,avoidSlope:next.avoidSlope||next.wheelchair});analyzed=$('#condition').value;$('#parser-note').textContent=source+' · '+(travelMode==='transit'?'입력한 이동 조건을 읽었어요. 대중교통 후보의 조건 충족은 아직 미확인입니다.':profile.recognized?'이동 조건을 경로에 반영했어요.':'추가 이동 제약을 찾지 못해 기본 보행 경로를 추천해요. 상태를 구체적으로 적으면 다시 반영해요.')+(profile.restMinutes?` · ${profile.restMinutes}분 휴식 간격 요청`:'');return profile}
-async function analyzeWithGemini(){const raw=$('#condition').value;if(demoBeta){cancelAnalysis();invalidate();applyProfile(E.parseState(raw),'시연 베타 · 기기 내 해석');autoAnalyzedText=raw;return true}if(!raw.trim()){toast('먼저 현재 상태를 적어 주세요.');return false}cancelAnalysis();invalidate();if(PortableAI.isFile()&&!PortableAI.hasKey()){applyProfile(E.parseState(raw),'AI 키 미입력 · 기기 내 해석');return true}const version=analysisVersion,controller=new AbortController();analysisRequest=controller;$('#find-route').disabled=true;$('#search').setAttribute('aria-busy','true');searchLabel('AI가 상태를 해석하고 있어요…');$('#parser-note').textContent='입력한 상태 문장으로 이동 조건을 확인하고 있어요.';const deadline=setTimeout(()=>controller.abort(),18000);try{let data;if(PortableAI.isFile()){data={profile:await PortableAI.analyze(raw,{signal:controller.signal})}}else{const response=await fetch('/api/analyze-condition',{method:'POST',headers:{'Content-Type':'application/json'},signal:controller.signal,body:JSON.stringify({condition:raw})});data=await response.json();if(!response.ok)throw Error(data.error||'AI 연결에 실패했어요.')}if(version!==analysisVersion||raw!==$('#condition').value)return false;applyProfile(ConditionAI.merge(E.parseState(raw),data.profile),'Gemini 해석');autoAnalyzedText=raw;return true}catch(error){if(version!==analysisVersion||raw!==$('#condition').value)return false;applyProfile(E.parseState(raw),'AI 연결 실패 · 기기 내 해석');autoAnalyzedText='';$('#parser-note').title=error.message;$('#parser-note').textContent=(error.name==='AbortError'?'AI 응답 시간 초과':error.message.replace(/기기 내 해석.*$/,'').trim().slice(0,80))+' · 기기 내 해석'+(travelMode==='transit'?' · 대중교통 조건 충족은 아직 미확인':'');return true}finally{clearTimeout(deadline);if(version===analysisVersion){analysisRequest=null;searchLabel();$('#search').removeAttribute('aria-busy');$('#find-route').disabled=!graph}}}
+async function analyzeWithGemini(){
+ const raw=$('#condition').value;
+ if(!raw.trim()&&!demoBeta){toast('먼저 현재 상태를 적어 주세요.');return false}
+ cancelAnalysis();invalidate();
+ if(!raw.trim()||(PortableAI.isFile()&&!PortableAI.hasKey())){
+  applyProfile(E.parseState(raw),raw.trim()?'AI 키 미입력 · 기기 내 해석':'기본 보행 조건');
+  autoAnalyzedText=raw;
+  return true;
+ }
+ const version=analysisVersion,controller=new AbortController();
+ analysisRequest=controller;
+ $('#find-route').disabled=true;
+ $('#search').setAttribute('aria-busy','true');
+ searchLabel('AI가 상태를 해석하고 있어요…');
+ $('#parser-note').textContent='입력한 상태 문장으로 이동 조건을 확인하고 있어요.';
+ const deadline=setTimeout(()=>controller.abort(),demoBeta?8000:18000);
+ try{
+  let data;
+  if(PortableAI.isFile()){
+   data={profile:await PortableAI.analyze(raw,{signal:controller.signal})};
+  }else{
+   const response=await fetch('/api/analyze-condition',{
+    method:'POST',headers:{'Content-Type':'application/json'},signal:controller.signal,body:JSON.stringify({condition:raw})
+   });
+   data=await response.json();
+   if(!response.ok)throw Error(data.error||'AI 연결에 실패했어요.');
+  }
+  if(version!==analysisVersion||raw!==$('#condition').value)return false;
+  applyProfile(ConditionAI.merge(E.parseState(raw),data.profile),'Gemini 해석');
+  autoAnalyzedText=raw;
+  return true;
+ }catch(error){
+  if(version!==analysisVersion||raw!==$('#condition').value)return false;
+  const reason=error.name==='AbortError'?'AI 응답 시간 초과':'AI 연결 실패';
+  applyProfile(E.parseState(raw),reason+' · 기기 내 해석');
+  autoAnalyzedText='';
+  return true;
+ }finally{
+  clearTimeout(deadline);
+  if(version===analysisVersion){
+   analysisRequest=null;
+   searchLabel();
+   $('#search').removeAttribute('aria-busy');
+   $('#find-route').disabled=!graph;
+  }
+ }
+}
 function effectiveProfile(){if(!profile||analyzed!==$('#condition').value)throw Error('상태를 다시 입력하고 길 찾기를 눌러 주세요.');return {...profile}}
 $$('[data-example]').forEach(b=>b.onclick=()=>setCondition(b.dataset.example));$('#condition').oninput=conditionChanged;
 function matchingPlaces(query){const q=query.trim().toLowerCase().replace(/\s/g,'');return q.length<2?[]:cityDestinations.filter(p=>(p.name+' '+(p.address||'')).toLowerCase().replace(/\s/g,'').includes(q)).slice(0,10)}
@@ -127,6 +173,8 @@ function startBetaExample(){
  tripQuestions.close();
  resetTrip();
  setCondition(F.SCENARIOS.rest.text);
+ applyProfile(E.parseState(F.SCENARIOS.rest.text),'월곡 오프라인 예시 · 기기 내 해석');
+ autoAnalyzedText=F.SCENARIOS.rest.text;
  pickMode=null;
  entryReference=null;
  $('#map-instruction').hidden=true;
